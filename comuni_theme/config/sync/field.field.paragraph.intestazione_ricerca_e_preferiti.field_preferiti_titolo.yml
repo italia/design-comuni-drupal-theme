@@ -1,0 +1,19 @@
+uuid: f8235c34-b727-4f8b-bf56-49b234d20dd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_preferiti_titolo
+    - paragraphs.paragraphs_type.intestazione_ricerca_e_preferiti
+id: paragraph.intestazione_ricerca_e_preferiti.field_preferiti_titolo
+field_name: field_preferiti_titolo
+entity_type: paragraph
+bundle: intestazione_ricerca_e_preferiti
+label: 'Preferiti - Titolo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

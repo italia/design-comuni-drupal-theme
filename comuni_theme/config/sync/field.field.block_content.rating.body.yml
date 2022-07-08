@@ -1,0 +1,23 @@
+uuid: 39fd0f36-8215-4481-9c7d-8e8219398b68
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.rating
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.rating.body
+field_name: body
+entity_type: block_content
+bundle: rating
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

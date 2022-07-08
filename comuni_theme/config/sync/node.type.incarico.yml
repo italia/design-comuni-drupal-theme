@@ -1,0 +1,18 @@
+uuid: e6d17a81-6a7c-4752-b072-ebc3c84513fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Incarico
+type: incarico
+description: 'Questa Tipologia descrive la struttura di cariche, incarichi o ruoli salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

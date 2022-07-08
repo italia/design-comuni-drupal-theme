@@ -1,0 +1,21 @@
+uuid: d85ef74e-9685-414c-bf45-d6cb366ba772
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_autori
+    - node.type.documento_privato
+  module:
+    - text
+id: node.documento_privato.field_autori
+field_name: field_autori
+entity_type: node
+bundle: documento_privato
+label: Autore/i
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,160 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{% set mapContentTypeName = {
+  "dataset": "Documenti",
+  "documento_pubblico": "Documenti",
+  "evento": "Eventi",
+  "luogo": "Luoghi",
+  "notizia": "Notizie",
+  "persona": "Persona pubblica",
+  "servizio": "Servizi",
+  "unita_organizzativa": "Unità organizzativa",
+} %}
+
+{% set mapContentTypeUrl = {
+  "dataset": "/documenti",
+  "documento_pubblico": "/documenti",
+  "evento": "/eventi",
+  "luogo": "/amministrazione",
+  "notizia": "/novita",
+  "persona": "/amministrazione",
+  "servizio": "/servizi",
+  "unita_organizzativa": "/amministrazione",
+} %}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if exposed %}
+      {{ exposed }}
+  {% endif %}
+      <div class="col-lg-8 offset-lg-1">
+        {% if header %}
+          <div class="view-header">
+            <div class="d-flex justify-content-between align-items-center border-bottom border-light pb-3 mb-2">
+              <h2 class="visually-hidden" id="search-result">Risultati di ricerca</h2>
+              <span class="search-results u-grey-light"><span class="numResult">{{ header }}</span> Risultati</span>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#modal-categories" class="btn p-0 pe-2 d-lg-none">
+                <span class="rounded-icon"><svg class="icon icon-primary icon-xs mb-1" viewBox="0 0 24 24" id="it-funnel" xmlns="http://www.w3.org/2000/svg"><path d="M14 22h-1v-8.65L20.05 3H4l7 10.35V22h-1v-8.35L2.05 2H22l-8 11.65z"/><path fill="none" d="M0 0h24v24H0z"/></svg></span>
+                <span class="t-primary title-xsmall-semi-bold ms-1">Filtra</span>
+              </button>
+              <a href="/risultati-ricerca" class="btn p-0 pe-2 d-none d-lg-block">
+                <button type="button" class="btn d-none d-lg-block btn-result" aria-label="Rimuovi tutti i filtri">Rimuovi tutti i filtri</button>
+              </a>
+            </div>
+          </div>
+        {% endif %}
+        {% if attachment_before %}
+          <div class="attachment attachment-before">
+            {{ attachment_before }}
+          </div>
+        {% endif %}
+        <div class="container p-0">
+          <div class="row flex-column-reverse flex-lg-row">
+            <div class="col-12 pt-3">
+              {% if rows %}
+                <div class="view-content">
+                  {% for item in attribute(rows[0], "#rows") %}
+                    {% set node = attribute(item, "#node") %}
+                    {% if node is defined and node is not null %}
+                      {% set titolo = node.title.value %}
+                      {% set descrizione = node.field_descrizione_breve.value %}
+                      {% set bundle = node.type.target_id %}
+                      {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
+                      <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#" id="">
+                        <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
+                          <div class="card-header border-0 p-0">
+                            <a class="title-xsmall-bold mb-2 category text-uppercase" href={{mapContentTypeUrl[bundle]}} title={{mapContentTypeName[bundle]}} aria-label={{mapContentTypeName[bundle]}}>{{mapContentTypeName[bundle]}}</a>
+                          </div>
+                          <div class="card-body p-0 my-2">
+                            <h3 class="green-title-big t-primary mb-8" data-element="service-link">
+                              <a href={{urlContenuto}} title={{titolo}} aria-label="Vai alla pagina " ~ {{titolo}}>{{titolo}}</a>
+                            </h3>
+                            <p class="text-paragraph">{{descrizione}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% elseif empty %}
+                <div class="view-empty">
+                  {{ empty }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% if pager %}
+          <div class="container p-0">
+            <div class="d-flex justify-content-center">
+              {{ pager }}
+            </div>
+          </div>
+        {% endif %}
+        {% if attachment_after %}
+          <div class="attachment attachment-after">
+            {{ attachment_after }}
+          </div>
+        {% endif %}
+        {% if more %}
+          {{ more }}
+        {% endif %}
+        {% if footer %}
+          <div class="view-footer">
+            {{ footer }}
+          </div>
+        {% endif %}
+        {% if feed_icons %}
+          <div class="feed-icons">
+            {{ feed_icons }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

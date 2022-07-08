@@ -1,0 +1,98 @@
+{#
+/**
+ * @file
+ * Theme implementation for a 'webform' element.
+ *
+ * This is an copy of the webform.html.twig theme_wrapper which includes the
+ * 'title_prefix' and 'title_suffix' variables needed for
+ * contextual links to appear.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the webform.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_webform()
+ * @see _webform_form_after_build()
+ *
+ * @ingroup themeable
+ */
+#}
+<form{{ attributes }}>
+  {{ title_prefix }}
+  <div class="bg-primary">
+    <div class="container">
+      <div class="row d-flex justify-content-center bg-primary">
+        <div class="col-12 col-lg-6">
+          <div class="cmp-rating pt-lg-80 pb-lg-80" id="">
+            <div class="card shadow card-wrapper">
+              <div class="cmp-rating__card-first">
+                <div class="card-header border-0">
+                  <h2 class="title-medium-2-semi-bold mb-0">Quanto è utile questa pagina?</h2>
+                </div>
+                <div class="card-body">
+                  <fieldset class="">
+                    {{ children }}
+
+                  </fieldset>
+                </div>
+              </div>
+              <div class="cmp-rating__card-second d-none" data-step="3">
+                <div class="card-header border-0 mb-0">
+                  <h2 class="title-medium-2-bold mb-0">Grazie, il tuo parere ci aiuterà a migliorare il servizio!</h2>
+                </div>
+              </div>
+
+              <div class="form-rating d-none">
+                <div class="d-none" data-step="1">
+                  <div class="cmp-steps-rating">
+                    <div class="iscrizioni-header w-100">
+                      <h4 class="step-title d-flex align-items-center justify-content-between drop-shadow">
+                    <span class="d-block d-lg-inline">
+                      Cosa ha funzionato meglio?
+                    </span>
+                        <span class="step">1/2</span>
+                      </h4>
+                    </div>
+                    <div class="cmp-steps-rating__body">
+                      <div class="cmp-radio-list">
+                        <div class="card card-teaser shadow-rating">
+                          <div class="card-body">
+                            <div class="form-check m-0">
+                              <div class="radio-body border-bottom border-light cmp-radio-list__item">
+                                <input name="rating" type="radio" id="radio-1">
+                                <label for="radio-1">Alcune indicazioni non erano chiare</label>
+                              </div>
+                              <div class="radio-body border-bottom border-light cmp-radio-list__item">
+                                <input name="rating" type="radio" id="radio-2">
+                                <label for="radio-2">Alcune indicazioni non erano corrette</label>
+                              </div>
+                              <div class="radio-body border-bottom border-light cmp-radio-list__item">
+                                <input name="rating" type="radio" id="radio-3">
+                                <label for="radio-3">Non capivo se quello che facevo era corretto</label>
+                              </div>
+                              <div class="radio-body border-bottom border-light cmp-radio-list__item">
+                                <input name="rating" type="radio" id="radio-4">
+                                <label for="radio-4">Ho avuto problemi tecnici</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ title_suffix }}
+</form>

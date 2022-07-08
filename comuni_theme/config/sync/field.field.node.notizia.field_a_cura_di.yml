@@ -1,0 +1,29 @@
+uuid: 9c60e44e-cc7d-46e2-83b2-f40723545257
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_a_cura_di
+    - node.type.notizia
+    - node.type.unita_organizzativa
+id: node.notizia.field_a_cura_di
+field_name: field_a_cura_di
+entity_type: node
+bundle: notizia
+label: 'A cura di'
+description: 'Ufficio che ha curato il comunicato'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

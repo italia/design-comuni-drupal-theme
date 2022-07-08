@@ -1,0 +1,10 @@
+services:
+  comuni_module.twig.extension:
+    class: Drupal\comuni_module\TwigExtension\ComuniTwig
+    arguments: []
+    tags:
+      - { name: twig.extension }
+  create_menu.commands:
+    class: \Drupal\comuni_module\Commands\CreateMenuCommands
+    tags:
+      - { name: drush.command }

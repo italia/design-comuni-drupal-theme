@@ -1,0 +1,29 @@
+uuid: f3de11b4-effd-4585-8ead-fc40c45e5e2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sezione_amministrazione
+    - node.type.dataset
+    - taxonomy.vocabulary.amministrazione
+id: node.dataset.field_sezione_amministrazione
+field_name: field_sezione_amministrazione
+entity_type: node
+bundle: dataset
+label: 'Sezione amministrazione'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      amministrazione: amministrazione
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: ed6c36d8-4410-48dd-93df-700dcf5ba83a
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tipo_di_notizia
+field_name: field_tipo_di_notizia
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

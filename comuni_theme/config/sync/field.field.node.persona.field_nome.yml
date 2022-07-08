@@ -1,0 +1,19 @@
+uuid: 8dd74fc0-8d0a-487f-9111-98e241f4ae03
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nome
+    - node.type.persona
+id: node.persona.field_nome
+field_name: field_nome
+entity_type: node
+bundle: persona
+label: Nome
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

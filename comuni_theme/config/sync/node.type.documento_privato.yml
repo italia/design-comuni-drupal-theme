@@ -1,0 +1,18 @@
+uuid: 65751b41-a0cf-4bf4-a52d-9058a4b479d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Documento privato'
+type: documento_privato
+description: 'Struttura delle informazioni relative utili a presentare un documento privato in area riservata.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

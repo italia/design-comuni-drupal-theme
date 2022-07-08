@@ -1,0 +1,29 @@
+uuid: d72500a0-4b0c-40f3-99a8-e5c76b2f1446
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_argomenti
+    - node.type.notizia
+    - taxonomy.vocabulary.argomenti
+id: node.notizia.field_argomenti
+field_name: field_argomenti
+entity_type: node
+bundle: notizia
+label: Argomenti
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

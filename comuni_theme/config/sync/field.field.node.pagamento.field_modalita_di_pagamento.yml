@@ -1,0 +1,21 @@
+uuid: 7948a707-b6e3-4d85-9e75-c0ead073990d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_modalita_di_pagamento
+    - node.type.pagamento
+  module:
+    - text
+id: node.pagamento.field_modalita_di_pagamento
+field_name: field_modalita_di_pagamento
+entity_type: node
+bundle: pagamento
+label: 'Modalità di pagamento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

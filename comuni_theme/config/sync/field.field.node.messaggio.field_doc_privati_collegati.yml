@@ -1,0 +1,29 @@
+uuid: b7c0206b-d22c-4754-85e2-221f779ad234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_doc_privati_collegati
+    - node.type.documento_privato
+    - node.type.messaggio
+id: node.messaggio.field_doc_privati_collegati
+field_name: field_doc_privati_collegati
+entity_type: node
+bundle: messaggio
+label: 'Documenti privati'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_privato: documento_privato
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

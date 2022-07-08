@@ -1,0 +1,160 @@
+uuid: dbfaec0e-4197-4328-82d8-5fadab96d546
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_icone_social
+    - paragraphs.paragraphs_type.link_con_icona
+    - site_settings.site_setting_entity_type.info_comune
+  module:
+    - entity_reference_revisions
+id: site_setting_entity.info_comune.field_icone_social
+field_name: field_icone_social
+entity_type: site_setting_entity
+bundle: info_comune
+label: 'Icone Social'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      link_con_icona: link_con_icona
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 45
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 46
+        enabled: false
+      argomenti:
+        weight: 47
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 48
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 28
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 29
+        enabled: false
+      biglietto_evento:
+        weight: 51
+        enabled: false
+      calendario:
+        weight: 30
+        enabled: false
+      card_assistenza:
+        weight: 53
+        enabled: false
+      collection_multimediale:
+        weight: 32
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 33
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 35
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 36
+        enabled: false
+      container_assistenza:
+        weight: 58
+        enabled: false
+      container_calendario:
+        weight: 37
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 60
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 61
+        enabled: false
+      dataset:
+        weight: 62
+        enabled: false
+      documento:
+        weight: 38
+        enabled: false
+      elemento_immagine:
+        weight: 39
+        enabled: false
+      elemento_video:
+        weight: 40
+        enabled: false
+      esplora:
+        weight: 66
+        enabled: false
+      faq:
+        weight: 67
+        enabled: false
+      fase_intitolata:
+        weight: 41
+        enabled: false
+      hero_immagine:
+        weight: 69
+        enabled: false
+      homepage_top_card:
+        weight: 43
+        enabled: false
+      homepage_top_cards:
+        weight: 44
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 72
+        enabled: false
+      link:
+        weight: 46
+        enabled: false
+      link_con_icona:
+        weight: 48
+        enabled: true
+      link_esterno:
+        weight: 76
+        enabled: false
+      links_con_icona:
+        weight: 74
+        enabled: false
+      punto_di_contatto:
+        weight: 77
+        enabled: false
+      ricerca:
+        weight: 50
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 79
+        enabled: false
+      ricerca_novita:
+        weight: 80
+        enabled: false
+      ricerca_servizi:
+        weight: 81
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 82
+        enabled: false
+      siti_tematici:
+        weight: 51
+        enabled: false
+      testo_e_lista:
+        weight: 53
+        enabled: false
+      titolo_descrizione_link:
+        weight: 85
+        enabled: false
+      titolo_e_descrizione:
+        weight: 86
+        enabled: false
+      ultima_notizia:
+        weight: 54
+        enabled: false
+      valutazione:
+        weight: 88
+        enabled: false
+field_type: entity_reference_revisions

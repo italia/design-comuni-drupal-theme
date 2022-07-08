@@ -1,0 +1,10 @@
+uuid: d3c2b9cb-eeac-4b41-a1e9-ff2fdd47c571
+langcode: en
+status: true
+dependencies: {  }
+id: siti_tematici
+label: 'Siti tematici'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

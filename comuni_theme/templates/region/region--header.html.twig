@@ -1,0 +1,181 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+  * Custom variables:
+ * - info_comune: contiene informazioni su comune e regione oltre che le configurazioni per i social e gli svg legati ai content types.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+<div class="skiplink">
+  <a class="visually-hidden-focusable" aria-label="vai ai contenuti presenti in pagina" accesskey="1" href="#main-container">Vai ai contenuti</a>
+  <a class="visually-hidden-focusable" aria-label="vai al footer" accesskey="2" href="#footer">Vai al footer</a>
+</div>
+<header class="it-header-wrapper" data-bs-target="#header-nav-wrapper" style="">
+  <div class="it-header-slim-wrapper">
+    <div class="container">
+      <div class="row">
+      <div class="col-12">
+          {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-lg-block navbar-brand"
+              href="{{ path('<front>') }}" target="_blank"
+              aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
+              title="Vai al portale {{ nome_regione }}"
+            >{{ nome_regione }}</a>
+            <div class="it-header-slim-right-zone" role="navigation">
+              <div class="nav-item dropdown">
+                <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-expanded="false" aria-controls="languages" aria-haspopup="true"
+                >
+                  <span class="visually-hidden">Lingua attiva:</span>
+                  <span>ITA</span>
+                  <svg class="icon" viewBox="0 0 24 24" id="it-expand" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li>
+                            <a class="dropdown-item list-item" href="#">
+                              <span>ITA<span class="visually-hidden">selezionata</span></span>
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item list-item" href="#">
+                              <span>ENG</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="#"
+                class="btn btn-primary btn-icon btn-full"
+                title="Accedi all'area personale"
+                aria-label="Accedi all'area personale"
+                data-element="personal-area-login"
+              ><span class="rounded-icon">
+                  <svg viewBox="0 0 24 24" id="it-user" class="icon icon-primary" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 13a4 4 0 004-4V6a4 4 0 00-8 0v3a4 4 0 004 4zM9 6a3 3 0 016 0v3a3 3 0 01-6 0zm11 16h-1a7 7 0 00-14 0H4a8 8 0 0116 0z"/>
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                  </svg>
+                </span>
+                <span class="d-none d-lg-block">Accedi all'area personale</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a href="/homepage"
+                  aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
+                  title="Vai alla home"
+                ><img style="width:82px;margin-right:16px;" aria-hidden="true"
+                    src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
+                  </div>
+                </a>
+              </div>
+              <div class="it-right-zone">
+                <div class="it-socials d-none d-lg-flex">
+                  <span>Seguici su</span>
+                  <ul>
+                    {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+                      {{ drupal_entity('paragraph',social.target_id,'social_header') }}
+                    {% endfor %}
+                  </ul>
+                </div>
+                <div class="it-search-wrapper">
+                  <span class="d-none d-md-block">Cerca</span>
+                  <button class="search-link rounded-icon" type="button" data-bs-toggle="modal"
+                    data-bs-target="#search-modal" aria-label="Cerca nel sito"
+                  ><svg viewBox="0 0 24 24" id="it-search" class="icon" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/>
+                    <path fill="none" d="M0 0h24v24H0z"/>
+                  </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="it-header-navbar-wrapper" id="header-nav-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <nav class="navbar navbar-expand-lg has-megamenu"
+              aria-label="Navigazione principale" role="navigation"
+            ><button class="custom-navbar-toggler" type="button" role="navigation"
+              aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione"
+              data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
+              ><svg class="icon" viewBox="0 0 24 24" id="it-burger" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 5v1H2V5zM2 12.5h20v-1H2zM2 19h20v-1H2z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+              </button>
+              <div class="navbar-collapsable" id="nav4">
+                <div class="overlay" style="display: none;"></div>
+                <div class="close-div">
+                  <button class="btn close-menu" type="button">
+                    <span class="visually-hidden">Nascondi la navigazione</span>
+                    <svg class="icon" viewBox="0 0 24 24" id="it-close-big" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12.7 12l6.7 6.6-.8.8-6.6-6.7-6.6 6.7-.8-.8 6.7-6.6-6.7-6.6.8-.8 6.6 6.7 6.6-6.7.8.8z"/>
+                      <path fill="none" d="M0 0h24v24H0z"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="menu-wrapper">
+                  <a href="{{ path('<front>') }}" class="logo-hamburger"
+                    aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
+                    title="Vai alla home"
+                  ><img style="width:82px;margin-right:16px;" aria-hidden="true"
+                       src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+                    <div class="it-brand-text">
+                      <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
+                    </div>
+                  </a>
+                  {{ elements.topleft }}
+                  {{ elements.topright }}
+                  <div class="it-socials">
+                    <span>Seguici su</span>
+                    <ul>
+                      {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+                        {{ drupal_entity('paragraph',social.target_id,'social_header_mobile') }}
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

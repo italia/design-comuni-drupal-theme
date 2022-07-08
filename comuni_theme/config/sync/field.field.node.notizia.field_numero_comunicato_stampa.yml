@@ -1,0 +1,19 @@
+uuid: b3ee8509-73d2-4a08-bee0-bad816df0295
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_comunicato_stampa
+    - node.type.notizia
+id: node.notizia.field_numero_comunicato_stampa
+field_name: field_numero_comunicato_stampa
+entity_type: node
+bundle: notizia
+label: 'Numero progressivo comunicato stampa'
+description: 'Se è un comunicato stampa, indica un''eventuale numero progressivo del comunicato stampa'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

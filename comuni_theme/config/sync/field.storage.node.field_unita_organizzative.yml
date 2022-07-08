@@ -1,0 +1,19 @@
+uuid: 60e2c00b-416c-4392-b03b-1621c3ade6f0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_unita_organizzative
+field_name: field_unita_organizzative
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

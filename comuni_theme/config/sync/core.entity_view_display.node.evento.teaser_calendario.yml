@@ -1,0 +1,64 @@
+uuid: f9f69510-ca0e-4a06-9a42-84fcf6e19e7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_calendario
+    - field.field.node.evento.field_a_chi_e_rivolto
+    - field.field.node.evento.field_allegati
+    - field.field.node.evento.field_argomenti
+    - field.field.node.evento.field_costo
+    - field.field.node.evento.field_data_e_orario_di_fine
+    - field.field.node.evento.field_data_e_orario_di_inizio
+    - field.field.node.evento.field_descrizione_breve
+    - field.field.node.evento.field_descrizione_completa
+    - field.field.node.evento.field_evento_genitore
+    - field.field.node.evento.field_galleria_immagini
+    - field.field.node.evento.field_immagine
+    - field.field.node.evento.field_luogo
+    - field.field.node.evento.field_organizzato_da
+    - field.field.node.evento.field_patrocinato_da
+    - field.field.node.evento.field_persone
+    - field.field.node.evento.field_punti_di_contatto
+    - field.field.node.evento.field_sottotitolo
+    - field.field.node.evento.field_sponsor
+    - field.field.node.evento.field_tipo_di_evento
+    - field.field.node.evento.field_ulteriori_informazioni
+    - field.field.node.evento.field_video_esterno
+    - node.type.evento
+  module:
+    - user
+id: node.evento.teaser_calendario
+targetEntityType: node
+bundle: evento
+mode: teaser_calendario
+content:
+  sharing_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_a_chi_e_rivolto: true
+  field_allegati: true
+  field_argomenti: true
+  field_costo: true
+  field_data_e_orario_di_fine: true
+  field_data_e_orario_di_inizio: true
+  field_descrizione_breve: true
+  field_descrizione_completa: true
+  field_evento_genitore: true
+  field_galleria_immagini: true
+  field_immagine: true
+  field_luogo: true
+  field_organizzato_da: true
+  field_patrocinato_da: true
+  field_persone: true
+  field_punti_di_contatto: true
+  field_sottotitolo: true
+  field_sponsor: true
+  field_tipo_di_evento: true
+  field_ulteriori_informazioni: true
+  field_video_esterno: true
+  links: true
+  search_api_excerpt: true

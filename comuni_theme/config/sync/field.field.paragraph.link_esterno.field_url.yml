@@ -1,0 +1,19 @@
+uuid: c0880e5f-5c9b-4933-becc-8a34cfa8e690
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_url
+    - paragraphs.paragraphs_type.link_esterno
+id: paragraph.link_esterno.field_url
+field_name: field_url
+entity_type: paragraph
+bundle: link_esterno
+label: Url
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

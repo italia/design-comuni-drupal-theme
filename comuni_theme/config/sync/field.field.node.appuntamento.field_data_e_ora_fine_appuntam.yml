@@ -1,0 +1,21 @@
+uuid: 00442808-7f3a-4bb3-90f6-573a09027e38
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_e_ora_fine_appuntam
+    - node.type.appuntamento
+  module:
+    - datetime
+id: node.appuntamento.field_data_e_ora_fine_appuntam
+field_name: field_data_e_ora_fine_appuntam
+entity_type: node
+bundle: appuntamento
+label: 'Data e ora fine appuntamento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

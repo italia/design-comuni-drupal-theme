@@ -1,0 +1,21 @@
+uuid: 7b267caf-9bce-4283-be2a-33529eb3a5af
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+    - site_settings
+id: site_setting_entity.field_icone_social
+field_name: field_icone_social
+entity_type: site_setting_entity
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

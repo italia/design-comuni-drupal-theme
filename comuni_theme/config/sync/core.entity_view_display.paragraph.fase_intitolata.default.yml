@@ -1,0 +1,42 @@
+uuid: 59180f69-35fc-4afb-aa50-979181618eb5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fase_intitolata.field_data_inizio_fase
+    - field.field.paragraph.fase_intitolata.field_descrizione
+    - field.field.paragraph.fase_intitolata.field_titolo
+    - paragraphs.paragraphs_type.fase_intitolata
+  module:
+    - datetime
+id: paragraph.fase_intitolata.default
+targetEntityType: paragraph
+bundle: fase_intitolata
+mode: default
+content:
+  field_data_inizio_fase:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: 1c7ede01-0354-46c0-96a3-176136754fcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_colore
+    - node.type.sito_tematico
+    - taxonomy.vocabulary.colore
+id: node.sito_tematico.field_colore
+field_name: field_colore
+entity_type: node
+bundle: sito_tematico
+label: Colore
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      colore: colore
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

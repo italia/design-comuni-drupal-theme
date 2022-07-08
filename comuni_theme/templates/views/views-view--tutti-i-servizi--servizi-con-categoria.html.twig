@@ -1,0 +1,137 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+  <div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if title %}
+      {{ title }}
+    {% endif %}
+    {{ title_suffix }}
+    {% if exposed %}
+      <div class="cmp-input-search">
+        <div class="form-group autocomplete-wrapper mb-0">
+          <div class="view-filters">
+            {{ exposed }}
+          </div>
+          <div class="view-header">
+            <p id="autocomplete-label" class="mt-2 mt-lg-3 mb-4">{{header}}</p>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if attachment_before %}
+      <div class="attachment attachment-before">
+        {{ attachment_before }}
+      </div>
+    {% endif %}
+
+    {% if rows %}
+      <div class="view-content">
+        {% for item in attribute(rows[0], "#rows") %}
+          {% set node = attribute(item, "#node") %}
+          {% if node is defined and node is not null %}
+            {% set titolo = node.title.value %}
+            {% set descrizione = node.field_descrizione_breve.value %}
+            {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
+            {% set nomeCategoria = node.field_categoria_del_servizio.entity.name.value %}
+            {% set urlCategoria = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_categoria_del_servizio.target_id}) %}
+            {% if loop.last %}
+              <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#" id="">
+            {% else %}
+              <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#" id="">
+            {% endif %}
+                <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
+                  <div class="card-header border-0 p-0">
+                    <a href="{{ urlCategoria }}"
+                      class="title-xsmall-bold mb-2 category text-uppercase"
+                      title="{{ nomeCategoria }}"
+                      aria-label="{{ nomeCategoria }}"
+                    >{{ nomeCategoria }}</a>
+                  </div>
+                  <div class="card-body p-0 my-2">
+                    <h3 class="green-title-big t-primary mb-8">
+                      <a href="{{ urlContenuto }}"
+                        aria-label="Vai alla pagina {{titolo}}"
+                        title="Vai alla pagina {{titolo}}"
+                        data-element="service-link"
+                      >{{titolo}}</a>
+                    </h3>
+                    <p class="text-paragraph">{{ descrizione }}</p>
+                  </div>
+                </div>
+              </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+
+    {% if pager %}
+      <div class="container p-0">
+        <div class="d-flex justify-content-center">
+          {{ pager }}
+        </div>
+      </div>
+    {% endif %}
+    {% if attachment_after %}
+      <div class="attachment attachment-after">
+        {{ attachment_after }}
+      </div>
+    {% endif %}
+    {% if more %}
+      {{ more }}
+    {% endif %}
+    {% if footer %}
+      <div class="view-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if feed_icons %}
+      <div class="feed-icons">
+        {{ feed_icons }}
+      </div>
+    {% endif %}
+  </div>
+</div>

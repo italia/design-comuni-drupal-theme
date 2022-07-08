@@ -1,0 +1,29 @@
+uuid: a2c81c51-1bbe-4481-b45a-85004f5d0234
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organizzato_da
+    - node.type.evento
+    - node.type.unita_organizzativa
+id: node.evento.field_organizzato_da
+field_name: field_organizzato_da
+entity_type: node
+bundle: evento
+label: 'Organizzato da'
+description: 'Relazione con le unità organizzative che organizzano l''evento, se presenti'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

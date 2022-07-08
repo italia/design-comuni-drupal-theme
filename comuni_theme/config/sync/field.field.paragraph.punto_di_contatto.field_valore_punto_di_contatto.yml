@@ -1,0 +1,21 @@
+uuid: 69943927-d4cb-4890-9c95-3a1ff29a1533
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_valore_punto_di_contatto
+    - paragraphs.paragraphs_type.punto_di_contatto
+  module:
+    - text
+id: paragraph.punto_di_contatto.field_valore_punto_di_contatto
+field_name: field_valore_punto_di_contatto
+entity_type: paragraph
+bundle: punto_di_contatto
+label: 'Valore punto di contatto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

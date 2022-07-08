@@ -1,0 +1,15 @@
+global-styling:
+  version: 1.x
+  js:
+    js/bootstrap-italia.bundle.min.js: {},
+    js/scripts.js: {}
+    js/rating.js: {}
+    js/search.js: {}
+    js/assistenza.js: {}
+    js/booking.js: {}
+  css:
+    theme:
+      css/fonts.css: {},
+      css/bootstrap-italia.min.css: {},
+      css/style.css: {},
+      css/drupal.css: {},

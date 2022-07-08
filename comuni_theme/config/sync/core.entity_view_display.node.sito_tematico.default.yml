@@ -1,0 +1,60 @@
+uuid: d3d3c289-1e91-4585-966f-0ce613de6b41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sito_tematico.field_colore
+    - field.field.node.sito_tematico.field_descrizione_breve
+    - field.field.node.sito_tematico.field_immagine
+    - field.field.node.sito_tematico.field_link
+    - node.type.sito_tematico
+  module:
+    - link
+    - user
+id: node.sito_tematico.default
+targetEntityType: node
+bundle: sito_tematico
+mode: default
+content:
+  field_colore:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_immagine:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,38 @@
+uuid: 9560f21e-c02d-4856-ac91-7455d4d8d5fa
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: argomenti
+label: 'Taxonomy Terms'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  bac2f28d-d570-4b6b-98b0-6bc10427579c:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: bac2f28d-d570-4b6b-98b0-6bc10427579c
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      amministrazione: amministrazione
+      categorie_dei_servizi: categorie_dei_servizi
+      colore: colore
+      documenti_albo_pretorio: documenti_albo_pretorio
+      eventi_della_vita_delle_persone: eventi_della_vita_delle_persone
+      eventi_della_vita_di_un_impresa: eventi_della_vita_di_un_impresa
+      frequenze_di_aggiornamento: frequenze_di_aggiornamento
+      licenze: licenze
+      stati_di_una_pratica: stati_di_una_pratica
+      temi_di_un_dataset: temi_di_un_dataset
+      tipi_di_documento: tipi_di_documento
+      tipi_di_evento: tipi_di_evento
+      tipi_di_incarico: tipi_di_incarico
+      tipi_di_luogo: tipi_di_luogo
+      tipi_di_notizia: tipi_di_notizia
+      tipi_punto_di_contatto: tipi_punto_di_contatto
+      tipi_unita_organizzativa: tipi_unita_organizzativa
+selection_logic: and
+weight: -5
+relationships: {  }

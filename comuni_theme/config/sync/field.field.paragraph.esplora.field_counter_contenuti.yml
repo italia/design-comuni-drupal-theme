@@ -1,0 +1,23 @@
+uuid: bae7c5a9-7efc-4560-b92e-18a416a518e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_counter_contenuti
+    - paragraphs.paragraphs_type.esplora
+id: paragraph.esplora.field_counter_contenuti
+field_name: field_counter_contenuti
+entity_type: paragraph
+bundle: esplora
+label: 'Counter contenuti'
+description: 'Mostra o meno il counter dei contenuti che referenziano un dato termine di tassonomia.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

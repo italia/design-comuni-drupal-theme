@@ -1,0 +1,21 @@
+uuid: a1eb1edf-54c9-401a-a66b-2c9ef3ae4455
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ulteriori_informazioni
+    - node.type.documento_pubblico
+  module:
+    - text
+id: node.documento_pubblico.field_ulteriori_informazioni
+field_name: field_ulteriori_informazioni
+entity_type: node
+bundle: documento_pubblico
+label: 'Ulteriori informazioni'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

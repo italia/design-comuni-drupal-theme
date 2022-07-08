@@ -1,0 +1,29 @@
+uuid: e936e38a-7546-4ade-abe3-b6b8c311a0ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_licenza_di_distribuzione
+    - node.type.documento_pubblico
+    - taxonomy.vocabulary.licenze
+id: node.documento_pubblico.field_licenza_di_distribuzione
+field_name: field_licenza_di_distribuzione
+entity_type: node
+bundle: documento_pubblico
+label: 'Licenza di distribuzione'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      licenze: licenze
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

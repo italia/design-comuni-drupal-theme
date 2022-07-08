@@ -1,0 +1,168 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{% set name = fields.name.content %}
+{% set description = fields.description__value.content %}
+{% set taxonomy_term_link = fields.view_taxonomy_term.content %}
+
+<div class="col-md-6 col-xl-4">
+  <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
+    <div class="card shadow-sm rounded">
+      <div class="card-body card-esplora">
+        {% set path = url('<current>')['#markup']|split('/')|last %}
+        {% if path == 'tutti-gli-argomenti' %}
+          {% set dataElem = 'topic-element' %}
+        {% elseif path == 'servizi' %}
+          {% set dataElem = 'service-category-link' %}
+        {% else %}
+          {% set dataElem = '' %}
+        {% endif %}
+        <a href="{{ taxonomy_term_link|striptags|replace({"\n":'',})}}"
+          aria-label="Vai all'argomento {{ name|striptags|replace({'\n':'','&#039;':'\'',}) }}"
+          title="Vai all'argomento {{ name|striptags|replace({'\n':'','&#039;':'\'',}) }}"
+          data-element="{{ dataElem }}"
+        ><h3 class="card-title t-primary title-xlarge">{{name}}</h3></a>
+        <div class="titillium text-paragraph mb-0 description">{{description}}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# old logics on view template#}
+
+{#{% if '_simple_view' in display_id %}
+	{{ title_prefix }}
+	{% if title %}
+		{{ title }}
+	{% endif %}
+	{{ title_suffix }}
+	{% if header %}
+		{{ header }}
+	{% endif %}
+	{% if attachment_before %}
+		{{ attachment_before }}
+	{% endif %}
+	{% if rows %}
+		{{ rows }}
+	{% elseif empty %}
+		{{ empty }}
+	{% endif %}
+	{% if pager %}
+		{{ pager }}
+	{% endif %}
+	{% if attachment_after %}
+		{{ attachment_after }}
+	{% endif %}
+	{% if more %}
+		{{ more }}
+	{% endif %}
+	{% if footer %}
+		{{ footer }}
+	{% endif %}
+{% else %}
+	<div{{attributes.addClass(classes)}}>
+		{{ title_prefix }}
+		{% if title %}
+			{{ title }}
+		{% endif %}
+		{{ title_suffix }}
+		{% if header %}
+			<div class="view-header">
+				{{ header }}
+			</div>
+		{% endif %}
+		{% if exposed %}
+			<div class="view-filters">
+				{{ exposed }}
+			</div>
+		{% endif %}
+		{% if attachment_before %}
+			<div class="attachment attachment-before">
+				{{ attachment_before }}
+			</div>
+		{% endif %}
+    {{dd(rows)}}
+		{% if rows %}
+			<div class="content-wrapper">
+				<div class="view-content">
+						<div class="row flex-wrap justify-content-between gy-3 gy-md-5 gx-lg-5 pb-3 pb-lg-60 align-items-stretch">
+						{% for row in attribute(rows.0, '#rows') %}
+							{% set item = attribute(row, '#taxonomy_term') %}
+							<div class="col-12 col-lg-4"> <div class="cmp-card-simple card-wrapper pb-0">
+								<div class="card shadow rounded">
+									<div class="card-body">
+										<h3 class="card-title t-primary title-xlarge">{{ item.name.value }}</h3>
+										<p class="titillium text-paragraph mb-4">{{ item.description.value }}</p>
+										<a class="read-more mt-4" href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.tid.value})}}">
+											<span class="text text-button-semi">Vai alla pagina</span>
+											<span class="visually-hidden">su Lorem ipsum dolor sit amet, consectetur adipiscing elit…</span>
+											<svg viewBox="0 0 24 24" class="icon icon-primary icon-xs ml-10" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+
+		{% elseif empty %}
+			<div class="view-empty">
+				{{ empty }}
+			</div>
+		{% endif %}
+
+		{% if pager %}
+			{{ pager }}
+		{% endif %}
+		{% if attachment_after %}
+			<div class="attachment attachment-after">
+				{{ attachment_after }}
+			</div>
+		{% endif %}
+		{% if more %}
+			{{ more }}
+		{% endif %}
+		{% if footer %}
+			<div class="view-footer">
+				{{ footer }}
+			</div>
+		{% endif %}
+		{% if feed_icons %}
+			<div class="feed-icons">
+				{{ feed_icons }}
+			</div>
+		{% endif %}
+	</div>
+{% endif %}
+#}

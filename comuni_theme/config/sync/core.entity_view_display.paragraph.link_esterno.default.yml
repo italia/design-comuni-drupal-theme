@@ -1,0 +1,31 @@
+uuid: 525c1cf3-f751-4fe9-8014-51b28c8a36d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_esterno.field_titolo
+    - field.field.paragraph.link_esterno.field_url
+    - paragraphs.paragraphs_type.link_esterno
+id: paragraph.link_esterno.default
+targetEntityType: paragraph
+bundle: link_esterno
+mode: default
+content:
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_url:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

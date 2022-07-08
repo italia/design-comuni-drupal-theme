@@ -1,0 +1,28 @@
+uuid: ec87cdde-ea95-4d62-8aa1-1d0f32fb8bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_evento_genitore
+    - node.type.evento
+id: node.evento.field_evento_genitore
+field_name: field_evento_genitore
+entity_type: node
+bundle: evento
+label: 'Evento genitore'
+description: 'Un evento può essere parte di un altro evento definito come "genitore" (ad es. "Mostra sul Rinascimento" è parte dell''evento "Festival dell''Arte")'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      evento: evento
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

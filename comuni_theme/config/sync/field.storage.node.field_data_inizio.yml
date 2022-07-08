@@ -1,0 +1,20 @@
+uuid: bd7ecc9a-8588-4d20-8865-ecc90601d940
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_data_inizio
+field_name: field_data_inizio
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

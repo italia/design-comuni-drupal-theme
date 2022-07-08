@@ -1,0 +1,21 @@
+uuid: c834ca0d-ef29-4b0e-831c-99dd09355abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cosa_serve
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_cosa_serve
+field_name: field_cosa_serve
+entity_type: node
+bundle: servizio
+label: 'Cosa serve'
+description: 'Elenco delle cose necessarie per attivare il Servizio.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

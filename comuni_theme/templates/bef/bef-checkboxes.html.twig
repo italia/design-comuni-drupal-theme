@@ -1,0 +1,49 @@
+{#
+Themes Views' default multi-select element as a set of checkboxes.
+
+Available variables:
+  - wrapper_attributes: attributes for the wrapper element.
+  - element: The collection of checkboxes.
+  - children: An array of keys for the children of element.
+  - is_nested: TRUE if this is to be rendered as a nested list.
+  - depth: If is_nested is TRUE, this holds an array in the form of
+    child_id => nesting_level which defines the depth a given element should
+    appear in the nested list.
+#}
+{% set classes = [
+  'form-checkboxes',
+  'bef-checkboxes',
+  is_nested ? 'bef-nested',
+  show_select_all_none ? 'bef-select-all-none',
+  show_select_all_none_nested ? 'bef-select-all-none-nested',
+  display_inline ? 'form--inline',
+  ''
+] %}
+{#dd(element)#}
+<div{{ wrapper_attributes.addClass(classes) }}>
+  <div class="categoy-list pb-4">
+    <ul>
+      {% set current_nesting_level = 0 %}
+      {% for child in children %}
+        {% set item = attribute(element, child) %}
+        {% if is_nested %}
+          {% set new_nesting_level = attribute(depth, child) %}
+          {% include '@better_exposed_filters/bef-nested-elements.html.twig' %}
+          {% set current_nesting_level = new_nesting_level %}
+        {% else %}
+        <li>
+          <div class="form-check">
+            <div class="checkbox-body border-light py-3">
+              {% set customClass = "js-form-item form-item js-form-type-checkbox form-type-checkbox js-form-item-type-dataset form-item-type-" ~ attribute(item, "#return_value") %}
+              <div class={{customClass}}>
+                <input data-drupal-selector="edit-type-dataset" class="form-checkbox" type="checkbox" id={{ attribute(item, "#id") }} name={{ attribute(item, "#name") }} value={{attribute(item, "#return_value") }}>
+                <label for={{ attribute(item, "#id") }} class="subtitle-small_semi-bold mb-0 category-list__list active ">{{attribute(item, "#title")}}</label>
+              </div>
+            </div>
+          </div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

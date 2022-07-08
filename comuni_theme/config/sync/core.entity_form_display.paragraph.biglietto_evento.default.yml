@@ -1,0 +1,43 @@
+uuid: e74f2680-7776-412e-830f-cdc423346b32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.biglietto_evento.field_didascalia
+    - field.field.paragraph.biglietto_evento.field_prezzo
+    - field.field.paragraph.biglietto_evento.field_titolo
+    - paragraphs.paragraphs_type.biglietto_evento
+  module:
+    - text
+id: paragraph.biglietto_evento.default
+targetEntityType: paragraph
+bundle: biglietto_evento
+mode: default
+content:
+  field_didascalia:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_prezzo:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_titolo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

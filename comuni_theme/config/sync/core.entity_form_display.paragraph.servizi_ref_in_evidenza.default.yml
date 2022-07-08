@@ -1,0 +1,25 @@
+uuid: 4fa0639a-19c3-4955-9642-39c755a8a85c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.servizi_ref_in_evidenza.field_contenuti
+    - paragraphs.paragraphs_type.servizi_ref_in_evidenza
+id: paragraph.servizi_ref_in_evidenza.default
+targetEntityType: paragraph
+bundle: servizi_ref_in_evidenza
+mode: default
+content:
+  field_contenuti:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

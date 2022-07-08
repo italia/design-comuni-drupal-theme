@@ -1,0 +1,188 @@
+uuid: 6946f002-6b20-432e-9fa5-985cfa9f361a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.notizia.field_a_cura_di
+    - field.field.node.notizia.field_allegati
+    - field.field.node.notizia.field_argomenti
+    - field.field.node.notizia.field_data_della_notizia
+    - field.field.node.notizia.field_data_di_scadenza
+    - field.field.node.notizia.field_dataset
+    - field.field.node.notizia.field_descrizione_breve
+    - field.field.node.notizia.field_documenti
+    - field.field.node.notizia.field_galleria_immagini
+    - field.field.node.notizia.field_immagine
+    - field.field.node.notizia.field_luoghi
+    - field.field.node.notizia.field_numero_comunicato_stampa
+    - field.field.node.notizia.field_persone
+    - field.field.node.notizia.field_testo_completo_notizia
+    - field.field.node.notizia.field_tipo_di_notizia
+    - field.field.node.notizia.field_ulteriori_informazioni
+    - field.field.node.notizia.field_video_esterno
+    - node.type.notizia
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.notizia.default
+targetEntityType: node
+bundle: notizia
+mode: default
+content:
+  field_a_cura_di:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_dettaglio_notizia
+      link: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_allegati:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_argomenti:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_data_della_notizia:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_data_di_scadenza:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_dataset:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_documenti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_galleria_immagini:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_luoghi:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_numero_comunicato_stampa:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_persone:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_testo_completo_notizia:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_tipo_di_notizia:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_video_esterno:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  reading_time:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

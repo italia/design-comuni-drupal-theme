@@ -1,0 +1,10 @@
+uuid: 5ce9eaa0-fac5-42f2-9052-88e1c48c428e
+langcode: en
+status: true
+dependencies: {  }
+id: container_assistenza
+label: 'Container assistenza'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

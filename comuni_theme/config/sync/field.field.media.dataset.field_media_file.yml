@@ -1,0 +1,27 @@
+uuid: 409fa0e7-6794-45e8-99b6-e972814060d0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_file
+    - media.type.dataset
+  module:
+    - file
+id: media.dataset.field_media_file
+field_name: field_media_file
+entity_type: media
+bundle: dataset
+label: File
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx pdf csv'
+  max_filesize: ''
+  description_field: false
+field_type: file

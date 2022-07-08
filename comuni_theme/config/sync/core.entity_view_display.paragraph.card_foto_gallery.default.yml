@@ -1,0 +1,31 @@
+uuid: 9e82fb6c-1aef-410a-b5b9-55ab620b1552
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_foto_gallery.field_immagine
+    - field.field.paragraph.card_foto_gallery.field_label
+    - paragraphs.paragraphs_type.card_foto_gallery
+id: paragraph.card_foto_gallery.default
+targetEntityType: paragraph
+bundle: card_foto_gallery
+mode: default
+content:
+  field_immagine:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

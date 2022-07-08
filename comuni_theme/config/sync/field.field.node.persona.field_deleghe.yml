@@ -1,0 +1,21 @@
+uuid: b7e855eb-fa98-440a-8ccd-f56b8bbeb743
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_deleghe
+    - node.type.persona
+  module:
+    - text
+id: node.persona.field_deleghe
+field_name: field_deleghe
+entity_type: node
+bundle: persona
+label: Deleghe
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

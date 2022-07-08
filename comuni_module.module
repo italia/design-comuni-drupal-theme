@@ -1,0 +1,76 @@
+<?php
+
+use Drupal\comuni_module\Controller\NodeController;
+
+function comuni_module_entity_form_mode_alter(&$form_mode, \Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'user') {
+    $form_mode = 'comuni_default';
+  }
+}
+
+
+/**
+ * Impelemts hook_entity_presave
+ */
+function comuni_module_node_presave($node) {
+  $bundle = $node->bundle();
+  switch ($bundle) {
+    case 'documento_pubblico':
+      NodeController::updateFileExtension($node);
+      break;
+    case 'documento_privato':
+      NodeController::updateFileExtension($node);
+      break;
+  }
+}
+
+
+function comuni_module_theme_suggestions_fieldset_alter(array &$suggestions, array $variables, $hook){
+     if (isset($variables['element']['#webform'])) {
+         $webformID = str_replace("-", "_", $variables['element']['#webform']);
+         $suggestions[] = $hook . '__' . $webformID;
+     }
+ }
+
+function comuni_module_theme_suggestions_form_element_alter(array &$suggestions, array $variables, $hook){
+     if (isset($variables['element']['#webform'])) {
+         $webformID = str_replace("-", "_", $variables['element']['#webform']);
+         $suggestions[] = $hook . '__' . $webformID;
+          if (!empty($variables['element']['#type'])) {
+            $suggestions[] = $hook . '__' . $webformID . '__' . $variables['element']['#type'];
+          }
+     }
+
+ }
+
+/**
+   * @param $alias
+   *
+   * @return int|string
+   */
+  function getNodeIdByAlias(string $alias) {
+    $data = NULL;
+    try {
+      $query = \Drupal::entityQuery('path_alias');
+      $query->condition('alias', '/' . $alias, '=');
+      foreach ($aliasIds as $id) {
+        $path = PathAlias::load($id)->getPath();
+        $data = (int) str_replace("/node/", "", $path);
+      }
+    } catch (\Exception $e) {
+      $data = $e->getMessage();
+    }
+    return $data;
+  }
+
+/**
+ * Implements hook_system_breadcrumb_alter().
+ */
+function comuni_module_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrumb &$breadcrumb, \Drupal\Core\Routing\RouteMatchInterface $route_match, array $context) {
+  if ($breadcrumb && !\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $title = \Drupal::service('title_resolver')->getTitle(\Drupal::request(), $route_match->getRouteObject());
+    if (!empty($title)) {
+      $breadcrumb->addLink(\Drupal\Core\Link::createFromRoute($title, '<none>'));
+    }
+  }
+}

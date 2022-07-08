@@ -1,0 +1,21 @@
+uuid: 0233a258-7ca4-4f60-ae4f-285c0c998692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_conclusione_incarico
+    - node.type.incarico
+  module:
+    - datetime
+id: node.incarico.field_data_conclusione_incarico
+field_name: field_data_conclusione_incarico
+entity_type: node
+bundle: incarico
+label: 'Data conclusione incarico'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

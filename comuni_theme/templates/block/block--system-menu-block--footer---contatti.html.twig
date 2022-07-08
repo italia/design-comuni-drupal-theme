@@ -1,0 +1,81 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{# TODO: handle attributes like className, etc. #}
+{% macro menu_link(menu_item) %}
+  {% set map = {
+  'leggi le faq': 'faq',
+  'segnalazione disservizio': 'report-inefficiency',
+  'informativa privacy': 'privacy-policy-link',
+  'dichiarazione di accessibilità': 'accessibility-link'
+  } %}
+  {% if menu_item is defined and menu_item is not null %}
+    <a href="{{ menu_item.url.toString }}"
+      aria-label="{{ menu_item.title }}" data-element="{{ map[menu_item.title|lower] }}"
+    >{{ menu_item.title }}
+    </a>
+  {% endif %}
+  {# {{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
+  {# {{ url(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
+{% endmacro %}
+
+
+<div class="col-md-9 mt-md-4 footer-items-wrapper">
+  <h3 class="footer-heading-title">Contatti</h3>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="footer-info">
+        {{ site_settings.infocomune.info_comune.field_contatti.value|raw }}
+        {# {{ site_settings.infocomune.info_comune.field_contatti }} #}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <ul class="footer-list">
+      {% for anchor in content["#items"][0:4] %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul class="footer-list">
+      {% for anchor in content["#items"][4:8] %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+

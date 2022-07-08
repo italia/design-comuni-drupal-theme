@@ -1,0 +1,168 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+{% set months = {
+  'January': 'Gen',
+  'February': 'Feb',
+  'March': 'Mar',
+  'April': 'Apr',
+  'May': 'Mag',
+  'Jun': 'Giu',
+  'July': 'Lug',
+  'August': 'Ago',
+  'September': 'Set',
+  'October': 'Ott',
+  'November': 'Nov',
+  'December': 'Dic',
+} %}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if exposed %}
+    <div class="view-filters">
+      <h2 class="title-xxlarge mb-4">Esplora i documenti</h2>
+      <div class="cmp-input-search">
+        <div class="form-group autocomplete-wrapper mb-0">
+          {{ exposed }}
+          {% if header %}
+            <div class="view-header">
+              <p id="autocomplete-label" class="u-grey-light text-paragraph-card mt-2 mb-30 mt-lg-3 mb-lg-40">{{ header }} documenti trovati in ordine alfabetico</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+  {% if rows %}
+    <div class="view-content">
+      <div class="row cmp-list-card-img cmp-list-card-img-hr g-4 align-items-stretch pb-4">
+        {% for item in attribute(rows[0], "#rows") %}
+          {% set node = attribute(item, "#node") %}
+          {% if node is defined and node is not null %}
+            {% set titolo = node.title.value %}
+            {% set descrizione = node.field_descrizione_breve.value %}
+            {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
+            {% if node.field_data_della_notizia.value is defined and node.field_data_della_notizia.value is not empty and node.field_data_della_notizia.value is not null %}
+              {% set dataNotizia = node.field_data_della_notizia.value %}
+            {% else %}
+              {% set dataNotizia = node.created.value %}
+            {% endif %}
+            {% set day = dataNotizia|date("d") %}
+            {% set month = months[dataNotizia|date("M")] %}
+            {% set year = dataNotizia|date("Y") %}
+            {% set dataNotizia = day ~ " " ~ month ~ " " ~ year %}
+            <div class="col-12 col-md-6 col-xl-4">
+              <div class="card-wrapper border border-light rounded shadow-sm cmp-list-card-img cmp-list-card-img-hr">
+                <div class="card no-after rounded">
+                  <div class="row g-2 g-md-0 flex-md-column">
+                    {% if node.field_immagine.entity.field_media_image %}
+                      <div class="col-4 order-2 order-md-1">
+                        <img class="rounded-top img-fluid img-responsive"
+                            src="{{ file_url(node.field_immagine.entity.field_media_image.entity.uri.value) }}"
+                            title="{{ node.field_immagine.entity.field_media_image.title }}"
+                            alt="{{ node.field_immagine.entity.field_media_image.alt }}">
+                      </div>
+                    {% endif %}
+                    <div class="col-8 order-1 order-md-2">
+                      <div class="card-body">
+                        <div class="category-top cmp-list-card-img__body">
+                          <span class="data">{{ dataNotizia }}</span>
+                        </div>
+                        <a href="{{ urlContenuto }}" aria-label="vai alla notizia " ~ {{ titolo }}
+                          title="vai alla notizia " ~{{ titolo }}><h3
+                            class="h5 card-title u-grey-light">{{ titolo }}</h3></a>
+                        <p class="card-text d-none d-md-block">{{ descrizione }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+        <!--end card-->
+      </div>
+    </div>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+
+  {% if pager %}
+    <div class="container p-0">
+      <div class="d-flex justify-content-center">
+        {{ pager }}
+      </div>
+    </div>
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>
+

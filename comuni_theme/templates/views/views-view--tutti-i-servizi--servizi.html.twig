@@ -1,0 +1,196 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  <div class="bg-grey-card">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
+          <h2 class="visually-hidden">Esplora tutti i servizi</h2>
+          {{ title_prefix }}
+          {% if title %}
+            {{ title }}
+          {% endif %}
+          {{ title_suffix }}
+          {% if exposed %}
+            <div class="view-filters">
+              <div class="cmp-input-search">
+                <div class="form-group autocomplete-wrapper mb-0">
+                  {{ exposed }}
+                  {% if header %}
+                    <div class="view-header">
+                      <p id="autocomplete-label" class="mt-2 mt-lg-3 mb-4">{{header}}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          {% if attachment_before %}
+            <div class="attachment attachment-before">
+              {{ attachment_before }}
+            </div>
+          {% endif %}
+          {% set ids = [] %}
+          {% set uffici = [] %}
+          {% set targets = [] %}
+          {% if rows %}
+            <div class="view-content">
+              {% for item in attribute(rows[0], "#rows") %}
+                {% set node = attribute(item, "#node") %}
+                {% if node is defined and node is not null %}
+                  {% if node.field_unita_org_responsabile.target_id not in targets %}
+                    {% set targets = targets|merge([node.field_unita_org_responsabile.target_id]) %}
+                    {% set ufficio = {
+                      "titoloUfficio" : node.field_unita_org_responsabile.entity.title.value,
+                      "urlUfficio" : path('entity.node.canonical', {'node': node.field_unita_org_responsabile.target_id})
+                    } %}
+                    {% set uffici = uffici|merge([ufficio]) %}
+                  {% endif %}
+                  {% set ids = ids|merge([node.nid.value]) %}
+                  {% set titolo = node.title.value %}
+                  {% set descrizione = node.field_descrizione_breve.value %}
+                  {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
+                  {% set nomeCategoria = node.field_categoria_del_servizio.entity.name.value %}
+                  {% set urlCategoria = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_categoria_del_servizio.target_id}) %}
+                  {% if loop.last %}
+                    <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#" id="">
+                  {% else %}
+                    <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#" id="">
+                  {% endif %}
+                      <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
+                        <div class="card-header border-0 p-0">
+                          <a href="{{ urlCategoria }}"
+                            class="title-xsmall-bold mb-2 category text-uppercase"
+                            title="{{ nomeCategoria }}"
+                            aria-label="{{ nomeCategoria }}"
+                          >{{ nomeCategoria }}</a>
+                        </div>
+                        <div class="card-body p-0 my-2">
+                          <h3 class="green-title-big t-primary mb-8">
+                            <a href="{{ urlContenuto }}" aria-label="Vai alla pagina {{titolo}}">{{titolo}}</a>
+                          </h3>
+                          <p class="text-paragraph">{{ descrizione }}</p>
+                        </div>
+                      </div>
+                    </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% elseif empty %}
+            <div class="view-empty">
+              {{ empty }}
+            </div>
+          {% endif %}
+
+          {% if pager %}
+            <div class="container p-0">
+              <div class="d-flex justify-content-center">
+                {{ pager }}
+              </div>
+            </div>
+          {% endif %}
+          {% if attachment_after %}
+            <div class="attachment attachment-after">
+              {{ attachment_after }}
+            </div>
+          {% endif %}
+          {% if more %}
+            {{ more }}
+          {% endif %}
+          {% if footer %}
+            <div class="view-footer">
+              {{ footer }}
+            </div>
+          {% endif %}
+          {% if feed_icons %}
+            <div class="feed-icons">
+              {{ feed_icons }}
+            </div>
+          {% endif %}
+        </div>
+        <div class="col-12 col-lg-4 pt-50 pb-30 pt-lg-5 ps-lg-5">
+          <div class="link-list-wrap">
+            <div class="title-xsmall-semi-bold"><span>UFFICI</span></div>
+            <ul class="link-list t-primary">
+              {% for ufficio in uffici %}
+                {% if loop.first %}
+                <li class="mb-3 mt-3">
+                {% elseif loop.last %}
+                <li class="mb-4">
+                {% else %}
+                <li class="mb-3">
+                {% endif %}
+                  <a class="list-item ps-0 title-medium" href="{{ufficio["urlUfficio"]}}" title="Vai alla pagina " ~ {{ufficio["titoloUfficio"]}} aria-label="Vai alla pagina " ~ {{ufficio["titoloUfficio"]}}>
+                    <span>{{ufficio["titoloUfficio"]}}</span>
+                  </a>
+                </li>
+              {% endfor %}
+              <li>
+                <a class="list-item ps-0 text-button-xs-bold d-flex align-items-center" href="/amministrazione" title="Vai all'area amministrativa" aria-label="Vai all'area amministrativa">
+                  <span class="mr-10">VAI ALL’AREA AMMINISTRATIVA</span>
+                  <svg class="icon icon-xs icon-primary"viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% set ids = ids|join(",") %}
+{{drupal_view('bandi', 'bandi_servizi', ids)}}
+
+{#<button type="button" aria-label="Carica altri risultati"
+  data-bs-toggle="modal" data-bs-target="#"
+  class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 mb-30 mt-3 mb-lg-50 full-mb text-button">
+  <span class="">Carica altri risultati</span>
+</button>#}
+
+
+
+
+

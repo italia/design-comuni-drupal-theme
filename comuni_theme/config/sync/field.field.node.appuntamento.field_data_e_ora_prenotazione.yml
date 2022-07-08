@@ -1,0 +1,21 @@
+uuid: c559a13c-e37e-4610-ad0c-46b419bec8ca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_e_ora_prenotazione
+    - node.type.appuntamento
+  module:
+    - datetime
+id: node.appuntamento.field_data_e_ora_prenotazione
+field_name: field_data_e_ora_prenotazione
+entity_type: node
+bundle: appuntamento
+label: 'Data e ora in cui è stata fatta la prenotazione'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

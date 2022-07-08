@@ -1,0 +1,25 @@
+uuid: 241d96f8-8310-45ce-805d-0446c4f903be
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - comuni_theme
+id: footer
+theme: comuni_theme
+region: footer
+weight: -1
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

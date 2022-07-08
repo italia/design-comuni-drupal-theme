@@ -1,0 +1,65 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+
+{% if rows %}
+  <div class="container">
+    <h2 class="title-xxlarge mt-40 mb-40 mt-lg-60 mb-lg-40">Bandi</h2>
+    <div class="row flex-wrap justify-content-between gy-4 gy-lg-5 gx-lg-5 pb-40 pb-lg-60 align-items-stretch">
+      {% for item in attribute(rows[0], "#rows") %}
+        {% set node = attribute(item, "#node") %}
+        {% if node is defined and node is not null %}
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="cmp-card-simple card-wrapper pb-0">
+              <div class="card shadow-sm rounded">
+                <div class="card-body">
+                  {% set titolo = node.title.value %}
+                  {% set descrizione = node.field_descrizione_breve.value %}
+                  {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
+                  <a href="{{urlContenuto}}" aria-label="Vai all'argomento " ~ {{titolo}} title="Vai all'argomento " ~ {{titolo}}>
+                    <h3 class="card-title t-primary title-xlarge">{{titolo}}</h3>
+                  </a>
+                  <div class="titillium text-paragraph">{{descrizione}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    </div>
+  </div>
+{% endif %}

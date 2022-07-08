@@ -1,0 +1,132 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{# TODO: handle attributes like className, etc. #}
+{% macro menu_link(menu_item) %}
+  {% if menu_item is defined and menu_item is not null %}
+    {% if menu_item.url.external %}
+      <a class="list-item"  href="{{ menu_item.url.uri }}">{{ menu_item.title }}</a>
+    {% elseif menu_item.url.routeName is same as "<nolink>" %}
+      {# <span title="{{ menu_item.url.options.attributes.title }}">{{ menu_item.title }}</span> #}
+      <h3 class="footer-heading-title">{{ menu_item.title }}</h3>
+    {% elseif menu_item.url.routeName is same as "<button>" %}
+      <button title="{{ menu_item.url.options.attributes.title }}" type="button">{{ menu_item.title }}</button>
+    {% else %}
+      <a href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
+        aria-label="{{ menu_item.title }}"
+      >{{ menu_item.title }}
+      </a>
+    {% endif %}
+  {% endif %}
+  {# {{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
+  {# {{ url(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
+{% endmacro %}
+
+{# TODO: if menus novita and vivere would be split this would be more efficient #}
+{# {% for item in content["#items"] %}
+  {% if loop.index0 == 0 %}
+    ...
+  {% else if loop.index0 == 1%}
+    ...
+  ...
+  {% endif %}
+{% endfor %} #}
+
+{% set contents = [] %}
+{% for key, value in content["#items"] %}
+  {% set contents = contents|merge([value]) %}
+{% endfor %}
+
+{% set menu_amministrazione = contents[0] %}
+<div class="col-md-3 footer-items-wrapper">
+  {{ _self.menu_link(menu_amministrazione) }}
+  {% if menu_amministrazione.below|length > 0 %}
+    <ul class="footer-list">
+      {% for anchor in menu_amministrazione.below %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+{% set menu_servizi = contents[1] %}
+<div class="col-md-6 footer-items-wrapper">
+  {{ _self.menu_link(menu_servizi) }}
+  {% if menu_servizi.below|length > 0 %}
+  <div class="row">
+    <div class="col-md-6">
+      <ul class="footer-list">
+      {% for anchor in menu_servizi.below[0:8] %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul class="footer-list">
+      {% for anchor in menu_servizi.below[8:15] %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<div class="col-md-3 footer-items-wrapper">
+{% set menu_novita = contents[2] %}
+  {{ _self.menu_link(menu_novita) }}
+  {% if menu_novita.below|length > 0 %}
+    <ul class="footer-list">
+      {% for anchor in menu_novita.below %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% set menu_vivere = contents[3] %}
+  {{ _self.menu_link(menu_vivere) }}
+  {% if menu_vivere.below|length > 0 %}
+    <ul class="footer-list">
+      {% for anchor in menu_vivere.below %}
+        <li>
+          {{ _self.menu_link(anchor) }}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>

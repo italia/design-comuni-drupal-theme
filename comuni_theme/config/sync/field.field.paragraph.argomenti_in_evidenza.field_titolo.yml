@@ -1,0 +1,19 @@
+uuid: b8c9d88d-73bf-43e1-9dad-bedd9d2cad1e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.argomenti_in_evidenza
+id: paragraph.argomenti_in_evidenza.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: argomenti_in_evidenza
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

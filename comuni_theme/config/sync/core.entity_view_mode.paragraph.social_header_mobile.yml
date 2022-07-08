@@ -1,0 +1,10 @@
+uuid: 1f08f2de-3638-4b6c-88cb-fadecd2d8edd
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.social_header_mobile
+label: 'Social Header - Mobile'
+targetEntityType: paragraph
+cache: true

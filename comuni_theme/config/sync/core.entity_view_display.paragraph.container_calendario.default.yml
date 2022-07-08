@@ -1,0 +1,44 @@
+uuid: 2d7adf46-52f0-4ce3-9d7e-830e0aad4865
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.container_calendario.field_calendario
+    - field.field.paragraph.container_calendario.field_calendario_titolo
+    - field.field.paragraph.container_calendario.field_top_cards
+    - paragraphs.paragraphs_type.container_calendario
+  module:
+    - entity_reference_revisions
+id: paragraph.container_calendario.default
+targetEntityType: paragraph
+bundle: container_calendario
+mode: default
+content:
+  field_calendario:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_calendario_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_top_cards:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

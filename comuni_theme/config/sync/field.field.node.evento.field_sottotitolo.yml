@@ -1,0 +1,19 @@
+uuid: 07b84092-a90d-4d3f-bdc9-4d38f6953d75
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sottotitolo
+    - node.type.evento
+id: node.evento.field_sottotitolo
+field_name: field_sottotitolo
+entity_type: node
+bundle: evento
+label: Sottotitolo
+description: 'Eventuale sottotitolo o titolo abbreviato'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

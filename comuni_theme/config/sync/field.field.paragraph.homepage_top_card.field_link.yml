@@ -1,0 +1,23 @@
+uuid: be20b28a-8c71-4915-88c9-469a432c127d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.homepage_top_card
+  module:
+    - link
+id: paragraph.homepage_top_card.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: homepage_top_card
+label: Link
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 1
+field_type: link

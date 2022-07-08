@@ -1,0 +1,22 @@
+uuid: 353d2e02-436e-4caf-af51-9a50b57c5f52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.amministrazione_ref_in_evidenza.field_contenuti
+    - paragraphs.paragraphs_type.amministrazione_ref_in_evidenza
+id: paragraph.amministrazione_ref_in_evidenza.default
+targetEntityType: paragraph
+bundle: amministrazione_ref_in_evidenza
+mode: default
+content:
+  field_contenuti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

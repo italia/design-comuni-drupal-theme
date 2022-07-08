@@ -1,0 +1,20 @@
+uuid: 10031eec-7b36-4b49-afdf-9401a9673d86
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_data_e_orario_di_fine
+field_name: field_data_e_orario_di_fine
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

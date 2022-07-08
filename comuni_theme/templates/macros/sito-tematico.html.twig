@@ -1,0 +1,26 @@
+{% macro sito_tematico(sito, color_idx=0) %}
+  {% if sito is defined and sito is not empty %}
+  {% set color_classes = [
+    "card-bg-blue",
+    "card-bg-warning",
+    "card-bg-dark",
+  ] %}
+  <a href="{{ sito.field_link.uri }}"
+    aria-label="vai all'argomento {{ sito.title.value }} {{ sito.field_descrizione_breve.value }}"
+    title="vai alla sezione {{ sito.title.value }}"
+    class="card card-teaser {{ color_classes[color_idx % 3] }} no-after rounded mt-0 p-3" data-focus-mouse="false"
+  >
+    <div class="avatar size-lg me-3">
+      <img src="{{ file_url(sito.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="Immagine">
+    </div>
+    <div class="card-body">
+      <h4 class="card-title text-white mb-1">
+        {{ sito.title.value }}
+      </h4>
+      <p class="card-text text-sans-serif text-white">
+        {{ sito.field_descrizione_breve.value }}
+      </p>
+    </div>
+  </a>
+  {% endif %}
+{% endmacro %}

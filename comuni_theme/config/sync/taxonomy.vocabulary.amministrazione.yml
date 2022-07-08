@@ -1,0 +1,8 @@
+uuid: afdc14e2-0fb8-489f-8ede-5c7a6c2c96ab
+langcode: en
+status: true
+dependencies: {  }
+name: Amministrazione
+vid: amministrazione
+description: 'Tutta l''amministrazione'
+weight: 0

@@ -1,0 +1,10 @@
+uuid: 27f304ad-50b8-4a8d-9974-17c05905f82a
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.comuni_default
+label: 'Comuni default'
+targetEntityType: user
+cache: true

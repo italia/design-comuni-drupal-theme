@@ -1,0 +1,25 @@
+name: Comuni Theme
+type: theme
+description: "Theme for Comuni"
+dependencies:
+  - comuni_module
+package: Comuni
+core_version_requirement: ^9
+libraries:
+  - comuni_theme/global-styling
+
+base theme: classy
+regions:
+  includes: Includes
+  header: Header
+  branding: Branding
+  main_navigation: "Main navigation"
+  follow: "Social Menù"
+  top_right_menu: "Top Right Menù"
+  search: Search
+  featured: Featured
+  content: Content
+  right_sidebar: Right sidebar
+  contacts: Contact
+  rating: Rating
+  footer: Footer

@@ -1,0 +1,29 @@
+uuid: 6055a87c-07cf-4b61-8cad-e689fa9f603f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_unita_organizzativa
+    - node.type.incarico
+    - node.type.unita_organizzativa
+id: node.incarico.field_unita_organizzativa
+field_name: field_unita_organizzativa
+entity_type: node
+bundle: incarico
+label: 'Unità organizzativa'
+description: 'L''organizzazione presso la quale svolge l''incarico'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{#{% for row in (attribute(content, "#view").result) %}
+  {% set node = attribute(row, "_entity") %}
+  {{ kint(node) }}
+  {{ kint(node.langcode.value) }}
+  {{ kint(node.title.value) }}
+  {{ kint(node.field_regione.value) }}
+  {{ kint(node.slogan.value) }}
+  {% for icona in node.field_icone %}
+    {% set bundle = icona.entity.field_content_type.target_id %}
+    {% set media_icona = icona.entity.field_icona.entity %}
+    {% set file_icona = media_icona.field_media_image.entity %}
+  {% endfor %}
+  {{ kint(node.field_logo.entity) }}
+  {% for social in node.field_social %}
+    {% set paragraph_social = social.entity %}
+    {% set nome_social = paragraph_social.field_titolo.value %}
+    {% set nome_link = paragraph_social.field_link.title %}
+    {% set uri_link = paragraph_social.field_link.uri %}
+    {% set media_social = paragraph_social.field_icon.entity %}
+    {% set file_icona_social = media_social.field_media_image.entity %}
+    {{ kint(nome_social) }}
+    {{ kint(nome_link) }}
+    {{ kint(uri_link) }}
+    {{ kint(file_icona_social) }}
+
+  {% endfor %}
+{% endfor %}#}

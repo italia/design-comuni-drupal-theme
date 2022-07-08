@@ -1,0 +1,19 @@
+uuid: 41322d07-db10-48dc-bb06-c16e8b6d08d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_doc_privati_collegati
+field_name: field_doc_privati_collegati
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

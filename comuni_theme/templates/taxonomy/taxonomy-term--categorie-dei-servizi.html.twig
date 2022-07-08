@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: (optional) Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ */
+#}
+
+{#{%
+  set classes = [
+    'taxonomy-term',
+    'vocabulary-' ~ term.bundle|clean_class,
+  ]
+%}
+<div{{attributes.setAttribute('id','taxonomy-term-'~term.id).addClass(classes)}}>
+	{{ title_prefix }}
+	{% if name and not page %}
+		<h2>
+			<a href="{{ url }}">{{ name }}</a>
+		</h2>
+	{% endif %}
+	{{ title_suffix }}
+	<div class="content">
+		{{ content }}
+	</div>
+</div>#}
+
+<div class="container" id="main-container">
+  <div class="mt-5">
+    {{ drupal_block('system_breadcrumb_block') }}
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="cmp-hero">
+        <section class="it-hero-wrapper bg-white align-items-start">
+          <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+            <h1 class="text-black title-xxxlarge mb-2">{{ name }}</h1>
+            <div class="text-black titillium text-paragraph">
+              {{ content.description['#items'][0].value|check_markup(content.description['#items'][0].format) }}
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{drupal_view('tutti_i_servizi', 'servizi')}}

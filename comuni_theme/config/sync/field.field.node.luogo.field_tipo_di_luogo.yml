@@ -1,0 +1,29 @@
+uuid: 41b2309c-095c-4e9b-8906-1cce2e6b5644
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_di_luogo
+    - node.type.luogo
+    - taxonomy.vocabulary.tipi_di_luogo
+id: node.luogo.field_tipo_di_luogo
+field_name: field_tipo_di_luogo
+entity_type: node
+bundle: luogo
+label: 'Tipo di luogo'
+description: 'Una classificazione dei luoghi di pubblico interesse.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_luogo: tipi_di_luogo
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

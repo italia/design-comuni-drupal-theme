@@ -1,0 +1,19 @@
+uuid: 5fd7c33d-3f53-4953-ab55-e5c16cb2b2e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_formato_documento
+    - node.type.documento_pubblico
+id: node.documento_pubblico.field_formato_documento
+field_name: field_formato_documento
+entity_type: node
+bundle: documento_pubblico
+label: 'Formato Documento'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

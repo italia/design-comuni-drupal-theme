@@ -1,0 +1,19 @@
+uuid: 682c4056-dbc4-4067-8361-421e7397ed7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.evento
+id: node.evento.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: evento
+label: 'Descrizione breve'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

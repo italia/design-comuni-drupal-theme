@@ -1,0 +1,10 @@
+uuid: 9d35e4d3-4e93-4749-b1ac-90c0b80ce34c
+langcode: en
+status: true
+dependencies: {  }
+id: homepage_top_card
+label: 'Homepage top card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

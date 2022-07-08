@@ -1,0 +1,19 @@
+uuid: 6da1d5f5-67eb-41ba-b40b-49c4eea8ae1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.siti_tematici
+id: paragraph.siti_tematici.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: siti_tematici
+label: Titolo
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

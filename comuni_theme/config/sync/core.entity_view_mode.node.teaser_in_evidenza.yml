@@ -1,0 +1,10 @@
+uuid: 870a7b61-c866-4f05-b661-4fd2197a5409
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_in_evidenza
+label: 'Teaser in evidenza'
+targetEntityType: node
+cache: true

@@ -1,0 +1,29 @@
+uuid: bccbb10b-ed9e-499e-b25f-26c3bf2e7bc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_condizioni_di_servizio
+    - media.type.document
+    - node.type.servizio
+id: node.servizio.field_condizioni_di_servizio
+field_name: field_condizioni_di_servizio
+entity_type: node
+bundle: servizio
+label: 'Condizioni di servizio'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

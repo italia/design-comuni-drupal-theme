@@ -1,0 +1,29 @@
+uuid: feef8b2f-1654-4a2b-b5e7-324b6967267a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pratica
+    - node.type.pagamento
+    - node.type.pratica
+id: node.pagamento.field_pratica
+field_name: field_pratica
+entity_type: node
+bundle: pagamento
+label: Pratica
+description: 'Se presente'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pratica: pratica
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,166 @@
+uuid: 112b65d9-f5bb-46a2-a2eb-bbd1b88fcef9
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contatti
+    - field.storage.block_content.field_contatti
+    - paragraphs.paragraphs_type.container_assistenza
+  module:
+    - entity_reference_revisions
+id: block_content.contatti.field_contatti
+field_name: field_contatti
+entity_type: block_content
+bundle: contatti
+label: Contatti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      container_assistenza: container_assistenza
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 47
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 48
+        enabled: false
+      argomenti:
+        weight: 49
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 50
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 51
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 52
+        enabled: false
+      biglietto_evento:
+        weight: 53
+        enabled: false
+      calendario:
+        weight: 54
+        enabled: false
+      card_assistenza:
+        weight: 55
+        enabled: false
+      card_foto_gallery:
+        weight: 56
+        enabled: false
+      collection_multimediale:
+        weight: 57
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 58
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 59
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 60
+        enabled: false
+      container_assistenza:
+        weight: 61
+        enabled: true
+      container_calendario:
+        weight: 62
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 63
+        enabled: false
+      container_foto_gallery:
+        weight: 64
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 65
+        enabled: false
+      dataset:
+        weight: 66
+        enabled: false
+      documento:
+        weight: 67
+        enabled: false
+      elemento_video:
+        weight: 68
+        enabled: false
+      esplora:
+        weight: 69
+        enabled: false
+      faq:
+        weight: 70
+        enabled: false
+      fase_intitolata:
+        weight: 71
+        enabled: false
+      hero_immagine:
+        weight: 72
+        enabled: false
+      homepage_top_card:
+        weight: 73
+        enabled: false
+      homepage_top_cards:
+        weight: 74
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 75
+        enabled: false
+      link:
+        weight: 76
+        enabled: false
+      link_con_icona:
+        weight: 77
+        enabled: false
+      link_esterno:
+        weight: 78
+        enabled: false
+      links_con_icona:
+        weight: 79
+        enabled: false
+      punto_di_contatto:
+        weight: 80
+        enabled: false
+      ricerca:
+        weight: 81
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 82
+        enabled: false
+      ricerca_novita:
+        weight: 83
+        enabled: false
+      ricerca_servizi:
+        weight: 84
+        enabled: false
+      richiesta_assistenza:
+        weight: 85
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 86
+        enabled: false
+      siti_tematici:
+        weight: 87
+        enabled: false
+      testo_e_lista:
+        weight: 88
+        enabled: false
+      titolo_descrizione_link:
+        weight: 89
+        enabled: false
+      titolo_e_descrizione:
+        weight: 90
+        enabled: false
+      ultima_notizia:
+        weight: 91
+        enabled: false
+      valutazione:
+        weight: 92
+        enabled: false
+field_type: entity_reference_revisions

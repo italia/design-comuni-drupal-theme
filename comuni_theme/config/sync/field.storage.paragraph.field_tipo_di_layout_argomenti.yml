@@ -1,0 +1,27 @@
+uuid: 12e7ca91-caf9-4fa2-a632-ffdce22d0db1
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_tipo_di_layout_argomenti
+field_name: field_tipo_di_layout_argomenti
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: with_link
+      label: Full
+    -
+      value: just_pills
+      label: Bordered
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

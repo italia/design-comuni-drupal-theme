@@ -1,0 +1,43 @@
+uuid: 74fff5db-b756-4caa-834a-351b037276a3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.intestazione_ricerca_e_preferiti.field_intestazione
+    - field.field.paragraph.intestazione_ricerca_e_preferiti.field_preferiti
+    - field.field.paragraph.intestazione_ricerca_e_preferiti.field_preferiti_titolo
+    - paragraphs.paragraphs_type.intestazione_ricerca_e_preferiti
+  module:
+    - entity_reference_revisions
+id: paragraph.intestazione_ricerca_e_preferiti.default
+targetEntityType: paragraph
+bundle: intestazione_ricerca_e_preferiti
+mode: default
+content:
+  field_intestazione:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_preferiti:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_preferiti_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

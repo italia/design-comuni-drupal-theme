@@ -1,0 +1,160 @@
+<?php
+
+use Drupal\comuni_module\Controller\CalendarController;
+use Drupal\comuni_module\Controller\NodeController;
+use Drupal\comuni_module\Controller\ThemeController;
+
+/*function comuni_theme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  //Hide default theme settings.
+  //$form['logo']['#access'] = FALSE;
+  $form['favicon']['#access'] = FALSE;
+  $form['theme_settings']['#access'] = FALSE;
+
+
+  $themeHandler = \Drupal::service('theme_handler');
+  $form['dettagli_comune'] = [
+    '#type' => 'details',
+    '#title' => t('Comune'),
+    //'#open' => TRUE,
+  ];
+  $form['dettagli_comune']['nome_regione'] = [
+    '#type' => 'textfield',
+    '#title' => t('Nome della regione'),
+    //'#description' => t('Nome della Regione di appartenenza.'),
+  ];
+  $form['dettagli_comune']['nome_comune'] = [
+    '#type' => 'textfield',
+    '#title' => t('Nome del comune'),
+    //'#description' => t('Nome del comune.'),
+  ];
+  $form['dettagli_comune']['motto'] = [
+    '#type' => 'textarea',
+    '#title' => t('Motto del comune'),
+    //'#description' => t('Motto del comune.'),
+  ];
+  $form['social'] = [
+    '#type' => 'details',
+    '#title' => t('Social'),
+    //'#open' => TRUE,
+  ];
+  $form['social']['twitter'] = [
+    '#type' => 'textfield',
+    '#title' => t('Twitter'),
+  ];
+  $form['social']['facebook'] = [
+    '#type' => 'textfield',
+    '#title' => t('Facebook'),
+  ];
+  $form['social']['youtube'] = [
+    '#type' => 'textfield',
+    '#title' => t('Youtube'),
+  ];
+  $form['social']['telegram'] = [
+    '#type' => 'textfield',
+    '#title' => t('Telegram'),
+  ];
+  $form['social']['whatsapp'] = [
+    '#type' => 'textfield',
+    '#title' => t('Whatsapp'),
+  ];
+  $form['social']['rss'] = [
+    '#type' => 'textfield',
+    '#title' => t('Rss'),
+  ];
+}*/
+
+/*function comuni_theme_preprocess_page(&$variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['is_front'] = TRUE;
+    $variables['last_news'] = NodeController::getLastNews();
+    $variables['homepage'] = ThemeController::getHomepage();
+  }
+  $variables['current_path'] = \Drupal::service('path.current')->getPath();
+  $variables['current_uri'] = \Drupal::request()->getRequestUri();
+  $variables["info_comune"] = ThemeController::getInfoComune();
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $variables['site_slogan'] = \Drupal::config('system.site')->get('slogan');
+}*/
+
+/*function comuni_theme_preprocess_region(&$variables) {
+  switch ($variables['region']) {
+    case "header":
+      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+      $variables['current_path'] = \Drupal::service('path.current')->getPath();
+      $variables['current_uri'] = \Drupal::request()->getRequestUri();
+      $variables["info_comune"] = ThemeController::getInfoComune();
+      break;
+    case "footer":
+      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+      $variables['current_path'] = \Drupal::service('path.current')->getPath();
+      $variables['current_uri'] = \Drupal::request()->getRequestUri();
+      $variables["info_comune"] = ThemeController::getInfoComune();
+      break;
+    case "content":
+      break;
+    default:
+      break;
+  }
+}*/
+
+/*function comuni_theme_preprocess_block(&$variables) {
+  switch ($variables['plugin_id']) {
+    case "views_block:comuni_calendario_eventi-calendario_eventi":
+      $calendar = CalendarController::getCalendarEvents();
+      $variables["calendario_eventi"] = $calendar;
+      break;
+    default:
+      break;
+  }
+}*/
+
+/*function comuni_module_preprocess_views_view(&$variables) {
+  switch ($variables['id']) {
+    case 'comuni_amministrazione':
+      break;
+    case 'frontpage':
+      break;
+    case 'comuni_calendario_eventi':
+    default:
+      break;
+  }
+}*/
+
+
+function comuni_module_preprocess_block(&$vars)
+{
+    if ($vars['plugin_id'] == 'system_breadcrumb_block') {
+        $vars['content']['#cache']['max-age'] = 0;
+    }
+}
+
+function comuni_module_preprocess_esplora(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $variables['title'] = $node->title->value;
+  }
+}
+
+function comuni_module_preprocess_breadcrumb(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $nid = $node->id();
+    $contentType = $node->bundle();
+    $variables['contentType'] = $contentType;
+  }
+  $taxonomy = \Drupal::routeMatch()->getParameter('taxonomy_term');
+  if ($taxonomy instanceof \Drupal\taxonomy\TermInterface) {
+    $variables['contentType'] = 'taxonomy';
+    $path = \Drupal::service('path.current')->getPath();
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath($path);
+    $aliasSplit = explode("/", $alias);
+
+    $variables['pageTaxName'] = ucfirst(str_replace('-', ' ', $aliasSplit[1]));
+    $variables['pageTaxUrl'] = '/' . $aliasSplit[1];
+  }
+}

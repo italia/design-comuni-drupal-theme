@@ -1,0 +1,37 @@
+uuid: 80aefd62-0af5-4fc7-a5e9-237012619281
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pratica.field_argomenti
+    - field.field.node.pratica.field_descrizione_completa
+    - field.field.node.pratica.field_doc_privati_collegati
+    - field.field.node.pratica.field_doc_pubblici_collegati
+    - field.field.node.pratica.field_numero_di_protocollo
+    - field.field.node.pratica.field_servizio_origina_pratica
+    - field.field.node.pratica.field_stato_della_pratica
+    - field.field.node.pratica.field_ufficio_di_riferimento
+    - node.type.pratica
+  module:
+    - user
+id: node.pratica.teaser
+targetEntityType: node
+bundle: pratica
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_argomenti: true
+  field_descrizione_completa: true
+  field_doc_privati_collegati: true
+  field_doc_pubblici_collegati: true
+  field_numero_di_protocollo: true
+  field_servizio_origina_pratica: true
+  field_stato_della_pratica: true
+  field_ufficio_di_riferimento: true
+  search_api_excerpt: true

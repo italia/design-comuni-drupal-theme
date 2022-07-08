@@ -1,0 +1,31 @@
+uuid: a42f0cf2-54ae-48ac-b89e-82802285e3c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.siti_tematici.field_contenuti
+    - field.field.paragraph.siti_tematici.field_titolo
+    - paragraphs.paragraphs_type.siti_tematici
+id: paragraph.siti_tematici.default
+targetEntityType: paragraph
+bundle: siti_tematici
+mode: default
+content:
+  field_contenuti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

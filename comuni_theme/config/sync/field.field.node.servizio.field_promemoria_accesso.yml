@@ -1,0 +1,21 @@
+uuid: 5fa0657f-65fe-4031-957d-0141e8fb5d2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promemoria_accesso
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_promemoria_accesso
+field_name: field_promemoria_accesso
+entity_type: node
+bundle: servizio
+label: 'Promemoria accesso'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

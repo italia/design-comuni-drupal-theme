@@ -1,0 +1,29 @@
+uuid: b9d1e23f-b643-4fed-88ea-a7fa01637243
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_area_di_appartenenza
+    - node.type.unita_organizzativa
+    - taxonomy.vocabulary.argomenti
+id: taxonomy_term.argomenti.field_area_di_appartenenza
+field_name: field_area_di_appartenenza
+entity_type: taxonomy_term
+bundle: argomenti
+label: 'Area di appartenenza'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

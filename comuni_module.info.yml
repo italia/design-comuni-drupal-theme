@@ -1,0 +1,14 @@
+name: 'Comuni module'
+type: module
+description: 'Comuni module Configuration'
+dependencies:
+  - drupal:media
+  - drupal:rest
+  - drupal:serialization
+  - pathauto:pathauto
+  - paragraphs:paragraphs
+  - color_field:color_field
+  - twig_tweak:twig_tweak
+  - views_field_view:views_field_view
+core_version_requirement: ^9
+package: Comuni

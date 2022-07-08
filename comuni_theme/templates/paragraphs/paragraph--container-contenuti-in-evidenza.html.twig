@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set viewMode = paragraph.field_tipo_di_visualizzazione.value %}
+{% block paragraph %}
+	<div{{attributes.addClass(classes)}}>
+	{% block content %}
+  {% if content.field_colore[0]["#title"] == "Grigio" %}
+    <div class="bg-grey-card">
+  {% endif %}
+      <div class="container py-5">
+        <h2 class="title-xxlarge mb-4">{{ paragraph.field_titolo.value }}</h2>
+        <div class="row g-4">
+          {% if viewMode == "card_estese" %}
+            {% for contenuto in content.field_contenuti["#items"] %}
+              {{ drupal_entity('node', contenuto.target_id, 'teaser_in_evidenza_amministrazione') }}
+            {% endfor %}
+          {% elseif (viewMode == "card_estese_eventi" or viewMode == "card_estese_luogo") %}
+            {% if content.field_contenuti["#object"] is defined and content.field_contenuti["#object"] is not null %}
+              {{ content.field_contenuti }}
+            {% elseif content.field_card_contenuti["#object"] is defined and content.field_card_contenuti["#object"] is not null %}
+              {# NOTE: can't null check the inner content because it renders the results of a view #}
+              {{ content.field_card_contenuti }}
+            {% endif %}
+            <div class="d-flex justify-content-end">
+              <button type="button" data-bs-toggle="modal" data-bs-target="#" aria-label="Vedi tutti {{ viewMode == " card_estese_eventi" ? " gli eventi" : " i luoghi" }}" class="btn btn-primary px-5 py-3 full-mb">
+                <span class="">Tutti
+                  {{ viewMode == "card_estese_eventi" ? "gli eventi" : "i luoghi" }}</span>
+              </button>
+            </div>
+          {% elseif (viewMode == "card_estese_documenti") %}
+            {% if content.field_contenuti["#object"] is defined and content.field_contenuti["#object"] is not null %}
+              {{ content.field_contenuti }}
+            {% endif %}
+          {% elseif (viewMode == "contenuto_notizia") %}
+            {{ content.field_contenuti }}
+          {% endif %}
+        </div>
+      </div>
+  {% if content.field_colore[0]["#title"] == "Grigio" %}
+    </div>
+  {% endif %}
+  {% endblock %}
+	</div>
+{% endblock paragraph %}

@@ -1,0 +1,20 @@
+uuid: 53920a0c-c2b6-4fe6-a4f6-f4108eff6a65
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tipo_di_organizzazione
+field_name: field_tipo_di_organizzazione
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

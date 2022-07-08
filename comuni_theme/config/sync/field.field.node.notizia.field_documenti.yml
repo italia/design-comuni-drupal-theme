@@ -1,0 +1,29 @@
+uuid: f6a817c7-de00-47e3-822d-5dddcbfef0d4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documenti
+    - node.type.documento_pubblico
+    - node.type.notizia
+id: node.notizia.field_documenti
+field_name: field_documenti
+entity_type: node
+bundle: notizia
+label: Documenti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

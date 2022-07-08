@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+  This ensures that, if clean URLs are off, the 'q' is added first,
+  as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+<div class="input-group">
+  <label for="autocomplete-autocomplete-three" class="visually-hidden"></label>
+  <input type="text" class="autocomplete form-control" placeholder="Cerca per parola chiave"
+         id="autocomplete-autocomplete-three" name="search_api_fulltext" data-bs-autocomplete="[]">
+
+  <div class="input-group-append">
+    <button class="btn btn-primary" type="submit" id="button-3">Invio</button>
+  </div>
+
+  <span class="autocomplete-icon" aria-hidden="true">
+                        <svg class="icon icon-sm icon-primary" role="img" aria-labelledby="autocomplete-label" viewbox="0 0 24 24" id="it-search" xmlns="http://www.w3.org/2000/svg"><path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+
+                  </span>
+</div>

@@ -1,0 +1,23 @@
+uuid: 67da63fb-1d37-4060-8770-6e4f00f392bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.dataset.field_dataset
+    - paragraphs.paragraphs_type.dataset
+id: paragraph.dataset.default
+targetEntityType: paragraph
+bundle: dataset
+mode: default
+content:
+  field_dataset:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

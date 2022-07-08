@@ -1,0 +1,99 @@
+uuid: d1d84d33-ab22-436b-9237-375ef41676cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_argomenti
+    - search_api.server.drupal_db
+    - core.entity_view_mode.node.search_index
+  module:
+    - taxonomy
+    - node
+    - search_api
+id: all
+name: All
+description: ''
+read_only: false
+field_settings:
+  field_argomenti:
+    label: Argomenti
+    datasource_id: 'entity:node'
+    property_path: field_argomenti
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_argomenti
+  name:
+    label: 'Argomenti » Taxonomy term » Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_argomenti:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_argomenti
+      module:
+        - taxonomy
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          appuntamento: search_index
+          dataset: search_index
+          documento_privato: search_index
+          documento_pubblico: search_index
+          evento: search_index
+          fase_del_servizio: search_index
+          incarico: search_index
+          luogo: search_index
+          messaggio: search_index
+          notizia: search_index
+          pagamento: search_index
+          persona: search_index
+          pratica: search_index
+          punto_di_contatto: search_index
+          servizio: search_index
+          sito_tematico: search_index
+          unita_organizzativa: search_index
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - dataset
+        - documento_pubblico
+        - evento
+        - luogo
+        - notizia
+        - persona
+        - servizio
+        - unita_organizzativa
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: drupal_db

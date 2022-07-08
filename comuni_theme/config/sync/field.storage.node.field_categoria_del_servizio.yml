@@ -1,0 +1,20 @@
+uuid: bc9585a1-4622-44ea-8a53-c5a20b708175
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_categoria_del_servizio
+field_name: field_categoria_del_servizio
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

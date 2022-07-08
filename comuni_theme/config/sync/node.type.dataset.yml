@@ -1,0 +1,18 @@
+uuid: ae064449-1432-4536-9598-22298aaccccb
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Dataset
+type: dataset
+description: 'Struttura delle informazioni relative utili a presentare un Dataset'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

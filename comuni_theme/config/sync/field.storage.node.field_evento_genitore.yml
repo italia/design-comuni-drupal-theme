@@ -1,0 +1,19 @@
+uuid: 69a67efa-896c-4f39-9808-3eb160aed8b4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_evento_genitore
+field_name: field_evento_genitore
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

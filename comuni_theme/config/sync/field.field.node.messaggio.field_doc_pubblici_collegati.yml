@@ -1,0 +1,29 @@
+uuid: 3969037a-ffbe-41ba-9115-6c505f45409d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_doc_pubblici_collegati
+    - node.type.documento_pubblico
+    - node.type.messaggio
+id: node.messaggio.field_doc_pubblici_collegati
+field_name: field_doc_pubblici_collegati
+entity_type: node
+bundle: messaggio
+label: 'Documenti pubblici'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

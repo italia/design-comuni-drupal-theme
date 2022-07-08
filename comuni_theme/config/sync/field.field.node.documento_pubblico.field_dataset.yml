@@ -1,0 +1,29 @@
+uuid: 977ad2b9-4bc3-400b-bf82-79e7334035a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dataset
+    - node.type.dataset
+    - node.type.documento_pubblico
+id: node.documento_pubblico.field_dataset
+field_name: field_dataset
+entity_type: node
+bundle: documento_pubblico
+label: Dataset
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dataset: dataset
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

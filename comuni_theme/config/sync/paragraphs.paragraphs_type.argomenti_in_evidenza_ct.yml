@@ -1,0 +1,10 @@
+uuid: b51581c7-e140-43bc-afdc-1b48d2688644
+langcode: en
+status: true
+dependencies: {  }
+id: argomenti_in_evidenza_ct
+label: 'Argomenti in Evidenza CT'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

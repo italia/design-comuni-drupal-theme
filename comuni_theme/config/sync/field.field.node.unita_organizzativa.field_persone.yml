@@ -1,0 +1,29 @@
+uuid: 4c64dab3-aa39-413d-91f2-2e693a4fef53
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_persone
+    - node.type.persona
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa.field_persone
+field_name: field_persone
+entity_type: node
+bundle: unita_organizzativa
+label: 'Persone che compongono la struttura'
+description: 'Link alla scheda della persona responsabile della struttura'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      persona: persona
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

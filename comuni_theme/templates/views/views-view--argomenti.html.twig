@@ -1,0 +1,90 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+	{% if title %}
+		{{ title }}
+	{% endif %}
+
+	{% if rows %}
+		<div class="row mt-lg-4">
+			<div class="col">
+				<div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
+				{% for item in attribute(rows[0], "#rows") %}
+					{% set term = attribute(item, "#taxonomy_term") %}
+					{% if term is defined and term is not null %}
+						<div class="card card-teaser rounded shadow align-items-center">
+							<svg viewBox="0 0 24 24" id="it-help-circle" xmlns="http://www.w3.org/2000/svg" class="icon">
+								<path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 19a9 9 0 119-9 9 9 0 01-9 9zm-1.2-4.5H12v1.8h-1.2zm4.5-8a4.2 4.2 0 01-.3 1.8 5.4 5.4 0 01-1.3 1.4L12.3 13a2.8 2.8 0 00-.4 1.2v.6H11a3 3 0 01-.2-1 2.1 2.1 0 01.5-1.2 9 9 0 011.4-1.4 6.4 6.4 0 001.2-1.3 2.6 2.6 0 00.3-1.4 1.7 1.7 0 00-.6-1.4 3.5 3.5 0 00-2-.4L9.3 7h-.5v-.8a10.2 10.2 0 013-.5 4.9 4.9 0 012.7.6 2.7 2.7 0 01.8 2.2z"/>
+								<path fill="none" d="M0 0h24v24H0z"/>
+							</svg>
+							<div class="card-body">
+								<h5 class="card-title mb-0">
+									<a href= "{{ path('entity.taxonomy_term.canonical', { 'taxonomy_term': term.tid.value }) }}"
+									>{{ term.name.value }}</a>
+								</h5>
+							</div>
+						</div>
+					{% else %}
+						term was null or smth
+					{% endif %}
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% elseif empty %}
+		<div class="view-empty">
+			{{ empty }}
+		</div>
+	{% endif %}
+
+	{% if pager %}
+		<div class="row mt-lg-4">
+			<div class="col">
+				{{pager}}
+			</div>
+		</div>
+	{% endif %}
+
+	{% if more %}
+		{{ more }}
+	{% endif %}
+</div>

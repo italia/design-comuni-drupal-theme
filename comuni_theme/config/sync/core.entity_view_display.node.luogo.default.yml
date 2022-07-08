@@ -1,0 +1,226 @@
+uuid: 4274063a-7d74-4d6f-bdd1-f176ae25c1cf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.luogo.field_argomenti
+    - field.field.node.luogo.field_cap
+    - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_descrizione_breve
+    - field.field.node.luogo.field_descrizione_estesa
+    - field.field.node.luogo.field_galleria_immagini
+    - field.field.node.luogo.field_gps_latitude
+    - field.field.node.luogo.field_gps_longitude
+    - field.field.node.luogo.field_identificativo
+    - field.field.node.luogo.field_immagine
+    - field.field.node.luogo.field_indirizzo
+    - field.field.node.luogo.field_luoghi_collegati
+    - field.field.node.luogo.field_modalita_di_accesso
+    - field.field.node.luogo.field_nome_alternativo
+    - field.field.node.luogo.field_orario_per_il_pubblico
+    - field.field.node.luogo.field_punti_di_contatto
+    - field.field.node.luogo.field_quartiere
+    - field.field.node.luogo.field_sede_di
+    - field.field.node.luogo.field_servizi_presenti_nel_luogo
+    - field.field.node.luogo.field_struttura_responsabile
+    - field.field.node.luogo.field_tipo_di_luogo
+    - field.field.node.luogo.field_ulteriori_informazioni
+    - field.field.node.luogo.field_video_esterno
+    - node.type.luogo
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.luogo.default
+targetEntityType: node
+bundle: luogo
+mode: default
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_cap:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_circoscrizione:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_descrizione_estesa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_galleria_immagini:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 128
+    region: content
+  field_gps_latitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_gps_longitude:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_identificativo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_indirizzo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_luoghi_collegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_modalita_di_accesso:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_nome_alternativo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_orario_per_il_pubblico:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_punti_di_contatto:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 127
+    region: content
+  field_quartiere:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_sede_di:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_servizi_presenti_nel_luogo:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_struttura_responsabile:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_tipo_di_luogo:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_video_esterno:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 129
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

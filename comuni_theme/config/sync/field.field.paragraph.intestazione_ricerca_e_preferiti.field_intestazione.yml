@@ -1,0 +1,142 @@
+uuid: 97427476-7c82-4450-93d5-aa86ae872f77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_intestazione
+    - paragraphs.paragraphs_type.intestazione_ricerca_e_preferiti
+    - paragraphs.paragraphs_type.titolo_e_descrizione
+  module:
+    - entity_reference_revisions
+id: paragraph.intestazione_ricerca_e_preferiti.field_intestazione
+field_name: field_intestazione
+entity_type: paragraph
+bundle: intestazione_ricerca_e_preferiti
+label: Intestazione
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      titolo_e_descrizione: titolo_e_descrizione
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 39
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 40
+        enabled: false
+      argomenti:
+        weight: 41
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 42
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 43
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 44
+        enabled: false
+      calendario:
+        weight: 45
+        enabled: false
+      card_assistenza:
+        weight: 46
+        enabled: false
+      collection_multimediale:
+        weight: 47
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 48
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 49
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 50
+        enabled: false
+      container_assistenza:
+        weight: 51
+        enabled: false
+      container_calendario:
+        weight: 52
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 53
+        enabled: false
+      documento:
+        weight: 54
+        enabled: false
+      elemento_immagine:
+        weight: 55
+        enabled: false
+      elemento_video:
+        weight: 56
+        enabled: false
+      esplora:
+        weight: 57
+        enabled: false
+      fase_intitolata:
+        weight: 58
+        enabled: false
+      hero_immagine:
+        weight: 59
+        enabled: false
+      homepage_card_argomento:
+        weight: 60
+        enabled: false
+      homepage_top_card:
+        weight: 61
+        enabled: false
+      homepage_top_cards:
+        weight: 62
+        enabled: false
+      icona_content_type:
+        weight: 63
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 64
+        enabled: false
+      link:
+        weight: 65
+        enabled: false
+      link_con_icona:
+        weight: 67
+        enabled: false
+      links_con_icona:
+        weight: 66
+        enabled: false
+      punto_di_contatto:
+        weight: 68
+        enabled: false
+      ricerca:
+        weight: 69
+        enabled: false
+      ricerca_tassonomia:
+        weight: 70
+        enabled: false
+      siti_tematici:
+        weight: 71
+        enabled: false
+      testo_e_lista:
+        weight: 72
+        enabled: false
+      titolo_descrizione_link:
+        weight: 73
+        enabled: false
+      titolo_e_descrizione:
+        weight: 74
+        enabled: true
+      ultima_notizia:
+        weight: 75
+        enabled: false
+      valutazione:
+        weight: 76
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,86 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A CSS-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   JavaScript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+
+{% for item in attribute(rows[0], "#rows") %}
+	{% set node = attribute(item, "#node") %}
+	{% if node is defined and node is not null %}
+		{# {{ node.field_immagine.entity.field_media_image.entity.uri.value }} #}
+		{# {{ node.field_immagine.entity.field_media_image.entity.filename.value }} #}
+		{# {{ node.field_immagine.entity.field_media_image.entity.filesize.value }} #}
+		{# {{ node.field_immagine.entity.field_media_image.entity.created.value|date() }} #}
+		{# {{ kint(node.field_immagine.entity.field_media_image.entity) }} #}
+		{# {{ kint(node.field_immagine.entity.field_media_image) }} #}
+		{# {{ node.field_immagine.entity.field_media_image.alt }} #}
+		{# {{ node.field_immagine.entity.field_media_image.title }} #}
+		{# {{ node.field_immagine.entity.field_media_image.width }} #}
+		{# {{ node.field_immagine.entity.field_media_image.height }} #}
+		<div class="col-12 col-lg-6 col-xl-4">
+			<div class="card-wrapper shadow-sm rounded">
+				<div class="card card-img no-after">
+					<div class="img-responsive-wrapper cmp-list-card-img__wrapper">
+						<div class="img-responsive img-responsive-panoramic h-100">
+							<figure class="img-wrapper">
+								<img class="rounded-top img-fluid"
+									src="{{ file_url(node.field_immagine.entity.field_media_image.entity.uri.value) }}"
+									title="{{ node.field_immagine.entity.field_media_image.title }}"
+									alt="{{ node.field_immagine.entity.field_media_image.alt }}"
+								>
+							</figure>
+						</div>
+					</div>
+					<div class="card-body">
+						<div class="category-top cmp-list-card-img__body">
+							<a class="category cmp-list-card-img__body-heading-title underline"
+								href={{ path(
+									'entity.taxonomy_term.canonical',
+									{ 'taxonomy_term': node.field_tipo_di_luogo.entity.tid.value }
+								) }}
+							>{{ node.field_tipo_di_luogo.entity.name.value }}</a>
+						</div>
+						<h3 class="cmp-list-card-img__body-title">{{ node.title.value }}</h3>
+						<p class="cmp-list-card-img__body-description">{{ node.field_descrizione_breve.value }}</p>
+						<a class="read-more t-primary text-uppercase cmp-list-card-img__body-link"
+							href="{{ path('entity.node.canonical', { 'node': node.nid.value }) }}"
+						>
+							<span class="text">Leggi di più</span>
+							<span class="visually-hidden">"Vai alla pagina di {{ node.title.value }}"</span>
+							<svg viewBox="0 0 24 24" id="it-arrow-right" class="icon icon-primary icon-xs ml-10" xmlns="http://www.w3.org/2000/svg">
+								<path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+{% endfor %}

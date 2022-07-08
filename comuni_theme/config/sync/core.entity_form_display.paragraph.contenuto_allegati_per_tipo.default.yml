@@ -1,0 +1,25 @@
+uuid: 49644843-8f04-46d0-b089-4ebe36f04c69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contenuto_allegati_per_tipo.field_tipo_contenuto
+    - paragraphs.paragraphs_type.contenuto_allegati_per_tipo
+id: paragraph.contenuto_allegati_per_tipo.default
+targetEntityType: paragraph
+bundle: contenuto_allegati_per_tipo
+mode: default
+content:
+  field_tipo_contenuto:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

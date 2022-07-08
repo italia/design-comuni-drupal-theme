@@ -1,0 +1,10 @@
+uuid: f4ed04f1-566d-43ac-92e4-3130929b7ef9
+langcode: en
+status: true
+dependencies: {  }
+id: servizi_ref_in_evidenza
+label: 'Servizi ref in evidenza'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

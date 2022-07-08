@@ -1,0 +1,21 @@
+uuid: 0c4a5c7b-7db0-48ee-bc98-a0190ecad1bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_completa
+    - node.type.documento_pubblico
+  module:
+    - text
+id: node.documento_pubblico.field_descrizione_completa
+field_name: field_descrizione_completa
+entity_type: node
+bundle: documento_pubblico
+label: Descrizione
+description: 'L''oggetto del documento, utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarezza il documento.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

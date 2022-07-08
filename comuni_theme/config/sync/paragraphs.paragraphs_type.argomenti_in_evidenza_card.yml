@@ -1,0 +1,10 @@
+uuid: 50d3d5d9-77e4-4c16-abc3-6a465a13f0c3
+langcode: en
+status: true
+dependencies: {  }
+id: argomenti_in_evidenza_card
+label: 'Argomenti in Evidenza Card'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

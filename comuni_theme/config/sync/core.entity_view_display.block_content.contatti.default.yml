@@ -1,0 +1,34 @@
+uuid: 14c7065f-1bb2-49fd-944c-c8da7641e13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contatti
+    - field.field.block_content.contatti.body
+    - field.field.block_content.contatti.field_contatti
+  module:
+    - entity_reference_revisions
+    - text
+id: block_content.contatti.default
+targetEntityType: block_content
+bundle: contatti
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_contatti:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

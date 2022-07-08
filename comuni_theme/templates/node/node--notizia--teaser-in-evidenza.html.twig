@@ -1,0 +1,149 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+		{# {{ kint(node) }} #}
+
+{{ attach_library('classy/node') }}
+{# <article{{ attributes.addClass(classes) }}> #}
+
+  {# {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }} #}
+
+  {# {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %} #}
+
+  {# <div{{ content_attributes.addClass('node__content') }}> #}
+		<div class="col-12 col-md-6 col-xl-4">
+			<div class="card-wrapper border border-light rounded shadow-sm cmp-list-card-img cmp-list-card-img-hr">
+				<div class="card no-after rounded">
+					<div class="row g-2 g-md-0 flex-md-column">
+						{% set field_immagine_object = attribute(content.field_immagine, "#object") %}
+						{% if field_immagine_object is defined and field_immagine_object  is not null %}
+						{# with img #}
+						<div class="col-4 order-2 order-md-1">
+							{% set field_immagine_media = attribute(content.field_immagine.0, "#media") %}
+							<img class="rounded-top img-fluid img-responsive"
+								src="{{ file_url(field_immagine_media.field_media_image.entity.uri.value) }}"
+								title="{{ field_immagine_media.field_media_image.title }}"
+								alt="{{ field_immagine_media.field_media_image.alt }}"
+							>
+						</div>
+						<div class="col-8 order-1 order-md-2">
+							<div class="card-body">
+          {% else %}
+						{# without img #}
+						<div class="col-12 order-1 order-md-2">
+							<div class="card-img-none">
+						{% endif %}
+								<div class="category-top cmp-list-card-img__body">
+                {% set data_notizie = attribute(content.field_data_della_notizia, "#items").0.value %}
+									<span class="data">
+										{{ data_notizie|date('d') }}
+										{{ data_notizie|date('M')|monthEn2It }}
+										{{ data_notizie|date('Y') }}
+									</span>
+								</div>
+								{% set title = node.getTitle() %}
+								<a href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
+									aria-label="vai alla notizia {{ title }}"
+									title="vai alla notizia {{ title }}"
+								>
+									<h3 class="h5 card-title u-grey-light">{{ title }}</h3>
+								</a>
+								<div class="card-text d-none d-md-block">{{ content.field_descrizione_breve }}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  {# </div> #}
+{# </article> #}

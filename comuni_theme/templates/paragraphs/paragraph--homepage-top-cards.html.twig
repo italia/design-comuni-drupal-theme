@@ -1,0 +1,126 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+
+{% block paragraph %}
+  {% set host = attribute(url('<front>'), '#markup') %}
+  {# <div{{ attributes.addClass(classes) }}> #}
+		<div class="row mb-2">
+			<div class="card-wrapper px-0 card-overlapping card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
+				{% for item in attribute(content.field_card, "#items") %}
+					{% set linkUri = item.entity.field_link.uri | replace({'entity:':'/'}) %}
+					{% if item.entity.field_mostra_immagine.value == 1 %}
+						<div class="card card-teaser card-teaser-image card-flex no-after rounded shadow-sm border border-light mb-0">
+              {% set card_title = item.entity.field_contenuto.entity.title.value %}
+              <div class="card-image-wrapper with-read-more">
+                <div class="card-body p-3 u-grey-light">
+                  <div class="category-top">
+                    {% set category_name = item.entity.field_contenuto.entity.field_tipo_di_evento.entity.name.value %}
+                    <a href="{{ path(
+                        'entity.taxonomy_term.canonical',
+                        {'taxonomy_term': item.entity.field_contenuto.entity.field_tipo_di_evento.target_id}
+                      ) }}"
+                      class="category title-xsmall-semi-bold fw-semibold"
+                      label="Vai all'argomento: {{ category_name }}"
+                      title="vai alla sezione {{ category_name }}"
+                    >{{ category_name }}</a>
+                  </div>
+                  <h3 class="card-title text-paragraph-medium u-grey-light">{{ card_title }}</h3>
+                  <p class="text-paragraph-card u-grey-light m-0 mb-5">
+                    {{ item.entity.field_contenuto.entity.field_descrizione_breve.value }}
+                  </p>
+                </div>
+                <div class="card-image card-image-rounded pb-5">
+                  <img src="{{ file_url(item.entity.field_contenuto.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
+                    alt="{{item.entity.field_contenuto.entity.field_immagine.entity.field_media_image.alt }}"/>
+                </div>
+              </div>
+              <a class="read-more ps-3 position-absolute bottom-0 mb-4" href="{{ linkUri }}"
+                aria-label="Vai alla pagina di {{ card_title }}" title="Vai alla pagina di {{ card_title }}">
+                <span class="text">Vai alla pagina</span>
+                <svg viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+              </a>
+            </div>
+					{% else %}
+						<div class="card card-teaser no-after rounded shadow-sm mb-0 border border-light">
+              {% set card_title = item.entity.field_contenuto.entity.title.value %}
+              <div class="card-body">
+                <div class="category-top">
+                    {% set category_name = item.entity.field_contenuto.entity.field_tipo_di_evento.entity.name.value %}
+                    <a href="{{ path(
+                        'entity.taxonomy_term.canonical',
+                        {'taxonomy_term': item.entity.field_contenuto.entity.field_tipo_di_evento.target_id}
+                      ) }}"
+                      class="category title-xsmall-semi-bold fw-semibold"
+                      title="vai alla sezione {{ category_name }}"
+                      aria-label="vai alla sezione {{ category_name }}"
+                      data-focus-mouse="false"
+                    >{{ category_name }}</a>
+                </div>
+                <h3 class="card-title text-paragraph-medium u-grey-light">{{ card_title }}</h3>
+                <p class="text-paragraph-card u-grey-light m-0 mb-5 mb-lg-0">
+                  {{ item.entity.field_contenuto.entity.field_descrizione_breve.value }}
+              </div>
+              <a class="read-more" href="{{ linkUri }}"
+                aria-label="Vai alla pagina di {{ card_title }}" title="Vai alla pagina di {{ card_title }}">
+                <span class="text">Vai alla pagina</span>
+                <svg viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+              </a>
+            </div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	{# </div> #}
+{% endblock paragraph %}

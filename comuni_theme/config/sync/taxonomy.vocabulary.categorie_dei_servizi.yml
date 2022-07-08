@@ -1,0 +1,8 @@
+uuid: 07812e2f-7493-46df-a0ca-9f0065be4d09
+langcode: en
+status: true
+dependencies: {  }
+name: 'Categorie dei servizi'
+vid: categorie_dei_servizi
+description: 'Classificazione delle materie dei servizi pubblici'
+weight: 0

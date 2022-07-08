@@ -1,0 +1,32 @@
+uuid: 63b67735-26da-4db3-b83a-8792315b43b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.argomenti_in_evidenza.field_argomenti
+    - field.field.paragraph.argomenti_in_evidenza.field_titolo
+    - paragraphs.paragraphs_type.argomenti_in_evidenza
+id: paragraph.argomenti_in_evidenza.default
+targetEntityType: paragraph
+bundle: argomenti_in_evidenza
+mode: default
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_argomento: true
+  search_api_excerpt: true

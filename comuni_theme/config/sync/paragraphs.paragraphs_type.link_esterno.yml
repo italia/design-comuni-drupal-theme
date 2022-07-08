@@ -1,0 +1,10 @@
+uuid: d24ade53-3544-47c5-b384-b9ef9b71099e
+langcode: en
+status: true
+dependencies: {  }
+id: link_esterno
+label: 'Link esterno'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

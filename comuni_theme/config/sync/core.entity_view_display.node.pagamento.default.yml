@@ -1,0 +1,119 @@
+uuid: 31641071-4a78-4d30-a5ff-9c0d0c4f5176
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pagamento.field_data_pagamento
+    - field.field.node.pagamento.field_descrizione_completa
+    - field.field.node.pagamento.field_documenti_personali
+    - field.field.node.pagamento.field_esito
+    - field.field.node.pagamento.field_importo_pagato
+    - field.field.node.pagamento.field_modalita_di_pagamento
+    - field.field.node.pagamento.field_numero_di_protocollo
+    - field.field.node.pagamento.field_pratica
+    - field.field.node.pagamento.field_ricevuta
+    - field.field.node.pagamento.field_servizio
+    - node.type.pagamento
+  module:
+    - datetime
+    - link
+    - text
+    - user
+id: node.pagamento.default
+targetEntityType: node
+bundle: pagamento
+mode: default
+content:
+  field_data_pagamento:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_documenti_personali:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_esito:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_importo_pagato:
+    type: number_decimal
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_modalita_di_pagamento:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_numero_di_protocollo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_pratica:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_ricevuta:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_servizio:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  search_api_excerpt: true

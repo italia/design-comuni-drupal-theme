@@ -1,0 +1,21 @@
+uuid: 3274f66a-5ebe-4c4e-a7fc-8415f892aec5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testo_del_messaggio
+    - node.type.messaggio
+  module:
+    - text
+id: node.messaggio.field_testo_del_messaggio
+field_name: field_testo_del_messaggio
+entity_type: node
+bundle: messaggio
+label: 'Testo del messaggio'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,41 @@
+uuid: 0a536474-1545-486b-ba3a-35dec3870a0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pagamento.field_data_pagamento
+    - field.field.node.pagamento.field_descrizione_completa
+    - field.field.node.pagamento.field_documenti_personali
+    - field.field.node.pagamento.field_esito
+    - field.field.node.pagamento.field_importo_pagato
+    - field.field.node.pagamento.field_modalita_di_pagamento
+    - field.field.node.pagamento.field_numero_di_protocollo
+    - field.field.node.pagamento.field_pratica
+    - field.field.node.pagamento.field_ricevuta
+    - field.field.node.pagamento.field_servizio
+    - node.type.pagamento
+  module:
+    - user
+id: node.pagamento.teaser
+targetEntityType: node
+bundle: pagamento
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_data_pagamento: true
+  field_descrizione_completa: true
+  field_documenti_personali: true
+  field_esito: true
+  field_importo_pagato: true
+  field_modalita_di_pagamento: true
+  field_numero_di_protocollo: true
+  field_pratica: true
+  field_ricevuta: true
+  field_servizio: true
+  search_api_excerpt: true

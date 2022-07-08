@@ -1,0 +1,25 @@
+uuid: 42b4ddf9-e4e0-472c-ac5b-7380f574945d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_assistenza.field_links_group
+    - paragraphs.paragraphs_type.card_assistenza
+  module:
+    - entity_reference_revisions
+id: paragraph.card_assistenza.default
+targetEntityType: paragraph
+bundle: card_assistenza
+mode: default
+content:
+  field_links_group:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

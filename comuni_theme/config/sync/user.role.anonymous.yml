@@ -1,0 +1,20 @@
+uuid: 34cdf77f-60d0-4939-8c7e-9fae6b6e73b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - rest.resource.create_content_resource
+  module:
+    - media
+    - rest
+    - site_settings
+    - system
+id: anonymous
+label: Anonymous
+weight: 4
+is_admin: null
+permissions:
+  - 'access content'
+  - 'restful post create_content_resource'
+  - 'view media'
+  - 'view published site setting entities'

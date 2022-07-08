@@ -1,0 +1,29 @@
+uuid: 883a180f-ff4c-4040-9d5f-12d8dc815e3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_argomenti
+    - paragraphs.paragraphs_type.argomenti_in_evidenza
+    - taxonomy.vocabulary.argomenti
+id: paragraph.argomenti_in_evidenza.field_argomenti
+field_name: field_argomenti
+entity_type: paragraph
+bundle: argomenti_in_evidenza
+label: Argomenti
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

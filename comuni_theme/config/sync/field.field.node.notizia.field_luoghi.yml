@@ -1,0 +1,29 @@
+uuid: 5745b6bc-454b-4bd0-9b46-66f0da0845e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_luoghi
+    - node.type.luogo
+    - node.type.notizia
+id: node.notizia.field_luoghi
+field_name: field_luoghi
+entity_type: node
+bundle: notizia
+label: Luoghi
+description: 'Link a schede luoghi del sito citati nella notizia'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      luogo: luogo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

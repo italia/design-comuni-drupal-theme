@@ -1,0 +1,29 @@
+uuid: bc9209d6-ddcb-418d-bd19-c8b4020c9708
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_colore
+    - paragraphs.paragraphs_type.container_contenuti_in_evidenza
+    - taxonomy.vocabulary.colore
+id: paragraph.container_contenuti_in_evidenza.field_colore
+field_name: field_colore
+entity_type: paragraph
+bundle: container_contenuti_in_evidenza
+label: 'Colore di sfondo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      colore: colore
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

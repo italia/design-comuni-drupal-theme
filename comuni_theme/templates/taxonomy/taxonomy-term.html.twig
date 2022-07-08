@@ -1,0 +1,154 @@
+{#
+/**
+ * @file
+ * Theme override to display a taxonomy term.
+ *
+ * Available variables:
+ * - url: URL of the current term.
+ * - name: (optional) Name of the current term.
+ * - content: Items for the content of the term (fields and description).
+ *   Use 'content' to print them all, or print a subset such as
+ *   'content.description'. Use the following code to exclude the
+ *   printing of a given child element:
+ *   @code
+ *   {{ content|without('description') }}
+ *   @endcode
+ * - attributes: HTML attributes for the wrapper.
+ * - page: Flag for the full page state.
+ * - term: The taxonomy term entity, including:
+ *   - id: The ID of the taxonomy term.
+ *   - bundle: Machine name of the current vocabulary.
+ * - view_mode: View mode, e.g. 'full', 'teaser', etc.
+ *
+ * @see template_preprocess_taxonomy_term()
+ */
+#}
+{%
+  set classes = [
+  'taxonomy-term',
+  'vocabulary-' ~ term.bundle|clean_class,
+]
+%}
+<div{{ attributes.setAttribute('id', 'taxonomy-term-' ~ term.id).addClass(classes) }}>
+
+  <div class="it-hero-wrapper it-wrapped-container" id="main-container">
+    <div class="img-responsive-wrapper">
+      <div class="img-responsive">
+        <div class="img-wrapper">
+          {% if content.field_immagine[0] is not empty %}
+            <img src="{{ file_url(content.field_immagine[0]['#media'].field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ content.field_immagine[0]['#media'].field_media_image.alt }}" title="{{ content.field_immagine[0]['#media'].field_media_image.alt }}">
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 px-0 px-lg-2 drop-shadow">
+          <div class="it-hero-card it-hero-bottom-overlapping rounded hero-p pb-lg-80">
+            {{ drupal_block('system_breadcrumb_block') }}
+            <div class="row sport-wrapper justify-content-between mt-lg-2">
+              <div class="col-12 col-lg-5 offset-lg-1">
+                <h1 class="mb-3 mb-lg-4 title-xxlarge">{{ name.0['#context'].value }}</h1>
+                <h2 class="visually-hidden" id="news-details">Dettagli della notizia</h2>{# TODO Label #}
+                <p class="u-main-black text-paragraph-regular-medium mb-60">
+                  {{ content.description}}
+                </p>
+              </div>
+              <div class="col-12 col-lg-5 me-lg-5">
+                {% if content.field_area_di_appartenenza[0] is not empty %}
+                <div class="card-wrapper card-column">
+                  <h3 class="title-xsmall-semi-bold">Questo argomento è gestito da:</h3>{# TODO Label #}
+                  {{ content.field_area_di_appartenenza }}
+                  {{ content.field_assessorato_di_riferimento }}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="novita">
+    <div class="bg-grey-card pt-40 pt-md-100 pb-50">
+      <div class="container">
+        <div class="row row-title">
+          <div class="col-12">
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 mt-lg-3 title-large-semi-bold">Novità</h3>
+          </div>
+        </div>
+        {{ drupal_view('argomenti_correlati', 'block_1', term.id) }}
+
+        <div class="row mt-lg-2">
+          <div class="col-12 col-lg-3 offset-lg-9">
+            <a href="{{ url('<front>') }}/novita" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutte le novità" title="vai alla pagina di novità">Tutte le novità</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="amministrazione">
+    <div class="pb-40 pt-40 pt-lg-80">
+      <div class="container">
+        <div class="row row-title">
+          <div class="col-12">
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Amministrazione</h3>
+          </div>
+        </div>
+        <div>
+          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3 d-flex d-md-block d-lg-flex">
+            {{ drupal_view('argomenti_correlati', 'block_2', term.id) }}
+          </div>
+          <div class="col-12 col-lg-3 offset-lg-9">
+            <a href="{{ url('<front>') }}/amministrazione" class="btn btn-primary text-button w-100" aria-label="vai alla sezione amministrazione" title="vai alla pagina amministrazione">Tutta l’amministrazione</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="servizi">
+    <div class="pb-40 pt-40">
+      <div class="container">
+        <div class="row row-title">
+          <div class="col-12">
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Servizi</h3>{# TODO Label #}
+          </div>
+        </div>
+        <div>
+          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3 justify-content-between">
+            {{ drupal_view('argomenti_correlati', 'block_3', term.id) }}
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 offset-lg-9">
+          <a href="{{ url('<front>') }}/servizi" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutti i servizi" title="vai alla pagina di servizi">Tutti i servizi</a>{# TODO Label #}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="documenti">
+    <div class="pb-80 pt-40">
+      <div class="container">
+        <div class="row row-title">
+          <div class="col-12">
+            <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Documenti</h3>
+          </div>
+        </div>
+        <div>
+          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3">
+            {{ drupal_view('argomenti_correlati', 'block_4', term.id) }}
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 offset-lg-9">
+          <a href="{{ url('<front>') }}/documenti" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutti i documenti" title="vai alla pagina di documenti">Tutti i documenti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,23 @@
+uuid: 95ef2525-7a03-4990-854c-3d340d94406a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tipo_di_layout_argomenti
+    - paragraphs.paragraphs_type.comuni_altri_argomenti
+  module:
+    - options
+id: paragraph.comuni_altri_argomenti.field_tipo_di_layout_argomenti
+field_name: field_tipo_di_layout_argomenti
+entity_type: paragraph
+bundle: comuni_altri_argomenti
+label: 'Tipo di visualizzazione'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: with_link
+default_value_callback: ''
+settings: {  }
+field_type: list_string

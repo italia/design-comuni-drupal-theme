@@ -1,0 +1,21 @@
+uuid: b06fa05b-6dee-44ee-8599-0a48279eea54
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ulteriori_informazioni
+    - node.type.evento
+  module:
+    - text
+id: node.evento.field_ulteriori_informazioni
+field_name: field_ulteriori_informazioni
+entity_type: node
+bundle: evento
+label: 'Ulteriori informazioni'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,21 @@
+uuid: d9c9f74c-acda-447d-8422-9b97f992bae2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_estesa
+    - node.type.luogo
+  module:
+    - text
+id: node.luogo.field_descrizione_estesa
+field_name: field_descrizione_estesa
+entity_type: node
+bundle: luogo
+label: 'Descrizione estesa'
+description: 'Descrizione del luogo e degli elementi di interesse presenti nel luogo (POI)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

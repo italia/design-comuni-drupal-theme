@@ -1,0 +1,21 @@
+uuid: 1ef1b347-55ae-4f9d-be56-c8b6c73de7e1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_costi
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_costi
+field_name: field_costi
+entity_type: node
+bundle: servizio
+label: Costi
+description: 'Condizioni e termini economici per completare la procedura di richiesta del Servizio. '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

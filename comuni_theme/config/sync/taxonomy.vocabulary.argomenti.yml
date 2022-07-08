@@ -1,0 +1,8 @@
+uuid: f2570dc1-ab1d-444f-883e-fd7849b9b6dd
+langcode: en
+status: true
+dependencies: {  }
+name: Argomenti
+vid: argomenti
+description: 'Vocabolario controllato che raccoglie un subset dei vocaboli definiti in Eurovoc.'
+weight: 0

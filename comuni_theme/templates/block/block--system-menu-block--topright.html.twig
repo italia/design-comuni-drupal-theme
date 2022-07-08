@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main content
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{% macro menu_link(menu_item) %}
+    {% if menu_item.url.external %}
+        <a class="nav-link" href="{{ menu_item.url.uri }}" aria-label="{{ menu_item.title }}" title="vai alla pagina {{ menu_item.title  }}"><span>{{ menu_item.title }}</span></a>
+    {% elseif menu_item.url.routeName is same as "<nolink>" %}
+        <span title="{{ menu_item.url.options.attributes.title }}">{{ menu_item.title }}</span>
+    {% elseif menu_item.url.routeName is same as "<button>" %}
+        <button title="{{ menu_item.url.options.attributes.title }}" type="button">{{ menu_item.title }}</button>
+    {% else %}
+        <a class="nav-link {{ menu_item.in_active_trail ? " active" : "" }}"
+          href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
+          aria-label="{{ menu_item.title }}"
+          title="vai alla pagina {{ menu_item.title }}"
+          data-element="{{ 'tutti gli argomenti' in menu_item.title|lower ? "all-topics" : "" }}"
+        ><span class="{{ 'tutti gli argomenti' in menu_item.title|lower ? "fw-bold" : ""  }}">{{ menu_item.title }}</span></a>
+    {% endif %}
+{% endmacro %}
+
+<ul class="navbar-nav navbar-secondary">
+    {% for item in attribute(content, "#items") %}
+        <li class="nav-item">
+            {{ _self.menu_link(item) }}
+        </li>
+    {% endfor %}
+</ul>

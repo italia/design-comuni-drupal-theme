@@ -1,0 +1,21 @@
+uuid: 5934c093-9074-45f8-aa41-27efb4d2d3bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competenze
+    - node.type.unita_organizzativa
+  module:
+    - text
+id: node.unita_organizzativa.field_competenze
+field_name: field_competenze
+entity_type: node
+bundle: unita_organizzativa
+label: Competenze
+description: 'Elenco/descrizione dei compiti assegnati alla struttura'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

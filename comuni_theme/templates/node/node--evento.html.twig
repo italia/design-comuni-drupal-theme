@@ -1,0 +1,640 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ * @ingroup themeable
+ */
+#}
+
+  {% set evento_genitore_id = content.field_evento_genitore.0['#plain_text'] ? content.field_evento_genitore.0['#plain_text'] : 'all' %}
+  <div class="container px-4 my-4">
+    {{ drupal_block('system_breadcrumb_block') }}
+    <div class="row">
+      <div class="col-lg-8 px-lg-4 py-lg-2">
+        {{ title_prefix }}
+        {% if node.label %}
+          <h1{{ title_attributes }}>
+            {{ node.label }}
+          </h1>
+        {% endif %}
+        {{ title_suffix }}
+        {% if content.field_data_e_orario_di_inizio %}
+          {% set data_inizio = content.field_data_e_orario_di_inizio['#items'].0.value %}
+          {% set data_inizio = data_inizio|date('d') ~ " " ~ data_inizio|date('M')|monthEn2It(false)|lower  ~ " " ~ data_inizio|date('Y') %}
+          {% set data_fine = content.field_data_e_orario_di_fine['#items'].0.value %}
+          {% set data_fine = data_fine|date('d') ~ " " ~  data_fine|date('M')|monthEn2It(false)|lower  ~ " " ~ data_fine|date('Y') %}
+          <h4 class="py-2">dal {{ data_inizio }}
+            {% if content.field_data_e_orario_di_fine %}
+              al {{ data_fine }}</h4>
+          {% endif %}
+        {% endif %}
+        {% if content.field_descrizione_breve %}
+          <p>{{ content.field_descrizione_breve }}</p>
+        {% endif %}
+      </div>
+      <div class="col-lg-3 offset-lg-1">
+        {{ drupal_block("social_sharing_buttons_block") }}
+
+        <div class="dropdown d-inline">
+          <button class="btn btn-dropdown dropdown-toggle" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg class="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 18a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a.9.9 0 011 1 1 1 0 01-2 0 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2z" />
+              <path fill="none" d="M0 0h24v24H0z" />
+            </svg>
+            <small>Vedi azioni</small>{# TODO Label #}
+          </button>
+          <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+            <div class="link-list-wrapper">
+              <ul class="link-list">
+                <li>
+                  <a class="list-item" href="#">
+                    <svg class="icon" viewBox="0 0 24 24" id="it-download" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 14.2L7.7 9.9l.7-.7 3.1 3.1V3h1v9.2l3.1-3 .7.7zm7-2.2v7.5a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5V12H4v7.5A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5V12z" />
+                      <path fill="none" d="M0 0h24v24H0z" />
+                    </svg>
+                    <span>Scarica</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="list-item" href="javascript:window.print()">
+                    <svg class="icon" viewBox="0 0 24 24" id="it-print" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 9.5A1.5 1.5 0 0019.5 8H17V3H7v5H4.5A1.5 1.5 0 003 9.5V16h2v3h2v2h10v-2h2v-3h2zM8 4h8v4H8zM6 18v-4h1v4zm10 2H8v-6h8v6zm2-2h-1v-4h1v4zm2-3h-1v-2H5v2H4V9.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5zM6 11h4v1H6z" />
+                      <path fill="none" d="M0 0h24v24H0z" />
+                    </svg>
+                    <span>Stampa</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="list-item" href="#">
+                    <svg class="icon" viewBox="0 0 24 24" id="it-hearing" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 9a6.8 6.8 0 01-3.5 6l-2 1.1a3.3 3.3 0 00-1.5 2.7A3.2 3.2 0 019.8 22h-.6a3.4 3.4 0 01-3-2.1l.9-.5A2.3 2.3 0 009.2 21h.6a2.1 2.1 0 001.6-.7 2 2 0 00.6-1.5 4 4 0 012-3.5l2-1.2A5.9 5.9 0 0019 9a6 6 0 00-6-6 6 6 0 00-4.8 2.4l-.8-.6A7 7 0 0113 2a7 7 0 017 7zM7.5 12A5.5 5.5 0 002 6.5v1a4.5 4.5 0 010 9v1A5.5 5.5 0 007.5 12zM5 12a2.9 2.9 0 00-3-3v1a2 2 0 010 4v1a2.9 2.9 0 003-3zm5 0a8 8 0 00-8-8v1a7 7 0 010 14v1a8 8 0 008-8zm5.9.3a4.5 4.5 0 001.2-3.2 4.5 4.5 0 00-1.2-3.2 4.5 4.5 0 00-3.2-1.4A4.8 4.8 0 009.5 6l-.3.3.2.3a8.8 8.8 0 011.3 3v.4h.4a1.5 1.5 0 010 3v1a2.5 2.5 0 002.5-2.5 2.6 2.6 0 00-2-2.5 8.5 8.5 0 00-1.1-2.6 3.9 3.9 0 012.2-.9 3.5 3.5 0 012.4 1 3.5 3.5 0 011 2.6 3.5 3.5 0 01-1 2.6z" />
+                      <path fill="none" d="M0 0h24v24H0z" />
+                    </svg>
+                    <span>Ascolta</span>
+                  </a>
+                </li>
+                <li>
+                  <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}" title="{{ 'Invia'|t }} E-mail" aria-label="{{ 'Invia'|t }} E-mail" target="_blank" rel="noopener">
+                    <svg class="icon" viewBox="0 0 24 24" id="it-mail" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.5 5h-17A1.5 1.5 0 002 6.5v11A1.5 1.5 0 003.5 19h17a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0020.5 5zm-.3 1l-7.1 7.2a1.6 1.6 0 01-2.2 0L3.8 6zM3 17.3V6.6L8.3 12zm.7.7L9 12.7l1.2 1.2a2.7 2.7 0 003.6 0l1.2-1.2 5.3 5.3zm12-6L21 6.6v10.7z" />
+                      <path fill="none" d="M0 0h24v24H0z" />
+                    </svg>
+                    <span>Invia</span>{# TODO Label #}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 mb-4">
+          {% if content.field_argomenti %}
+            <h6>
+              <small>Argomenti</small>
+            </h6>
+            {% for item in attribute(content.field_argomenti, "#items") %}
+              <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}" class="chip-label">
+                <div class="chip chip-simple chip-primary">
+                  <span class="chip-label">
+                  {{ item.entity.name.value }}
+                  </span>
+                </div>
+              </a>
+            {% endfor %}
+          {% endif %}
+        </div>
+        <div class="mt-5">
+          <a href="{{ url('<front>') }}" class="btn btn-outline-primary btn-icon">
+            <svg class="icon icon-primary" viewBox="0 0 24 24" id="it-calendar" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z" />
+              <path fill="none" d="M0 0h24v24H0z" />
+            </svg>
+            <span>Vai al calendario eventi</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if node.field_immagine %}
+  <div class="container-fluid my-3">
+    <div class="row">
+      <figure class="figure px-0 img-full">
+        <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ node.field_immagine.entity.field_media_image.alt }}" title="{{ node.field_immagine.entity.field_media_image.alt }}">
+        <figcaption class="figure-caption text-center pt-3">{{ node.field_immagine.entity.field_media_image.alt }}</figcaption>
+      </figure>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="container">
+    <div class="row border-top row-column-border row-column-menu-left">
+      <aside class="col-lg-4">
+        <div class="sticky-wrapper navbar-wrapper">
+          <nav class="navbar it-navscroll-wrapper it-top-navscroll navbar-expand-lg">
+            <button class="custom-navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarNav">
+              <span class="it-list"></span>Indice della pagina </button>
+            <div class="navbar-collapsable" id="navbarNav">
+              <div class="overlay"></div>
+              <div class="close-div visually-hidden">
+                <button class="btn close-menu" type="button">
+                  <span class="it-close"></span>Chiudi </button>
+              </div>
+              <a class="it-back-button" href="#">
+                <svg class="icon icon-sm icon-primary align-top">
+                  <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-chevron-left"></use>
+                </svg>
+                <span>Torna indietro</span>
+              </a>
+              <div class="menu-wrapper">
+                <div class="link-list-wrapper menu-link-list">
+                  <h3 class="no_toc">Indice della pagina</h3>
+                  <ul class="link-list">
+                    {% if content.field_descrizione_completa[0] is not empty  %}
+                    <li class="nav-item active">
+                      <a class="nav-link active" href="#cos-e">
+                        <span>Cos'è</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if node.field_luogo[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#luogo" data-focus-mouse="false">
+                        <span>Luogo</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_data_e_orario_di_inizio[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#date-e-orari" data-focus-mouse="false">
+                        <span>Date e orari</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_costo[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#costi" data-focus-mouse="false">
+                        <span>Costi</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_allegati[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#documenti">
+                        <span>Documenti</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#contatti">
+                        <span>Contatti</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#appuntamenti">
+                        <span>Appuntamenti</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_ulteriori_informazioni[0] is not empty %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="#ulteriori-informazioni">
+                        <span>Ulteriori informazioni</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </aside>
+      <section class="col-lg-8 it-page-sections-container">
+        {% if content.field_descrizione_completa [0] is not empty %}
+        <article id="cos-e" class="it-page-section anchor-offset">
+          <h4>Cos'è?</h4>
+          <div class="font-serif">
+            {{ content.field_descrizione_completa }}
+          </div>
+          {% if content.field_galleria_immagini[0] is not empty %}
+          <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide="" id="splide01">
+            {{ content.field_galleria_immagini }}
+          </div>
+          {% endif %}
+          {{content.field_video_esterno}}
+          {% if content.field_persone[0] is not empty %}
+            <div class="pt-3 pb-5">
+              <h6 class="font-serif fw-bold">Parteciperanno:</h6>
+              {% for item in attribute(content.field_persone, "#items") %}
+                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" title="vai alla scheda di{{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}" aria-label="vai alla scheda di {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}" class="" data-focus-mouse="false">
+                   <div class="chip chip-simple chip-primary">
+                    <span class="chip-label">
+                        {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
+                    </span>
+                  </div>
+                </a>
+               {% endfor %}
+            </div>
+          {% endif %}
+
+        </article>
+        {% endif %}
+
+        {% if node.field_luogo[0] is not empty %}
+        <article id="luogo" class="it-page-section anchor-offset">
+          <h4>Luogo</h4>
+          <div class="card-wrapper card-teaser-wrapper">
+            <div class="card card-teaser shadow mt-3 rounded">
+              <svg class="icon" viewBox="0 0 24 24" id="it-pin" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.1 14L15 10.3V4.6L16.3 2H7.7L9 4.6v5.7L5.9 14h5.6v8h1v-8zM10 5h4v5h-4zm4.7-2l-.5 1H9.8l-.5-1zm-5 8h4.6l1.6 2H8.1z" />
+                <path fill="none" d="M0 0h24v24H0z" />
+              </svg>
+              <div class="card-body">
+                <h5 class="card-title">{{ node.field_luogo.entity.title.value }}</h5>
+                <div class="card-text">
+                  <p>{{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}</p>
+                  <p class="mt-3">Ulteriori dettagli</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {# TODO: check map controls at https://openlayers.org/en/latest/examples/ #}
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/openlayers/2.13.1/OpenLayers.js"></script>
+          <script type="text/javascript">
+            var lat="{{ node.field_luogo.entity.field_gps_latitude.value }}";
+            var lon="{{ node.field_luogo.entity.field_gps_longitude.value }}";
+            var zoom=13;
+            window.addEventListener('load', (event) => {
+              map = new OpenLayers.Map ("map", {
+                controls:[
+                  new OpenLayers.Control.Navigation(),
+                  new OpenLayers.Control.PanZoomBar(),
+                  new OpenLayers.Control.ScaleLine(),
+                  new OpenLayers.Control.Permalink('permalink'),
+                  new OpenLayers.Control.MousePosition(),
+                  new OpenLayers.Control.Attribution()
+                ],
+                projection: new OpenLayers.Projection("EPSG:900913"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326")
+              } );
+
+              var mapnik = new OpenLayers.Layer.OSM("OpenStreetMap (Mapnik)");
+              map.addLayer(mapnik);
+              var lonLat = new OpenLayers.LonLat( lon ,lat )
+                .transform(
+                  new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                  map.getProjectionObject() // to Spherical Mercator Projection
+                );
+              var markers = new OpenLayers.Layer.Markers( "Markers" );
+              map.addLayer(markers);
+              markers.addMarker(new OpenLayers.Marker(lonLat));
+              map.setCenter (lonLat, zoom);
+            });
+
+          </script>
+          <div class="map-wrapper map-column mt-4 mb-5">
+            <div style="width:100%; height:476px; position: relative;" id="map" tabindex="1"></div>
+          </div>
+        </article>
+        {% endif %}
+
+        {% if content.field_data_e_orario_di_inizio[0] is not empty %}
+        <article id="date-e-orari" class="it-page-section anchor-offset">
+          <h4>Date e orari</h4>{# TODO Label #}
+          <div class="point-list-wrapper my-4">
+            <div class="point-list">
+              <div class="point-list-aside point-list-primary">
+                <div class="point-date font-monospace">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('d') }}</div>
+                <div class="point-month font-monospace">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('M')|monthEn2It }}</div>
+              </div>
+              <div class="point-list-content">
+                <div class="card card-teaser shadow rounded">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('H:m')}} - Inizio evento{# TODO Label #}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% if content.field_data_e_orario_di_fine[0] is not empty %}
+              <div class="point-list">
+                <div class="point-list-aside point-list-primary">
+                  <div class="point-date font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('d') }}</div>
+                  <div class="point-month font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('M')|monthEn2It }}</div>
+                </div>
+                <div class="point-list-content">
+                  <div class="card card-teaser shadow rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('H:m') }} - Fine evento{# TODO Label #}</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+          </div>
+          {# TODO Label #}<p class="font-serif">Per informazioni sul programma dettagliato degli appuntamenti religiosi e civili, consultare il programma nella sezione documenti.</p>
+          <div class="mt-3">
+            {% set inizioAnno = content.field_data_e_orario_di_inizio['#items'].0.value|date('Y') %}
+            {% set inizioMese = content.field_data_e_orario_di_inizio['#items'].0.value|date('m') %}
+            {% set inizioGiorno = content.field_data_e_orario_di_inizio['#items'].0.value|date('d') %}
+            {% set inizioOra = content.field_data_e_orario_di_inizio['#items'].0.value|date('H') %}
+            {% set inizioMinuti = content.field_data_e_orario_di_inizio['#items'].0.value|date('m') %}
+            {% set fineAnno = content.field_data_e_orario_di_fine['#items'].0.value|date('Y') %}
+            {% set fineMese = content.field_data_e_orario_di_fine['#items'].0.value|date('m') %}
+            {% set fineGiorno = content.field_data_e_orario_di_fine['#items'].0.value|date('d') %}
+            {% set fineOra = content.field_data_e_orario_di_fine['#items'].0.value|date('H') %}
+            {% set fineMinuti = content.field_data_e_orario_di_fine['#items'].0.value|date('m') %}
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{ inizioAnno ~ inizioMese ~ inizioGiorno }}T{{ inizioOra ~ inizioMinuti }}00Z/{{ fineAnno ~ fineMese ~ fineGiorno }}T{{ fineOra ~ fineMinuti }}00Z&text={{ node.label|replace({' ': '%20'}) }}" target="_blank" class="btn btn-outline-primary btn-icon">
+              <svg  class="icon icon-primary" viewBox="0 0 24 24" id="it-plus-circle" xmlns="http://www.w3.org/2000/svg"><path d="M12.4 11.5h4.5v1h-4.5V17h-1v-4.5H6.9v-1h4.5V7h1zm9.6.5A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+              <span>Aggiungi al calendario</span>{# TODO Label #}
+            </a>
+          </div>
+        </article>
+        {% endif %}
+
+        {% if content.field_costo[0] is not empty %}
+        <article id="costi" class="it-page-section anchor-offset mt-5">
+          <h4>Costi</h4>
+          {{ content.field_costo }}
+        </article>
+        {% endif %}
+
+        {% if content.field_allegati[0] is not empty %}
+        <article id="documenti" class="it-page-section anchor-offset mt-5">
+          <h4>Documenti</h4>
+            {{ content.field_allegati }}
+        </article>
+        {% endif %}
+
+        {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
+        <article id="contatti" class="it-page-section anchor-offset mt-5">
+          {% if content.field_punti_di_contatto[0] is not empty %}
+          <h4>Contatti</h4>
+          {{ content.field_punti_di_contatto }}
+          {% endif %}
+          {% if content.field_organizzato_da[0] is not empty %}
+          <h5 class="mt-4">Con il supporto di:</h5>
+          {{ content.field_organizzato_da }}
+          {% endif %}
+        </article>
+        {% endif %}
+
+        {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
+        <article id="appuntamenti" class="it-page-section anchor-offset mt-5">
+          <h4>Appuntamenti</h4>
+
+        {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
+        </article>
+        {% endif %}
+
+        <article id="ulteriori-informazioni" class="it-page-section anchor-offset mt-5">
+          <h4 class="mb-3">Ulteriori informazioni</h4>
+          {% if content.field_patrocinato_da[0] is not empty %}
+            <strong>Patrocinato da:</strong>
+            <div class="link-list-wrapper">
+              <ul class="link-list">
+                {{ content.field_patrocinato_da }}
+              </ul>
+            </div>
+          {% endif %}
+          {% if content.field_sponsor[0] is not empty %}
+          <strong>Sponsor:</strong>
+            <div class="link-list-wrapper">
+              <ul class="link-list">
+                {{ content.field_sponsor }}
+              </ul>
+            </div>
+          {% endif %}
+          <div class="mt-5">
+            <strong>Recensione:</strong>
+            <div class="rating-list-wrapper my-4">
+              <div class="rating-list">
+                <div class="rating-list-aside rating-list-warning">
+                  <div class="rating-value fw-semibold">4</div>
+                  <div class="rating-total fw-semibold">su 5</div>
+                </div>
+                <div class="rating-list-content">
+                  <div class="rating-list-row">
+                    <div class="rating-list-stars">
+                      <div class="rating rating-read-only">
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                      </div>
+                      <div class="rating rating-read-only">
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                      </div>
+                      <div class="rating rating-read-only">
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                      </div>
+                      <div class="rating rating-read-only">
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                      </div>
+                      <div class="rating rating-read-only">
+                        <svg class="icon icon-warning">
+                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="rating-list-progress">
+                      <div class="progress progress-color">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="progress progress-color">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="progress progress-color">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="progress progress-color">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="progress progress-color">
+                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mt-5">
+              <fieldset class="rating">
+                <input type="radio" id="star5a" name="ratingA" value="5" style="">
+                <label class="full active" for="star5a">
+                  <svg class="icon icon-sm">
+                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                  </svg>
+                  <span class="visually-hidden" style="">Valuta 5 stelle su 5</span>
+                </label>
+                <input type="radio" id="star4a" name="ratingA" value="4" style="">
+                <label class="full active" for="star4a">
+                  <svg class="icon icon-sm">
+                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                  </svg>
+                  <span class="visually-hidden" style="">Valuta 4 stelle su 5</span>
+                </label>
+                <input type="radio" id="star3a" name="ratingA" value="3" style="">
+                <label class="full active" for="star3a">
+                  <svg class="icon icon-sm">
+                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                  </svg>
+                  <span class="visually-hidden" style="">Valuta 3 stelle su 5</span>
+                </label>
+                <input type="radio" id="star2a" name="ratingA" value="2" style="">
+                <label class="full active" for="star2a">
+                  <svg class="icon icon-sm">
+                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                  </svg>
+                  <span class="visually-hidden" style="">Valuta 2 stelle su 5</span>
+                </label>
+                <input type="radio" id="star1a" name="ratingA" value="1" style="">
+                <label class="full active" for="star1a">
+                  <svg class="icon icon-sm">
+                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
+                  </svg>
+                  <span class="visually-hidden" style="">Valuta 1 stelle su 5</span>
+                </label>
+              </fieldset>
+              <div class="ms-3">
+                <a href="#" class="btn btn-outline-primary btn-sm" data-focus-mouse="false">
+                  <span>Invia valutazione</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          {% if content.field_ulteriori_informazioni[0] is not empty %}
+          <div class="mt-5">
+            <div class="callout">
+              <div class="callout-title">
+                <svg viewBox="0 0 24 24" id="it-info-circle" class="icon" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 19a9 9 0 119-9 9 9 0 01-9 9zm-.7-15h1.5v2h-1.5zm0 3h1.5v9h-1.5z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+              </div>
+              {{ content.field_ulteriori_informazioni }}
+            </div>
+          </div>
+          {% endif %}
+        </article>
+        {% if node.changed.value %}
+        <article id="ultimo-aggiornamento" class="it-page-section anchor-offset mt-5">
+          <h5 class="font-serif">Ultimo aggiornamento</h5>
+          <p class="h6"><strong>{{ node.changed.value|date("d/m/Y, H:i") }}</strong></p>
+        </article>
+        {% endif %}
+      </section>
+    </div>
+  </div>
+
+
+  {% if display_submitted %}
+    <footer>
+      {{ author_picture }}
+      <div{{ author_attributes }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+

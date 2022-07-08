@@ -1,0 +1,114 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+ *   - paragraph.id(): The paragraph ID.
+ *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+ *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+ *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+ *   and methods for the paragraph object.
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished',
+  'section  py-5'
+] %}
+{% block paragraph %}
+  {# <div{{ attributes.addClass(classes) }}> #}
+		{% block content %}
+			{% set layout_mode = content.field_tipo_di_layout_argomenti["#items"][0].value %}
+			{% if layout_mode == "with_link" %}
+			<div class="row pt-30">
+				<div class="col-lg-10 col-xl-6 offset-lg-1 offset-xl-2">
+					<div class="row d-lg-inline-flex">
+						<div class="col-lg-3">
+							<h3 class="text-uppercase mb-3 title-xsmall-bold text u-grey-light">
+								{{ content.field_titolo }}
+							</h3>
+						</div>
+						<div class="col-lg-9 argomenti">
+							{% for item in attribute(content.field_argomenti, "#items") %}
+								<div class="chip chip-simple chip-primary bg-primary rounded-3 pb-0 mb-2">
+									<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
+										class="chip-label text-white"
+										aria-label="Vai all'argomento {{ item.entity.name.value }}"
+										aria-label="vai alla sezione {{ item.entity.name.value }}"
+									>
+										{{ item.entity.name.value }}
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+				{% if content.field_link["#object"] is defined and content.field_link["#object"] is not null %}
+				<div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2 text-center">
+					<a href="{{ attribute(content.field_link.0, "#url") }}"
+						class="btn btn-primary mt-40"
+						aria-label="Vedi tutti gli argomenti"
+						title="visualizza tutti gli argomenti"
+					>
+						{{ attribute(content.field_link.0, "#title") }}
+					</a>
+				</div>
+				{% endif %}
+			</div>
+			{% elseif layout_mode == "just_pills" %}
+			<div class="py-5">
+				<div class="container px-4">
+					<div class="row">
+						<div class="col">
+							<h3 class="mb-4 text-primary">{{ content.field_titolo }}</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col text-center">
+						{% for item in attribute(content.field_argomenti, "#items") %}
+							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+								<span
+									class="chip chip-simple chip-primary"
+									title="vai all'argomento - {{ item.entity.name.value }}"
+									aria-label="vai all'argomento - {{ item.entity.name.value }}"
+								><span class="chip-label">{{ item.entity.name.value }}</span></span>
+							</a>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+		{% endblock %}
+  {# </div> #}
+{% endblock paragraph %}

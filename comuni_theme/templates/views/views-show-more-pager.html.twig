@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * The views show more pager template.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - item: Show more pager item.
+ *
+ * @see views_show_more_preprocess_views_show_more_pager()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if item.text %}
+  <nav role="navigation" aria-labelledby="{{ heading_id }}">
+    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <ul{{ attributes }}>
+      <li class="pager__item">
+        {% if item.href %}
+        <a class="" href="{{ item.href }}" rel="next">
+          <button type="button" data-bs-toggle="modal" data-bs-target="#" aria-label="Carica altre domande da consultare" class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 mb-30 mb-lg-50 full-mb text-button" data-focus-mouse="false">
+            <span class="">{{ item.text }}</span>
+          </button>
+        </a>
+        {% else %}
+          <p class="text-center text-paragraph-regular-medium mt-4 mb-0">{{ item.text }}</p>
+        {% endif %}
+      </li>
+    </ul>
+  </nav>
+{% endif %}

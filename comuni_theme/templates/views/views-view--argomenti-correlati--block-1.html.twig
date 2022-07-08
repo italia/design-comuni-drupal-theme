@@ -1,0 +1,177 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{% set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+] %}
+
+{% if '_simple_view' in display_id %}
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    {{ header }}
+  {% endif %}
+  {% if attachment_before %}
+    {{ attachment_before }}
+  {% endif %}
+  {% if rows %}
+    {{ rows }}
+  {% elseif empty %}
+    {{ empty }}
+  {% endif %}
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
+  {% if attachment_after %}
+    {{ attachment_after }}
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    {{ footer }}
+  {% endif %}
+{% else %}
+    {{ title_prefix }}
+    {% if title %}
+      {{ title }}
+    {% endif %}
+    {{ title_suffix }}
+    {% if header %}
+      <div class="view-header">
+        {{ header }}
+      </div>
+    {% endif %}
+    {% if exposed %}
+      <div class="view-filters">
+        {{ exposed }}
+      </div>
+    {% endif %}
+    {% if attachment_before %}
+      <div class="attachment attachment-before">
+        {{ attachment_before }}
+      </div>
+    {% endif %}
+
+    {% if rows %}
+
+      <div class="row pt-4 mt-lg-2 pb-lg-4">
+            {% for row in rows[0]['#rows']%}
+              <div class="col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper">
+                  <div class="card card-img no-after rounded sm-row">
+
+                    {% if row['#node'].field_immagine[0] is not empty %}
+                      <div class="img-responsive-wrapper">
+                        <div class="img-responsive img-responsive-panoramic">
+                          <figure class="img-wrapper">
+                            <img src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ row['#node'].field_immagine.entity.field_media_image.alt }}" title="{{ row['#node'].field_immagine.entity.field_media_image.alt }}">
+                          </figure>
+                          {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_della_notizia.value is not empty %}
+                            <div class="card-calendar d-flex flex-column justify-content-center">
+                              <span class="card-date">{{ row['#node'].field_data_della_notizia.value|date('d')}}{{ row['#node'].field_data_di_scadenza.value ? "-" ~ row['#node'].field_data_di_scadenza.vale|date('d') : "" }}</span>
+                              <span class="card-day">{{ row['#node'].field_data_della_notizia.value|date('M')|monthEn2It }}</span>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                    <div class="card-body p-4">
+                      <div class="category-top">
+                        {% if row['#node'].field_tipo_di_notizia[0] is not empty  %}
+                          <a class="u-grey-light fw-semibold" href="#" aria-label="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}" title="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}">{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}</a>
+                        {% endif %}
+                        {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_di_scadenza.value is empty %}
+                          {% set data_val = row['#node'].field_data_della_notizia.value %}
+                          <span class="data u-grey-light">{{ data_val|date('d') }} {{ data_val|date('M')|monthEn2It }} {{ data_val|date('Y') }}</span>
+                        {% endif %}
+                        {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_di_scadenza.value is not empty %}
+                          {% set start_val = row['#node'].field_data_della_notizia.value %}
+                          {% set end_val = row['#node'].field_data_di_scadenza.value %}
+                          <span class="data u-grey-light">DAL {{ start_val|date('d') }} {{ start_val|date('M')|monthEn2It }} AL {{ end_val.value|date('d') }} {{ end_val.value|date('M')|monthEn2It }} {{ end_val|date('Y') }}</span>
+                        {% endif %}
+                      </div>
+                      {% if row['#node'].label %}
+                        <h4 class="title-small-semi-bold-big mb-0 u-grey-light">
+                          <a
+                            aria-label="Visualizza {{ row['#node'].label }}"
+                            title="Visualizza {{ row['#node'].label }}"
+                            href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}">
+                          {{ row['#node'].label }}
+                          </a>
+                        </h4>
+                      {% endif %}
+                      {% if row['#node'].field_descrizione_breve[0] is not empty %}
+                        <p class="pt-3 d-none d-lg-block text-paragraph-card u-grey-light">{{ row['#node'].field_descrizione_breve.value }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        {% endfor %}
+      </div>
+    {% elseif empty %}
+      <div class="view-empty">
+        {{ empty }}
+      </div>
+    {% endif %}
+
+    {% if pager %}
+      {{ pager }}
+    {% endif %}
+    {% if attachment_after %}
+      <div class="attachment attachment-after">
+        {{ attachment_after }}
+      </div>
+    {% endif %}
+    {% if more %}
+      {{ more }}
+    {% endif %}
+    {% if footer %}
+      <div class="view-footer">
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if feed_icons %}
+      <div class="feed-icons">
+        {{ feed_icons }}
+      </div>
+    {% endif %}
+{% endif %}

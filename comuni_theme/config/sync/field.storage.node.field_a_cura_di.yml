@@ -1,0 +1,19 @@
+uuid: 313cbf7c-b632-4b43-9c96-96685177f2a7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_a_cura_di
+field_name: field_a_cura_di
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

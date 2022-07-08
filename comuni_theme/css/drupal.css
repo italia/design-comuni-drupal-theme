@@ -1,0 +1,62 @@
+/* OVERRIDES */
+.evidence-section .section {
+	background-image: url("../assets/img/evidenza-header.png");
+}
+.point-list-wrapper .point-list .point-list-content .card-title {
+  margin-bottom: 0;
+}
+
+/* CUSTOM */
+.drupal--grey-block {
+	background-image: url("../assets/img/grey-square.jpg");
+	padding-bottom: 100%;
+}
+
+.cmp-hero .it-hero-wrapper .it-hero-text-wrapper .text-paragraph {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+@media (min-width: 576px) {
+  .cmp-hero .it-hero-wrapper .it-hero-text-wrapper .text-paragraph {
+    font-size: 1rem;
+    line-height: 1.556;
+  }
+}
+
+:root {
+  --ue-logo-width: 178px;
+  --ue-logo-height: 56px;
+}
+
+.it-brand-wrapper {
+  min-height: var(--ue-logo-height);
+  display: flex;
+  align-items: center;
+}
+
+.it-brand-wrapper a,
+.it-brand-wrapper img {
+  max-height: var(--ue-logo-height);
+}
+
+.it-brand-wrapper img {
+  margin-right: 14%;
+}
+
+.ue-logo {
+  position: relative;
+  width: var(--ue-logo-width);
+  height: var(--ue-logo-height);
+}
+
+.ue-logo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 178px;
+  height: 56px;
+  background-image: url('../assets/img/logo-eu-inverted.svg');
+}

@@ -1,0 +1,25 @@
+uuid: 881e373a-3809-4fb4-b838-0f000008b9ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer---contatti
+  module:
+    - system
+  theme:
+    - comuni_theme
+id: footercontatti
+theme: comuni_theme
+region: footer
+weight: -3
+provider: null
+plugin: 'system_menu_block:footer---contatti'
+settings:
+  id: 'system_menu_block:footer---contatti'
+  label: 'Footer - Contatti'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

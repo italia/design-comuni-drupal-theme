@@ -1,0 +1,29 @@
+uuid: 37f2f151-aa38-41af-8f44-036a4290620d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_argomenti
+    - node.type.pratica
+    - taxonomy.vocabulary.argomenti
+id: node.pratica.field_argomenti
+field_name: field_argomenti
+entity_type: node
+bundle: pratica
+label: Argomenti
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

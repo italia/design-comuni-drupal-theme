@@ -1,0 +1,21 @@
+uuid: 684b47c2-b126-4b06-a1ed-9a5528b59d61
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_casi_particolari
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_casi_particolari
+field_name: field_casi_particolari
+entity_type: node
+bundle: servizio
+label: 'Casi particolari'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

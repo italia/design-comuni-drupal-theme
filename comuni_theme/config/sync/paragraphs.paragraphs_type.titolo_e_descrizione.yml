@@ -1,0 +1,10 @@
+uuid: e9f87908-4502-4a85-9971-1d36b8e2df46
+langcode: en
+status: true
+dependencies: {  }
+id: titolo_e_descrizione
+label: 'Titolo e descrizione'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

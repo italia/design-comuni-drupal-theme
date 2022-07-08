@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+  This ensures that, if clean URLs are off, the 'q' is added first,
+  as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
+
+<div class="container" id="main-container">
+  <div class="mb-md-5">
+    <div class="cmp-breadcrumbs" role="navigation">
+      <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+        <ol class="breadcrumb p-0">
+          <li class="breadcrumb-item"><a href="{{ url('<front>') }}" aria-label="Vai alla pagina Home" title="Vai alla pagina Home">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><span class="separator">/</span>Ricerca</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="form-group cmp-input-search-button mt-2 mb-4 mb-lg-50">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <svg class="icon icon-md" svg viewBox="0 0 24 24" id="it-search" xmlns="http://www.w3.org/2000/svg"><path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+        </div>
+      </div>
+      <label for="search_api_fulltext" class="active">Con Etichetta</label>
+      <input type="search" class="form-control" id="search_api_fulltext" name="search_api_fulltext" placeholder="Pagamento TARI" data-focus-mouse="false">
+    </div>
+    <button type="submit" data-bs-toggle="modal" data-bs-target="#" class="btn btn-primary" aria-label="Cerca">
+      <span class="">Cerca</span>
+    </button>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-3 d-none d-lg-block scroll-filter-wrapper">
+      {{ form.type }}
+      {{ form.field_argomenti }}
+    </div>

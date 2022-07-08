@@ -1,0 +1,29 @@
+uuid: 2e973668-f7f6-4240-9d09-c460aa2bab28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_immagine
+    - media.type.image
+    - node.type.notizia
+id: node.notizia.field_immagine
+field_name: field_immagine
+entity_type: node
+bundle: notizia
+label: Immagine
+description: 'Immagine principale della notizia'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

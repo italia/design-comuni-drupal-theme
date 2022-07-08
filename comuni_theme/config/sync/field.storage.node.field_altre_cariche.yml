@@ -1,0 +1,20 @@
+uuid: e64a34d2-1fa4-4e63-b0dd-edcf7e6c1b21
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - node
+id: node.field_altre_cariche
+field_name: field_altre_cariche
+entity_type: node
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

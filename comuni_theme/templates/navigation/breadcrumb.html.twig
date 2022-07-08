@@ -1,0 +1,107 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb %}
+  {% if contentType == 'evento' or contentType == 'notizia' %}
+    <div class="row">
+      <div class="col px-lg-4">
+        <div class="cmp-breadcrumbs" role="navigation">
+          <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+            <ol class="breadcrumb p-0">
+              {% for item in breadcrumb %}
+                {% if item.url %}
+                  <li class="breadcrumb-item">
+                    {% if loop.index > 1 %}
+                      <span class="separator">/</span>
+                    {% endif %}
+                    <a href="{{ item.url }}"
+                       aria-label="Vai alla pagina {{ item.text }}"
+                       title="Vai alla pagina {{ item.text }}"
+                    >{{ item.text }}</a>
+                  </li>
+                {% elseif item.text %}
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span class="separator">/</span>{{ item.text }}</li>
+                {% endif %}
+              {% endfor %}
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+    {% elseif contentType == 'taxonomy' %}
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="cmp-breadcrumbs mt-0" role="navigation">
+            <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+              <ol class="breadcrumb p-0">
+                {% for item in breadcrumb %}
+                  {% if item.url %}
+                    <li class="breadcrumb-item">
+                      {% if loop.index > 1 %}
+                        <span class="separator">/</span>
+                      {% endif %}
+                      <a href="{{ item.url }}"
+                         aria-label="Vai alla pagina {{ item.text }}"
+                         title="Vai alla pagina {{ item.text }}"
+                      >{{ item.text }}</a>
+                    </li>
+                    {% if loop.index == 1 %}
+                      <li class="breadcrumb-item">
+                        <span class="separator">/</span>
+                        <a href="{{ pageTaxUrl }}"
+                           aria-label="Vai alla pagina {{ pageTaxName }}"
+                           title="Vai alla pagina {{ pageTaxName }}"
+                        >{{ pageTaxName }}</a>
+                      </li>
+                    {% endif %}
+                  {% elseif item.text %}
+                    <li class="breadcrumb-item active" aria-current="page">
+                      <span class="separator">/</span>{{ item.text }}</li>
+                  {% endif %}
+                {% endfor %}
+              </ol>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+  {% else %}
+    <div class="container" id="main-container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <div class="cmp-breadcrumbs" role="navigation">
+            <nav class="breadcrumb-container" aria-label="Percorso di navigazione">
+              <ol class="breadcrumb p-0">
+              {% for item in breadcrumb %}
+                {% if item.url %}
+                  <li class="breadcrumb-item">
+                  {% if loop.index > 1 %}
+                    <span class="separator">/</span>
+                  {% endif %}
+                    <a href="{{ item.url }}"
+                      aria-label="Vai alla pagina {{ item.text }}"
+                      title="Vai alla pagina {{ item.text }}"
+                    >{{ item.text }}</a>
+                  </li>
+                {% elseif item.text %}
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <span class="separator">/</span>{{ item.text }}</li>
+                {% endif %}
+              {% endfor %}
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+

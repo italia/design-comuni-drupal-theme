@@ -1,0 +1,19 @@
+uuid: 1da3e3f8-355b-4073-a62c-f396f453ebaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_numero_di_protocollo
+    - node.type.pratica
+id: node.pratica.field_numero_di_protocollo
+field_name: field_numero_di_protocollo
+entity_type: node
+bundle: pratica
+label: 'Numero di protocollo'
+description: 'Codice univoco che identifica la pratica in esame'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

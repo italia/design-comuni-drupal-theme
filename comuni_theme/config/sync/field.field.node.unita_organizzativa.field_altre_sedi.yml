@@ -1,0 +1,29 @@
+uuid: 1568d999-8a6d-477b-8fe7-9d407a1ffed5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_altre_sedi
+    - node.type.luogo
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa.field_altre_sedi
+field_name: field_altre_sedi
+entity_type: node
+bundle: unita_organizzativa
+label: 'Altre sedi'
+description: 'Relazioni con eventuali altri luoghi che sono definibili come sedi'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      luogo: luogo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

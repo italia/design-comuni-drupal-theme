@@ -1,0 +1,120 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region <div>.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+<div class="modal fade search-modal" id="search-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content perfect-scrollbar">
+      <div class="modal-body">
+        <form action="/risultati-ricerca">
+          <div class="container">
+            <div class="row variable-gutters">
+              <div class="col">
+                <div class="modal-title">
+                  <button class="search-link d-md-none" type="submit" data-bs-toggle="modal"
+                          data-bs-target="#search-modal"
+                          aria-label="chiudi e torna alla pagina precedente">
+										<svg viewBox="0 0 24 24" id="it-arrow-left" class="icon icon-md" xmlns="http://www.w3.org/2000/svg">
+											<path d="M21 11.5H5.5l5.3-5.4-.7-.7L3.6 12l6.5 6.6.7-.7-5.3-5.4H21zM5 12z"/>
+											<path fill="none" d="M0 0h24v24H0z"/>
+										</svg>
+                  </button>
+                  <span>Cerca</span>
+                  <button class="search-link d-none d-md-block" type="button" data-bs-toggle="modal"
+                          data-bs-target="#search-modal"
+                          aria-label="chiudi e torna alla pagina precedente">
+										<svg viewBox="0 0 24 24" id="it-close-big" class="icon icon-md" xmlns="http://www.w3.org/2000/svg">
+											<path d="M12.7 12l6.7 6.6-.8.8-6.6-6.7-6.6 6.7-.8-.8 6.7-6.6-6.7-6.6.8-.8 6.6 6.7 6.6-6.7.8.8z"/>
+											<path fill="none" d="M0 0h24v24H0z"/>
+										</svg>
+                  </button>
+                </div>
+                <div class="form-group autocomplete-wrapper">
+                  <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
+                  <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="search_api_fulltext" data-bs-autocomplete="[]">
+                  <span class="autocomplete-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" id="it-search" xmlns="http://www.w3.org/2000/svg" class="icon">
+                      <path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/>
+                      <path fill="none" d="M0 0h24v24H0z"/>
+                    </svg>
+                  </span>
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#"
+                  aria-label="cerca in tutto il sito" class="btn btn-primary">
+                    <span class="">Cerca</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row variable-gutters">
+              <div class="col-lg-5">
+                <div class="searches-list-wrapper">
+                  <div class="other-link-title">FORSE STAVI CERCANDO</div>
+                  <ul class="searches-list" role="list">
+                    {% for link in site_settings.infocomune.info_comune.field_forse_stavi_cercando %}
+                      {% set field = drupal_field('title', 'node', link['target_id']) %}
+                      {% set link2 = path('entity.node.canonical', {'node': link['target_id']})  %}
+                      <li role="listitem"><a href="{{ link2 }}"
+                          aria-label="{{ field["#items"][0].value}}"
+                          title="{{ field["#items"][0].value}}"
+                        >{{ field["#items"][0].value }}
+                      </a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="it-footer" id="footer">
+  <div class="it-footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 footer-items-wrapper logo-wrapper">
+          <div class="ue-logo"><span class="visually-hidden">logo Unione Europea</span></div>
+          <div class="it-brand-wrapper">
+            <a href="{{ url('<front>') }}" title="Vai alla home"
+              aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
+              class data-focus-mouse="false"
+            >
+              <img src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+              <div class="it-brand-text">
+                <h2 class="no_toc">{{ site_settings.infocomune.info_comune.field_nome_comune }}</h2>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {{ elements.footernavigazione }}
+        {{ elements.footercontatti }}
+        <div class="col-md-3 mt-md-4 footer-items-wrapper">
+          <h3 class="footer-heading-title">Seguici su</h3>
+          <ul class="list-inline text-start social">
+            {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+              {{ drupal_entity('paragraph', social['target_id'], 'social_footer') }}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 footer-items-wrapper">
+          {{ elements.footer }}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

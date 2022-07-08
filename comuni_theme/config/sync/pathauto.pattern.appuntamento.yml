@@ -1,0 +1,22 @@
+uuid: 4d88cf64-b16e-4b92-9834-4c067f1e4ade
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: appuntamento
+label: Appuntamento
+type: 'canonical_entities:node'
+pattern: '/appuntamento/[node:title]'
+selection_criteria:
+  9ae7efbc-cc9b-40bb-b32f-16ef64a9173d:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 9ae7efbc-cc9b-40bb-b32f-16ef64a9173d
+    context_mapping:
+      node: node
+    bundles:
+      appuntamento: appuntamento
+selection_logic: and
+weight: -5
+relationships: {  }

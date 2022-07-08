@@ -1,0 +1,29 @@
+uuid: a7504796-4939-4d4c-b48d-5573a37fc1c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_luogo
+    - node.type.evento
+    - node.type.luogo
+id: node.evento.field_luogo
+field_name: field_luogo
+entity_type: node
+bundle: evento
+label: Luogo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      luogo: luogo
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 79a09e16-2a03-4961-9aa9-de95c06315c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.site_setting_entity.field_contatti
+    - site_settings.site_setting_entity_type.info_comune
+  module:
+    - text
+id: site_setting_entity.info_comune.field_contatti
+field_name: field_contatti
+entity_type: site_setting_entity
+bundle: info_comune
+label: Contatti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

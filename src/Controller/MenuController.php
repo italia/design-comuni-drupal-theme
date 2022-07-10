@@ -118,7 +118,7 @@ class MenuController extends ControllerBase {
               ],
               'Salute, benessere e assistenza' => [
                 'link' => 'internal:/categorie-dei-servizi/salute-benessere-e-assistenza',
-              ],              
+              ],
               'Autorizzazioni' => [
                 'link' => 'internal:/categorie-dei-servizi/autorizzazioni'
               ],
@@ -162,7 +162,7 @@ class MenuController extends ControllerBase {
             'link' => 'internal:/domande-frequenti',
           ],
           'Prenotazione appuntamento' =>  [
-            'link' => 'internal:/#',
+            'link' => 'internal:/prenotazione-appuntamento',
           ],
           'Segnalazione disservizio' =>  [
             'link' => 'internal:/#',

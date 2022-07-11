@@ -78,8 +78,17 @@ function comuni_module_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrum
 function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
   // Adding custom validation for the welcome page type field.
+
+  if ($form_id == 'node_appuntamento_edit_form' || $form_id == 'node_ticket_edit_form' || $form_id == 'node_valutazione_edit_form'){
+    $form['#disabled'] = array('#type' => 'hidden',
+      '#title' => t('Row 3. Column 1'),
+      '#required' => FALSE,
+      '#default_value' => 0,
+      '#disabled' => TRUE,
+    );
+  }
   if ($form_id == 'node_pagina_edit_form' ){
     // Do some stuff.
-    $form['field_componenti']['#disabled'] = TRUE;
+    $form['field_componenti']['widget'][0]['#disabled'] = TRUE;
   }
 }

@@ -134,6 +134,7 @@ class CreateContentResource extends ResourceBase {
       }
 
       $node = Node::create($arrayInsertNode);
+      $node->setUnpublished();
       $node->save();
       return new ModifiedResourceResponse('Contenuto creato con successo: ' . $node->id(), 200);
     } catch (Exception $e) {

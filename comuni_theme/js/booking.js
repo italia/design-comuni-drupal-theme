@@ -254,7 +254,7 @@ function appointment() {
     answers.appointment = null;
     checkMandatoryFields();
     // fetch(`a[i/v1/appuntamenti/${appointment?.value}/{answers?.place?.id}`)
-    fetch('/modules/custom/comuni_module/comuni_theme/assets/mocks/appuntamenti.json')
+    fetch('/modules/custom/design-comuni-drupal-theme/comuni_theme/assets/mocks/appuntamenti.json')
       .then((response) => {
         if (!response.ok) {
           throw new Error("HTTP error " + response.status);
@@ -285,7 +285,7 @@ function appointment() {
             }</label>
           </div>
           `;
-          
+
           const radioAppointmentInputs = document.getElementsByTagName('input')
           for (input of radioAppointmentInputs) {
             input.onclick = () => saveAnswerByValue('appointment', value, true)

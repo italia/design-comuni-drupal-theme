@@ -65,7 +65,7 @@
                         'entity.taxonomy_term.canonical',
                         {'taxonomy_term': item.entity.field_contenuto.entity.field_tipo_di_evento.target_id}
                       ) }}"
-                      class="category title-xsmall-semi-bold fw-semibold"
+                      class="title-xsmall-semi-bold fw-semibold"
                       label="Vai all'argomento: {{ category_name }}"
                       title="vai alla sezione {{ category_name }}"
                     >{{ category_name }}</a>
@@ -95,15 +95,11 @@
               <div class="card-body">
                 <div class="category-top">
                     {% set category_name = item.entity.field_contenuto.entity.field_tipo_di_evento.entity.name.value %}
-                    <a href="{{ path(
-                        'entity.taxonomy_term.canonical',
-                        {'taxonomy_term': item.entity.field_contenuto.entity.field_tipo_di_evento.target_id}
-                      ) }}"
-                      class="category title-xsmall-semi-bold fw-semibold"
+                    <span class="title-xsmall-semi-bold fw-semibold"
                       title="vai alla sezione {{ category_name }}"
                       aria-label="vai alla sezione {{ category_name }}"
                       data-focus-mouse="false"
-                    >{{ category_name }}</a>
+                    >{{ category_name }}</span>
                 </div>
                 <h3 class="card-title text-paragraph-medium u-grey-light">{{ card_title }}</h3>
                 <p class="text-paragraph-card u-grey-light m-0 mb-5 mb-lg-0">

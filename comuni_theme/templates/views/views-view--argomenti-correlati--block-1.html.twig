@@ -115,7 +115,7 @@
                     <div class="card-body p-4">
                       <div class="category-top">
                         {% if row['#node'].field_tipo_di_notizia[0] is not empty  %}
-                          <a class="u-grey-light fw-semibold" href="#" aria-label="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}" title="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}">{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}</a>
+                          <a class="u-main-primary fw-semibold" href="#" aria-label="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}" title="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}">{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}</a>
                         {% endif %}
                         {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_di_scadenza.value is empty %}
                           {% set data_val = row['#node'].field_data_della_notizia.value %}
@@ -128,7 +128,7 @@
                         {% endif %}
                       </div>
                       {% if row['#node'].label %}
-                        <h4 class="title-small-semi-bold-big mb-0 u-grey-light">
+                        <h4 class="title-small-semi-bold-big mb-0 u-main-primary">
                           <a
                             aria-label="Visualizza {{ row['#node'].label }}"
                             title="Visualizza {{ row['#node'].label }}"

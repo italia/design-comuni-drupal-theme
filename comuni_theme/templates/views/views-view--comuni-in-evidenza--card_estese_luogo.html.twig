@@ -60,14 +60,14 @@
 					</div>
 					<div class="card-body">
 						<div class="category-top cmp-list-card-img__body">
-							<a class="category cmp-list-card-img__body-heading-title underline"
+							<a class="u-main-primary fw-bold cmp-list-card-img__body-heading-title"
 								href={{ path(
 									'entity.taxonomy_term.canonical',
 									{ 'taxonomy_term': node.field_tipo_di_luogo.entity.tid.value }
 								) }}
 							>{{ node.field_tipo_di_luogo.entity.name.value }}</a>
 						</div>
-						<h3 class="cmp-list-card-img__body-title">{{ node.title.value }}</h3>
+						<h3 class="cmp-list-card-img__body-title u-main-primary">{{ node.title.value }}</h3>
 						<p class="cmp-list-card-img__body-description">{{ node.field_descrizione_breve.value }}</p>
 						<a class="read-more t-primary text-uppercase cmp-list-card-img__body-link"
 							href="{{ path('entity.node.canonical', { 'node': node.nid.value }) }}"

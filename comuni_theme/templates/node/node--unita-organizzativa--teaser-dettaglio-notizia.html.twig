@@ -111,7 +111,8 @@
         </h5>
         {% if node.field_sede_principale.0 %}
         <div class="card-text">
-          <p>{{ node.field_sede_principale.entity.field_indirizzo.value }}</p>
+          {{ node.field_sede_principale.entity.field_indirizzo.value }}
+          {# <p>{{ node.field_sede_principale.entity.field_indirizzo.value }}</p> #}
           {# TODO: add <p> with cap and town name (currently no field for town name) #}
         </div>
         {% endif %}

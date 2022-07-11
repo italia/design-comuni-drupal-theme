@@ -273,6 +273,20 @@
                       </a>
                     </li>
                     {% endif %}
+                    {% if content.field_condizioni_di_servizio[0] is not empty %}
+                    <li>
+                      <a class="list-item" href="#conditions" aria-label="Vai alla sezione Condizioni di servizio" title="Vai alla sezione Condizioni di servizio" data-focus-mouse="false">
+                        <span class="title-medium">Condizioni di servizio</span>
+                      </a>
+                    </li>
+                    {% endif %}
+                    {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+                    <li>
+                      <a class="list-item" href="#contacts" aria-label="Vai alla sezione Contatti" title="Vai alla sezione Contatti" data-focus-mouse="false">
+                        <span class="title-medium">Contatti</span>
+                      </a>
+                    </li>
+                    {% endif %}
                   </ul>
                 </li>
               </ul>
@@ -392,12 +406,21 @@
           </div>
         </section>
         {% endif %}
+        {% if content.field_condizioni_di_servizio[0] is not empty %}
+        <section class="mb-30">
+          <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_condizioni_di_servizio }}
+          </div>
+        </section>
+        {% endif %}
         {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
         <section class="it-page-section">
+          <h2 class="title-xxlarge mb-3" id="contacts">Contatti</h2>
           <div class="row">
             {% if content.field_unita_org_responsabile[0] is not empty %}
             <div class="col-12 col-md-6">
-              <h6><small class="fw-semibold">Questa pagina è gestita da</small></h6>
+              {# <h6><small class="fw-semibold">Questa pagina è gestita da</small></h6> #}
               <div class="card-wrapper rounded h-auto mt-10">
                 {% for uorg in content.field_unita_org_responsabile['#items'] %}
                 <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">

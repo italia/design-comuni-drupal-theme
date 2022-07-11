@@ -12,7 +12,6 @@ dependencies:
     - field.field.node.unita_organizzativa.field_descrizione_breve
     - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
     - field.field.node.unita_organizzativa.field_immagine
-    - field.field.node.unita_organizzativa.field_in_evidenza
     - field.field.node.unita_organizzativa.field_persona
     - field.field.node.unita_organizzativa.field_persone
     - field.field.node.unita_organizzativa.field_persone_altre
@@ -46,7 +45,6 @@ hidden:
   field_descrizione_breve: true
   field_elenco_servizi_offerti: true
   field_immagine: true
-  field_in_evidenza: true
   field_persona: true
   field_persone: true
   field_persone_altre: true

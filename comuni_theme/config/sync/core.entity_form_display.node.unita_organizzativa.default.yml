@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.unita_organizzativa.field_descrizione_breve
     - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
     - field.field.node.unita_organizzativa.field_immagine
-    - field.field.node.unita_organizzativa.field_in_evidenza
     - field.field.node.unita_organizzativa.field_persona
     - field.field.node.unita_organizzativa.field_persone
     - field.field.node.unita_organizzativa.field_persone_altre
@@ -110,13 +109,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_in_evidenza:
-    type: boolean_checkbox
-    weight: 136
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_persona:
     type: entity_reference_autocomplete

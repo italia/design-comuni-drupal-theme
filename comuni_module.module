@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\comuni_module\Controller\NodeController;
+use Drupal\Core\Form\FormStateInterface;
 
 function comuni_module_entity_form_mode_alter(&$form_mode, \Drupal\Core\Entity\EntityInterface $entity) {
   if ($entity->getEntityTypeId() == 'user') {
@@ -72,5 +73,16 @@ function comuni_module_system_breadcrumb_alter(\Drupal\Core\Breadcrumb\Breadcrum
     if (!empty($title)) {
       $breadcrumb->addLink(\Drupal\Core\Link::createFromRoute($title, '<none>'));
     }
+  }
+}
+function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Adding custom validation for the welcome page type field.
+  if ($form_id == 'node_pagina_edit_form' ){
+    // Do some stuff.
+    $form['field_componenti']['widget'][0] = array(
+      '#states' => array(
+        'visible' => FALSE  ),
+    );
   }
 }

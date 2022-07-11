@@ -1,8 +1,0 @@
-uuid: 163947ee-9614-45c5-b0c2-0d779855ae18
-langcode: en
-status: true
-dependencies: {  }
-id: customfooter
-label: 'Footer - Navigazione'
-description: ''
-locked: false

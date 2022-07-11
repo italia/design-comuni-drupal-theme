@@ -1,8 +1,0 @@
-uuid: cf9e2537-b0f2-4ecd-80fe-60fcc8196249
-langcode: en
-status: true
-dependencies: {  }
-name: 'Tipi di notizia'
-vid: tipi_di_notizia
-description: 'Classificazione multi livello dei tipi notizie pubblicate da un''amministrazione locale.'
-weight: 0

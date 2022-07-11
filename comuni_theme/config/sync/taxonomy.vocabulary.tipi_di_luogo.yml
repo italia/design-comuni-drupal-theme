@@ -1,8 +1,0 @@
-uuid: d5ff54b2-fb48-4611-ad1e-220712bd577d
-langcode: en
-status: true
-dependencies: {  }
-name: 'Tipi di luogo'
-vid: tipi_di_luogo
-description: 'Classificazione multi livello dei luoghi di interesse pubblico'
-weight: 0

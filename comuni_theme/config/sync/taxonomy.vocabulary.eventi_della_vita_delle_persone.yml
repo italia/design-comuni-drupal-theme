@@ -1,8 +1,0 @@
-uuid: 8c561d64-c233-44a7-b4c1-1b8e7484c679
-langcode: en
-status: true
-dependencies: {  }
-name: 'Eventi della vita delle persone'
-vid: eventi_della_vita_delle_persone
-description: 'Classificazione degli eventi della vita delle persone (Life Events)'
-weight: 0

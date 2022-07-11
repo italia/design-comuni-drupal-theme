@@ -1,8 +1,0 @@
-uuid: fdedb31a-99d0-4507-806f-23bff78d4c5b
-langcode: en
-status: true
-dependencies: {  }
-name: 'Eventi della vita di un''impresa'
-vid: eventi_della_vita_di_un_impresa
-description: 'Classificazione degli eventi della vita dei un''impresa (Business Events)'
-weight: 0

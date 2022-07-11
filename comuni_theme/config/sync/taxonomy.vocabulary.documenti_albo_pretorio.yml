@@ -1,8 +1,0 @@
-uuid: 9f45cea1-3d32-4c8c-bc85-e1bca51dc938
-langcode: en
-status: true
-dependencies: {  }
-name: 'Documenti albo pretorio'
-vid: documenti_albo_pretorio
-description: ''
-weight: 0

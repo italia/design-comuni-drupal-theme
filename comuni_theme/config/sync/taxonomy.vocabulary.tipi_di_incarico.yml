@@ -1,8 +1,0 @@
-uuid: 6dd50aa9-3d07-4af6-80c8-2b683cde78b9
-langcode: en
-status: true
-dependencies: {  }
-name: 'Tipi di incarico'
-vid: tipi_di_incarico
-description: '"Classificazione multi livello dei tipi di incarico che una persona può ricoprire presso un''amministrazione locale.'
-weight: 0

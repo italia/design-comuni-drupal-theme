@@ -1,8 +1,0 @@
-uuid: 309c6971-7fd9-4379-ace2-f4d03843f2cc
-langcode: en
-status: true
-dependencies: {  }
-name: Licenze
-vid: licenze
-description: 'Classificazione delle licenze dei dataset secondo il Vocabolario Controllato Licenze.'
-weight: 0

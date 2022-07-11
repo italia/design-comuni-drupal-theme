@@ -1,8 +1,0 @@
-uuid: c33cf0c4-b7ab-4e95-a394-94ef17f1a2c6
-langcode: en
-status: true
-dependencies: {  }
-name: 'Tipi unità organizzativa'
-vid: tipi_unita_organizzativa
-description: 'Classificazione multi livello dei tipi di unità organizzativa che distingue tra macro ambiti di un''amministrazione locale.'
-weight: 0

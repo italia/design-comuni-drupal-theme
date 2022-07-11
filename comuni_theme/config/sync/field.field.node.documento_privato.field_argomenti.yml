@@ -1,0 +1,29 @@
+uuid: 7d217481-4fa1-4da2-97c7-0f864ad28bf3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_argomenti
+    - node.type.documento_privato
+    - taxonomy.vocabulary.argomenti
+id: node.documento_privato.field_argomenti
+field_name: field_argomenti
+entity_type: node
+bundle: documento_privato
+label: Argomenti
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

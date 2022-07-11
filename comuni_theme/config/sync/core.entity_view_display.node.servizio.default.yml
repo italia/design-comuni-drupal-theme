@@ -1,0 +1,201 @@
+uuid: 911cb615-0583-4a3d-9807-6b73a5528759
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.servizio.field_a_chi_rivolto
+    - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_business_events
+    - field.field.node.servizio.field_canale_digitale
+    - field.field.node.servizio.field_casi_particolari
+    - field.field.node.servizio.field_categoria_del_servizio
+    - field.field.node.servizio.field_codice_dell_ente_erogatore
+    - field.field.node.servizio.field_come_fare
+    - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_contatti
+    - field.field.node.servizio.field_copertura_geografica
+    - field.field.node.servizio.field_cosa_serve
+    - field.field.node.servizio.field_cosa_si_ottiene
+    - field.field.node.servizio.field_costi
+    - field.field.node.servizio.field_descrizione_breve
+    - field.field.node.servizio.field_descrizione_estesa
+    - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_immagine
+    - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_motivo_dello_stato
+    - field.field.node.servizio.field_procedure_collegate_esito
+    - field.field.node.servizio.field_promemoria_accesso
+    - field.field.node.servizio.field_promemoria_scadenze
+    - field.field.node.servizio.field_settore_merceologico
+    - field.field.node.servizio.field_sottotitolo
+    - field.field.node.servizio.field_stato_del_servizio
+    - field.field.node.servizio.field_tempi_e_scadenze
+    - field.field.node.servizio.field_ulteriori_informazioni
+    - field.field.node.servizio.field_unita_org_responsabile
+    - field.field.node.servizio.field_unita_organizzative
+    - field.field.node.servizio.field_vincoli
+    - node.type.servizio
+  module:
+    - link
+    - text
+    - user
+id: node.servizio.default
+targetEntityType: node
+bundle: servizio
+mode: default
+content:
+  field_a_chi_rivolto:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_argomenti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_canale_digitale:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_come_fare:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_cosa_serve:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_cosa_si_ottiene:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_costi:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_estesa:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_promemoria_accesso:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_promemoria_scadenze:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_stato_del_servizio:
+    type: boolean
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tempi_e_scadenze:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  field_unita_org_responsabile:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_unita_organizzative:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  search_api_excerpt:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 17
+    region: content
+hidden:
+  field_business_events: true
+  field_canale_fisico: true
+  field_casi_particolari: true
+  field_categoria_del_servizio: true
+  field_codice_dell_ente_erogatore: true
+  field_condizioni_di_servizio: true
+  field_contatti: true
+  field_copertura_geografica: true
+  field_documenti: true
+  field_immagine: true
+  field_life_events: true
+  field_motivo_dello_stato: true
+  field_procedure_collegate_esito: true
+  field_settore_merceologico: true
+  field_sottotitolo: true
+  field_vincoli: true
+  langcode: true

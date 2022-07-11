@@ -1,0 +1,8 @@
+uuid: e76f4d23-2a42-4fc9-bf28-0882ed622c37
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tipi punto di contatto'
+vid: tipi_punto_di_contatto
+description: 'Classificazione dei tipi di punti di contatto riprendendo le Linee Guida Cataloghi dei dati.'
+weight: 0

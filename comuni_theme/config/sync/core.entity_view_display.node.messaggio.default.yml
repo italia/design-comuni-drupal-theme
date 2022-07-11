@@ -1,0 +1,87 @@
+uuid: 13c63664-a01e-4531-aa90-3294460f87d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.messaggio.field_data_del_messaggio
+    - field.field.node.messaggio.field_data_scadenza
+    - field.field.node.messaggio.field_doc_privati_collegati
+    - field.field.node.messaggio.field_doc_pubblici_collegati
+    - field.field.node.messaggio.field_pratica_associata
+    - field.field.node.messaggio.field_servizio_collegato
+    - field.field.node.messaggio.field_testo_del_messaggio
+    - node.type.messaggio
+  module:
+    - datetime
+    - text
+    - user
+id: node.messaggio.default
+targetEntityType: node
+bundle: messaggio
+mode: default
+content:
+  field_data_del_messaggio:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_data_scadenza:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_doc_privati_collegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_doc_pubblici_collegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_pratica_associata:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_servizio_collegato:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_testo_del_messaggio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 85cc498a-8e83-407e-b682-31e1c674389f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.container_contenuti_in_evidenza
+id: paragraph.container_contenuti_in_evidenza.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: container_contenuti_in_evidenza
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

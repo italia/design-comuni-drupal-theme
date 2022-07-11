@@ -1,0 +1,59 @@
+uuid: c06ef4f1-dc51-4539-b6e7-aeeebf3845e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_categoria_del_servizio
+    - search_api.server.drupal_db
+  module:
+    - taxonomy
+    - search_api
+    - node
+id: servizi
+name: Servizi
+description: ''
+read_only: false
+field_settings:
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          servizio: default
+  tid:
+    label: 'Categoria del servizio » Taxonomy term » Term ID'
+    datasource_id: 'entity:node'
+    property_path: 'field_categoria_del_servizio:entity:tid'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_categoria_del_servizio
+      module:
+        - taxonomy
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - servizio
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_type: {  }
+  language_with_fallback: {  }
+  rendered_item: {  }
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  cron_limit: 50
+  index_directly: true
+  track_changes_in_references: true
+server: drupal_db

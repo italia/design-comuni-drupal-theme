@@ -1,0 +1,19 @@
+uuid: edd1db6e-7694-485d-94e6-e7381f2bd5cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_prezzo
+    - paragraphs.paragraphs_type.biglietto_evento
+id: paragraph.biglietto_evento.field_prezzo
+field_name: field_prezzo
+entity_type: paragraph
+bundle: biglietto_evento
+label: Prezzo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

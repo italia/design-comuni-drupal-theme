@@ -1,0 +1,19 @@
+uuid: 8bf26fa0-c537-4505-a714-accd79241d63
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_testo_completo_notizia
+field_name: field_testo_completo_notizia
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

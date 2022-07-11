@@ -1,0 +1,21 @@
+uuid: ce555c94-1312-4429-a16d-416fc355cf6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_e_ora_inizio_appuntam
+    - node.type.appuntamento
+  module:
+    - datetime
+id: node.appuntamento.field_data_e_ora_inizio_appuntam
+field_name: field_data_e_ora_inizio_appuntam
+entity_type: node
+bundle: appuntamento
+label: 'Data e ora inizio appuntamento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

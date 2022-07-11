@@ -1,0 +1,8 @@
+uuid: 9673b03a-7a88-4995-bf25-c07306c3d76b
+langcode: en
+status: true
+dependencies: {  }
+name: 'Frequenze di aggiornamento'
+vid: frequenze_di_aggiornamento
+description: 'Classificazione della frequenza di aggiornamento secondo il Vocabolario Controllato Frequenza'
+weight: 0

@@ -1,0 +1,29 @@
+uuid: ee3024f8-ae59-4939-9565-f0988d6c812a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documenti
+    - node.type.documento_pubblico
+    - node.type.servizio
+id: node.servizio.field_documenti
+field_name: field_documenti
+entity_type: node
+bundle: servizio
+label: Documenti
+description: 'Link alle schede documenti non funzionali al completamento del servizi, ma di semplice supporto'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

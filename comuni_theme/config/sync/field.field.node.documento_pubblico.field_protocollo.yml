@@ -1,0 +1,19 @@
+uuid: e4ab6d32-f3d9-47d2-bb19-744349ead150
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protocollo
+    - node.type.documento_pubblico
+id: node.documento_pubblico.field_protocollo
+field_name: field_protocollo
+entity_type: node
+bundle: documento_pubblico
+label: Protocollo
+description: 'Numero di protocollo del documento'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

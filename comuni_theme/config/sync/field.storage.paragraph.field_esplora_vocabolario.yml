@@ -1,0 +1,20 @@
+uuid: 0a438dd6-cfa5-4f6a-ae7c-45ba1b3232ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_esplora_vocabolario
+field_name: field_esplora_vocabolario
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_vocabulary
+module: core
+locked: false
+cardinality: 2
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

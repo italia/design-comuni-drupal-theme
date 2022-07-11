@@ -1,0 +1,19 @@
+uuid: 33d92c14-9150-4661-be35-50e161a2ed29
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_punti_di_contatto
+field_name: field_punti_di_contatto
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

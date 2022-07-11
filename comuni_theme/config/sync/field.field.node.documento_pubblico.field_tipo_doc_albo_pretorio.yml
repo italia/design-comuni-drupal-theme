@@ -1,0 +1,29 @@
+uuid: ac63b464-bdf2-410c-aa74-ceb9781ace33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_doc_albo_pretorio
+    - node.type.documento_pubblico
+    - taxonomy.vocabulary.documenti_albo_pretorio
+id: node.documento_pubblico.field_tipo_doc_albo_pretorio
+field_name: field_tipo_doc_albo_pretorio
+entity_type: node
+bundle: documento_pubblico
+label: 'Tipo Documento albo pretorio'
+description: 'solo se il documento è da albo pretorio'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      documenti_albo_pretorio: documenti_albo_pretorio
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

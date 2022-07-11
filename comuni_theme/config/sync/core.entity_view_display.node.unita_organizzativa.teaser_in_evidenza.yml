@@ -1,0 +1,58 @@
+uuid: 5f288dae-febb-4d5e-9b6b-798e0aa842dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza
+    - field.field.node.unita_organizzativa.field_allegati_doc_pubblico
+    - field.field.node.unita_organizzativa.field_altre_sedi
+    - field.field.node.unita_organizzativa.field_argomenti
+    - field.field.node.unita_organizzativa.field_competenze
+    - field.field.node.unita_organizzativa.field_contatti
+    - field.field.node.unita_organizzativa.field_descrizione_breve
+    - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
+    - field.field.node.unita_organizzativa.field_immagine
+    - field.field.node.unita_organizzativa.field_in_evidenza
+    - field.field.node.unita_organizzativa.field_persona
+    - field.field.node.unita_organizzativa.field_persone
+    - field.field.node.unita_organizzativa.field_persone_altre
+    - field.field.node.unita_organizzativa.field_sede_principale
+    - field.field.node.unita_organizzativa.field_sezione_amministrazione
+    - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
+    - field.field.node.unita_organizzativa.field_ulteriori_informazioni
+    - field.field.node.unita_organizzativa.field_unita_org_genitore
+    - node.type.unita_organizzativa
+  module:
+    - user
+id: node.unita_organizzativa.teaser_in_evidenza
+targetEntityType: node
+bundle: unita_organizzativa
+mode: teaser_in_evidenza
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_allegati_doc_pubblico: true
+  field_altre_sedi: true
+  field_argomenti: true
+  field_competenze: true
+  field_contatti: true
+  field_elenco_servizi_offerti: true
+  field_immagine: true
+  field_in_evidenza: true
+  field_persona: true
+  field_persone: true
+  field_persone_altre: true
+  field_sede_principale: true
+  field_sezione_amministrazione: true
+  field_tipo_di_organizzazione: true
+  field_ulteriori_informazioni: true
+  field_unita_org_genitore: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

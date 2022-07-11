@@ -1,0 +1,20 @@
+uuid: 7507a778-9d65-42a1-88c9-2c7e337962b7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_tipo_di_luogo
+field_name: field_tipo_di_luogo
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

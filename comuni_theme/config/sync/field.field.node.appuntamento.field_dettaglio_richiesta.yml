@@ -1,0 +1,21 @@
+uuid: 6030884b-522a-4523-beeb-44dff3e1a4b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dettaglio_richiesta
+    - node.type.appuntamento
+  module:
+    - text
+id: node.appuntamento.field_dettaglio_richiesta
+field_name: field_dettaglio_richiesta
+entity_type: node
+bundle: appuntamento
+label: 'Dettaglio richiesta'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

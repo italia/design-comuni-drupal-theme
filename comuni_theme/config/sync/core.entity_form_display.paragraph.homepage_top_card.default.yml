@@ -1,0 +1,44 @@
+uuid: 52f4a7d0-d09b-43ad-850b-4e63aa7bafab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.homepage_top_card.field_contenuto
+    - field.field.paragraph.homepage_top_card.field_link
+    - field.field.paragraph.homepage_top_card.field_mostra_immagine
+    - paragraphs.paragraphs_type.homepage_top_card
+  module:
+    - link
+id: paragraph.homepage_top_card.default
+targetEntityType: paragraph
+bundle: homepage_top_card
+mode: default
+content:
+  field_contenuto:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_mostra_immagine:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

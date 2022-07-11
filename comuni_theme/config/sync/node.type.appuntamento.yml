@@ -1,0 +1,18 @@
+uuid: f4b9ad83-7b4c-417d-8503-d30799aaa362
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Appuntamento
+type: appuntamento
+description: 'Struttura delle informazioni relative utili a presentare un appuntamento.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

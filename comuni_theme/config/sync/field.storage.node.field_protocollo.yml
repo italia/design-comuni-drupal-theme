@@ -1,0 +1,21 @@
+uuid: 9f377fc9-2765-4e83-a3df-33e659ba8a03
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_protocollo
+field_name: field_protocollo
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

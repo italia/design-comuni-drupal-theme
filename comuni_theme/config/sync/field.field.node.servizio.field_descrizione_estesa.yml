@@ -1,0 +1,21 @@
+uuid: 9ec54a59-4799-4968-ae75-1bd4afce78e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_estesa
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_descrizione_estesa
+field_name: field_descrizione_estesa
+entity_type: node
+bundle: servizio
+label: 'Descrizione estesa'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,29 @@
+uuid: 0ce2cd47-240b-4461-bbd2-a3d0a4202195
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_life_events
+    - node.type.documento_privato
+    - taxonomy.vocabulary.eventi_della_vita_delle_persone
+id: node.documento_privato.field_life_events
+field_name: field_life_events
+entity_type: node
+bundle: documento_privato
+label: 'Life Events'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eventi_della_vita_delle_persone: eventi_della_vita_delle_persone
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

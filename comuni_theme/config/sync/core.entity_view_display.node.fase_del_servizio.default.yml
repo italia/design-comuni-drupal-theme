@@ -1,0 +1,32 @@
+uuid: e6079e15-341c-4695-8aae-ac748df64f1f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.fase_del_servizio.field_data
+    - node.type.fase_del_servizio
+  module:
+    - datetime
+    - user
+id: node.fase_del_servizio.default
+targetEntityType: node
+bundle: fase_del_servizio
+mode: default
+content:
+  field_data:
+    type: datetime_default
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

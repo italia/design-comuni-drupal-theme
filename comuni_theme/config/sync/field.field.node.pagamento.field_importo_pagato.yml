@@ -1,0 +1,23 @@
+uuid: 8a9ef837-c462-478d-8216-2b69618be2ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_importo_pagato
+    - node.type.pagamento
+id: node.pagamento.field_importo_pagato
+field_name: field_importo_pagato
+entity_type: node
+bundle: pagamento
+label: 'Importo pagato'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

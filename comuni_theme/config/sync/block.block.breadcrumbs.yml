@@ -1,0 +1,24 @@
+uuid: 450158ea-a2c3-4dfa-8e13-3a03d14ad701
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - comuni_theme
+id: breadcrumbs
+theme: comuni_theme
+region: content
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*"

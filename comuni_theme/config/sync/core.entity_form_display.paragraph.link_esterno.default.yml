@@ -1,0 +1,32 @@
+uuid: dbee383d-4a22-4ce7-9041-ab46592c3a6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_esterno.field_titolo
+    - field.field.paragraph.link_esterno.field_url
+    - paragraphs.paragraphs_type.link_esterno
+id: paragraph.link_esterno.default
+targetEntityType: paragraph
+bundle: link_esterno
+mode: default
+content:
+  field_titolo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_url:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

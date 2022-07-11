@@ -1,0 +1,25 @@
+uuid: 82a42855-528f-44a5-a98f-a6d63920340e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ricerca_servizi.field_card_singola
+    - paragraphs.paragraphs_type.ricerca_servizi
+  module:
+    - entity_reference_revisions
+id: paragraph.ricerca_servizi.default
+targetEntityType: paragraph
+bundle: ricerca_servizi
+mode: default
+content:
+  field_card_singola:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

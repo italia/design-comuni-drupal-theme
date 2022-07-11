@@ -1,0 +1,29 @@
+uuid: 61c12d84-447a-46cc-9414-e580cb456904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_punti_di_contatto
+    - node.type.luogo
+    - node.type.punto_di_contatto
+id: node.luogo.field_punti_di_contatto
+field_name: field_punti_di_contatto
+entity_type: node
+bundle: luogo
+label: 'Punti di contatto'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      punto_di_contatto: punto_di_contatto
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

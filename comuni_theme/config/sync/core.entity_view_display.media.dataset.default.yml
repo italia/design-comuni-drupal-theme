@@ -1,0 +1,29 @@
+uuid: c1a2d15a-a2b5-4ff9-b0f2-859d42d88641
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.dataset.field_media_file
+    - media.type.dataset
+  module:
+    - file
+id: media.dataset.default
+targetEntityType: media
+bundle: dataset
+mode: default
+content:
+  field_media_file:
+    type: file_default
+    label: visually_hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  created: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true

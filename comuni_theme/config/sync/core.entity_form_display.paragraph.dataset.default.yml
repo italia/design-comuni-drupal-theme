@@ -1,0 +1,25 @@
+uuid: 936b51d8-07ab-413b-9211-3df8b107403f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.dataset.field_dataset
+    - paragraphs.paragraphs_type.dataset
+id: paragraph.dataset.default
+targetEntityType: paragraph
+bundle: dataset
+mode: default
+content:
+  field_dataset:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

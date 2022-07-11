@@ -1,0 +1,29 @@
+uuid: 27dd8482-509b-41d2-98a4-7805f3d0f709
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_immagine
+    - media.type.image
+    - node.type.persona
+id: node.persona.field_immagine
+field_name: field_immagine
+entity_type: node
+bundle: persona
+label: 'Foto della persona'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

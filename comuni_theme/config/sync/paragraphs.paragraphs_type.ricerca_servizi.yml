@@ -1,0 +1,10 @@
+uuid: 6e734dd4-4660-40b8-b0da-91e623c78e5c
+langcode: en
+status: true
+dependencies: {  }
+id: ricerca_servizi
+label: 'Ricerca Servizi'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

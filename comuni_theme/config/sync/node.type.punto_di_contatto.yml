@@ -1,0 +1,18 @@
+uuid: 3273eeb4-7ea4-479c-be9b-e292cfe45af0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Punto di contatto'
+type: punto_di_contatto
+description: 'Questa Tipologia descrive la struttura di un punto di contatto, che può essere fisico, virtuale o digitale.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

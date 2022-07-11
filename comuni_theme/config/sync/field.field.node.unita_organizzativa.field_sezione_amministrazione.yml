@@ -1,0 +1,29 @@
+uuid: eeb51f6e-acf4-4679-8fe5-5212efc7607e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sezione_amministrazione
+    - node.type.unita_organizzativa
+    - taxonomy.vocabulary.amministrazione
+id: node.unita_organizzativa.field_sezione_amministrazione
+field_name: field_sezione_amministrazione
+entity_type: node
+bundle: unita_organizzativa
+label: 'Sezione amministrazione'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      amministrazione: amministrazione
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

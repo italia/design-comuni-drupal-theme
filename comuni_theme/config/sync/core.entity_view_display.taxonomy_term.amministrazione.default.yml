@@ -1,0 +1,23 @@
+uuid: dd15e446-f6d4-4dc2-9deb-2c6406a8dada
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.amministrazione
+  module:
+    - text
+id: taxonomy_term.amministrazione.default
+targetEntityType: taxonomy_term
+bundle: amministrazione
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

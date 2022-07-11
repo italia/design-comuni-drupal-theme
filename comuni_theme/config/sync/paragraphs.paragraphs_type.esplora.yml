@@ -1,0 +1,10 @@
+uuid: b296c45f-63f7-4b91-8b65-071cd877baa8
+langcode: en
+status: true
+dependencies: {  }
+id: esplora
+label: Esplora
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

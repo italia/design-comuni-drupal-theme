@@ -1,0 +1,19 @@
+uuid: 2dd924cb-4134-4807-9e48-9863ac049bad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sottotitolo
+    - node.type.valutazione
+id: node.valutazione.field_sottotitolo
+field_name: field_sottotitolo
+entity_type: node
+bundle: valutazione
+label: Selezione
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

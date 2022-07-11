@@ -1,0 +1,19 @@
+uuid: 3f031b8d-0920-4e97-b08d-04da7351cb94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protocollo
+    - node.type.documento_privato
+id: node.documento_privato.field_protocollo
+field_name: field_protocollo
+entity_type: node
+bundle: documento_privato
+label: Protocollo
+description: 'Numero di protocollo del documento'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

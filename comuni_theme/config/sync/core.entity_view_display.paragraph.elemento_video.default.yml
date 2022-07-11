@@ -1,0 +1,51 @@
+uuid: 5aedb073-ee3a-4734-acd5-082253298276
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.elemento_video.field_didascalia
+    - field.field.paragraph.elemento_video.field_id_video_youtube
+    - field.field.paragraph.elemento_video.field_testo_introduttivo
+    - field.field.paragraph.elemento_video.field_titolo
+    - field.field.paragraph.elemento_video.field_video
+    - paragraphs.paragraphs_type.elemento_video
+  module:
+    - text
+id: paragraph.elemento_video.default
+targetEntityType: paragraph
+bundle: elemento_video
+mode: default
+content:
+  field_didascalia:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_id_video_youtube:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_testo_introduttivo:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_video: true
+  search_api_excerpt: true

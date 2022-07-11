@@ -1,0 +1,79 @@
+uuid: e679bddc-f16d-4d39-ac28-a4f39b273b0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.appuntamento.field_data_e_ora_fine_appuntam
+    - field.field.node.appuntamento.field_data_e_ora_inizio_appuntam
+    - field.field.node.appuntamento.field_data_e_ora_prenotazione
+    - field.field.node.appuntamento.field_dettaglio_richiesta
+    - field.field.node.appuntamento.field_nome
+    - field.field.node.appuntamento.field_sottotitolo
+    - node.type.appuntamento
+  module:
+    - datetime
+    - text
+    - user
+id: node.appuntamento.default
+targetEntityType: node
+bundle: appuntamento
+mode: default
+content:
+  field_data_e_ora_fine_appuntam:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_data_e_ora_inizio_appuntam:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_data_e_ora_prenotazione:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_dettaglio_richiesta:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_nome:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_sottotitolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

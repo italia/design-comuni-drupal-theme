@@ -1,0 +1,10 @@
+uuid: 7bf5befd-1ffc-4c04-a0ad-9d7f148dc61d
+langcode: en
+status: true
+dependencies: {  }
+id: ricerca
+label: Ricerca
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

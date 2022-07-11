@@ -1,0 +1,21 @@
+uuid: 86c6b50e-8102-4bc5-b70a-d19747e2ef18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_promemoria_scadenze
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_promemoria_scadenze
+field_name: field_promemoria_scadenze
+entity_type: node
+bundle: servizio
+label: 'Promemoria scadenze'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,10 @@
+uuid: da48d88b-649a-4ae5-8f13-e16b4b5e51ba
+langcode: en
+status: true
+dependencies: {  }
+id: punto_di_contatto
+label: 'Punto di contatto'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

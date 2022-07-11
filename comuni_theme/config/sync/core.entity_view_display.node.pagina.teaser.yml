@@ -1,0 +1,25 @@
+uuid: c4c08908-4d9a-4814-8139-f33e1f762269
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pagina.field_componenti
+    - node.type.pagina
+  module:
+    - user
+id: node.pagina.teaser
+targetEntityType: node
+bundle: pagina
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_componenti: true
+  field_intestazione: true
+  langcode: true
+  search_api_excerpt: true

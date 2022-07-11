@@ -1,0 +1,19 @@
+uuid: 9ab1f8af-8769-444e-a974-f6768afde355
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.argomenti_in_evidenza_card
+id: paragraph.argomenti_in_evidenza_card.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: argomenti_in_evidenza_card
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

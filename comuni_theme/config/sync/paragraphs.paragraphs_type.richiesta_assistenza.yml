@@ -1,0 +1,10 @@
+uuid: 2499a59e-3ea5-4683-8d39-d998f498db30
+langcode: en
+status: true
+dependencies: {  }
+id: richiesta_assistenza
+label: 'Richiesta assistenza'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

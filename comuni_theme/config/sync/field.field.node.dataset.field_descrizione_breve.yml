@@ -1,0 +1,19 @@
+uuid: 6f7881bb-a08d-490a-95db-c6f6d4c98334
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.dataset
+id: node.dataset.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: dataset
+label: 'Descrizione breve'
+description: 'Descrizione del dataset. Si raccomanda di fornire una breve descrizione dei contenuti principali del dataset. Evitare di utilizzare un linguaggio ricco di riferimenti normativi. '
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,10 @@
+uuid: 5d09c23d-e246-4d54-ae5b-cf68af2216c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.social_header
+label: 'Social Header'
+targetEntityType: paragraph
+cache: true

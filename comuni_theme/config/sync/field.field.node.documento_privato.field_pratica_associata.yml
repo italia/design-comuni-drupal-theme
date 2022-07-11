@@ -1,0 +1,29 @@
+uuid: fd070797-96bf-417a-b566-6463a68ecacc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pratica_associata
+    - node.type.documento_privato
+    - node.type.pratica
+id: node.documento_privato.field_pratica_associata
+field_name: field_pratica_associata
+entity_type: node
+bundle: documento_privato
+label: 'Pratica associata'
+description: 'Eventuale pratica associata al documento'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      pratica: pratica
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

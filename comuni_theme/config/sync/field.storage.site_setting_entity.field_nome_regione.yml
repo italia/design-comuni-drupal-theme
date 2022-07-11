@@ -1,0 +1,21 @@
+uuid: ac944d97-018b-4455-a1da-88d592eca8fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.field_nome_regione
+field_name: field_nome_regione
+entity_type: site_setting_entity
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,40 @@
+uuid: 54201f7d-5ed4-4f40-8159-f0c7cb699cb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.dataset.field_descrizione_breve
+    - field.field.node.dataset.field_distribuzione
+    - field.field.node.dataset.field_frequenza_di_aggiornamento
+    - field.field.node.dataset.field_licenza
+    - field.field.node.dataset.field_sezione_amministrazione
+    - field.field.node.dataset.field_temi
+    - field.field.node.dataset.field_titolare
+    - field.field.node.dataset.field_ultima_modifica
+    - field.field.node.dataset.field_url_dataset
+    - node.type.dataset
+  module:
+    - user
+id: node.dataset.teaser
+targetEntityType: node
+bundle: dataset
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_descrizione_breve: true
+  field_distribuzione: true
+  field_frequenza_di_aggiornamento: true
+  field_licenza: true
+  field_sezione_amministrazione: true
+  field_temi: true
+  field_titolare: true
+  field_ultima_modifica: true
+  field_url_dataset: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: b5888ab5-bb4a-4e83-a649-655a5ffe8a13
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tipo_punto_di_contatto
+    - paragraphs.paragraphs_type.punto_di_contatto
+    - taxonomy.vocabulary.tipi_punto_di_contatto
+id: paragraph.punto_di_contatto.field_tipo_punto_di_contatto
+field_name: field_tipo_punto_di_contatto
+entity_type: paragraph
+bundle: punto_di_contatto
+label: 'Tipo punto di contatto'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_punto_di_contatto: tipi_punto_di_contatto
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

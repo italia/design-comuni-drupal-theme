@@ -1,0 +1,21 @@
+uuid: 72f4c01a-cfc6-404b-a6a9-8cb617a2421f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ulteriori_informazioni
+    - node.type.notizia
+  module:
+    - text
+id: node.notizia.field_ulteriori_informazioni
+field_name: field_ulteriori_informazioni
+entity_type: node
+bundle: notizia
+label: 'Ulteriori informazioni'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

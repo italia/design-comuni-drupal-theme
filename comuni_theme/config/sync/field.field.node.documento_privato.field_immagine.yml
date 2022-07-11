@@ -1,0 +1,29 @@
+uuid: 9f87ad7e-7ae2-4423-9c6a-42c27a55ad9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_immagine
+    - media.type.image
+    - node.type.documento_privato
+id: node.documento_privato.field_immagine
+field_name: field_immagine
+entity_type: node
+bundle: documento_privato
+label: Immagine
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

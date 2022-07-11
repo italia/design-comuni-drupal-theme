@@ -1,0 +1,21 @@
+uuid: 006a9b9c-a311-48ac-9bea-f46aee37165b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_didascalia
+    - paragraphs.paragraphs_type.elemento_video
+  module:
+    - text
+id: paragraph.elemento_video.field_didascalia
+field_name: field_didascalia
+entity_type: paragraph
+bundle: elemento_video
+label: Didascalia
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

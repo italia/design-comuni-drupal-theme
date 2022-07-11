@@ -1,0 +1,23 @@
+uuid: 3b4b12b9-9d22-45ff-89b8-5f92c0ef748b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.valutazione
+  module:
+    - text
+id: node.valutazione.body
+field_name: body
+entity_type: node
+bundle: valutazione
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

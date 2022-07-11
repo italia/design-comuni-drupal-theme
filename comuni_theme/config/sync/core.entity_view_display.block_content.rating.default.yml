@@ -1,0 +1,24 @@
+uuid: 1712df75-9e21-41ab-889e-b9aa9896c7f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.rating
+    - field.field.block_content.rating.body
+  module:
+    - text
+id: block_content.rating.default
+targetEntityType: block_content
+bundle: rating
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

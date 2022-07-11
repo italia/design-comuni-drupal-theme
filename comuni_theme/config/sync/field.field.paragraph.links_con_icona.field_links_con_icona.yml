@@ -1,0 +1,121 @@
+uuid: 128719e3-e567-4bb7-b1f8-d55ff8a86e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links_con_icona
+    - paragraphs.paragraphs_type.link_con_icona
+    - paragraphs.paragraphs_type.links_con_icona
+  module:
+    - entity_reference_revisions
+id: paragraph.links_con_icona.field_links_con_icona
+field_name: field_links_con_icona
+entity_type: paragraph
+bundle: links_con_icona
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      link_con_icona: link_con_icona
+    negate: 0
+    target_bundles_drag_drop:
+      argomenti_in_evidenza_card:
+        weight: 32
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 33
+        enabled: false
+      calendario:
+        weight: 34
+        enabled: false
+      card_assistenza_e_contatti:
+        weight: 36
+        enabled: false
+      card_contenuto:
+        weight: 37
+        enabled: false
+      cards_contenuto:
+        weight: 35
+        enabled: false
+      collection_multimediale:
+        weight: 38
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 39
+        enabled: false
+      colore:
+        weight: 40
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 41
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 42
+        enabled: false
+      container_calendario:
+        weight: 43
+        enabled: false
+      documento:
+        weight: 44
+        enabled: false
+      elemento_immagine:
+        weight: 45
+        enabled: false
+      elemento_video:
+        weight: 46
+        enabled: false
+      fase_intitolata:
+        weight: 47
+        enabled: false
+      homepage_card_argomento:
+        weight: 48
+        enabled: false
+      homepage_top_card:
+        weight: 49
+        enabled: false
+      homepage_top_cards:
+        weight: 50
+        enabled: false
+      icona_content_type:
+        weight: 51
+        enabled: false
+      link:
+        weight: 52
+        enabled: false
+      link_con_icona:
+        weight: 55
+        enabled: true
+      link_con_immagine_e_colore:
+        weight: 56
+        enabled: false
+      links:
+        weight: 53
+        enabled: false
+      links_con_icona:
+        weight: 54
+        enabled: false
+      ricerca:
+        weight: 57
+        enabled: false
+      siti_tematici:
+        weight: 58
+        enabled: false
+      social:
+        weight: 59
+        enabled: false
+      testo_e_lista:
+        weight: 60
+        enabled: false
+      titolo_e_descrizione:
+        weight: 61
+        enabled: false
+      ultima_notizia:
+        weight: 62
+        enabled: false
+field_type: entity_reference_revisions

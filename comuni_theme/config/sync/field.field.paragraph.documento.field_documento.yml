@@ -1,0 +1,29 @@
+uuid: 012c08a5-756c-4690-938b-b81644463cc2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_documento
+    - media.type.document
+    - paragraphs.paragraphs_type.documento
+id: paragraph.documento.field_documento
+field_name: field_documento
+entity_type: paragraph
+bundle: documento
+label: Documento
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

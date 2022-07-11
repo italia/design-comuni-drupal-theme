@@ -1,0 +1,21 @@
+uuid: fffd13ff-6636-4ec1-854b-a84943bca415
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_icona
+    - paragraphs.paragraphs_type.link_con_icona
+  module:
+    - fontawesome
+id: paragraph.link_con_icona.field_icona
+field_name: field_icona
+entity_type: paragraph
+bundle: link_con_icona
+label: Icona
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

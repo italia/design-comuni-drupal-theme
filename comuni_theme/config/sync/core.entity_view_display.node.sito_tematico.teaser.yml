@@ -1,0 +1,30 @@
+uuid: 74b1d4b0-1b72-4c4b-8587-49ae621260c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.sito_tematico.field_colore
+    - field.field.node.sito_tematico.field_descrizione_breve
+    - field.field.node.sito_tematico.field_immagine
+    - field.field.node.sito_tematico.field_link
+    - node.type.sito_tematico
+  module:
+    - user
+id: node.sito_tematico.teaser
+targetEntityType: node
+bundle: sito_tematico
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_colore: true
+  field_descrizione_breve: true
+  field_immagine: true
+  field_link: true
+  langcode: true
+  search_api_excerpt: true

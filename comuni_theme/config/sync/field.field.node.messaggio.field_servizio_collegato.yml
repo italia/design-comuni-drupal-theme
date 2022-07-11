@@ -1,0 +1,29 @@
+uuid: 1726b2fa-4bbe-48c7-975f-49a52697f2c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servizio_collegato
+    - node.type.messaggio
+    - node.type.servizio
+id: node.messaggio.field_servizio_collegato
+field_name: field_servizio_collegato
+entity_type: node
+bundle: messaggio
+label: 'Servizio collegato'
+description: 'Se il messaggio non è collegato a una pratica è possibile indicare il servizio che ha generato il messaggio'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      servizio: servizio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

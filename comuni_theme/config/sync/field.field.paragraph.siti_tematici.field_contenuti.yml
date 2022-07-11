@@ -1,0 +1,29 @@
+uuid: 6f95c64f-fdcf-4c36-997c-67848a142388
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti
+    - node.type.sito_tematico
+    - paragraphs.paragraphs_type.siti_tematici
+id: paragraph.siti_tematici.field_contenuti
+field_name: field_contenuti
+entity_type: paragraph
+bundle: siti_tematici
+label: contenuti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      sito_tematico: sito_tematico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

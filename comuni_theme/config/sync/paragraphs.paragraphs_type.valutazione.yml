@@ -1,0 +1,10 @@
+uuid: c2ae3b02-d54a-4722-848b-2c2a67a479a4
+langcode: en
+status: true
+dependencies: {  }
+id: valutazione
+label: Valutazione
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: d8ab760f-dba4-4556-af74-96f7a02d082f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_in_evidenza
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa.field_in_evidenza
+field_name: field_in_evidenza
+entity_type: node
+bundle: unita_organizzativa
+label: 'In Evidenza'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

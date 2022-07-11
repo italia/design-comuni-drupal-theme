@@ -1,0 +1,19 @@
+uuid: 89cc5c63-f79e-4f19-8152-d83d9696dd25
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,35 @@
+uuid: 20472ed3-3a7e-41f1-b6ee-2444a5a12153
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ricerca.field_label
+    - field.field.paragraph.ricerca.field_links
+    - paragraphs.paragraphs_type.ricerca
+  module:
+    - link
+id: paragraph.ricerca.default
+targetEntityType: paragraph
+bundle: ricerca
+mode: default
+content:
+  field_label:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_links:
+    type: link_default
+    weight: 1
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_suggeriti: true
+  status: true

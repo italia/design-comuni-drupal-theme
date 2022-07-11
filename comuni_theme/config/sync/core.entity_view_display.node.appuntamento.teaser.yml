@@ -1,0 +1,34 @@
+uuid: 7b50f601-f2c7-42bf-9aa9-e3a234333e21
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.appuntamento.field_data_e_ora_fine_appuntam
+    - field.field.node.appuntamento.field_data_e_ora_inizio_appuntam
+    - field.field.node.appuntamento.field_data_e_ora_prenotazione
+    - field.field.node.appuntamento.field_dettaglio_richiesta
+    - field.field.node.appuntamento.field_nome
+    - field.field.node.appuntamento.field_sottotitolo
+    - node.type.appuntamento
+  module:
+    - user
+id: node.appuntamento.teaser
+targetEntityType: node
+bundle: appuntamento
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_data_e_ora_fine_appuntam: true
+  field_data_e_ora_inizio_appuntam: true
+  field_data_e_ora_prenotazione: true
+  field_dettaglio_richiesta: true
+  field_nome: true
+  field_sottotitolo: true
+  langcode: true
+  search_api_excerpt: true

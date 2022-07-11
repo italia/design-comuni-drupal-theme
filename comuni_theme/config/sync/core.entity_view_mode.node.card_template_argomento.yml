@@ -1,0 +1,10 @@
+uuid: 3903dc47-2d15-408b-87fb-98aa2b6a7d67
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card_template_argomento
+label: 'Card template argomento'
+targetEntityType: node
+cache: true

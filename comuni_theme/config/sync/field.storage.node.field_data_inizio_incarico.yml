@@ -1,0 +1,20 @@
+uuid: 8843e968-3a5c-408e-aeec-63217a3ef92e
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_data_inizio_incarico
+field_name: field_data_inizio_incarico
+entity_type: node
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,177 @@
+uuid: 8dcedea9-eace-4f84-b138-3f6bcac81618
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_dettaglio_notizia
+    - field.field.node.unita_organizzativa.field_allegati_doc_pubblico
+    - field.field.node.unita_organizzativa.field_altre_sedi
+    - field.field.node.unita_organizzativa.field_argomenti
+    - field.field.node.unita_organizzativa.field_competenze
+    - field.field.node.unita_organizzativa.field_contatti
+    - field.field.node.unita_organizzativa.field_descrizione_breve
+    - field.field.node.unita_organizzativa.field_elenco_servizi_offerti
+    - field.field.node.unita_organizzativa.field_immagine
+    - field.field.node.unita_organizzativa.field_in_evidenza
+    - field.field.node.unita_organizzativa.field_persona
+    - field.field.node.unita_organizzativa.field_persone
+    - field.field.node.unita_organizzativa.field_persone_altre
+    - field.field.node.unita_organizzativa.field_sede_principale
+    - field.field.node.unita_organizzativa.field_sezione_amministrazione
+    - field.field.node.unita_organizzativa.field_tipo_di_organizzazione
+    - field.field.node.unita_organizzativa.field_ulteriori_informazioni
+    - field.field.node.unita_organizzativa.field_unita_org_genitore
+    - node.type.unita_organizzativa
+  module:
+    - text
+    - user
+id: node.unita_organizzativa.teaser_dettaglio_notizia
+targetEntityType: node
+bundle: unita_organizzativa
+mode: teaser_dettaglio_notizia
+content:
+  field_allegati_doc_pubblico:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_altre_sedi:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_competenze:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_contatti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_elenco_servizi_offerti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_in_evidenza:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_persona:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_persone:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_persone_altre:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  field_sede_principale:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_sezione_amministrazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_tipo_di_organizzazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_unita_org_genitore:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

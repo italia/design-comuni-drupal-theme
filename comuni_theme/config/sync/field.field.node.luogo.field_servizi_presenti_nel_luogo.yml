@@ -1,0 +1,21 @@
+uuid: cb61a019-f4bb-4d32-813a-268749417994
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servizi_presenti_nel_luogo
+    - node.type.luogo
+  module:
+    - text
+id: node.luogo.field_servizi_presenti_nel_luogo
+field_name: field_servizi_presenti_nel_luogo
+entity_type: node
+bundle: luogo
+label: 'Servizi presenti nel luogo'
+description: 'Se il luogo presenta servizi di carattere privato, descrizione testuale del servizio e link esterno al servizio. Se il luogo è sede di unità organizzativa abbiamo i servizi collegati all''unità organizzativa'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

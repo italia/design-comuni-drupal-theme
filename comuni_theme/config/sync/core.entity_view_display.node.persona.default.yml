@@ -1,0 +1,194 @@
+uuid: 88ed6de5-df18-4bb6-b716-a102161fa491
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.persona.field_altre_cariche
+    - field.field.node.persona.field_biografia
+    - field.field.node.persona.field_cognome
+    - field.field.node.persona.field_competenze
+    - field.field.node.persona.field_curriculum_vitae
+    - field.field.node.persona.field_deleghe
+    - field.field.node.persona.field_descrizione_breve
+    - field.field.node.persona.field_dichiarazione_dei_redditi
+    - field.field.node.persona.field_galleria_immagini
+    - field.field.node.persona.field_immagine
+    - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_nome
+    - field.field.node.persona.field_organizzazioni
+    - field.field.node.persona.field_punti_di_contatto
+    - field.field.node.persona.field_sezione_amministrazione
+    - field.field.node.persona.field_situazione_patrimoniale
+    - field.field.node.persona.field_spese_elettorali
+    - field.field.node.persona.field_ulteriori_informazioni
+    - field.field.node.persona.field_v_situazione_patrimoniale
+    - node.type.persona
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.persona.default
+targetEntityType: node
+bundle: persona
+mode: default
+content:
+  field_altre_cariche:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 17
+    region: content
+  field_biografia:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_cognome:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_competenze:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_curriculum_vitae:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 11
+    region: content
+  field_deleghe:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_dichiarazione_dei_redditi:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_galleria_immagini:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 20
+    region: content
+  field_immagine:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_incarichi:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_nome:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_organizzazioni:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_punti_di_contatto:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 19
+    region: content
+  field_sezione_amministrazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
+  field_situazione_patrimoniale:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 12
+    region: content
+  field_spese_elettorali:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 13
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
+    region: content
+  field_v_situazione_patrimoniale:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 15
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

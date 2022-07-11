@@ -1,0 +1,22 @@
+uuid: d5c23c57-2ef1-4f8d-864a-591fe439e160
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: pratica
+label: Pratica
+type: 'canonical_entities:node'
+pattern: '/pratica/[node:title]'
+selection_criteria:
+  35652064-06e1-47e2-9f21-8c24a656fc4c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 35652064-06e1-47e2-9f21-8c24a656fc4c
+    context_mapping:
+      node: node
+    bundles:
+      pratica: pratica
+selection_logic: and
+weight: -5
+relationships: {  }

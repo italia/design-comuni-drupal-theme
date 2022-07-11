@@ -1,0 +1,19 @@
+uuid: 40cce3bc-1c78-411e-8487-450c7bb76c27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.sito_tematico
+id: node.sito_tematico.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: sito_tematico
+label: 'Descrizione breve'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

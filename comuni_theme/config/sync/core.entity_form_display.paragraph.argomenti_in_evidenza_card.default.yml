@@ -1,0 +1,45 @@
+uuid: be9ce6e8-1abd-4f23-95e2-05cfdf487e71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.argomenti_in_evidenza_card.field_argomento
+    - field.field.paragraph.argomenti_in_evidenza_card.field_contenuto
+    - field.field.paragraph.argomenti_in_evidenza_card.field_label
+    - paragraphs.paragraphs_type.argomenti_in_evidenza_card
+id: paragraph.argomenti_in_evidenza_card.default
+targetEntityType: paragraph
+bundle: argomenti_in_evidenza_card
+mode: default
+content:
+  field_argomento:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contenuto:
+    type: entity_reference_autocomplete
+    weight: 4
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_label:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

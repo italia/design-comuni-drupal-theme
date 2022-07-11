@@ -1,0 +1,21 @@
+uuid: 78d8882a-fcae-494d-a388-afbaf027f902
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_della_notizia
+    - node.type.notizia
+  module:
+    - datetime
+id: node.notizia.field_data_della_notizia
+field_name: field_data_della_notizia
+entity_type: node
+bundle: notizia
+label: 'Data della notizia'
+description: 'Data di pubblicazione della notizia'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

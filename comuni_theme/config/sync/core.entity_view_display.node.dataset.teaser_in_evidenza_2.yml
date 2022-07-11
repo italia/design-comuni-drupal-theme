@@ -1,0 +1,106 @@
+uuid: 9a4786bd-d408-48a5-8c86-6660485358ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza_2
+    - field.field.node.dataset.field_descrizione_breve
+    - field.field.node.dataset.field_distribuzione
+    - field.field.node.dataset.field_frequenza_di_aggiornamento
+    - field.field.node.dataset.field_licenza
+    - field.field.node.dataset.field_sezione_amministrazione
+    - field.field.node.dataset.field_temi
+    - field.field.node.dataset.field_titolare
+    - field.field.node.dataset.field_ultima_modifica
+    - field.field.node.dataset.field_url_dataset
+    - node.type.dataset
+  module:
+    - datetime
+    - entity_reference_revisions
+    - text
+    - user
+id: node.dataset.teaser_in_evidenza_2
+targetEntityType: node
+bundle: dataset
+mode: teaser_in_evidenza_2
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_distribuzione:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_frequenza_di_aggiornamento:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_licenza:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_sezione_amministrazione:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_temi:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_titolare:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_ultima_modifica:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_url_dataset:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

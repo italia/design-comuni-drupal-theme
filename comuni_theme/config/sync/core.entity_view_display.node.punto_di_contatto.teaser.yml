@@ -1,0 +1,29 @@
+uuid: b07ce721-74ca-4bbe-8104-cfa42aeba042
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.punto_di_contatto.field_persona
+    - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
+    - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
+    - node.type.punto_di_contatto
+  module:
+    - user
+id: node.punto_di_contatto.teaser
+targetEntityType: node
+bundle: punto_di_contatto
+mode: teaser
+content:
+  sharing_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_persona: true
+  field_tipo_punto_di_contatto: true
+  field_valore_punto_di_contatto: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 99ce910b-0d84-4412-8847-cb6e21b59ce5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: persona
+label: Persona
+type: 'canonical_entities:node'
+pattern: '/persona/[node:title]'
+selection_criteria:
+  4e6da197-1114-4341-a207-7df6f363dfc6:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 4e6da197-1114-4341-a207-7df6f363dfc6
+    context_mapping:
+      node: node
+    bundles:
+      persona: persona
+selection_logic: and
+weight: -5
+relationships: {  }

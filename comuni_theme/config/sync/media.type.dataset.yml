@@ -1,0 +1,13 @@
+uuid: 677a610f-a003-4ecf-856f-ca50697ceaef
+langcode: en
+status: true
+dependencies: {  }
+id: dataset
+label: Dataset
+description: ''
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map: {  }

@@ -1,0 +1,35 @@
+uuid: 46dbeda8-13f5-450c-916d-54684ef48632
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti
+    - node.type.dataset
+    - node.type.documento_pubblico
+    - node.type.persona
+    - node.type.unita_organizzativa
+    - paragraphs.paragraphs_type.amministrazione_ref_in_evidenza
+id: paragraph.amministrazione_ref_in_evidenza.field_contenuti
+field_name: field_contenuti
+entity_type: paragraph
+bundle: amministrazione_ref_in_evidenza
+label: Contenuti
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dataset: dataset
+      documento_pubblico: documento_pubblico
+      persona: persona
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: dataset
+field_type: entity_reference

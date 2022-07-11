@@ -1,0 +1,23 @@
+uuid: 1010ebcc-68b1-452d-84e8-07039ff72dd6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ultima_notizia.field_contenuto
+    - paragraphs.paragraphs_type.ultima_notizia
+id: paragraph.ultima_notizia.default
+targetEntityType: paragraph
+bundle: ultima_notizia
+mode: default
+content:
+  field_contenuto:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,36 @@
+uuid: b5c3b3e7-b6eb-4465-aa09-b1d6d4ae328c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.messaggio.field_data_del_messaggio
+    - field.field.node.messaggio.field_data_scadenza
+    - field.field.node.messaggio.field_doc_privati_collegati
+    - field.field.node.messaggio.field_doc_pubblici_collegati
+    - field.field.node.messaggio.field_pratica_associata
+    - field.field.node.messaggio.field_servizio_collegato
+    - field.field.node.messaggio.field_testo_del_messaggio
+    - node.type.messaggio
+  module:
+    - user
+id: node.messaggio.teaser
+targetEntityType: node
+bundle: messaggio
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_data_del_messaggio: true
+  field_data_scadenza: true
+  field_doc_privati_collegati: true
+  field_doc_pubblici_collegati: true
+  field_pratica_associata: true
+  field_servizio_collegato: true
+  field_testo_del_messaggio: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,29 @@
+uuid: c97f7fc4-fbea-4210-a5d5-49c5bd8acff3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documenti_personali
+    - node.type.documento_privato
+    - node.type.pagamento
+id: node.pagamento.field_documenti_personali
+field_name: field_documenti_personali
+entity_type: node
+bundle: pagamento
+label: 'Documenti personali'
+description: 'Eventuali documenti personali allegati'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_privato: documento_privato
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

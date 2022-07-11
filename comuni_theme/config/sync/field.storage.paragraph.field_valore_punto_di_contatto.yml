@@ -1,0 +1,19 @@
+uuid: e0f4f67b-dac8-4721-b136-d6fc67624338
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_valore_punto_di_contatto
+field_name: field_valore_punto_di_contatto
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

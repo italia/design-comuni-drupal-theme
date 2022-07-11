@@ -1,0 +1,29 @@
+uuid: 7b2ac885-b7c9-411b-ae11-c6f4d54c1abc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_business_events
+    - node.type.servizio
+    - taxonomy.vocabulary.eventi_della_vita_di_un_impresa
+id: node.servizio.field_business_events
+field_name: field_business_events
+entity_type: node
+bundle: servizio
+label: 'Business Events'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      eventi_della_vita_di_un_impresa: eventi_della_vita_di_un_impresa
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: 80bd3d6c-2323-4c3c-8a57-554a422d5b94
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data
+    - node.type.fase_del_servizio
+  module:
+    - datetime
+id: node.fase_del_servizio.field_data
+field_name: field_data
+entity_type: node
+bundle: fase_del_servizio
+label: Data
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

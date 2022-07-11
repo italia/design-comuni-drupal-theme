@@ -1,0 +1,19 @@
+uuid: 9c4fe2e5-d055-460c-ac6e-fbb1aecb5c2c
+langcode: en
+status: true
+dependencies:
+  module:
+    - site_settings
+    - text
+id: site_setting_entity.field_amministrazione_trasparent
+field_name: field_amministrazione_trasparent
+entity_type: site_setting_entity
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

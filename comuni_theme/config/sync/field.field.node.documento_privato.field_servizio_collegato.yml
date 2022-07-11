@@ -1,0 +1,29 @@
+uuid: c43a0170-500b-4d06-b84c-1537fc1cab0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servizio_collegato
+    - node.type.documento_privato
+    - node.type.servizio
+id: node.documento_privato.field_servizio_collegato
+field_name: field_servizio_collegato
+entity_type: node
+bundle: documento_privato
+label: 'Servizio collegato'
+description: 'Se il documento non è collegato a una pratica è possibile indicare il servizio che ha generato il documento'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      servizio: servizio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

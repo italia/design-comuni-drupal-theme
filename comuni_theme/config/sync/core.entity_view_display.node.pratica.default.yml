@@ -1,0 +1,93 @@
+uuid: bea9ab0d-6960-44ac-8f9a-0f53185e2e4c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.pratica.field_argomenti
+    - field.field.node.pratica.field_descrizione_completa
+    - field.field.node.pratica.field_doc_privati_collegati
+    - field.field.node.pratica.field_doc_pubblici_collegati
+    - field.field.node.pratica.field_numero_di_protocollo
+    - field.field.node.pratica.field_servizio_origina_pratica
+    - field.field.node.pratica.field_stato_della_pratica
+    - field.field.node.pratica.field_ufficio_di_riferimento
+    - node.type.pratica
+  module:
+    - text
+    - user
+id: node.pratica.default
+targetEntityType: node
+bundle: pratica
+mode: default
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_doc_privati_collegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_doc_pubblici_collegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_numero_di_protocollo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_servizio_origina_pratica:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_stato_della_pratica:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_ufficio_di_riferimento:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

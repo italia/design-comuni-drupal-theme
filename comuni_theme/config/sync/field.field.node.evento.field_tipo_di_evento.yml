@@ -1,0 +1,29 @@
+uuid: d0e967c9-5386-4b3a-9e42-c3de602e3ff2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tipo_di_evento
+    - node.type.evento
+    - taxonomy.vocabulary.tipi_di_evento
+id: node.evento.field_tipo_di_evento
+field_name: field_tipo_di_evento
+entity_type: node
+bundle: evento
+label: 'Tipo di evento'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_evento: tipi_di_evento
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

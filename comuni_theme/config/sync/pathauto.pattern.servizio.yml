@@ -1,0 +1,22 @@
+uuid: ee0ab787-63cb-4aaa-bceb-ce459dd19eb7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: servizio
+label: Servizio
+type: 'canonical_entities:node'
+pattern: '/servizi/[node:title]'
+selection_criteria:
+  3c3924ac-3793-4fd0-bf26-49d864e01f3a:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 3c3924ac-3793-4fd0-bf26-49d864e01f3a
+    context_mapping:
+      node: node
+    bundles:
+      servizio: servizio
+selection_logic: and
+weight: -5
+relationships: {  }

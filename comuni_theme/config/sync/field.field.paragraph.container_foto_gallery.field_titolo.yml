@@ -1,0 +1,19 @@
+uuid: fa301175-5a78-4bcc-8337-4cfa3da4c786
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.container_foto_gallery
+id: paragraph.container_foto_gallery.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: container_foto_gallery
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

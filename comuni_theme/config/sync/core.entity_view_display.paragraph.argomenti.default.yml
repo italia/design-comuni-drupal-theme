@@ -1,0 +1,22 @@
+uuid: a08528ba-a058-4a2e-9c16-b734c33f1e29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.argomenti.field_titolo
+    - paragraphs.paragraphs_type.argomenti
+id: paragraph.argomenti.default
+targetEntityType: paragraph
+bundle: argomenti
+mode: default
+content:
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

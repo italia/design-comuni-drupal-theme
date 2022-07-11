@@ -1,0 +1,31 @@
+uuid: 11bee3e0-696d-436b-8e0b-d2d64be89cda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_preferiti
+    - paragraphs.paragraphs_type.intestazione_ricerca_e_preferiti
+    - taxonomy.vocabulary.argomenti
+    - taxonomy.vocabulary.tipi_di_documento
+id: paragraph.intestazione_ricerca_e_preferiti.field_preferiti
+field_name: field_preferiti
+entity_type: paragraph
+bundle: intestazione_ricerca_e_preferiti
+label: Preferiti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      argomenti: argomenti
+      tipi_di_documento: tipi_di_documento
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: argomenti
+field_type: entity_reference

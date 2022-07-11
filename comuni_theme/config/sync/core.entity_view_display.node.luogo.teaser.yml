@@ -1,0 +1,68 @@
+uuid: 6c7ad66e-1387-4452-8ea4-3ad807ae9b23
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.luogo.field_argomenti
+    - field.field.node.luogo.field_cap
+    - field.field.node.luogo.field_circoscrizione
+    - field.field.node.luogo.field_descrizione_breve
+    - field.field.node.luogo.field_descrizione_estesa
+    - field.field.node.luogo.field_galleria_immagini
+    - field.field.node.luogo.field_gps_latitude
+    - field.field.node.luogo.field_gps_longitude
+    - field.field.node.luogo.field_identificativo
+    - field.field.node.luogo.field_immagine
+    - field.field.node.luogo.field_indirizzo
+    - field.field.node.luogo.field_luoghi_collegati
+    - field.field.node.luogo.field_modalita_di_accesso
+    - field.field.node.luogo.field_nome_alternativo
+    - field.field.node.luogo.field_orario_per_il_pubblico
+    - field.field.node.luogo.field_punti_di_contatto
+    - field.field.node.luogo.field_quartiere
+    - field.field.node.luogo.field_sede_di
+    - field.field.node.luogo.field_servizi_presenti_nel_luogo
+    - field.field.node.luogo.field_struttura_responsabile
+    - field.field.node.luogo.field_tipo_di_luogo
+    - field.field.node.luogo.field_ulteriori_informazioni
+    - field.field.node.luogo.field_video_esterno
+    - node.type.luogo
+  module:
+    - user
+id: node.luogo.teaser
+targetEntityType: node
+bundle: luogo
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_argomenti: true
+  field_cap: true
+  field_circoscrizione: true
+  field_descrizione_breve: true
+  field_descrizione_estesa: true
+  field_galleria_immagini: true
+  field_gps_latitude: true
+  field_gps_longitude: true
+  field_identificativo: true
+  field_immagine: true
+  field_indirizzo: true
+  field_luoghi_collegati: true
+  field_modalita_di_accesso: true
+  field_nome_alternativo: true
+  field_orario_per_il_pubblico: true
+  field_punti_di_contatto: true
+  field_quartiere: true
+  field_sede_di: true
+  field_servizi_presenti_nel_luogo: true
+  field_struttura_responsabile: true
+  field_tipo_di_luogo: true
+  field_ulteriori_informazioni: true
+  field_video_esterno: true
+  langcode: true
+  search_api_excerpt: true

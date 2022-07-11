@@ -1,0 +1,94 @@
+uuid: cb6dd5cb-904d-4d27-aa03-4f6aa85c8727
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.notizia.field_a_cura_di
+    - field.field.node.notizia.field_allegati
+    - field.field.node.notizia.field_argomenti
+    - field.field.node.notizia.field_data_della_notizia
+    - field.field.node.notizia.field_data_di_scadenza
+    - field.field.node.notizia.field_dataset
+    - field.field.node.notizia.field_descrizione_breve
+    - field.field.node.notizia.field_documenti
+    - field.field.node.notizia.field_galleria_immagini
+    - field.field.node.notizia.field_immagine
+    - field.field.node.notizia.field_luoghi
+    - field.field.node.notizia.field_numero_comunicato_stampa
+    - field.field.node.notizia.field_persone
+    - field.field.node.notizia.field_testo_completo_notizia
+    - field.field.node.notizia.field_tipo_di_notizia
+    - field.field.node.notizia.field_ulteriori_informazioni
+    - field.field.node.notizia.field_video_esterno
+    - node.type.notizia
+  module:
+    - datetime
+    - text
+    - user
+id: node.notizia.teaser
+targetEntityType: node
+bundle: notizia
+mode: teaser
+content:
+  field_argomenti:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_data_della_notizia:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_immagine:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_testo_completo_notizia:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  field_a_cura_di: true
+  field_allegati: true
+  field_data_di_scadenza: true
+  field_dataset: true
+  field_documenti: true
+  field_galleria_immagini: true
+  field_luoghi: true
+  field_numero_comunicato_stampa: true
+  field_persone: true
+  field_tipo_di_notizia: true
+  field_ulteriori_informazioni: true
+  field_video_esterno: true
+  langcode: true
+  reading_time: true
+  search_api_excerpt: true

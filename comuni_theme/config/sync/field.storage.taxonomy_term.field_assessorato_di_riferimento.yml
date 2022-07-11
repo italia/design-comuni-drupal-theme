@@ -1,0 +1,20 @@
+uuid: 687f0b4d-d02f-418b-b514-46737514cb0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: taxonomy_term.field_assessorato_di_riferimento
+field_name: field_assessorato_di_riferimento
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

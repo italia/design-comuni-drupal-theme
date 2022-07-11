@@ -1,0 +1,23 @@
+uuid: 9f323f67-394d-4430-9097-620c70323dff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.contatti
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.contatti.body
+field_name: body
+entity_type: block_content
+bundle: contatti
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

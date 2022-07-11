@@ -1,0 +1,39 @@
+uuid: 868f2baa-7450-4075-ac3b-51d5c38de93c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.social_header_mobile
+    - field.field.paragraph.link_con_icona.field_icona
+    - field.field.paragraph.link_con_icona.field_link
+    - paragraphs.paragraphs_type.link_con_icona
+  module:
+    - fontawesome
+    - link
+id: paragraph.link_con_icona.social_header_mobile
+targetEntityType: paragraph
+bundle: link_con_icona
+mode: social_header_mobile
+content:
+  field_icona:
+    type: fontawesome_icon_formatter
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

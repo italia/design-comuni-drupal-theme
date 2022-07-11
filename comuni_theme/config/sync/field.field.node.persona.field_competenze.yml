@@ -1,0 +1,21 @@
+uuid: 8f8be647-246f-4530-b01e-dd138aac57d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_competenze
+    - node.type.persona
+  module:
+    - text
+id: node.persona.field_competenze
+field_name: field_competenze
+entity_type: node
+bundle: persona
+label: Competenze
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

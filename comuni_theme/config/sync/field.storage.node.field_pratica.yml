@@ -1,0 +1,19 @@
+uuid: 920d5968-e9eb-4cb7-9de7-b646113590fd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_pratica
+field_name: field_pratica
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

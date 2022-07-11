@@ -1,0 +1,23 @@
+uuid: 7b781003-fc55-40c3-9831-c9b039c34cc6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_canale_digitale
+    - node.type.servizio
+  module:
+    - link
+id: node.servizio.field_canale_digitale
+field_name: field_canale_digitale
+entity_type: node
+bundle: servizio
+label: 'Canale digitale'
+description: '(Accedi al servizio) Link per avviare la procedura di attivazione del servizio.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

@@ -1,0 +1,167 @@
+uuid: 5e311817-7210-4fe0-90aa-b1b2ea37606a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_index
+    - field.field.node.evento.field_a_chi_e_rivolto
+    - field.field.node.evento.field_allegati
+    - field.field.node.evento.field_argomenti
+    - field.field.node.evento.field_costo
+    - field.field.node.evento.field_data_e_orario_di_fine
+    - field.field.node.evento.field_data_e_orario_di_inizio
+    - field.field.node.evento.field_descrizione_breve
+    - field.field.node.evento.field_descrizione_completa
+    - field.field.node.evento.field_evento_genitore
+    - field.field.node.evento.field_galleria_immagini
+    - field.field.node.evento.field_immagine
+    - field.field.node.evento.field_luogo
+    - field.field.node.evento.field_organizzato_da
+    - field.field.node.evento.field_patrocinato_da
+    - field.field.node.evento.field_persone
+    - field.field.node.evento.field_punti_di_contatto
+    - field.field.node.evento.field_sottotitolo
+    - field.field.node.evento.field_sponsor
+    - field.field.node.evento.field_tipo_di_evento
+    - field.field.node.evento.field_ulteriori_informazioni
+    - field.field.node.evento.field_video_esterno
+    - node.type.evento
+  module:
+    - datetime
+    - text
+    - user
+id: node.evento.search_index
+targetEntityType: node
+bundle: evento
+mode: search_index
+content:
+  field_a_chi_e_rivolto:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_allegati:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_argomenti:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_data_e_orario_di_fine:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_data_e_orario_di_inizio:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_descrizione_completa:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_evento_genitore:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_immagine:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_luogo:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_organizzato_da:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_sottotitolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_tipo_di_evento:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_ulteriori_informazioni:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+  sharing_buttons:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_costo: true
+  field_galleria_immagini: true
+  field_patrocinato_da: true
+  field_persone: true
+  field_punti_di_contatto: true
+  field_sponsor: true
+  field_video_esterno: true
+  langcode: true
+  search_api_excerpt: true

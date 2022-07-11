@@ -1,0 +1,8 @@
+uuid: f3967ebe-0ce7-4da1-b771-42a7de19829b
+langcode: en
+status: true
+dependencies: {  }
+id: info_comune
+label: 'Info Comune'
+fieldset: infoComune
+multiple: false

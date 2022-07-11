@@ -1,0 +1,10 @@
+uuid: d8e729bf-df46-4b6c-a37c-0382fde2ab42
+langcode: en
+status: true
+dependencies: {  }
+id: collection_multimediale
+label: 'Collection Multimediale'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

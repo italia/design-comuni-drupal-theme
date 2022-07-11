@@ -1,0 +1,8 @@
+uuid: bddd9011-84a8-4ed7-a3cb-dade5f1eb803
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tipi di evento'
+vid: tipi_di_evento
+description: 'Classificazione multi livello degli eventi di interesse pubblico'
+weight: 0

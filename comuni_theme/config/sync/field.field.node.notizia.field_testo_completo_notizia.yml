@@ -1,0 +1,21 @@
+uuid: 8880f641-f47e-476c-b74d-9f4854ef2577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testo_completo_notizia
+    - node.type.notizia
+  module:
+    - text
+id: node.notizia.field_testo_completo_notizia
+field_name: field_testo_completo_notizia
+entity_type: node
+bundle: notizia
+label: 'Testo completo della notizia'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

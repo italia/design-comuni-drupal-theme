@@ -1,0 +1,23 @@
+uuid: ae86942d-f4d4-4fd6-9ae3-f099a7f2c961
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_links
+    - paragraphs.paragraphs_type.ricerca
+  module:
+    - link
+id: paragraph.ricerca.field_links
+field_name: field_links
+entity_type: paragraph
+bundle: ricerca
+label: Links
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

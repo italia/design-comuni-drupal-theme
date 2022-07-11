@@ -1,0 +1,19 @@
+uuid: d3107fbd-8253-4917-b74e-0100737d172d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_esadecimale
+    - taxonomy.vocabulary.colore
+id: taxonomy_term.colore.field_esadecimale
+field_name: field_esadecimale
+entity_type: taxonomy_term
+bundle: colore
+label: Esadecimale
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

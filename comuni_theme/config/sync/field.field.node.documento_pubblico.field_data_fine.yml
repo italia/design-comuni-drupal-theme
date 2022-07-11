@@ -1,0 +1,21 @@
+uuid: de7df09a-3ae7-4a3e-a5fb-c639a397d5b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_fine
+    - node.type.documento_pubblico
+  module:
+    - datetime
+id: node.documento_pubblico.field_data_fine
+field_name: field_data_fine
+entity_type: node
+bundle: documento_pubblico
+label: 'Data fine'
+description: 'se rilevante'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

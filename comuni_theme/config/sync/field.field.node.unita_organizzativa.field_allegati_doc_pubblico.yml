@@ -1,0 +1,29 @@
+uuid: f6037e8d-79e3-4460-aaf7-cb529410dee6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_allegati_doc_pubblico
+    - node.type.documento_pubblico
+    - node.type.unita_organizzativa
+id: node.unita_organizzativa.field_allegati_doc_pubblico
+field_name: field_allegati_doc_pubblico
+entity_type: node
+bundle: unita_organizzativa
+label: Allegati
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

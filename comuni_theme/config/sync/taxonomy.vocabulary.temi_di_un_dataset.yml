@@ -1,0 +1,8 @@
+uuid: 8a73c44c-56f9-4d2b-9a87-1aa1fc6f1cc6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Temi di un dataset'
+vid: temi_di_un_dataset
+description: 'Classificazione dei temi dei dati secondo il Vocabolario Controllato Temi dei dati.'
+weight: 0

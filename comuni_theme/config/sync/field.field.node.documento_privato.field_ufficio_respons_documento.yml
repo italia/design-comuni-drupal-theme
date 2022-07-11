@@ -1,0 +1,29 @@
+uuid: 81fc9ffa-20dd-4946-85b7-7316a11652ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ufficio_respons_documento
+    - node.type.documento_privato
+    - node.type.unita_organizzativa
+id: node.documento_privato.field_ufficio_respons_documento
+field_name: field_ufficio_respons_documento
+entity_type: node
+bundle: documento_privato
+label: 'Ufficio responsabile del documento'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

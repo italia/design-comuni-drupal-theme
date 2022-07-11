@@ -1,0 +1,21 @@
+uuid: 064bdbe5-e541-465c-a031-da47a84da162
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_completa
+    - node.type.pratica
+  module:
+    - text
+id: node.pratica.field_descrizione_completa
+field_name: field_descrizione_completa
+entity_type: node
+bundle: pratica
+label: Descrizione
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,20 @@
+uuid: d8b18b0b-1e71-4ba9-9ff0-e13e7dfa4c49
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_licenza_di_distribuzione
+field_name: field_licenza_di_distribuzione
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

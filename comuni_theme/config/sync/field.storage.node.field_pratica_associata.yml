@@ -1,0 +1,19 @@
+uuid: 36a045be-2a22-45f1-84f9-d37274e39dd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_pratica_associata
+field_name: field_pratica_associata
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

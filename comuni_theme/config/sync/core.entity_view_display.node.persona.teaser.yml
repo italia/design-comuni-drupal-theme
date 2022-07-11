@@ -1,0 +1,60 @@
+uuid: efd34220-97b4-4bba-8ee6-f23d13841650
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.persona.field_altre_cariche
+    - field.field.node.persona.field_biografia
+    - field.field.node.persona.field_cognome
+    - field.field.node.persona.field_competenze
+    - field.field.node.persona.field_curriculum_vitae
+    - field.field.node.persona.field_deleghe
+    - field.field.node.persona.field_descrizione_breve
+    - field.field.node.persona.field_dichiarazione_dei_redditi
+    - field.field.node.persona.field_galleria_immagini
+    - field.field.node.persona.field_immagine
+    - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_nome
+    - field.field.node.persona.field_organizzazioni
+    - field.field.node.persona.field_punti_di_contatto
+    - field.field.node.persona.field_sezione_amministrazione
+    - field.field.node.persona.field_situazione_patrimoniale
+    - field.field.node.persona.field_spese_elettorali
+    - field.field.node.persona.field_ulteriori_informazioni
+    - field.field.node.persona.field_v_situazione_patrimoniale
+    - node.type.persona
+  module:
+    - user
+id: node.persona.teaser
+targetEntityType: node
+bundle: persona
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_altre_cariche: true
+  field_biografia: true
+  field_cognome: true
+  field_competenze: true
+  field_curriculum_vitae: true
+  field_deleghe: true
+  field_descrizione_breve: true
+  field_dichiarazione_dei_redditi: true
+  field_galleria_immagini: true
+  field_immagine: true
+  field_incarichi: true
+  field_nome: true
+  field_organizzazioni: true
+  field_punti_di_contatto: true
+  field_sezione_amministrazione: true
+  field_situazione_patrimoniale: true
+  field_spese_elettorali: true
+  field_ulteriori_informazioni: true
+  field_v_situazione_patrimoniale: true
+  langcode: true
+  search_api_excerpt: true

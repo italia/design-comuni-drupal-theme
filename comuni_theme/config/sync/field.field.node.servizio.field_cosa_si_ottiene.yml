@@ -1,0 +1,21 @@
+uuid: 9f00c89a-e854-437b-867a-d088188fe061
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cosa_si_ottiene
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_cosa_si_ottiene
+field_name: field_cosa_si_ottiene
+entity_type: node
+bundle: servizio
+label: 'Cosa si ottiene'
+description: 'Uno o più output prodotti dal servizio'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

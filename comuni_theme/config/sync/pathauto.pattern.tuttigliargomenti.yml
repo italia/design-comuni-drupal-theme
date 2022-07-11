@@ -1,0 +1,22 @@
+uuid: 3817f0b8-6014-4228-983a-cf0b4296a2a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: tuttigliargomenti
+label: Argomenti
+type: 'canonical_entities:taxonomy_term'
+pattern: '/tutti-gli-argomenti/[term:name]'
+selection_criteria:
+  156bc518-845a-49d8-bb7d-fba299cb7019:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 156bc518-845a-49d8-bb7d-fba299cb7019
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      argomenti: argomenti
+selection_logic: and
+weight: -5
+relationships: {  }

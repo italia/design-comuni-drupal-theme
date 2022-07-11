@@ -1,0 +1,29 @@
+uuid: 727be4dd-4938-428b-8eee-e7d245e12e02
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_documenti_collegati
+    - node.type.documento_privato
+    - node.type.documento_pubblico
+id: node.documento_privato.field_documenti_collegati
+field_name: field_documenti_collegati
+entity_type: node
+bundle: documento_privato
+label: 'Documenti collegati'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      documento_pubblico: documento_pubblico
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

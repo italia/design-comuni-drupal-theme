@@ -1,0 +1,21 @@
+uuid: f412b47b-c977-4d01-b168-70f1ab213702
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_a_chi_rivolto
+    - node.type.servizio
+  module:
+    - text
+id: node.servizio.field_a_chi_rivolto
+field_name: field_a_chi_rivolto
+entity_type: node
+bundle: servizio
+label: 'A chi è rivolto'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

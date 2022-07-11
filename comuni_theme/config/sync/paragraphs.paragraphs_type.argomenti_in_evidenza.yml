@@ -1,0 +1,10 @@
+uuid: bb8722e5-ed61-4396-babb-54855455d062
+langcode: en
+status: true
+dependencies: {  }
+id: argomenti_in_evidenza
+label: 'Argomenti - In evidenza'
+icon_uuid: null
+icon_default: null
+description: 'Paragrafo argomenti in evidenza per pagina di primo livello dedicata agli argomenti, seleziona manualmente gli argomenti da mostrare in evidenza.'
+behavior_plugins: {  }

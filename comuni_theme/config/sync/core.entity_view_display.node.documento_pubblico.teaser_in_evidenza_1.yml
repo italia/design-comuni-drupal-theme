@@ -1,0 +1,78 @@
+uuid: ae5596df-400a-4fe9-9c08-ce924043d1ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_in_evidenza_1
+    - field.field.node.documento_pubblico.field_argomenti
+    - field.field.node.documento_pubblico.field_autori
+    - field.field.node.documento_pubblico.field_business_events
+    - field.field.node.documento_pubblico.field_data_fine
+    - field.field.node.documento_pubblico.field_data_inizio
+    - field.field.node.documento_pubblico.field_data_protocollo
+    - field.field.node.documento_pubblico.field_dataset
+    - field.field.node.documento_pubblico.field_descrizione_breve
+    - field.field.node.documento_pubblico.field_descrizione_completa
+    - field.field.node.documento_pubblico.field_documenti_collegati
+    - field.field.node.documento_pubblico.field_formato_documento
+    - field.field.node.documento_pubblico.field_galleria_immagini
+    - field.field.node.documento_pubblico.field_identificativo
+    - field.field.node.documento_pubblico.field_immagine
+    - field.field.node.documento_pubblico.field_licenza_di_distribuzione
+    - field.field.node.documento_pubblico.field_life_events
+    - field.field.node.documento_pubblico.field_paragraph_documento
+    - field.field.node.documento_pubblico.field_protocollo
+    - field.field.node.documento_pubblico.field_riferimenti_normativi
+    - field.field.node.documento_pubblico.field_servizi
+    - field.field.node.documento_pubblico.field_sezione_amministrazione
+    - field.field.node.documento_pubblico.field_tipo_di_documento
+    - field.field.node.documento_pubblico.field_tipo_doc_albo_pretorio
+    - field.field.node.documento_pubblico.field_ufficio_respons_documento
+    - field.field.node.documento_pubblico.field_ulteriori_informazioni
+    - node.type.documento_pubblico
+  module:
+    - user
+id: node.documento_pubblico.teaser_in_evidenza_1
+targetEntityType: node
+bundle: documento_pubblico
+mode: teaser_in_evidenza_1
+content:
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_argomenti: true
+  field_autori: true
+  field_business_events: true
+  field_data_fine: true
+  field_data_inizio: true
+  field_data_protocollo: true
+  field_dataset: true
+  field_descrizione_completa: true
+  field_documenti_collegati: true
+  field_formato_documento: true
+  field_galleria_immagini: true
+  field_identificativo: true
+  field_immagine: true
+  field_licenza_di_distribuzione: true
+  field_life_events: true
+  field_paragraph_documento: true
+  field_protocollo: true
+  field_riferimenti_normativi: true
+  field_servizi: true
+  field_sezione_amministrazione: true
+  field_tipo_di_documento: true
+  field_tipo_doc_albo_pretorio: true
+  field_ufficio_respons_documento: true
+  field_ulteriori_informazioni: true
+  langcode: true
+  search_api_excerpt: true

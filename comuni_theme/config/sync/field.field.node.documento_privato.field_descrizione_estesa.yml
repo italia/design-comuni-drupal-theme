@@ -1,0 +1,21 @@
+uuid: d85234b2-cdbd-4c58-a0ba-f664dede0d48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_estesa
+    - node.type.documento_privato
+  module:
+    - text
+id: node.documento_privato.field_descrizione_estesa
+field_name: field_descrizione_estesa
+entity_type: node
+bundle: documento_privato
+label: Descrizione
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

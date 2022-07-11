@@ -1,0 +1,29 @@
+uuid: 9eda8d0d-db30-4afc-8c99-2843c0b1efae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti
+    - node.type.servizio
+    - paragraphs.paragraphs_type.servizi_ref_in_evidenza
+id: paragraph.servizi_ref_in_evidenza.field_contenuti
+field_name: field_contenuti
+entity_type: paragraph
+bundle: servizi_ref_in_evidenza
+label: Contenuti
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      servizio: servizio
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

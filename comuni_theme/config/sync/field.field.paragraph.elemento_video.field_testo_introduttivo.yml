@@ -1,0 +1,21 @@
+uuid: eb8bef02-a419-40c3-b782-c555c4269191
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testo_introduttivo
+    - paragraphs.paragraphs_type.elemento_video
+  module:
+    - text
+id: paragraph.elemento_video.field_testo_introduttivo
+field_name: field_testo_introduttivo
+entity_type: paragraph
+bundle: elemento_video
+label: 'Trascrizione del video'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

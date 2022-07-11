@@ -1,0 +1,19 @@
+uuid: 62ca3c31-5935-4fe0-8977-3219ab8c43c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.comuni_altri_argomenti
+id: paragraph.comuni_altri_argomenti.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: comuni_altri_argomenti
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

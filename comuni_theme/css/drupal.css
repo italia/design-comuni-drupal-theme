@@ -2,8 +2,14 @@
 .evidence-section .section {
 	background-image: url("../assets/img/evidenza-header.png");
 }
+
 .point-list-wrapper .point-list .point-list-content .card-title {
   margin-bottom: 0;
+}
+
+.icon-white svg,
+.icon-white path {
+  fill: white;
 }
 
 /* CUSTOM */

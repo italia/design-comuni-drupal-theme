@@ -93,8 +93,14 @@
                 <a href="/homepage"
                   aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
                   title="Vai alla home"
-                ><img style="width:82px;margin-right:16px;" aria-hidden="true"
+                >
+                  {% if site_settings.infocomune.info_comune.field_logo_svg %}
+                    <img style="width:82px;margin-right:16px;" aria-hidden="true"
+                         src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>
+                  {% else %}
+                  <img style="width:82px;margin-right:16px;" aria-hidden="true"
                     src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+                  {% endif %}
                   <div class="it-brand-text">
                     <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                   </div>

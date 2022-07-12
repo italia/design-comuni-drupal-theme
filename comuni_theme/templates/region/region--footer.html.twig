@@ -90,8 +90,13 @@
               aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
               class data-focus-mouse="false"
             >
-              <img src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
-              <div class="it-brand-text">
+              {% if site_settings.infocomune.info_comune.field_logo_svg %}
+                <img style="width:82px;margin-right:16px;" aria-hidden="true"
+                     src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>
+              {% else %}
+                <img style="width:82px;margin-right:16px;" aria-hidden="true"
+                     src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+              {% endif %}              <div class="it-brand-text">
                 <h2 class="no_toc">{{ site_settings.infocomune.info_comune.field_nome_comune }}</h2>
               </div>
             </a>

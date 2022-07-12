@@ -1,0 +1,19 @@
+uuid: df52598e-f8dc-4190-b7c6-8df00e6108eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_label
+    - paragraphs.paragraphs_type.homepage_top_card
+id: paragraph.homepage_top_card.field_label
+field_name: field_label
+entity_type: paragraph
+bundle: homepage_top_card
+label: Label
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

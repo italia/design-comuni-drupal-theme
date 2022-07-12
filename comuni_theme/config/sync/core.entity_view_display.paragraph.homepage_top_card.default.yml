@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.homepage_top_card.field_contenuto
+    - field.field.paragraph.homepage_top_card.field_label
     - field.field.paragraph.homepage_top_card.field_link
     - field.field.paragraph.homepage_top_card.field_mostra_immagine
     - paragraphs.paragraphs_type.homepage_top_card
@@ -21,6 +22,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_label:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
     region: content
   field_link:
     type: link

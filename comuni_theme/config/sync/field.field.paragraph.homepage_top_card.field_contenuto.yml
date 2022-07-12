@@ -4,7 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_contenuto
+    - node.type.dataset
+    - node.type.documento_pubblico
     - node.type.evento
+    - node.type.luogo
+    - node.type.notizia
+    - node.type.servizio
+    - node.type.unita_organizzativa
     - paragraphs.paragraphs_type.homepage_top_card
 id: paragraph.homepage_top_card.field_contenuto
 field_name: field_contenuto
@@ -20,7 +26,13 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      dataset: dataset
+      documento_pubblico: documento_pubblico
       evento: evento
+      luogo: luogo
+      notizia: notizia
+      servizio: servizio
+      unita_organizzativa: unita_organizzativa
     sort:
       field: _none
       direction: ASC

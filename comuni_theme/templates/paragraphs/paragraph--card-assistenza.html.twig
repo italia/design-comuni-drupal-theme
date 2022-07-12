@@ -67,7 +67,7 @@
 						{% set icon  = link.entity.field_icona.value[0].style ~ " fa-" ~ link.entity.field_icona.value[0].icon_name %}
 						<li>
 							<a class="list-item"
-                href="{{ link.entity.field_link.uri }}"
+                href="{{ link.entity.field_link.0.url }}"
                 title="Vai alla pagina {{ link.entity.field_link.title }}"
                 aria-label="Vai alla pagina {{ link.entity.field_link.title }}"
                 data-element="{{ map[ link.entity.field_link.title|lower] }}"

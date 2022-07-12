@@ -61,7 +61,7 @@
 				<ul class="contact-list p-0">
           {% set map = {
             'richiedi assistenza': 'contacts',
-            'Prenota appuntamento': 'appointment-booking'
+            'prenota appuntamento': 'appointment-booking'
           } %}
 					{% for link in group.entity.field_links_con_icona %}
 						{% set icon  = link.entity.field_icona.value[0].style ~ " fa-" ~ link.entity.field_icona.value[0].icon_name %}

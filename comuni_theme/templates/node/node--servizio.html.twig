@@ -78,23 +78,24 @@
             <div class="col-lg-8">
               {{ title_prefix }}
               {% if node.label %}
-              <h1{{ title_attributes.addClass('title-xxxlarge') }}>
+              <h1{{ title_attributes.addClass('title-xxxlarge') }} data-element="service-title">
                 {{ node.label }}
               </h1>
               {% endif %}
               {{ title_suffix }}
-              {% if content.field_stato_del_servizio.0['#markup'] == 'On' %}
+              {% if content.field_stato_del_servizio %}
               <div class="d-flex flex-wrap cmp-heading__tag">
                 <div class="cmp-tag">
-                  <a class="cmp-tag__tag title-xsmall text-decoration-none text-button"
-                    aria-label="Servizio attivo" title="Servizio attivo" href="#"
-                  >Servizio attivo</a>
+                  <span class="cmp-tag__tag title-xsmall text-decoration-none text-button"
+                    data-element="service-status"
+                  >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
                 </div>
               </div>
               {% endif %}
               {% if content.field_descrizione_breve %}
-              {# <p class="subtitle-small mb-3">{{ content.field_descrizione_breve }}</p> #}
-              <div class="subtitle-small mb-3">{{ content.field_descrizione_breve }}</div>
+              <div class="subtitle-small mb-3" data-element="service-description">
+                {{ content.field_descrizione_breve }}
+              </div>
               {% endif %}
               {% if content.field_canale_digitale[0] %}
               <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
@@ -430,7 +431,6 @@
                         class="u-main-black" data-element="service-area"
                         aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
                         title="Vai alla pagina di {{ uorg.entity.title.value }}"
-                        data-element="service-area"
                       >{{ uorg.entity.title.value }}
                       </a>
                     </h5>
@@ -466,8 +466,6 @@
       </div>
     </div>
   </div>
-
-
 
   {# {% if display_submitted %}
     <footer>

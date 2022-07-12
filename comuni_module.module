@@ -89,6 +89,8 @@ function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_
   }
   if ($form_id == 'node_pagina_edit_form' ){
     // Do some stuff.
-    $form['field_componenti']['widget'][0]['#disabled'] = TRUE;
+    if ( $form['field_componenti']['widget'][0]['#paragraph_type']=='titolo_e_descrizione') {
+      $form['field_componenti']['widget'][0]['#disabled'] = TRUE;
+    }
   }
 }

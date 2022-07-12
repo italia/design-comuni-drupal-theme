@@ -53,7 +53,7 @@
 		<div class="row mb-2">
 			<div class="card-wrapper px-0 card-overlapping card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3">
 				{% for item in attribute(content.field_card, "#items") %}
-					{% set linkUri = item.entity.field_link.uri | replace({'entity:':'/'}) %}
+					{% set linkUri = item.entity.field_link.0.url %}
 					{% if item.entity.field_mostra_immagine.value == 1 %}
 						<div class="card card-teaser card-teaser-image card-flex no-after rounded shadow-sm border border-light mb-0">
               {% set card_title = item.entity.field_contenuto.entity.title.value %}

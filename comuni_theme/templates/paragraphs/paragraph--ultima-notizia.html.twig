@@ -104,7 +104,7 @@
                   >Notizie</span>
 									<span class="data fw-normal">{{dataNotizia}}</span>
 								</div>
-                <a href="{{ node.url.value }}" aria-label="vai alla notizia {{ node.title.value }}">
+                <a href="{{ path('entity.node.canonical', {'node':  node.id})  }}" aria-label="vai alla notizia {{ node.title.value }}">
 								  <h3 class="h4 card-title title-xlarge u-main-primary">{{ node.title.value }}</h3>
                 </a>
 								<p class="mb-4 subtitle-small pt-3 lora">{{ node.field_descrizione_breve.value }}</p>

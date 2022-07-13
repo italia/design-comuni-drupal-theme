@@ -64,9 +64,10 @@
     'December': 'Dic',
   }
 %}
+{% if content.field_contenuto.0 %}
+  {% set node = paragraph.field_contenuto.entity %}
 
-{% set node = paragraph.field_contenuto.entity %}
-{% if node.field_data_della_notizia.value is defined and node.field_data_della_notizia.value is not empty and node.field_data_della_notizia.value is not null %}
+  {% if node.field_data_della_notizia.value is defined and node.field_data_della_notizia.value is not empty and node.field_data_della_notizia.value is not null %}
   {% set dataNotizia = node.field_data_della_notizia.value %}
   {% set day = dataNotizia|date("d") %}
   {% set month = months[dataNotizia|date("M")] %}
@@ -75,6 +76,8 @@
 {% else %}
   {% set dataNotizia = node.created.value %}
 {% endif %}
+{% endif %}
+
 
 {% block paragraph %}
 	<div{{attributes.addClass(classes)}}>
@@ -84,6 +87,7 @@
 		<section id="head-section">
       <h2 class="visually-hidden">Ultime notizie</h2>
 			<div class="container">
+        {% if node %}
 				<div class="row">
 					<div class="col-lg-6 offset-lg-1 order-lg-2 px-0 px-lg-2">
             <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}"
@@ -131,6 +135,7 @@
 						</div>
 					</div>
 				</div>
+        {% endif %}
 			</div>
 		</section>
 	</div>

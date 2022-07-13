@@ -1,0 +1,11 @@
+uuid: 8419ad23-dcae-4526-9058-b82981dd18fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.documento_privato
+id: node.documento_privato
+target_entity_type_id: node
+target_bundle: documento_privato
+default_langcode: site_default
+language_alterable: false

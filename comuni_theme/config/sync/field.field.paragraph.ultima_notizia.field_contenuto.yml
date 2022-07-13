@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: ultima_notizia
 label: Notizia
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

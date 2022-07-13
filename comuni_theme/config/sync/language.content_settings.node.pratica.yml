@@ -1,0 +1,11 @@
+uuid: bdf1b636-d6fc-463e-a96d-c36cdd1a7741
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.pratica
+id: node.pratica
+target_entity_type_id: node
+target_bundle: pratica
+default_langcode: site_default
+language_alterable: false

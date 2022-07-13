@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Messaggio
 type: messaggio
-description: 'Struttura delle informazioni relative utili a presentare un messaggio in area riservata'
+description: '“Content type utile per l’ implementazione dell’AREA RISERVATA”'
 help: ''
 new_revision: true
 preview_mode: 1

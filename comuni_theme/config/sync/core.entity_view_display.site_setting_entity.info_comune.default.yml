@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.site_setting_entity.info_comune.field_amministrazione_trasparent
     - field.field.site_setting_entity.info_comune.field_contatti
     - field.field.site_setting_entity.info_comune.field_forse_stavi_cercando
     - field.field.site_setting_entity.info_comune.field_icone_social
@@ -21,13 +20,6 @@ targetEntityType: site_setting_entity
 bundle: info_comune
 mode: default
 content:
-  field_amministrazione_trasparent:
-    type: text_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_contatti:
     type: text_default
     label: above

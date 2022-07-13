@@ -70,410 +70,453 @@
 #}
 
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-10">
-        <div class="cmp-heading pb-3 pb-lg-4">
-          <div class="row">
-            <div class="col-lg-8">
-              {{ title_prefix }}
-              {% if node.label %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="cmp-heading pb-3 pb-lg-4">
+        <div class="row">
+          <div class="col-lg-8">
+            {{ title_prefix }}
+            {% if node.label %}
               <h1{{ title_attributes.addClass('title-xxxlarge') }} data-element="service-title">
                 {{ node.label }}
               </h1>
-              {% endif %}
-              {{ title_suffix }}
-              {% if content.field_stato_del_servizio %}
+            {% endif %}
+            {{ title_suffix }}
+            {% if content.field_stato_del_servizio %}
               <div class="d-flex flex-wrap cmp-heading__tag">
                 <div class="cmp-tag">
                   <span class="cmp-tag__tag title-xsmall text-decoration-none text-button"
-                    data-element="service-status"
+                        data-element="service-status"
                   >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
                 </div>
               </div>
-              {% endif %}
-              {% if content.field_descrizione_breve %}
+            {% endif %}
+            {% if content.field_descrizione_breve %}
               <div class="subtitle-small mb-3" data-element="service-description">
                 {{ content.field_descrizione_breve }}
               </div>
-              {% endif %}
-              {% if content.field_canale_digitale[0] %}
+            {% endif %}
+            {% if content.field_canale_digitale[0] %}
               <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-                type="button" aria-label="Richiesta di iscrizione online a {{ node.label }}"
-                class="btn btn-primary fw-bold" data-focus-mouse="false">
+                 type="button" aria-label="Richiesta di iscrizione online a {{ node.label }}"
+                 class="btn btn-primary fw-bold" data-focus-mouse="false">
                 <span class="">Richiesta di iscrizione online</span>
               </a>
-              {% endif %}
-            </div>
-            <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
-              {{ drupal_block("social_sharing_buttons_block") }}
-              <div class="dropdown">
-                <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <svg class="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 18a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a.9.9 0 011 1 1 1 0 01-2 0 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2z" />
-                    <path fill="none" d="M0 0h24v24H0z" />
-                  </svg>
-                  <small>Vedi azioni</small>
-                </button>
-                <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
-                  <div class="link-list-wrapper">
-                    <ul class="link-list">
-                      <li>
-                        <a class="list-item" href="#" aria-label="Scarica notizia">
-                          <svg class="icon" viewBox="0 0 24 24" id="it-download" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 14.2L7.7 9.9l.7-.7 3.1 3.1V3h1v9.2l3.1-3 .7.7zm7-2.2v7.5a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5V12H4v7.5A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5V12z" />
-                            <path fill="none" d="M0 0h24v24H0z" />
-                          </svg>
-                          <span>Scarica</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="list-item" href="javascript:window.print()" aria-label="Stampa notizia">
-                          <svg class="icon" viewBox="0 0 24 24" id="it-print" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 9.5A1.5 1.5 0 0019.5 8H17V3H7v5H4.5A1.5 1.5 0 003 9.5V16h2v3h2v2h10v-2h2v-3h2zM8 4h8v4H8zM6 18v-4h1v4zm10 2H8v-6h8v6zm2-2h-1v-4h1v4zm2-3h-1v-2H5v2H4V9.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5zM6 11h4v1H6z" />
-                            <path fill="none" d="M0 0h24v24H0z" />
-                          </svg>
-                          <span>Stampa</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="list-item" href="#" aria-label="Ascolta notizia">
-                          <svg class="icon" viewBox="0 0 24 24" id="it-hearing" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 9a6.8 6.8 0 01-3.5 6l-2 1.1a3.3 3.3 0 00-1.5 2.7A3.2 3.2 0 019.8 22h-.6a3.4 3.4 0 01-3-2.1l.9-.5A2.3 2.3 0 009.2 21h.6a2.1 2.1 0 001.6-.7 2 2 0 00.6-1.5 4 4 0 012-3.5l2-1.2A5.9 5.9 0 0019 9a6 6 0 00-6-6 6 6 0 00-4.8 2.4l-.8-.6A7 7 0 0113 2a7 7 0 017 7zM7.5 12A5.5 5.5 0 002 6.5v1a4.5 4.5 0 010 9v1A5.5 5.5 0 007.5 12zM5 12a2.9 2.9 0 00-3-3v1a2 2 0 010 4v1a2.9 2.9 0 003-3zm5 0a8 8 0 00-8-8v1a7 7 0 010 14v1a8 8 0 008-8zm5.9.3a4.5 4.5 0 001.2-3.2 4.5 4.5 0 00-1.2-3.2 4.5 4.5 0 00-3.2-1.4A4.8 4.8 0 009.5 6l-.3.3.2.3a8.8 8.8 0 011.3 3v.4h.4a1.5 1.5 0 010 3v1a2.5 2.5 0 002.5-2.5 2.6 2.6 0 00-2-2.5 8.5 8.5 0 00-1.1-2.6 3.9 3.9 0 012.2-.9 3.5 3.5 0 012.4 1 3.5 3.5 0 011 2.6 3.5 3.5 0 01-1 2.6z" />
-                            <path fill="none" d="M0 0h24v24H0z" />
-                          </svg>
-                          <span>Ascolta</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="list-item"href="mailto:?subject={{ node.label }}&body={{ url }}" title="{{ 'Invia notizia'|t }} E-mail" aria-label="{{ 'Invia notizia'|t }} E-mail" target="_blank" rel="noopener">
-                          <svg class="icon" viewBox="0 0 24 24" id="it-mail" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.5 5h-17A1.5 1.5 0 002 6.5v11A1.5 1.5 0 003.5 19h17a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0020.5 5zm-.3 1l-7.1 7.2a1.6 1.6 0 01-2.2 0L3.8 6zM3 17.3V6.6L8.3 12zm.7.7L9 12.7l1.2 1.2a2.7 2.7 0 003.6 0l1.2-1.2 5.3 5.3zm12-6L21 6.6v10.7z" />
-                            <path fill="none" d="M0 0h24v24H0z" />
-                          </svg>
-                          <span>Invia</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+            {% endif %}
+          </div>
+          <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
+            {{ drupal_block("social_sharing_buttons_block") }}
+            <div class="dropdown">
+              <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle"
+                      type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                <svg class="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12 18a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a.9.9 0 011 1 1 1 0 01-2 0 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2z"/>
+                  <path fill="none" d="M0 0h24v24H0z"/>
+                </svg>
+                <small>Vedi azioni</small>
+              </button>
+              <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
+                <div class="link-list-wrapper">
+                  <ul class="link-list">
+                    <li>
+                      <a class="list-item" href="#" aria-label="Scarica notizia">
+                        <svg class="icon" viewBox="0 0 24 24" id="it-download" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12 14.2L7.7 9.9l.7-.7 3.1 3.1V3h1v9.2l3.1-3 .7.7zm7-2.2v7.5a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5V12H4v7.5A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5V12z"/>
+                          <path fill="none" d="M0 0h24v24H0z"/>
+                        </svg>
+                        <span>Scarica</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="list-item" href="javascript:window.print()" aria-label="Stampa notizia">
+                        <svg class="icon" viewBox="0 0 24 24" id="it-print" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M21 9.5A1.5 1.5 0 0019.5 8H17V3H7v5H4.5A1.5 1.5 0 003 9.5V16h2v3h2v2h10v-2h2v-3h2zM8 4h8v4H8zM6 18v-4h1v4zm10 2H8v-6h8v6zm2-2h-1v-4h1v4zm2-3h-1v-2H5v2H4V9.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5zM6 11h4v1H6z"/>
+                          <path fill="none" d="M0 0h24v24H0z"/>
+                        </svg>
+                        <span>Stampa</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="list-item" href="#" aria-label="Ascolta notizia">
+                        <svg class="icon" viewBox="0 0 24 24" id="it-hearing" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M20 9a6.8 6.8 0 01-3.5 6l-2 1.1a3.3 3.3 0 00-1.5 2.7A3.2 3.2 0 019.8 22h-.6a3.4 3.4 0 01-3-2.1l.9-.5A2.3 2.3 0 009.2 21h.6a2.1 2.1 0 001.6-.7 2 2 0 00.6-1.5 4 4 0 012-3.5l2-1.2A5.9 5.9 0 0019 9a6 6 0 00-6-6 6 6 0 00-4.8 2.4l-.8-.6A7 7 0 0113 2a7 7 0 017 7zM7.5 12A5.5 5.5 0 002 6.5v1a4.5 4.5 0 010 9v1A5.5 5.5 0 007.5 12zM5 12a2.9 2.9 0 00-3-3v1a2 2 0 010 4v1a2.9 2.9 0 003-3zm5 0a8 8 0 00-8-8v1a7 7 0 010 14v1a8 8 0 008-8zm5.9.3a4.5 4.5 0 001.2-3.2 4.5 4.5 0 00-1.2-3.2 4.5 4.5 0 00-3.2-1.4A4.8 4.8 0 009.5 6l-.3.3.2.3a8.8 8.8 0 011.3 3v.4h.4a1.5 1.5 0 010 3v1a2.5 2.5 0 002.5-2.5 2.6 2.6 0 00-2-2.5 8.5 8.5 0 00-1.1-2.6 3.9 3.9 0 012.2-.9 3.5 3.5 0 012.4 1 3.5 3.5 0 011 2.6 3.5 3.5 0 01-1 2.6z"/>
+                          <path fill="none" d="M0 0h24v24H0z"/>
+                        </svg>
+                        <span>Ascolta</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}"
+                         title="{{ 'Invia notizia'|t }} E-mail" aria-label="{{ 'Invia notizia'|t }} E-mail"
+                         target="_blank" rel="noopener">
+                        <svg class="icon" viewBox="0 0 24 24" id="it-mail" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M20.5 5h-17A1.5 1.5 0 002 6.5v11A1.5 1.5 0 003.5 19h17a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0020.5 5zm-.3 1l-7.1 7.2a1.6 1.6 0 01-2.2 0L3.8 6zM3 17.3V6.6L8.3 12zm.7.7L9 12.7l1.2 1.2a2.7 2.7 0 003.6 0l1.2-1.2 5.3 5.3zm12-6L21 6.6v10.7z"/>
+                          <path fill="none" d="M0 0h24v24H0z"/>
+                        </svg>
+                        <span>Invia</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div class="mt-4 mb-4">
-                {% if content.field_argomenti %}
-                  <span class="subtitle-small">Argomenti</span>
-                  <div class="chip-wrapper mt-2">
+            </div>
+            <div class="mt-4 mb-4">
+              {% if content.field_argomenti %}
+                <span class="subtitle-small">Argomenti</span>
+                <div class="chip-wrapper mt-2">
                   {% for item in attribute(content.field_argomenti, "#items") %}
                     {% set arg_name = item.entity.name.value %}
-                    <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}"
-                      aria-label="Vai all'argomento {{ arg_name }}"
-                      title="Vai all'argomento {{ arg_name }}"
-                      data-element="service-topic"
-                    ><div class="chip chip-simple chip-primary">
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
+                       aria-label="Vai all'argomento {{ arg_name }}"
+                       title="Vai all'argomento {{ arg_name }}"
+                       data-element="service-topic"
+                    >
+                      <div class="chip chip-simple chip-primary">
                         <span class="chip-label">{{ arg_name }}</span>
                       </div>
                     </a>
                   {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
+                </div>
+              {% endif %}
             </div>
           </div>
         </div>
       </div>
-      <hr class="d-none d-lg-block mt-2">
     </div>
+    <hr class="d-none d-lg-block mt-2">
   </div>
+</div>
 
-  <div class="container">
-    <div class="row mt-4 mt-lg-80 pb-lg-80 pb-40">
-      <div class="col-12 col-lg-3 mb-4 border-col">
-        <aside class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-          <div class="inline-menu">
-            <div class="link-list-wrapper">
-              <ul class="link-list">
-                <li>
-                  <a href="#collapse-one"
-                    class="list-item large medium right-icon p-0 text-decoration-none"
-                    data-bs-toggle="collapse" data-focus-mouse="true"
-                    aria-label="Apri e chiudi il menù INDICE DELLA PAGINA"
-                    title="Apri e chiudi il menù INDICE DELLA PAGINA"
-                    aria-expanded="true" aria-controls="collapse-one"
-                  >
+<div class="container">
+  <div class="row mt-4 mt-lg-80 pb-lg-80 pb-40">
+    <div class="col-12 col-lg-3 mb-4 border-col">
+      <aside class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+        <div class="inline-menu">
+          <div class="link-list-wrapper">
+            <ul class="link-list">
+              <li>
+                <a href="#collapse-one"
+                   class="list-item large medium right-icon p-0 text-decoration-none"
+                   data-bs-toggle="collapse" data-focus-mouse="true"
+                   aria-label="Apri e chiudi il menù INDICE DELLA PAGINA"
+                   title="Apri e chiudi il menù INDICE DELLA PAGINA"
+                   aria-expanded="true" aria-controls="collapse-one"
+                >
                     <span class="list-item-title-icon-wrapper pb-10 px-3">
                       <span id="accordion-title-one" class="title-xsmall-semi-bold">INDICE DELLA PAGINA</span>
-                      <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg">
+                      <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right"
+                           xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
                       </svg>
                     </span>
-                    <div class="progress bg-light">
-                      <div class="progress-bar" style="width: 15%"
-                        role="progressbar" aria-label="Progress bar dell'indice della pagina"
-                        aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </a>
-                  <ul class="link-sublist collapse show" id="collapse-one" data-element="page-index">
-                    {% if content.field_a_chi_rivolto[0] is not empty %}
+                  <div class="progress bg-light">
+                    <div class="progress-bar" style="width: 15%"
+                         role="progressbar" aria-label="Progress bar dell'indice della pagina"
+                         aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
+                    ></div>
+                  </div>
+                </a>
+                <ul class="link-sublist collapse show" id="collapse-one" data-element="page-index">
+                  {% if content.field_a_chi_rivolto[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#who-needs" aria-label="Vai alla sezione A chi è rivolto" title="Vai alla sezione A chi è rivolto">
+                      <a class="list-item" href="#who-needs" aria-label="Vai alla sezione A chi è rivolto"
+                         title="Vai alla sezione A chi è rivolto">
                         <span class="title-medium">A chi è rivolto</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_descrizione_estesa[0] is not empty  %}
+                  {% endif %}
+                  {% if content.field_descrizione_estesa[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#description" aria-label="Vai alla sezione Descrizione" title="Vai alla sezione Descrizione">
+                      <a class="list-item" href="#description" aria-label="Vai alla sezione Descrizione"
+                         title="Vai alla sezione Descrizione">
                         <span class="title-medium">Descrizione</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_come_fare[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_come_fare[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#how-to" aria-label="Vai alla sezione Come fare" title="Vai alla sezione Come fare">
+                      <a class="list-item" href="#how-to" aria-label="Vai alla sezione Come fare"
+                         title="Vai alla sezione Come fare">
                         <span class="title-medium">Come fare</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_cosa_serve[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_cosa_serve[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#needed" aria-label="Vai alla sezione Cosa serve" title="Vai alla sezione Cosa serve">
+                      <a class="list-item" href="#needed" aria-label="Vai alla sezione Cosa serve"
+                         title="Vai alla sezione Cosa serve">
                         <span class="title-medium">Cosa serve</span>
                       </a>
                     </li>
-                    {% endif %}
+                  {% endif %}
+                  <li>
+                    <a class="list-item" href="#obtain" aria-label="Vai alla sezione Cosa si ottiene"
+                       title="Vai alla sezione Cosa si ottiene">
+                      <span class="title-medium">Cosa si ottiene</span>
+                    </a>
+                  </li>
+                  {% if content.field_tempi_e_scadenze[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#obtain" aria-label="Vai alla sezione Cosa si ottiene" title="Vai alla sezione Cosa si ottiene">
-                        <span class="title-medium">Cosa si ottiene</span>
-                      </a>
-                    </li>
-                    {% if content.field_tempi_e_scadenze[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#deadlines" aria-label="Vai alla sezione Tempi e scadenze" title="Vai alla sezione Tempi e scadenze">
+                      <a class="list-item" href="#deadlines" aria-label="Vai alla sezione Tempi e scadenze"
+                         title="Vai alla sezione Tempi e scadenze">
                         <span class="title-medium">Tempi e scadenze</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_costi[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_costi[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#costs" aria-label="Vai alla sezione Quanto costa" title="Vai alla sezione Quanto costa">
+                      <a class="list-item" href="#costs" aria-label="Vai alla sezione Quanto costa"
+                         title="Vai alla sezione Quanto costa">
                         <span class="title-medium">Quanto costa</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
+                  {% endif %}
+                  {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
                     <li>
-                      <a class="list-item" href="#submit-request" aria-label="Vai alla sezione Presenta la domanda" title="Vai alla sezione Presenta la domanda">
+                      <a class="list-item" href="#submit-request" aria-label="Vai alla sezione Presenta la domanda"
+                         title="Vai alla sezione Presenta la domanda">
                         <span class="title-medium">Presenta la domanda</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_ulteriori_informazioni[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_ulteriori_informazioni[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#more-info" aria-label="Vai alla sezione Ulteriori informazioni" title="Vai alla sezione Ulteriori informazioni">
+                      <a class="list-item" href="#more-info" aria-label="Vai alla sezione Ulteriori informazioni"
+                         title="Vai alla sezione Ulteriori informazioni">
                         <span class="title-medium">Ulteriori informazioni</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_condizioni_di_servizio[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_condizioni_di_servizio[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#conditions" aria-label="Vai alla sezione Condizioni di servizio" title="Vai alla sezione Condizioni di servizio" data-focus-mouse="false">
+                      <a class="list-item" href="#conditions" aria-label="Vai alla sezione Condizioni di servizio"
+                         title="Vai alla sezione Condizioni di servizio" data-focus-mouse="false">
                         <span class="title-medium">Condizioni di servizio</span>
                       </a>
                     </li>
-                    {% endif %}
-                    {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+                  {% endif %}
+                  {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#contacts" aria-label="Vai alla sezione Contatti" title="Vai alla sezione Contatti" data-focus-mouse="false">
+                      <a class="list-item" href="#contacts" aria-label="Vai alla sezione Contatti"
+                         title="Vai alla sezione Contatti" data-focus-mouse="false">
                         <span class="title-medium">Contatti</span>
                       </a>
                     </li>
-                    {% endif %}
-                  </ul>
-                </li>
-              </ul>
-            </div>
+                  {% endif %}
+                </ul>
+              </li>
+            </ul>
           </div>
-        </aside>
-      </div>
-      <div class="col-12 col-lg-8 offset-lg-1">
-        {% if content.field_a_chi_rivolto[0] is not empty %}
+        </div>
+      </aside>
+    </div>
+    <div class="col-12 col-lg-8 offset-lg-1">
+      {% if content.field_a_chi_rivolto[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_a_chi_rivolto }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_descrizione_estesa[0] is not empty %}
+      {% endif %}
+      {% if content.field_descrizione_estesa[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_descrizione_estesa }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_come_fare[0] is not empty %}
+      {% endif %}
+      {% if content.field_come_fare[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_come_fare }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_cosa_serve[0] is not empty %}
+      {% endif %}
+      {% if content.field_cosa_serve[0] is not empty %}
         <section class="mb-30 has-bg-grey p-3">
           <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_cosa_serve }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_cosa_si_ottiene[0] is not empty %}
+      {% endif %}
+      {% if content.field_cosa_si_ottiene[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_cosa_si_ottiene }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_tempi_e_scadenze[0] is not empty %}
+      {% endif %}
+      {% if content.field_tempi_e_scadenze[0] is not empty %}
         <section class="mb-30">
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
             {% if content.field_promemoria_scadenze[0] %}
-            <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
+              <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
             {% endif %}
             <div class="calendar-vertical mb-3">
               {% for fase in content.field_tempi_e_scadenze["#items"] %}
-              <div class="calendar-date">
-                <div class="calendar-date-day">
-                  <small class="calendar-date-day__year">{{ fase.entity.field_data.value|date('Y') }}</small>
-                  <span class="title-xxlarge-regular d-flex justify-content-center">{{ fase.entity.field_data.value|date('d') }}</span>
-                  <small class="calendar-date-day__month">{{ fase.entity.field_data.value|date('M')|monthEn2It|lower }}</small>
-                </div>
-                <div class="calendar-date-description rounded">
-                  <div class="calendar-date-description-content">
-                    <h3 class="title-medium-2 mb-0">{{ fase.entity.title.value }}</h3>
+                <div class="calendar-date">
+                  <div class="calendar-date-day">
+                    <small class="calendar-date-day__year">{{ fase.entity.field_data.value|date('Y') }}</small>
+                    <span
+                      class="title-xxlarge-regular d-flex justify-content-center">{{ fase.entity.field_data.value|date('d') }}</span>
+                    <small
+                      class="calendar-date-day__month">{{ fase.entity.field_data.value|date('M')|monthEn2It|lower }}</small>
+                  </div>
+                  <div class="calendar-date-description rounded">
+                    <div class="calendar-date-description-content">
+                      <h3 class="title-medium-2 mb-0">{{ fase.entity.title.value }}</h3>
+                    </div>
                   </div>
                 </div>
-              </div>
               {% endfor %}
             </div>
           </div>
         </section>
-        {% endif %}
-        {% if content.field_costi[0] is not empty %}
+      {% endif %}
+      {% if content.field_costi[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_costi }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
+      {% endif %}
+      {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
         <section class="mb-30 has-bg-grey p-4">
           <h2 class="title-xxlarge mb-3" id="submit-request">Dove presentare la domanda</h2>
           {% if content.field_promemoria_accesso[0] %}
-          <div class="richtext-wrapper lora">
-            {{ content.field_promemoria_accesso}}
-          </div>
+            <div class="richtext-wrapper lora">
+              {{ content.field_promemoria_accesso }}
+            </div>
           {% endif %}
           {% if content.field_canale_digitale[0] %}
-          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-            type="button" aria-label="Vai alla pagina richiedi {{ content.title }}"
-            class="btn btn-primary mobile-full mb-4" data-focus-mouse="false">
-            <span>Richiesta di iscrizione online</span>
-          </a>
+            <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
+               type="button" aria-label="Vai alla pagina richiedi {{ content.title }}"
+               class="btn btn-primary mobile-full mb-4" data-focus-mouse="false">
+              <span>Richiesta di iscrizione online</span>
+            </a>
           {% endif %}
           {% if content.field_unita_organizzative[0] %}
-          <p class="text-paragraph lora mb-4">Uffici dove presentare la domanda su appuntamento</p>
-          {% for uorg in content.field_unita_organizzative["#items"] %}
-            <p class="text-paragraph t-primary mb-4">
-              <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': uorg.target_id}) }}"
-                aria-label="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
-                title="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
-              >{{ uorg.entity.title.value }} [prenota]
-              </a>
-            </p>
-          {% endfor %}
+            <p class="text-paragraph lora mb-4">Uffici dove presentare la domanda su appuntamento</p>
+            {% for uorg in content.field_unita_organizzative["#items"] %}
+              <p class="text-paragraph t-primary mb-4">
+                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': uorg.target_id}) }}"
+                   aria-label="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
+                   title="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
+                >{{ uorg.entity.title.value }} [prenota]
+                </a>
+              </p>
+            {% endfor %}
           {% endif %}
         </section>
-        {% endif %}
-        {% if content.field_ulteriori_informazioni[0] is not empty %}
+      {% endif %}
+      {% if content.field_ulteriori_informazioni[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_ulteriori_informazioni }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_condizioni_di_servizio[0] is not empty %}
+      {% endif %}
+      {% if content.field_condizioni_di_servizio[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_condizioni_di_servizio }}
           </div>
         </section>
-        {% endif %}
-        {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+      {% endif %}
+      {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
         <section class="it-page-section">
           <h2 class="title-xxlarge mb-3" id="contacts">Contatti</h2>
           <div class="row">
             {% if content.field_unita_org_responsabile[0] is not empty %}
-            <div class="col-12 col-md-6">
-              {# <h6><small class="fw-semibold">Questa pagina è gestita da</small></h6> #}
-              <div class="card-wrapper rounded h-auto mt-10">
-                {% for uorg in content.field_unita_org_responsabile['#items'] %}
-                <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
-                  <div class="card-body pe-3">
-                    <h5 class="card-title">
-                      <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
-                        class="u-main-black" data-element="service-area"
-                        aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
-                        title="Vai alla pagina di {{ uorg.entity.title.value }}"
-                      >{{ uorg.entity.title.value }}
-                      </a>
-                    </h5>
-                    <div class="card-text">
-                      <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
+              <div class="col-12 col-md-6">
+                {# <h6><small class="fw-semibold">Questa pagina è gestita da</small></h6> #}
+                <div class="card-wrapper rounded h-auto mt-10">
+                  {% for uorg in content.field_unita_org_responsabile['#items'] %}
+                    <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
+                      <div class="card-body pe-3">
+                        <h5 class="card-title">
+                          <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
+                             class="u-main-black" data-element="service-area"
+                             aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
+                             title="Vai alla pagina di {{ uorg.entity.title.value }}"
+                          >{{ uorg.entity.title.value }}
+                          </a>
+                        </h5>
+                        <div class="card-text">
+                          <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}
+                            , {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
+                        </div>
+                      </div>
+                      <div class="avatar size-xl">
+                        <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
+                             alt="Immagine">
+                      </div>
                     </div>
-                  </div>
-                  <div class="avatar size-xl">
-                    <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}" alt="Immagine">
-                  </div>
+                  {% endfor %}
                 </div>
-                {% endfor %}
               </div>
-            </div>
             {% endif %}
             {% if content.field_argomenti[0] is not empty %}
-            <div class="col-12 col-md-6">
-              <span class="text-paragraph-small d-block mb-2">Argomenti</span>
-              {% for argomento in content.field_argomenti['#items'] %}
-                {% set argName = argomento.entity.name.value %}
-                <a href"{{path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id})}}"
+              <div class="col-12 col-md-6">
+                <span class="text-paragraph-small d-block mb-2">Argomenti</span>
+                {% for argomento in content.field_argomenti['#items'] %}
+                  {% set argName = argomento.entity.name.value %}
+                  <a href"{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
                   class="text-white" title="Vai all'argomento {{ argName }}" aria-label="Vai all'argomento {{ argName }}">
                   <div class="chip chip-simple bg-success">
                     <span class="chip-label text-white">{{ argName }}</span>
                   </div>
-                </a>
-              {% endfor %}
-            </div>
+                  </a>
+                {% endfor %}
+              </div>
             {% endif %}
           </div>
         </section>
-        {% endif %}
-      </div>
+      {% endif %}
     </div>
   </div>
+</div>
+<script data-element="metatag" type="application/ld+json">
+  {
+    "name": "{{ node.label }}",
+    "serviceType": "{{ drupal_field('name', 'taxonomy_term', node.field_categoria_del_servizio.value[0]['target_id'])[0]['#context']['value'] }}",
+        "serviceOperator": {
+      "name": "{{ node.field_codice_dell_ente_erogatore.value }}"
+    },
+    "areaServed": {
+      "name": "{{ node.field_copertura_geografica.value|raw|striptags }}"
+    },
+    "audience": {
+      "name": "{{ node.field_a_chi_rivolto.value }}"
+    },
+    "availableChannel": {
+      "serviceUrl": "{{ url }}",
+      "serviceLocation": {
+        "name": "{{ content.field_unita_org_responsabile['#items'][0].entity.title.value }}",
+        "address": {
+          "streetAddress": "{{ content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value }}",
+          "postalCode": "{{ content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_cap.value }}",
+          "addressLocality": "{{ content.field_unita_org_responsabile['#items'][0].field_circoscrizione }}"
+        }
+      }
+    }
+  }
 
-  {# {% if display_submitted %}
-    <footer>
-      {{ author_picture }}
-      <div{{ author_attributes }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %} #}
+</script>
 

@@ -500,10 +500,10 @@
       "name": "{{ node.field_codice_dell_ente_erogatore.value }}"
     },
     "areaServed": {
-      "name": "{{ node.field_copertura_geografica.value|raw|striptags }}"
+      "name": "{{ node.field_copertura_geografica.value|raw|striptags|trim }}"
     },
     "audience": {
-      "name": "{{ node.field_a_chi_rivolto.value }}"
+      "name": "{{ node.field_a_chi_rivolto.value|raw|striptags|trim }}"
     },
     "availableChannel": {
       "serviceUrl": "{{ url }}",

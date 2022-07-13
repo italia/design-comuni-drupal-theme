@@ -11,5 +11,6 @@ global-styling:
     theme:
       css/fonts.css: {},
       css/bootstrap-italia.min.css: {},
+      css/styles.css: {},
       css/style.css: {},
       css/drupal.css: {},

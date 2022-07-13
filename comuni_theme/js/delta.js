@@ -166,7 +166,7 @@ officeSelect.addEventListener("change", () => {
             setSelectedPlace()})"
                     />
                     <label for=${place?.ID}>
-                    <h3 class="big-title mb-0 pb-0">
+                    <h3 class="big-title">
                         ${place?.post_title}
                     </h3></label
                     >

@@ -190,7 +190,7 @@ function appointment() {
                       value='${JSON.stringify(reducedPlace)}'
                     />
                     <label for=${place?.id}>
-                    <h3 class="big-title mb-0 pb-0">
+                    <h3 class="big-title">
                       ${place?.title}
                     </h3></label
                     >

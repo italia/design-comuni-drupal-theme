@@ -1,6 +1,6 @@
-name: 'Comuni module'
+name: 'Design Comuni Italia'
 type: module
-description: 'Comuni module Configuration'
+description: 'Design Comuni Italia Configuration'
 dependencies:
 core_version_requirement: ^9
 package: Comuni

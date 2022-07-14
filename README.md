@@ -12,27 +12,37 @@
 
 Prepara un'installazione in locale di Drupal con il seguente comando composer:
 
-`composer create-project drupal/recommended-project my_site_name_dir`
+~~~
+composer create-project drupal/recommended-project my_site_name_dir
+~~~
 
 Procedi con il normale processo di installazione di Drupal caricando il sito e seguendo le istruzioni nel browser
 
-All'interno della cartella `modules` crea la cartella `custom`, poi al suo interno scarica il progetto con il seguente comando git:
+All'interno della cartella *modules* crea la cartella *custom*, poi al suo interno scarica il progetto con il seguente comando git:
 
-`git clone https://github.com/italia/design-comuni-drupal-theme.git`
+~~~
+git clone https://github.com/italia/design-comuni-drupal-theme.git
+~~~
 
-Nel file `settings.php` che puoi trovare in `/web/sites/default/settings.php` modifica la riga che contiene la chiave `$settings['config_sync_directory']` in questo modo:
+Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* modifica la riga che contiene la chiave *$settings['config_sync_directory']* in questo modo:
 
-`$settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';`
+~~~
+$settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';*
+~~~
 
-Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala nel seguente modo:
+Nello stesso file cerca la riga che contiene la chiave *$settings['file_private_path']* e modificala nel seguente modo:
 
-`$settings['file_private_path'] = 'sites/default/files';`
+~~~
+$settings['file_private_path'] = 'sites/default/files';
+~~~
 
 Nella cartella principale di drupal che si è selezionata durante l'installazione con composer eseguire il seguente comando:
 
-`composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush`
+~~~
+composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush
+~~~
 
-Nel file `composer.json` inserire la seguente patch all'interno della chiave `extra`:
+Nel file *composer.json* inserire la seguente patch all'interno della chiave *extra*:
 
 ~~~
 enable-patching": true,
@@ -45,7 +55,9 @@ enable-patching": true,
 
 Sempra nella cartella principale di Drupal eseguire l'installazione delle dipendenze di composer con il seguente comando:
 
-`composer install`
+~~~
+composer install
+~~~
 
 Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*
 
@@ -55,36 +67,42 @@ Attiva il tema *Comuni Theme*
 
 Rimuovi gli shortcut nell'admin con il seguentecomando drush:
 
-`entity:delete shortcut_set -y`
+~~~
+drush entity:delete shortcut_set -y
+~~~
 
 Imposta l'*uuid* del sito con il seguentecomando drush:
 
-`cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y`
+~~~
+drush cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y
+~~~
 
 Importa i file di configurazione del sito con il seguentecomando drush:
 
-`cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y`
+~~~
+drush cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
+~~~
 
 Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine:
 
-```
 •	Taxonomy
 •	Block 
 •	SiteSetting
 •	Pages
-```
 
 Generare i menu con il seguente comando drush:
 
-`drush-create-menus:generate`
+~~~
+drush drush-create-menus:generate
+~~~
 
 Ripulire la cache corrente conil seguente comando drush:
 
-`cr`
+~~~
+drush cr
+~~~
 
-Nelle sezione configurazione dell'admin, sotto basic site settings inserire il seguente valore come homepage
-
-`/homepage`
+Nelle sezione configurazione dell'admin, sotto basic site settings inserire il valore `/homepage` nella casella homepage
 
 Importa il logo svg del comune spostando il file svg nella cartella */web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modifica l'entry *Info Comune* e inserisci la path al file svg nella sezione *Logo svg*
 

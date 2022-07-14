@@ -27,7 +27,7 @@ git clone https://github.com/italia/design-comuni-drupal-theme.git
 Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* modifica la riga che contiene la chiave `$settings['config_sync_directory']` in questo modo:
 
 ~~~
-$settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';*
+$settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';
 ~~~
 
 Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala nel seguente modo:
@@ -45,10 +45,10 @@ composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1
 Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
 
 ~~~
-enable-patching": true,
-  "patches": {
-    "drupal/views_show_more": {
-      "<After update to Drupal 9.3.0 on second click on Show more button page reloads and shows 404 error>": "https://www.drupal.org/files/issues/2021-12-17/views_show_more-3254931_4.patch"
+"enable-patching": true,
+    "patches": {
+      "drupal/views_show_more": {
+        "<After update to Drupal 9.3.0 on second click on Show more button page reloads and shows 404 error>": "https://www.drupal.org/files/issues/2021-12-17/views_show_more-3254931_4.patch"
     }
 },
 ~~~
@@ -61,25 +61,25 @@ composer install
 
 Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*, poi verifica che il modulo *Update Manager* sia disabilitato e nel caso contrario disinstallalo, quindi attiva il tema *Comuni Theme*
 
-Rimuovi gli shortcut nell'admin con il seguentecomando drush:
+Rimuovi gli shortcut nell'admin con il seguente comando drush:
 
 ~~~
 drush entity:delete shortcut_set -y
 ~~~
 
-Imposta l'*uuid* del sito con il seguentecomando drush:
+Imposta l'*uuid* del sito con il seguente comando drush:
 
 ~~~
 drush cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y
 ~~~
 
-Importa i file di configurazione del sito con il seguentecomando drush:
+Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):
 
 ~~~
 drush cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
 ~~~
 
-Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine:
+Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine (se necessario aumentare il valore della dimensione massima consentita per gli upload in php.ini):
 
 - Taxonomy
 - Block 
@@ -92,7 +92,7 @@ Generare i menu con il seguente comando drush:
 drush drush-create-menus:generate
 ~~~
 
-Ripulire la cache corrente conil seguente comando drush:
+Ripulire la cache corrente con il seguente comando drush:
 
 ~~~
 drush cr
@@ -101,6 +101,8 @@ drush cr
 Nelle sezione configurazione dell'admin, sotto basic site settings inserire il valore `/homepage` nella casella homepage
 
 Importa il logo svg del comune spostando il file svg nella cartella */web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modifica l'entry *Info Comune* e inserisci la path al file svg nella sezione *Logo svg*
+
+Se necessario ripulire la cache di drupal un'ultima volta.
 
 
 
@@ -134,11 +136,11 @@ Il tema è basato sul [modello di sito istituzionale dei comuni italiani](https:
 
 
 #### **Cosa fa**
-Il tema WordPress è stato progettato per adottare rapidamente il modello di sito istituzionale dei comuni. Il tema imposta automaticamente lo stile grafico del sito, i layout delle pagine e il menu di navigazione, permettendo di velocizzare l’adozione tecnica del modello e di focalizzarsi sulla creazione dei contenuti sulle pagine.
+Il tema Drupal è stato progettato per adottare rapidamente il modello di sito istituzionale dei comuni. Il tema imposta automaticamente lo stile grafico del sito, i layout delle pagine e il menu di navigazione, permettendo di velocizzare l’adozione tecnica del modello e di focalizzarsi sulla creazione dei contenuti sulle pagine.
 
 Il modello di sito istituzionale comunale vuole comunicare l’identità e l’atmosfera di un comune, fornendo agli utenti tutte le informazioni sull’organizzazione dell’istituzione e sui servizi di supporto al cittadino.
 
-Il tema Wordpress è pronto all’uso. [Scaricalo gratuitamente da GitHub](https://github.com/italia/design-comuni-drupal-theme)
+Il tema Drupal è pronto all’uso. [Scaricalo gratuitamente da GitHub](https://github.com/italia/design-comuni-drupal-theme)
 
 
 #### **La cura verso i contenuti**
@@ -199,7 +201,7 @@ Servizi - Documenti Pubblici
 
 Questo significa, ad esempio, che ogni pagina di un'unità organizzative può presentare una relazione con contenuti come i luoghi e i servizi.
 
-**Attenzione!** Dal punto di vista pratico, è necessario che i contenuti che si vuole collegare vengano creati in un ordine preciso: prima i content type che fungono da contenuti di dettaglio e poi il content type contenitore (es. prima i servizi, i luoghi e le persone e solo dopo l'unità organizzativa che raggruppa servizi, luoghi, persone creati in precedenza).
+**Attenzione!** Dal punto di vista pratico, è necessario che i contenuti che si vuole collegare vengano creati in un ordine preciso: prima i content type che fungono da contenuti di dettaglio e poi il content type contenitore (es. prima le persone, il luogo e punti di contatto e solo dopo l'evento che raggruppa persone, luogo e punti di contatto creati in precedenza).
 
 Per collegare tra loro diverse tipologie di contenuto, quindi:
 1.	crea la scheda o le schede dei contenuti di dettaglio (ad esempio, il luogo “Palazzo Baldini” che verrà associato ad un'unità organizzativa);
@@ -286,7 +288,7 @@ Nel tema vengono integrate le componenti di [**Bootstrap Italia**](https://itali
 ## Licenze software dei componenti di terze parti
 
 ### Componenti distribuiti con i template
-Di seguito elencati i componenti distribuiti con il tema WordPress:
+Di seguito elencati i componenti distribuiti con il tema Drupal:
 
 - [Package Name](repository url) © Author, License;
 
@@ -300,7 +302,7 @@ Di seguito elencati i componenti distribuiti (derivati dal template html utilizz
 ## Segnalazione bug
 Vuoi segnalare un bug o fare una richiesta?
 
-Prima di tutto assicurati che sia un problema relativo al tema WordPress e non a plugin installati o impostazioni del CMS, poi dai un'occhiata a come creare una [issue](https://github.com/italia/bootstrap-italia/blob/master/CONTRIBUTING.md#creare-una-issue) ed infine, se lo ritieni necessario, apri la issue [in questo repository](https://github.com/italia/design-comuni-drupal-theme/issues).
+Prima di tutto assicurati che sia un problema relativo al tema Drupal e non a plugin installati o impostazioni del CMS, poi dai un'occhiata a come creare una [issue](https://github.com/italia/bootstrap-italia/blob/master/CONTRIBUTING.md#creare-una-issue) ed infine, se lo ritieni necessario, apri la issue [in questo repository](https://github.com/italia/design-comuni-drupal-theme/issues).
 
 ## Come contribuire
 Vorresti dare una mano su Bootstrap Italia? Sei nel posto giusto!

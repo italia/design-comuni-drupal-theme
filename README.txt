@@ -8,15 +8,85 @@
 **Design Comuni Italia** è il tema Drupal che permette di aderire al [modello di sito istituzionale dei comuni](https://designers.italia.it/modello/comuni/), progettato dal Dipartimento per la trasformazione digitale.
 
 ## **Installazione e supporto**
-#### **Come scaricare il tema**
+#### **Come installare il tema**
 
-Per scaricare il progetto esegui il seguente comando git:
+Prepara un'installazione in locale di Drupal con il seguente comando composer:
 
-+ git clone https://github.com/italia/design-comuni-drupal-theme.git
+`composer create-project drupal/recommended-project my_site_name_dir`
 
-Se già usi una vecchia versione del tema e vuoi aggiornarla, esegui il comando:
+Procedi con il normale processo di installazione di Drupal caricando il sito e seguendo le istruzioni nel browser
 
-+ git pull.
+All'interno della cartella `modules` crea la cartella `custom`, poi al suo interno scarica il progetto con il seguente comando git:
+
+`git clone https://github.com/italia/design-comuni-drupal-theme.git`
+
+Nel file `settings.php` che puoi trovare in `/web/sites/default/settings.php` modifica la riga che contiene la chiave `$settings['config_sync_directory']` in questo modo:
+
+`$settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';`
+
+Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala nel seguente modo:
+
+`$settings['file_private_path'] = 'sites/default/files';`
+
+Nella cartella principale di drupal che si è selezionata durante l'installazione con composer eseguire il seguente comando:
+
+`composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush`
+
+Nel file `composer.json` inserire la seguente patch all'interno della chiave `extra`:
+
+~~~
+enable-patching": true,
+  "patches": {
+    "drupal/views_show_more": {
+      "<After update to Drupal 9.3.0 on second click on Show more button page reloads and shows 404 error>": "https://www.drupal.org/files/issues/2021-12-17/views_show_more-3254931_4.patch"
+    }
+},
+~~~
+
+Sempra nella cartella principale di Drupal eseguire l'installazione delle dipendenze di composer con il seguente comando:
+
+`composer install`
+
+Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*
+
+Verificare che il modulo *Update Manager* sia disabilitato e nel caso contrario disinstallarlo
+
+Attiva il tema *Comuni Theme*
+
+Rimuovi gli shortcut nell'admin con il seguentecomando drush:
+
+`entity:delete shortcut_set -y`
+
+Imposta l'*uuid* del sito con il seguentecomando drush:
+
+`cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y`
+
+Importa i file di configurazione del sito con il seguentecomando drush:
+
+`cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y`
+
+Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine:
+
+```
+•	Taxonomy
+•	Block 
+•	SiteSetting
+•	Pages
+```
+
+Generare i menu con il seguente comando drush:
+
+`drush-create-menus:generate`
+
+Ripulire la cache corrente conil seguente comando drush:
+
+`cr`
+
+Nelle sezione configurazione dell'admin, sotto basic site settings inserire il seguente valore come homepage
+
+`/homepage`
+
+Importa il logo svg del comune spostando il file svg nella cartella */web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modifica l'entry *Info Comune* e inserisci la path al file svg nella sezione *Logo svg*
 
 
 

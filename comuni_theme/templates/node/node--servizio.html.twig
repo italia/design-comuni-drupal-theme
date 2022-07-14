@@ -487,6 +487,15 @@
   </div>
 </div>
 <script data-element="metatag" type="application/ld+json">
+  {% if node.field_copertura_geografica.value %}
+  {%  set  areaServed = node.field_copertura_geografica.value|raw|striptags|trim %}
+  {% endif %}
+ {% if node.field_a_chi_rivolto.value %}
+  {%  set  audience = node.field_a_chi_rivolto.value|raw|striptags|trim %}
+  {% endif %}
+   {% if content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value %}
+  {%  set  streetAddress = content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value|raw|striptags %}
+  {% endif %}
   {
     "name": "{{ node.label }}",
     "serviceType": "{{ drupal_field('name', 'taxonomy_term', node.field_categoria_del_servizio.value[0]['target_id'])[0]['#context']['value'] }}",
@@ -494,17 +503,17 @@
       "name": "{{ node.field_codice_dell_ente_erogatore.value }}"
     },
     "areaServed": {
-      "name": "{{ node.field_copertura_geografica.value|raw|striptags|trim }}"
+      "name": "{{ areaServed }}"
     },
     "audience": {
-      "name": "{{ node.field_a_chi_rivolto.value|raw|striptags|trim }}"
+      "name": "{{ audience }}"
     },
     "availableChannel": {
       "serviceUrl": "{{ url }}",
       "serviceLocation": {
         "name": "{{ content.field_unita_org_responsabile['#items'][0].entity.title.value }}",
         "address": {
-          "streetAddress": "{{ content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_indirizzo.value }}",
+          "streetAddress": "{{ streetAddress }}",
           "postalCode": "{{ content.field_unita_org_responsabile['#items'][0].entity.field_sede_principale.entity.field_cap.value }}",
           "addressLocality": "{{ content.field_unita_org_responsabile['#items'][0].field_circoscrizione }}"
         }

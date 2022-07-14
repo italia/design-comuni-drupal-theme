@@ -24,25 +24,25 @@ All'interno della cartella *modules* crea la cartella *custom*, poi al suo inter
 git clone https://github.com/italia/design-comuni-drupal-theme.git
 ~~~
 
-Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* modifica la riga che contiene la chiave *$settings['config_sync_directory']* in questo modo:
+Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* modifica la riga che contiene la chiave `$settings['config_sync_directory']` in questo modo:
 
 ~~~
 $settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';*
 ~~~
 
-Nello stesso file cerca la riga che contiene la chiave *$settings['file_private_path']* e modificala nel seguente modo:
+Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala nel seguente modo:
 
 ~~~
 $settings['file_private_path'] = 'sites/default/files';
 ~~~
 
-Nella cartella principale di drupal che si è selezionata durante l'installazione con composer eseguire il seguente comando:
+Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:
 
 ~~~
 composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush
 ~~~
 
-Nel file *composer.json* inserire la seguente patch all'interno della chiave *extra*:
+Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
 
 ~~~
 enable-patching": true,
@@ -53,17 +53,13 @@ enable-patching": true,
 },
 ~~~
 
-Sempra nella cartella principale di Drupal eseguire l'installazione delle dipendenze di composer con il seguente comando:
+Sempre nella cartella principale di Drupal esegui l'installazione delle dipendenze di composer con il seguente comando:
 
 ~~~
 composer install
 ~~~
 
-Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*
-
-Verificare che il modulo *Update Manager* sia disabilitato e nel caso contrario disinstallarlo
-
-Attiva il tema *Comuni Theme*
+Spostati alla pagina di admin del sito e attiva il modulo *Design Comuni Italia*, poi verifica che il modulo *Update Manager* sia disabilitato e nel caso contrario disinstallalo, quindi attiva il tema *Comuni Theme*
 
 Rimuovi gli shortcut nell'admin con il seguentecomando drush:
 
@@ -85,10 +81,10 @@ drush cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_th
 
 Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine:
 
-•	Taxonomy
-•	Block 
-•	SiteSetting
-•	Pages
+- Taxonomy
+- Block 
+- SiteSetting
+- Pages
 
 Generare i menu con il seguente comando drush:
 

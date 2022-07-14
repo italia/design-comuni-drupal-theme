@@ -122,6 +122,7 @@ Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/message
 - [Relazioni tra i contenuti](#relazioni-tra-i-contenuti)
 - [I diversi content type](#i-diversi-content-type)
 - [Personalizzazione](#personalizzazione)
+- [Servizi esterni](#servizi-esterni)
 - [La community di riferimento](#la-community-di-riferimento)
 - [FAQ](#faq)
 - [Licenze software dei componenti di terze parti](#licenze-software-dei-componenti-di-terze-parti)
@@ -237,6 +238,11 @@ Cliccando su “Configurazione,  è possibile definire:
 
 -	**opzione 1**: descrizione;
 -	**opzione 2**: descrizione.
+
+
+### **Servizi esterni**
+Il sito Drupal è realizzato per supportare il collegamento a API esterne per quel che concerne le funzionalità di valutazione, prenotazione appuntamento e richiesta di assistenza.
+Ogni amministrazione comunale dovrà quindi provvedere ad integrare i form forniti con il modulo con un servizio esterno realizzato a propria discrezione.
 
 
 #### **La community di riferimento**

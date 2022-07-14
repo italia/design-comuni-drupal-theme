@@ -257,7 +257,7 @@ Scopri i canali della community dove confrontarti sulle risorse del modello:
 
 L’uso del tema non impatta le modalità con cui viene abitualmente gestito il sito scolastico e rimane una responsabilità degi comuni. Molti comuni fanno affidamento su fornitori esterni per hosting e manutenzione.
 
-➔	**Perché esiste=one temi pronti solo per Drupal e WordPress?**
+➔	**Perché esistono temi pronti solo per Drupal e WordPress?**
 
 Drupal e WordPress sono i CMS più usati dai comuni. Puoi usare l’apposito [kit per creare temi per altri CMS](https://github.com/italia/design-comuni-pagine-statiche/).
 

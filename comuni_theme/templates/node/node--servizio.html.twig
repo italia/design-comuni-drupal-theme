@@ -167,7 +167,7 @@
                 </div>
               </div>
             </div>
-            <div class="mt-4 mb-4">
+            {# <div class="mt-4 mb-4">
               {% if content.field_argomenti %}
                 <span class="subtitle-small">Argomenti</span>
                 <div class="chip-wrapper mt-2">
@@ -185,7 +185,7 @@
                   {% endfor %}
                 </div>
               {% endif %}
-            </div>
+            </div> #}
           </div>
         </div>
       </div>
@@ -278,14 +278,11 @@
                       </a>
                     </li>
                   {% endif %}
-                  {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
-                    <li>
-                      <a class="list-item" href="#submit-request" aria-label="Vai alla sezione Presenta la domanda"
-                         title="Vai alla sezione Presenta la domanda">
-                        <span class="title-medium">Presenta la domanda</span>
-                      </a>
-                    </li>
-                  {% endif %}
+                  <li>
+                    <a class="list-item" href="#submit-request" aria-label="Vai alla sezione Accedi al servizio" title="Vai alla sezione Accedi al servizio" data-focus-mouse="false">
+                      <span class="title-medium">Accedi al servizio</span>
+                    </a>
+                  </li>
                   {% if content.field_ulteriori_informazioni[0] is not empty %}
                     <li>
                       <a class="list-item" href="#more-info" aria-label="Vai alla sezione Ulteriori informazioni"
@@ -394,35 +391,25 @@
           </div>
         </section>
       {% endif %}
-      {% if content.field_promemoria_accesso[0] or content.field_canale_digitale[0] or content.field_canale_fisico[0] %}
-        <section class="mb-30 has-bg-grey p-4">
-          <h2 class="title-xxlarge mb-3" id="submit-request">Dove presentare la domanda</h2>
-          {% if content.field_promemoria_accesso[0] %}
-            <div class="richtext-wrapper lora">
-              {{ content.field_promemoria_accesso }}
-            </div>
-          {% endif %}
-          {% if content.field_canale_digitale[0] %}
-            <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-               type="button" aria-label="Vai alla pagina richiedi {{ content.title }}"
-               class="btn btn-primary mobile-full mb-4" data-focus-mouse="false">
-              <span>Richiesta di iscrizione online</span>
-            </a>
-          {% endif %}
-          {% if content.field_unita_organizzative[0] %}
-            <p class="text-paragraph lora mb-4">Uffici dove presentare la domanda su appuntamento</p>
-            {% for uorg in content.field_unita_organizzative["#items"] %}
-              <p class="text-paragraph t-primary mb-4">
-                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': uorg.target_id}) }}"
-                   aria-label="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
-                   title="Vai a Pranota appuntamento presso {{ uorg.entity.title.value }}"
-                >{{ uorg.entity.title.value }} [prenota]
-                </a>
-              </p>
-            {% endfor %}
-          {% endif %}
-        </section>
-      {% endif %}
+      <section class="mb-30 has-bg-grey p-4">
+        <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
+        {% if content.field_canale_digitale[0] %}
+        <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
+        <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
+            type="button" aria-label="Richiesta di iscrizione online a {{ node.label }}"
+            class="btn btn-primary mobile-full" data-focus-mouse="false">
+          <span class="">Richiedi iscrizione online</span>
+        </a>
+        <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+        {% else %}
+        <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+        {% endif %}
+        <a href='/prenotazione-appuntamento' target="_blank"
+          class="btn btn-outline-primary t-primary bg-white mobile-full"
+          aria-label="Vai alla pagina prenota appuntamento"
+        ><span>Prenota appuntamento</span>
+        </a>
+      </section>
       {% if content.field_ulteriori_informazioni[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
@@ -441,26 +428,24 @@
       {% endif %}
       {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
         <section class="it-page-section">
-          <h2 class="title-xxlarge mb-3" id="contacts">Contatti</h2>
+          <h2 class="mb-3" id="contacts">Contatti</h2>
           <div class="row">
             {% if content.field_unita_org_responsabile[0] is not empty %}
-              <div class="col-12 col-md-6">
-                {# <h6><small class="fw-semibold">Questa pagina è gestita da</small></h6> #}
+              <div class="col-12 col-md-8 col-lg-6 mb-30">
                 <div class="card-wrapper rounded h-auto mt-10">
                   {% for uorg in content.field_unita_org_responsabile['#items'] %}
                     <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
                       <div class="card-body pe-3">
                         <h5 class="card-title">
                           <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
-                             class="u-main-black" data-element="service-area"
+                             class data-element="service-area"
                              aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
                              title="Vai alla pagina di {{ uorg.entity.title.value }}"
                           >{{ uorg.entity.title.value }}
                           </a>
                         </h5>
                         <div class="card-text">
-                          <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}
-                            , {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
+                          <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
                         </div>
                       </div>
                       <div class="avatar size-xl">
@@ -472,18 +457,27 @@
                 </div>
               </div>
             {% endif %}
-            {% if content.field_argomenti[0] is not empty %}
-              <div class="col-12 col-md-6">
-                <span class="text-paragraph-small d-block mb-2">Argomenti</span>
+            {% if content.field_argomenti[0] is not empty or node.changed.value %}
+              <div class="col-12 mb-30">
+                {% if content.field_argomenti[0] is not empty %}
+                <span class="text-paragraph-small">Argomenti:</span>
+                <div class="d-flex flex-wrap gap-2 mt-10 mb-30">
                 {% for argomento in content.field_argomenti['#items'] %}
                   {% set argName = argomento.entity.name.value %}
-                  <a href"{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
-                  class="text-white" title="Vai all'argomento {{ argName }}" aria-label="Vai all'argomento {{ argName }}">
-                  <div class="chip chip-simple bg-success">
-                    <span class="chip-label text-white">{{ argName }}</span>
+                  <div class="cmp-tag">
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
+                      class="cmp-tag__tag title-xsmall t-primary bg-tag"
+                      aria-label="Visualizza tutti gli argomenti {{ argName }}"
+                      title="Visualizza tutti gli argomenti {{ argName }}"
+                      data-element="service-topic" data-focus-mouse="false"
+                    >{{ argName }}</a>
                   </div>
-                  </a>
                 {% endfor %}
+                {% endif %}
+                </div>
+                {% if node.changed.value %}
+                <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
+                {% endif %}
               </div>
             {% endif %}
           </div>

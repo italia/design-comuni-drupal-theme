@@ -285,18 +285,18 @@ class ComuniTwig extends AbstractExtension
       );
     } else {
       $months = array(
-        'January' =>  'Gennaio',
-        'February' =>  'Febbraio',
-        'March' =>  'Marzo',
-        'April' =>  'Aprile',
+        'Jan' =>  'Gennaio',
+        'Feb' =>  'Febbraio',
+        'Mar' =>  'Marzo',
+        'Apr' =>  'Aprile',
         'May' =>  'Maggio',
         'Jun' =>  'Giugno',
-        'July' =>  'Luglio',
-        'August' =>  'Agosto',
-        'September' =>  'Settembre',
-        'October' =>  'Ottobre',
-        'November' =>  'Novembre',
-        'December' =>  'Dicembre',
+        'Jul' =>  'Luglio',
+        'Aug' =>  'Agosto',
+        'Sep' =>  'Settembre',
+        'Oct' =>  'Ottobre',
+        'Nov' =>  'Novembre',
+        'Dec' =>  'Dicembre',
       );
     }
     return $months[$englishName];

@@ -81,15 +81,16 @@
           </h1>
         {% endif %}
         {{ title_suffix }}
-        {% if content.field_data_e_orario_di_inizio %}
+        {% if content.field_data_e_orario_di_inizio[0] %}
           {% set data_inizio = content.field_data_e_orario_di_inizio['#items'].0.value %}
           {% set data_inizio = data_inizio|date('d') ~ " " ~ data_inizio|date('M')|monthEn2It(false)|lower  ~ " " ~ data_inizio|date('Y') %}
           {% set data_fine = content.field_data_e_orario_di_fine['#items'].0.value %}
           {% set data_fine = data_fine|date('d') ~ " " ~  data_fine|date('M')|monthEn2It(false)|lower  ~ " " ~ data_fine|date('Y') %}
           <h4 class="py-2">dal {{ data_inizio }}
-            {% if content.field_data_e_orario_di_fine %}
-              al {{ data_fine }}</h4>
-          {% endif %}
+            {% if content.field_data_e_orario_di_fine[0] %}
+              al {{ data_fine }}
+            {% endif %}
+          </h4>
         {% endif %}
         {% if content.field_descrizione_breve %}
           <p>{{ content.field_descrizione_breve }}</p>
@@ -178,7 +179,7 @@
     </div>
   </div>
 
-  {% if node.field_immagine %}
+  {% if content.field_immagine[0] %}
   <div class="container-fluid my-3">
     <div class="row">
       <figure class="figure px-0 img-full">
@@ -287,7 +288,9 @@
             {{ content.field_galleria_immagini }}
           </div>
           {% endif %}
+          {% if content.field_video_esterno %}
           {{content.field_video_esterno}}
+          {% endif %}
           {% if content.field_persone[0] is not empty %}
             <div class="pt-3 pb-5">
               <h6 class="font-serif fw-bold">Parteciperanno:</h6>

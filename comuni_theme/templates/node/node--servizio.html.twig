@@ -68,7 +68,8 @@
  * @ingroup themeable
  */
 #}
-
+{{dd(content)}}
+{{dd(content.field_condizioni_di_servizio)}}
 
 <div class="container">
   <div class="row justify-content-center">
@@ -420,9 +421,8 @@
       {% if content.field_condizioni_di_servizio[0] is not empty %}
         <section class="mb-30">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_condizioni_di_servizio }}
-          </div>
+          <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
+          {{ content.field_condizioni_di_servizio }}
         </section>
       {% endif %}
       {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}

@@ -79,6 +79,15 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
+  field_condizioni_di_servizio:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 16
+    region: content
   field_cosa_serve:
     type: text_default
     label: hidden
@@ -160,7 +169,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_unita_organizzative:
     type: entity_reference_entity_view
@@ -179,7 +188,7 @@ content:
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
 hidden:
   field_business_events: true
@@ -187,7 +196,6 @@ hidden:
   field_casi_particolari: true
   field_categoria_del_servizio: true
   field_codice_dell_ente_erogatore: true
-  field_condizioni_di_servizio: true
   field_contatti: true
   field_copertura_geografica: true
   field_documenti: true

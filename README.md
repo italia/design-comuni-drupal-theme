@@ -219,9 +219,71 @@ Cliccando su “Configurazione,  è possibile definire:
 -	**opzione 2**: descrizione.
 
 
-### **Servizi esterni**
-Il sito Drupal è realizzato per supportare il collegamento a API esterne per quel che concerne le funzionalità di valutazione, prenotazione appuntamento e richiesta di assistenza.
-Ogni amministrazione comunale dovrà quindi provvedere ad integrare i form forniti con il modulo con un servizio esterno realizzato a propria discrezione.
+#### **Servizi esterni**
+Il tema Drupal è realizzato per supportare il collegamento a API esterne per quel che concerne le funzionalità di valutazione, prenotazione appuntamento e richiesta di assistenza. Ogni amministrazione comunale dovrà quindi provvedere ad integrare i form forniti con il modulo con un servizio esterno realizzato a propria discrezione.
+**_Valutazione_**
+Al termine del processo di valutazione viene inoltrato all'endpoint `/api/v1/create/valutazione` un payload con il seguente formato:
+```json
+{
+  "freeText": "Ho creato piu' contenuti con lo stesso titolo",
+  "page": "http://localhost:8085/homepage",
+  "radioResponse": "Non capivo se quello che facevo era corretto",
+  "star": 4,
+  "title": "Homepage | Nome del comune"
+}
+```
+**_Prenotazione appuntamento_**
+Per funzionare correttamente, senza dover intervenire sul codice, la chiamata che restituisce le date disponibili, dovrà rispettare il seguente formato:
+```json
+[
+  {
+    "startDate": "2022-07-04T09:00",
+    "endDate": "2022-07-04T09:45"
+  },
+  {
+    "startDate": "2022-07-04T09:45",
+    "endDate": "2022-07-04T10:30"
+  },
+  {
+    "startDate": "2022-07-05T09:45",
+    "endDate": "2022-07-05T10:30"
+  }
+]
+```
+Al termine della procedura per la prenotazione viene inviato all'endpoint `/api/v1/create/appuntamento` un payload nel seguente formato:
+```json
+{
+  "office":"Assessorato all'educazione",
+  "place": {
+    "nome":"Palazzina A. Volta",
+    "indirizzo":"Piazza dell'Aia, 38",
+    "apertura":"",
+    "id":"20"
+  },
+  "appointment": {
+    "startDate":"2022-07-05T09:45",
+    "endDate":"2022-07-05T10:30"
+  },
+  "service":"Distribuzione gratuita depliant parchi nazionali",
+  "moreDetails":"Abbiamo ricevuto uno scatolone in piu'",
+  "name":"Piero",
+  "surname":"Bianchi",
+  "email":"piero.bianchi@istituto-einstein.it"
+}
+```
+**_Richiesta di assistenza_**
+Al termine della richiesta assistenza viene creato un payload nel seguente formato:
+```json
+{
+  "title": "ticket_2022-07-15T12:47:02.560Z",
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "email": "mario@rossi.it",
+  "categoria": "Attività produttive e commercio",
+  "servizio": "Pagamento multa",
+  "descrizione": "ho ricevuto la comunicazione",
+}
+```
 
 
 #### **La community di riferimento**

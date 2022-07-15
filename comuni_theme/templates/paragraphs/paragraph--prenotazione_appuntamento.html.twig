@@ -497,7 +497,7 @@
 														{# {% for i in 1..12 %} #}
 														{% set interval = "+" ~ (i - currentMonth) ~ " month" %}
 														{# {% set interval = "+" ~ (currentMonth) ~ " month" %} #}
-														<option value="{{ i }}">{{ "now"|date_modify(interval)|date("F")|monthEn2It(false) }}</option>
+														<option value="{{ i }}">{{ "now"|date_modify(interval)|date("M")|monthEn2It(false) }}</option>
 													{% endfor %}
 												</select>
 											</div>

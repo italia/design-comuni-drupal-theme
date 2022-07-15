@@ -262,7 +262,8 @@ function appointment() {
         return response.json();
       })
       .then((data) => {
-        document.querySelector("#radio-appointment").innerHTML = "";
+        const radioAppointment = document.querySelector("#radio-appointment")
+        radioAppointment.innerHTML = "";
         for (const dates of data) {
           const { startDate, endDate } = dates;
           const startDay = startDate.split("T")[0];
@@ -277,7 +278,6 @@ function appointment() {
             JSON.stringify({ startDate, endDate })
           );
 
-          const radioAppointment = document.querySelector("#radio-appointment")
           radioAppointment.innerHTML += `
           <div class="radio-body border-bottom border-light">
           <input name="radio" type="radio" id="${id}" />

@@ -60,7 +60,7 @@
 						</div>
 						<div class="col-lg-9 argomenti">
 							{% for item in attribute(content.field_argomenti, "#items") %}
-								<div class="chip chip-simple chip-primary bg-primary rounded-3 pb-0 mb-2">
+								<div class="chip chip-simple pb-0 mb-2">
 									<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
 										class="chip-label text-white"
 										aria-label="Vai all'argomento {{ item.entity.name.value }}"

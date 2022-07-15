@@ -43,7 +43,7 @@
   %}
 
   {% if attributes.storage["id"]|render == "edit-type--wrapper" or attributes.storage["id"]|render == "edit-field-argomenti--wrapper" %}
-    <h3 class="h6 text-uppercase category-list__title">{{ legend.title }}</h3>
+    <legend class="h6 text-uppercase category-list__title">{{ legend.title }}</legend>
   {% else %}
     {#  Always wrap fieldset legends in a <span> for CSS positioning. #}
     <legend{{ legend.attributes }}>

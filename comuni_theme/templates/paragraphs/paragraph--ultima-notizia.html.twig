@@ -113,7 +113,7 @@
                 </a>
 								<p class="mb-4 subtitle-small pt-3 lora">{{ node.field_descrizione_breve.value }}</p>
 								{% for argomento in node.field_argomenti %}
-                  <div class="chip chip-simple chip-primary bg-primary rounded-3">
+                  <div class="chip chip-simple">
                     <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id})}}"
                       class="chip-label text-white"
                       aria-label="vai all'argomento {{ argomento.entity.name.value }}"

@@ -86,8 +86,7 @@
             {% if content.field_stato_del_servizio %}
               <div class="d-flex flex-wrap cmp-heading__tag">
                 <div class="cmp-tag">
-                  <span class="cmp-tag__tag title-xsmall text-decoration-none text-button"
-                        data-element="service-status"
+                  <span class="cmp-tag__tag title-xsmall" data-element="service-status"
                   >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
                 </div>
               </div>
@@ -436,14 +435,14 @@
                   {% for uorg in content.field_unita_org_responsabile['#items'] %}
                     <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
                       <div class="card-body pe-3">
-                        <h5 class="card-title">
+                        <p class="card-title text-paragraph-regular-medium-semi mb-3">
                           <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
                              class data-element="service-area"
                              aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
                              title="Vai alla pagina di {{ uorg.entity.title.value }}"
                           >{{ uorg.entity.title.value }}
                           </a>
-                        </h5>
+                        </p>
                         <div class="card-text">
                           <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
                         </div>
@@ -466,11 +465,12 @@
                   {% set argName = argomento.entity.name.value %}
                   <div class="cmp-tag">
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
-                      class="cmp-tag__tag title-xsmall t-primary bg-tag"
+                      class="chip chip-simple t-primary bg-tag"
                       aria-label="Visualizza tutti gli argomenti {{ argName }}"
                       title="Visualizza tutti gli argomenti {{ argName }}"
-                      data-element="service-topic" data-focus-mouse="false"
-                    >{{ argName }}</a>
+                      data-element="service-topic"
+                    ><span class="chip-label">{{ argName }}</span>
+                    </a>
                   </div>
                 {% endfor %}
                 {% endif %}

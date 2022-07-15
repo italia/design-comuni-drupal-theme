@@ -115,7 +115,7 @@
 								{% for argomento in node.field_argomenti %}
                   <div class="chip chip-simple">
                     <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id})}}"
-                      class="chip-label text-white"
+                      class="chip-label"
                       aria-label="vai all'argomento {{ argomento.entity.name.value }}"
                       title="vai all'argomento {{ argomento.entity.name.value }}"
                     >{{ argomento.entity.name.value }}</a>

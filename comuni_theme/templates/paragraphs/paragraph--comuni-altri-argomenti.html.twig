@@ -62,7 +62,7 @@
 							{% for item in attribute(content.field_argomenti, "#items") %}
 								<div class="chip chip-simple pb-0 mb-2">
 									<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-										class="chip-label text-white"
+										class="chip-label"
 										aria-label="Vai all'argomento {{ item.entity.name.value }}"
 										aria-label="vai alla sezione {{ item.entity.name.value }}"
 									>

@@ -1,5 +1,5 @@
 # ![developers.italia](https://avatars1.githubusercontent.com/u/15377824?s=36&v=4 "developers.italia") Design Comuni Italia
-[![Join the #design siti comuni channel](logo svg del canale)](url del canale)
+[![Join the #design siti scuole channel](https://img.shields.io/badge/Slack%20channel-%23design_siti_comuni-blue.svg)](https://developersitalia.slack.com/messages/design-siti-comuni/)
 
 ## **Un sito per i comuni italiani**
 ### I primi passi con il tema Dupal (v1.0.0)
@@ -158,10 +158,6 @@ Inizia guardando gli esempi di amministrazioni comunali che hanno già adottato 
 [Il Comune di Cagliari](https://www.comune.cagliari.it/portale/)
 
 
-Consigliamo di cominciare a creare i diversi contenuti in questo ordine:
-- content type 1;
-- content type 2.
-
 Per creare i contenuti del nuovo sito e imparare a gestirlo al meglio, è utile creare uno o più gruppi di lavoro composti da rappresentanti dei cittadini e da una rappresentanza del personale tecnico-amministrativo. 
 
 La creazione di un team è importante soprattutto per mappare le informazioni necessarie prima della fase di scrittura vera e propria. Ad esempio, per poter scrivere contenuti sui servizi demografici del comune, è necessario un confronto preliminare con gli esperti di questo ambito per chiarire come sono fatti i servizi e come funzionano. 
@@ -169,11 +165,6 @@ La creazione di un team è importante soprattutto per mappare le informazioni ne
 L’obiettivo dei vari gruppi di lavoro è di creare questi contenuti e di aggiornarli quando necessario.
 
 In fase iniziale, consigliamo di creare un unico esempio per ciascuna tipologia di contenuto, in modo da validare la struttura con i gruppi di lavoro e usarlo come linea guida per la stesura di tutti i contenuti di quella tipologia.
-
-
-Una volta iniziato il lavoro sulle prime 5 tipologie di contenuto suggerite, si può continuare con: 
-- content type 3;
-- content type 4.
 
 Prima della pubblicazione del sito, è utile definire con chiarezza chi sarà responsabile della pubblicazione di ciascuna delle tipologie di contenuti, in modo da garantire un flusso di pubblicazione costante. Non tutte le sezioni del sito andranno gestite e aggiornate con la stessa frequenza. È bene prendere consapevolezza delle varie sezioni e della frequenza con cui ciascun aggiornamento va fatto.
 
@@ -215,17 +206,6 @@ Per associare nuovi contenuti di dettaglio ad altri già esistenti:
 
 
 Nella maggior parte dei casi questa correlazione è bidirezionale e automatica. Quando si crea, ad esempio, una relazione tra un luogo e una struttura, questa verrà mostrata sia nel dettaglio del luogo che in quello della struttura.
-
-
-#### **I diversi *content type***
-
-*Content type 1*
-
-[Descrizione del content type]
-
-*Content type 2*
-
-[Descrizione del content type]
 
 
 
@@ -296,27 +276,27 @@ Nel tema vengono integrate le componenti di [**Bootstrap Italia**](https://itali
 ### Componenti distribuiti con i template
 Di seguito elencati i componenti distribuiti con il tema Drupal:
 
-[Views field view](https://www.drupal.org/project/views_field_view), licenza GNU GPL v2.0;
-[CSV serialization](https://www.drupal.org/project/csv_serialization), licenza GNU GPL v2.0;
-[Composer patches](https://github.com/cweagans/composer-patches) © Cameron Eagans, licenza BSD 3
-[Menu trail by path](https://www.drupal.org/project/menu_trail_by_path), licenza GNU GPL v2.0;
-[Better exposed filters](https://www.drupal.org/project/better_exposed_filters), licenza GNU GPL v2.0;
-[Better social sharing buttons](https://www.drupal.org/project/better_social_sharing_buttons), licenza GNU GPL v2.0;
-[Color field](https://www.drupal.org/project/color_field), licenza GNU GPL v2.0;
-[Content synchronizer](https://www.drupal.org/project/content_synchronizer), licenza GNU GPL v2.0;
-[Devel](https://www.drupal.org/project/devel), licenza GNU GPL v2.0;
-[Fontawesome](https://www.drupal.org/project/fontawesome), licenza GNU GPL v2.0;
-[jQuery UI TouchPunch](https://www.drupal.org/project/jquery_ui_touch_punch), licenza GNU GPL v2.0;
-[Node read time](https://www.drupal.org/project/node_read_time), licenza GNU GPL v2.0;
-[Paragraphs](https://www.drupal.org/project/paragraphs), licenza GNU GPL v2.0;
-[Pathauto](https://www.drupal.org/project/pathauto), licenza GNU GPL v2.0;
-[Quick Node Clone](https://www.drupal.org/project/quick_node_clone), licenza GNU GPL v2.0;
-[REST UI](https://www.drupal.org/project/restui), licenza GNU GPL v2.0;
-[Search API](https://www.drupal.org/project/search_api), licenza GNU GPL v2.0;
-[Site Settings and Labels](https://www.drupal.org/project/site_settings), licenza GNU GPL v2.0;
-[Twig Tweak](https://www.drupal.org/project/twig_tweak), licenza GNU GPL v2.0;
-[Views Show More](https://www.drupal.org/project/views_show_more), licenza GNU GPL v2.0;
-[Drush](https://github.com/drush-ops/drush) © Moshe Weitzman, licenza GNU GPL v3.0
+- [Better exposed filters](https://www.drupal.org/project/better_exposed_filters), licenza GNU GPL v2.0;
+- [Better social sharing buttons](https://www.drupal.org/project/better_social_sharing_buttons), licenza GNU GPL v2.0;
+- [Color field](https://www.drupal.org/project/color_field), licenza GNU GPL v2.0;
+- [Composer patches](https://github.com/cweagans/composer-patches) © Cameron Eagans, licenza BSD 3
+- [Content synchronizer](https://www.drupal.org/project/content_synchronizer), licenza GNU GPL v2.0;
+- [CSV serialization](https://www.drupal.org/project/csv_serialization), licenza GNU GPL v2.0;
+- [Devel](https://www.drupal.org/project/devel), licenza GNU GPL v2.0;
+- [Drush](https://github.com/drush-ops/drush) © Moshe Weitzman, licenza GNU GPL v3.0
+- [Fontawesome](https://www.drupal.org/project/fontawesome), licenza GNU GPL v2.0;
+- [jQuery UI TouchPunch](https://www.drupal.org/project/jquery_ui_touch_punch), licenza GNU GPL v2.0;
+- [Menu trail by path](https://www.drupal.org/project/menu_trail_by_path), licenza GNU GPL v2.0;
+- [Node read time](https://www.drupal.org/project/node_read_time), licenza GNU GPL v2.0;
+- [Paragraphs](https://www.drupal.org/project/paragraphs), licenza GNU GPL v2.0;
+- [Pathauto](https://www.drupal.org/project/pathauto), licenza GNU GPL v2.0;
+- [Quick Node Clone](https://www.drupal.org/project/quick_node_clone), licenza GNU GPL v2.0;
+- [REST UI](https://www.drupal.org/project/restui), licenza GNU GPL v2.0;
+- [Search API](https://www.drupal.org/project/search_api), licenza GNU GPL v2.0;
+- [Site Settings and Labels](https://www.drupal.org/project/site_settings), licenza GNU GPL v2.0;
+- [Views field view](https://www.drupal.org/project/views_field_view), licenza GNU GPL v2.0;
+- [Views Show More](https://www.drupal.org/project/views_show_more), licenza GNU GPL v2.0;
+- [Twig Tweak](https://www.drupal.org/project/twig_tweak), licenza GNU GPL v2.0;
 
 Di seguito elencati i componenti distribuiti (derivati dal template html utilizzato per realizzare il tema: https://github.com/italia/design-comuni-drupal-theme/), che hanno una propria licenza diversa da CC0:
 

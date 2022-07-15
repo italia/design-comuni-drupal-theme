@@ -120,7 +120,6 @@ Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/message
 - [Da dove iniziare](#da-dove-iniziare)
 - [Riscrivere o importare i contenuti del vecchio sito](#riscrivere-o-importare-i-contenuti-del-vecchio-sito)
 - [Relazioni tra i contenuti](#relazioni-tra-i-contenuti)
-- [I diversi content type](#i-diversi-content-type)
 - [Personalizzazione](#personalizzazione)
 - [Servizi esterni](#servizi-esterni)
 - [La community di riferimento](#la-community-di-riferimento)

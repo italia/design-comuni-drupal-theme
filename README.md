@@ -296,9 +296,27 @@ Nel tema vengono integrate le componenti di [**Bootstrap Italia**](https://itali
 ### Componenti distribuiti con i template
 Di seguito elencati i componenti distribuiti con il tema Drupal:
 
-- [Package Name](repository url) © Author, License;
-
-
+[Views field view](https://www.drupal.org/project/views_field_view), licenza GNU GPL v2.0;
+[CSV serialization](https://www.drupal.org/project/csv_serialization), licenza GNU GPL v2.0;
+[Composer patches](https://github.com/cweagans/composer-patches) © Cameron Eagans, licenza BSD 3
+[Menu trail by path](https://www.drupal.org/project/menu_trail_by_path), licenza GNU GPL v2.0;
+[Better exposed filters](https://www.drupal.org/project/better_exposed_filters), licenza GNU GPL v2.0;
+[Better social sharing buttons](https://www.drupal.org/project/better_social_sharing_buttons), licenza GNU GPL v2.0;
+[Color field](https://www.drupal.org/project/color_field), licenza GNU GPL v2.0;
+[Content synchronizer](https://www.drupal.org/project/content_synchronizer), licenza GNU GPL v2.0;
+[Devel](https://www.drupal.org/project/devel), licenza GNU GPL v2.0;
+[Fontawesome](https://www.drupal.org/project/fontawesome), licenza GNU GPL v2.0;
+[jQuery UI TouchPunch](https://www.drupal.org/project/jquery_ui_touch_punch), licenza GNU GPL v2.0;
+[Node read time](https://www.drupal.org/project/node_read_time), licenza GNU GPL v2.0;
+[Paragraphs](https://www.drupal.org/project/paragraphs), licenza GNU GPL v2.0;
+[Pathauto](https://www.drupal.org/project/pathauto), licenza GNU GPL v2.0;
+[Quick Node Clone](https://www.drupal.org/project/quick_node_clone), licenza GNU GPL v2.0;
+[REST UI](https://www.drupal.org/project/restui), licenza GNU GPL v2.0;
+[Search API](https://www.drupal.org/project/search_api), licenza GNU GPL v2.0;
+[Site Settings and Labels](https://www.drupal.org/project/site_settings), licenza GNU GPL v2.0;
+[Twig Tweak](https://www.drupal.org/project/twig_tweak), licenza GNU GPL v2.0;
+[Views Show More](https://www.drupal.org/project/views_show_more), licenza GNU GPL v2.0;
+[Drush](https://github.com/drush-ops/drush) © Moshe Weitzman, licenza GNU GPL v3.0
 
 Di seguito elencati i componenti distribuiti (derivati dal template html utilizzato per realizzare il tema: https://github.com/italia/design-comuni-drupal-theme/), che hanno una propria licenza diversa da CC0:
 

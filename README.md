@@ -30,10 +30,10 @@ Nel file *settings.php* che puoi trovare in */web/sites/default/settings.php* mo
 $settings['config_sync_directory'] = 'modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync';
 ~~~
 
-Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala nel seguente modo:
+Nello stesso file cerca la riga che contiene la chiave `$settings['file_private_path']` e modificala assegnandole una path a una cartella con permssi di scrittura al di fuori della cartella di Drupal:
 
 ~~~
-$settings['file_private_path'] = 'sites/default/files';
+$settings['file_private_path'] = 'path/to/your/folder';
 ~~~
 
 Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:

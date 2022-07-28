@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/italia/design-comuni-drupal-theme.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Presidenza del Consiglio dei Ministri",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/italia/design-comuni-drupal-theme/issues"
   },

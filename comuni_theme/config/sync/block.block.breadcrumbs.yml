@@ -21,4 +21,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*"
+    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*\r\n/servizi/*"

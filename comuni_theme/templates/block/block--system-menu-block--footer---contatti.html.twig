@@ -39,7 +39,7 @@
   } %}
   {% if menu_item is defined and menu_item is not null %}
     <a href="{{ menu_item.url.toString }}"
-      aria-label="{{ menu_item.title }}" data-element="{{ map[menu_item.title|lower] }}"
+      data-element="{{ map[menu_item.title|lower] }}"
     >{{ menu_item.title }}
     </a>
   {% endif %}

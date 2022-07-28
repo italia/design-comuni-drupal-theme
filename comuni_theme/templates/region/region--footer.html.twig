@@ -48,7 +48,7 @@
                       <path fill="none" d="M0 0h24v24H0z"/>
                     </svg>
                   </span>
-                  <button type="submit" aria-label="cerca in tutto il sito" class="btn btn-primary">
+                  <button type="submit" class="btn btn-primary">
                     <span class="">Cerca</span>
                   </button>
                 </div>
@@ -63,8 +63,6 @@
                       {% set field = drupal_field('title', 'node', link['target_id']) %}
                       {% set link2 = path('entity.node.canonical', {'node': link['target_id']})  %}
                       <li role="listitem"><a href="{{ link2 }}"
-                          aria-label="{{ field["#items"][0].value}}"
-                          title="{{ field["#items"][0].value}}"
                         >{{ field["#items"][0].value }}
                       </a></li>
                     {% endfor %}
@@ -85,10 +83,7 @@
         <div class="col-12 footer-items-wrapper logo-wrapper">
           <div class="ue-logo"><span class="visually-hidden">logo Unione Europea</span></div>
           <div class="it-brand-wrapper">
-            <a href="{{ url('<front>') }}" title="Vai alla home"
-              aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
-              class data-focus-mouse="false"
-            >
+            <a href="{{ url('<front>') }}">
               {% if site_settings.infocomune.info_comune.field_logo_svg %}
                 <img style="width:82px;margin-right:16px;" aria-hidden="true"
                      src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>

@@ -32,22 +32,14 @@
 {# TODO: handle attributes like className, etc. #}
 {% macro menu_link(menu_item) %}
   {% if menu_item.url.external %}
-    <a
-      href="{{ menu_item.url.uri }}"
-      aria-label="{{ menu_item.title }}"
-      class=""
-      data-focus-mouse="false"
-    >{{ menu_item.title }}
-    </a>
+    <a href="{{ menu_item.url.uri }}">{{ menu_item.title }}</a>
   {% elseif menu_item.url.routeName is same as "<nolink>" %}
     <span title="{{ menu_item.url.options.attributes.title }}">{{ menu_item.title }}</span>
   {% elseif menu_item.url.routeName is same as "<button>" %}
     <button title="{{ menu_item.url.options.attributes.title }}" type="button">{{ menu_item.title }}</button>
   {% else %}
-    <a
-      href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}"
-      aria-label="{{ menu_item.title }}"
-    >{{ menu_item.title }}
+    <a href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}">
+      {{ menu_item.title }}
     </a>
   {% endif %}
   {# {{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}

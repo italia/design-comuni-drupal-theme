@@ -101,13 +101,13 @@
                         <div class="card-header border-0 p-0">
                           <a href="{{ urlCategoria }}"
                             class="title-xsmall-bold mb-2 category text-uppercase"
-                            title="{{ nomeCategoria }}"
-                            aria-label="{{ nomeCategoria }}"
                           >{{ nomeCategoria }}</a>
                         </div>
                         <div class="card-body p-0 my-2">
                           <h3 class="green-title-big t-primary mb-8">
-                            <a href="{{ urlContenuto }}" aria-label="Vai alla pagina {{titolo}}">{{titolo}}</a>
+                            <a href="{{ urlContenuto }}"
+                              data-element="service-link"
+                            >{{titolo}}</a>
                           </h3>
                           <p class="text-paragraph">{{ descrizione }}</p>
                         </div>
@@ -160,7 +160,7 @@
                 {% else %}
                 <li class="mb-3">
                 {% endif %}
-                  <a class="list-item ps-0 title-medium" href="{{ufficio["urlUfficio"]}}" title="Vai alla pagina " ~ {{ufficio["titoloUfficio"]}} aria-label="Vai alla pagina " ~ {{ufficio["titoloUfficio"]}}>
+                  <a class="list-item ps-0 title-medium" href="{{ufficio["urlUfficio"]}}">
                     <span>{{ufficio["titoloUfficio"]}}</span>
                   </a>
                 </li>

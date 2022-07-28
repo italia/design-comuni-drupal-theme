@@ -125,16 +125,12 @@
             {% set taxonomy_name = node.field_tipo_di_evento.entity.name.value %}
 							<a class="u-main-primary fw-bold cmp-list-card-img__body-heading-title"
 								href="{{ path('entity.taxonomy_term.canonical', { 'taxonomy_term': node.field_tipo_di_evento.entity.tid.value }) }}"
-								title="Categoria {{ taxonomy_name }}"
-								aria-label="Categoria {{ taxonomy_name }}"
 							>{{ taxonomy_name }}</a>
 						</div>
 						{% set node_title = node.getTitle() %}
             <h3 class="cmp-list-card-img__body-title u-main-primary">
               <a
                 href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
-                title="Categoria {{ node_title }}"
-                aria-label="Categoria {{ node_title }}"
               >{{ node_title }}</a>
             </h3>
 						<div class="cmp-list-card-img__body-description">
@@ -142,8 +138,6 @@
 						</div>
 						<a class="read-more t-primary text-uppercase cmp-list-card-img__body-link"
 							href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
-							title="Leggi di più sulla pagina {{ node_title }}"
-							aria-label="Leggi di più sulla pagina {{ node_title }}"
 						>
 							<span class="text">Leggi di più</span>
 							<span class="visually-hidden">su Lorem ipsum dolor sit amet, consectetur adipiscing elit…</span>

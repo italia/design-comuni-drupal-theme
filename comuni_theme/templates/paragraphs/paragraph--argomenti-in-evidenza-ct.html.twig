@@ -64,8 +64,6 @@
 								<li>
 									<a class="list-item active icon-left mb-2"
                     href="{{ path('entity.node.canonical', {'node': contenuto.target_id }) }}"
-                    aria-label="vai all'argomento {{ contenuto.entity.title.value }}"
-                    title="vai all'argomento {{ contenuto.entity.title.value }}"
                   >
 										<span class="list-item-title-icon-wrapper">
 											<span class="text-success">
@@ -79,8 +77,6 @@
 					</div>
 				</div>
 				<a class="read-more pt-0"
-          aria-label="Esplora argomento {{ card_title }}"
-          aria-label="vai alla sezione di {{ card_title }}"
           href="{{ content.field_argomento[0]['#url'] }}"
         >
           <span class="list-item-title-icon-wrapper">

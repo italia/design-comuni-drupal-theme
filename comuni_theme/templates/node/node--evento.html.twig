@@ -100,11 +100,14 @@
         {{ drupal_block("social_sharing_buttons_block") }}
 
         <div class="dropdown d-inline">
-          <button class="btn btn-dropdown dropdown-toggle" type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <svg class="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
+          <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            aria-label="vedi azioni da compiere sulla pagina"
+            class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0"
+          >
+            <svgclass="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 18a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a.9.9 0 011 1 1 1 0 01-2 0 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2z" />
               <path fill="none" d="M0 0h24v24H0z" />
-            </svg>
+            </svgclass=>
             <small>Vedi azioni</small>{# TODO Label #}
           </button>
           <div class="dropdown-menu shadow-lg" aria-labelledby="viewActions">
@@ -138,7 +141,9 @@
                   </a>
                 </li>
                 <li>
-                  <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}" title="{{ 'Invia'|t }} E-mail" aria-label="{{ 'Invia'|t }} E-mail" target="_blank" rel="noopener">
+                  <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}" target="_blank" rel="noopener"
+                    title="{{ 'Invia'|t }} E-mail" aria-label="{{ 'Invia'|t }} E-mail"
+                  >
                     <svg class="icon" viewBox="0 0 24 24" id="it-mail" xmlns="http://www.w3.org/2000/svg">
                       <path d="M20.5 5h-17A1.5 1.5 0 002 6.5v11A1.5 1.5 0 003.5 19h17a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0020.5 5zm-.3 1l-7.1 7.2a1.6 1.6 0 01-2.2 0L3.8 6zM3 17.3V6.6L8.3 12zm.7.7L9 12.7l1.2 1.2a2.7 2.7 0 003.6 0l1.2-1.2 5.3 5.3zm12-6L21 6.6v10.7z" />
                       <path fill="none" d="M0 0h24v24H0z" />
@@ -183,7 +188,9 @@
   <div class="container-fluid my-3">
     <div class="row">
       <figure class="figure px-0 img-full">
-        <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ node.field_immagine.entity.field_media_image.alt }}" title="{{ node.field_immagine.entity.field_media_image.alt }}">
+        <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid"
+          alt="{{ node.field_immagine.entity.field_media_image.alt }}"
+        >
         <figcaption class="figure-caption text-center pt-3">{{ node.field_immagine.entity.field_media_image.alt }}</figcaption>
       </figure>
     </div>
@@ -195,7 +202,7 @@
       <aside class="col-lg-4">
         <div class="sticky-wrapper navbar-wrapper">
           <nav class="navbar it-navscroll-wrapper it-top-navscroll navbar-expand-lg">
-            <button class="custom-navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" data-bs-target="#navbarNav">
+            <button class="custom-navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" data-bs-target="#navbarNav">
               <span class="it-list"></span>Indice della pagina </button>
             <div class="navbar-collapsable" id="navbarNav">
               <div class="overlay"></div>
@@ -222,21 +229,21 @@
                     {% endif %}
                     {% if node.field_luogo[0] is not empty %}
                     <li class="nav-item">
-                      <a class="nav-link" href="#luogo" data-focus-mouse="false">
+                      <a class="nav-link" href="#luogo">
                         <span>Luogo</span>
                       </a>
                     </li>
                     {% endif %}
                     {% if content.field_data_e_orario_di_inizio[0] is not empty %}
                     <li class="nav-item">
-                      <a class="nav-link" href="#date-e-orari" data-focus-mouse="false">
+                      <a class="nav-link" href="#date-e-orari">
                         <span>Date e orari</span>
                       </a>
                     </li>
                     {% endif %}
                     {% if content.field_costo[0] is not empty %}
                     <li class="nav-item">
-                      <a class="nav-link" href="#costi" data-focus-mouse="false">
+                      <a class="nav-link" href="#costi">
                         <span>Costi</span>
                       </a>
                     </li>
@@ -295,7 +302,7 @@
             <div class="pt-3 pb-5">
               <h6 class="font-serif fw-bold">Parteciperanno:</h6>
               {% for item in attribute(content.field_persone, "#items") %}
-                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" title="vai alla scheda di{{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}" aria-label="vai alla scheda di {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}" class="" data-focus-mouse="false">
+                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" class="" data-focus-mouse="false">
                    <div class="chip chip-simple chip-primary">
                     <span class="chip-label">
                         {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
@@ -414,7 +421,7 @@
             {% set fineOra = content.field_data_e_orario_di_fine['#items'].0.value|date('H') %}
             {% set fineMinuti = content.field_data_e_orario_di_fine['#items'].0.value|date('m') %}
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{ inizioAnno ~ inizioMese ~ inizioGiorno }}T{{ inizioOra ~ inizioMinuti }}00Z/{{ fineAnno ~ fineMese ~ fineGiorno }}T{{ fineOra ~ fineMinuti }}00Z&text={{ node.label|replace({' ': '%20'}) }}" target="_blank" class="btn btn-outline-primary btn-icon">
-              <svg  class="icon icon-primary" viewBox="0 0 24 24" id="it-plus-circle" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.4 11.5h4.5v1h-4.5V17h-1v-4.5H6.9v-1h4.5V7h1zm9.6.5A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+              <svg class="icon icon-primary" viewBox="0 0 24 24" id="it-plus-circle" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.4 11.5h4.5v1h-4.5V17h-1v-4.5H6.9v-1h4.5V7h1zm9.6.5A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
               <span>Aggiungi al calendario</span>{# TODO Label #}
             </a>
           </div>

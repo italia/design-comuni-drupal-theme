@@ -106,7 +106,6 @@
           <div class="img-responsive">
             <figure class="img-wrapper">
               <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}"
-                title="{{ node.field_immagine.entity.field_media_image.alt }}"
                 alt="{{ node.field_immagine.entity.field_media_image.alt }}"
               >
             </figure>
@@ -118,11 +117,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">
-            <a
-              href="{{ url }}"
-              aria-label="Vai alla scheda {{ node_title }}"
-              title="Vai alla scheda {{ node_title }}"
-            >{{ node_title }}</a>
+            <a href="{{ url }}">{{ node_title }}</a>
           </h5>
           <p class="card-text"></p>
           <a href="{{ url }}"

@@ -58,8 +58,6 @@
                 'entity.taxonomy_term.canonical',
                 {'taxonomy_term': item.target_id}
               ) }}"
-              title="vai all'argomento - {{ item.entity.name.value }}"
-              aria-label="vai all'argomento - {{ item.entity.name.value }}"
             >
               <div class="img-responsive-wrapper">
                 <div class="img-responsive rounded">
@@ -67,8 +65,7 @@
                   {% set media_image = item.entity.field_immagine.entity.field_media_image %}
                   {% if media_image is defined and media_image is not null %}
                     <img src="{{ file_url(media_image.entity.fileuri) }}"
-                      alt="{{ media_image.alt }}"
-                      title="{{ media_image.title }}"
+                      alt="{{ media_image.alt }}" title="{{ media_image.title }}"
                     >
                   {% else %}
                     <div class="drupal--grey-block"></div>

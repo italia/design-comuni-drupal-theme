@@ -36,7 +36,9 @@
       <div class="img-responsive">
         <div class="img-wrapper">
           {% if content.field_immagine[0] is not empty %}
-            <img src="{{ file_url(content.field_immagine[0]['#media'].field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ content.field_immagine[0]['#media'].field_media_image.alt }}" title="{{ content.field_immagine[0]['#media'].field_media_image.alt }}">
+            <img src="{{ file_url(content.field_immagine[0]['#media'].field_media_image.entity.fileuri) }}" class="figure-img img-fluid"
+              title="{{ content.field_immagine[0]['#media'].field_media_image.alt }}" alt="{{ content.field_immagine[0]['#media'].field_media_image.alt }}"
+            >
           {% endif %}
         </div>
       </div>
@@ -83,7 +85,7 @@
 
         <div class="row mt-lg-2">
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}/novita" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutte le novità" title="vai alla pagina di novità">Tutte le novità</a>
+            <a href="{{ url('<front>') }}/novita" class="btn btn-primary text-button w-100">Tutte le novità</a>
           </div>
         </div>
       </div>
@@ -103,7 +105,7 @@
             {{ drupal_view('argomenti_correlati', 'block_2', term.id) }}
           </div>
           <div class="col-12 col-lg-3 offset-lg-9">
-            <a href="{{ url('<front>') }}/amministrazione" class="btn btn-primary text-button w-100" aria-label="vai alla sezione amministrazione" title="vai alla pagina amministrazione">Tutta l’amministrazione</a>
+            <a href="{{ url('<front>') }}/amministrazione" class="btn btn-primary text-button w-100">Tutta l’amministrazione</a>
           </div>
         </div>
 
@@ -125,7 +127,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-3 offset-lg-9">
-          <a href="{{ url('<front>') }}/servizi" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutti i servizi" title="vai alla pagina di servizi">Tutti i servizi</a>{# TODO Label #}
+          <a href="{{ url('<front>') }}/servizi" class="btn btn-primary text-button w-100">Tutti i servizi</a>{# TODO Label #}
         </div>
       </div>
     </div>
@@ -145,7 +147,7 @@
           </div>
         </div>
         <div class="col-12 col-lg-3 offset-lg-9">
-          <a href="{{ url('<front>') }}/documenti" class="btn btn-primary text-button w-100" aria-label="vai alla sezione di tutti i documenti" title="vai alla pagina di documenti">Tutti i documenti</a>
+          <a href="{{ url('<front>') }}/documenti" class="btn btn-primary text-button w-100">Tutti i documenti</a>
         </div>
       </div>
     </div>

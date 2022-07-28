@@ -108,9 +108,10 @@
                     {% if node.field_immagine.entity.field_media_image %}
                       <div class="col-4 order-2 order-md-1">
                         <img class="rounded-top img-fluid img-responsive"
-                            src="{{ file_url(node.field_immagine.entity.field_media_image.entity.uri.value) }}"
-                            title="{{ node.field_immagine.entity.field_media_image.title }}"
-                            alt="{{ node.field_immagine.entity.field_media_image.alt }}">
+                          src="{{ file_url(node.field_immagine.entity.field_media_image.entity.uri.value) }}"
+                          title="{{ node.field_immagine.entity.field_media_image.title }}"
+                          alt="{{ node.field_immagine.entity.field_media_image.alt }}"
+                        >
                       </div>
                     {% endif %}
                     <div class="col-8 order-1 order-md-2">
@@ -118,7 +119,7 @@
                         <div class="category-top cmp-list-card-img__body">
                           <span class="data">{{ dataNotizia }}</span>
                         </div>
-                        <a href="{{ urlContenuto }}" aria-label="vai alla notizia " ~ {{ titolo }}>
+                        <a href="{{ urlContenuto }}">
                           <h3 class="h5 card-title u-main-primary">{{ titolo }}</h3></a>
                         <p class="card-text d-none d-md-block">{{ descrizione }}</p>
                       </div>

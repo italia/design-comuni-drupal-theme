@@ -101,7 +101,11 @@
                       <div class="img-responsive-wrapper">
                         <div class="img-responsive img-responsive-panoramic">
                           <figure class="img-wrapper">
-                            <img src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ row['#node'].field_immagine.entity.field_media_image.alt }}" title="{{ row['#node'].field_immagine.entity.field_media_image.alt }}">
+                            <img src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}"
+                              alt="{{ row['#node'].field_immagine.entity.field_media_image.alt }}"
+                              title="{{ row['#node'].field_immagine.entity.field_media_image.alt }}"
+                              class="figure-img img-fluid"
+                            >
                           </figure>
                           {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_della_notizia.value is not empty %}
                             <div class="card-calendar d-flex flex-column justify-content-center">
@@ -115,7 +119,9 @@
                     <div class="card-body p-4">
                       <div class="category-top">
                         {% if row['#node'].field_tipo_di_notizia[0] is not empty  %}
-                          <a class="u-main-primary fw-semibold" href="#" aria-label="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}" title="{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}">{{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}</a>
+                          <a class="u-main-primary fw-semibold" href="#">
+                            {{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}
+                          </a>
                         {% endif %}
                         {% if row['#node'].field_data_della_notizia.value is not empty and row['#node'].field_data_di_scadenza.value is empty %}
                           {% set data_val = row['#node'].field_data_della_notizia.value %}
@@ -129,10 +135,7 @@
                       </div>
                       {% if row['#node'].label %}
                         <h4 class="title-small-semi-bold-big mb-0 u-main-primary">
-                          <a
-                            aria-label="Visualizza {{ row['#node'].label }}"
-                            title="Visualizza {{ row['#node'].label }}"
-                            href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}">
+                          <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}">
                           {{ row['#node'].label }}
                           </a>
                         </h4>

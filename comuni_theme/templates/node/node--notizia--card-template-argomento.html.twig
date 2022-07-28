@@ -77,7 +77,9 @@
       <div class="img-responsive-wrapper">
         <div class="img-responsive img-responsive-panoramic">
           <figure class="img-wrapper">
-            <img src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid" alt="{{ row['#node'].field_immagine.entity.field_media_image.alt }}" title="{{ row['#node'].field_immagine.entity.field_media_image.alt }}">
+            <img src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}" class="figure-img img-fluid"
+              alt="{{ row['#node'].field_immagine.entity.field_media_image.alt }}"
+            >
           </figure>
 
           {% if content.field_data_della_notizia[0] is not empty and content.field_data_di_scadenza[0] is not empty %}
@@ -92,7 +94,7 @@
       <div class="card-body p-4">
         <div class="category-top">
           {% if content.field_tipo_di_notizia[0] is not empty  %}
-            <a class="u-main-primary fw-semibold" href="#" aria-label="{{ content.field_tipo_di_notizia[0]['#plain_text'] }}" title="{{ content.field_tipo_di_notizia[0]['#plain_text'] }}">{{ content.field_tipo_di_notizia[0]['#plain_text'] }}</a>
+            <a class="u-main-primary fw-semibold" href="#">{{ content.field_tipo_di_notizia[0]['#plain_text'] }}</a>
           {% endif %}
           {% if content.field_data_della_notizia[0] is not empty and content.field_data_di_scadenza[0] is empty %}
             <span class="data u-grey-light">{{ content.field_data_della_notizia['#items'].0.value|date('d M Y')}}</span>

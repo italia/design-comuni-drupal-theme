@@ -13,9 +13,9 @@
 <div class="visually-hidden">{% include social_buttons_sprite %}</div>
 
 <div class="dropdown d-inline">
-  <button class="btn btn-dropdown dropdown-toggle" type="button" id="shareActions"
-    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-    aria-label="condividi sui social" aria-hidden="true"
+  <button type="button" id="shareActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0"
+    aria-label="condividi sui social"
   >
     <svg class="icon" viewBox="0 0 24 24" id="it-share" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M17.5 15a2.5 2.5 0 00-2 1l-7.6-3.4A1.3 1.3 0 008 12a1.3 1.3 0 00-.1-.6L15.5 8a2.5 2.5 0 10-.5-1.5 1.3 1.3 0 00.1.6l-7.6 3.4a2.5 2.5 0 100 3l7.6 3.4a1.3 1.3 0 00-.1.6 2.5 2.5 0 102.5-2.5zm0-10A1.5 1.5 0 0119 6.5a1.5 1.5 0 01-3 0A1.5 1.5 0 0117.5 5zm-12 8.5a1.5 1.5 0 010-3 1.5 1.5 0 010 3zm12 5.5a1.5 1.5 0 111.5-1.5 1.5 1.5 0 01-1.5 1.5z" />
@@ -31,7 +31,6 @@
         <li role="menu">
           <a href="https://www.facebook.com/sharer/sharer.php?u={{ items.page_url }}&title={{ items.title }}"
             class="list-item" target="_blank" rel="noopener"
-            aria-label="{{ 'Share to'|t }} Facebook" title="{{ 'Share to'|t }} Facebook"
           >
             <svg class="icon" viewBox="0 0 24 24" id="it-facebook" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="none" d="M0 0h24v24H0z" />
@@ -46,7 +45,6 @@
         <li role="menu">
           <a href="http://twitter.com/intent/tweet?text={{ items.title }}+{{ items.page_url }}"
             class="list-item" rel="noopener" target="_blank"
-            aria-label="{{ 'Share to'|t }} Twitter" title="{{ 'Share to'|t }} Twitter" 
           >
             <svg class="icon" viewBox="0 0 24 24" id="it-twitter" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path fill="none" d="M0 0h24v24H0z" />
@@ -61,7 +59,6 @@
       <li role="menu">
         <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ items.page_url }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Linkedin" title="{{ 'Share to'|t }} Linkedin" 
         >
           <svg class="icon" viewBox="0 0 24 24" id="it-linkedin" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -76,7 +73,6 @@
       <li role="menu">
         <a href="https://wa.me/?text={{ items.page_url }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} WhatsApp" title="{{ 'Share to'|t }} WhatsApp" 
         >
           <svg class="icon" viewBox="0 0 24 24" id="it-whatsapp" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -91,7 +87,6 @@
       <li role="menu">
         <a href="http://www.facebook.com/dialog/send?app_id={{ items.facebook_app_id }}&link={{ items.page_url }}&redirect_uri={{ url('<current>') }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Facebook Messenger" title="{{ 'Share to'|t }} Facebook Messenger"
         >
           <svg class="icon" viewBox="0 0 24 24" id="it-whatsapp" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path fill="none" d="M0 0h24v24H0z" />
@@ -106,7 +101,6 @@
       <li role="menu">
         <a href="http://pinterest.com/pin/create/link/?url={{ items.page_url }}&description={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Pinterest" title="{{ 'Share to'|t }} Pinterest" 
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#pinterest" />
@@ -120,7 +114,6 @@
       <li role="menu">
         <a href="http://www.digg.com/submit?phase=2&url={{ items.page_url }}&title={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Digg" title="{{ 'Share to'|t }} Digg"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#digg" />
@@ -134,7 +127,6 @@
       <li role="menu">
         <a href="http://www.stumbleupon.com/submit?url={{ items.page_url }}&title={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} StumbleUpon" title="{{ 'Share to'|t }} StumbleUpon"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#stumbleupon" />
@@ -148,7 +140,6 @@
       <li role="menu">
         <a href="http://slashdot.org/bookmark.pl?url={{ items.page_url }}&title={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Slashdot" title="{{ 'Share to'|t }} Slashdot"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#slashdot" />
@@ -162,7 +153,6 @@
       <li role="menu">
         <a href="http://www.tumblr.com/share?v=3&u={{ items.page_url }}&t={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Tumblr" title="{{ 'Share to'|t }} Tumblr"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#tumblr" />
@@ -176,7 +166,6 @@
       <li role="menu">
         <a href="http://www.reddit.com/submit?url={{ items.page_url }}&title={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Reddit" title="{{ 'Share to'|t }} Reddit"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#reddit" />
@@ -190,7 +179,6 @@
       <li role="menu">
         <a href="http://www.evernote.com/clip.action?url={{ items.page_url }}&title={{ items.title }}"
           class="list-item" target="_blank" rel="noopener"
-          aria-label="{{ 'Share to'|t }} Evernote" title="{{ 'Share to'|t }} Evernote"
         >
           <svg class="icon" {{ width }} {{ height }} {{ radius }} aria-hidden="true">
             <use href="{{ social_buttons_sprite }}#evernote" />

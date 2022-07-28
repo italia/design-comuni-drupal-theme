@@ -100,9 +100,8 @@
             {% set lower = rows[0]['#rows']|slice(4) %}
             {% for row in upper %}
             <li>
-              <a href="{{path('entity.node.canonical', {'node': row['#node'].nid.value})}}" class="list-item"
-                aria-label="{{ row['#node'].title.value }}" title="{{ row['#node'].title.value }}"
-              ><span>{{ row['#node'].title.value }}</span>
+              <a href="{{path('entity.node.canonical', {'node': row['#node'].nid.value})}}" class="list-item">
+                <span>{{ row['#node'].title.value }}</span>
               </a>
             </li>
             {% endfor %}
@@ -111,7 +110,6 @@
               <a href="#collapse-{{ content_type }}"
                 class="show-more px-0" data-bs-toggle="collapse" data-focus-mouse="false"
                 aria-expanded="false" aria-controls="collapse-{{ content_type }}"
-                aria-label="Vedi altri {{ lower|length }} risultati" title="Vedi altri {{ lower|length }} risultati"
               >
                 <span class="show-more d-flex align-items-center">Vedi altri {{ lower|length }}
                   <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-primary icon-md" xmlns="http://www.w3.org/2000/svg">
@@ -122,9 +120,8 @@
               <ul class="collapse" id="collapse-{{ content_type }}">
                 {% for row in lower %}
                 <li>
-                  <a href="{{path('entity.node.canonical', {'node': row['#node'].nid.value})}}" class="list-item"
-                    aria-label="{{ row['#node'].title.value }}" title="{{ row['#node'].title.value }}"
-                  ><span>{{ row['#node'].title.value }}</span>
+                  <a href="{{path('entity.node.canonical', {'node': row['#node'].nid.value})}}" class="list-item">
+                    <span>{{ row['#node'].title.value }}</span>
                   </a>
                 </li>
                 {% endfor %}

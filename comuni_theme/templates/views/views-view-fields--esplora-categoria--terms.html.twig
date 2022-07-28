@@ -47,8 +47,6 @@
           {% set dataElem = '' %}
         {% endif %}
         <a href="{{ taxonomy_term_link|striptags|replace({"\n":'',})}}"
-          aria-label="Vai all'argomento {{ name|striptags|replace({'\n':'','&#039;':'\'',}) }}"
-          title="Vai all'argomento {{ name|striptags|replace({'\n':'','&#039;':'\'',}) }}"
           data-element="{{ dataElem }}"
         ><h3 class="card-title t-primary title-xlarge">{{name}}</h3></a>
         <div class="titillium text-paragraph mb-0 description">{{description}}</div>

@@ -35,10 +35,9 @@
     {% if menu_item.url.external %}
       <a class="list-item" href="{{ menu_item.url.uri }}">{{ menu_item.title }}</a>
     {% elseif menu_item.url.routeName is same as "<nolink>" %}
-      {# <span title="{{ menu_item.url.options.attributes.title }}">{{ menu_item.title }}</span> #}
       <h3 class="footer-heading-title">{{ menu_item.title }}</h3>
     {% elseif menu_item.url.routeName is same as "<button>" %}
-      <button title="{{ menu_item.url.options.attributes.title }}" type="button">{{ menu_item.title }}</button>
+      <button type="button">{{ menu_item.title }}</button>
     {% else %}
       <a href="{{ path(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }}">
         {{ menu_item.title }}

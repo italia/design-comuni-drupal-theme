@@ -166,7 +166,7 @@
                 </li>
               {% endfor %}
               <li>
-                <a class="list-item ps-0 text-button-xs-bold d-flex align-items-center" href="/amministrazione" title="Vai all'area amministrativa" aria-label="Vai all'area amministrativa">
+                <a class="list-item ps-0 text-button-xs-bold d-flex align-items-center" href="/amministrazione">
                   <span class="mr-10">VAI ALL’AREA AMMINISTRATIVA</span>
                   <svg class="icon icon-xs icon-primary"viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
@@ -184,7 +184,7 @@
 {% set ids = ids|join(",") %}
 {{drupal_view('bandi', 'bandi_servizi', ids)}}
 
-{#<button type="button" aria-label="Carica altri risultati"
+{#<button type="button"
   data-bs-toggle="modal" data-bs-target="#"
   class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 mb-30 mt-3 mb-lg-50 full-mb text-button">
   <span class="">Carica altri risultati</span>

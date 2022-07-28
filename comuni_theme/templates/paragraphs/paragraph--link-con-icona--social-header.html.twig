@@ -51,8 +51,7 @@
     {% block content %}
     {% set icon = content.field_icona["#items"][0].style ~ " fa-" ~ content.field_icona["#items"][0].icon_name %}
       <li>
-        <a href="{{ content.field_link[0]["#url"] }}"
-          target="_blank"
+        <a href="{{ content.field_link[0]["#url"] }}" target="_blank"
           aria-label="{{ content.field_link[0]["#title"] }}"
           title="vai alla pagina {{ content.field_link[0]["#title"] }}"
         >

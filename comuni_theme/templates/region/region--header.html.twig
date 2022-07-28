@@ -17,8 +17,8 @@
 #}
 
 <div class="skiplink">
-  <a class="visually-hidden-focusable" aria-label="vai ai contenuti presenti in pagina" accesskey="1" href="#main-container">Vai ai contenuti</a>
-  <a class="visually-hidden-focusable" aria-label="vai al footer" accesskey="2" href="#footer">Vai al footer</a>
+  <a class="visually-hidden-focusable" accesskey="1" href="#main-container">Vai ai contenuti</a>
+  <a class="visually-hidden-focusable" accesskey="2" href="#footer">Vai al footer</a>
 </div>
 <header class="it-header-wrapper" data-bs-target="#header-nav-wrapper" style="">
   <div class="it-header-slim-wrapper">
@@ -66,8 +66,6 @@
               </div>
               <a href="#"
                 class="btn btn-primary btn-icon btn-full"
-                title="Accedi all'area personale"
-                aria-label="Accedi all'area personale"
                 data-element="personal-area-login"
               ><span class="rounded-icon">
                   <svg viewBox="0 0 24 24" id="it-user" class="icon icon-primary" xmlns="http://www.w3.org/2000/svg">
@@ -91,8 +89,8 @@
             <div class="it-header-center-content-wrapper">
               <div class="it-brand-wrapper">
                 <a href="/homepage"
+                  title="Vai alla homepage"
                   aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
-                  title="Vai alla home"
                 >
                   {% if site_settings.infocomune.info_comune.field_logo_svg %}
                     <img style="width:82px;margin-right:16px;" aria-hidden="true"
@@ -117,8 +115,9 @@
                 </div>
                 <div class="it-search-wrapper">
                   <span class="d-none d-md-block">Cerca</span>
-                  <button class="search-link rounded-icon" type="button" data-bs-toggle="modal"
-                    data-bs-target="#search-modal" aria-label="Cerca nel sito"
+                  <button class="search-link rounded-icon" type="button"
+                    data-bs-toggle="modal" data-bs-target="#search-modal"
+                    aria-label="Cerca nel sito"
                   ><svg viewBox="0 0 24 24" id="it-search" class="icon" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/>
                     <path fill="none" d="M0 0h24v24H0z"/>
@@ -137,8 +136,9 @@
           <div class="col-12">
             <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Navigazione principale">
               <button class="custom-navbar-toggler" type="button" role="navigation"
-                aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione"
                 data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
+                aria-controls="nav4" aria-expanded="false"
+                aria-label="Mostra/Nascondi la navigazione"
               ><svg class="icon" viewBox="0 0 24 24" id="it-burger" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22 5v1H2V5zM2 12.5h20v-1H2zM2 19h20v-1H2z"/>
                   <path fill="none" d="M0 0h24v24H0z"/>
@@ -158,8 +158,8 @@
                 <div class="menu-wrapper">
                   <a href="{{ path('<front>') }}" class="logo-hamburger"
                     aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
-                    title="Vai alla home"
-                  ><img style="width:82px;margin-right:16px;" aria-hidden="true"
+                  >
+                    <img style="width:82px;margin-right:16px;" aria-hidden="true"
                        src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
                     <div class="it-brand-text">
                       <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>

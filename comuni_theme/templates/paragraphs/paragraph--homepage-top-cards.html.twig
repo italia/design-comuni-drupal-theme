@@ -61,7 +61,7 @@
                 <div class="card-body p-3 u-grey-light">
                   <div class="category-top">
                     {% set category_name = item.entity.field_label.value %}
-                    <span class="title-xsmall-semi-bold fw-semibold" aria-label="Vai all'argomento: {{category_name }}" title="vai alla sezione {{category_name }}">
+                    <span class="title-xsmall-semi-bold fw-semibold">
                       {{category_name }}
                     </span>
                   </div>
@@ -75,8 +75,7 @@
                     alt="{{item.entity.field_contenuto.entity.field_immagine.entity.field_media_image.alt }}"/>
                 </div>
               </div>
-              <a class="read-more ps-3 position-absolute bottom-0 mb-4" href="{{ linkUri }}"
-                aria-label="Vai alla pagina di {{ card_title }}" title="Vai alla pagina di {{ card_title }}">
+              <a class="read-more ps-3 position-absolute bottom-0 mb-4" href="{{ linkUri }}">
                 <span class="text">Vai alla pagina</span>
                 <svg viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
@@ -90,7 +89,7 @@
               <div class="card-body">
                 <div class="category-top">
                   {% set category_name = item.entity.field_label.value %}
-                  <span class="title-xsmall-semi-bold fw-semibold" aria-label="Vai all'argomento: {{category_name }}" title="vai alla sezione {{category_name }}">
+                  <span class="title-xsmall-semi-bold fw-semibold">
                       {{ category_name }}
                     </span>
                 </div>
@@ -98,8 +97,7 @@
                 <p class="text-paragraph-card u-grey-light m-0 mb-5 mb-lg-0">
                   {{ item.entity.field_contenuto.entity.field_descrizione_breve.value }}
               </div>
-              <a class="read-more" href="{{ linkUri }}"
-                aria-label="Vai alla pagina di {{ card_title }}" title="Vai alla pagina di {{ card_title }}">
+              <a class="read-more" href="{{ linkUri }}">
                 <span class="text">Vai alla pagina</span>
                 <svg viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
                   <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>

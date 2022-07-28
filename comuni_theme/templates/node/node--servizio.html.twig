@@ -121,18 +121,22 @@
             {% endif %}
             {% if content.field_canale_digitale[0] %}
               <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-                 type="button" aria-label="Richiesta di iscrizione online a {{ node.label }}"
-                 class="btn btn-primary fw-bold" data-focus-mouse="false">
-                <span class="">Richiesta di iscrizione online</span>
+                 type="button" class="btn btn-primary fw-bold" data-focus-mouse="false"
+              ><span class="">Richiesta di iscrizione online</span>
               </a>
             {% endif %}
           </div>
           <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
             {{ drupal_block("social_sharing_buttons_block") }}
             <div class="dropdown">
-              <button aria-label="vedi azioni da compiere sulla pagina" class="btn btn-dropdown dropdown-toggle"
-                      type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true"
-                      aria-expanded="false">
+              <button class="btn btn-dropdown dropdown-toggle"
+                type="button" id="viewActions" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false"
+              >
+              <button type="button" id="viewActions" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                class="btn btn-dropdown dropdown-toggle text-decoration-underline d-inline-flex align-items-center fs-0"
+                aria-label="vedi azioni da compiere sulla pagina"
+                >
                 <svg class="icon" viewBox="0 0 24 24" id="it-more-items" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M12 18a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a1 1 0 11-1 1 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2zm0-6a.9.9 0 011 1 1 1 0 01-2 0 .9.9 0 011-1m0-1a2 2 0 102 2 2 2 0 00-2-2z"/>
@@ -144,7 +148,7 @@
                 <div class="link-list-wrapper">
                   <ul class="link-list">
                     <li>
-                      <a class="list-item" href="#" aria-label="Scarica notizia">
+                      <a class="list-item" href="#">
                         <svg class="icon" viewBox="0 0 24 24" id="it-download" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M12 14.2L7.7 9.9l.7-.7 3.1 3.1V3h1v9.2l3.1-3 .7.7zm7-2.2v7.5a.5.5 0 01-.5.5h-13a.5.5 0 01-.5-.5V12H4v7.5A1.5 1.5 0 005.5 21h13a1.5 1.5 0 001.5-1.5V12z"/>
@@ -154,7 +158,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="list-item" href="javascript:window.print()" aria-label="Stampa notizia">
+                      <a class="list-item" href="javascript:window.print()">
                         <svg class="icon" viewBox="0 0 24 24" id="it-print" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M21 9.5A1.5 1.5 0 0019.5 8H17V3H7v5H4.5A1.5 1.5 0 003 9.5V16h2v3h2v2h10v-2h2v-3h2zM8 4h8v4H8zM6 18v-4h1v4zm10 2H8v-6h8v6zm2-2h-1v-4h1v4zm2-3h-1v-2H5v2H4V9.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5zM6 11h4v1H6z"/>
@@ -164,7 +168,7 @@
                       </a>
                     </li>
                     <li>
-                      <a class="list-item" href="#" aria-label="Ascolta notizia">
+                      <a class="list-item" href="#">
                         <svg class="icon" viewBox="0 0 24 24" id="it-hearing" xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M20 9a6.8 6.8 0 01-3.5 6l-2 1.1a3.3 3.3 0 00-1.5 2.7A3.2 3.2 0 019.8 22h-.6a3.4 3.4 0 01-3-2.1l.9-.5A2.3 2.3 0 009.2 21h.6a2.1 2.1 0 001.6-.7 2 2 0 00.6-1.5 4 4 0 012-3.5l2-1.2A5.9 5.9 0 0019 9a6 6 0 00-6-6 6 6 0 00-4.8 2.4l-.8-.6A7 7 0 0113 2a7 7 0 017 7zM7.5 12A5.5 5.5 0 002 6.5v1a4.5 4.5 0 010 9v1A5.5 5.5 0 007.5 12zM5 12a2.9 2.9 0 00-3-3v1a2 2 0 010 4v1a2.9 2.9 0 003-3zm5 0a8 8 0 00-8-8v1a7 7 0 010 14v1a8 8 0 008-8zm5.9.3a4.5 4.5 0 001.2-3.2 4.5 4.5 0 00-1.2-3.2 4.5 4.5 0 00-3.2-1.4A4.8 4.8 0 009.5 6l-.3.3.2.3a8.8 8.8 0 011.3 3v.4h.4a1.5 1.5 0 010 3v1a2.5 2.5 0 002.5-2.5 2.6 2.6 0 00-2-2.5 8.5 8.5 0 00-1.1-2.6 3.9 3.9 0 012.2-.9 3.5 3.5 0 012.4 1 3.5 3.5 0 011 2.6 3.5 3.5 0 01-1 2.6z"/>
@@ -175,7 +179,6 @@
                     </li>
                     <li>
                       <a class="list-item" href="mailto:?subject={{ node.label }}&body={{ url }}"
-                         title="{{ 'Invia notizia'|t }} E-mail" aria-label="{{ 'Invia notizia'|t }} E-mail"
                          target="_blank" rel="noopener">
                         <svg class="icon" viewBox="0 0 24 24" id="it-mail" xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -196,8 +199,6 @@
                   {% for item in attribute(content.field_argomenti, "#items") %}
                     {% set arg_name = item.entity.name.value %}
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-                       aria-label="Vai all'argomento {{ arg_name }}"
-                       title="Vai all'argomento {{ arg_name }}"
                        data-element="service-topic"
                     >
                       <div class="chip chip-simple chip-primary">
@@ -227,8 +228,6 @@
                 <a href="#collapse-one"
                    class="list-item large medium right-icon p-0 text-decoration-none"
                    data-bs-toggle="collapse" data-focus-mouse="true"
-                   aria-label="Apri e chiudi il menù INDICE DELLA PAGINA"
-                   title="Apri e chiudi il menù INDICE DELLA PAGINA"
                    aria-expanded="true" aria-controls="collapse-one"
                 >
                     <span class="list-item-title-icon-wrapper pb-10 px-3">
@@ -239,92 +238,81 @@
                       </svg>
                     </span>
                   <div class="progress bg-light">
-                    <div class="progress-bar" style="width: 15%"
-                         role="progressbar" aria-label="Progress bar dell'indice della pagina"
-                         aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
+                    <div class="progress-bar" style="width: 15%" role="progressbar"
+                      aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
                     ></div>
                   </div>
                 </a>
                 <ul class="link-sublist collapse show" id="collapse-one" data-element="page-index">
                   {% if content.field_a_chi_rivolto[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#who-needs" aria-label="Vai alla sezione A chi è rivolto"
-                         title="Vai alla sezione A chi è rivolto">
+                      <a class="list-item" href="#who-needs">
                         <span class="title-medium">A chi è rivolto</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_descrizione_estesa[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#description" aria-label="Vai alla sezione Descrizione"
-                         title="Vai alla sezione Descrizione">
+                      <a class="list-item" href="#description">
                         <span class="title-medium">Descrizione</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_come_fare[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#how-to" aria-label="Vai alla sezione Come fare"
-                         title="Vai alla sezione Come fare">
+                      <a class="list-item" href="#how-to">
                         <span class="title-medium">Come fare</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_cosa_serve[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#needed" aria-label="Vai alla sezione Cosa serve"
-                         title="Vai alla sezione Cosa serve">
+                      <a class="list-item" href="#needed">
                         <span class="title-medium">Cosa serve</span>
                       </a>
                     </li>
                   {% endif %}
                   <li>
-                    <a class="list-item" href="#obtain" aria-label="Vai alla sezione Cosa si ottiene"
-                       title="Vai alla sezione Cosa si ottiene">
+                    <a class="list-item" href="#obtain">
                       <span class="title-medium">Cosa si ottiene</span>
                     </a>
                   </li>
                   {% if content.field_tempi_e_scadenze[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#deadlines" aria-label="Vai alla sezione Tempi e scadenze"
-                         title="Vai alla sezione Tempi e scadenze">
+                      <a class="list-item" href="#deadlines">
                         <span class="title-medium">Tempi e scadenze</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_costi[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#costs" aria-label="Vai alla sezione Quanto costa"
-                         title="Vai alla sezione Quanto costa">
+                      <a class="list-item" href="#costs">
                         <span class="title-medium">Quanto costa</span>
                       </a>
                     </li>
                   {% endif %}
                   <li>
-                    <a class="list-item" href="#submit-request" aria-label="Vai alla sezione Accedi al servizio" title="Vai alla sezione Accedi al servizio" data-focus-mouse="false">
+                    <a class="list-item" href="#submit-request">
                       <span class="title-medium">Accedi al servizio</span>
                     </a>
                   </li>
                   {% if content.field_ulteriori_informazioni[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#more-info" aria-label="Vai alla sezione Ulteriori informazioni"
-                         title="Vai alla sezione Ulteriori informazioni">
+                      <a class="list-item" href="#more-info">
                         <span class="title-medium">Ulteriori informazioni</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_condizioni_di_servizio[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#conditions" aria-label="Vai alla sezione Condizioni di servizio"
-                         title="Vai alla sezione Condizioni di servizio" data-focus-mouse="false">
+                      <a class="list-item" href="#conditions">
                         <span class="title-medium">Condizioni di servizio</span>
                       </a>
                     </li>
                   {% endif %}
                   {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
                     <li>
-                      <a class="list-item" href="#contacts" aria-label="Vai alla sezione Contatti"
-                         title="Vai alla sezione Contatti" data-focus-mouse="false">
+                      <a class="list-item" href="#contacts">
                         <span class="title-medium">Contatti</span>
                       </a>
                     </li>
@@ -418,8 +406,8 @@
         {% if content.field_canale_digitale[0] %}
         <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
         <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-            type="button" aria-label="Richiesta di iscrizione online a {{ node.label }}"
-            class="btn btn-primary mobile-full" data-focus-mouse="false">
+          type="button" class="btn btn-primary mobile-full"
+        >
           <span class="">Richiedi iscrizione online</span>
         </a>
         <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
@@ -428,7 +416,6 @@
         {% endif %}
         <a href='/prenotazione-appuntamento' target="_blank"
           class="btn btn-outline-primary t-primary bg-white mobile-full"
-          aria-label="Vai alla pagina prenota appuntamento"
         ><span>Prenota appuntamento</span>
         </a>
       </section>
@@ -460,8 +447,6 @@
                         <p class="card-title text-paragraph-regular-medium-semi mb-3">
                           <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
                              class data-element="service-area"
-                             aria-label="Vai alla pagina di {{ uorg.entity.title.value }}"
-                             title="Vai alla pagina di {{ uorg.entity.title.value }}"
                           >{{ uorg.entity.title.value }}
                           </a>
                         </p>
@@ -488,8 +473,6 @@
                   <div class="cmp-tag">
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
                       class="chip chip-simple t-primary bg-tag"
-                      aria-label="Visualizza tutti gli argomenti {{ argName }}"
-                      title="Visualizza tutti gli argomenti {{ argName }}"
                       data-element="service-topic"
                     ><span class="chip-label">{{ argName }}</span>
                     </a>

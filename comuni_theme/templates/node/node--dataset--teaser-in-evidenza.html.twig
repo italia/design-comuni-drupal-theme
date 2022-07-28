@@ -120,18 +120,12 @@
               </svg>
               {% set categoria = node.field_temi.entity.name.value %}
               <span class="text fw-semibold">
-                <a href="{{ taxUrl }}"
-                  aria-label="Vai a categoria {{ categoria }}"
-                  title="Vai a categoria {{ categoria }}"
-                >{{ categoria}}
+                <a href="{{ taxUrl }}">{{ categoria}}
                 </a>
               </span>
             </div>
             {% set title = node.getTitle() %}
-            <a href="{{ url }}"
-              aria-label="Vai a {{ title }}"
-              title="Vai a {{ title }}"
-            >
+            <a href="{{ url }}">
               <h3 class="card-title h5">{{ title }}</h3>
             </a>
             <p class="card-text">{{ content.field_descrizione_breve }}</p>

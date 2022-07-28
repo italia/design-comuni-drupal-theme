@@ -63,8 +63,6 @@
 								<div class="chip chip-simple pb-0 mb-2">
 									<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
 										class="chip-label"
-										aria-label="Vai all'argomento {{ item.entity.name.value }}"
-										aria-label="vai alla sezione {{ item.entity.name.value }}"
 									>
 										{{ item.entity.name.value }}
 									</a>
@@ -77,8 +75,6 @@
 				<div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2 text-center">
 					<a href="{{ attribute(content.field_link.0, "#url") }}"
 						class="btn btn-primary mt-40"
-						aria-label="Vedi tutti gli argomenti"
-						title="visualizza tutti gli argomenti"
 					>
 						{{ attribute(content.field_link.0, "#title") }}
 					</a>
@@ -97,11 +93,9 @@
 						<div class="col text-center">
 						{% for item in attribute(content.field_argomenti, "#items") %}
 							<a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
-								<span
-									class="chip chip-simple chip-primary"
-									title="vai all'argomento - {{ item.entity.name.value }}"
-									aria-label="vai all'argomento - {{ item.entity.name.value }}"
-								><span class="chip-label">{{ item.entity.name.value }}</span></span>
+								<span class="chip chip-simple chip-primary">
+                  <span class="chip-label">{{ item.entity.name.value }}</span>
+                </span>
 							</a>
 						{% endfor %}
 						</div>

@@ -50,7 +50,9 @@
   <li class="splide__slide is-prev" id="splide01-slide01" style="margin-right: 24px; width: calc(((100% + 24px) / 3) - 24px);" aria-hidden="true">
     <div class="it-single-slide-wrapper">
       <figure>
-        <img src="{{ file_url(paragraph.field_immagine.entity.field_media_image.entity.fileuri) }}" class="img-fluid" alt="{{ content.field_titolo.0['#context'].value }}" title="{{ content.field_titolo.0['#context'].value }}">
+        <img src="{{ file_url(paragraph.field_immagine.entity.field_media_image.entity.fileuri) }}"
+          class="img-fluid" alt="{{ content.field_titolo.0['#context'].value }}"
+        >
         <figcaption class="figure-caption mt-2">{{ content.field_titolo.0['#context'].value }}</figcaption>
       </figure>
     </div>

@@ -110,7 +110,6 @@
 								{% set field_immagine_media = attribute(content.field_immagine.0, "#media") %}
 								<img class="rounded-top img-fluid"
 									src="{{ file_url(field_immagine_media.field_media_image.entity.uri.value) }}"
-									title="{{ field_immagine_media.field_media_image.title }}"
 									alt="{{ field_immagine_media.field_media_image.alt }}"
 								>
 							</figure>

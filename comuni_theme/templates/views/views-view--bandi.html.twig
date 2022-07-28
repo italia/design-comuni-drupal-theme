@@ -46,7 +46,7 @@
                   {% set titolo = node.title.value %}
                   {% set descrizione = node.field_descrizione_breve.value %}
                   {% set urlContenuto = path('entity.node.canonical', {'node': node.nid.value}) %}
-                  <a href="{{urlContenuto}}" aria-label="Vai all'argomento " ~ {{titolo}} title="Vai all'argomento " ~ {{titolo}}>
+                  <a href="{{urlContenuto}}">
                     <h3 class="card-title t-primary title-xlarge">{{titolo}}</h3>
                   </a>
                   <div class="titillium text-paragraph">{{descrizione}}</div>

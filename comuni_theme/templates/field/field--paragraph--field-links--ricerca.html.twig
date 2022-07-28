@@ -55,25 +55,25 @@
 
 {% if label_hidden %}
   {% if multiple %}
-      {% for item in items %}
-        <li role="listitem"><a  title ="vai alla sezione - {{ item.content['#title'] }}" aria-label="vai alla sezione - {{ item.content['#title'] }}" class="list-item mb-3 active ps-0" href="{{ item.content['#url'] }}"><span
-              class="text-button-normal">{{ item.content['#title'] }}</span></a>
-        </li>      {% endfor %}
-
+    {% for item in items %}
+      <li role="listitem">
+        <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
+      </li>
+    {% endfor %}
   {% else %}
     {% for item in items %}
-      <li role="listitem"><a title ="vai alla sezione - {{ item.content['#title'] }}" aria-label="vai alla sezione - {{ item.content['#title'] }}" class="list-item mb-3 active ps-0" href="{{ item.content['#url'] }}"><span
-            class="text-button-normal">{{ item.content['#title'] }}</span></a>
-      </li>    {% endfor %}
+      <li role="listitem">
+        <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
+      </li>
+    {% endfor %}
   {% endif %}
 {% else %}
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
     {% if multiple %}
       {% endif %}
       {% for item in items %}
-
-        <li role="listitem"><a title ="vai alla sezione - {{ item.content['#title'] }}" aria-label="vai alla sezione - {{ item.content['#title'] }}" class="list-item mb-3 active ps-0" href="{{ item.content['#url'] }}"><span
-              class="text-button-normal">{{ item.content['#title'] }}</span></a>
+        <li role="listitem">
+          <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
         </li>
       {% endfor %}
       {% if multiple %}

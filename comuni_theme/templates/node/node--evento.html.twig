@@ -168,7 +168,7 @@
         </div>
         <div class="mt-5">
           <a href="{{ url('<front>') }}" class="btn btn-outline-primary btn-icon">
-            <svg class="icon icon-primary" viewBox="0 0 24 24" id="it-calendar" xmlns="http://www.w3.org/2000/svg">
+            <svg class="icon icon-primary" viewBox="0 0 24 24" id="it-calendar" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z" />
               <path fill="none" d="M0 0h24v24H0z" />
             </svg>
@@ -204,8 +204,8 @@
                   <span class="it-close"></span>Chiudi </button>
               </div>
               <a class="it-back-button" href="#">
-                <svg class="icon icon-sm icon-primary align-top">
-                  <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-chevron-left"></use>
+                <svg viewBox="0 0 24 24" id="it-chevron-left" xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-primary align-top" aria-hidden="true">
+                  <path d="M14.6 17.2L9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
                 </svg>
                 <span>Torna indietro</span>
               </a>
@@ -314,7 +314,7 @@
           <h4>Luogo</h4>
           <div class="card-wrapper card-teaser-wrapper">
             <div class="card card-teaser shadow mt-3 rounded">
-              <svg class="icon icon-success" viewBox="0 0 24 24" id="it-pin" xmlns="http://www.w3.org/2000/svg">
+              <svg class="icon icon-success" viewBox="0 0 24 24" id="it-pin" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">>
                 <path d="M18.1 14L15 10.3V4.6L16.3 2H7.7L9 4.6v5.7L5.9 14h5.6v8h1v-8zM10 5h4v5h-4zm4.7-2l-.5 1H9.8l-.5-1zm-5 8h4.6l1.6 2H8.1z" />
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
@@ -414,7 +414,7 @@
             {% set fineOra = content.field_data_e_orario_di_fine['#items'].0.value|date('H') %}
             {% set fineMinuti = content.field_data_e_orario_di_fine['#items'].0.value|date('m') %}
             <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates={{ inizioAnno ~ inizioMese ~ inizioGiorno }}T{{ inizioOra ~ inizioMinuti }}00Z/{{ fineAnno ~ fineMese ~ fineGiorno }}T{{ fineOra ~ fineMinuti }}00Z&text={{ node.label|replace({' ': '%20'}) }}" target="_blank" class="btn btn-outline-primary btn-icon">
-              <svg  class="icon icon-primary" viewBox="0 0 24 24" id="it-plus-circle" xmlns="http://www.w3.org/2000/svg"><path d="M12.4 11.5h4.5v1h-4.5V17h-1v-4.5H6.9v-1h4.5V7h1zm9.6.5A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+              <svg  class="icon icon-primary" viewBox="0 0 24 24" id="it-plus-circle" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.4 11.5h4.5v1h-4.5V17h-1v-4.5H6.9v-1h4.5V7h1zm9.6.5A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
               <span>Aggiungi al calendario</span>{# TODO Label #}
             </a>
           </div>
@@ -611,7 +611,7 @@
           <div class="mt-5">
             <div class="callout">
               <div class="callout-title">
-                <svg viewBox="0 0 24 24" id="it-info-circle" class="icon" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 24 24" id="it-info-circle" class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 19a9 9 0 119-9 9 9 0 01-9 9zm-.7-15h1.5v2h-1.5zm0 3h1.5v9h-1.5z"/>
                   <path fill="none" d="M0 0h24v24H0z"/>
                 </svg>

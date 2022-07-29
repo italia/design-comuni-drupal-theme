@@ -109,7 +109,7 @@ content:
     region: content
   field_galleria_immagini:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -145,7 +145,7 @@ content:
     region: content
   field_patrocinato_da:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -162,10 +162,11 @@ content:
     weight: 129
     region: content
   field_punti_di_contatto:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: teaser_dettaglio_evento
+      link: false
     third_party_settings: {  }
     weight: 128
     region: content
@@ -179,7 +180,7 @@ content:
     region: content
   field_sponsor:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -203,7 +204,7 @@ content:
     region: content
   field_video_esterno:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''

@@ -79,14 +79,6 @@ content:
     third_party_settings: {  }
     weight: 7
     region: content
-  field_categoria_del_servizio:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 19
-    region: content
   field_condizioni_di_servizio:
     type: entity_reference_entity_view
     label: hidden

@@ -72,6 +72,14 @@ content:
     third_party_settings: {  }
     weight: 3
     region: content
+  field_categoria_del_servizio:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 18
+    region: content
   field_come_fare:
     type: text_default
     label: hidden
@@ -188,13 +196,12 @@ content:
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
 hidden:
   field_business_events: true
   field_canale_fisico: true
   field_casi_particolari: true
-  field_categoria_del_servizio: true
   field_codice_dell_ente_erogatore: true
   field_contatti: true
   field_copertura_geografica: true

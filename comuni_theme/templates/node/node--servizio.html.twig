@@ -446,7 +446,7 @@
                       <div class="card-body pe-3">
                         <p class="card-title text-paragraph-regular-medium-semi mb-3">
                           <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
-                             class data-element="service-area"
+                            class="text-decoration-none" data-element="service-area"
                           >{{ uorg.entity.title.value }}
                           </a>
                         </p>
@@ -472,7 +472,7 @@
                   {% set argName = argomento.entity.name.value %}
                   <div class="cmp-tag">
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
-                      class="chip chip-simple t-primary bg-tag"
+                      class="chip chip-simple t-primary bg-tag text-decoration-none"
                       data-element="service-topic"
                     ><span class="chip-label">{{ argName }}</span>
                     </a>

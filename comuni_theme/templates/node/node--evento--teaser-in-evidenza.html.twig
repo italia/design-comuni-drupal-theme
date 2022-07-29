@@ -122,14 +122,14 @@
 					<div class="card-body">
 						<div class="category-top cmp-list-card-img__body">
             {% set taxonomy_name = node.field_tipo_di_evento.entity.name.value %}
-							<a class="u-main-primary fw-bold cmp-list-card-img__body-heading-title"
+							<a class="text-decoration-none fw-bold cmp-list-card-img__body-heading-title"
 								href="{{ path('entity.taxonomy_term.canonical', { 'taxonomy_term': node.field_tipo_di_evento.entity.tid.value }) }}"
 							>{{ taxonomy_name }}</a>
 						</div>
 						{% set node_title = node.getTitle() %}
             <h3 class="cmp-list-card-img__body-title u-main-primary">
-              <a
-                href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
+              <a href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
+                class="text-decoration-none"
               >{{ node_title }}</a>
             </h3>
 						<div class="cmp-list-card-img__body-description">

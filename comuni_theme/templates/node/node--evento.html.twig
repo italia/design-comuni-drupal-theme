@@ -161,7 +161,9 @@
               <small>Argomenti</small>
             </h6>
             {% for item in attribute(content.field_argomenti, "#items") %}
-              <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}" class="chip-label">
+              <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}"
+                class="text-decoration-none"
+              >
                 <div class="chip chip-simple chip-primary">
                   <span class="chip-label">
                   {{ item.entity.name.value }}
@@ -302,7 +304,9 @@
             <div class="pt-3 pb-5">
               <h6 class="font-serif fw-bold">Parteciperanno:</h6>
               {% for item in attribute(content.field_persone, "#items") %}
-                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" class="" data-focus-mouse="false">
+                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
+                  class="text-decoration-none"
+                >
                    <div class="chip chip-simple chip-primary">
                     <span class="chip-label">
                         {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
@@ -326,11 +330,17 @@
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
               <div class="card-body">
-                <h5 class="card-title">{{ node.field_luogo.entity.title.value }}</h5>
+                <h5 class="card-title">
+                  <a href="{{ path('entity.node.canonical', { 'node': node.field_luogo.entity.id }) }}"
+                    class="text-decoration-none"
+                  >
+                    {{ node.field_luogo.entity.title.value }}
+                  </a>
+                </h5>
                 <div class="card-text">
-                  {# <p>{{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}</p>
-                  <p class="mt-3">Ulteriori dettagli</p> #}
+                  {# <p>{{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}</p> #}
                   {{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}
+                  {# <p class="mt-3">Ulteriori dettagli</p> #}
                 </div>
               </div>
             </div>

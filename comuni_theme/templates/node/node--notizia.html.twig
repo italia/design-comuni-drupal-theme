@@ -171,7 +171,8 @@
           </h6>
           {% for item in attribute(content.field_argomenti, "#items") %}
             <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-               class="chip-label">
+              class="text-decoration-none"
+            >
               <div class="chip chip-simple chip-primary">
                   <span class="chip-label">
                   {{ item.entity.name.value }}
@@ -292,7 +293,8 @@
                 <h6><small>Persone</small></h6>
                 {% for item in attribute(content.field_persone, "#items") %}
                   <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
-                     class="" data-focus-mouse="false">
+                    class="text-decoration-none"
+                  >
                     <div class="chip chip-simple chip-primary">
                       <span class="chip-label">
                       {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}

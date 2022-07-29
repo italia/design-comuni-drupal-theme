@@ -113,12 +113,13 @@
               {% set categoria = node.field_tipo_di_documento.entity.name.value %}
               <span class="text fw-semibold">
                 <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_tipo_di_documento.entity.tid.value}) }}"
+                   class="text-decoration-none"
                 >{{ categoria }}
                 </a>
               </span>
             </div>
 					  {% set title = node.getTitle() %}
-						<a href="{{ url }}">
+						<a href="{{ url }}" class="text-decoration-none">
 						  <h3 class="card-title h5">{{ title }}</h3>
 						</a>
 						<p class="card-text">{{ content.field_descrizione_breve }}</p>

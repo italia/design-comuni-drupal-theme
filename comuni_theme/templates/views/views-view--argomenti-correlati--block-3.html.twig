@@ -90,32 +90,34 @@
     {% endif %}
 
     {% if rows %}
-            {% for row in rows[0]['#rows']%}
-
-              <div class="card card-teaser rounded border border-light">
-                <div class="card-body">
-                    {% if row['#node'].field_categoria_del_servizio[0] is not empty %}
-                      <div class="category-top">
-                        <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row['#node'].field_categoria_del_servizio[0].entity.tid.value}) }}"
-                          title="vai al servizio - {{ row['#node'].field_categoria_del_servizio[0].value }}"
-                          class="u-main-primary fw-semibold"
-                        >
-                            {{ row['#node'].field_categoria_del_servizio[0].value }}
-                          </a>
-                      </div>
-                    {% endif %}
-                  {% if row['#node'].label %}
-                    <h4 class="text-paragraph-medium u-grey-light">
-                      <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}">
-                        {{ row['#node'].label }}
-                      </a>
-                    </h4>
-                  {% endif %}
-                  {% if row['#node'].field_descrizione_breve[0] is not empty %}
-                    <p class="text-paragraph-card u-grey-light">{{ row['#node'].field_descrizione_breve.value }}</p>
-                  {% endif %}
-                </div>
+        {% for row in rows[0]['#rows']%}
+          <div class="card card-teaser rounded border border-light">
+            <div class="card-body">
+            {% if row['#node'].field_categoria_del_servizio[0] is not empty %}
+              <div class="category-top">
+                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row['#node'].field_categoria_del_servizio[0].entity.tid.value}) }}"
+                  class="text-decoration-none fw-semibold"
+                >
+                  {{ drupal_field('name', 'taxonomy_term', row['#node'].field_categoria_del_servizio[0].value['target_id']) }}
+                </a>
               </div>
+              {% endif %}
+              {% if row['#node'].label %}
+              <h4 class="text-paragraph-medium">
+                <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}"
+                  class="text-decoration-none"
+                >
+                  {{ row['#node'].label }}
+                </a>
+              </h4>
+              {% endif %}
+              {% if row['#node'].field_descrizione_breve[0] is not empty %}
+              {% endif %}
+              <p class="text-paragraph-card u-grey-light">
+                {{ row['#node'].field_descrizione_breve.value }}
+              </p>
+            </div>
+          </div>
         {% endfor %}
     {% elseif empty %}
       <div class="view-empty">

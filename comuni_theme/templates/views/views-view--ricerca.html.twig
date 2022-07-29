@@ -108,11 +108,14 @@
                       <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#" id="">
                         <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
                           <div class="card-header border-0 p-0">
-                            <a class="title-xsmall-bold mb-2 category text-uppercase" href={{mapContentTypeUrl[bundle]}}>{{mapContentTypeName[bundle]}}</a>
+                            <a href={{mapContentTypeUrl[bundle]}}
+                              class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase"
+                            >{{mapContentTypeName[bundle]}}
+                            </a>
                           </div>
                           <div class="card-body p-0 my-2">
                             <h3 class="green-title-big t-primary mb-8" data-element="service-element">
-                              <a href={{urlContenuto}}>{{titolo}}</a>
+                              <a href={{urlContenuto}} class="text-decoration-none">{{titolo}}</a>
                             </h3>
                             <p class="text-paragraph">{{descrizione}}</p>
                           </div>

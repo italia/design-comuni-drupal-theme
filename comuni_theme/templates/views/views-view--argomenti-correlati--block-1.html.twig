@@ -119,7 +119,7 @@
                     <div class="card-body p-4">
                       <div class="category-top">
                         {% if row['#node'].field_tipo_di_notizia[0] is not empty  %}
-                          <a class="u-main-primary fw-semibold" href="#">
+                          <a class="text-decoration-none fw-semibold" href="#">
                             {{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_notizia.value[0]['target_id'])[0]['#context'].value }}
                           </a>
                         {% endif %}
@@ -135,7 +135,9 @@
                       </div>
                       {% if row['#node'].label %}
                         <h4 class="title-small-semi-bold-big mb-0 u-main-primary">
-                          <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}">
+                          <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}"
+                            class="text-decoration-none"
+                          >
                           {{ row['#node'].label }}
                           </a>
                         </h4>

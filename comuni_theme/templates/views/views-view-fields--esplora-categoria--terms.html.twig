@@ -47,6 +47,7 @@
           {% set dataElem = '' %}
         {% endif %}
         <a href="{{ taxonomy_term_link|striptags|replace({"\n":'',})}}"
+          class="text-decoration-none"1
           data-element="{{ dataElem }}"
         ><h3 class="card-title t-primary title-xlarge">{{name}}</h3></a>
         <div class="titillium text-paragraph mb-0 description">{{description}}</div>

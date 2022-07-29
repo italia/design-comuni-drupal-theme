@@ -274,7 +274,7 @@
           var cleanBtn = input.parentElement.querySelector('.clean-input');
   
           if (!cleanBtn) {
-            /*input.insertAdjacentHTML('afterend', "\n <button type=\"button\" class=\"clean-input\" aria-label=\"Elimina testo di ricerca\">\n <svg class=\"icon\" viewBox='0 0 24 24' id='it-close' xmlns='http://www.w3.org/2000/svg'>\n <path d='M12.7 12l3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8z'/><path fill='none' d='M0 0h24v24H0z'/></svg>\n </button>\n ");*/
+            input.insertAdjacentHTML('afterend', "\n          <button type=\"button\" class=\"clean-input\" aria-label=\"Elimina testo di ricerca\">\n            <svg class=\"icon\">\n              <use xlink:href=\"../assets/bootstrap-italia/dist/svg/sprites.svg#it-close\"></use>\n            </svg>\n          </button>\n          ");
             var clean = input.parentElement.querySelector('.clean-input');
             var label = input.parentElement.querySelector('.cmp-input__label');
             clean.addEventListener('click', function () {
@@ -3971,6 +3971,7 @@
   
   // CONCATENATED MODULE: ./javascripts/scripts.js
   /* eslint-disable */
+   // import './pageStep';
   
   
   
@@ -4085,7 +4086,7 @@
     validate.addField('#code', [{
       rule: 'required',
       errorMessage: 'Questo campo è richiesto'
-    }]).addField('#dateStandard', [{
+    }]).addField('#date-1', [{
       rule: 'required',
       errorMessage: 'Questo campo è richiesto'
     }]).onFail(function (fields) {
@@ -4097,6 +4098,21 @@
   }
   
   validateFormMulta();
+  /* Header Hamburger Menu aria-expanded */
+  
+  var nav = document.querySelector(".custom-navbar-toggler");
+  var closeBtn = document.querySelector('.close-menu');
+  
+  function menuExpanded() {
+    nav.addEventListener("click", function () {
+      nav.setAttribute("aria-expanded", "true");
+    });
+    closeBtn.addEventListener("click", function () {
+      nav.setAttribute("aria-expanded", "false");
+    });
+  }
+  
+  menuExpanded();
   
   /***/ })
   /******/ ]);

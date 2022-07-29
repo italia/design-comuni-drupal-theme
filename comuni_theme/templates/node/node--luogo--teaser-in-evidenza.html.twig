@@ -110,6 +110,7 @@
 								{% set field_immagine_media = attribute(content.field_immagine.0, "#media") %}
 								<img class="rounded-top img-fluid"
 									src="{{ file_url(field_immagine_media.field_media_image.entity.uri.value) }}"
+									title="{{ field_immagine_media.field_media_image.title }}"
 									alt="{{ field_immagine_media.field_media_image.alt }}"
 								>
 							</figure>
@@ -133,9 +134,9 @@
 						</div>
 						<a class="read-more t-primary text-uppercase cmp-list-card-img__body-link"
 							href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
+              aria-label="Leggi di più sulla pagina di {{ node_title }}"
 						>
 							<span class="text">Leggi di più</span>
-							<span class="visually-hidden">su Lorem ipsum dolor sit amet, consectetur adipiscing elit…</span>
 							<svg viewBox="0 0 24 24" id="it-arrow-right" class="icon icon-primary icon-xs ml-10" xmlns="http://www.w3.org/2000/svg">
 								<path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
 								<path fill="none" d="M0 0h24v24H0z"/>

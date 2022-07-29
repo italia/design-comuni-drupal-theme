@@ -66,6 +66,7 @@
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}"
+              title="Scarica {{ filename }}" aria-label="Scarica {{ filename }}"
               class="text-decoration-none"
             >{{ filename }}
             </a>
@@ -84,7 +85,9 @@
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}"
-              class="" data-focus-mouse="false">{{ filename }}
+              title="Scarica {{ filename }}" aria-label="Scarica {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
             </a>
           </h5>
         </div>
@@ -102,7 +105,9 @@
         <div class="card-body">
           <h5 class="card-title">
             <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}"
-              class="" data-focus-mouse="false">{{ filename }}</a>
+              title="Scarica {{ filename }}" aria-label="Scarica {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
           </h5>
         </div>
       </div>

@@ -23,7 +23,9 @@
       }
 
       function postNode(csrfToken) {
-        const radioButtons = document.querySelectorAll('input[name="rating"]');
+        const radioButtons = stars > 3
+          ? document.querySelectorAll('input[name="rating1"]')
+          : document.querySelectorAll('input[name="rating2"]');
         let selectedRadio;
         for (const radioButton of radioButtons) {
           if (radioButton.checked) {

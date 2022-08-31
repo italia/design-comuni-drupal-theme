@@ -173,15 +173,13 @@
 
       document.querySelector('[name="ratingA"]:checked').checked = false;
     } else {
-      var previousWrapper = wrapper.querySelector("[data-step=\"".concat(activeStep - 1, "\"]"));
-      if (previousWrapper) {
-        previousWrapper.classList.remove('d-none');
-        previousWrapper.classList.add('active');
-      }
+      var previousWrapper = wrapper.querySelector("[data-step=\"".concat(activeStep + 1, "\"]"));
+      previousWrapper.classList.add('d-none');
+      previousWrapper.classList.remove('active');
 
       var currentWrapper = wrapper.querySelector("[data-step=\"".concat(activeStep, "\"]"));
-      currentWrapper.classList.add('d-none');
-      currentWrapper.classList.remove('active');
+      currentWrapper.classList.remove('d-none');
+      currentWrapper.classList.add('active');
     }
   }
 

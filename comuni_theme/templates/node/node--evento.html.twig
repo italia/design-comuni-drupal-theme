@@ -202,83 +202,86 @@
   <div class="container">
     <div class="row border-top row-column-border row-column-menu-left">
       <aside class="col-lg-4">
-        <div class="sticky-wrapper navbar-wrapper">
-          <nav class="navbar it-navscroll-wrapper it-top-navscroll navbar-expand-lg">
-            <button class="custom-navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" data-bs-target="#navbarNav">
-              <span class="it-list"></span>Indice della pagina </button>
-            <div class="navbar-collapsable" id="navbarNav">
-              <div class="overlay"></div>
-              <div class="close-div visually-hidden">
-                <button class="btn close-menu" type="button">
-                  <span class="it-close"></span>Chiudi </button>
-              </div>
-              <a class="it-back-button" href="#">
-                <svg viewBox="0 0 24 24" id="it-chevron-left" xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-primary align-top" aria-hidden="true">
-                  <path d="M14.6 17.2L9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
-                </svg>
-                <span>Torna indietro</span>
-              </a>
+        <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+          <nav class="navbar it-navscroll-wrapper it-top-navscroll navbar-expand-lg" data-bs-navscroll>
+            <div class="navbar-custom" id="navbarNavProgress">
               <div class="menu-wrapper">
-                <div class="link-list-wrapper menu-link-list">
-                  <h3 class="no_toc">Indice della pagina</h3>
-                  <ul class="link-list">
-                    {% if content.field_descrizione_completa[0] is not empty  %}
-                    <li class="nav-item active">
-                      <a class="nav-link active" href="#cos-e">
-                        <span>Cos'è</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if node.field_luogo[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#luogo">
-                        <span>Luogo</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if content.field_data_e_orario_di_inizio[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#date-e-orari">
-                        <span>Date e orari</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if content.field_costo[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#costi">
-                        <span>Costi</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if content.field_allegati[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#documenti">
-                        <span>Documenti</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#contatti">
-                        <span>Contatti</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#appuntamenti">
-                        <span>Appuntamenti</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                    {% if content.field_ulteriori_informazioni[0] is not empty %}
-                    <li class="nav-item">
-                      <a class="nav-link" href="#ulteriori-informazioni">
-                        <span>Ulteriori informazioni</span>
-                      </a>
-                    </li>
-                    {% endif %}
-                  </ul>
+                <div class="link-list-wrapper">
+                  <div class="accordion">
+                    <div class="accordion-item">
+                      <span class="accordion-header" id="accordion-title-one">
+                        <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
+                          INDICE DELLA PAGINA
+                          <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
+                        </button>
+                      </span>
+                      <div class="progress">
+                        <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+                        <div class="accordion-body">
+                          <ul class="link-list" data-element="page-index">
+                            {% if content.field_descrizione_completa[0] is not empty  %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="#cos-e">
+                                <span class="title-medium">Cos'è</span>
+                              </a>
+                            </li>
+                            {% endif %}
+                            {% if node.field_luogo[0] is not empty %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="#luogo">
+                                <span class="title-medium">Luogo</span>
+                              </a>
+                            </li>
+                            {% endif %}
+                            {% if content.field_data_e_orario_di_inizio[0] is not empty %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="#date-e-orari">
+                                <span class="title-medium">Date e orari</span>
+                              </a>
+                            </li>
+                            {% endif %}
+                            {% if content.field_costo[0] is not empty %}
+                            <li class="nav-item">
+                              <a class="nav-link" href="#costi">
+                                <span class="title-medium">Costi</span>
+                              </a>
+                            </li>
+                            {% endif %}
+                            {% if content.field_allegati[0] is not empty %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#documenti">
+                                  <span class="title-medium">Documenti</span>
+                                </a>
+                              </li>
+                              {% endif %}
+                              {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#contatti">
+                                  <span class="title-medium">Contatti</span>
+                                </a>
+                              </li>
+                              {% endif %}
+                              {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#appuntamenti">
+                                  <span class="title-medium">Appuntamenti</span>
+                                </a>
+                              </li>
+                              {% endif %}
+                              {% if content.field_ulteriori_informazioni[0] is not empty %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#ulteriori-informazioni">
+                                  <span class="title-medium">Ulteriori informazioni</span>
+                                </a>
+                              </li>
+                              {% endif %}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

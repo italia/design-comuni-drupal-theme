@@ -204,7 +204,7 @@
   <div class="row border-top row-column-border row-column-menu-left">
     <aside class="col-lg-4">
       <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-        <nav class="navbar it-navscroll-wrapper it-top-navscroll navbar-expand-lg" data-bs-navscroll>
+        <nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
           <div class="navbar-custom" id="navbarNavProgress">
             <div class="menu-wrapper">
               <div class="link-list-wrapper">
@@ -261,7 +261,7 @@
         </nav>
       </div>
     </aside>
-    <section class="col-lg-8 it-page-sections-container">
+    <section class="col-lg-8 it-page-sections-container border-light">
       {% if content.field_testo_completo_notizia [0] is not empty %}
         <article id="descrizione" class="it-page-section anchor-offset">
           <h4>Descrizione</h4>{# TODO Label #}
@@ -277,7 +277,6 @@
           {{ content.field_allegati }}
         </article>
       {% endif %}
-
       {% if content.field_a_cura_di[0] is not empty %}
         <article id="a-cura-di" class="it-page-section anchor-offset mt-5">
           <h4>A cura di</h4>

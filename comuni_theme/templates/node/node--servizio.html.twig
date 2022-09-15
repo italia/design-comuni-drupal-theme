@@ -326,169 +326,171 @@
       </div>
     </div>
     <div class="col-12 col-lg-8 offset-lg-1">
-      {% if content.field_a_chi_rivolto[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_a_chi_rivolto }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_descrizione_estesa[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_descrizione_estesa }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_come_fare[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_come_fare }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_cosa_serve[0] is not empty %}
-      <section class="mb-30 has-bg-grey p-3">
-        <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_cosa_serve }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_cosa_si_ottiene[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_cosa_si_ottiene }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_tempi_e_scadenze[0] is not empty %}
-      <section class="mb-30">
-        <div class="cmp-timeline">
-          <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
-          {% if content.field_promemoria_scadenze[0] %}
-            <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
-          {% endif %}
-          <div class="calendar-vertical mb-3">
-            {% for fase in content.field_tempi_e_scadenze["#items"] %}
-              <div class="calendar-date">
-                <div class="calendar-date-day">
-                  <small class="calendar-date-day__year">{{ fase.entity.field_data.value|date('Y') }}</small>
-                  <span
-                    class="title-xxlarge-regular d-flex justify-content-center">{{ fase.entity.field_data.value|date('d') }}</span>
-                  <small
-                    class="calendar-date-day__month">{{ fase.entity.field_data.value|date('M')|monthEn2It|lower }}</small>
-                </div>
-                <div class="calendar-date-description rounded">
-                  <div class="calendar-date-description-content">
-                    <h3 class="title-medium-2 mb-0">{{ fase.entity.title.value }}</h3>
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
+      <div class="it-page-sections-container">
+        {% if content.field_a_chi_rivolto[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_a_chi_rivolto }}
           </div>
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_costi[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_costi }}
-        </div>
-      </section>
-      {% endif %}
-      <section class="mb-30 has-bg-grey p-4">
-        <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
-        {% if content.field_canale_digitale[0] %}
-        <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
-        <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-          type="button" class="btn btn-primary mobile-full"
-        >
-          <span class="">Richiedi iscrizione online</span>
-        </a>
-        <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
-        {% else %}
-        <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+        </section>
         {% endif %}
-        <a href='/prenotazione-appuntamento' target="_blank"
-          class="btn btn-outline-primary t-primary bg-white mobile-full"
-        ><span>Prenota appuntamento</span>
-        </a>
-      </section>
-      {% if content.field_ulteriori_informazioni[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
-        <div class="richtext-wrapper lora">
-          {{ content.field_ulteriori_informazioni }}
-        </div>
-      </section>
-      {% endif %}
-      {% if content.field_condizioni_di_servizio[0] is not empty %}
-      <section class="mb-30">
-        <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
-        <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
-        {{ content.field_condizioni_di_servizio }}
-      </section>
-      {% endif %}
-      {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
-      <section class="it-page-section">
-        <h2 class="mb-3" id="contacts">Contatti</h2>
-        <div class="row">
-          {% if content.field_unita_org_responsabile[0] is not empty %}
-            <div class="col-12 col-md-8 col-lg-6 mb-30">
-              <div class="card-wrapper rounded h-auto mt-10">
-                {% for uorg in content.field_unita_org_responsabile['#items'] %}
-                  <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
-                    <div class="card-body pe-3">
-                      <p class="card-title text-paragraph-regular-medium-semi mb-3">
-                        <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
-                          class="text-decoration-none" data-element="service-area"
-                        >{{ uorg.entity.title.value }}
-                        </a>
-                      </p>
-                      <div class="card-text">
-                        <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
-                      </div>
-                    </div>
-                    <div class="avatar size-xl">
-                      <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
-                            alt="Immagine">
+        {% if content.field_descrizione_estesa[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_descrizione_estesa }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_come_fare[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_come_fare }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_cosa_serve[0] is not empty %}
+        <section class="it-page-section  mb-30 has-bg-grey p-3">
+          <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_cosa_serve }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_cosa_si_ottiene[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_cosa_si_ottiene }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_tempi_e_scadenze[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <div class="cmp-timeline">
+            <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
+            {% if content.field_promemoria_scadenze[0] %}
+              <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
+            {% endif %}
+            <div class="calendar-vertical mb-3">
+              {% for fase in content.field_tempi_e_scadenze["#items"] %}
+                <div class="calendar-date">
+                  <div class="calendar-date-day">
+                    <small class="calendar-date-day__year">{{ fase.entity.field_data.value|date('Y') }}</small>
+                    <span
+                      class="title-xxlarge-regular d-flex justify-content-center">{{ fase.entity.field_data.value|date('d') }}</span>
+                    <small
+                      class="calendar-date-day__month">{{ fase.entity.field_data.value|date('M')|monthEn2It|lower }}</small>
+                  </div>
+                  <div class="calendar-date-description rounded">
+                    <div class="calendar-date-description-content">
+                      <h3 class="title-medium-2 mb-0">{{ fase.entity.title.value }}</h3>
                     </div>
                   </div>
-                {% endfor %}
-              </div>
-            </div>
-          {% endif %}
-          {% if content.field_argomenti[0] is not empty or node.changed.value %}
-            <div class="col-12 mb-30">
-              {% if content.field_argomenti[0] is not empty %}
-              <span class="text-paragraph-small">Argomenti:</span>
-              <div class="d-flex flex-wrap gap-2 mt-10 mb-30">
-              {% for argomento in content.field_argomenti['#items'] %}
-                {% set argName = argomento.entity.name.value %}
-                <div class="cmp-tag">
-                  <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
-                    class="chip chip-simple t-primary bg-tag text-decoration-none"
-                    data-element="service-topic"
-                  ><span class="chip-label">{{ argName }}</span>
-                  </a>
                 </div>
               {% endfor %}
-              {% endif %}
-              </div>
-              {% if node.changed.value %}
-              <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
-              {% endif %}
             </div>
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_costi[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_costi }}
+          </div>
+        </section>
+        {% endif %}
+        <section class="it-page-section  mb-30 has-bg-grey p-4">
+          <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
+          {% if content.field_canale_digitale[0] %}
+          <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
+          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
+            type="button" class="btn btn-primary mobile-full"
+          >
+            <span class="">Richiedi iscrizione online</span>
+          </a>
+          <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          {% else %}
+          <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
           {% endif %}
-        </div>
-      </section>
-      {% endif %}
+          <a href='/prenotazione-appuntamento' target="_blank"
+            class="btn btn-outline-primary t-primary bg-white mobile-full"
+          ><span>Prenota appuntamento</span>
+          </a>
+        </section>
+        {% if content.field_ulteriori_informazioni[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_ulteriori_informazioni }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_condizioni_di_servizio[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
+          <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
+          {{ content.field_condizioni_di_servizio }}
+        </section>
+        {% endif %}
+        {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+        <section class="it-page-section">
+          <h2 class="mb-3" id="contacts">Contatti</h2>
+          <div class="row">
+            {% if content.field_unita_org_responsabile[0] is not empty %}
+              <div class="col-12 col-md-8 col-lg-6 mb-30">
+                <div class="card-wrapper rounded h-auto mt-10">
+                  {% for uorg in content.field_unita_org_responsabile['#items'] %}
+                    <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
+                      <div class="card-body pe-3">
+                        <p class="card-title text-paragraph-regular-medium-semi mb-3">
+                          <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
+                            class="text-decoration-none" data-element="service-area"
+                          >{{ uorg.entity.title.value }}
+                          </a>
+                        </p>
+                        <div class="card-text">
+                          <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
+                        </div>
+                      </div>
+                      <div class="avatar size-xl">
+                        <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
+                              alt="Immagine">
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+            {% if content.field_argomenti[0] is not empty or node.changed.value %}
+              <div class="col-12 mb-30">
+                {% if content.field_argomenti[0] is not empty %}
+                <span class="text-paragraph-small">Argomenti:</span>
+                <div class="d-flex flex-wrap gap-2 mt-10 mb-30">
+                {% for argomento in content.field_argomenti['#items'] %}
+                  {% set argName = argomento.entity.name.value %}
+                  <div class="cmp-tag">
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
+                      class="chip chip-simple t-primary bg-tag text-decoration-none"
+                      data-element="service-topic"
+                    ><span class="chip-label">{{ argName }}</span>
+                    </a>
+                  </div>
+                {% endfor %}
+                {% endif %}
+                </div>
+                {% if node.changed.value %}
+                <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </section>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>

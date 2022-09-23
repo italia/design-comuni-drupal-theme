@@ -218,155 +218,157 @@
 </div>
 
 <div class="container">
-  <div class="row mt-4 mt-lg-80 pb-lg-80 pb-40">
+  <div class="row row-column-menu-left mt-4 mt-lg-80 pb-lg-80 pb-40">
     <div class="col-12 col-lg-3 mb-4 border-col">
-      <aside class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-        <div class="inline-menu">
-          <div class="link-list-wrapper">
-            <ul class="link-list">
-              <li>
-                <a href="#collapse-one"
-                   class="list-item large medium right-icon p-0 text-decoration-none"
-                   data-bs-toggle="collapse" data-focus-mouse="true"
-                   aria-expanded="true" aria-controls="collapse-one"
-                >
-                    <span class="list-item-title-icon-wrapper pb-10 px-3">
-                      <span id="accordion-title-one" class="title-xsmall-semi-bold">INDICE DELLA PAGINA</span>
-                      <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right"
-                           xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
-                      </svg>
+      <div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+        <nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
+          <div class="navbar-custom" id="navbarNavProgress">
+            <div class="menu-wrapper">
+              <div class="link-list-wrapper">
+                <div class="accordion">
+                  <div class="accordion-item">
+                    <span class="accordion-header" id="accordion-title-one">
+                      <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
+                        INDICE DELLA PAGINA
+                        <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
+                      </button>
                     </span>
-                  <div class="progress bg-light">
-                    <div class="progress-bar" style="width: 15%" role="progressbar"
-                      aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
-                    ></div>
+                    <div class="progress">
+                      <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+                      <div class="accordion-body">
+                        <ul class="link-list" data-element="page-index">
+                          {% if content.field_a_chi_rivolto[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#who-needs">
+                              <span class="title-medium">A chi è rivolto</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_descrizione_estesa[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#description">
+                              <span class="title-medium">Descrizione</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_come_fare[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#how-to">
+                              <span class="title-medium">Come fare</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_cosa_serve[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#needed">
+                              <span class="title-medium">Cosa serve</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_cosa_si_ottiene[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#obtain">
+                              <span class="title-medium">Cosa si ottiene</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_tempi_e_scadenze[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#deadlines">
+                              <span class="title-medium">Tempi e scadenze</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_costi[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#costs">
+                              <span class="title-medium">Quanto costa</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#submit-request">
+                              <span class="title-medium">Accedi al servizio</span>
+                            </a>
+                          </li>
+                          {% if content.field_ulteriori_informazioni[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#more-info">
+                              <span class="title-medium">Ulteriori informazioni</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_condizioni_di_servizio[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#conditions">
+                              <span class="title-medium">Condizioni di servizio</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#contacts">
+                              <span class="title-medium">Contatti</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </a>
-                <ul class="link-sublist collapse show" id="collapse-one" data-element="page-index">
-                  {% if content.field_a_chi_rivolto[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#who-needs">
-                        <span class="title-medium">A chi è rivolto</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_descrizione_estesa[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#description">
-                        <span class="title-medium">Descrizione</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_come_fare[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#how-to">
-                        <span class="title-medium">Come fare</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_cosa_serve[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#needed">
-                        <span class="title-medium">Cosa serve</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  <li>
-                    <a class="list-item" href="#obtain">
-                      <span class="title-medium">Cosa si ottiene</span>
-                    </a>
-                  </li>
-                  {% if content.field_tempi_e_scadenze[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#deadlines">
-                        <span class="title-medium">Tempi e scadenze</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_costi[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#costs">
-                        <span class="title-medium">Quanto costa</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  <li>
-                    <a class="list-item" href="#submit-request">
-                      <span class="title-medium">Accedi al servizio</span>
-                    </a>
-                  </li>
-                  {% if content.field_ulteriori_informazioni[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#more-info">
-                        <span class="title-medium">Ulteriori informazioni</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_condizioni_di_servizio[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#conditions">
-                        <span class="title-medium">Condizioni di servizio</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                  {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
-                    <li>
-                      <a class="list-item" href="#contacts">
-                        <span class="title-medium">Contatti</span>
-                      </a>
-                    </li>
-                  {% endif %}
-                </ul>
-              </li>
-            </ul>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </aside>
+        </nav>
+      </div>
     </div>
     <div class="col-12 col-lg-8 offset-lg-1">
-      {% if content.field_a_chi_rivolto[0] is not empty %}
-        <section class="mb-30">
+      <div class="it-page-sections-container">
+        {% if content.field_a_chi_rivolto[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_a_chi_rivolto }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_descrizione_estesa[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_descrizione_estesa[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_descrizione_estesa }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_come_fare[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_come_fare[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_come_fare }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_cosa_serve[0] is not empty %}
-        <section class="mb-30 has-bg-grey p-3">
+        {% endif %}
+        {% if content.field_cosa_serve[0] is not empty %}
+        <section class="it-page-section  mb-30 has-bg-grey p-3">
           <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_cosa_serve }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_cosa_si_ottiene[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_cosa_si_ottiene[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_cosa_si_ottiene }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_tempi_e_scadenze[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_tempi_e_scadenze[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
             {% if content.field_promemoria_scadenze[0] %}
@@ -392,49 +394,49 @@
             </div>
           </div>
         </section>
-      {% endif %}
-      {% if content.field_costi[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_costi[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_costi }}
           </div>
         </section>
-      {% endif %}
-      <section class="mb-30 has-bg-grey p-4">
-        <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
-        {% if content.field_canale_digitale[0] %}
-        <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
-        <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-          type="button" class="btn btn-primary mobile-full"
-        >
-          <span class="">Richiedi iscrizione online</span>
-        </a>
-        <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
-        {% else %}
-        <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
         {% endif %}
-        <a href='/prenotazione-appuntamento' target="_blank"
-          class="btn btn-outline-primary t-primary bg-white mobile-full"
-        ><span>Prenota appuntamento</span>
-        </a>
-      </section>
-      {% if content.field_ulteriori_informazioni[0] is not empty %}
-        <section class="mb-30">
+        <section class="it-page-section  mb-30 has-bg-grey p-4">
+          <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
+          {% if content.field_canale_digitale[0] %}
+          <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
+          <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
+            type="button" class="btn btn-primary mobile-full"
+          >
+            <span class="">Richiedi iscrizione online</span>
+          </a>
+          <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          {% else %}
+          <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          {% endif %}
+          <a href='/prenotazione-appuntamento' target="_blank"
+            class="btn btn-outline-primary t-primary bg-white mobile-full"
+          ><span>Prenota appuntamento</span>
+          </a>
+        </section>
+        {% if content.field_ulteriori_informazioni[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
           <div class="richtext-wrapper lora">
             {{ content.field_ulteriori_informazioni }}
           </div>
         </section>
-      {% endif %}
-      {% if content.field_condizioni_di_servizio[0] is not empty %}
-        <section class="mb-30">
+        {% endif %}
+        {% if content.field_condizioni_di_servizio[0] is not empty %}
+        <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
           <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
           {{ content.field_condizioni_di_servizio }}
         </section>
-      {% endif %}
-      {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+        {% endif %}
+        {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
         <section class="it-page-section">
           <h2 class="mb-3" id="contacts">Contatti</h2>
           <div class="row">
@@ -456,7 +458,7 @@
                       </div>
                       <div class="avatar size-xl">
                         <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
-                             alt="Immagine">
+                              alt="Immagine">
                       </div>
                     </div>
                   {% endfor %}
@@ -487,7 +489,8 @@
             {% endif %}
           </div>
         </section>
-      {% endif %}
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>

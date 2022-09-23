@@ -286,7 +286,7 @@ function appointment() {
           </div>
           `;
 
-          const radioAppointmentInputs = document.getElementsByTagName('input')
+          const radioAppointmentInputs = radioAppointment.getElementsByTagName('input')
           for (input of radioAppointmentInputs) {
             input.onclick = () => saveAnswerByValue('appointment', value, true)
           }

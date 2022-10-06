@@ -262,6 +262,7 @@ function appointment() {
         return response.json();
       })
       .then((data) => {
+        data = data[appointment?.value]
         const radioAppointment = document.querySelector("#radio-appointment")
         radioAppointment.innerHTML = "";
         for (const dates of data) {

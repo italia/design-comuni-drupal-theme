@@ -304,37 +304,34 @@ function appointment() {
     document.querySelector("#selected-place-card").innerHTML = `
     <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-4">
     <div class="card">
-        <div
-        class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end"
-        >
+      <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
         <h3 class="title-large-semi-bold mb-3">
           ${place?.nome}
         </h3>
         </div>
-
         <div class="card-body p-0">
-        <div class="single-line-info border-light">
+          <div class="single-line-info border-light">
             <div class="text-paragraph-small">Sportello</div>
             <div class="border-light">
-            <p class="data-text">CIE</p>
+              <p class="data-text">CIE</p>
             </div>
-        </div>
-        <div class="single-line-info border-light">
+          </div>
+          <div class="single-line-info border-light">
             <div class="text-paragraph-small">Indirizzo</div>
             <div class="border-light">
-            <p class="data-text">
-              ${place?.indirizzo}
-            </p>
+              <p class="data-text">
+                ${place?.indirizzo}
+              </p>
             </div>
-        </div>
-        <div class="single-line-info border-light">
+          </div>
+          <div class="single-line-info border-light">
             <div class="text-paragraph-small">Apertura</div>
             <div class="border-light">
-            <div class="data-text">
-              ${!place?.apertura ? 'non disponibile' : place.apertura}
+              <div class="data-text">
+                ${!place?.apertura ? 'non disponibile' : place.apertura}
+              </div>
             </div>
-            </div>
-        </div>
+          </div>
         </div>
         <div class="card-footer p-0"></div>
     </div>

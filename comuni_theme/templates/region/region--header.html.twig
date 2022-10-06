@@ -67,7 +67,7 @@
               <a href="#"
                 class="btn btn-primary btn-icon btn-full"
                 data-element="personal-area-login"
-              ><span class="rounded-icon">
+              ><span class="rounded-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" id="it-user" class="icon icon-primary" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 13a4 4 0 004-4V6a4 4 0 00-8 0v3a4 4 0 004 4zM9 6a3 3 0 016 0v3a3 3 0 01-6 0zm11 16h-1a7 7 0 00-14 0H4a8 8 0 0116 0z"/>
                     <path fill="none" d="M0 0h24v24H0z"/>
@@ -88,10 +88,7 @@
           <div class="col-12">
             <div class="it-header-center-content-wrapper">
               <div class="it-brand-wrapper">
-                <a href="/homepage"
-                  title="Vai alla homepage"
-                  aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
-                >
+                <a href="{{ url('<front>') }}" title="Vai alla homepage">
                   {% if site_settings.infocomune.info_comune.field_logo_svg %}
                     <img style="width:82px;margin-right:16px;" aria-hidden="true"
                          src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>

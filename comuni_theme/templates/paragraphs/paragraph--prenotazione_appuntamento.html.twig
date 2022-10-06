@@ -49,7 +49,7 @@
 {% block paragraph %}
 	<div{{attributes.addClass(classes)}}>
 		{% block content %}
-    <div id="form-steps">
+		<div id="form-steps">
 			<div class="container">
 				<div class="cmp-info-progress d-flex d-none" data-progress="1">
 					<!-- Desktop -->
@@ -296,164 +296,162 @@
 					<!-- Step 1 -->
 					<div class="col-12 col-lg-3 mb-4 d-none" data-index="1">
 						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-              <nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
-                <div class="navbar-custom" id="navbarNavProgress">
-                  <div class="menu-wrapper">
-                    <div class="link-list-wrapper">
-                      <div class="accordion">
-                        <div class="accordion-item">
-                          <span class="accordion-header" id="accordion-title-one">
-                            <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
-                              INFORMAZIONI RICHIESTE
-                              <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
-                            </button>
-                          </span>
-                          <div class="progress">
-                            <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
-                            <div class="accordion-body">
-                              <ul class="link-list" data-element="page-index">
-                                <li class="nav-item">
-                                  <a class="nav-link" href="#office">
-                                    <span class="title-medium">Ufficio</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-					</div>
-					<!-- Step 2 -->
-					<div class="col-12 col-lg-3 mb-4 d-none" data-index="2">
-						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-              <nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
-                <div class="navbar-custom" id="navbarNavProgress">
-                  <div class="menu-wrapper">
-                    <div class="link-list-wrapper">
-                      <div class="accordion">
-                        <div class="accordion-item">
-                          <span class="accordion-header" id="accordion-title-one">
-                            <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-two" aria-expanded="true" aria-controls="collapse-two">
-                              INFORMAZIONI RICHIESTE
-                              <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
-                            </button>
-                          </span>
-                          <div class="progress">
-                            <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div id="collapse-two" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
-                            <div class="accordion-body">
-                              <ul class="link-list" data-element="page-index">
-                                <li class="nav-item">
-                                  <a class="nav-link" href="#appointment-available">
-                                    <span class="title-medium">Appuntamenti disponibili</span>
-                                  </a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="#office-2">
-                                    <span class="title-medium">Ufficio</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-					</div>
-					<!-- Step 3 -->
-					<div class="col-12 col-lg-3 mb-4 d-none" data-index="3">
-						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-              <nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
-                <div class="navbar-custom" id="navbarNavProgress">
-                  <div class="menu-wrapper">
-                    <div class="link-list-wrapper">
-                      <div class="accordion">
-                        <div class="accordion-item">
-                          <span class="accordion-header" id="accordion-title-one">
-                            <button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-three" aria-expanded="true" aria-controls="collapse-three">
-                              INFORMAZIONI RICHIESTE
-                              <svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
-                            </button>
-                          </span>
-                          <div class="progress">
-                            <div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                          <div id="collapse-three" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
-                            <div class="accordion-body">
-                              <ul class="link-list" data-element="page-index">
-                                <li class="nav-item">
-                                  <a class="nav-link" href="#reason">
-                                    <span class="title-medium">Motivo</span>
-                                  </a>
-                                </li>
-                                <li class="nav-item">
-                                  <a class="nav-link" href="#details">
-                                    <span class="title-medium">Dettagli</span>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-					</div>
-					<!-- Step 4 -->
-					<div class="col-12 col-lg-3 mb-4 d-none" data-index="4">
-						<aside class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
-							<div class="inline-menu">
-								<nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
-									<div class="navbar-custom" id="navbarNavProgress">
-										<div class="menu-wrapper">
-											<div class="link-list-wrapper">
-												<div class="accordion">
-													<div class="accordion-item">
-														<span class="accordion-header" id="accordion-title-one">
-															<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-four" aria-expanded="true" aria-controls="collapse-four">
-																INFORMAZIONI RICHIESTE
-																<svg class="icon icon-xs right">
-																	<use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
-																</svg>
-															</button>
-														</span>
-														<div class="progress">
-															<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-														</div>
-														<div id="collapse-four" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
-															<div class="accordion-body">
-																<ul class="link-list" data-element="page-index">
-																	<li class="nav-item">
-																		<a class="nav-link" href="#applicant">
-																			<span class="title-medium">Richiedente</span>
-																		</a>
-																	</li>
-																</ul>
-															</div>
+							<nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
+								<div class="navbar-custom" id="navbarNavProgress">
+									<div class="menu-wrapper">
+										<div class="link-list-wrapper">
+											<div class="accordion">
+												<div class="accordion-item">
+													<span class="accordion-header" id="accordion-title-one">
+														<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-one" aria-expanded="true" aria-controls="collapse-one">
+															INFORMAZIONI RICHIESTE
+															<svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
+														</button>
+													</span>
+													<div class="progress">
+														<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+													<div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+														<div class="accordion-body">
+															<ul class="link-list" data-element="page-index">
+																<li class="nav-item">
+																	<a class="nav-link" href="#office">
+																		<span class="title-medium">Ufficio</span>
+																	</a>
+																</li>
+															</ul>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</nav>
-							</div>
-						</aside>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<!-- Step 2 -->
+					<div class="col-12 col-lg-3 mb-4 d-none" data-index="2">
+						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+							<nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
+								<div class="navbar-custom" id="navbarNavProgress">
+									<div class="menu-wrapper">
+										<div class="link-list-wrapper">
+											<div class="accordion">
+												<div class="accordion-item">
+													<span class="accordion-header" id="accordion-title-one">
+														<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-two" aria-expanded="true" aria-controls="collapse-two">
+															INFORMAZIONI RICHIESTE
+															<svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
+														</button>
+													</span>
+													<div class="progress">
+														<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+													<div id="collapse-two" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+														<div class="accordion-body">
+															<ul class="link-list" data-element="page-index">
+																<li class="nav-item">
+																	<a class="nav-link" href="#appointment-available">
+																		<span class="title-medium">Appuntamenti disponibili</span>
+																	</a>
+																</li>
+																<li class="nav-item">
+																	<a class="nav-link" href="#office-2">
+																		<span class="title-medium">Ufficio</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<!-- Step 3 -->
+					<div class="col-12 col-lg-3 mb-4 d-none" data-index="3">
+						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+							<nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
+								<div class="navbar-custom" id="navbarNavProgress">
+									<div class="menu-wrapper">
+										<div class="link-list-wrapper">
+											<div class="accordion">
+												<div class="accordion-item">
+													<span class="accordion-header" id="accordion-title-one">
+														<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-three" aria-expanded="true" aria-controls="collapse-three">
+															INFORMAZIONI RICHIESTE
+															<svg viewBox="0 0 24 24" id="it-expand" class="icon icon-xs right" xmlns="http://www.w3.org/2000/svg"><path d="M11.6 15.4L6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/></svg>
+														</button>
+													</span>
+													<div class="progress">
+														<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+													<div id="collapse-three" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+														<div class="accordion-body">
+															<ul class="link-list" data-element="page-index">
+																<li class="nav-item">
+																	<a class="nav-link" href="#reason">
+																		<span class="title-medium">Motivo</span>
+																	</a>
+																</li>
+																<li class="nav-item">
+																	<a class="nav-link" href="#details">
+																		<span class="title-medium">Dettagli</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<!-- Step 4 -->
+					<div class="col-12 col-lg-3 mb-4 d-none" data-index="4">
+						<div class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+							<nav class="navbar it-navscroll-wrapper navbar-expand-lg" data-bs-navscroll>
+								<div class="navbar-custom" id="navbarNavProgress">
+									<div class="menu-wrapper">
+										<div class="link-list-wrapper">
+											<div class="accordion">
+												<div class="accordion-item">
+													<span class="accordion-header" id="accordion-title-one">
+														<button class="accordion-button pb-10 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-four" aria-expanded="true" aria-controls="collapse-four">
+															INFORMAZIONI RICHIESTE
+															<svg class="icon icon-xs right">
+																<use href="../assets/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use>
+															</svg>
+														</button>
+													</span>
+													<div class="progress">
+														<div class="progress-bar it-navscroll-progressbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+													</div>
+													<div id="collapse-four" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
+														<div class="accordion-body">
+															<ul class="link-list" data-element="page-index">
+																<li class="nav-item">
+																	<a class="nav-link" href="#applicant">
+																		<span class="title-medium">Richiedente</span>
+																	</a>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</nav>
+						</div>
 					</div>
 					<div class="col-12 col-lg-8 offset-lg-1 section-wrapper">
 						<div class="steppers-content" aria-live="polite">
@@ -461,8 +459,8 @@
 							{% set currentMonth = "now"|date('m') %}
 							<div class="it-page-sections-container">
 								<!-- Step 1 -->
-                <section class="it-page-section active" id="office" data-steps="1">
-									<div class="cmp-card">
+								<section class="firstStep page-step active it-page-section" data-steps="1">
+									<div class="cmp-card mb-40" id="office">
 										<div class="card has-bkg-grey shadow-sm p-big">
 											<div class="card-header border-0 p-0 mb-lg-30">
 												<div class="d-flex">
@@ -495,12 +493,12 @@
 								</section>
 
 								<!-- Step 2 -->
-								<section class="it-page-section d-none" data-steps="2">
-									<div class="cmp-card mb-40" id="appointment-available">
+								<section class="d-none page-step it-page-section" data-steps="2">
+									<div class="cmp-card mb-40" id="appointment-available" >
 										<div class="card has-bkg-grey shadow-sm p-big">
 											<div class="card-header border-0 p-0 mb-lg-30">
 												<div class="d-flex">
-													<h2 class="title-xxlarge mb-2" id="appointment-available">
+													<h2 class="title-xxlarge mb-2">
 														Appuntamenti disponibili*
 													</h2>
 												</div>
@@ -535,9 +533,8 @@
 											</div>
 										</div>
 									</div>
-
-									<div class="cmp-card  mb-40" id="office-2">
-										<div class="card has-bkg-grey shadow-sm p-big">
+									<div class="cmp-card mb-40" id="office-2">
+										<div class="card has-bkg-grey shadow-sm p-big" >
 											<div class="card-header border-0 p-0 mb-lg-30">
 												<div class="d-flex">
 													<h2 class="title-xxlarge mb-0">Ufficio</h2>
@@ -549,12 +546,12 @@
 								</section>
 
 								<!-- Step 3 -->
-								<section class="it-page-section d-none" data-steps="3">
+								<section class="d-none page-step it-page-section" data-steps="3">
 									<div class="cmp-card mb-40" id="reason">
 										<div class="card has-bkg-grey shadow-sm p-big">
 											<div class="card-header border-0 p-0 mb-lg-30 mb-3">
 												<div class="d-flex">
-													<h2 class="title-xxlarge mb-0">Motivo*</h2>
+													<h2 class="title-xxlarge mb-0" >Motivo*</h2>
 												</div>
 												<p class="subtitle-small mb-0">
 													Scegli il motivo dell’appuntamento
@@ -573,7 +570,7 @@
 										<div class="card has-bkg-grey shadow-sm p-big">
 											<div class="card-header border-0 p-0 mb-lg-30 m-0">
 												<div class="d-flex">
-													<h2 class="title-xxlarge mb-0">
+													<h2 class="title-xxlarge mb-0" >
 														Dettagli*
 													</h2>
 												</div>
@@ -595,16 +592,16 @@
 								</section>
 
 								<!-- Step 4 -->
-								<section class="it-page-section d-none" id="applicant" data-steps="4">
+								<section class="d-none page-step it-page-section" data-steps="4">
 									<p class="subtitle-small pb-40 mb-0 d-lg-none">
 										Hai un’identità digitale SPID o CIE?
-										<a class="title-small-semi-bold t-primary" href="./iscrizione-graduatoria-accedere-servizio.html">Accedi</a>
+										<a class="title-small-semi-bold t-primary underline" href="./iscrizione-graduatoria-accedere-servizio.html">Accedi</a>
 									</p>
-									<div class="cmp-card">
+									<div class="cmp-card" id="applicant">
 										<div class="card has-bkg-grey shadow-sm p-big">
 											<div class="card-header border-0 p-0 mb-lg-30 m-0">
 												<div class="d-flex">
-													<h2 class="title-xxlarge mb-3" id="applicant">
+													<h2 class="title-xxlarge mb-3" >
 														Richiedente
 													</h2>
 												</div>
@@ -616,7 +613,8 @@
 														<input type="text" class="form-control" id="name" name="name" required/>
 														<div class="d-flex">
 															<span class="form-text cmp-input__text">
-																Inserisci il tuo nome</span>
+																Inserisci il tuo nome
+															</span>
 														</div>
 													</div>
 
@@ -625,7 +623,8 @@
 														<input type="text" class="form-control" id="surname" name="surname" required/>
 														<div class="d-flex">
 															<span class="form-text cmp-input__text">
-																Inserisci il tuo cognome</span>
+																Inserisci il tuo cognome
+															</span>
 														</div>
 													</div>
 
@@ -634,7 +633,8 @@
 														<input type="email" class="form-control" id="email" name="email" required/>
 														<div class="d-flex">
 															<span class="form-text cmp-input__text">
-																Inserisci la tua email</span>
+																Inserisci la tua email
+															</span>
 														</div>
 													</div>
 												</div>
@@ -644,7 +644,7 @@
 								</section>
 
 								<!-- Step 5 -->
-								<section class="d-none page-step" data-steps="5">
+								<section class="d-none page-step it-page-section" data-steps="5">
 									<div class="mt-2">
 										<h2 class="visually-hidden">Dettagli dell'appuntamento</h2>
 										<div class="cmp-card mb-4">
@@ -661,7 +661,11 @@
 																<h4 class="title-large-semi-bold mb-3">
 																	Ufficio
 																</h4>
-																<a href="#" class="">
+																<a href="#"
+																	class="text-decoration-none"
+																	title="Modifica Ufficio"
+																	aria-label="Modifica Ufficio"
+																>
 																	<span class="text-button-sm-semi t-primary">Modifica</span>
 																</a>
 															</div>
@@ -693,7 +697,11 @@
 																<h4 class="title-large-semi-bold mb-3">
 																	Data e orario
 																</h4>
-																<a href="#" class="">
+																<a href="#"
+																	class="text-decoration-none"
+																	title="Modifica Data e orario"
+																	aria-label="Modifica Data e orario"
+																>
 																	<span class="text-button-sm-semi t-primary">Modifica</span>
 																</a>
 															</div>
@@ -721,7 +729,11 @@
 																<h4 class="title-large-semi-bold mb-3">
 																	Dettagli appuntamento
 																</h4>
-																<a href="#" class="">
+																<a href="#"
+																	class="text-decoration-none"
+																	title="Modifica Dettagli appuntamento"
+																	aria-label="Modifica Dettagli appuntamento"
+																>
 																	<span class="text-button-sm-semi t-primary">Modifica</span>
 																</a>
 															</div>
@@ -749,7 +761,11 @@
 																<h4 class="title-large-semi-bold mb-3">
 																	Richiedente
 																</h4>
-																<a href="#" class="">
+																<a href="#"
+																	class="text-decoration-none"
+																	title="Modifica Richiedente"
+																	aria-label="Modifica Richiedente"
+																>
 																	<span class="text-button-sm-semi t-primary">Modifica</span>
 																</a>
 															</div>
@@ -786,9 +802,9 @@
 							<div class="cmp-nav-steps">
 								<nav class="steppers-nav">
 									<button type="button" class="btn btn-sm steppers-btn-prev p-0 btn-back-step" disabled>
-                    <svg viewBox="0 0 24 24" id="it-chevron-left" xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-primary" aria-hidden="true">
-                      <path d="M14.6 17.2L9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
-                    </svg>
+										<svg viewbox="0 0 24 24" id="it-chevron-left" xmlns="http://www.w3.org/2000/svg" class="icon icon-sm icon-primary" aria-hidden="true">
+											<path d="M14.6 17.2L9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
+										</svg>
 										<span class="text-button-sm t-primary">Indietro</span>
 									</button>
 									<button type="button" class="btn btn-outline-primary bg-white btn-sm steppers-btn-save d-none d-lg-block saveBtn">
@@ -799,9 +815,9 @@
 									</button>
 									<button type="submit" class="btn btn-primary btn-sm steppers-btn-confirm btn-next-step" data-bs-validate="validate" disabled>
 										<span class="text-button-sm">Avanti</span>
-                    <svg viewBox="0 0 24 24" id="it-chevron-right" class="icon icon-white icon-sm" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M9.8 17.2l-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
-                    </svg>
+										<svg viewbox="0 0 24 24" id="it-chevron-right" class="icon icon-white icon-sm" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+											<path d="M9.8 17.2l-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
+										</svg>
 									</button>
 								</nav>
 								<div id="alert-message" class="alert alert-success cmp-disclaimer rounded d-none" role="alert">
@@ -812,202 +828,167 @@
 					</div>
 				</div>
 			</div>
-    </div>
-    <div id="final-step" class="d-none">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-10">
-            <div class="cmp-hero">
-              <section class="it-hero-wrapper bg-white align-items-start">
-                <div class="it-hero-text-wrapper pt-0 ps-0 pb-40">
-                  <div class="categoryicon-top d-flex">
-                    <svg viewBox="0 0 24 24" id="it-check-circle" class="icon icon-success mr-10 icon-sm mb-1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" aria-hidden="true">
-                      <path d="M17.1 7.9l.7.7-7.8 7.6-4.7-4.6.7-.7 4 3.9zM22 12A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/>
-                      <path fill="none" d="M0 0h24v24H0z"/>
-                    </svg>
-                    <h1 class="text-black hero-title" data-element="page-name">
-                      Appuntamento confermato
-                    </h1>
-                  </div>
-                  <p class="titillium hero-text">
-                    L’appuntamento è fissato per<strong id="date-recap"></strong>
-                    <br />Abbiamo inviato il riepilogo all’email:<br />
-                    <strong id="email-recap"></strong>
-                  </p>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-        <hr class="d-none d-lg-block mb-40" />
-      </div>
-      <div class="container">
-        <div class="row mb-4 mb-lg-80">
-          <div class="d-none d-sm-none d-lg-block col-lg-3">
-            <aside
-              class="cmp-navscroll sticky-top"
-              aria-labelledby="accordion-title-one"
-            >
-              <div class="inline-menu">
-                <div class="link-list-wrapper">
-                  <ul>
-                    <li>
-                      <a class="list-item large medium right-icon p-0 text-decoration-none" href="#collapse-final"
-                        data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-final"
-                      >
-                    <span class="list-item-title-icon-wrapper pb-10 px-3">
-                        <span
-                          id="accordion-title-one"
-                          class="title-xsmall-semi-bold"
-                        >INDICE DELLA PAGINA</span>
-                        <svg class="icon icon-xs right">
-                        <use
-                          href="#it-expand"
-                        ></use>
-                        </svg>
-                    </span>
-                        <!-- Progress Bar -->
-                        <div class="progress bg-light">
-                          <div
-                            class="progress-bar"
-                            role="progressbar"
-                            style="width: 15%"
-                            aria-valuenow="15"
-                            aria-valuemin="0"
-                            aria-valuemax="100"
-                          ></div>
-                        </div>
-                      </a>
-                      <ul class="link-sublist collapse show"
-                        id="collapse-final"
-                        data-element="index-link-list"
-                      >
-                        <li>
-                          <a
-                            class="list-item"
-                            href="#needed"
-                          >
-                            <span class="title-medium">Cosa serve</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            class="list-item"
-                            href="#address"
-                          >
-                            <span class="title-medium">Indirizzo</span>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            class="list-item"
-                            href="#calendar"
-                          >
-                        <span class="title-medium"
-                        >Aggiungi al tuo calendario</span
-                        >
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </aside>
-          </div>
-          <div class="col-12 col-lg-8 offset-lg-1">
-            <div class="cmp-card mb-50">
-              <div class="card has-bkg-primary-grey p-3">
-                <div class="card-header border-0 p-0 mb-lg-30">
-                  <div class="d-flex">
-                    <h2 class="title-xxlarge mb-0">Cosa serve</h2>
-                  </div>
-                </div>
-                <div class="card-body p-0" id="needed">
-                  <div class="cmp-ul-list">
-                    <ul class="list-wrapper titillium">
-                      <li>
-                        <span> Documento di identità </span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="address-wrapper mb-50">
-              <h2 class="title-xxlarge mb-10" id="address">Indirizzo</h2>
-              <div class="cmp-card-img row mx-auto">
-                <div class="col-11 col-lg-6 px-0">
-                  <div class="card card-teaser card-teaser-info rounded shadow-sm">
-                    <div class="card-body align-items-center card-body d-flex justify-content-between">
-                      <div class="left">
-                        <h3 class="title-small">
-                          <a href="#">Ufficio anagrafe 03</a
-                          >
-                        </h3>
-                        <p class="subtitle-small mb-0">
-                          Via Grazia Deledda 9/a - 20127<br />
-                          Milano <br />
-                          anagrafe@comune.it
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="cmp-icon-list">
-              <h2 class="title-xxlarge mt-40 mb-2 mb-lg-4" id="calendar">
-                Aggiungi al tuo calendario
-              </h2>
-              <div class="link-list-wrapper">
-                <ul class="link-list mt-3">
-                  <li class="">
-                    <a class="list-item icon-left t-primary title-small-semi-bold"
-                      href="#"
-                    >
-                    <span class="list-item-title-icon-wrapper">
-                      <svg viewBox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
-                        <path fill="none" d="M0 0h24v24H0z"/>
-                      </svg>
-                      <span class="list-item-title title-small-semi-bold fw-normal">Outlook</span>
-                    </span>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a class="list-item icon-left t-primary title-small-semi-bold"
-                      href="#"
-                    >
-                    <span class="list-item-title-icon-wrapper">
-                      <svg viewBox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
-                        <path fill="none" d="M0 0h24v24H0z"/>
-                      </svg>
-                      <span class="list-item-title title-small-semi-bold fw-normal">Google Calendar</span>
-                    </span>
-                    </a>
-                  </li>
-                  <li class="">
-                    <a class="list-item icon-left t-primary title-small-semi-bold"
-                      href="#"
-                    >
-                    <span class="list-item-title-icon-wrapper">
-                      <svg viewBox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
-                        <path fill="none" d="M0 0h24v24H0z"/>
-                      </svg>
-                    <span class="list-item-title title-small-semi-bold fw-normal">iCloud Calendar</span>
-                    </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    {% endblock %}
+		</div>
+		<div id="final-step" class="d-none">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-10">
+						<div class="cmp-hero">
+							<section class="it-hero-wrapper bg-white align-items-start">
+								<div class="it-hero-text-wrapper pt-0 ps-0 pb-40">
+									<div class="categoryicon-top d-flex">
+										<svg viewbox="0 0 24 24" id="it-check-circle" class="icon icon-success mr-10 icon-sm mb-1" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" aria-hidden="true">
+											<path d="M17.1 7.9l.7.7-7.8 7.6-4.7-4.6.7-.7 4 3.9zM22 12A10 10 0 1112 2a10 10 0 0110 10zm-1 0a9 9 0 10-9 9 9 9 0 009-9z"/>
+											<path fill="none" d="M0 0h24v24H0z"/>
+										</svg>
+										<h1 class="text-black hero-title" data-element="page-name">
+											Appuntamento confermato
+										</h1>
+									</div>
+									<p class="titillium hero-text">
+										L’appuntamento è fissato per<strong id="date-recap"></strong>
+										<br/>Abbiamo inviato il riepilogo all’email:<br/>
+										<strong id="email-recap"></strong>
+									</p>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+				<hr class="d-none d-lg-block mb-40"/>
+			</div>
+			<div class="container">
+				<div class="row mb-4 mb-lg-80">
+					<div class="d-none d-sm-none d-lg-block col-lg-3">
+						<aside class="cmp-navscroll sticky-top" aria-labelledby="accordion-title-one">
+							<div class="inline-menu">
+								<div class="link-list-wrapper">
+									<ul>
+										<li>
+											<a class="list-item large medium right-icon p-0 text-decoration-none" href="#collapse-final" data-bs-toggle="collapse" aria-expanded="true" aria-controls="collapse-final">
+												<span class="list-item-title-icon-wrapper pb-10 px-3">
+													<span id="accordion-title-one" class="title-xsmall-semi-bold">INDICE DELLA PAGINA</span>
+													<svg class="icon icon-xs right">
+														<use href="#it-expand"></use>
+													</svg>
+												</span>
+												<!-- Progress Bar -->
+												<div class="progress bg-light">
+													<div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+												</div>
+											</a>
+											<ul class="link-sublist collapse show" id="collapse-final" data-element="index-link-list">
+												<li>
+													<a class="list-item" href="#needed">
+														<span class="title-medium">Cosa serve</span>
+													</a>
+												</li>
+												<li>
+													<a class="list-item" href="#address">
+														<span class="title-medium">Indirizzo</span>
+													</a>
+												</li>
+												<li>
+													<a class="list-item" href="#calendar">
+														<span class="title-medium">Aggiungi al tuo calendario</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</aside>
+					</div>
+					<div class="col-12 col-lg-8 offset-lg-1">
+						<div class="cmp-card mb-50">
+							<div class="card has-bkg-primary-grey p-3">
+								<div class="card-header border-0 p-0 mb-lg-30">
+									<div class="d-flex">
+										<h2 class="title-xxlarge mb-0">Cosa serve</h2>
+									</div>
+								</div>
+								<div class="card-body p-0" id="needed">
+									<div class="cmp-ul-list">
+										<ul class="list-wrapper titillium">
+											<li>
+												<span>
+													Documento di identità
+												</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="address-wrapper mb-50">
+							<h2 class="title-xxlarge mb-10" id="address">Indirizzo</h2>
+							<div class="cmp-card-img row mx-auto">
+								<div class="col-11 col-lg-6 px-0">
+									<div class="card card-teaser card-teaser-info rounded shadow-sm">
+										<div class="card-body align-items-center card-body d-flex justify-content-between">
+											<div class="left">
+												<h3 class="title-small">
+													<a href="#">Ufficio anagrafe 03</a>
+												</h3>
+												<p class="subtitle-small mb-0">
+													Via Grazia Deledda 9/a - 20127<br/>
+													Milano
+													<br/>
+													anagrafe@comune.it
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cmp-icon-list">
+							<h2 class="title-xxlarge mt-40 mb-2 mb-lg-4" id="calendar">
+								Aggiungi al tuo calendario
+							</h2>
+							<div class="link-list-wrapper">
+								<ul class="link-list mt-3">
+									<li class="">
+										<a class="list-item icon-left t-primary title-small-semi-bold" href="#">
+											<span class="list-item-title-icon-wrapper">
+												<svg viewbox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+													<path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
+													<path fill="none" d="M0 0h24v24H0z"/>
+												</svg>
+												<span class="list-item-title title-small-semi-bold fw-normal">Outlook</span>
+											</span>
+										</a>
+									</li>
+									<li class="">
+										<a class="list-item icon-left t-primary title-small-semi-bold" href="#">
+											<span class="list-item-title-icon-wrapper">
+												<svg viewbox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+													<path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
+													<path fill="none" d="M0 0h24v24H0z"/>
+												</svg>
+												<span class="list-item-title title-small-semi-bold fw-normal">Google Calendar</span>
+											</span>
+										</a>
+									</li>
+									<li class="">
+										<a class="list-item icon-left t-primary title-small-semi-bold" href="#">
+											<span class="list-item-title-icon-wrapper">
+												<svg viewbox="0 0 24 24" id="it-calendar" class="icon icon-sm align-self-start icon-primary icon-color" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+													<path d="M20.5 4H17V3h-1v1H8V3H7v1H3.5A1.5 1.5 0 002 5.5v13A1.5 1.5 0 003.5 20h17a1.5 1.5 0 001.5-1.5v-13A1.5 1.5 0 0020.5 4zm.5 14.5a.5.5 0 01-.5.5h-17a.5.5 0 01-.5-.5v-13a.5.5 0 01.5-.5H7v1h1V5h8v1h1V5h3.5a.5.5 0 01.5.5zM4 8h16v1H4z"/>
+													<path fill="none" d="M0 0h24v24H0z"/>
+												</svg>
+												<span class="list-item-title title-small-semi-bold fw-normal">iCloud Calendar</span>
+											</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endblock %}
 	</div>
 {% endblock paragraph %}

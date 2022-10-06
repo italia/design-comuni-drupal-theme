@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/italia/design-comuni-drupal-theme#readme",
   "dependencies": {
-    "bootstrap-italia": "^2.0.2"
+    "bootstrap-italia": "^2.0.4"
   }
 }

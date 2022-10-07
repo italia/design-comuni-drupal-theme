@@ -367,7 +367,7 @@
           </div>
         </section>
         {% endif %}
-        {% if content.field_tempi_e_scadenze[0] is not empty %}
+        {% if content.field_tempi_e_scadenze[0] is not empty or field_fase_semplice[0] is not empty %}
         <section class="it-page-section  mb-30">
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
@@ -375,6 +375,28 @@
               <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
             {% endif %}
             <div class="calendar-vertical mb-3">
+             {% for fase in content.field_fase_semplice["#items"] %}
+                <div class="calendar-date">
+                  <div class="calendar-date-day">
+                    {% if fase.entity.field_giorni is not empty %}
+                    <span class="title-xxlarge-regular d-flex justify-content-center">
+                      {{ fase.entity.field_giorni.value }}
+                    </span>
+                    <small class="calendar-date-day__month">
+                      {{ fase.entity.field_giorni.value == 1 ? 'giorno' : 'giorni' }}
+                    </small>
+                    {% endif %}
+                  </div>
+                  <div class="calendar-date-description rounded">
+                    <div class="calendar-date-description-content">
+                      <h3 class="title-medium-2 mb-0">{{ fase.entity.field_titolo.value }}</h3>
+                      {% if fase.entity.field_descrizione is not empty %}
+                      <p class="info-text mt-1 mb-0">{{ fase.entity.field_descrizione.value }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
               {% for fase in content.field_tempi_e_scadenze["#items"] %}
                 <div class="calendar-date">
                   <div class="calendar-date-day">
@@ -387,6 +409,9 @@
                   <div class="calendar-date-description rounded">
                     <div class="calendar-date-description-content">
                       <h3 class="title-medium-2 mb-0">{{ fase.entity.title.value }}</h3>
+                      {% if fase.entity.field_descrizione_breve is not empty %}
+                      <p class="info-text mt-1 mb-0">{{ fase.entity.field_descrizione_breve.value }}</p>
+                      {% endif %}
                     </div>
                   </div>
                 </div>

@@ -375,7 +375,8 @@
               <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
             {% endif %}
             <div class="calendar-vertical mb-3">
-             {% for fase in content.field_fase_semplice["#items"] %}
+              {% for fase in content.field_fase_semplice["#items"] %}
+                {% if fase.entity.field_titolo is not empty or fase.entity.field_descrizione is not empty %}
                 <div class="calendar-date">
                   <div class="calendar-date-day">
                     {% if fase.entity.field_giorni is not empty %}
@@ -396,6 +397,7 @@
                     </div>
                   </div>
                 </div>
+                {% endif %}
               {% endfor %}
               {% for fase in content.field_tempi_e_scadenze["#items"] %}
                 <div class="calendar-date">

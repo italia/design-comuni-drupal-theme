@@ -135,7 +135,7 @@ content:
     region: content
   field_fase_semplice:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''

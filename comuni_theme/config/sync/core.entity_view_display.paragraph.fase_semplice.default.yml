@@ -14,14 +14,14 @@ mode: default
 content:
   field_descrizione:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content
   field_giorni:
     type: number_integer
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -30,7 +30,7 @@ content:
     region: content
   field_titolo:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }

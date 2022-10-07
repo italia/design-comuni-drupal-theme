@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.fase_del_servizio.field_data
+    - field.field.node.fase_del_servizio.field_descrizione_breve
     - node.type.fase_del_servizio
   module:
     - datetime
@@ -21,6 +22,13 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     settings: {  }

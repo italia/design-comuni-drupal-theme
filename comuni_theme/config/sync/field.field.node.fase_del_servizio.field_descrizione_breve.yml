@@ -1,0 +1,19 @@
+uuid: da9faf34-79e2-4bc9-b9ce-61f737c2b31b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.fase_del_servizio
+id: node.fase_del_servizio.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: fase_del_servizio
+label: Descrizione
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

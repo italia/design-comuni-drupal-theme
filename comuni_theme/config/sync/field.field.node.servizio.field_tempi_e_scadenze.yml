@@ -12,7 +12,7 @@ entity_type: node
 bundle: servizio
 label: 'Tempi e scadenze (fasi esistenti)'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

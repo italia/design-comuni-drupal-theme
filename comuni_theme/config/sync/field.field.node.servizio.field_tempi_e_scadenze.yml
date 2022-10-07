@@ -10,7 +10,7 @@ id: node.servizio.field_tempi_e_scadenze
 field_name: field_tempi_e_scadenze
 entity_type: node
 bundle: servizio
-label: 'Tempi e scadenze'
+label: 'Tempi e scadenze (fasi esistenti)'
 description: ''
 required: true
 translatable: false

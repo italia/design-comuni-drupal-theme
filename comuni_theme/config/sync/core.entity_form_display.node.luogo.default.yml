@@ -28,7 +28,6 @@ dependencies:
     - field.field.node.luogo.field_video_esterno
     - node.type.luogo
   module:
-    - entity_reference_revisions
     - path
     - text
 id: node.luogo.default
@@ -38,13 +37,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
     type: entity_reference_autocomplete
-    weight: 122
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -54,7 +53,7 @@ content:
     third_party_settings: {  }
   field_cap:
     type: string_textfield
-    weight: 137
+    weight: 20
     region: content
     settings:
       size: 60
@@ -62,7 +61,7 @@ content:
     third_party_settings: {  }
   field_circoscrizione:
     type: string_textfield
-    weight: 134
+    weight: 19
     region: content
     settings:
       size: 60
@@ -70,7 +69,7 @@ content:
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
-    weight: 125
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -78,25 +77,15 @@ content:
     third_party_settings: {  }
   field_descrizione_estesa:
     type: text_textarea
-    weight: 126
+    weight: 13
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_galleria_immagini:
-    type: entity_reference_revisions_autocomplete
-    weight: 148
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_gps_latitude:
     type: string_textfield
-    weight: 144
+    weight: 26
     region: content
     settings:
       size: 60
@@ -104,7 +93,7 @@ content:
     third_party_settings: {  }
   field_gps_longitude:
     type: string_textfield
-    weight: 145
+    weight: 27
     region: content
     settings:
       size: 60
@@ -112,7 +101,7 @@ content:
     third_party_settings: {  }
   field_identificativo:
     type: string_textfield
-    weight: 143
+    weight: 25
     region: content
     settings:
       size: 60
@@ -120,7 +109,7 @@ content:
     third_party_settings: {  }
   field_immagine:
     type: entity_reference_autocomplete
-    weight: 124
+    weight: 11
     region: content
     settings:
       match_operator: CONTAINS
@@ -130,7 +119,7 @@ content:
     third_party_settings: {  }
   field_indirizzo:
     type: string_textfield
-    weight: 132
+    weight: 17
     region: content
     settings:
       size: 60
@@ -138,7 +127,7 @@ content:
     third_party_settings: {  }
   field_luoghi_collegati:
     type: entity_reference_autocomplete
-    weight: 127
+    weight: 14
     region: content
     settings:
       match_operator: CONTAINS
@@ -148,7 +137,7 @@ content:
     third_party_settings: {  }
   field_modalita_di_accesso:
     type: text_textarea
-    weight: 131
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -156,7 +145,7 @@ content:
     third_party_settings: {  }
   field_nome_alternativo:
     type: string_textfield
-    weight: 121
+    weight: 8
     region: content
     settings:
       size: 60
@@ -164,7 +153,7 @@ content:
     third_party_settings: {  }
   field_orario_per_il_pubblico:
     type: text_textarea
-    weight: 138
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -172,7 +161,7 @@ content:
     third_party_settings: {  }
   field_punti_di_contatto:
     type: entity_reference_autocomplete
-    weight: 147
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS
@@ -182,7 +171,7 @@ content:
     third_party_settings: {  }
   field_quartiere:
     type: string_textfield
-    weight: 133
+    weight: 18
     region: content
     settings:
       size: 60
@@ -190,7 +179,7 @@ content:
     third_party_settings: {  }
   field_sede_di:
     type: entity_reference_autocomplete
-    weight: 141
+    weight: 23
     region: content
     settings:
       match_operator: CONTAINS
@@ -200,7 +189,7 @@ content:
     third_party_settings: {  }
   field_servizi_presenti_nel_luogo:
     type: text_textarea
-    weight: 130
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -208,7 +197,7 @@ content:
     third_party_settings: {  }
   field_struttura_responsabile:
     type: entity_reference_autocomplete
-    weight: 140
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -218,7 +207,7 @@ content:
     third_party_settings: {  }
   field_tipo_di_luogo:
     type: entity_reference_autocomplete
-    weight: 123
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -228,59 +217,49 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 142
+    weight: 24
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_video_esterno:
-    type: entity_reference_revisions_autocomplete
-    weight: 149
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 1
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -288,7 +267,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -296,4 +275,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_galleria_immagini: true
+  field_video_esterno: true

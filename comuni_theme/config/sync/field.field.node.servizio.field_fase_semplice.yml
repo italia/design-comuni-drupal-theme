@@ -1,0 +1,172 @@
+uuid: 09e4eb67-8c54-48e0-87b8-2b3b3bd7551a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_fase_semplice
+    - node.type.servizio
+    - paragraphs.paragraphs_type.fase_semplice
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_fase_semplice
+field_name: field_fase_semplice
+entity_type: node
+bundle: servizio
+label: 'Tempi e scadenze (fasi semplici)'
+description: 'Aggiungi le fasi specifiche per questo servizio (è possibile specificare il numero di giorni).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      fase_semplice: fase_semplice
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 50
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 51
+        enabled: false
+      argomenti:
+        weight: 52
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 53
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 54
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 55
+        enabled: false
+      biglietto_evento:
+        weight: 56
+        enabled: false
+      calendario:
+        weight: 57
+        enabled: false
+      card_assistenza:
+        weight: 58
+        enabled: false
+      card_foto_gallery:
+        weight: 59
+        enabled: false
+      collection_multimediale:
+        weight: 60
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 61
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 62
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 63
+        enabled: false
+      container_assistenza:
+        weight: 64
+        enabled: false
+      container_calendario:
+        weight: 65
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 66
+        enabled: false
+      container_foto_gallery:
+        weight: 67
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 68
+        enabled: false
+      dataset:
+        weight: 69
+        enabled: false
+      documento:
+        weight: 70
+        enabled: false
+      elemento_video:
+        weight: 71
+        enabled: false
+      esplora:
+        weight: 72
+        enabled: false
+      faq:
+        weight: 73
+        enabled: false
+      fase_intitolata:
+        weight: 74
+        enabled: false
+      fase_semplice:
+        weight: 49
+        enabled: true
+      hero_immagine:
+        weight: 75
+        enabled: false
+      homepage_top_card:
+        weight: 76
+        enabled: false
+      homepage_top_cards:
+        weight: 77
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 78
+        enabled: false
+      link:
+        weight: 79
+        enabled: false
+      link_con_icona:
+        weight: 80
+        enabled: false
+      link_esterno:
+        weight: 81
+        enabled: false
+      links_con_icona:
+        weight: 82
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 83
+        enabled: false
+      punto_di_contatto:
+        weight: 84
+        enabled: false
+      ricerca:
+        weight: 85
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 86
+        enabled: false
+      ricerca_novita:
+        weight: 87
+        enabled: false
+      ricerca_servizi:
+        weight: 88
+        enabled: false
+      richiesta_assistenza:
+        weight: 89
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 90
+        enabled: false
+      siti_tematici:
+        weight: 91
+        enabled: false
+      testo_e_lista:
+        weight: 92
+        enabled: false
+      titolo_descrizione_link:
+        weight: 93
+        enabled: false
+      titolo_e_descrizione:
+        weight: 94
+        enabled: false
+      ultima_notizia:
+        weight: 95
+        enabled: false
+      valutazione:
+        weight: 96
+        enabled: false
+field_type: entity_reference_revisions

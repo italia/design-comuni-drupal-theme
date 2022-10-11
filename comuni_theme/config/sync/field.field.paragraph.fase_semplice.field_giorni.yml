@@ -1,0 +1,23 @@
+uuid: 506ae1ca-3dc5-40ff-adca-271345ba9f27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_giorni
+    - paragraphs.paragraphs_type.fase_semplice
+id: paragraph.fase_semplice.field_giorni
+field_name: field_giorni
+entity_type: paragraph
+bundle: fase_semplice
+label: Giorni
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

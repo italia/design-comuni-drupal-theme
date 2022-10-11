@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.servizio.field_descrizione_breve
     - field.field.node.servizio.field_descrizione_estesa
     - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
     - field.field.node.servizio.field_motivo_dello_stato
@@ -75,6 +76,7 @@ hidden:
   field_costi: true
   field_descrizione_estesa: true
   field_documenti: true
+  field_fase_semplice: true
   field_immagine: true
   field_life_events: true
   field_motivo_dello_stato: true

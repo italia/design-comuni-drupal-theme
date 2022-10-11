@@ -20,6 +20,7 @@ dependencies:
     - field.field.node.servizio.field_descrizione_breve
     - field.field.node.servizio.field_descrizione_estesa
     - field.field.node.servizio.field_documenti
+    - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
     - field.field.node.servizio.field_motivo_dello_stato
@@ -36,6 +37,7 @@ dependencies:
     - field.field.node.servizio.field_vincoli
     - node.type.servizio
   module:
+    - entity_reference_revisions
     - link
     - text
     - user
@@ -78,7 +80,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 18
+    weight: 19
     region: content
   field_come_fare:
     type: text_default
@@ -94,7 +96,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 16
+    weight: 17
     region: content
   field_cosa_serve:
     type: text_default
@@ -115,7 +117,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 12
+    weight: 13
     region: content
   field_descrizione_breve:
     type: basic_string
@@ -131,12 +133,21 @@ content:
     third_party_settings: {  }
     weight: 6
     region: content
+  field_fase_semplice:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 11
+    region: content
   field_promemoria_accesso:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 14
     region: content
   field_promemoria_scadenze:
     type: text_default
@@ -161,14 +172,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 11
+    weight: 12
     region: content
   field_ulteriori_informazioni:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 15
+    weight: 16
     region: content
   field_unita_org_responsabile:
     type: entity_reference_entity_view
@@ -177,7 +188,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 17
+    weight: 18
     region: content
   field_unita_organizzative:
     type: entity_reference_entity_view
@@ -186,7 +197,7 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 14
+    weight: 15
     region: content
   links:
     settings: {  }
@@ -196,7 +207,7 @@ content:
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 20
     region: content
 hidden:
   field_business_events: true

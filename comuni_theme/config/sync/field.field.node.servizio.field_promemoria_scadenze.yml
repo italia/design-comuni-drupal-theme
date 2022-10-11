@@ -11,9 +11,9 @@ id: node.servizio.field_promemoria_scadenze
 field_name: field_promemoria_scadenze
 entity_type: node
 bundle: servizio
-label: 'Promemoria scadenze'
+label: 'Tempi e Scadenze (testo introduttivo)'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

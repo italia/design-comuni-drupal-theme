@@ -1,0 +1,10 @@
+uuid: 35e4fa17-e441-4ef7-9a56-ad1c757cde81
+langcode: en
+status: true
+dependencies: {  }
+id: fase_semplice
+label: 'Fase semplice'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

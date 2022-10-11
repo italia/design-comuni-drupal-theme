@@ -1,0 +1,40 @@
+uuid: bc8f152d-faf0-4bb4-8394-4ac9eef3eb3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fase_semplice.field_descrizione
+    - field.field.paragraph.fase_semplice.field_giorni
+    - field.field.paragraph.fase_semplice.field_titolo
+    - paragraphs.paragraphs_type.fase_semplice
+id: paragraph.fase_semplice.default
+targetEntityType: paragraph
+bundle: fase_semplice
+mode: default
+content:
+  field_descrizione:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_giorni:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_titolo:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

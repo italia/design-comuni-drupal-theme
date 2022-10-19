@@ -79,7 +79,13 @@ Importa i file di configurazione del sito con il seguentecomando drush (se neces
 drush cim --partial --source=modules/custom/design-comuni-drupal-theme/comuni_theme/config/sync -y
 ~~~
 
-Dalla cartella *comuni-theme* lancia il comando *npm install* per installare Bootstrap Italia
+Dalla cartella *comuni-theme* lancia il comando 
+
+~~~
+npm install
+~~~
+
+per installare Bootstrap Italia
 
 Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchronizer* ed importare i quattro bundle di contenuti, presenti nella cartella *content* della cartella del tema Design Comuni Drupal nel seguente ordine (se necessario aumentare il valore della dimensione massima consentita per gli upload in php.ini):
 

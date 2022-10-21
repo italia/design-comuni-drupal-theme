@@ -8,7 +8,7 @@ const version = require('../package.json').version
 const configReadmeOptions = {
   files: readmePath,
   from: /### I primi passi con il tema Dupal \(.+\)/gi,
-  to: `### I primi passi con il tema Dupal (${version})`,
+  to: `### I primi passi con il tema Dupal (v${version})`,
 }
 
 const configCssOptions = {

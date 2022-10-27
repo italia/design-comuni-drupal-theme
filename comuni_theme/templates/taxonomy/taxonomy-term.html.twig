@@ -100,10 +100,10 @@
             <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Amministrazione</h3>
           </div>
         </div>
-        <div>
-          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3 d-flex d-md-block d-lg-flex">
+        <div class="row mt-0 g-4">
             {{ drupal_view('argomenti_correlati', 'block_2', term.id) }}
-          </div>
+        </div>
+        <div class="row mt-4">
           <div class="col-12 col-lg-3 offset-lg-9">
             <a href="{{ url('<front>') }}/amministrazione" class="btn btn-primary text-button w-100">Tutta l’amministrazione</a>
           </div>
@@ -121,13 +121,13 @@
             <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Servizi</h3>{# TODO Label #}
           </div>
         </div>
-        <div>
-          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3 justify-content-between">
+        <div class="row mt-0 g-4">
             {{ drupal_view('argomenti_correlati', 'block_3', term.id) }}
-          </div>
         </div>
-        <div class="col-12 col-lg-3 offset-lg-9">
-          <a href="{{ url('<front>') }}/servizi" class="btn btn-primary text-button w-100">Tutti i servizi</a>{# TODO Label #}
+        <div class="row mt-4">
+          <div class="col-12 col-lg-3 offset-lg-9">
+            <a href="{{ url('<front>') }}/servizi" class="btn btn-primary text-button w-100">Tutti i servizi</a>{# TODO Label #}
+          </div>
         </div>
       </div>
     </div>
@@ -141,13 +141,13 @@
             <h3 class="u-grey-light border-bottom border-semi-dark pb-2 pb-lg-3 title-large-semi-bold">Documenti</h3>
           </div>
         </div>
-        <div>
-          <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3 py-2 py-lg-3">
+        <div class="row mt-0 g-4">
             {{ drupal_view('argomenti_correlati', 'block_4', term.id) }}
-          </div>
         </div>
-        <div class="col-12 col-lg-3 offset-lg-9">
-          <a href="{{ url('<front>') }}/documenti" class="btn btn-primary text-button w-100">Tutti i documenti</a>
+        <div class="row mt-4">
+          <div class="col-12 col-lg-3 offset-lg-9">
+            <a href="{{ url('<front>') }}/documenti" class="btn btn-primary text-button w-100">Tutti i documenti</a>
+          </div>
         </div>
       </div>
     </div>

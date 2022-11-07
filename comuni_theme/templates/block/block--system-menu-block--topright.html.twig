@@ -44,10 +44,12 @@
     {% endif %}
 {% endmacro %}
 
-<ul class="navbar-nav navbar-secondary">
-    {% for item in attribute(content, "#items") %}
-        <li class="nav-item">
-            {{ _self.menu_link(item) }}
-        </li>
-    {% endfor %}
-</ul>
+<nav aria-label="Secondaria">
+    <ul class="navbar-nav navbar-secondary">
+        {% for item in attribute(content, "#items") %}
+            <li class="nav-item">
+                {{ _self.menu_link(item) }}
+            </li>
+        {% endfor %}
+    </ul>
+</nav>

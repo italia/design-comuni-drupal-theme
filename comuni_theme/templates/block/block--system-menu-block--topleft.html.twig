@@ -53,10 +53,12 @@
   {# {{ url(menu_item.url.routeName, menu_item.url.routeParameters, menu_item.url.options) }} #}
 {% endmacro %}
 
-<ul class="navbar-nav" data-element="main-navigation">
-  {% for item in attribute(content, "#items") %}
-    <li class="nav-item">
-      {{ _self.menu_link(item) }}
-    </li>
-  {% endfor %}
-</ul>
+<nav aria-label="Principale">
+  <ul class="navbar-nav" data-element="main-navigation">
+    {% for item in attribute(content, "#items") %}
+      <li class="nav-item">
+        {{ _self.menu_link(item) }}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

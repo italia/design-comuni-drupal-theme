@@ -23,7 +23,7 @@ jobs:
         run: | 
           git clone https://github.com/italia/design-comuni-pagine-statiche
           cd design-comuni-pagine-statiche && npm i && npm run build && cd ..
-          cp ./design-comuni-pagine-statiche/dist/assets/css/style.css ./comuni_theme/assets/css/comuni.css
+          cp ./design-comuni-pagine-statiche/dist/assets/css/style.css ./comuni_theme/css/styles.css
           rm -rf design-comuni-pagine-statiche
           cd comuni_theme
           npm i

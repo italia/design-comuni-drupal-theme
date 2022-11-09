@@ -4,6 +4,7 @@
   "description": "Tema Drupal dei Comuni Italiani",
   "main": "index.js",
   "scripts": {
+    "build": "./copy_assets.sh",
     "version": "node scripts/config-sync && git add css/style.css && git add ../README.md",
     "postversion": "echo \"You can now publish your tag with 'git push --follow-tags'\""
   },

@@ -93,8 +93,8 @@
 
         {% for row in rows[0]['#rows']%}
         <div class="col-lg-4">
-          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} rounded border border-light">
-          {# <div class="card-teaser card-teaser-image card-flex rounded border border-light"> #}
+          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} rounded border border-light arguments-card">
+          {# <div class="card-teaser card-teaser-image card-flex rounded border border-light arguments-card"> #}
             <div class="card-body d-flex justify-content-between">
               <div class="teaser-content">
                 {% if row['#node'].field_tipo_di_organizzazione[0] is not empty %}

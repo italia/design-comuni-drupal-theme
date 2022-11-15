@@ -91,22 +91,21 @@
 
     {% if rows %}
         {% for row in rows[0]['#rows']%}
-        <div class="col-lg-4">
-          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} rounded border border-light">
-	        {# <div class="card-teaser card-teaser-image card-flex rounded border border-light"> #}
-            <div class="card-body d-flex justify-content-between">
-              <div class="teaser-content">
+          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} no-after rounded shadow-sm border border-light mb-0">
+	        {# <div class="card-teaser card-teaser-image card-flex no-after rounded shadow-sm border border-light mb-0"> #}
+            <div class="card-image-wrapper with-read-more">
+              <div class="card-body p-3">
                 {% if row['#node'].field_categoria_del_servizio[0] is not empty %}
                 <div class="category-top">
                   <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row['#node'].field_categoria_del_servizio[0].entity.tid.value}) }}"
-                    class="text-decoration-none fw-semibold"
+                    class="title-xsmall-semi-bold fw-semibold text-decoration-none"
                   >
                     {{ drupal_field('name', 'taxonomy_term', row['#node'].field_categoria_del_servizio[0].value['target_id']) }}
                   </a>
                 </div>
                 {% endif %}
                 {% if row['#node'].label %}
-                <h4 class="text-paragraph-medium">
+                <h4 class="text-paragraph-card u-grey-light m-0">
                   <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}"
                     class="text-decoration-none"
                   >
@@ -122,7 +121,6 @@
               </div>
             </div>
           </div>
-        </div>
         {% endfor %}
     {% elseif empty %}
       <div class="view-empty">

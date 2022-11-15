@@ -92,31 +92,37 @@
     {% if rows %}
 
         {% for row in rows[0]['#rows']%}
-        <div class="col-lg-4">
-          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} rounded border border-light arguments-card">
-          {# <div class="card-teaser card-teaser-image card-flex rounded border border-light arguments-card"> #}
-            <div class="card-body d-flex justify-content-between">
-              <div class="teaser-content">
+          <div class="card-teaser {{ row['#node'].field_immagine[0] is not empty ? 'card-teaser-image card-flex' : '' }} no-after rounded shadow-sm border border-light mb-0">
+          {# <div class="card-teaser card-teaser-image card-flex no-after rounded shadow-sm border border-light mb-0"> #}
+            <div class="card-image-wrapper with-read-more">
+              <div class="card-body p-3">
                 {% if row['#node'].field_tipo_di_organizzazione[0] is not empty %}
                   <div class="category-top">
-                    <h4 class="text-paragraph-medium">
-                      <a class="text-decoration-none" href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row['#node'].field_tipo_di_organizzazione[0].entity.tid.value}) }}">
+                    {# <h4 class="text-paragraph-medium"> #}
+                      <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row['#node'].field_tipo_di_organizzazione[0].entity.tid.value}) }}"
+                        class="title-xsmall-semi-bold fw-semibold text-decoration-none"
+                      >
                         {{ drupal_field('name', 'taxonomy_term', row['#node'].field_tipo_di_organizzazione[0].value['target_id']) }}
                       </a>
-                    </h4>
+                    {# </h4> #}
                   </div>
                 {% endif %}
                 {% if row['#node'].label %}
                   <h4 class="text-paragraph-medium u-grey-light">
-                    {{ row['#node'].label }}
+                    {# {{ row['#node'].label }} #}
+                    <a href="{{ path('entity.node.canonical', {'node': row['#node'].nid.value}) }}"
+                      class="text-decoration-none"
+                    >
+                      {{ row['#node'].label }}
+                    </a>
                   </h4>
                 {% endif %}
                 {% if row['#node'].field_descrizione_breve[0] is not empty %}
-                  <p class="m-0 u-grey-light text-paragraph-card">{{ row['#node'].field_descrizione_breve.value }}</p>
+                <p class="m-0 u-grey-light text-paragraph-card">{{ row['#node'].field_descrizione_breve.value }}</p>
                 {% endif %}
               </div>
               {% if row['#node'].field_immagine[0] is not empty %}
-                <div class="card-image">
+                <div class="card-image card-image-rounded">
                 {# TODO: remove file extension from alt by calling pathauto in a twig filter #}
                   <img
                     src="{{ file_url(row['#node'].field_immagine.entity.field_media_image.entity.fileuri) }}"
@@ -125,7 +131,6 @@
               {% endif %}
             </div>
           </div>
-        </div>
         {% endfor %}
     {% elseif empty %}
       <div class="view-empty">

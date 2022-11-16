@@ -66,12 +66,12 @@
       <div class="it-carousel-wrapper it-carousel-landscape-abstract-four-cols it-calendar-wrapper splide" data-bs-carousel-splide>
         <div class="it-header-block">
           <div class="it-header-block-title">
-            {% set currentMonth = "now"|date("F")|monthEn2It(false) %}
+            {% set currentMonth = "now"|date("M")|monthEn2It(false) %}
             {% set currentYear = "now"|date("Y") %}
             {% set currentDay = "now"|date("d")%}
             {% set currentDayName = "now"|date("D")|dayEn2It %}
             {% set interval = "+ " ~ 7 ~ " day" %}
-            {% set newCurrentMonth = "now"|date_modify(interval)|date("F")|monthEn2It(false) %}
+            {% set newCurrentMonth = "now"|date_modify(interval)|date("M")|monthEn2It(false) %}
             {% set newCurrentYear = "now"|date_modify(interval)|date("Y") %}
             {% if newCurrentYear != currentYear %}
               <h3 class="mb-0 text-center home-carousel-title">{{ currentMonth ~ " " ~ currentYear ~ " - " ~ newCurrentMonth ~ " " ~ newCurrentYear }}</h3>

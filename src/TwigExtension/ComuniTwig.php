@@ -267,39 +267,36 @@ class ComuniTwig extends AbstractExtension
     return $days[$englishName];
   }
 
+  /**
+   * Translates an English month name to Italian.
+   *
+   * twigs can behave unexpectedly when invoking date_format(date, "F")
+   * (sometimes the short version is returned), so we use a flag parameter
+   *
+   * @param short - A flag that describes the outpout length.
+   *
+   * @return A string with the input translated to Italian.
+   */
   public function monthEn2It($englishName, $short=true) {
+    $months = array(
+      'Jan' =>  'Gennaio',
+      'Feb' =>  'Febbraio',
+      'Mar' =>  'Marzo',
+      'Apr' =>  'Aprile',
+      'May' =>  'Maggio',
+      'Jun' =>  'Giugno',
+      'Jul' =>  'Luglio',
+      'Aug' =>  'Agosto',
+      'Sep' =>  'Settembre',
+      'Oct' =>  'Ottobre',
+      'Nov' =>  'Novembre',
+      'Dec' =>  'Dicembre',
+    );
+    $italianName = $months[substr($englishName, 0, 3)];
     if ($short) {
-      $months = array(
-        'Jan' =>  'Gen',
-        'Feb' =>  'Feb',
-        'Mar' =>  'Mar',
-        'Apr' =>  'Apr',
-        'May' =>  'Mag',
-        'Jun' =>  'Giu',
-        'Jul' =>  'Lug',
-        'Aug' =>  'Ago',
-        'Sep' =>  'Set',
-        'Oct' =>  'Ott',
-        'Nov' =>  'Nov',
-        'Dec' =>  'Dic',
-      );
-    } else {
-      $months = array(
-        'Jan' =>  'Gennaio',
-        'Feb' =>  'Febbraio',
-        'Mar' =>  'Marzo',
-        'Apr' =>  'Aprile',
-        'May' =>  'Maggio',
-        'Jun' =>  'Giugno',
-        'Jul' =>  'Luglio',
-        'Aug' =>  'Agosto',
-        'Sep' =>  'Settembre',
-        'Oct' =>  'Ottobre',
-        'Nov' =>  'Novembre',
-        'Dec' =>  'Dicembre',
-      );
+      $italianName = substr($italianName, 0, 3);
     }
-    return $months[$englishName];
+    return $italianName;
   }
 
   public function strpad($string, $length, $pad_string) {

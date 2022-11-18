@@ -107,12 +107,14 @@
             {% endif %}
             {{ title_suffix }}
             {% if content.field_stato_del_servizio %}
-              <div class="d-flex flex-wrap cmp-heading__tag">
-                <div class="cmp-tag">
-                  <span class="cmp-tag__tag title-xsmall" data-element="service-status"
-                  >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
-                </div>
-              </div>
+              <ul class="d-flex flex-wrap gap-1 my-3">
+                <li>
+                  <div class="chip chip-simple text-button" data-element="service-status">
+                    <span class="chip-label"
+                    >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
+                  </div>
+                </ul>
+              </li>
             {% endif %}
             {% if content.field_descrizione_breve %}
               <div class="subtitle-small mb-3" data-element="service-description">
@@ -496,19 +498,21 @@
               <div class="col-12 mb-30">
                 {% if content.field_argomenti[0] is not empty %}
                 <span class="text-paragraph-small">Argomenti:</span>
-                <div class="d-flex flex-wrap gap-2 mt-10 mb-30">
+                <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
                 {% for argomento in content.field_argomenti['#items'] %}
                   {% set argName = argomento.entity.name.value %}
-                  <div class="cmp-tag">
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}"
-                      class="chip chip-simple t-primary bg-tag text-decoration-none"
-                      data-element="service-topic"
-                    ><span class="chip-label">{{ argName }}</span>
+                  <li>
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}" 
+                      class="chip chip-simple"
+                    >
+                      <span class="chip-label">
+                        {{ argName }}
+                      </span>
                     </a>
-                  </div>
+                  </li>
                 {% endfor %}
                 {% endif %}
-                </div>
+                </ul>
                 {% if node.changed.value %}
                 <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
                 {% endif %}

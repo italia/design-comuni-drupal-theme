@@ -76,7 +76,7 @@
       <div class="col-lg-8 px-lg-4 py-lg-2">
         {{ title_prefix }}
         {% if node.label %}
-          <h1{{ title_attributes }}>
+          <h1{{ title_attributes }} data-audio>
             {{ node.label }}
           </h1>
         {% endif %}
@@ -93,7 +93,7 @@
           </h4>
         {% endif %}
         {% if content.field_descrizione_breve %}
-          <p>{{ content.field_descrizione_breve }}</p>
+          <p data-audio>{{ content.field_descrizione_breve }}</p>
         {% endif %}
       </div>
       <div class="col-lg-3 offset-lg-1">
@@ -148,20 +148,20 @@
         </div>
         <div class="mt-4 mb-4">
           {% if content.field_argomenti %}
-            <h6>
-              <small>Argomenti</small>
-            </h6>
+            <span class="subtitle-small">Argomenti</span>
+            <ul class="d-flex flex-wrap gap-1 mt-2">
             {% for item in attribute(content.field_argomenti, "#items") %}
-              <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}"
-                class="text-decoration-none"
-              >
-                <div class="chip chip-simple chip-primary">
+              <li>
+                <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}"
+                  class="chip chip-simple"
+                >
                   <span class="chip-label">
-                  {{ item.entity.name.value }}
+                    {{ item.entity.name.value }}
                   </span>
-                </div>
-              </a>
+                </a>
+              </li>
             {% endfor %}
+            </ul>
           {% endif %}
         </div>
         <div class="mt-5">
@@ -281,7 +281,7 @@
       </aside>
       <section class="col-lg-8 it-page-sections-container border-light">
         {% if content.field_descrizione_completa [0] is not empty %}
-        <article id="cos-e" class="it-page-section anchor-offset">
+        <article id="cos-e" class="it-page-section anchor-offset" data-audio>
           <h4>Cos'è?</h4>
           <div class="font-serif">
             {{ content.field_descrizione_completa }}
@@ -296,18 +296,23 @@
           {% endif %}
           {% if content.field_persone[0] is not empty %}
             <div class="pt-3 pb-5">
-              <h6 class="font-serif fw-bold">Parteciperanno:</h6>
+              <h5 class="h6 font-serif fw-bold">Parteciperanno:</h5>
+              <ul class="d-flex flex-wrap gap-1 mt-2">
               {% for item in attribute(content.field_persone, "#items") %}
-                <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
-                  class="text-decoration-none"
-                >
-                   <div class="chip chip-simple chip-primary">
-                    <span class="chip-label">
-                        {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
-                    </span>
+                <li>
+                  <div class="cmp-tag">
+                    <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
+                      class="chip chip-simple t-primary bg-tag text-decoration-none"
+                      data-element="service-topic"
+                    >
+                      <span class="chip-label">
+                          {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
+                      </span>
+                    </a>
                   </div>
-                </a>
+                </li>
                {% endfor %}
+               </ul>
             </div>
           {% endif %}
 

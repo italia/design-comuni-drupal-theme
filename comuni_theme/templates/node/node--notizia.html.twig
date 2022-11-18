@@ -74,13 +74,13 @@
   <div class="row">
     <div class="col-lg-8 px-lg-4 py-lg-2">
       {% if node.label %}
-        <h1{{ title_attributes }}>
+        <h1{{ title_attributes }} data-audio>
           {{ node.label }}
         </h1>
       {% endif %}
       <h2 class="sr-only">Dettagli della notizia</h2>
       {% if content.field_descrizione_breve %}
-        <p>{{ content.field_descrizione_breve }}</p>
+        <p data-audio>{{ content.field_descrizione_breve }}</p>
       {% endif %}
       <div class="row mt-5 mb-4">
         <div class="col-6">
@@ -156,20 +156,24 @@
       </div>
       <div class="mt-4 mb-4">
         {% if content.field_argomenti %}
-          <h6>
-            <small>Argomenti</small>
-          </h6>
+          <div class="row">
+            <span class="mb-2 small">Argomenti</span>
+          </div>
+          <ul class="d-flex flex-wrap gap-1">
           {% for item in attribute(content.field_argomenti, "#items") %}
-            <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-              class="text-decoration-none"
-            >
-              <div class="chip chip-simple chip-primary">
+            <li>
+              <div class="chip chip-simple">
+                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
+                  class="chip-label"
+                >
                   <span class="chip-label">
-                  {{ item.entity.name.value }}
+                    {{ item.entity.name.value }}
                   </span>
+                </a>
               </div>
-            </a>
+            </li>
           {% endfor %}
+          </ul>
         {% endif %}
       </div>
     </div>
@@ -253,7 +257,7 @@
     </aside>
     <section class="col-lg-8 it-page-sections-container border-light">
       {% if content.field_testo_completo_notizia [0] is not empty %}
-        <article id="descrizione" class="it-page-section anchor-offset">
+        <article id="descrizione" class="it-page-section anchor-offset" data-audio>
           <h4>Descrizione</h4>{# TODO Label #}
           <div class="font-serif">
             {{ content.field_testo_completo_notizia }}

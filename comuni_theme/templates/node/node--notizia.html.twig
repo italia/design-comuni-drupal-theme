@@ -74,13 +74,13 @@
   <div class="row">
     <div class="col-lg-8 px-lg-4 py-lg-2">
       {% if node.label %}
-        <h1{{ title_attributes }}>
+        <h1{{ title_attributes }} data-audio>
           {{ node.label }}
         </h1>
       {% endif %}
       <h2 class="sr-only">Dettagli della notizia</h2>
       {% if content.field_descrizione_breve %}
-        <p>{{ content.field_descrizione_breve }}</p>
+        <p data-audio>{{ content.field_descrizione_breve }}</p>
       {% endif %}
       <div class="row mt-5 mb-4">
         <div class="col-6">
@@ -267,7 +267,7 @@
     </aside>
     <section class="col-lg-8 it-page-sections-container border-light">
       {% if content.field_testo_completo_notizia [0] is not empty %}
-        <article id="descrizione" class="it-page-section anchor-offset">
+        <article id="descrizione" class="it-page-section anchor-offset" data-audio>
           <h4>Descrizione</h4>{# TODO Label #}
           <div class="font-serif">
             {{ content.field_testo_completo_notizia }}

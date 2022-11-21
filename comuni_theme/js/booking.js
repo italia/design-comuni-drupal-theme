@@ -1,183 +1,4 @@
-function appointment() {
-
-  /* Steps Page - Next and Back button */
-
-  var content = document.querySelector(".section-wrapper");
-  var currentStep = 1;
-  var navscroll = document.querySelector(
-    '[data-index="'.concat(currentStep, '"]')
-  );
-  var progressBar = document.querySelector(
-    '[data-progress="'.concat(currentStep, '"]')
-  );
-  // need to define btns globally
-  var btnNext = content.querySelector(".btn-next-step");
-  var btnBack = content.querySelector(".btn-back-step");
-
-  function pageSteps() {
-    if (!content) return;
-    var btnSave = content.querySelectorAll(".saveBtn");
-    navscroll.classList.add("d-lg-block");
-    progressBar.classList.remove("d-none");
-    btnSave.forEach(function (element) {
-      element.classList.add("invisible");
-    });
-
-    if (btnNext) {
-      btnNext.addEventListener("click", function () {
-        openNext();
-      });
-    }
-
-    if (btnBack) {
-      btnBack.addEventListener("click", function () {
-        backPrevious();
-      });
-    }
-  }
-
-  function openNext() {
-    btnBack.disabled = false;
-    var btnSave = content.querySelectorAll(".saveBtn");
-    var steps = content.querySelectorAll("[data-steps]");
-    var nextStep = content.querySelector(
-      '[data-steps="'.concat(currentStep + 1, '"]')
-    );
-    var stepWrapper = content.querySelector("[data-steps].active");
-    navscroll.classList.remove("d-lg-block");
-    progressBar.classList.remove("d-block");
-    progressBar.classList.add("d-none");
-
-    if (currentStep == steps.length) {
-      confirmAppointment();
-      return;
-    } else {
-      stepWrapper.classList.add("d-none");
-      stepWrapper.classList.remove("active");
-      nextStep.classList.add("active");
-      nextStep.classList.remove("d-none");
-      document.getElementById("form-steps")
-        .scrollIntoView({ behavior: "smooth" });
-      currentStep = currentStep + 1;
-      checkMandatoryFields();
-      progressBar = document.querySelector(
-        '[data-progress="'.concat(currentStep, '"]')
-      );
-      progressBar.classList.add("d-block");
-      progressBar.classList.remove("d-none");
-
-      if (currentStep < steps.length) {
-        navscroll = document.querySelector(
-          '[data-index="'.concat(currentStep, '"]')
-        );
-        navscroll.classList.add("d-lg-block");
-      }
-
-      if (currentStep == steps.length) {
-        content.classList.remove("offset-lg-1");
-      }
-
-      if (currentStep == steps.length) {
-        btnNext.disabled = false;
-        content.querySelector(".steppers-btn-confirm span").innerHTML = "Invia";
-        btnSave.forEach(function (element) {
-          element.classList.remove("invisible");
-          element.classList.add("visible");
-          setReviews();
-        });
-      }
-    }
-  }
-
-  function backPrevious() {
-    btnNext.disabled = false;
-    var btnSave = content.querySelectorAll(".saveBtn");
-    var steps = content.querySelectorAll("[data-steps]");
-    var stepWrapper = content.querySelector("[data-steps].active");
-    var previousStep = content.querySelector(
-      '[data-steps="'.concat(currentStep - 1, '"]')
-    );
-
-    if (currentStep == 1) {
-      return;
-    } else {
-      previousStep.classList.remove("d-none");
-      previousStep.classList.add("active");
-      stepWrapper.classList.add("d-none");
-      stepWrapper.classList.remove("active");
-      navscroll.classList.remove("d-lg-block");
-      progressBar.classList.add("d-none");
-      currentStep = currentStep - 1;
-      progressBar = document.querySelector(
-        '[data-progress="'.concat(currentStep, '"]')
-      );
-      progressBar.classList.toggle("d-none");
-      content.querySelector(".steppers-btn-confirm span").innerHTML = "Avanti";
-
-      if (currentStep < steps.length) {
-        navscroll = document.querySelector(
-          '[data-index="'.concat(currentStep, '"]')
-        );
-        navscroll.classList.add("d-lg-block");
-        content.classList.add("offset-lg-1");
-      }
-
-      if (currentStep < steps.length) {
-        btnSave.forEach(function (element) {
-          element.classList.remove("visible");
-          element.classList.add("invisible");
-        });
-      }
-
-      if (currentStep == 1) {
-        btnBack.disabled = true;
-      }
-    }
-  }
-
-  pageSteps();
-
-  /* Define an empty object to collect answers */
-  const answers = {};
-
-  const saveAnswerByValue = (key, value, toBeDecoded = false) => {
-    if (toBeDecoded) {
-      const decodedvalue = decodeURIComponent(value);
-      const newValue = JSON.parse(decodedvalue);
-      answers[key] = newValue;
-    } else answers[key] = value;
-    if (key == "office") answers.place = null;
-    checkMandatoryFields();
-  };
-  const saveAnswerById = (key, id, callback) => {
-    const value = document.getElementById(id)?.value;
-    answers[key] = JSON.parse(value);
-    if (typeof callback == "function") callback();
-    checkMandatoryFields();
-  };
-
-  /* Get Luoghi by Unità organizzativa - Step 1 */
-  const officeSelect = document.getElementById("office-choice");
-  officeSelect.addEventListener("change", () => {
-    saveAnswerByValue("office", officeSelect?.value);
-
-    if (officeSelect?.value) {
-      const uriSegment = encodeURI(officeSelect.value);
-      fetch(`/api/v1/ufficio/${uriSegment}/sedi`)
-        .then((response) => response.json())
-        .then(({ data }) => {
-          document.querySelector("#place-cards-wrapper").innerHTML = "";
-          const { sede_principale, altre_sedi } = data[0]
-          const places = sede_principale.concat(altre_sedi)
-          for (const place of places) {
-            const reducedPlace = {
-              nome: place.title,
-              indirizzo: place.indirizzo,
-              apertura: place.orario_apertura,
-              id: place.id,
-            };
-            const placeCardsWrapper = document.querySelector("#place-cards-wrapper")
-            placeCardsWrapper.innerHTML += `
+function appointment(){var e,i=document.querySelector(".section-wrapper"),r=1,o=document.querySelector('[data-index="'.concat(r,'"]')),s=document.querySelector('[data-progress="'.concat(r,'"]')),l=i.querySelector(".btn-next-step"),d=i.querySelector(".btn-back-step");i&&(e=i.querySelectorAll(".saveBtn"),o.classList.add("d-lg-block"),s.classList.remove("d-none"),e.forEach(function(e){e.classList.add("invisible")}),l&&l.addEventListener("click",function(){var e,t,a,n;d.disabled=!1,e=i.querySelectorAll(".saveBtn"),t=i.querySelectorAll("[data-steps]"),a=i.querySelector('[data-steps="'.concat(r+1,'"]')),n=i.querySelector("[data-steps].active"),o.classList.remove("d-lg-block"),s.classList.remove("d-block"),s.classList.add("d-none"),r==t.length?E():(n.classList.add("d-none"),n.classList.remove("active"),a.classList.add("active"),a.classList.remove("d-none"),document.getElementById("form-steps").scrollIntoView({behavior:"smooth"}),r+=1,L(),(s=document.querySelector('[data-progress="'.concat(r,'"]'))).classList.add("d-block"),s.classList.remove("d-none"),r<t.length&&(o=document.querySelector('[data-index="'.concat(r,'"]'))).classList.add("d-lg-block"),r==t.length&&i.classList.remove("offset-lg-1"),r==t.length&&(l.disabled=!1,i.querySelector(".steppers-btn-confirm span").innerHTML="Invia",e.forEach(function(e){e.classList.remove("invisible"),e.classList.add("visible"),b()})))}),d)&&d.addEventListener("click",function(){var e,t,a,n;l.disabled=!1,e=i.querySelectorAll(".saveBtn"),t=i.querySelectorAll("[data-steps]"),a=i.querySelector("[data-steps].active"),n=i.querySelector('[data-steps="'.concat(r-1,'"]')),1!=r&&(n.classList.remove("d-none"),n.classList.add("active"),a.classList.add("d-none"),a.classList.remove("active"),o.classList.remove("d-lg-block"),s.classList.add("d-none"),r-=1,(s=document.querySelector('[data-progress="'.concat(r,'"]'))).classList.toggle("d-none"),i.querySelector(".steppers-btn-confirm span").innerHTML="Avanti",r<t.length&&((o=document.querySelector('[data-index="'.concat(r,'"]'))).classList.add("d-lg-block"),i.classList.add("offset-lg-1")),r<t.length&&e.forEach(function(e){e.classList.remove("visible"),e.classList.add("invisible")}),1==r)&&(d.disabled=!0)});const c={},p=(e,t,a=!1)=>{a?(a=decodeURIComponent(t),a=JSON.parse(a),c[e]=a):c[e]=t,"office"==e&&(c.place=null),L()},t=document.getElementById("office-choice"),m=(t.addEventListener("change",()=>{var e;p("office",t?.value),t?.value?(e=encodeURI(t.value),fetch(`/api/v1/ufficio/${e}/sedi`).then(e=>e.json()).then(({data:e})=>{document.querySelector("#place-cards-wrapper").innerHTML="";var{sede_principale:e,altre_sedi:t}=e[0];for(const i of e.concat(t)){var a={nome:i.title,indirizzo:i.indirizzo,apertura:i.orario_apertura,id:i.id},n=document.querySelector("#place-cards-wrapper"),a=(n.innerHTML+=`
             <div class="cmp-info-radio radio-card">
               <div class="card p-3 p-lg-4">
                 <div class="card-header mb-0 p-0">
@@ -186,12 +7,12 @@ function appointment() {
                       class="radio-input"
                       name="beneficiaries"
                       type="radio"
-                      id=${place?.id}
-                      value='${JSON.stringify(reducedPlace)}'
+                      id=${i?.id}
+                      value='${JSON.stringify(a)}'
                     />
-                    <label for=${place?.id}>
+                    <label for=${i?.id}>
                     <h3 class="big-title">
-                      ${place?.title}
+                      ${i?.title}
                     </h3></label
                     >
                   </div>
@@ -204,109 +25,31 @@ function appointment() {
                   <div class="info-wrapper">
                     <span class="info-wrapper__label">Indirizzo</span>
                     <p class="info-wrapper__value">
-                      ${place?.indirizzo}
+                      ${i?.indirizzo}
                     </p>
                   </div>
                   <div class="info-wrapper info-orari">
                     <span class="info-wrapper__label">Apertura</span>
                     <div class="info-wrapper__value">
-                      ${!place?.orario_apertura ? 'non disponibile' : place.orario_apertura}
+                      ${i?.orario_apertura?i.orario_apertura:"non disponibile"}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            `;
-            const placeCardsInputs = placeCardsWrapper.getElementsByTagName('input')
-            for (input of placeCardsInputs) {
-              input.onclick = () => saveAnswerById('place', place?.id, () => setSelectedPlace())
-            }
-          }
-        })
-        .catch((err) => {
-          console.error("err", err);
-        });
-
-      /* Get Servizi by Unità organizzativa - Step 3 */
-      fetch(`/api/v1/servizi/canale/${uriSegment}`)
-        .then((response) => response.json())
-        .then((data) => {
-          document.querySelector("#motivo-appuntamento").innerHTML =
-            '<option selected="selected" value="">Seleziona opzione</option>';
-          for (const service of data) {
-            document.querySelector("#motivo-appuntamento").innerHTML += `
-            <option value="${service?.title}">${service?.title}</option>
-            `;
-          }
-        })
-        .catch((err) => {
-          console.error("err", err);
-        });
-    } else {
-      document.querySelector("#place-cards-wrapper").innerHTML = "";
-    }
-  });
-
-  /* Step 2 */
-  /* Get appointments calendar */
-  const appointment = document.getElementById("appointment");
-  appointment.addEventListener("change", () => {
-    answers.appointment = null;
-    checkMandatoryFields();
-    // fetch(`a[i/v1/appuntamenti/${appointment?.value}/{answers?.place?.id}`)
-    fetch('/modules/custom/design-comuni-drupal-theme/comuni_theme/assets/mocks/appuntamenti.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("HTTP error " + response.status);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        data = data[appointment?.value]
-        const radioAppointment = document.querySelector("#radio-appointment")
-        radioAppointment.innerHTML = "";
-        for (const dates of data) {
-          const { startDate, endDate } = dates;
-          const startDay = startDate.split("T")[0];
-          const startDayStr = new Date(startDay).toLocaleString('it-IT', {
-            weekday: "long",
-            day: "2-digit",
-            month: "long",
-            year: "numeric",
-          });
-          const id = startDate + "/" + endDate;
-          const value = encodeURIComponent(
-            JSON.stringify({ startDate, endDate })
-          );
-
-          radioAppointment.innerHTML += `
+            `,n.getElementsByTagName("input"));for(input of a)input.onclick=()=>{var e="place",t=i?.id,a=()=>u();t=document.getElementById(t)?.value,c[e]=JSON.parse(t),"function"==typeof a&&a(),L()}}}).catch(e=>{console.error("err",e)}),fetch("/api/v1/servizi/canale/"+e).then(e=>e.json()).then(e=>{document.querySelector("#motivo-appuntamento").innerHTML='<option selected="selected" value="">Seleziona opzione</option>';for(const t of e)document.querySelector("#motivo-appuntamento").innerHTML+=`
+            <option value="${t?.title}">${t?.title}</option>
+            `}).catch(e=>{console.error("err",e)})):document.querySelector("#place-cards-wrapper").innerHTML=""}),document.getElementById("appointment")),u=(m.addEventListener("change",()=>{c.appointment=null,L(),fetch("/modules/custom/design-comuni-drupal-theme/comuni_theme/assets/mocks/appuntamenti.json").then(e=>{if(e.ok)return e.json();throw new Error("HTTP error "+e.status)}).then(e=>{e=e[m?.value];var t=document.querySelector("#radio-appointment");t.innerHTML="";for(const o of e){var{startDate:a,endDate:n}=o,i=a.split("T")[0],i=new Date(i).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}),r=a+"/"+n;const s=encodeURIComponent(JSON.stringify({startDate:a,endDate:n}));t.innerHTML+=`
           <div class="radio-body border-bottom border-light">
-          <input name="radio" type="radio" id="${id}" />
-          <label for="${id}" class="text-capitalize">${startDayStr} ore ${startDate.split("T")[1]
-            }</label>
+          <input name="radio" type="radio" id="${r}" />
+          <label for="${r}" class="text-capitalize">${i} ore ${a.split("T")[1]}</label>
           </div>
-          `;
-
-          const radioAppointmentInputs = radioAppointment.getElementsByTagName('input')
-          for (input of radioAppointmentInputs) {
-            input.onclick = () => saveAnswerByValue('appointment', value, true)
-          }
-        }
-      })
-      .catch((err) => {
-        console.error("err", err);
-      });
-  });
-
-  /* Get selected office */
-  const setSelectedPlace = () => {
-    const place = answers?.place;
-    document.querySelector("#selected-place-card").innerHTML = `
+          `;for(input of t.getElementsByTagName("input"))input.onclick=()=>p("appointment",s,!0)}}).catch(e=>{console.error("err",e)})}),()=>{var e=c?.place;document.querySelector("#selected-place-card").innerHTML=`
     <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-4">
     <div class="card">
       <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
         <h3 class="title-large-semi-bold mb-3">
-          ${place?.nome}
+          ${e?.nome}
         </h3>
         </div>
         <div class="card-body p-0">
@@ -320,7 +63,7 @@ function appointment() {
             <div class="text-paragraph-small">Indirizzo</div>
             <div class="border-light">
               <p class="data-text">
-                ${place?.indirizzo}
+                ${e?.indirizzo}
               </p>
             </div>
           </div>
@@ -328,7 +71,7 @@ function appointment() {
             <div class="text-paragraph-small">Apertura</div>
             <div class="border-light">
               <div class="data-text">
-                ${!place?.apertura ? 'non disponibile' : place.apertura}
+                ${e?.apertura?e.apertura:"non disponibile"}
               </div>
             </div>
           </div>
@@ -337,176 +80,12 @@ function appointment() {
     </div>
     </div>
   </div>
-    `;
-  };
-
-  /* Step 3 */
-  const serviceSelect = document.getElementById("motivo-appuntamento");
-  serviceSelect.addEventListener("change", () => {
-    saveAnswerByValue("service", serviceSelect?.value);
-  });
-
-  const moreDetailsText = document.getElementById("form-details");
-  moreDetailsText.addEventListener("input", () => {
-    saveAnswerByValue("moreDetails", moreDetailsText?.value);
-  });
-
-  /* Step 4 */
-  const nameInput = document.getElementById("name");
-  nameInput.addEventListener("input", () => {
-    saveAnswerByValue("name", nameInput?.value);
-  });
-
-  const surnameInput = document.getElementById("surname");
-  surnameInput.addEventListener("input", () => {
-    saveAnswerByValue("surname", surnameInput?.value);
-  });
-
-  const emailInput = document.getElementById("email");
-  emailInput.addEventListener("input", () => {
-    saveAnswerByValue("email", emailInput?.value);
-  });
-
-  const getDay = () => {
-    const day = answers?.appointment?.startDate?.split("T")[0];
-    return new Date(day).toLocaleString('it-IT', {
-      weekday: "long",
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-  };
-  const getHour = () => {
-    const dates = answers?.appointment;
-    return [dates?.startDate?.split("T")[1], dates?.endDate?.split("T")[1]];
-  };
-  /* Step 5 */
-
-  const setReviews = () => {
-    const dates = answers?.appointment;
-    const day = dates?.startDate?.split("T")[0];
-    const formatDay = new Date(day).toLocaleString('it-IT', {
-      weekday: "long",
-      day: "2-digit",
-      month: "long",
-      year: "numeric",
-    });
-    const hour =
-      dates?.startDate?.split("T")[1] + " - " + dates?.endDate?.split("T")[1];
-
-    //set all values
-    document.getElementById("review-office").innerText = answers?.office;
-    document.getElementById("review-place").innerText = answers?.place?.nome;
-    document.getElementById("review-date").innerText = getDay();
-    document.getElementById("review-hour").innerText = `${getHour()[0]} - ${
-      getHour()[1]
-    }`;
-    document.getElementById("review-date").innerText = formatDay;
-    document.getElementById("review-hour").innerText = hour;
-    document.getElementById("review-service").innerText = answers?.service;
-    document.getElementById("review-details").innerText = answers?.moreDetails;
-    document.getElementById("review-name").innerText = answers?.name;
-    document.getElementById("review-surname").innerText = answers?.surname;
-    document.getElementById("review-email").innerText = answers?.email;
-  };
-
-  /* Check mandatory fields */
-  const checkMandatoryFields = () => {
-    switch (currentStep) {
-      case 1:
-        if (answers?.office && answers?.place) btnNext.disabled = false;
-        else btnNext.disabled = true;
-        break;
-
-      case 2:
-        if (answers?.appointment) btnNext.disabled = false;
-        else btnNext.disabled = true;
-        break;
-
-      case 3:
-        if (answers?.service && answers?.moreDetails) btnNext.disabled = false;
-        else btnNext.disabled = true;
-        break;
-
-      case 4:
-        if (answers?.name && answers?.surname && answers?.email)
-          btnNext.disabled = false;
-        else btnNext.disabled = true;
-        break;
-
-      default:
-        break;
-    }
-  };
-
-  async function getCsrfTokenRating() {
-    try {
-      const sessionToken = await fetch('session/token');
-      const csrfToken = await sessionToken.text();
-      return csrfToken;
-    } catch(e) {
-      console.error(e);
-    }
-  }
-
-  function successFeedback() {
-    document.getElementById("form-steps").classList.add("d-none");
-    document.getElementById("email-recap").innerText = answers?.email;
-    document.getElementById("date-recap").innerText = `
-      ${getDay()} dalle ore ${getHour()[0]} alle ore ${getHour()[1]}
-    `;
-    document.querySelector(".cmp-hero").classList.add("d-none");
-    const finalStep = document.getElementById("final-step");
-    const addressBox = finalStep.querySelector(".address-wrapper");
-    addressBox.querySelector(".title-small").innerHtml = `
+    `}),a=document.getElementById("motivo-appuntamento"),n=(a.addEventListener("change",()=>{p("service",a?.value)}),document.getElementById("form-details")),v=(n.addEventListener("input",()=>{p("moreDetails",n?.value)}),document.getElementById("name")),g=(v.addEventListener("input",()=>{p("name",v?.value)}),document.getElementById("surname")),f=(g.addEventListener("input",()=>{p("surname",g?.value)}),document.getElementById("email")),y=(f.addEventListener("input",()=>{p("email",f?.value)}),()=>{var e=c?.appointment?.startDate?.split("T")[0];return new Date(e).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"})}),h=()=>{var e=c?.appointment;return[e?.startDate?.split("T")[1],e?.endDate?.split("T")[1]]},b=()=>{var e=c?.appointment,t=e?.startDate?.split("T")[0],t=new Date(t).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}),e=e?.startDate?.split("T")[1]+" - "+e?.endDate?.split("T")[1];document.getElementById("review-office").innerText=c?.office,document.getElementById("review-place").innerText=c?.place?.nome,document.getElementById("review-date").innerText=y(),document.getElementById("review-hour").innerText=h()[0]+" - "+h()[1],document.getElementById("review-date").innerText=t,document.getElementById("review-hour").innerText=e,document.getElementById("review-service").innerText=c?.service,document.getElementById("review-details").innerText=c?.moreDetails,document.getElementById("review-name").innerText=c?.name,document.getElementById("review-surname").innerText=c?.surname,document.getElementById("review-email").innerText=c?.email},L=()=>{switch(r){case 1:c?.office&&c?.place?l.disabled=!1:l.disabled=!0;break;case 2:c?.appointment?l.disabled=!1:l.disabled=!0;break;case 3:c?.service&&c?.moreDetails?l.disabled=!1:l.disabled=!0;break;case 4:c?.name&&c?.surname&&c?.email?l.disabled=!1:l.disabled=!0}};const E=()=>{!async function(){try{return await(await fetch("session/token")).text()}catch(e){console.error(e)}}().then(e=>{fetch("/api/v1/create/appuntamento",{method:"POST",body:JSON.stringify(c),headers:{"Content-Type":"application/json","X-CSRF-Token":e}}).then(e=>{if(!e.ok)throw new Error("HTTP error "+e.status);var t;document.getElementById("form-steps").classList.add("d-none"),document.getElementById("email-recap").innerText=c?.email,document.getElementById("date-recap").innerText=`
+      ${y()} dalle ore ${h()[0]} alle ore ${h()[1]}
+    `,document.querySelector(".cmp-hero").classList.add("d-none"),e=document.getElementById("final-step"),(t=e.querySelector(".address-wrapper")).querySelector(".title-small").innerHtml=`
     <a href="#"
-      aria-label="Vai a ${answers?.place?.nome}"
-      title="Vai a ${answers?.place?.nome}"
+      aria-label="Vai a ${c?.place?.nome}"
+      title="Vai a ${c?.place?.nome}"
       class="" data-focus-mouse="false"
-    >${answers?.place?.nome}</a>
-    `;
-    addressBox.querySelector(".subtitle-small").innerText = answers?.place?.indirizzo;
-    finalStep.classList.remove("d-none");
-    finalStep.scrollIntoView({ behavior: "smooth" })
-
-    fetch(`/api/v1/servizio/dettaglio/${answers.service}`)
-    .then((response) => response.json())
-    .then((data) => {
-      const cosaServe = data[0].cosa_serve;
-      document.getElementById("needed").innerHtml = `${cosaServe}`;
-    })
-    .catch(err => console.error(err));
-  }
-
-  /* confirm appointment - Submit */
-  const confirmAppointment = () => {
-    getCsrfTokenRating()
-      .then(csrfToken => {
-        fetch('/api/v1/create/appuntamento', {
-          method: "POST",
-          body: JSON.stringify(answers),
-          headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': csrfToken
-          },
-        })
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("HTTP error " + response.status);
-            }
-            successFeedback();
-            // return response.json();
-          })
-          // .then((data) => {
-          // })
-          .catch((err) => {
-            console.error("err", err);
-          });
-      });
-  };
-};
-
-(function() {
-  if (!document.getElementById("form-steps")) return
-  appointment()
-})()
+    >${c?.place?.nome}</a>
+    `,t.querySelector(".subtitle-small").innerText=c?.place?.indirizzo,e.classList.remove("d-none"),e.scrollIntoView({behavior:"smooth"}),fetch("/api/v1/servizio/dettaglio/"+c.service).then(e=>e.json()).then(e=>{e=e[0].cosa_serve;document.getElementById("needed").innerHtml=""+e}).catch(e=>console.error(e))}).catch(e=>{console.error("err",e)})})}}document.getElementById("form-steps")&&appointment();

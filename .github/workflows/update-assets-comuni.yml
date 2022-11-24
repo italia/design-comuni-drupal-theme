@@ -1,4 +1,4 @@
-name: assets update
+name: Assets update
 
 on:
   schedule:
@@ -29,7 +29,7 @@ jobs:
           cd comuni_theme
           npm i
           npm run build
-          git add comuni_theme/css/styles.css comuni_theme/js/scripts.js css/bootstrap-italia.min.css js/bootstrap-italia.bundle.min.js
+          git add css/styles.css js/scripts.js css/bootstrap-italia.min.css js/bootstrap-italia.bundle.min.js
           git commit -m "chore(deps): update assets"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4

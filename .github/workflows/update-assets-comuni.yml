@@ -31,6 +31,7 @@ jobs:
           npm run build
           git add css/styles.css js/scripts.js css/bootstrap-italia.min.css js/bootstrap-italia.bundle.min.js
           git commit -m "chore(deps): update assets"
+          git checkout .
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
         with:

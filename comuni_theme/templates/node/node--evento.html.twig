@@ -86,7 +86,7 @@
           {% set data_inizio = data_inizio|date('d') ~ " " ~ data_inizio|date('M')|monthEn2It(false)|lower  ~ " " ~ data_inizio|date('Y') %}
           {% set data_fine = content.field_data_e_orario_di_fine['#items'].0.value %}
           {% set data_fine = data_fine|date('d') ~ " " ~  data_fine|date('M')|monthEn2It(false)|lower  ~ " " ~ data_fine|date('Y') %}
-          <h4 class="py-2">dal {{ data_inizio }}
+          <h2 class="h4 py-2">dal {{ data_inizio }}
             {% if content.field_data_e_orario_di_fine[0] %}
               al {{ data_fine }}
             {% endif %}
@@ -152,9 +152,7 @@
             <ul class="d-flex flex-wrap gap-1 mt-2">
             {% for item in attribute(content.field_argomenti, "#items") %}
               <li>
-                <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}"
-                  class="chip chip-simple"
-                >
+                <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id})}}" class="chip chip-simple">
                   <span class="chip-label">
                     {{ item.entity.name.value }}
                   </span>

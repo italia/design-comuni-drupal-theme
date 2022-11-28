@@ -236,17 +236,17 @@
                                 </a>
                               </li>
                               {% endif %}
-                              {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
-                              <li class="nav-item">
-                                <a class="nav-link" href="#contatti">
-                                  <span class="title-medium">Contatti</span>
-                                </a>
-                              </li>
-                              {% endif %}
                               {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
                               <li class="nav-item">
                                 <a class="nav-link" href="#appuntamenti">
                                   <span class="title-medium">Appuntamenti</span>
+                                </a>
+                              </li>
+                              {% endif %}
+                              {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
+                              <li class="nav-item">
+                                <a class="nav-link" href="#contatti">
+                                  <span class="title-medium">Contatti</span>
                                 </a>
                               </li>
                               {% endif %}
@@ -301,14 +301,19 @@
           {% if content.field_video_esterno %}
           {{content.field_video_esterno}}
           {% endif %}
-         
-
         </article>
         {% endif %}
 
+        <!-- TODO  
+        <article id="destinatari" class="it-page-section mb-5">
+          <h2 class="mb-3">A chi è rivolto</h2>
+          <p>Cittadini di tutte l'età.</p>
+        </article>
+        -->
+        
         {% if node.field_luogo[0] is not empty %}
         <article id="luogo" class="it-page-section">
-          <h4>Luogo</h4>
+          <h2 class="mb-3">Luogo</h2>
           <div class="card-wrapper card-teaser-wrapper">
             <div class="card card-teaser shadow mt-3 rounded">
               <svg class="icon icon-success" viewBox="0 0 24 24" id="it-pin" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">>
@@ -316,13 +321,13 @@
                 <path fill="none" d="M0 0h24v24H0z" />
               </svg>
               <div class="card-body">
-                <h5 class="card-title">
+                <h3 class="card-title h5">
                   <a href="{{ path('entity.node.canonical', { 'node': node.field_luogo.entity.id }) }}"
                     class="text-decoration-none"
                   >
                     {{ node.field_luogo.entity.title.value }}
                   </a>
-                </h5>
+                </h3>
                 <div class="card-text">
                   {# <p>{{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}</p> #}
                   {{ node.field_luogo.entity.field_indirizzo.value}} - {{ node.field_luogo.entity.field_cap.value }}
@@ -372,32 +377,32 @@
         {% endif %}
 
         {% if content.field_data_e_orario_di_inizio[0] is not empty %}
-        <article id="date-e-orari" class="it-page-section anchor-offset">
-          <h4>Date e orari</h4>{# TODO Label #}
+        <article id="date-e-orari" class="it-page-section">
+          <h2 class="mb-3">Date e orari</h2>
           <div class="point-list-wrapper my-4">
             <div class="point-list">
-              <div class="point-list-aside point-list-primary">
+              <h3 class="point-list-aside point-list-primary fw-normal">
                 <div class="point-date font-monospace">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('d') }}</div>
                 <div class="point-month font-monospace">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('M')|monthEn2It }}</div>
-              </div>
+              </h3>
               <div class="point-list-content">
                 <div class="card card-teaser shadow rounded">
                   <div class="card-body">
-                    <h5 class="card-title">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('H:m')}} - Inizio evento{# TODO Label #}</h5>
+                    <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('H:m')}} - Inizio evento </h3>
                   </div>
                 </div>
               </div>
             </div>
             {% if content.field_data_e_orario_di_fine[0] is not empty %}
               <div class="point-list">
-                <div class="point-list-aside point-list-primary">
+                <h3 class="point-list-aside point-list-primary fw-normal">
                   <div class="point-date font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('d') }}</div>
                   <div class="point-month font-monospace">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('M')|monthEn2It }}</div>
-                </div>
+                </h3>
                 <div class="point-list-content">
                   <div class="card card-teaser shadow rounded">
                     <div class="card-body">
-                      <h5 class="card-title">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('H:m') }} - Fine evento{# TODO Label #}</h5>
+                      <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('H:m') }} - Fine evento</h3>
                     </div>
                   </div>
                 </div>
@@ -448,28 +453,21 @@
         {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
         <article id="contatti" class="it-page-section mt-5">
           {% if content.field_punti_di_contatto[0] is not empty %}
-          <h4>Contatti</h4>
+          <h2 class="mb-3">Contatti</h2>
           {{ content.field_punti_di_contatto }}
           {% endif %}
           {% if content.field_organizzato_da[0] is not empty %}
-          <h5 class="mt-4">Con il supporto di:</h5>
+          <h4 class="h5">Con il supporto di:</h5>
           {{ content.field_organizzato_da }}
           {% endif %}
         </article>
         {% endif %}
 
-        {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
-        <article id="appuntamenti" class="it-page-section mt-5">
-          <h4>Appuntamenti</h4>
 
-        {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
-        </article>
-        {% endif %}
-
-        <article id="ulteriori-informazioni" class="it-page-section mt-5">
-          <h4 class="mb-3">Ulteriori informazioni</h4>
+        <article id="ulteriori-informazioni" class="it-page-section mb-5">
+          <h3 class="mb-3">Ulteriori informazioni</h3>
           {% if content.field_patrocinato_da[0] is not empty %}
-            <strong>Patrocinato da:</strong>
+            <h4 class="h5">Patrocinato da:</h4>
             <div class="link-list-wrapper">
               <ul class="link-list">
                 {{ content.field_patrocinato_da }}
@@ -477,146 +475,13 @@
             </div>
           {% endif %}
           {% if content.field_sponsor[0] is not empty %}
-          <strong>Sponsor:</strong>
+          <h4 class="h5">Sponsor:</h4>
             <div class="link-list-wrapper">
               <ul class="link-list">
                 {{ content.field_sponsor }}
               </ul>
             </div>
           {% endif %}
-          <div class="mt-5">
-            <strong>Recensione:</strong>
-            <div class="rating-list-wrapper my-4">
-              <div class="rating-list">
-                <div class="rating-list-aside rating-list-warning">
-                  <div class="rating-value fw-semibold">4</div>
-                  <div class="rating-total fw-semibold">su 5</div>
-                </div>
-                <div class="rating-list-content">
-                  <div class="rating-list-row">
-                    <div class="rating-list-stars">
-                      <div class="rating rating-read-only">
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                      </div>
-                      <div class="rating rating-read-only">
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                      </div>
-                      <div class="rating rating-read-only">
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                      </div>
-                      <div class="rating rating-read-only">
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                      </div>
-                      <div class="rating rating-read-only">
-                        <svg class="icon icon-warning">
-                          <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                        </svg>
-                      </div>
-                    </div>
-                    <div class="rating-list-progress">
-                      <div class="progress progress-color">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress progress-color">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress progress-color">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress progress-color">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="progress progress-color">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="d-flex align-items-center mt-5">
-              <fieldset class="rating">
-                <input type="radio" id="star5a" name="ratingA" value="5" style="">
-                <label class="full active" for="star5a">
-                  <svg class="icon icon-sm">
-                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                  </svg>
-                  <span class="visually-hidden" style="">Valuta 5 stelle su 5</span>
-                </label>
-                <input type="radio" id="star4a" name="ratingA" value="4" style="">
-                <label class="full active" for="star4a">
-                  <svg class="icon icon-sm">
-                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                  </svg>
-                  <span class="visually-hidden" style="">Valuta 4 stelle su 5</span>
-                </label>
-                <input type="radio" id="star3a" name="ratingA" value="3" style="">
-                <label class="full active" for="star3a">
-                  <svg class="icon icon-sm">
-                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                  </svg>
-                  <span class="visually-hidden" style="">Valuta 3 stelle su 5</span>
-                </label>
-                <input type="radio" id="star2a" name="ratingA" value="2" style="">
-                <label class="full active" for="star2a">
-                  <svg class="icon icon-sm">
-                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                  </svg>
-                  <span class="visually-hidden" style="">Valuta 2 stelle su 5</span>
-                </label>
-                <input type="radio" id="star1a" name="ratingA" value="1" style="">
-                <label class="full active" for="star1a">
-                  <svg class="icon icon-sm">
-                    <use xlink:href="./assets/bootstrap-italia/dist/svg/sprite.svg#it-star-full"></use>
-                  </svg>
-                  <span class="visually-hidden" style="">Valuta 1 stelle su 5</span>
-                </label>
-              </fieldset>
-              <div class="ms-3">
-                <a href="#" class="btn btn-outline-primary btn-sm" data-focus-mouse="false">
-                  <span>Invia valutazione</span>
-                </a>
-              </div>
-            </div>
-          </div>
           {% if content.field_ulteriori_informazioni[0] is not empty %}
           <div class="mt-5">
             <div class="callout">
@@ -633,8 +498,7 @@
         </article>
         {% if node.changed.value %}
         <article id="ultimo-aggiornamento" class="it-page-section mt-5">
-          <h5 class="font-serif">Ultimo aggiornamento</h5>
-          <p class="h6"><strong>{{ node.changed.value|date("d/m/Y, H:i") }}</strong></p>
+          <h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal">{{ node.changed.value|date("d/m/Y, H:i") }}</span></h4>
         </article>
         {% endif %}
       </section>

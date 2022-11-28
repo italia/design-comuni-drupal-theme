@@ -270,7 +270,7 @@
       </aside>
       <section class="col-lg-8 it-page-sections-container border-light">
         {% if content.field_descrizione_completa [0] is not empty %}
-        <article id="cos-e" class="it-page-section anchor-offset" data-audio>
+        <article id="cos-e" class="it-page-section" data-audio>
           <h4>Cos'è?</h4>
           <div class="font-serif">
             {{ content.field_descrizione_completa }}
@@ -307,7 +307,7 @@
         {% endif %}
 
         {% if node.field_luogo[0] is not empty %}
-        <article id="luogo" class="it-page-section anchor-offset">
+        <article id="luogo" class="it-page-section">
           <h4>Luogo</h4>
           <div class="card-wrapper card-teaser-wrapper">
             <div class="card card-teaser shadow mt-3 rounded">
@@ -425,21 +425,21 @@
         {% endif %}
 
         {% if content.field_costo[0] is not empty %}
-        <article id="costi" class="it-page-section anchor-offset mt-5">
-          <h4>Costi</h4>
+        <article id="costi" class="it-page-section mt-5">
+          <h2 class="mb-3">Costi</h2>
           {{ content.field_costo }}
         </article>
         {% endif %}
 
         {% if content.field_allegati[0] is not empty %}
-        <article id="documenti" class="it-page-section anchor-offset mt-5">
-          <h4>Documenti</h4>
+        <article id="allegati" class="it-page-section mt-5">
+          <h2 class="mb-3">Allegati</h2>
             {{ content.field_allegati }}
         </article>
         {% endif %}
 
         {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
-        <article id="contatti" class="it-page-section anchor-offset mt-5">
+        <article id="contatti" class="it-page-section mt-5">
           {% if content.field_punti_di_contatto[0] is not empty %}
           <h4>Contatti</h4>
           {{ content.field_punti_di_contatto }}
@@ -452,14 +452,14 @@
         {% endif %}
 
         {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
-        <article id="appuntamenti" class="it-page-section anchor-offset mt-5">
+        <article id="appuntamenti" class="it-page-section mt-5">
           <h4>Appuntamenti</h4>
 
         {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
         </article>
         {% endif %}
 
-        <article id="ulteriori-informazioni" class="it-page-section anchor-offset mt-5">
+        <article id="ulteriori-informazioni" class="it-page-section mt-5">
           <h4 class="mb-3">Ulteriori informazioni</h4>
           {% if content.field_patrocinato_da[0] is not empty %}
             <strong>Patrocinato da:</strong>
@@ -625,7 +625,7 @@
           {% endif %}
         </article>
         {% if node.changed.value %}
-        <article id="ultimo-aggiornamento" class="it-page-section anchor-offset mt-5">
+        <article id="ultimo-aggiornamento" class="it-page-section mt-5">
           <h5 class="font-serif">Ultimo aggiornamento</h5>
           <p class="h6"><strong>{{ node.changed.value|date("d/m/Y, H:i") }}</strong></p>
         </article>

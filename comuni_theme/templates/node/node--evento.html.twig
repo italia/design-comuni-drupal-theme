@@ -282,7 +282,7 @@
             {% for item in attribute(content.field_persone, "#items") %}
               <li>
                 <div class="cmp-tag">
-                  <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" class="chip chip-simple t-primary bg-tag text-decoration-none" data-element="service-topic">
+                  <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" class="chip chip-simple t-primary bg-tag text-decoration-none">
                     <span class="chip-label">
                         {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
                     </span>

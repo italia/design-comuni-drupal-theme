@@ -102,4 +102,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_amministrazione_trasparent: true
   search_api_excerpt: true

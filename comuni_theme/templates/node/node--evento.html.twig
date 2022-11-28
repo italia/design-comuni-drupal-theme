@@ -275,6 +275,24 @@
           <div class="font-serif">
             {{ content.field_descrizione_completa }}
           </div>
+          {% if content.field_persone[0] is not empty %}
+          <div class="pt-3 mb-4">
+            <h4 class="h4">Parteciperanno</h4>
+            <ul class="d-flex flex-wrap gap-1 mt-2">
+            {% for item in attribute(content.field_persone, "#items") %}
+              <li>
+                <div class="cmp-tag">
+                  <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}" class="chip chip-simple t-primary bg-tag text-decoration-none" data-element="service-topic">
+                    <span class="chip-label">
+                        {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
+                    </span>
+                  </a>
+                </div>
+              </li>
+             {% endfor %}
+             </ul>
+          </div>
+          {% endif %}
           {% if content.field_galleria_immagini[0] is not empty %}
           <div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide="" id="splide01">
             {{ content.field_galleria_immagini }}
@@ -283,27 +301,7 @@
           {% if content.field_video_esterno %}
           {{content.field_video_esterno}}
           {% endif %}
-          {% if content.field_persone[0] is not empty %}
-            <div class="pt-3 pb-5">
-              <h5 class="h6 font-serif fw-bold">Parteciperanno:</h5>
-              <ul class="d-flex flex-wrap gap-1 mt-2">
-              {% for item in attribute(content.field_persone, "#items") %}
-                <li>
-                  <div class="cmp-tag">
-                    <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
-                      class="chip chip-simple t-primary bg-tag text-decoration-none"
-                      data-element="service-topic"
-                    >
-                      <span class="chip-label">
-                          {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
-                      </span>
-                    </a>
-                  </div>
-                </li>
-               {% endfor %}
-               </ul>
-            </div>
-          {% endif %}
+         
 
         </article>
         {% endif %}

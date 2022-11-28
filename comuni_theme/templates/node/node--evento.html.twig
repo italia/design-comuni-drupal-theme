@@ -438,6 +438,13 @@
         </article>
         {% endif %}
 
+        {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
+        <article id="appuntamenti" class="it-page-section mt-5">
+          <h2 class="mb-3">Appuntamenti</h2>
+          {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
+        </article>
+        {% endif %}
+
         {% if content.field_punti_di_contatto[0] is not empty or content.field_organizzato_da[0] is not empty %}
         <article id="contatti" class="it-page-section mt-5">
           {% if content.field_punti_di_contatto[0] is not empty %}

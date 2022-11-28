@@ -106,8 +106,6 @@ Ripulire la cache corrente con il seguente comando drush:
 drush cr
 ~~~
 
-Nelle sezione configurazione dell'admin, sotto basic site settings inserire il valore `/homepage` nella casella homepage
-
 Importa il logo svg del comune spostando il file svg nella cartella */web/sites/default/files*, poi dalla sezione *site settings* dei contenuti modifica l'entry *Info Comune* e inserisci la path al file svg nella sezione *Logo svg*
 
 Se necessario ripulire la cache di drupal un'ultima volta.

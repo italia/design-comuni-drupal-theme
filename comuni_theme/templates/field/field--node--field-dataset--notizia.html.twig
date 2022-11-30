@@ -1,0 +1,116 @@
+{#
+/**
+ * @file
+ * Theme override for a field.
+ *
+ * To override output, copy the "field.html.twig" from the templates directory
+ * to your theme's directory and customize it, just like customizing other
+ * Drupal templates such as page.html.twig or node.html.twig.
+ *
+ * Instead of overriding the theming for all fields, you can also just override
+ * theming for a subset of fields using
+ * @link themeable Theme hook suggestions. @endlink For example,
+ * here are some theme hook suggestions that can be used for a field_foo field
+ * on an article node type:
+ * - field--node--field-foo--article.html.twig
+ * - field--node--field-foo.html.twig
+ * - field--node--article.html.twig
+ * - field--field-foo.html.twig
+ * - field--text-with-summary.html.twig
+ * - field.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the title.
+ * - label: The label for the field.
+ * - multiple: TRUE if a field can contain multiple items.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+<div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+{% if label_hidden %}
+  {% if multiple %}
+      {% for item in items %}
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
+        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+        {% set filename = item.content['#node'].title.value %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
+            </a>
+          </h5>
+        </div>
+      </div>
+      {% endfor %}
+  {% else %}
+    {% for item in items %}
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
+        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+        {% set filename = item.content['#node'].title.value %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
+            </a>
+          </h5>
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+    {% for item in items %}
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
+        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+        {% set filename = item.content['#node'].title.value %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
+          </h5>
+        </div>
+      </div>
+    {% endfor %}
+{% endif %}
+</div>

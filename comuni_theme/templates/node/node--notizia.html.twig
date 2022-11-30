@@ -223,6 +223,13 @@
                             </a>
                           </li>
                           {% endif %}
+                          {% if node.field_documenti[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#documenti">
+                              <span class="title-medium">Documenti</span>
+                            </a>
+                          </li>
+                          {% endif %}
                           {% if node.field_allegati[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#allegati">
@@ -234,13 +241,6 @@
                           <li class="nav-item">
                             <a class="nav-link" href="#dataset">
                               <span class="title-medium">Dataset</span>
-                            </a>
-                          </li>
-                          {% endif %}
-                          {% if node.field_documenti[0] is not empty %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#documenti">
-                              <span class="title-medium">Documenti</span>
                             </a>
                           </li>
                           {% endif %}
@@ -279,6 +279,12 @@
 
         </article>
       {% endif %}
+      {% if content.field_documenti[0] is not empty %}
+        <article id="documenti" class="it-page-section anchor-offset mt-5">
+          <h4>Documenti</h4>
+          {{ content.field_documenti }}
+        </article>
+      {% endif %}
       {% if content.field_allegati[0] is not empty %}
         <article id="allegati" class="it-page-section anchor-offset mt-5">
           <h4>Allegati</h4>
@@ -289,12 +295,6 @@
         <article id="dataset" class="it-page-section anchor-offset mt-5">
           <h4>Dataset</h4>
           {{ content.field_dataset }}
-        </article>
-      {% endif %}
-      {% if content.field_documenti[0] is not empty %}
-        <article id="documenti" class="it-page-section anchor-offset mt-5">
-          <h4>Documenti</h4>
-          {{ content.field_documenti }}
         </article>
       {% endif %}
       {% if content.field_a_cura_di[0] is not empty %}

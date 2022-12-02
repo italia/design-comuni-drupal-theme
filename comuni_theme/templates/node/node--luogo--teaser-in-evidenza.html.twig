@@ -117,12 +117,13 @@
 						</div>
 					</div>
 					<div class="card-body">
-            {% set node_type = node.field_tipo_di_luogo.entity.name.value %}
-						<div class="category-top cmp-list-card-img__body">
-							<a class="text-decoration-none fw-bold cmp-list-card-img__body-heading-title"
-								href="{{ path('entity.taxonomy_term.canonical', { 'taxonomy_term': node.field_tipo_di_luogo.entity.tid.value }) }}"
-							>{{ node_type }}</a>
-						</div>
+						{% if node.field_tipo_di_luogo.entity.name.value %}
+							<div class="category-top cmp-list-card-img__body">
+								<a class="text-decoration-none fw-bold cmp-list-card-img__body-heading-title"
+									href="{{ path('entity.taxonomy_term.canonical', { 'taxonomy_term': node.field_tipo_di_luogo.entity.tid.value }) }}"
+								>{{ node.field_tipo_di_luogo.entity.name.value }}</a>
+							</div>
+						{% endif %}
 						{% set title = node.getTitle() %}
 						<h3 class="cmp-list-card-img__body-title u-main-primary">
               <a href="{{ path('entity.node.canonical', { 'node': node.id }) }}"

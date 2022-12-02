@@ -44,7 +44,6 @@
         <span class="text-button-normal">{{ menu_item.content['#title'] }}</span>
       </a>
     {% else %}
-      <a class="list-item">
       <a class="list-item" href="{{ path(menu_item.content['#url'].routeName, menu_item.content['#url'].routeParameters, menu_item.content['#url'].options) }}">
         <span class="text-button-normal">{{ menu_item.content['#title'] }}</span>
       </a>

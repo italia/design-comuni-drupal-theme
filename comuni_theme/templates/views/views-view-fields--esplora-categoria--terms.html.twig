@@ -43,11 +43,13 @@
           {% set dataElem = 'topic-element' %}
         {% elseif path == 'servizi' %}
           {% set dataElem = 'service-category-link' %}
+				{% elseif path == 'novita' %}
+          {% set dataElem = 'news-category-link' %}
         {% else %}
           {% set dataElem = '' %}
         {% endif %}
         <a href="{{ taxonomy_term_link|striptags|replace({"\n":'',})}}"
-          class="text-decoration-none"1
+          class="text-decoration-none"
           data-element="{{ dataElem }}"
         ><h3 class="card-title t-primary title-xlarge">{{name}}</h3></a>
         <div class="titillium text-paragraph mb-0 description">{{description}}</div>

@@ -272,7 +272,7 @@
     <section class="col-lg-8 it-page-sections-container border-light">
       {% if content.field_testo_completo_notizia [0] is not empty %}
         <article id="descrizione" class="it-page-section anchor-offset" data-audio>
-          <h4>Descrizione</h4>{# TODO Label #}
+          <h2 class="mb-3">Descrizione</h2>{# TODO Label #}
           <div class="font-serif">
             {{ content.field_testo_completo_notizia }}
           </div>
@@ -281,25 +281,25 @@
       {% endif %}
       {% if content.field_documenti[0] is not empty %}
         <article id="documenti" class="it-page-section anchor-offset mt-5">
-          <h4>Documenti</h4>
+          <h2 class="mb-3">Documenti</h2>
           {{ content.field_documenti }}
         </article>
       {% endif %}
       {% if content.field_allegati[0] is not empty %}
         <article id="allegati" class="it-page-section anchor-offset mt-5">
-          <h4>Allegati</h4>
+          <h2 class="mb-3">Allegati</h2>
           {{ content.field_allegati }}
         </article>
       {% endif %}
       {% if content.field_dataset[0] is not empty %}
         <article id="dataset" class="it-page-section anchor-offset mt-5">
-          <h4>Dataset</h4>
+          <h2 class="mb-3">Dataset</h2>
           {{ content.field_dataset }}
         </article>
       {% endif %}
       {% if content.field_a_cura_di[0] is not empty %}
         <article id="a-cura-di" class="it-page-section anchor-offset mt-5">
-          <h4>A cura di</h4>
+          <h2 class="mb-3">A cura di</h2>
           <div class="row">
             <div class="col-12 col-sm-8">
               <p class="h6">

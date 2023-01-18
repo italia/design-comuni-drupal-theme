@@ -40,10 +40,12 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+{% set ids = [] %}
 <div{{ attributes.addClass(classes) }}>
   <div class="bg-grey-card">
     <div class="container">
       <div class="row">
+        {% set uffici = [] %}
         <div class="col-12 col-lg-8 pt-lg-50 pb-lg-50">
           <h2 class="visually-hidden">Esplora tutti i servizi</h2>
           {{ title_prefix }}
@@ -70,8 +72,6 @@
               {{ attachment_before }}
             </div>
           {% endif %}
-          {% set ids = [] %}
-          {% set uffici = [] %}
           {% set targets = [] %}
           {% if rows %}
             <div class="view-content">

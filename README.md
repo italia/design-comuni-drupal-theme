@@ -173,8 +173,6 @@ In fase iniziale, consigliamo di creare un unico esempio per ciascuna tipologia 
 
 Prima della pubblicazione del sito, è utile definire con chiarezza chi sarà responsabile della pubblicazione di ciascuna delle tipologie di contenuti, in modo da garantire un flusso di pubblicazione costante. Non tutte le sezioni del sito andranno gestite e aggiornate con la stessa frequenza. È bene prendere consapevolezza delle varie sezioni e della frequenza con cui ciascun aggiornamento va fatto.
 
-[Consulta un esempio di suddivisione del lavoro]()
-
 #### **Riscrivere o importare i contenuti del vecchio sito**
 L’aggiornamento di un sito è un’ottima opportunità per riscrivere, riorganizzare ed aggiornare tutti i contenuti relativi a (elenco content type principali).
 

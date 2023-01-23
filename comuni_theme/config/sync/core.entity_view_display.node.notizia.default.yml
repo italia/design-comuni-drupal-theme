@@ -76,10 +76,11 @@ content:
     weight: 107
     region: content
   field_dataset:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: teaser
+      link: false
     third_party_settings: {  }
     weight: 116
     region: content

@@ -53,36 +53,42 @@
   ]
 %}
 
-
+<div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
 {% if label_hidden %}
   {% if multiple %}
       {% for item in items %}
-      <div class="card card-teaser shadow mt-3 rounded">
-          {% set item_name = item.content['#media'].field_media_document.entity.filename.value %}
-          <div class="card-body">
-            <h3 class="card-title h5 m-0">
-              <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
-                <path fill="none" d="M0 0h24v24H0z" />
-              </svg>
-              <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}" download target="_blank"
-                title="Scarica {{ item_name }}" aria-label="Scarica {{ item_name }}"
-                class="text-decoration-none"
-              >{{ item_name }}</a>
-            </h5>
-          </div>
-        </div>
-      {% endfor %}
-  {% else %}
-    {% for item in items %}
-      <div class="card card-teaser shadow mt-3 rounded">
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
         <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
           <path fill="none" d="M0 0h24v24H0z" />
         </svg>
+        {% set filename = item.content['#node'].title.value %}
         <div class="card-body">
           <h5 class="card-title">
-            <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}" download target="_blank">{{ item.content['#media'].field_media_document.entity.filename.value }}</a>
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
+            </a>
+          </h5>
+        </div>
+      </div>
+      {% endfor %}
+  {% else %}
+    {% for item in items %}
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
+        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
+          <path fill="none" d="M0 0h24v24H0z" />
+        </svg>
+        {% set filename = item.content['#node'].title.value %}
+        <div class="card-body">
+          <h5 class="card-title">
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
+            </a>
           </h5>
         </div>
       </div>
@@ -90,16 +96,21 @@
   {% endif %}
 {% else %}
     {% for item in items %}
-      <div class="card card-teaser shadow mt-3 rounded">
+      <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
         <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
           <path fill="none" d="M0 0h24v24H0z" />
         </svg>
+        {% set filename = item.content['#node'].title.value %}
         <div class="card-body">
           <h5 class="card-title">
-            <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}" download target="_blank">{{ item.content['#media'].field_media_document.entity.filename.value }}</a>
+            <a href="{{ path('entity.node.canonical', { 'node': item.content['#node'].nid.value }) }}"
+              title="Naviga a {{ filename }}" aria-label="Naviga a {{ filename }}"
+              class="text-decoration-none"
+            >{{ filename }}
           </h5>
         </div>
       </div>
     {% endfor %}
 {% endif %}
+</div>

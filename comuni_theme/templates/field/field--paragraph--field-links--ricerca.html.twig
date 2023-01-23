@@ -37,6 +37,20 @@
  * @see template_preprocess_field()
  */
 #}
+{% macro menu_link(menu_item) %}
+  {% if menu_item is defined and menu_item is not null %}
+    {% if menu_item.content['#url'].external %}
+      <a class="list-item" href="{{ menu_item.content['#url'].uri }}">
+        <span class="text-button-normal">{{ menu_item.content['#title'] }}</span>
+      </a>
+    {% else %}
+      <a class="list-item" href="{{ path(menu_item.content['#url'].routeName, menu_item.content['#url'].routeParameters, menu_item.content['#url'].options) }}">
+        <span class="text-button-normal">{{ menu_item.content['#title'] }}</span>
+      </a>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
 {%
   set classes = [
   'field',
@@ -57,13 +71,13 @@
   {% if multiple %}
     {% for item in items %}
       <li role="listitem">
-        <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
+        {{ _self.menu_link(item, ) }}
       </li>
     {% endfor %}
   {% else %}
     {% for item in items %}
       <li role="listitem">
-        <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
+        {{ _self.menu_link(item, ) }}
       </li>
     {% endfor %}
   {% endif %}
@@ -73,7 +87,7 @@
       {% endif %}
       {% for item in items %}
         <li role="listitem">
-          <a><span class="text-button-normal">{{ item.content['#title'] }}</span></a>
+          {{ _self.menu_link(item, ) }}
         </li>
       {% endfor %}
       {% if multiple %}

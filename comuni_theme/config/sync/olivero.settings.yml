@@ -1,5 +1,6 @@
 _core:
   default_config_hash: Ylohp6sdrL1dU4v-KcXzXTP-U8BAMgh4NWJA9eGHtO4
+langcode: it
 favicon:
   use_default: true
 features:

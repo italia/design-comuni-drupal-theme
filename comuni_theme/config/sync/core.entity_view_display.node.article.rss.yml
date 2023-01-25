@@ -1,5 +1,5 @@
 uuid: d41b51bb-e849-4ef0-98fa-9e582335c181
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -27,3 +27,4 @@ hidden:
   field_image: true
   field_tags: true
   langcode: true
+  search_api_excerpt: true

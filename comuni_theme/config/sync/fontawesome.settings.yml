@@ -1,5 +1,6 @@
 _core:
   default_config_hash: mdb0TbcHBhZKr-rXOjpU0yvbfz26ROAUfFvZdubHJsM
+langcode: it
 tag: i
 method: svg
 load_assets: true

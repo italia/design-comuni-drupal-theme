@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 6CZIzFifRq3qbdq3n3nDpEOO4hWIQtKOAQNPvGNGKeM
-langcode: en
+langcode: it
 cancel_confirm:
   subject: 'Account cancellation request for [user:display-name] at [site:name]'
   body: |-

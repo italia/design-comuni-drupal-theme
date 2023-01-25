@@ -1,0 +1,22 @@
+uuid: 93d4b249-70a0-46d5-8506-d7f00de5a21a
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: comuni_theme_breadcrumbs
+theme: comuni_theme
+region: includes
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumb
+  label_display: '0'
+  provider: system
+visibility: {  }

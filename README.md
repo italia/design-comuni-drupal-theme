@@ -2,7 +2,7 @@
 [![Join the #design siti scuole channel](https://img.shields.io/badge/Slack%20channel-%23design_siti_comuni-blue.svg)](https://developersitalia.slack.com/messages/design-siti-comuni/)
 
 ## **Un sito per i comuni italiani**
-### I primi passi con il tema Dupal (v1.2.3)
+### I primi passi con il tema Dupal (v1.2.4)
 
 
 **Design Comuni Italia** è il tema Drupal che permette di aderire al [modello di sito istituzionale dei comuni](https://designers.italia.it/modello/comuni/), progettato dal Dipartimento per la trasformazione digitale.
@@ -13,10 +13,10 @@
 Prepara un'installazione in locale di Drupal con il seguente comando composer:
 
 ~~~
-composer create-project drupal/recommended-project my_site_name_dir
+composer create-project drupal/recommended-project:^9 my_site_name_dir
 ~~~
 
-Procedi con il normale processo di installazione di Drupal caricando il sito e seguendo le istruzioni nel browser
+Procedi con il normale processo di installazione di Drupal in lingua Italiana caricando il sito e seguendo le istruzioni nel browser
 
 All'interno della cartella *modules* crea la cartella *custom*, poi al suo interno scarica il progetto con il seguente comando git:
 
@@ -39,7 +39,7 @@ $settings['file_private_path'] = 'path/to/your/folder';
 Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:
 
 ~~~
-composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush
+composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3
 ~~~
 
 Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
@@ -73,6 +73,12 @@ Imposta l'*uuid* del sito con il seguente comando drush:
 drush cset system.site uuid 94d95421-24ae-4514-bfd3-7b52524a23cd -y
 ~~~
 
+Prepara la configurazione per la lingua italiana:
+
+~~~
+drush cdel language.entity.it
+~~~
+
 Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):
 
 ~~~
@@ -94,11 +100,7 @@ Nella sezione contenuti dall'admin di Drupal selezionare la tab *Content Synchro
 - SiteSetting
 - Pages
 
-Generare i menu con il seguente comando drush:
-
-~~~
-drush drush-create-menus:generate
-~~~
+Per importare i menu, nella sezione struttura dall'admin di Drupal selezionare *Menu Export*, successivamente *Importa* e infine Import Menu Links.
 
 Ripulire la cache corrente con il seguente comando drush:
 

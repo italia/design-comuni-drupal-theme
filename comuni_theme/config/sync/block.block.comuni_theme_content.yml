@@ -1,0 +1,22 @@
+uuid: e9d9491f-3adb-46a6-9f50-4c0048c03515
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: comuni_theme_content
+theme: comuni_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenuto della pagina principale'
+  label_display: '0'
+  provider: system
+visibility: {  }

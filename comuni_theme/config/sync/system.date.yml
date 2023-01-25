@@ -1,6 +1,7 @@
 _core:
   default_config_hash: t7clj3mzmOGrXX0HuCH5usf0vEqRtnMTBFVBIEmZ5pc
-first_day: 0
+langcode: it
+first_day: 1
 country:
   default: IT
 timezone:

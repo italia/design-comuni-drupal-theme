@@ -1,0 +1,23 @@
+uuid: 4908112b-0ba1-4933-9a53-c809782df5b6
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - seven
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: seven_syndicate
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'Feed RSS'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

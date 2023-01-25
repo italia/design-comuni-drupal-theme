@@ -1,5 +1,5 @@
 uuid: 2bd8267d-5120-4767-9602-5e796088eb2b
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -56,3 +56,4 @@ hidden:
   field_image: true
   field_tags: true
   langcode: true
+  search_api_excerpt: true

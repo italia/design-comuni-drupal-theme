@@ -1,0 +1,22 @@
+uuid: cddb0708-7817-4dda-bf92-ec17d186cee4
+langcode: it
+status: true
+dependencies:
+  theme:
+    - bartik
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: bartik_primary_local_tasks
+theme: bartik
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Schede primarie'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

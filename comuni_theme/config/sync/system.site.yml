@@ -1,6 +1,6 @@
 _core:
   default_config_hash: 94d95421-24ae-4514-bfd3-7b52524a23cd
-langcode: en
+langcode: it
 uuid: 94d95421-24ae-4514-bfd3-7b52524a23cd
 name: 'Nome del comune'
 mail: v2comunidrupalct@example.com
@@ -8,7 +8,7 @@ slogan: 'Slogan del comune'
 page:
   403: ''
   404: ''
-  front: /node/9
+  front: /homepage
 admin_compact_mode: false
 weight_select_max: 100
-default_langcode: en
+default_langcode: it

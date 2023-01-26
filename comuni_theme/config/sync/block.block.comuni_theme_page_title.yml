@@ -1,0 +1,20 @@
+uuid: 881abdb2-8c86-4993-b4f3-579225f25187
+langcode: it
+status: true
+dependencies:
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: comuni_theme_page_title
+theme: comuni_theme
+region: includes
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Titolo della pagina'
+  label_display: '0'
+  provider: core
+visibility: {  }

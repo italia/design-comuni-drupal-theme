@@ -1,0 +1,22 @@
+uuid: 5c1ebec8-57bb-4ed2-8f49-c480e890edd2
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - seven
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: seven_powered
+theme: seven
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Realizzato con Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

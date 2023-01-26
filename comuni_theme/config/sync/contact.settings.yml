@@ -1,5 +1,6 @@
 _core:
   default_config_hash: U69DBeuvXuNVOC15rVNaBjDPK2fWFbo9v4takdYSSO8
+langcode: it
 default_form: feedback
 flood:
   limit: 5

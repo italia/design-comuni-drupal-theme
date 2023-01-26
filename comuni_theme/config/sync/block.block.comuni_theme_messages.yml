@@ -1,0 +1,22 @@
+uuid: b7da16a9-0539-4eeb-857e-f82a717535dc
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: comuni_theme_messages
+theme: comuni_theme
+region: includes
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Messaggi di stato'
+  label_display: '0'
+  provider: system
+visibility: {  }

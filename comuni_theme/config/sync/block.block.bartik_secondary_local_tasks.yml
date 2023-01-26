@@ -1,0 +1,22 @@
+uuid: 91bd8a0d-1d62-45fc-9db5-ba032de8715b
+langcode: it
+status: true
+dependencies:
+  theme:
+    - bartik
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: bartik_secondary_local_tasks
+theme: bartik
+region: highlighted
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Schede secondarie'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

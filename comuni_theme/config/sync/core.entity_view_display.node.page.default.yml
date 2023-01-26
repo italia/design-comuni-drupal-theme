@@ -1,5 +1,5 @@
 uuid: f91967cc-2d26-46ad-a1e8-fb0a40d70908
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -27,3 +27,4 @@ content:
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true

@@ -422,7 +422,9 @@
           </div>
         </section>
         {% endif %}
-        <section class="it-page-section  mb-30 has-bg-grey p-4">
+        <section class="it-page-section mb-30 has-bg-grey p-4"
+          data-element="service-access"
+        >
           <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
           {% if content.field_canale_digitale[0] %}
           <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
@@ -461,7 +463,7 @@
           <div class="row">
             {% if content.field_unita_org_responsabile[0] is not empty %}
               <div class="col-12 col-md-8 col-lg-6 mb-30">
-                <div class="card-wrapper rounded h-auto mt-10" data-element="service-card-contacts">
+                <div class="card-wrapper rounded h-auto mt-10">
                   {% for uorg in content.field_unita_org_responsabile['#items'] %}
                     <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
                       <div class="card-body pe-3">

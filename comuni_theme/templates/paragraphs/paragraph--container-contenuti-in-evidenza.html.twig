@@ -68,10 +68,17 @@
               {{ content.field_card_contenuti }}
             {% endif %}
             <div class="d-flex justify-content-end">
-              <button type="button" data-bs-toggle="modal" data-bs-target="#" class="btn btn-primary px-5 py-3 full-mb">
-                <span class="">Tutti
-                  {{ viewMode == "card_estese_eventi" ? "gli eventi" : "i luoghi" }}</span>
-              </button>
+              {# NOTE: if it becomes necessary to build these links the paragraph will need additional fields for the data entry #}
+              <a href="{{viewMode == "card_estese_eventi"
+                  ? "/categorie-dei-servizi/cultura-e-tempo-libero"
+                  : "/aree-amministrative"
+                }}"
+                class="btn btn-primary px-5 py-3 full-mb"
+                data-element="live-button"
+              >
+                <span class="">
+                  Tutti {{ viewMode == "card_estese_eventi" ? "gli eventi" : "i luoghi" }}</span>
+              </a>
             </div>
           {% elseif (viewMode == "card_estese_documenti") %}
             {% if content.field_contenuti["#object"] is defined and content.field_contenuti["#object"] is not null %}

@@ -89,13 +89,8 @@
             <div class="it-header-center-content-wrapper">
               <div class="it-brand-wrapper">
                 <a href="{{ url('<front>') }}" title="Vai alla homepage">
-                  {% if site_settings.infocomune.info_comune.field_logo_svg %}
-                    <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                         src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>
-                  {% else %}
-                  <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                    src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
-                  {% endif %}
+                  <img aria-hidden="true"
+                    src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
                   <div class="it-brand-text">
                     <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                   </div>

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.site_setting_entity.field_logo
     - media.type.image
+    - media.type.image_svg
     - site_settings.site_setting_entity_type.info_comune
 id: site_setting_entity.info_comune.field_logo
 field_name: field_logo
@@ -21,9 +22,10 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      image_svg: image_svg
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: image
 field_type: entity_reference

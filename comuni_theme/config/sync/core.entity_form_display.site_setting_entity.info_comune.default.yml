@@ -3,11 +3,11 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.site_setting_entity.info_comune.field_amministrazione_trasparent
     - field.field.site_setting_entity.info_comune.field_contatti
     - field.field.site_setting_entity.info_comune.field_forse_stavi_cercando
     - field.field.site_setting_entity.info_comune.field_icone_social
     - field.field.site_setting_entity.info_comune.field_logo
-    - field.field.site_setting_entity.info_comune.field_logo_svg
     - field.field.site_setting_entity.info_comune.field_nome_comune
     - field.field.site_setting_entity.info_comune.field_nome_regione
     - site_settings.site_setting_entity_type.info_comune
@@ -62,14 +62,6 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_logo_svg:
-    type: string_textfield
-    weight: 18
-    region: content
-    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }

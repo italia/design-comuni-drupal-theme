@@ -13,12 +13,14 @@
     value: '1674173812'
   revision_user:
     target_id: '0'
-  revision_log_message: false
+  revision_log_message:
+    value: ''
   enabled:
     value: '1'
   title:
     value: Amministrazione
-  description: false
+  description:
+    value: ''
   menu_name:
     value: customfooter
   link:
@@ -33,7 +35,8 @@
     value: '1'
   expanded:
     value: '1'
-  parent: false
+  parent:
+    value: ''
   changed:
     value: '1674607886'
   default_langcode:
@@ -57,18 +60,16 @@
     value: '1674173850'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Aree amministrative'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/aree-amministrative'
     title: ''
     options: {  }
   external:
@@ -82,7 +83,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082844'
   default_langcode:
     value: '1'
   revision_default:
@@ -104,24 +105,22 @@
     value: '1674173884'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Documenti e dati'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'entity:node/2'
+    uri: 'internal:/documenti-e-dati'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-44'
   expanded:
@@ -129,7 +128,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082901'
   default_langcode:
     value: '1'
   revision_default:
@@ -151,18 +150,16 @@
     value: '1674173900'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Enti e fondazioni'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/enti-e-fondazioni'
     title: ''
     options: {  }
   external:
@@ -176,7 +173,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082867'
   default_langcode:
     value: '1'
   revision_default:
@@ -198,18 +195,16 @@
     value: '1674173913'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Organi di governo'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/organi-di-governo'
     title: ''
     options: {  }
   external:
@@ -223,7 +218,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082829'
   default_langcode:
     value: '1'
   revision_default:
@@ -245,18 +240,16 @@
     value: '1674173924'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Personale amministrativo'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/personale-amministrativo'
     title: ''
     options: {  }
   external:
@@ -270,7 +263,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082890'
   default_langcode:
     value: '1'
   revision_default:
@@ -292,18 +285,16 @@
     value: '1674173938'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Politici
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/politici'
     title: ''
     options: {  }
   external:
@@ -317,7 +308,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082879'
   default_langcode:
     value: '1'
   revision_default:
@@ -339,18 +330,16 @@
     value: '1674173951'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Uffici
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/'
+    uri: 'internal:/uffici'
     title: ''
     options: {  }
   external:
@@ -364,7 +353,7 @@
   parent:
     value: 'menu_link_content:64eeb26f-8471-4935-a67d-3ed7af3a5db7'
   changed:
-    value: '1674599990'
+    value: '1675082856'
   default_langcode:
     value: '1'
   revision_default:
@@ -386,14 +375,12 @@
     value: '1674174084'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Categorie di servizio'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -408,8 +395,7 @@
     value: '2'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674174411'
   default_langcode:
@@ -433,14 +419,12 @@
     value: '1674174287'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Agricoltura e pesca'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -480,14 +464,12 @@
     value: '1674174326'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Ambiente
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -527,14 +509,12 @@
     value: '1674174377'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Anagrafe e stato civile'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -574,14 +554,12 @@
     value: '1674174400'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Appalti pubblici'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -621,14 +599,12 @@
     value: '1674174438'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Autorizzazioni
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -668,14 +644,12 @@
     value: '1674174455'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Catasto e urbanistica'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -715,14 +689,12 @@
     value: '1674174471'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Cultura e tempo libero'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -762,14 +734,12 @@
     value: '1674174489'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Educazione e formazione'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -809,14 +779,12 @@
     value: '1674174518'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Giustizia e sicurezza pubblica'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -856,14 +824,12 @@
     value: '1674174541'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Imprese e commercio'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -903,14 +869,12 @@
     value: '1674174557'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Mobilità e trasporti'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -950,14 +914,12 @@
     value: '1674174577'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Salute, benessere e assistenza'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -997,14 +959,12 @@
     value: '1674174591'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Tributi, finanze e contravvenzioni'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1044,14 +1004,12 @@
     value: '1674174605'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Turismo
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1091,14 +1049,12 @@
     value: '1674174622'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vita lavorativa'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1138,14 +1094,12 @@
     value: '1674174687'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Novità
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1160,8 +1114,7 @@
     value: '3'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674174687'
   default_langcode:
@@ -1185,14 +1138,12 @@
     value: '1674174705'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vivere il comune'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1207,8 +1158,7 @@
     value: '4'
   expanded:
     value: '1'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674174705'
   default_langcode:
@@ -1232,14 +1182,12 @@
     value: '1674174783'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Avvisi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1279,14 +1227,12 @@
     value: '1674174784'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Comunicati
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1326,14 +1272,12 @@
     value: '1674174876'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Notizie
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1373,24 +1317,22 @@
     value: '1674174928'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Eventi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'entity:node/16'
+    uri: 'internal:/tutti-gli-eventi'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-49'
   expanded:
@@ -1398,7 +1340,7 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1674600090'
+    value: '1675083022'
   default_langcode:
     value: '1'
   revision_default:
@@ -1420,14 +1362,12 @@
     value: '1674174945'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Luoghi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
@@ -1467,14 +1407,12 @@
     value: '1674173372'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Mappa del sito'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer
   link:
@@ -1489,8 +1427,7 @@
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600119'
   default_langcode:
@@ -1514,14 +1451,12 @@
     value: '1674173376'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Media policy'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer
   link:
@@ -1533,13 +1468,12 @@
   rediscover:
     value: '1'
   weight:
-    value: '-48'
+    value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600119'
+    value: '1675086266'
   default_langcode:
     value: '1'
   revision_default:
@@ -1561,14 +1495,12 @@
     value: '1674173519'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Amministrazione trasparente'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1583,8 +1515,7 @@
     value: '-46'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600102'
   default_langcode:
@@ -1608,14 +1539,12 @@
     value: '1674173538'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Dichiarazione di accessibilità'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1630,8 +1559,7 @@
     value: '-43'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600102'
   default_langcode:
@@ -1655,14 +1583,12 @@
     value: '1674173547'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Informativa privacy'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1677,8 +1603,7 @@
     value: '-45'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600102'
   default_langcode:
@@ -1702,18 +1627,16 @@
     value: '1674173554'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Leggi le FAQ'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
-    uri: 'internal:/'
+    uri: 'internal:/domande-frequenti'
     title: ''
     options: {  }
   external:
@@ -1724,10 +1647,9 @@
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600102'
+    value: '1675082611'
   default_langcode:
     value: '1'
   revision_default:
@@ -1749,14 +1671,12 @@
     value: '1674173626'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Note legali'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1771,8 +1691,7 @@
     value: '-44'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600102'
   default_langcode:
@@ -1796,32 +1715,29 @@
     value: '1674173642'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Prenotazione appuntamento'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
-    uri: 'entity:node/11'
+    uri: 'internal:/prenotazione-appuntamento'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600102'
+    value: '1675082627'
   default_langcode:
     value: '1'
   revision_default:
@@ -1843,32 +1759,29 @@
     value: '1674173687'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
-    value: 'Richiesta di assistenza'
-  description:
-    value: ''
+    value: 'Richiesta d''assistenza'
+  description: false
   menu_name:
     value: footer---contatti
   link:
-    uri: 'entity:node/10'
+    uri: 'internal:/richiedi-assistenza'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600102'
+    value: '1675086242'
   default_langcode:
     value: '1'
   revision_default:
@@ -1890,14 +1803,12 @@
     value: '1674173708'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Segnalazione disservizio'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: footer---contatti
   link:
@@ -1912,8 +1823,7 @@
     value: '-48'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600102'
   default_langcode:
@@ -1937,32 +1847,29 @@
     value: '1674596233'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Amministrazione
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
-    uri: 'entity:node/8'
+    uri: 'internal:/amministrazione'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600132'
+    value: '1675082735'
   default_langcode:
     value: '1'
   revision_default:
@@ -1984,32 +1891,29 @@
     value: '1674596246'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Novità
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
-    uri: 'entity:node/13'
+    uri: 'internal:/novita'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600132'
+    value: '1675082748'
   default_langcode:
     value: '1'
   revision_default:
@@ -2031,32 +1935,29 @@
     value: '1674596255'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Servizi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
-    uri: 'entity:node/12'
+    uri: 'internal:/servizi'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-48'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600132'
+    value: '1675082760'
   default_langcode:
     value: '1'
   revision_default:
@@ -2078,32 +1979,29 @@
     value: '1674596269'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Vivere il Comune'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topleft
   link:
-    uri: 'entity:node/11'
+    uri: 'internal:/vivere-il-comune'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '0'
+    value: '1'
   weight:
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
-    value: '1674600132'
+    value: '1675082773'
   default_langcode:
     value: '1'
   revision_default:
@@ -2125,14 +2023,12 @@
     value: '1674596578'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Iscrizioni
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2147,8 +2043,7 @@
     value: '-50'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600144'
   default_langcode:
@@ -2172,14 +2067,12 @@
     value: '1674596615'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Estate in città'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2194,8 +2087,7 @@
     value: '-49'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600144'
   default_langcode:
@@ -2219,14 +2111,12 @@
     value: '1674596654'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Polizia locale'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2241,8 +2131,7 @@
     value: '-48'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600144'
   default_langcode:
@@ -2266,14 +2155,12 @@
     value: '1674596694'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: 'Tutti gli argomenti...'
-  description:
-    value: ''
+  description: false
   menu_name:
     value: topright
   link:
@@ -2288,8 +2175,7 @@
     value: '-47'
   expanded:
     value: '0'
-  parent:
-    value: ''
+  parent: false
   changed:
     value: '1674600144'
   default_langcode:

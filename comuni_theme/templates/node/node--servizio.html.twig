@@ -364,7 +364,9 @@
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
             {% if content.field_promemoria_scadenze[0] %}
-              <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
+              <div class="richtext-wrapper lora" data-element="service-calendar-text">
+                {{ content.field_promemoria_scadenze }}
+              </div>
             {% endif %}
             <div class="calendar-vertical mb-3" data-element="service-calendar-list">
               {% for fase in content.field_fase_semplice["#items"] %}
@@ -422,23 +424,28 @@
           </div>
         </section>
         {% endif %}
-        <section class="it-page-section mb-30 has-bg-grey p-4"
-          data-element="service-access"
-        >
+        <section class="it-page-section mb-30 has-bg-grey p-4">
           <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
           {% if content.field_canale_digitale[0] %}
-          <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
+          <p class="text-paragraph lora mb-4" data-element="service-generic-access">
+            Puoi richiedere l’iscrizione a {{ node.label }} direttamente online tramite identità digitale.
+          </p>
           <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-            type="button" class="btn btn-primary mobile-full"
+            type="button" class="btn btn-primary mobile-full" data-element="service-online-access"
           >
             <span class="">Richiedi iscrizione online</span>
           </a>
-          <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
+            Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.
+          </p>
           {% else %}
-          <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
+            Puoi prenotare un appuntamento e presentarti presso gli uffici.
+          </p>
           {% endif %}
           <a href='/prenotazione-appuntamento' target="_blank"
             class="btn btn-outline-primary t-primary bg-white mobile-full"
+            data-element="service-booking-access"
           ><span>Prenota appuntamento</span>
           </a>
         </section>

@@ -27,14 +27,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 127
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_descrizione_completa:
     type: text_textarea
@@ -45,24 +41,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_doc_privati_collegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 128
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_doc_pubblici_collegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 126
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_numero_di_protocollo:
     type: string_textfield
@@ -73,34 +61,21 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_servizio_origina_pratica:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 123
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    region: {  }
     third_party_settings: {  }
   field_stato_della_pratica:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 124
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ufficio_di_riferimento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 122
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -145,13 +120,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

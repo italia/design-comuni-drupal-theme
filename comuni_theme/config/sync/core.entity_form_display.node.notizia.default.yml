@@ -37,34 +37,22 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_a_cura_di:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 10
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_allegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 18
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 15
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_data_della_notizia:
     type: datetime_default
@@ -79,14 +67,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_dataset:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 20
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
@@ -97,34 +81,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_documenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 19
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_luoghi:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 16
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_numero_comunicato_stampa:
     type: string_textfield
@@ -135,14 +107,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_persone:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_testo_completo_notizia:
     type: text_textarea
@@ -153,14 +121,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_tipo_di_notizia:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 8
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -213,14 +177,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 2
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true

@@ -45,14 +45,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_documenti_personali:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 130
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_esito:
     type: string_textfield
@@ -86,14 +82,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_pratica:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 127
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ricevuta:
     type: link_default
@@ -104,14 +96,10 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_servizio:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 128
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -156,13 +144,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

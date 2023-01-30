@@ -31,14 +31,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_atto_di_nomina:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 131
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_compensi:
     type: text_textarea
@@ -75,34 +71,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_persona:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 123
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_responsabile_struttura:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 125
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_tipo_di_incarico:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 130
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -113,14 +97,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_unita_organizzativa:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 124
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -165,13 +145,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

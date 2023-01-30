@@ -42,14 +42,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 9
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_cap:
     type: string_textfield
@@ -108,14 +104,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_indirizzo:
     type: string_textfield
@@ -126,14 +118,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_luoghi_collegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 14
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_modalita_di_accesso:
     type: text_textarea
@@ -160,14 +148,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_punti_di_contatto:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 28
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_quartiere:
     type: string_textfield
@@ -178,14 +162,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_sede_di:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 23
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_servizi_presenti_nel_luogo:
     type: text_textarea
@@ -196,24 +176,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_struttura_responsabile:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_tipo_di_luogo:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 10
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -266,14 +238,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 2
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true

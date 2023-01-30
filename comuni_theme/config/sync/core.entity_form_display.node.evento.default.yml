@@ -50,24 +50,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_allegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 137
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 126
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_costo:
     type: paragraphs
@@ -117,14 +109,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_evento_genitore:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 127
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_galleria_immagini:
     type: paragraphs
@@ -146,34 +134,22 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 125
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_luogo:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 135
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_organizzato_da:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 138
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_patrocinato_da:
     type: paragraphs
@@ -194,24 +170,16 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_persone:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 149
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_punti_di_contatto:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 148
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_sottotitolo:
     type: string_textfield
@@ -241,14 +209,10 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_tipo_di_evento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 121
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -320,13 +284,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

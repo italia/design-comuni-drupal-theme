@@ -28,14 +28,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_forse_stavi_cercando:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 17
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_icone_social:
     type: paragraphs
@@ -56,14 +52,10 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_logo:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 12
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_nome_comune:
     type: string_textfield
@@ -105,14 +97,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   user_id:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_amministrazione_trasparent: true

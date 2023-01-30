@@ -35,34 +35,22 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_allegati_doc_pubblico:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 135
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_altre_sedi:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 133
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 130
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_competenze:
     type: text_textarea
@@ -73,14 +61,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_contatti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 128
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
@@ -91,84 +75,52 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_elenco_servizi_offerti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 134
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 121
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_persona:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 139
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_persone:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 140
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_persone_altre:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 141
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_sede_principale:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 132
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_sezione_amministrazione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 137
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_tipo_di_organizzazione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 131
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -179,14 +131,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_unita_org_genitore:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 124
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   langcode:
     type: language_select
@@ -231,13 +179,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

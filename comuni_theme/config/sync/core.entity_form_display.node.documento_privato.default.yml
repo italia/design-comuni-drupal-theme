@@ -41,15 +41,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 12
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
+    settings: {  }
   field_autori:
     type: text_textarea
     weight: 17
@@ -59,14 +54,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_business_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 23
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_data_protocollo:
     type: datetime_default
@@ -91,14 +82,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_documenti_collegati:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 21
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_galleria_immagini:
     type: entity_reference_revisions_autocomplete
@@ -111,34 +98,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 9
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_licenza_di_distribuzione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 18
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_life_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_paragraph_documento:
     type: paragraphs
@@ -159,14 +134,10 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_pratica_associata:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 10
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_protocollo:
     type: string_textfield
@@ -185,24 +156,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_servizio_collegato:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ufficio_respons_documento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 16
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -255,14 +218,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   uid:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 1
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
 hidden:
   field_formato_documento: true

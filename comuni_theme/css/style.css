@@ -53,3 +53,6 @@ footer .ue-logo::after {
 footer .it-brand-wrapper img {
 	width: 48px;
 }
+footer .it-brand-wrapper img {
+    margin-right: 8px;
+}

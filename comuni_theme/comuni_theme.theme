@@ -158,3 +158,89 @@ function comuni_module_preprocess_breadcrumb(&$variables) {
     $variables['pageTaxUrl'] = '/' . $aliasSplit[1];
   }
 }
+
+function comuni_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+	$element_id = $region_suggestion = $page_suggestion = '';
+	
+	if ($current_path = (Drupal::service('path.current')->getPath())) {
+		$parts = explode('/', $current_path);
+		$page_suggestion = 'page';
+		foreach ($parts as $part) {
+			$page_suggestion .= '_'.$part;
+		}
+		$page_suggestion = str_replace('-', '_', $page_suggestion);
+	}
+
+	if ($variables['theme_hook_original'] == 'block' && !empty($variables['elements']['#id'])) {
+		$block = \Drupal\block\Entity\Block::load($variables['elements']['#id']);
+		$region = $block->getRegion();
+		$regionParts = explode('_', $region);
+		array_pop($regionParts);
+		if ($regionParts) {
+			$region_suggestion = '__' . implode('_', $regionParts) . '__' . $variables['elements']['#id'];
+		}
+	}
+
+	$element_id = (@$variables['elements']['#id'] ? $variables['elements']['#id'] : (@$variables['element']['#id'] ? $variables['element']['#id'] : ''));
+
+	if ($element_id && $page_suggestion && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion))), $suggestions)){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+
+	if ($element_id && $region_suggestion && !in_array($variables['theme_hook_original'] . '__'	. implode('__',	array_filter(array($element_id,	$region_suggestion)), $suggestions))){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+
+	if ($element_id && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id))), $suggestions)){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+	
+}
+/*
+function comuni_theme_theme_suggestions_alter(array &$suggestions, array $variables)
+{
+
+	$element_id = $region_suggestion = $page_suggestion = '';
+	
+	if ($current_path = (Drupal::service('path.current')->getPath())) {
+		$parts = explode('/', $current_path);
+		$page_suggestion = 'page';
+		foreach ($parts as $part) {
+			$page_suggestion .= '_'.$part;
+		}
+		$page_suggestion = str_replace('-', '_', $page_suggestion);
+	}
+
+	if ($variables['theme_hook_original'] == 'block' && !empty($variables['elements']['#id'])) {
+		$block = \Drupal\block\Entity\Block::load($variables['elements']['#id']);
+		$region = $block->getRegion();
+		$regionParts = explode('_', $region);
+		array_pop($regionParts);
+		if ($regionParts) {
+			$region_suggestion = '__' . implode('_', $regionParts) . '__' . $variables['elements']['#id'];
+		}
+	}
+
+	$element_id = (@$variables['elements']['#id'] ? $variables['elements']['#id'] : (@$variables['element']['#id'] ? $variables['element']['#id'] : ''));
+
+	if ($element_id && $page_suggestion && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion))), $suggestions)){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion, $page_suggestion)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+
+	if ($element_id && $region_suggestion && !in_array($variables['theme_hook_original'] . '__'	. implode('__',	array_filter(array($element_id,	$region_suggestion)), $suggestions))){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id, $region_suggestion)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+
+	if ($element_id && !in_array($variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id))), $suggestions)){
+		$new_suggestion = $variables['theme_hook_original'] . '__' . implode('__', array_filter(array($element_id)));
+		$suggestions[] = preg_replace('/\d+/', '%', $new_suggestion);
+	}
+	
+}
+*/

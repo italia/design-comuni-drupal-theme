@@ -13,3 +13,7 @@ License: AGPL 3.0 or later
 Text Domain: design_comuni_italia
 
 */
+
+/* Fix Toolbar Amministrativa che crea spazi bianchi sopra e a destra */
+#toolbar-administration { height: auto; position: absolute; top: 0; }
+#toolbar-administration:before { content: initial; }

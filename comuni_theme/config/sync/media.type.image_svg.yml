@@ -1,0 +1,14 @@
+uuid: e8c5f6f7-03d2-4eec-ad6f-dcfc1ca21a58
+langcode: it
+status: true
+dependencies: {  }
+id: image_svg
+label: 'Image SVG'
+description: 'Use local svg images for reusable media.'
+source: file
+queue_thumbnail_downloads: false
+new_revision: false
+source_configuration:
+  source_field: field_media_file
+field_map:
+  name: name

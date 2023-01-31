@@ -17,3 +17,40 @@ Text Domain: design_comuni_italia
 /* Fix Toolbar Amministrativa che crea spazi bianchi sopra e a destra */
 #toolbar-administration { height: auto; position: absolute; top: 0; }
 #toolbar-administration:before { content: initial; }
+
+/* Fix default logo */
+header .it-brand-wrapper a, header .it-brand-wrapper img {
+	max-height: initial;
+}
+header .it-brand-wrapper img {
+	width: 48px;
+	height: 48px;
+	margin-right: 8px;
+}
+@media (min-width: 992px){
+	header .it-brand-wrapper img {
+		width: 82px;
+		height: 82px;
+		margin-right: 16px;
+	}
+}
+footer.it-footer .logo-wrapper .ue-logo {
+	width: unset;
+	height: unset;
+}
+footer.it-footer .it-brand-wrapper {
+	min-height: initial;
+}
+footer .ue-logo::after {
+	width: 178px;
+	min-width: 100%;
+	height: unset;
+	background-size: 100%;
+	aspect-ratio: 178 / 56;
+	display: block;
+	position: relative;
+}
+footer .it-brand-wrapper img {
+	width: 48px;
+	margin-right: 8px;
+}

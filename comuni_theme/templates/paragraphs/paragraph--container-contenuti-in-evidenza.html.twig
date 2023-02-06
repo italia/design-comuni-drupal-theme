@@ -60,6 +60,10 @@
             {% for contenuto in content.field_contenuti["#items"] %}
               {{ drupal_entity('node', contenuto.target_id, 'teaser_in_evidenza_amministrazione') }}
             {% endfor %}
+          {% elseif viewMode == "card_estese_amministrazione_dataelement" %}
+            {% for contenuto in content.field_contenuti["#items"] %}
+              {{ drupal_entity('node', contenuto.target_id, 'teaser_in_evidenza_amministrazione_dataelement') }}
+            {% endfor %}
           {% elseif (viewMode == "card_estese_eventi" or viewMode == "card_estese_luogo") %}
             {% if content.field_contenuti["#object"] is defined and content.field_contenuti["#object"] is not null %}
               {{ content.field_contenuti }}

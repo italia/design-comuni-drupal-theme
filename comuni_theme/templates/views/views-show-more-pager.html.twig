@@ -20,7 +20,7 @@
         {% if item.href %}
         {% set path = url('<current>')['#markup']|split('/')|last %}
         {% if path == 'servizi' %}
-          {% set dataElem = 'load-other-services' %}
+          {% set dataElem = 'load-other-cards' %}
         {% else %}
           {% set dataElem = '' %}
         {% endif %}            

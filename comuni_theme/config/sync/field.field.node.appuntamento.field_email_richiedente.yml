@@ -1,0 +1,19 @@
+uuid: 6fc83112-c07a-4f21-ab9c-187815013254
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_richiedente
+    - node.type.appuntamento
+id: node.appuntamento.field_email_richiedente
+field_name: field_email_richiedente
+entity_type: node
+bundle: appuntamento
+label: 'Email Richiedente'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.appuntamento.field_data_e_ora_inizio_appuntam
     - field.field.node.appuntamento.field_data_e_ora_prenotazione
     - field.field.node.appuntamento.field_dettaglio_richiesta
+    - field.field.node.appuntamento.field_email_richiedente
     - field.field.node.appuntamento.field_nome
     - field.field.node.appuntamento.field_sottotitolo
     - node.type.appuntamento
@@ -26,7 +27,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 104
+    weight: 5
     region: content
   field_data_e_ora_inizio_appuntam:
     type: datetime_default
@@ -35,7 +36,7 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 103
+    weight: 4
     region: content
   field_data_e_ora_prenotazione:
     type: datetime_default
@@ -44,14 +45,21 @@ content:
       timezone_override: ''
       format_type: medium
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_dettaglio_richiesta:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_email_richiedente:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_nome:
     type: string
@@ -59,7 +67,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 107
+    weight: 6
     region: content
   field_sottotitolo:
     type: string
@@ -67,12 +75,12 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 108
+    weight: 7
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true

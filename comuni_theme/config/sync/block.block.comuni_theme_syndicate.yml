@@ -1,0 +1,23 @@
+uuid: f4ecdc86-08d1-4ddf-9fbf-94284e24acd2
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: comuni_theme_syndicate
+theme: comuni_theme
+region: includes
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'Feed RSS'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

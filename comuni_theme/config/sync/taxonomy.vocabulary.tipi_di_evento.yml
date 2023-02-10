@@ -1,5 +1,5 @@
 uuid: bddd9011-84a8-4ed7-a3cb-dade5f1eb803
-langcode: en
+langcode: it
 status: true
 dependencies: {  }
 name: 'Tipi di evento'

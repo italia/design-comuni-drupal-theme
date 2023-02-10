@@ -1,0 +1,25 @@
+uuid: 3741a0ca-eae5-456a-905c-2a4b804404cf
+langcode: it
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: comuni_theme_site_branding
+theme: comuni_theme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Branding del sito'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

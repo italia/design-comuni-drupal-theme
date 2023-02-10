@@ -1,0 +1,10 @@
+uuid: a2af216e-2ba1-41d3-a259-3e2f4c182cbf
+langcode: it
+status: true
+dependencies:
+  module:
+    - site_settings
+id: site_setting_entity.token
+label: Token
+targetEntityType: site_setting_entity
+cache: true

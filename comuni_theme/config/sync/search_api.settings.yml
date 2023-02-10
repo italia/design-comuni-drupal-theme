@@ -1,5 +1,6 @@
 _core:
   default_config_hash: GUwISmLpTDUc6j8BdPRKp3fke8HsVe_IL1jar4Bbuq4
+langcode: it
 default_cron_limit: 50
 cron_worker_runtime: 15
 default_tracker: default

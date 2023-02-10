@@ -1,5 +1,5 @@
 uuid: 0edc32ba-3118-49a3-bf1a-832dd532c19e
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -337,7 +337,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       empty: {  }
       sorts: {  }
@@ -399,7 +399,7 @@ display:
             'entity:node':
               servizio: teaser
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false

@@ -1,0 +1,20 @@
+uuid: 8cf5a137-4095-4f4b-a19a-894b506ad32b
+langcode: it
+status: true
+dependencies:
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: comuni_theme_primary_admin_actions
+theme: comuni_theme
+region: includes
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Azioni di amministrazione principali'
+  label_display: '0'
+  provider: core
+visibility: {  }

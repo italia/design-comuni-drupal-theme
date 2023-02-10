@@ -1,5 +1,5 @@
 uuid: b51311ae-3b6a-4e15-8031-c735664ce0fe
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -28,7 +28,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           faq: teaser

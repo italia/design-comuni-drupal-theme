@@ -1,7 +1,7 @@
 _core:
   default_config_hash: HZwlfaTpnIGoxxZuV_dlyAe9HgcyzOmSr8Bcr_n3RbU
+langcode: it
 reading_time:
-  submit: 'Save configuration'
   container:
     appuntamento:
       is_activated: 0
@@ -39,8 +39,9 @@ reading_time:
       is_activated: 0
     unita_organizzativa:
       is_activated: 0
-  words_per_minute: '225'
+  words_per_minute: 225
   unit_of_time: default
+  submit: 'Save configuration'
   form_build_id: form-MEoae5t1rOhycB9Ku9ST9G2MblfteJiAPrxNM1T2NFA
   form_token: ynA5rW--rFvqGosmFs_NMUE-p_ehofdaIqr7xdaktFA
   form_id: reading_time

@@ -1,5 +1,5 @@
 uuid: d1d84d33-ab22-436b-9237-375ef41676cb
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -39,7 +39,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           appuntamento: search_index

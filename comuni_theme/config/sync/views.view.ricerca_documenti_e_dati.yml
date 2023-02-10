@@ -1,5 +1,5 @@
 uuid: 8761fd30-bcb7-4fd0-9eef-e26b4cc64271
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -96,7 +96,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       empty: {  }
       sorts: {  }
@@ -160,7 +160,7 @@ display:
               dataset: default
               documento_pubblico: default
       query:
-        type: views_query
+        type: search_api_query
         options:
           bypass_access: false
           skip_access: false

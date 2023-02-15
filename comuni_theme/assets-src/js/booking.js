@@ -24,8 +24,8 @@ var progressBar = document.querySelector(
   '[data-progress="'.concat(currentStep, '"]')
 );
 // need to define btns globally
-var btnNext = content.querySelector(".btn-next-step");
-var btnBack = content.querySelector(".btn-back-step");
+var btnNext = !content?null:content.querySelector(".btn-next-step");
+var btnBack = !content?null:content.querySelector(".btn-back-step");
 
 function pageSteps() {
   if (!content) return;
@@ -171,6 +171,7 @@ const saveAnswerById = (key, id, callback) => {
 
 /* Get Luoghi by Unità organizzativa - Step 1 */
 const officeSelect = document.getElementById("office-choice");
+if(officeSelect)
 officeSelect.addEventListener("change", () => {
   const id = officeSelect?.value;
   const name = officeSelect?.querySelector(`[value="${id}"]`)?.innerText;
@@ -262,6 +263,7 @@ officeSelect.addEventListener("change", () => {
 /* Step 2 */
 /* Get appointments calendar */
 const appointment = document.getElementById("appointment");
+if(appointment)
 appointment.addEventListener("change", () => {
   answers.appointment = null;
   checkMandatoryFields();
@@ -354,6 +356,7 @@ const setSelectedPlace = () => {
 
 /* Step 3 */
 const serviceSelect = document.getElementById("motivo-appuntamento");
+if(serviceSelect)
 serviceSelect.addEventListener("change", () => {
   const id = serviceSelect?.value;
   const name = serviceSelect?.querySelector(`[value="${id}"]`)?.innerText;
@@ -361,22 +364,26 @@ serviceSelect.addEventListener("change", () => {
 });
 
 const moreDetailsText = document.getElementById("form-details");
+if(moreDetailsText)
 moreDetailsText.addEventListener("input", () => {
   saveAnswerByValue("moreDetails", moreDetailsText?.value);
 });
 
 /* Step 4 */
 const nameInput = document.getElementById("name");
+if(nameInput)
 nameInput.addEventListener("input", () => {
   saveAnswerByValue("name", nameInput?.value);
 });
 
 const surnameInput = document.getElementById("surname");
+if(surnameInput)
 surnameInput.addEventListener("input", () => {
   saveAnswerByValue("surname", surnameInput?.value);
 });
 
 const emailInput = document.getElementById("email");
+if(emailInput)
 emailInput.addEventListener("input", () => {
   saveAnswerByValue("email", emailInput?.value);
 });

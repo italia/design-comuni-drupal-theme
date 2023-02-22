@@ -32,7 +32,6 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
-    <script>__PUBLIC_PATH__ = '{{ url('<front>') }}modules/custom/design-comuni-drupal-theme/comuni_theme/fonts'</script>
   </head>
   <body{{ attributes }}>
     {#
@@ -42,5 +41,6 @@
     {{ page }}
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
+    <script>bootstrap.loadFonts('{{ url('<front>') }}modules/custom/design-comuni-drupal-theme/comuni_theme/fonts')</script>
   </body>
 </html>

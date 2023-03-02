@@ -123,7 +123,7 @@ class CreateContentResource extends ResourceBase {
           $timestartDate = strtotime($payload['appointment']['startDate']);
           $newformatstartDate = date('Y-m-d\TH:i:s',$timestartDate);
 
-
+          $arrayInsertNode['field_email_richiedente'] = $payload['email'];
           $arrayInsertNode['field_data_e_ora_fine_appuntam'] = $newformatEndDate;
           $arrayInsertNode['field_data_e_ora_inizio_appuntam'] = $newformatstartDate;
           $arrayInsertNode['field_data_e_ora_prenotazione'] = date("Y-m-d\TH:i:s");

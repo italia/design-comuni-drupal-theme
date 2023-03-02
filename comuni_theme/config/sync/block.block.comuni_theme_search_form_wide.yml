@@ -1,0 +1,23 @@
+uuid: 75469c02-f6e0-410c-9318-7448ae50ae53
+langcode: it
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: comuni_theme_search_form_wide
+theme: comuni_theme
+region: includes
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

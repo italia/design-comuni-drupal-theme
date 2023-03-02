@@ -1,5 +1,5 @@
 uuid: 6370e9d7-b781-4ae8-a3e2-57d0a5e34c83
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -19,7 +19,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           notizia: full

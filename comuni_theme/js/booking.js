@@ -1,91 +1,97 @@
-function appointment(){var e,i=document.querySelector(".section-wrapper"),r=1,o=document.querySelector('[data-index="'.concat(r,'"]')),s=document.querySelector('[data-progress="'.concat(r,'"]')),l=i.querySelector(".btn-next-step"),d=i.querySelector(".btn-back-step");i&&(e=i.querySelectorAll(".saveBtn"),o.classList.add("d-lg-block"),s.classList.remove("d-none"),e.forEach(function(e){e.classList.add("invisible")}),l&&l.addEventListener("click",function(){var e,t,a,n;d.disabled=!1,e=i.querySelectorAll(".saveBtn"),t=i.querySelectorAll("[data-steps]"),a=i.querySelector('[data-steps="'.concat(r+1,'"]')),n=i.querySelector("[data-steps].active"),o.classList.remove("d-lg-block"),s.classList.remove("d-block"),s.classList.add("d-none"),r==t.length?E():(n.classList.add("d-none"),n.classList.remove("active"),a.classList.add("active"),a.classList.remove("d-none"),document.getElementById("form-steps").scrollIntoView({behavior:"smooth"}),r+=1,L(),(s=document.querySelector('[data-progress="'.concat(r,'"]'))).classList.add("d-block"),s.classList.remove("d-none"),r<t.length&&(o=document.querySelector('[data-index="'.concat(r,'"]'))).classList.add("d-lg-block"),r==t.length&&i.classList.remove("offset-lg-1"),r==t.length&&(l.disabled=!1,i.querySelector(".steppers-btn-confirm span").innerHTML="Invia",e.forEach(function(e){e.classList.remove("invisible"),e.classList.add("visible"),b()})))}),d)&&d.addEventListener("click",function(){var e,t,a,n;l.disabled=!1,e=i.querySelectorAll(".saveBtn"),t=i.querySelectorAll("[data-steps]"),a=i.querySelector("[data-steps].active"),n=i.querySelector('[data-steps="'.concat(r-1,'"]')),1!=r&&(n.classList.remove("d-none"),n.classList.add("active"),a.classList.add("d-none"),a.classList.remove("active"),o.classList.remove("d-lg-block"),s.classList.add("d-none"),r-=1,(s=document.querySelector('[data-progress="'.concat(r,'"]'))).classList.toggle("d-none"),i.querySelector(".steppers-btn-confirm span").innerHTML="Avanti",r<t.length&&((o=document.querySelector('[data-index="'.concat(r,'"]'))).classList.add("d-lg-block"),i.classList.add("offset-lg-1")),r<t.length&&e.forEach(function(e){e.classList.remove("visible"),e.classList.add("invisible")}),1==r)&&(d.disabled=!0)});const c={},p=(e,t,a=!1)=>{a?(a=decodeURIComponent(t),a=JSON.parse(a),c[e]=a):c[e]=t,"office"==e&&(c.place=null),L()},t=document.getElementById("office-choice"),m=(t.addEventListener("change",()=>{var e;p("office",t?.value),t?.value?(e=encodeURI(t.value),fetch(`/api/v1/ufficio/${e}/sedi`).then(e=>e.json()).then(({data:e})=>{document.querySelector("#place-cards-wrapper").innerHTML="";var{sede_principale:e,altre_sedi:t}=e[0];for(const i of e.concat(t)){var a={nome:i.title,indirizzo:i.indirizzo,apertura:i.orario_apertura,id:i.id},n=document.querySelector("#place-cards-wrapper"),a=(n.innerHTML+=`
-            <div class="cmp-info-radio radio-card">
-              <div class="card p-3 p-lg-4">
-                <div class="card-header mb-0 p-0">
-                  <div class="form-check m-0">
+function borderCardRadio(){var t=document.querySelectorAll(".radio-card");document.querySelectorAll(".radio-input").forEach(function(e,n){e.addEventListener("change",function(){t.forEach(function(e,t){n==t?e.classList.add("has-border-green"):e.classList.remove("has-border-green")})})})}var content=document.querySelector(".section-wrapper"),currentStep=1,navscroll=document.querySelector('[data-index="'.concat(currentStep,'"]')),progressBar=document.querySelector('[data-progress="'.concat(currentStep,'"]')),btnNext=content?content.querySelector(".btn-next-step"):null,btnBack=content?content.querySelector(".btn-back-step"):null;function pageSteps(){var e;content&&(e=content.querySelectorAll(".saveBtn"),navscroll.classList.add("d-lg-block"),progressBar.classList.remove("d-none"),e.forEach(function(e){e.classList.add("invisible")}),btnNext&&btnNext.addEventListener("click",function(){openNext()}),btnBack)&&btnBack.addEventListener("click",function(){backPrevious()})}function openNext(){btnBack.disabled=!1;var e=content.querySelectorAll(".saveBtn"),t=content.querySelectorAll("[data-steps]"),n=content.querySelector('[data-steps="'.concat(currentStep+1,'"]')),a=content.querySelector("[data-steps].active");navscroll.classList.remove("d-lg-block"),progressBar.classList.remove("d-block"),progressBar.classList.add("d-none"),currentStep==t.length?confirmAppointment():(a.classList.add("d-none"),a.classList.remove("active"),n.classList.add("active"),n.classList.remove("d-none"),currentStep+=1,checkMandatoryFields(),(progressBar=document.querySelector('[data-progress="'.concat(currentStep,'"]'))).classList.add("d-block"),progressBar.classList.remove("d-none"),currentStep<t.length&&(navscroll=document.querySelector('[data-index="'.concat(currentStep,'"]'))).classList.add("d-lg-block"),currentStep==t.length&&content.classList.remove("offset-lg-1"),currentStep==t.length&&(btnNext.disabled=!1,content.querySelector(".steppers-btn-confirm span").innerHTML="Invia",e.forEach(function(e){e.classList.remove("invisible"),e.classList.add("visible"),setReviews()})))}function backPrevious(){btnNext.disabled=!1;var e=content.querySelectorAll(".saveBtn"),t=content.querySelectorAll("[data-steps]"),n=content.querySelector("[data-steps].active"),a=content.querySelector('[data-steps="'.concat(currentStep-1,'"]'));1!=currentStep&&(a.classList.remove("d-none"),a.classList.add("active"),n.classList.add("d-none"),n.classList.remove("active"),navscroll.classList.remove("d-lg-block"),progressBar.classList.add("d-none"),currentStep-=1,(progressBar=document.querySelector('[data-progress="'.concat(currentStep,'"]'))).classList.toggle("d-none"),content.querySelector(".steppers-btn-confirm span").innerHTML="Avanti",currentStep<t.length&&((navscroll=document.querySelector('[data-index="'.concat(currentStep,'"]'))).classList.add("d-lg-block"),content.classList.add("offset-lg-1")),currentStep<t.length&&e.forEach(function(e){e.classList.remove("visible"),e.classList.add("invisible")}),1==currentStep)&&(btnBack.disabled=!0)}pageSteps();const answers={},encodeObject=e=>encodeURIComponent(JSON.stringify(e)),decodeObj=e=>JSON.parse(decodeURIComponent(e)),saveAnswerByValue=(e,t,n=!1)=>{if("office"==e)for(k in answers)delete answers[k];n?(n=decodeObj(t),answers[e]=n):answers[e]=t,checkMandatoryFields()},saveAnswerById=(e,t,n)=>{t=document.getElementById(t)?.value;answers[e]=JSON.parse(t),"function"==typeof n&&n(),checkMandatoryFields()},officeSelect=document.getElementById("office-choice"),appointment=(officeSelect&&officeSelect.addEventListener("change",()=>{var e=officeSelect?.value,t=officeSelect?.querySelector(`[value="${e}"]`)?.innerText;saveAnswerByValue("office",encodeObject({id:e,name:t}),!0),officeSelect?.value?(e=new URLSearchParams({id:officeSelect.value}),fetch("/wp-json/wp/v2/sedi/ufficio/?"+e).then(e=>e.json()).then(e=>{document.querySelector("#place-cards-wrapper").innerHTML='<legend class="visually-hidden">Seleziona un ufficio</legend>';for(const n of e){var t={nome:n.post_title,indirizzo:n.indirizzo,apertura:n.apertura,id:n.identificativo};document.querySelector("#place-cards-wrapper").innerHTML+=`
+          <div class="cmp-info-radio radio-card">
+            <div class="card p-3 p-lg-4">
+              <div class="card-header mb-0 p-0">
+                <div class="form-check m-0">
                     <input
-                      class="radio-input"
-                      name="beneficiaries"
-                      type="radio"
-                      id=${i?.id}
-                      value='${JSON.stringify(a)}'
+                    class="radio-input"
+                    name="beneficiaries"
+                    type="radio"
+                    id=${n?.ID}
+                    value='${JSON.stringify(t)}'
+                    onclick="saveAnswerById('place', ${n?.ID}, ${()=>setSelectedPlace()})"
                     />
-                    <label for=${i?.id}>
-                    <h3 class="big-title">
-                      ${i?.title}
+                    <label for=${n?.ID}>
+                    <h3 class="big-title mb-0 pb-0">
+                        ${n?.post_title}
                     </h3></label
                     >
-                  </div>
                 </div>
-                <div class="card-body p-0">
-                  <div class="info-wrapper">
-                    <span corario_aperturalass="info-wrapper__label">Sportello</span>
-                    <p class="info-wrapper__value">CIE</p>
-                  </div>
-                  <div class="info-wrapper">
-                    <span class="info-wrapper__label">Indirizzo</span>
-                    <p class="info-wrapper__value">
-                      ${i?.indirizzo}
-                    </p>
-                  </div>
-                  <div class="info-wrapper info-orari">
+              </div>
+              <div class="card-body p-0">
+                <div class="info-wrapper">
+                  <span class="info-wrapper__label">Sportello</span>
+                  <p class="info-wrapper__value">CIE</p>
+                </div>
+                <div class="info-wrapper">
+                  <span class="info-wrapper__label">Indirizzo</span>
+                  <p class="info-wrapper__value">
+                  ${n?.indirizzo}
+                  </p>
+                </div>
+                <div class="info-wrapper">
                     <span class="info-wrapper__label">Apertura</span>
-                    <div class="info-wrapper__value">
-                      ${i?.orario_apertura?i.orario_apertura:"non disponibile"}
-                    </div>
-                  </div>
+                    <p class="info-wrapper__value">
+                    ${n?.apertura}
+                    </p>
                 </div>
               </div>
             </div>
-            `,n.getElementsByTagName("input"));for(input of a)input.onclick=()=>{var e="place",t=i?.id,a=()=>u();t=document.getElementById(t)?.value,c[e]=JSON.parse(t),"function"==typeof a&&a(),L()}}}).catch(e=>{console.error("err",e)}),fetch("/api/v1/servizi/canale/"+e).then(e=>e.json()).then(e=>{document.querySelector("#motivo-appuntamento").innerHTML='<option selected="selected" value="">Seleziona opzione</option>';for(const t of e)document.querySelector("#motivo-appuntamento").innerHTML+=`
-            <option value="${t?.title}">${t?.title}</option>
-            `}).catch(e=>{console.error("err",e)})):document.querySelector("#place-cards-wrapper").innerHTML=""}),document.getElementById("appointment")),u=(m.addEventListener("change",()=>{c.appointment=null,L(),fetch("/modules/custom/design-comuni-drupal-theme/comuni_theme/assets/mocks/appuntamenti.json").then(e=>{if(e.ok)return e.json();throw new Error("HTTP error "+e.status)}).then(e=>{e=e[m?.value];var t=document.querySelector("#radio-appointment");t.innerHTML="";for(const o of e){var{startDate:a,endDate:n}=o,i=a.split("T")[0],i=new Date(i).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}),r=a+"/"+n;const s=encodeURIComponent(JSON.stringify({startDate:a,endDate:n}));t.innerHTML+=`
-          <div class="radio-body border-bottom border-light">
-          <input name="radio" type="radio" id="${r}" />
-          <label for="${r}" class="text-capitalize">${i} ore ${a.split("T")[1]}</label>
           </div>
-          `;for(input of t.getElementsByTagName("input"))input.onclick=()=>p("appointment",s,!0)}}).catch(e=>{console.error("err",e)})}),()=>{var e=c?.place;document.querySelector("#selected-place-card").innerHTML=`
-    <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-4">
-    <div class="card">
-      <div class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end">
-        <h3 class="title-large-semi-bold mb-3">
-          ${e?.nome}
-        </h3>
+          `}borderCardRadio()}).catch(e=>{console.log("err",e)}),fetch("/wp-json/wp/v2/servizi/ufficio?"+e).then(e=>e.json()).then(e=>{document.querySelector("#motivo-appuntamento").innerHTML='<option selected="selected" value="">Seleziona opzione</option>';for(const t of e)document.querySelector("#motivo-appuntamento").innerHTML+=`
+          <option value="${t?.ID}">${t?.post_title}</option>
+          `}).catch(e=>{console.log("err",e)})):document.querySelector("#place-cards-wrapper").innerHTML=""}),document.getElementById("appointment")),setSelectedPlace=(appointment&&appointment.addEventListener("change",()=>{answers.appointment=null,checkMandatoryFields(),fetch(url+(`?month=${appointment?.value}&office=`+answers?.place?.id)).then(e=>{if(e.ok)return e.json();throw new Error("HTTP error "+e.status)}).then(e=>{e=e[appointment?.value],document.querySelector("#radio-appointment").innerHTML='<legend class="visually-hidden">Seleziona un giorno e orario</legend>';for(const s of e){var{startDate:t,endDate:n}=s,a=t.split("T")[0],a=new Date(a).toLocaleString([],{weekday:"long",day:"2-digit",month:"long",year:"numeric"}),r=t+"/"+n,n=encodeObject({startDate:t,endDate:n});document.querySelector("#radio-appointment").innerHTML+=`
+        <div
+        class="radio-body border-bottom border-light"
+        >
+        <input name="radio" type="radio" id="${r}" onclick="saveAnswerByValue('appointment', '${n}', true)"/>
+        <label for="${r}" class="text-capitalize">${a} ore ${t.split("T")[1]}</label>
         </div>
-        <div class="card-body p-0">
-          <div class="single-line-info border-light">
-            <div class="text-paragraph-small">Sportello</div>
-            <div class="border-light">
-              <p class="data-text">CIE</p>
-            </div>
+        `}}).catch(e=>{console.log("err",e)})}),()=>{var e=answers?.place;document.querySelector("#selected-place-card").innerHTML=`  
+  <div class="cmp-info-summary bg-white mb-4 mb-lg-30 p-4">
+  <div class="card">
+      <div
+      class="card-header border-bottom border-light p-0 mb-0 d-flex justify-content-between d-flex justify-content-end"
+      >
+      <h3 class="title-large-semi-bold mb-3">
+        ${e?.nome}
+      </h3>
+      </div>
+
+      <div class="card-body p-0">
+      <div class="single-line-info border-light">
+          <div class="text-paragraph-small">Sportello</div>
+          <div class="border-light">
+          <p class="data-text">CIE</p>
           </div>
-          <div class="single-line-info border-light">
-            <div class="text-paragraph-small">Indirizzo</div>
-            <div class="border-light">
-              <p class="data-text">
-                ${e?.indirizzo}
-              </p>
-            </div>
+      </div>
+      <div class="single-line-info border-light">
+          <div class="text-paragraph-small">Indirizzo</div>
+          <div class="border-light">
+          <p class="data-text">
+            ${e?.indirizzo}
+          </p>
           </div>
-          <div class="single-line-info border-light">
-            <div class="text-paragraph-small">Apertura</div>
-            <div class="border-light">
-              <div class="data-text">
-                ${e?.apertura?e.apertura:"non disponibile"}
-              </div>
-            </div>
+      </div>
+      <div class="single-line-info border-light">
+          <div class="text-paragraph-small">Apertura</div>
+          <div class="border-light">
+          <p class="data-text">
+            ${e?.apertura}
+          </p>
           </div>
-        </div>
-        <div class="card-footer p-0"></div>
-    </div>
-    </div>
+      </div>
+      </div>
+      <div class="card-footer p-0"></div>
   </div>
-    `}),a=document.getElementById("motivo-appuntamento"),n=(a.addEventListener("change",()=>{p("service",a?.value)}),document.getElementById("form-details")),v=(n.addEventListener("input",()=>{p("moreDetails",n?.value)}),document.getElementById("name")),g=(v.addEventListener("input",()=>{p("name",v?.value)}),document.getElementById("surname")),f=(g.addEventListener("input",()=>{p("surname",g?.value)}),document.getElementById("email")),y=(f.addEventListener("input",()=>{p("email",f?.value)}),()=>{var e=c?.appointment?.startDate?.split("T")[0];return new Date(e).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"})}),h=()=>{var e=c?.appointment;return[e?.startDate?.split("T")[1],e?.endDate?.split("T")[1]]},b=()=>{var e=c?.appointment,t=e?.startDate?.split("T")[0],t=new Date(t).toLocaleString("it-IT",{weekday:"long",day:"2-digit",month:"long",year:"numeric"}),e=e?.startDate?.split("T")[1]+" - "+e?.endDate?.split("T")[1];document.getElementById("review-office").innerText=c?.office,document.getElementById("review-place").innerText=c?.place?.nome,document.getElementById("review-date").innerText=y(),document.getElementById("review-hour").innerText=h()[0]+" - "+h()[1],document.getElementById("review-date").innerText=t,document.getElementById("review-hour").innerText=e,document.getElementById("review-service").innerText=c?.service,document.getElementById("review-details").innerText=c?.moreDetails,document.getElementById("review-name").innerText=c?.name,document.getElementById("review-surname").innerText=c?.surname,document.getElementById("review-email").innerText=c?.email},L=()=>{switch(r){case 1:c?.office&&c?.place?l.disabled=!1:l.disabled=!0;break;case 2:c?.appointment?l.disabled=!1:l.disabled=!0;break;case 3:c?.service&&c?.moreDetails?l.disabled=!1:l.disabled=!0;break;case 4:c?.name&&c?.surname&&c?.email?l.disabled=!1:l.disabled=!0}};const E=()=>{!async function(){try{return await(await fetch("session/token")).text()}catch(e){console.error(e)}}().then(e=>{fetch("/api/v1/create/appuntamento",{method:"POST",body:JSON.stringify(c),headers:{"Content-Type":"application/json","X-CSRF-Token":e}}).then(e=>{if(!e.ok)throw new Error("HTTP error "+e.status);var t;document.getElementById("form-steps").classList.add("d-none"),document.getElementById("email-recap").innerText=c?.email,document.getElementById("date-recap").innerText=`
-      ${y()} dalle ore ${h()[0]} alle ore ${h()[1]}
-    `,document.querySelector(".cmp-hero").classList.add("d-none"),e=document.getElementById("final-step"),(t=e.querySelector(".address-wrapper")).querySelector(".title-small").innerHtml=`
-    <a href="#"
-      aria-label="Vai a ${c?.place?.nome}"
-      title="Vai a ${c?.place?.nome}"
-      class="" data-focus-mouse="false"
-    >${c?.place?.nome}</a>
-    `,t.querySelector(".subtitle-small").innerText=c?.place?.indirizzo,e.classList.remove("d-none"),e.scrollIntoView({behavior:"smooth"}),fetch("/api/v1/servizio/dettaglio/"+c.service).then(e=>e.json()).then(e=>{e=e[0].cosa_serve;document.getElementById("needed").innerHtml=""+e}).catch(e=>console.error(e))}).catch(e=>{console.error("err",e)})})}}document.getElementById("form-steps")&&appointment();
+  </div>
+</div>
+  `}),serviceSelect=document.getElementById("motivo-appuntamento"),moreDetailsText=(serviceSelect&&serviceSelect.addEventListener("change",()=>{var e=serviceSelect?.value,t=serviceSelect?.querySelector(`[value="${e}"]`)?.innerText;saveAnswerByValue("service",encodeObject({id:e,name:t}),!0)}),document.getElementById("form-details")),nameInput=(moreDetailsText&&moreDetailsText.addEventListener("input",()=>{saveAnswerByValue("moreDetails",moreDetailsText?.value)}),document.getElementById("name")),surnameInput=(nameInput&&nameInput.addEventListener("input",()=>{saveAnswerByValue("name",nameInput?.value)}),document.getElementById("surname")),emailInput=(surnameInput&&surnameInput.addEventListener("input",()=>{saveAnswerByValue("surname",surnameInput?.value)}),document.getElementById("email")),getDay=(emailInput&&emailInput.addEventListener("input",()=>{saveAnswerByValue("email",emailInput?.value)}),()=>{var e=answers?.appointment?.startDate?.split("T")[0];return new Date(e).toLocaleString([],{weekday:"long",day:"2-digit",month:"long",year:"numeric"})}),getHour=()=>{var e=answers?.appointment;return[e?.startDate?.split("T")[1],e?.endDate?.split("T")[1]]},setReviews=()=>{document.getElementById("review-office").innerHTML=answers?.office?.name,document.getElementById("review-place").innerHTML=answers?.place?.nome,document.getElementById("review-date").innerHTML=getDay(),document.getElementById("review-hour").innerHTML=getHour()[0]+" - "+getHour()[1],document.getElementById("review-service").innerHTML=answers?.service?.name,document.getElementById("review-details").innerHTML=answers?.moreDetails,document.getElementById("review-name").innerHTML=answers?.name,document.getElementById("review-surname").innerHTML=answers?.surname,document.getElementById("review-email").innerHTML=answers?.email},checkMandatoryFields=()=>{switch(currentStep){case 1:answers?.office&&answers?.place?btnNext.disabled=!1:btnNext.disabled=!0;break;case 2:answers?.appointment?btnNext.disabled=!1:btnNext.disabled=!0;break;case 3:answers?.service&&answers?.moreDetails?btnNext.disabled=!1:btnNext.disabled=!0;break;case 4:answers?.name&&answers?.surname&&answers?.email?btnNext.disabled=!1:btnNext.disabled=!0}};async function successFeedback(){document.getElementById("email-recap").innerText=answers?.email,document.getElementById("date-recap").innerText=` ${getDay()} dalle ore ${getHour()[0]} alle ore `+getHour()[1];var e=await getServiceDetail(answers?.service?.id);if(0<e?._dci_servizio_cosa_serve_list?.length||e?._dci_servizio_cosa_serve_introduzione){const t=document.getElementById("needed-recap");t.innerHTML=`
+      <p class="font-serif">${e?._dci_servizio_cosa_serve_introduzione}</p>
+    `,0<e?._dci_servizio_cosa_serve_list?.length&&(t.innerHTML+="<ul>",e._dci_servizio_cosa_serve_list.forEach(e=>{t.innerHTML+=`<li>${e}</li>`}),t.innerHTML+="</ul>")}document.getElementById("office-recap").innerHTML=`
+    <a
+      href="#"
+      class="text-decoration-none"
+      >${answers?.office?.name}</a
+    >  
+  `,document.getElementById("address-recap").innerHTML=answers?.place?.nome,document.getElementById("form-steps").classList.add("d-none"),document.getElementById("final-step").classList.remove("d-none")}const confirmAppointment=()=>{var e,t=new URLSearchParams;for(e in answers)"object"==typeof answers[e]?t.append(e,JSON.stringify(answers[e])):t.append(e,answers[e]);t.append("action","save_appuntamento"),fetch(urlConfirm,{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/x-www-form-urlencoded","Cache-Control":"no-cache"},body:t}).then(e=>{if(e.ok)return e.json();throw new Error("HTTP error "+e.status)}).then(e=>{successFeedback();var t=document.querySelector("#main-container");t&&t.scrollIntoView({behavior:"smooth"})}).catch(e=>{console.log("err",e)})};async function getServiceDetail(e){try{return await fetch("/wp-json/wp/v2/servizi/"+e).then(e=>{if(e.ok)return e.json();throw new Error("HTTP error "+e.status)}).then(e=>e?.cmb2?._dci_servizio_box_cosa_serve).catch(e=>{console.log("err",e)})}catch(e){console.error(e)}}

@@ -1,0 +1,22 @@
+uuid: 71cc0ae4-8020-47b5-982b-ffbe0f3a7f23
+langcode: it
+status: true
+dependencies:
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: comuni_theme_primary_local_tasks
+theme: comuni_theme
+region: includes
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Schede primarie'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

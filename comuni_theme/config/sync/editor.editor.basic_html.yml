@@ -1,5 +1,5 @@
 uuid: 21f8647f-e1d7-4d75-9b67-4a2daa71df14
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -42,9 +42,7 @@ settings:
           name: Tools
           items:
             - Source
-  plugins:
-    stylescombo:
-      styles: ''
+  plugins: {  }
 image_upload:
   status: true
   scheme: public

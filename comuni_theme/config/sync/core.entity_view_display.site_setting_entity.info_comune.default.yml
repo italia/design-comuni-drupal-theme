@@ -1,13 +1,13 @@
 uuid: 4d46ab97-b8d2-46fe-8896-a642018c721e
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
+    - field.field.site_setting_entity.info_comune.field_amministrazione_trasparent
     - field.field.site_setting_entity.info_comune.field_contatti
     - field.field.site_setting_entity.info_comune.field_forse_stavi_cercando
     - field.field.site_setting_entity.info_comune.field_icone_social
     - field.field.site_setting_entity.info_comune.field_logo
-    - field.field.site_setting_entity.info_comune.field_logo_svg
     - field.field.site_setting_entity.info_comune.field_nome_comune
     - field.field.site_setting_entity.info_comune.field_nome_regione
     - site_settings.site_setting_entity_type.info_comune
@@ -54,14 +54,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  field_logo_svg:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_nome_comune:
     type: string
     label: above
@@ -102,4 +94,5 @@ content:
     weight: 0
     region: content
 hidden:
+  field_amministrazione_trasparent: true
   search_api_excerpt: true

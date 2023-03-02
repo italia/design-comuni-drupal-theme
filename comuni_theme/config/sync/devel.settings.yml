@@ -1,5 +1,6 @@
 _core:
   default_config_hash: Aqx6J0yYT6mVqT0fbjeP4JkoL-700nmudVF5d6Pq2Yo
+langcode: it
 page_alter: false
 raw_names: false
 error_handlers:

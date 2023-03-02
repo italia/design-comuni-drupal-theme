@@ -1,0 +1,22 @@
+uuid: d98242c0-ad35-43da-9b96-bbd64c29dc94
+langcode: it
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - comuni_theme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: comuni_theme_help
+theme: comuni_theme
+region: includes
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aiuto
+  label_display: '0'
+  provider: help
+visibility: {  }

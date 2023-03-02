@@ -16,7 +16,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content perfect-scrollbar">
       <div class="modal-body">
-        <form action="/risultati-ricerca">
+        <form action="{{ url('<front>') }}risultati-ricerca">
           <div class="container">
             <div class="row variable-gutters">
               <div class="col">
@@ -86,13 +86,9 @@
           <div class="ue-logo"><span class="visually-hidden">logo Unione Europea</span></div>
           <div class="it-brand-wrapper">
             <a href="{{ url('<front>') }}">
-              {% if site_settings.infocomune.info_comune.field_logo_svg %}
-                <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                     src="{{ url('<front>') }}{{  site_settings.infocomune.info_comune.field_logo_svg }}" alt=""/>
-              {% else %}
-                <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                     src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
-              {% endif %}              <div class="it-brand-text">
+                <img aria-hidden="true"
+                     src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
+              <div class="it-brand-text">
                 <h2 class="no_toc">{{ site_settings.infocomune.info_comune.field_nome_comune }}</h2>
               </div>
             </a>

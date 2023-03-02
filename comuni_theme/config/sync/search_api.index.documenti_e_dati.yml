@@ -1,5 +1,5 @@
 uuid: 0bcf02c2-3b7a-4fd0-883e-231726ab25bd
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -19,7 +19,7 @@ field_settings:
     type: text
     configuration:
       roles:
-        anonymous: anonymous
+        - anonymous
       view_mode:
         'entity:node':
           dataset: full

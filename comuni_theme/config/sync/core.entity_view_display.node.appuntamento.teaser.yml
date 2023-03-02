@@ -1,5 +1,5 @@
 uuid: 7b50f601-f2c7-42bf-9aa9-e3a234333e21
-langcode: en
+langcode: it
 status: true
 dependencies:
   config:
@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.appuntamento.field_data_e_ora_inizio_appuntam
     - field.field.node.appuntamento.field_data_e_ora_prenotazione
     - field.field.node.appuntamento.field_dettaglio_richiesta
+    - field.field.node.appuntamento.field_email_richiedente
     - field.field.node.appuntamento.field_nome
     - field.field.node.appuntamento.field_sottotitolo
     - node.type.appuntamento
@@ -28,6 +29,7 @@ hidden:
   field_data_e_ora_inizio_appuntam: true
   field_data_e_ora_prenotazione: true
   field_dettaglio_richiesta: true
+  field_email_richiedente: true
   field_nome: true
   field_sottotitolo: true
   langcode: true

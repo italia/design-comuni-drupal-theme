@@ -1,11 +1,11 @@
 # ![developers.italia](https://avatars1.githubusercontent.com/u/15377824?s=36&v=4 "developers.italia") Design Comuni Italia
 [![Join the #design siti scuole channel](https://img.shields.io/badge/Slack%20channel-%23design_siti_comuni-blue.svg)](https://developersitalia.slack.com/messages/design-siti-comuni/)
 
-## **Un sito per i comuni italiani**
+## **Un sito per i Comuni italiani**
 ### I primi passi con il tema Dupal (v1.4.0)
 
 
-**Design Comuni Italia** è il tema Drupal che permette di aderire al [modello di sito istituzionale dei comuni](https://designers.italia.it/modello/comuni/), progettato dal Dipartimento per la trasformazione digitale.
+**Design Comuni Italia** è il tema Drupal che permette di aderire al [modello di sito istituzionale dei Comuni](https://designers.italia.it/modello/comuni/), progettato dal Dipartimento per la trasformazione digitale.
 
 ## **Installazione e supporto**
 #### **Come installare il tema**
@@ -16,7 +16,7 @@ Prepara un'installazione in locale di Drupal con il seguente comando composer:
 composer create-project drupal/recommended-project:^9 my_site_name_dir
 ~~~
 
-Procedi con il normale processo di installazione di Drupal in lingua Italiana caricando il sito e seguendo le istruzioni nel browser
+Procedi con il normale processo di installazione di Drupal in lingua italiana caricando il sito e seguendo le istruzioni nel browser
 
 All'interno della cartella *modules* crea la cartella *custom*, poi al suo interno scarica il progetto con il seguente comando git:
 
@@ -122,12 +122,10 @@ Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/message
 
 ## **Indice**
 
-- [Cos'è](#cosè)
-- [Cosa fa](#cosa-fa)
-- [La cura verso i contenuti](#la-cura-verso-i-contenuti)
+- [Cos'è e cosa fa](#cosè)
 - [Da dove iniziare](#da-dove-iniziare)
-- [Riscrivere o importare i contenuti del vecchio sito](#riscrivere-o-importare-i-contenuti-del-vecchio-sito)
 - [Relazioni tra i contenuti](#relazioni-tra-i-contenuti)
+- [Riscrivere o importare i contenuti del vecchio sito](#riscrivere-o-importare-i-contenuti-del-vecchio-sito)
 - [Personalizzazione](#personalizzazione)
 - [Servizi esterni](#servizi-esterni)
 - [La community di riferimento](#la-community-di-riferimento)
@@ -136,58 +134,36 @@ Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/message
 - [Segnalazione bug](#segnalazione-bug)
 - [Come contribuire](#come-contribuire)
 
-#### **Cos'è**
-Il tema Design Comuni Italia è un’applicazione di Drupal, il sistema di gestione di contenuti (CMS) che consente di creare un sito web. 
+#### **Cos'è e cosa fa**
+Il tema Design Comuni Italia è un’applicazione di Drupal, il sistema di gestione di contenuti (CMS), che consente di creare un sito web comunale sulla base del [modello Comuni](https://designers.italia.it/modello/comuni/), creato nell’ambito del progetto Designers Italia dal Dipartimento per la trasformazione digitale.
 
-Il tema è basato sul [modello di sito istituzionale dei comuni italiani](https://designers.italia.it/modello/comuni/), creato nell’ambito del progetto Designers Italia dal Dipartimento per la trasformazione digitale e il Ministero dell’Istruzione.
-
-
-
-#### **Cosa fa**
-Il tema Drupal è stato progettato per adottare rapidamente il modello di sito istituzionale dei comuni. Il tema imposta automaticamente lo stile grafico del sito, i layout delle pagine e il menu di navigazione, permettendo di velocizzare l’adozione tecnica del modello e di focalizzarsi sulla creazione dei contenuti sulle pagine.
-
-Il modello di sito istituzionale comunale vuole comunicare l’identità e l’atmosfera di un comune, fornendo agli utenti tutte le informazioni sull’organizzazione dell’istituzione e sui servizi di supporto al cittadino.
-
-Il tema Drupal è pronto all’uso. [Scaricalo gratuitamente da GitHub](https://github.com/italia/design-comuni-drupal-theme)
-
-
-#### **La cura verso i contenuti**
-Il tema imposta automaticamente le aree del sito, le voci di menù e la struttura delle pagine. 
-
-Inserendo i contenuti negli appositi campi predisposti per le varie tipologie di contenuto (content type), il tema comporrà automaticamente le diverse pagine del sito. Il compito dei redattori è quindi quello di curare i contenuti, senza doversi preoccupare di come verranno presentati a livello visivo sulle pagine. 
-
-Le amministrazioni comunali possono così risparmiare tempo nella progettazione e realizzazione del proprio sito e dedicare più tempo a comunicare con precisione e semplicità le informazioni, dall’organizzazione della struttura comunale ai servizi rivolti ai cittadini. 
+Il tema Drupal è stato progettato per aderire rapidamente al modello di sito comunale. Il tema, infatti, imposta automaticamente lo stile grafico del sito, le aree del sito, i layout delle pagine e il menu di navigazione. Il compito dei redattori rimane, quindi, quello di curare i contenuti delle pagine, risparmiando così tempo e risorse nella progettazione e realizzazione del sito.
 
 
 #### **Da dove iniziare**
-Inizia guardando gli esempi di amministrazioni comunali che hanno già adottato il modello, per prendere ispirazione su come scrivere i contenuti del sito:
 
-[Il Comune di Cagliari](https://www.comune.cagliari.it/portale/)
+I siti Drupal presentano una serie di tipologie di contenuto (content type) che sono in relazione tra loro. Ogni tipologia di contenuto viene creata attraverso una “scheda” nel backend di Drupal, che presenta i vari campi dove aggiungere i contenuti per creare la pagina.
 
+Consigliamo di cominciare a creare i diversi contenuti in questo ordine:
 
-Per creare i contenuti del nuovo sito e imparare a gestirlo al meglio, è utile creare uno o più gruppi di lavoro composti da rappresentanti dei cittadini e da una rappresentanza del personale tecnico-amministrativo. 
+- punti di contatto;
+- persone pubbliche;
+- luoghi;
+- unita organizzative;
 
-La creazione di un team è importante soprattutto per mappare le informazioni necessarie prima della fase di scrittura vera e propria. Ad esempio, per poter scrivere contenuti sui servizi demografici del comune, è necessario un confronto preliminare con gli esperti di questo ambito per chiarire come sono fatti i servizi e come funzionano. 
+Una volta iniziato il lavoro sulle prime 4 tipologie di contenuto suggerite, si può continuare con:
 
-L’obiettivo dei vari gruppi di lavoro è di creare questi contenuti e di aggiornarli quando necessario.
-
-In fase iniziale, consigliamo di creare un unico esempio per ciascuna tipologia di contenuto, in modo da validare la struttura con i gruppi di lavoro e usarlo come linea guida per la stesura di tutti i contenuti di quella tipologia.
-
-Prima della pubblicazione del sito, è utile definire con chiarezza chi sarà responsabile della pubblicazione di ciascuna delle tipologie di contenuti, in modo da garantire un flusso di pubblicazione costante. Non tutte le sezioni del sito andranno gestite e aggiornate con la stessa frequenza. È bene prendere consapevolezza delle varie sezioni e della frequenza con cui ciascun aggiornamento va fatto.
-
-#### **Riscrivere o importare i contenuti del vecchio sito**
-L’aggiornamento di un sito è un’ottima opportunità per riscrivere, riorganizzare ed aggiornare tutti i contenuti relativi a (elenco content type principali).
-
-Notizie ed eventi passati, non essendo più attuali, non vanno migrati sul nuovo sito.
-
-Per importare documenti e dataset dal vecchio al nuovo sito, si può utilizzare lo strumento di import/export incluso nel sito sotto la tab contenuti. La resa di questi contenuti, una volta migrati, andrà verificata manualmente e dipenderà molto dalla qualità degli stessi nel sito precedente. 
-
+- documenti pubblici;
+- dataset;
+- eventi;
+- notizie;
+- fasi;
+- servizi;
 
 
 #### **Relazioni tra i contenuti**
-I siti Drupal presentano una serie di tipologie di contenuto (content type) che sono in relazione tra loro. Ogni tipologia di contenuto viene creata attraverso una “scheda” nel backend di Drupal, che presenta i vari campi dove aggiungere i contenuti per creare la pagina.
 
-Questa impostazione permette di combinare i vari elementi per la creazione delle pagine, così che i contenuti vengano creati soltanto una volta e poi riutilizzati, se necessario, in varie parti del sito. Una volta comprese le relazioni tra le tipologie di contenuti, sarà facile creare le pagine del sito.
+L'impostazione per tipologie di contenuto (content type) permette di combinare i vari elementi per la creazione delle pagine, così che i contenuti vengano creati soltanto una volta e poi riutilizzati, se necessario, in varie parti del sito. Una volta comprese le relazioni tra le tipologie di contenuti, sarà facile creare le pagine del sito.
 
 Alcune relazioni tra tipologie di contenuti, sono:
 
@@ -196,16 +172,18 @@ Incarichi - Persone Pubbliche
 Unità Organizzative - Luoghi
 Servizi - Documenti Pubblici
 
-Questo significa, ad esempio, che ogni pagina di un'unità organizzative può presentare una relazione con contenuti come i luoghi e i servizi.
+Questo significa, ad esempio, che ogni pagina di un'unità organizzativa può presentare una relazione con contenuti come i luoghi e i servizi.
 
 **Attenzione!** Dal punto di vista pratico, è necessario che i contenuti che si vuole collegare vengano creati in un ordine preciso: prima i content type che fungono da contenuti di dettaglio e poi il content type contenitore (es. prima le persone, il luogo e punti di contatto e solo dopo l'evento che raggruppa persone, luogo e punti di contatto creati in precedenza).
 
 Per collegare tra loro diverse tipologie di contenuto, quindi:
+
 1.	crea la scheda o le schede dei contenuti di dettaglio (ad esempio, il luogo “Palazzo Baldini” che verrà associato ad un'unità organizzativa);
 2.	crea la scheda del contenuto contenitore (ad esempio, la scheda della unità organizzativa “Assessorato al Turismo”);
 3.	Associa, tramite l’apposito campo, le schede contenuto di dettaglio alla scheda contenuto (ad esempio, il luogo “Palazzo Baldini” all'unità organizzativa “Assessorato al Turismo”).
 
 Per associare nuovi contenuti di dettaglio ad altri già esistenti:
+
 1.	Crea la nuova scheda di contenuto di dettaglio (ad esempio, la scheda servizio “Iscrizione alla Scuola dell’infanzia” da associare alla scheda del contenuto contenitore “Assessorato all'Educazione”).
 2.	Entra nella scheda del contenuto contenitore e, tramite l’apposito campo, associa la scheda del contenuto di dettaglio (la scheda servizio “Iscrizione alla Scuola dell’infanzia” alla scheda “Assessorato all'Educazione”).
 
@@ -213,8 +191,17 @@ Per associare nuovi contenuti di dettaglio ad altri già esistenti:
 Nella maggior parte dei casi questa correlazione è bidirezionale e automatica. Quando si crea, ad esempio, una relazione tra un luogo e una struttura, questa verrà mostrata sia nel dettaglio del luogo che in quello della struttura.
 
 
+#### **Riscrivere o importare i contenuti del vecchio sito**
+
+L’aggiornamento di un sito è un’ottima opportunità per riscrivere, riorganizzare ed aggiornare tutti i contenuti relativi a (elenco content type principali).
+
+Notizie ed eventi passati, non essendo più attuali, non vanno migrati sul nuovo sito.
+
+Per importare documenti e dataset dal vecchio al nuovo sito, si può utilizzare lo strumento di import/export incluso nel sito sotto la tab contenuti. La resa di questi contenuti, una volta migrati, andrà verificata manualmente e dipenderà molto dalla qualità degli stessi nel sito precedente. 
+
 
 #### **Personalizzazione**
+
 Nell’area di configurazione è possibile (e talvolta necessario) personalizzare alcuni caratteristiche del sito, come i testi di presentazione o le notizie da mostrare in evidenza o nella pagina di presentazione del comune.
 
 L’area di configurazione è divisa in tab per le diverse aree del sito.
@@ -226,6 +213,7 @@ Cliccando su “Configurazione,  è possibile definire:
 
 
 #### **Servizi esterni**
+
 Il tema Drupal è realizzato per supportare il collegamento a API esterne per quel che concerne le funzionalità di valutazione, prenotazione appuntamento e richiesta di assistenza. Ogni amministrazione comunale dovrà quindi provvedere ad integrare i form forniti con il modulo con un servizio esterno realizzato a propria discrezione andando a modificare i file che andremo ad elencare di seguito. Per l'effettivo inserimento dei file all'interno del progetto si può agire in due modi
 
 - se vogliamo che i file siano minificati per un incremento delle performance del sito è necessario avviare un processo di build tramite `npm` dopo la modifica del file, come verrà descritto in seguito. Assicurarsi di aver installato [Node.js](https://nodejs.org/it/download/) almeno della versione 16.x e installato le dipendenze con il comando
@@ -308,6 +296,7 @@ Al termine della richiesta assistenza viene creato un payload nel seguente forma
 
 
 #### **La community di riferimento**
+
 Scopri i canali della community dove confrontarti sulle risorse del modello:
 
 -	[Forum Italia](https://forum.italia.it/) - unisciti alla discussione sul design dei servizi digitali con gli esperti del settore;
@@ -317,15 +306,15 @@ Scopri i canali della community dove confrontarti sulle risorse del modello:
 #### **F.A.Q**
 ➔	**Chi gestisce il sito?**
 
-L’uso del tema non impatta le modalità con cui viene abitualmente gestito il sito scolastico e rimane una responsabilità degi comuni. Molti comuni fanno affidamento su fornitori esterni per hosting e manutenzione.
+L’uso del tema non impatta le modalità con cui viene abitualmente gestito il sito comunale e rimane una responsabilità dei Comuni. Molti Comuni fanno affidamento su fornitori esterni per hosting e manutenzione.
 
 ➔	**Perché esistono temi pronti solo per Drupal e WordPress?**
 
-Drupal e WordPress sono i CMS più usati dai comuni. Puoi usare l’apposito [kit per creare temi per altri CMS](https://github.com/italia/design-comuni-pagine-statiche/).
+Drupal e WordPress sono i CMS più usati dai Comuni. Puoi usare l’apposito [kit per creare temi per altri CMS](https://github.com/italia/design-comuni-pagine-statiche/).
 
 ➔	**Non ho Drupal. Cosa devo fare?**
 
-Puoi passare a[ Drupal](https://www.drupal.it/) in qualunque momento, oppure usare le [altre risorse per la creazione del sito scolastico](https://designers.italia.it/modello/comuni/). 
+Puoi passare a[ Drupal](https://www.drupal.it/) in qualunque momento, oppure usare le [altre risorse per la creazione del sito comunale](https://designers.italia.it/modello/comuni/). 
 
 
 ➔	**Quali sono i benefici dell’uso del tema Drupal?**

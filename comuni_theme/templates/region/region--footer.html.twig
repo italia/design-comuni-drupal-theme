@@ -60,11 +60,11 @@
               <div class="col-lg-5">
                 <div class="searches-list-wrapper">
                   <div class="other-link-title">FORSE STAVI CERCANDO</div>
-                  <ul class="searches-list" role="list">
+                  <ul class="searches-list">
                     {% for link in site_settings.infocomune.info_comune.field_forse_stavi_cercando %}
                       {% set field = drupal_field('title', 'node', link['target_id']) %}
                       {% set link2 = path('entity.node.canonical', {'node': link['target_id']})  %}
-                      <li role="listitem"><a href="{{ link2 }}"
+                      <li><a href="{{ link2 }}"
                         >{{ field["#items"][0].value }}
                       </a></li>
                     {% endfor %}

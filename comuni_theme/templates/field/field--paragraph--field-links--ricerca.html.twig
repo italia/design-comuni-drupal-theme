@@ -70,13 +70,13 @@
 {% if label_hidden %}
   {% if multiple %}
     {% for item in items %}
-      <li role="listitem">
+      <li>
         {{ _self.menu_link(item, ) }}
       </li>
     {% endfor %}
   {% else %}
     {% for item in items %}
-      <li role="listitem">
+      <li>
         {{ _self.menu_link(item, ) }}
       </li>
     {% endfor %}
@@ -86,7 +86,7 @@
     {% if multiple %}
       {% endif %}
       {% for item in items %}
-        <li role="listitem">
+        <li>
           {{ _self.menu_link(item, ) }}
         </li>
       {% endfor %}

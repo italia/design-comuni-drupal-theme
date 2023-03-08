@@ -93,9 +93,9 @@
                   {% set nomeCategoria = node.field_categoria_del_servizio.entity.name.value %}
                   {% set urlCategoria = path('entity.taxonomy_term.canonical', {'taxonomy_term': node.field_categoria_del_servizio.target_id}) %}
                   {% if loop.last %}
-                    <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#" id="">
+                    <div class="cmp-card-latest-messages mb-3" data-bs-toggle="modal" data-bs-target="#">
                   {% else %}
-                    <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#" id="">
+                    <div class="cmp-card-latest-messages mb-3 mb-30" data-bs-toggle="modal" data-bs-target="#">
                   {% endif %}
                       <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
                         <span class="visually-hidden">Categoria:</span>

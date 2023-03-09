@@ -18,8 +18,14 @@
     <ul{{ attributes }}>
       <li class="pager__item">
         {% if item.href %}
+        {% set path = url('<current>')['#markup']|split('/')|last %}
+        {% if path == 'servizi' %}
+          {% set dataElem = 'load-other-cards' %}
+        {% else %}
+          {% set dataElem = '' %}
+        {% endif %}            
         <a class="" href="{{ item.href }}" rel="next">
-          <button type="button" data-bs-toggle="modal" data-bs-target="#"
+          <button type="button" data-bs-toggle="modal" data-bs-target="#" data-element="{{ dataElem }}"
             class="btn btn-outline-primary pt-15 pb-15 pl-90 pr-90 mb-30 mb-lg-50 full-mb text-button"
           >
             <span class="">{{ item.text }}</span>

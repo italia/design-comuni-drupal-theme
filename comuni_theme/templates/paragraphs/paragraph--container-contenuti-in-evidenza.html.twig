@@ -60,6 +60,10 @@
             {% for contenuto in content.field_contenuti["#items"] %}
               {{ drupal_entity('node', contenuto.target_id, 'teaser_in_evidenza_amministrazione') }}
             {% endfor %}
+          {% elseif viewMode == "card_estese_amministrazione_dataelement" %}
+            {% for contenuto in content.field_contenuti["#items"] %}
+              {{ drupal_entity('node', contenuto.target_id, 'teaser_in_evidenza_amministrazione_dataelement') }}
+            {% endfor %}
           {% elseif (viewMode == "card_estese_eventi" or viewMode == "card_estese_luogo") %}
             {% if content.field_contenuti["#object"] is defined and content.field_contenuti["#object"] is not null %}
               {{ content.field_contenuti }}
@@ -68,8 +72,16 @@
               {{ content.field_card_contenuti }}
             {% endif %}
             <div class="d-flex justify-content-end">
-              <a href="{{ url('<front>') }}{{ viewMode == "card_estese_eventi" ? "tutti-gli-eventi" : "tutti-i-luoghi" }}" class="btn btn-primary px-5 py-3 full-mb">
-                <span class="">Tutti {{ viewMode == "card_estese_eventi" ? "gli eventi" : "i luoghi" }}</span>
+              {# NOTE: if it becomes necessary to build these links the paragraph will need additional fields for the data entry #}
+              <a href="{{viewMode == "card_estese_eventi"
+                  ? "/categorie-dei-servizi/cultura-e-tempo-libero"
+                  : "/aree-amministrative"
+                }}"
+                class="btn btn-primary px-5 py-3 full-mb"
+                data-element="live-button-{{viewMode == "card_estese_eventi" ? "events" : "locations"}}"
+              >
+                <span class="">
+                  Tutti {{ viewMode == "card_estese_eventi" ? "gli eventi" : "i luoghi" }}</span>
               </a>
             </div>
           {% elseif (viewMode == "card_estese_documenti") %}

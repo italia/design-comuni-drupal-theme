@@ -322,7 +322,7 @@
         {% if content.field_a_chi_rivolto[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="who-needs">A chi è rivolto</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data-element="service-addressed">
             {{ content.field_a_chi_rivolto }}
           </div>
         </section>
@@ -330,7 +330,7 @@
         {% if content.field_descrizione_estesa[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="description">Descrizione</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data--element="service-extended-description">
             {{ content.field_descrizione_estesa }}
           </div>
         </section>
@@ -338,7 +338,7 @@
         {% if content.field_come_fare[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data-element="service-how-to">
             {{ content.field_come_fare }}
           </div>
         </section>
@@ -346,7 +346,7 @@
         {% if content.field_cosa_serve[0] is not empty %}
         <section class="it-page-section  mb-30 has-bg-grey p-3">
           <h2 class="title-xxlarge mb-3" id="needed">Cosa serve</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data-element="service-needed">
             {{ content.field_cosa_serve }}
           </div>
         </section>
@@ -354,7 +354,7 @@
         {% if content.field_cosa_si_ottiene[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="obtain">Cosa si ottiene</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data-element="service-achieved">
             {{ content.field_cosa_si_ottiene }}
           </div>
         </section>
@@ -364,9 +364,11 @@
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
             {% if content.field_promemoria_scadenze[0] %}
-              <p class="richtext-wrapper lora">{{ content.field_promemoria_scadenze }}</p>
+              <div class="richtext-wrapper lora" data-element="service-calendar-text">
+                {{ content.field_promemoria_scadenze }}
+              </div>
             {% endif %}
-            <div class="calendar-vertical mb-3">
+            <div class="calendar-vertical mb-3" data-element="service-calendar-list">
               {% for fase in content.field_fase_semplice["#items"] %}
                 {% if fase.entity.field_titolo is not empty or fase.entity.field_descrizione is not empty %}
                 <div class="calendar-date">
@@ -417,26 +419,33 @@
         {% if content.field_costi[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
-          <div class="richtext-wrapper lora">
+          <div class="richtext-wrapper lora" data-element="service-cost">
             {{ content.field_costi }}
           </div>
         </section>
         {% endif %}
-        <section class="it-page-section  mb-30 has-bg-grey p-4">
+        <section class="it-page-section mb-30 has-bg-grey p-4">
           <h2 class="mb-3" id="submit-request">Accedi al servizio</h2>
           {% if content.field_canale_digitale[0] %}
-          <p class="text-paragraph lora mb-4">Puoi richiedere l’iscrizione alla Scuola dell’infanzia direttamente online tramite identità digitale.</p>
+          <p class="text-paragraph lora mb-4" data-element="service-generic-access">
+            Puoi richiedere l’iscrizione a {{ node.label }} direttamente online tramite identità digitale.
+          </p>
           <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-            type="button" class="btn btn-primary mobile-full"
+            type="button" class="btn btn-primary mobile-full" data-element="service-online-access"
           >
             <span class="">Richiedi iscrizione online</span>
           </a>
-          <p class="text-paragraph lora mt-4">Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
+            Oppure, puoi prenotare un appuntamento e presentarti presso gli uffici.
+          </p>
           {% else %}
-          <p class="text-paragraph lora mt-4">Puoi prenotare un appuntamento e presentarti presso gli uffici.</p>
+          <p class="text-paragraph lora mt-4" data-element="service-generic-access">
+            Puoi prenotare un appuntamento e presentarti presso gli uffici.
+          </p>
           {% endif %}
           <a href='/prenotazione-appuntamento' target="_blank"
             class="btn btn-outline-primary t-primary bg-white mobile-full"
+            data-element="service-booking-access"
           ><span>Prenota appuntamento</span>
           </a>
         </section>

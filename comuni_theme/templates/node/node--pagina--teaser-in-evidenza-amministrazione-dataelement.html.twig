@@ -68,22 +68,23 @@
  * @ingroup themeable
  */
 #}
-{# <article{{attributes}}> #}
-	{# <div{{content_attributes}}> #}
+
   {% set node_title = node.getTitle() %}
-		<div class="col-12 col-md-6 col-lg-4">
-			<div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
-				<div class="card shadow-sm rounded">
-					<div class="card-body">
-						<a href="{{ path('entity.node.canonical', { 'node': node.id }) }}"
-              class="text-decoration-none"
-            >
-							<h3 class="card-title t-primary title-xlarge">{{ node_title }}</h3>
-						</a>
-						<div class="titillium text-paragraph mb-0">{{ content.field_descrizione_breve|raw }}</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	{# </div> #}
-{# </article> #}
+
+
+  <div class="col-12 col-md-6 col-lg-4">
+    <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
+      <div class="card shadow-sm rounded">
+        <div class="card-body">
+          <a href="{{ url }}" class="text-decoration-none" data-element="management-category-link">
+            <h3 class="card-title t-primary title-xlarge">
+              {{ drupal_field('field_titolo', 'paragraph', node.field_componenti.0.target_id) }}
+            </h3>
+          </a>
+          <div class="titillium text-paragraph mb-0">
+            {{ drupal_field('field_descrizione', 'paragraph', node.field_componenti.0.target_id) }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -2,8 +2,7 @@
 [![Join the #design siti scuole channel](https://img.shields.io/badge/Slack%20channel-%23design_siti_comuni-blue.svg)](https://developersitalia.slack.com/messages/design-siti-comuni/)
 
 ## **Un sito per i Comuni italiani**
-### I primi passi con il tema Dupal (v1.4.0)
-
+### I primi passi con il tema Dupal (v1.6.0)
 
 **Design Comuni Italia** è il tema Drupal che permette di aderire al [modello di sito istituzionale dei Comuni](https://designers.italia.it/modello/comuni/), progettato dal Dipartimento per la trasformazione digitale.
 

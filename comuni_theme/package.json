@@ -1,6 +1,6 @@
 {
   "name": "design-comuni-drupal-theme-npm",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Tema Drupal dei Comuni Italiani",
   "main": "index.js",
   "scripts": {

@@ -11,7 +11,7 @@ field_name: field_sede_di
 entity_type: node
 bundle: luogo
 label: 'Sede di'
-description: 'Link alle strutture (amministrative, politiche, altre strutture) presenti nel luogo.'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nLink alle strutture (amministrative, politiche, altre strutture) presenti nel luogo."
 required: false
 translatable: false
 default_value: {  }

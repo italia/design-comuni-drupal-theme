@@ -11,7 +11,7 @@ field_name: field_responsabile_struttura
 entity_type: node
 bundle: incarico
 label: 'Responsabile della struttura'
-description: 'Se è un incarico di responsabilità, specificare l''organizzazione della quale è responsabile in base all''incarico'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nSe è un incarico di responsabilità, specificare l'organizzazione della quale è responsabile in base all'incarico"
 required: false
 translatable: false
 default_value: {  }

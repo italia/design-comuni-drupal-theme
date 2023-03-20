@@ -11,7 +11,7 @@ field_name: field_ufficio_respons_documento
 entity_type: node
 bundle: documento_pubblico
 label: 'Ufficio responsabile del documento'
-description: 'Link alla scheda dell''ufficio responsabile del documento'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nLink alla scheda dell'ufficio responsabile del documento"
 required: true
 translatable: false
 default_value: {  }

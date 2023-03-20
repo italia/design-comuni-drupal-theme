@@ -11,7 +11,7 @@ field_name: field_struttura_responsabile
 entity_type: node
 bundle: luogo
 label: 'Struttura responsabile'
-description: 'Unità organizzativa che ha la responsabilità del luogo'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nUnità organizzativa che ha la responsabilità del luogo"
 required: false
 translatable: false
 default_value: {  }

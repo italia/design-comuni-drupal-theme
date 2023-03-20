@@ -27,6 +27,7 @@ dependencies:
     - node.type.evento
   module:
     - datetime
+    - media_library
     - paragraphs
     - path
     - text
@@ -50,24 +51,17 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_allegati:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 137
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 126
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_costo:
     type: paragraphs
@@ -146,14 +140,11 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 125
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_luogo:
     type: entity_reference_autocomplete
@@ -241,14 +232,10 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_tipo_di_evento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 121
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea

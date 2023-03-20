@@ -31,6 +31,7 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - datetime
+    - media_library
     - paragraphs
     - path
     - text
@@ -46,14 +47,10 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 13
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_autori:
     type: text_textarea
@@ -64,14 +61,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_business_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 26
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_data_fine:
     type: datetime_default
@@ -156,34 +149,23 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 10
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_licenza_di_distribuzione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 18
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_life_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 25
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_paragraph_documento:
     type: paragraphs
@@ -230,34 +212,22 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_sezione_amministrazione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 31
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_tipo_di_documento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 11
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_tipo_doc_albo_pretorio:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 12
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_ufficio_respons_documento:
     type: entity_reference_autocomplete

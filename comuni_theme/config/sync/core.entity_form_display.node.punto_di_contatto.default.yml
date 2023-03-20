@@ -31,14 +31,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_tipo_punto_di_contatto:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 1
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_valore_punto_di_contatto:
     type: string_textfield

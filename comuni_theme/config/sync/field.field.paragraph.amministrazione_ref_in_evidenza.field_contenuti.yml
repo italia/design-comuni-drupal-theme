@@ -14,7 +14,7 @@ field_name: field_contenuti
 entity_type: paragraph
 bundle: amministrazione_ref_in_evidenza
 label: Contenuti
-description: ''
+description: "Aggiungi nuovo contenuto: \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/documento_pubblico\">Documento pubblico</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/dataset\">Dataset</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Persona</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Unità organizzativa</a>"
 required: false
 translatable: true
 default_value: {  }

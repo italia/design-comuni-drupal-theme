@@ -84,6 +84,12 @@ Scarica la libreria necessaria al modulo chosen:
 drush chosenplugin
 ~~~
 
+Abilita modulo media_library:
+
+~~~
+drush pm:enable media_library
+~~~
+
 Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):
 
 ~~~

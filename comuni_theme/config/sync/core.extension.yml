@@ -44,6 +44,7 @@ module:
   link: 0
   locale: 0
   media: 0
+  media_library: 0
   menu_export: 0
   menu_link_content: 0
   menu_trail_by_path: 0

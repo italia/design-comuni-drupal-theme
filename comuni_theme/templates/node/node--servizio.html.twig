@@ -266,7 +266,7 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_tempi_e_scadenze[0] is not empty %}
+                          {% if content.field_tempi_e_scadenze[0] is not empty or content.field_fase_semplice[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#deadlines">
                               <span class="title-medium">Tempi e scadenze</span>
@@ -359,7 +359,8 @@
           </div>
         </section>
         {% endif %}
-        {% if content.field_tempi_e_scadenze[0] is not empty or field_fase_semplice[0] is not empty %}
+        {#{ dump(fase) }#}
+        {% if content.field_tempi_e_scadenze[0] is not empty or content.field_fase_semplice[0] is not empty %}
         <section class="it-page-section  mb-30">
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>

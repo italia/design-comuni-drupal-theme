@@ -123,7 +123,9 @@ Importa il logo svg del comune spostando il file svg nella cartella */web/sites/
 
 Se necessario ripulire la cache di drupal un'ultima volta.
 
-
+#### Per categorizzare "Esplora" nelle pagine di secondo livello
+In modifica della pagina Servizi, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Categorie dei servizi".
+In modifica della pagina Novità, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Tipi di notizia".
 
 #### **Supporto tecnico ed editoriale**
 Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/messages/design-siti-comuni) puoi confrontarti sulle risorse e trovare le risposte a tutte le domande riguardo problemi tecnici o l’architettura dei contenuti.

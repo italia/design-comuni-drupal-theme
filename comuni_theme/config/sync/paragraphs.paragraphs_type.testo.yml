@@ -1,0 +1,10 @@
+uuid: dd2e54b0-d68c-49d7-8230-5a5112f55c1e
+langcode: it
+status: true
+dependencies: {  }
+id: testo
+label: 'Testo libero'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

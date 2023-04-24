@@ -1,0 +1,10 @@
+uuid: f537e76e-ffa1-4c23-b566-9968393769bc
+langcode: it
+status: true
+dependencies: {  }
+id: container_vuoto
+label: 'Container vuoto'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

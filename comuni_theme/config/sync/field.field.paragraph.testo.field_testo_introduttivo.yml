@@ -1,0 +1,21 @@
+uuid: 19a4bc2b-994f-4a93-8ed2-e4cc2b95b429
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testo_introduttivo
+    - paragraphs.paragraphs_type.testo
+  module:
+    - text
+id: paragraph.testo.field_testo_introduttivo
+field_name: field_testo_introduttivo
+entity_type: paragraph
+bundle: testo
+label: 'Testo libero'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

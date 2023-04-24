@@ -1,0 +1,25 @@
+uuid: d9907f75-b08c-4637-9138-652d2ed5ae3a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.container_vuoto.field_componenti
+    - paragraphs.paragraphs_type.container_vuoto
+  module:
+    - entity_reference_revisions
+id: paragraph.container_vuoto.default
+targetEntityType: paragraph
+bundle: container_vuoto
+mode: default
+content:
+  field_componenti:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

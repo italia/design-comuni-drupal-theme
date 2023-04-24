@@ -1,0 +1,178 @@
+uuid: 5c222cd0-b654-42d8-95a1-ad8ea5d1006b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_componenti
+    - paragraphs.paragraphs_type.container_vuoto
+    - paragraphs.paragraphs_type.testo
+  module:
+    - entity_reference_revisions
+id: paragraph.container_vuoto.field_componenti
+field_name: field_componenti
+entity_type: paragraph
+bundle: container_vuoto
+label: Componenti
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      testo: testo
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 52
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 53
+        enabled: false
+      argomenti:
+        weight: 54
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 55
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 56
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 57
+        enabled: false
+      biglietto_evento:
+        weight: 58
+        enabled: false
+      calendario:
+        weight: 59
+        enabled: false
+      card_assistenza:
+        weight: 60
+        enabled: false
+      card_foto_gallery:
+        weight: 61
+        enabled: false
+      collection_multimediale:
+        weight: 62
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 63
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 64
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 65
+        enabled: false
+      container_assistenza:
+        weight: 66
+        enabled: false
+      container_calendario:
+        weight: 67
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 68
+        enabled: false
+      container_foto_gallery:
+        weight: 69
+        enabled: false
+      container_vuoto:
+        weight: 51
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 70
+        enabled: false
+      dataset:
+        weight: 71
+        enabled: false
+      documento:
+        weight: 72
+        enabled: false
+      elemento_video:
+        weight: 73
+        enabled: false
+      esplora:
+        weight: 74
+        enabled: false
+      faq:
+        weight: 75
+        enabled: false
+      fase_intitolata:
+        weight: 76
+        enabled: false
+      fase_semplice:
+        weight: 77
+        enabled: false
+      hero_immagine:
+        weight: 78
+        enabled: false
+      homepage_top_card:
+        weight: 79
+        enabled: false
+      homepage_top_cards:
+        weight: 80
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 81
+        enabled: false
+      link:
+        weight: 82
+        enabled: false
+      link_con_icona:
+        weight: 83
+        enabled: false
+      link_esterno:
+        weight: 84
+        enabled: false
+      links_con_icona:
+        weight: 85
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 86
+        enabled: false
+      punto_di_contatto:
+        weight: 87
+        enabled: false
+      ricerca:
+        weight: 88
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 89
+        enabled: false
+      ricerca_novita:
+        weight: 90
+        enabled: false
+      ricerca_servizi:
+        weight: 91
+        enabled: false
+      richiesta_assistenza:
+        weight: 92
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 93
+        enabled: false
+      siti_tematici:
+        weight: 94
+        enabled: false
+      testo:
+        weight: 95
+        enabled: true
+      testo_e_lista:
+        weight: 96
+        enabled: false
+      titolo_descrizione_link:
+        weight: 97
+        enabled: false
+      titolo_e_descrizione:
+        weight: 98
+        enabled: false
+      ultima_notizia:
+        weight: 99
+        enabled: false
+      valutazione:
+        weight: 100
+        enabled: false
+field_type: entity_reference_revisions

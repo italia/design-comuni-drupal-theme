@@ -1,0 +1,23 @@
+uuid: 4114ce5a-5871-408e-ac06-785d5f2d940d
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.testo.field_testo_introduttivo
+    - paragraphs.paragraphs_type.testo
+  module:
+    - text
+id: paragraph.testo.default
+targetEntityType: paragraph
+bundle: testo
+mode: default
+content:
+  field_testo_introduttivo:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,21 @@
+uuid: f48e2dc4-5206-4209-b284-b4db4b785d62
+langcode: it
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_condizioni_di_servizio_par
+field_name: field_condizioni_di_servizio_par
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

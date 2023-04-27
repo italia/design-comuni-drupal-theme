@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: punto_di_contatto
 label: 'Tipo punto di contatto'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

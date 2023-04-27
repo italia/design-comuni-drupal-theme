@@ -6,6 +6,8 @@ dependencies:
     - field.field.paragraph.hero_immagine.field_descrizione
     - field.field.paragraph.hero_immagine.field_immagine
     - paragraphs.paragraphs_type.hero_immagine
+  module:
+    - media_library
 id: paragraph.hero_immagine.default
 targetEntityType: paragraph
 bundle: hero_immagine
@@ -20,14 +22,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
 hidden:
   created: true

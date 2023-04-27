@@ -1,0 +1,8 @@
+uuid: f2c56eda-e3a8-48df-b7b1-374d120b01cb
+langcode: it
+status: true
+dependencies: {  }
+name: 'Full HTML senza editor'
+format: full_html_senza_editor
+weight: -6
+filters: {  }

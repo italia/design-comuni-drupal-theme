@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.servizio.field_codice_dell_ente_erogatore
     - field.field.node.servizio.field_come_fare
     - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_condizioni_di_servizio_par
     - field.field.node.servizio.field_contatti
     - field.field.node.servizio.field_copertura_geografica
     - field.field.node.servizio.field_cosa_serve
@@ -69,6 +70,7 @@ hidden:
   field_codice_dell_ente_erogatore: true
   field_come_fare: true
   field_condizioni_di_servizio: true
+  field_condizioni_di_servizio_par: true
   field_contatti: true
   field_copertura_geografica: true
   field_cosa_serve: true

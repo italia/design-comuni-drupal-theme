@@ -1,0 +1,20 @@
+uuid: 5253c457-878f-40a7-90c7-97bbdcb6a0c4
+langcode: it
+status: true
+dependencies:
+  module:
+    - media
+    - paragraphs
+id: paragraph.field_documento_condizioni_di_se
+field_name: field_documento_condizioni_di_se
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

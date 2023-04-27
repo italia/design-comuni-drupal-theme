@@ -1,0 +1,19 @@
+uuid: 0b02dfaf-a26a-4afd-b7da-c2ea3ef96980
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_valore_punto_di_cont
+    - paragraphs.paragraphs_type.punto_di_contatto
+id: paragraph.punto_di_contatto.field_valore_punto_di_cont
+field_name: field_valore_punto_di_cont
+entity_type: paragraph
+bundle: punto_di_contatto
+label: 'Valore punto di contatto'
+description: 'Se presenti (ad esempio) più numeri di telefono, aggiungere più valori di questo campo.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

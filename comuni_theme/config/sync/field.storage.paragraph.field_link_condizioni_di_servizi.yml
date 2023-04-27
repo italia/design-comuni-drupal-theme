@@ -1,16 +1,16 @@
-uuid: e0f4f67b-dac8-4721-b136-d6fc67624338
+uuid: ac52af03-18db-4129-a4ed-6deb71b05b5f
 langcode: it
 status: true
 dependencies:
   module:
+    - link
     - paragraphs
-    - text
-id: paragraph.field_valore_punto_di_contatto
-field_name: field_valore_punto_di_contatto
+id: paragraph.field_link_condizioni_di_servizi
+field_name: field_link_condizioni_di_servizi
 entity_type: paragraph
-type: text_long
+type: link
 settings: {  }
-module: text
+module: link
 locked: false
 cardinality: 1
 translatable: true

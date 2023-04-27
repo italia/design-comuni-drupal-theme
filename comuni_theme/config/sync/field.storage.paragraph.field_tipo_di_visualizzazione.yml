@@ -16,7 +16,7 @@ settings:
       label: Amministrazione
     -
       value: card_estese_amministrazione_dataelement
-      label: Amministrazione (con Data Element)
+      label: 'Amministrazione (con Data Element)'
     -
       value: card_estese_documenti
       label: Documenti

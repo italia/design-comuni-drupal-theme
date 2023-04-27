@@ -11,7 +11,7 @@ _core:
 id: comuni_theme_content
 theme: comuni_theme
 region: content
-weight: 0
+weight: -9
 provider: null
 plugin: system_main_block
 settings:

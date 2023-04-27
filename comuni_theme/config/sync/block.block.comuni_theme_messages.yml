@@ -11,7 +11,7 @@ _core:
 id: comuni_theme_messages
 theme: comuni_theme
 region: includes
-weight: -5
+weight: -10
 provider: null
 plugin: system_messages_block
 settings:

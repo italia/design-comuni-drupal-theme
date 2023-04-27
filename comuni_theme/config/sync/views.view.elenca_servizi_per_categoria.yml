@@ -341,8 +341,8 @@ display:
             title:
               alias: ''
               raw_output: true
-            field_categoria_del_servizio:		
-              alias: ''		
+            field_categoria_del_servizio:
+              alias: ''
               raw_output: false
       display_extenders: {  }
       path: api/v1/servizi

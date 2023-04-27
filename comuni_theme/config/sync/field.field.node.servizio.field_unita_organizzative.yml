@@ -12,7 +12,7 @@ entity_type: node
 bundle: servizio
 label: 'Canale fisico'
 description: '<a target="_blank" href="//[site:url-brief]/node/add/unita_organizzativa">Aggiungi nuovo contenuto</a>'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

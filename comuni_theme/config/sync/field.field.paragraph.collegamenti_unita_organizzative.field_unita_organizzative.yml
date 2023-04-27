@@ -11,7 +11,7 @@ field_name: field_unita_organizzative
 entity_type: paragraph
 bundle: collegamenti_unita_organizzative
 label: 'Unità organizzative'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/unita_organizzativa">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

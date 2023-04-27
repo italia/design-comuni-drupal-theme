@@ -33,6 +33,7 @@ module:
   file: 0
   filter: 0
   fontawesome: 0
+  force_password_change: 0
   help: 0
   history: 0
   image: 0

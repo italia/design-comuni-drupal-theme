@@ -9,7 +9,7 @@ _core:
 id: comuni_theme_page_title
 theme: comuni_theme
 region: includes
-weight: -5
+weight: -8
 provider: null
 plugin: page_title_block
 settings:

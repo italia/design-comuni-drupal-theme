@@ -11,7 +11,7 @@ _core:
 id: comuni_theme_breadcrumbs
 theme: comuni_theme
 region: includes
-weight: 0
+weight: -2
 provider: null
 plugin: system_breadcrumb_block
 settings:

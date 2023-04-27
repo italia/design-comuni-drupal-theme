@@ -9,7 +9,7 @@ _core:
 id: comuni_theme_primary_admin_actions
 theme: comuni_theme
 region: includes
-weight: -5
+weight: -11
 provider: null
 plugin: local_actions_block
 settings:

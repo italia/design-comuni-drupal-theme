@@ -11,7 +11,7 @@ _core:
 id: comuni_theme_search_form_wide
 theme: comuni_theme
 region: includes
-weight: -5
+weight: -9
 provider: null
 plugin: search_form_block
 settings:

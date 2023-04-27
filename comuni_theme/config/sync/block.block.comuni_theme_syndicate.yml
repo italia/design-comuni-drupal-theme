@@ -11,7 +11,7 @@ _core:
 id: comuni_theme_syndicate
 theme: comuni_theme
 region: includes
-weight: 0
+weight: -1
 provider: null
 plugin: node_syndicate_block
 settings:

@@ -11,7 +11,7 @@ entity_type: node
 bundle: documento_pubblico
 label: Protocollo
 description: 'Numero di protocollo del documento'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

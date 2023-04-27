@@ -11,7 +11,7 @@ field_name: field_elenco_servizi_offerti
 entity_type: node
 bundle: unita_organizzativa
 label: 'Elenco servizi offerti'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/servizio">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

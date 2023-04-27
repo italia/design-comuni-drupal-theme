@@ -11,7 +11,7 @@ field_name: field_altre_sedi
 entity_type: node
 bundle: unita_organizzativa
 label: 'Altre sedi'
-description: 'Relazioni con eventuali altri luoghi che sono definibili come sedi'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/luogo\">Aggiungi nuovo contenuto</a><br>\r\nRelazioni con eventuali altri luoghi che sono definibili come sedi"
 required: false
 translatable: false
 default_value: {  }

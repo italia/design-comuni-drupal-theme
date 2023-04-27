@@ -11,7 +11,7 @@ field_name: field_punti_di_contatto
 entity_type: node
 bundle: persona
 label: 'Punti di contatto'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/punto_di_contatto">Aggiungi nuovo contenuto</a>'
 required: true
 translatable: false
 default_value: {  }

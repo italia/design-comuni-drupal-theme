@@ -11,7 +11,7 @@ field_name: field_luogo
 entity_type: node
 bundle: evento
 label: Luogo
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/luogo">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

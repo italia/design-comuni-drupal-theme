@@ -11,7 +11,7 @@ field_name: field_unita_organizzativa
 entity_type: node
 bundle: incarico
 label: 'Unità organizzativa'
-description: 'L''organizzazione presso la quale svolge l''incarico'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nL'organizzazione presso la quale svolge l'incarico"
 required: false
 translatable: false
 default_value: {  }

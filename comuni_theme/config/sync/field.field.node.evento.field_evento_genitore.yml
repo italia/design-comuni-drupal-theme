@@ -10,7 +10,7 @@ field_name: field_evento_genitore
 entity_type: node
 bundle: evento
 label: 'Evento genitore'
-description: 'Un evento può essere parte di un altro evento definito come "genitore" (ad es. "Mostra sul Rinascimento" è parte dell''evento "Festival dell''Arte")'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/evento\">Aggiungi nuovo contenuto</a><br>\r\nUn evento può essere parte di un altro evento definito come \"genitore\" (ad es. \"Mostra sul Rinascimento\" è parte dell'evento \"Festival dell'Arte\")"
 required: false
 translatable: false
 default_value: {  }

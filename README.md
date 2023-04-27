@@ -38,7 +38,7 @@ $settings['file_private_path'] = 'path/to/your/folder';
 Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:
 
 ~~~
-composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3
+composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3 drupal/chosen:^3.0
 ~~~
 
 Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
@@ -76,6 +76,12 @@ Prepara la configurazione per la lingua italiana:
 
 ~~~
 drush cdel language.entity.it
+~~~
+
+Scarica la libreria necessaria al modulo chosen:
+
+~~~
+drush chosenplugin
 ~~~
 
 Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):

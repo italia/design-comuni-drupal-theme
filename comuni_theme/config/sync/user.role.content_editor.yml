@@ -2,12 +2,31 @@ uuid: 1644d909-7981-4718-a457-bb1ce9a755dd
 langcode: it
 status: true
 dependencies:
+  config:
+    - media.type.document
+    - media.type.image
+    - media.type.image_svg
+    - node.type.dataset
+    - node.type.documento_pubblico
+    - node.type.evento
+    - node.type.fase_del_servizio
+    - node.type.incarico
+    - node.type.luogo
+    - node.type.notizia
+    - node.type.pagina
+    - node.type.persona
+    - node.type.pratica
+    - node.type.punto_di_contatto
+    - node.type.servizio
+    - node.type.unita_organizzativa
   module:
     - comment
     - contextual
     - file
+    - media
     - node
     - path
+    - quick_node_clone
     - system
     - toolbar
     - tour
@@ -25,7 +44,75 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
+  - 'clone appuntamento content'
+  - 'clone article content'
+  - 'clone dataset content'
+  - 'clone documento_privato content'
+  - 'clone documento_pubblico content'
+  - 'clone evento content'
+  - 'clone faq content'
+  - 'clone fase_del_servizio content'
+  - 'clone incarico content'
+  - 'clone luogo content'
+  - 'clone messaggio content'
+  - 'clone notizia content'
+  - 'clone pagamento content'
+  - 'clone page content'
+  - 'clone pagina content'
+  - 'clone persona content'
+  - 'clone pratica content'
+  - 'clone punto_di_contatto content'
+  - 'clone servizio content'
+  - 'clone sito_tematico content'
+  - 'clone ticket content'
+  - 'clone unita_organizzativa content'
+  - 'clone valutazione content'
+  - 'create dataset content'
+  - 'create document media'
+  - 'create documento_pubblico content'
+  - 'create evento content'
+  - 'create fase_del_servizio content'
+  - 'create image media'
+  - 'create incarico content'
+  - 'create luogo content'
+  - 'create notizia content'
+  - 'create pagina content'
+  - 'create persona content'
+  - 'create pratica content'
+  - 'create punto_di_contatto content'
+  - 'create servizio content'
+  - 'create unita_organizzativa content'
   - 'create url aliases'
+  - 'delete any document media'
+  - 'delete any image media'
+  - 'delete any image_svg media'
+  - 'delete own dataset content'
+  - 'delete own documento_pubblico content'
+  - 'delete own evento content'
+  - 'delete own fase_del_servizio content'
+  - 'delete own incarico content'
+  - 'delete own luogo content'
+  - 'delete own notizia content'
+  - 'delete own pagina content'
+  - 'delete own persona content'
+  - 'delete own punto_di_contatto content'
+  - 'delete own servizio content'
+  - 'delete own unita_organizzativa content'
+  - 'edit any dataset content'
+  - 'edit any document media'
+  - 'edit any documento_pubblico content'
+  - 'edit any evento content'
+  - 'edit any fase_del_servizio content'
+  - 'edit any image media'
+  - 'edit any image_svg media'
+  - 'edit any incarico content'
+  - 'edit any luogo content'
+  - 'edit any notizia content'
+  - 'edit any pagina content'
+  - 'edit any persona content'
+  - 'edit any punto_di_contatto content'
+  - 'edit any servizio content'
+  - 'edit any unita_organizzativa content'
   - 'edit own comments'
   - 'revert all revisions'
   - 'view all revisions'

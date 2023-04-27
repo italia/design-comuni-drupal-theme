@@ -11,7 +11,7 @@ field_name: field_contenuto
 entity_type: paragraph
 bundle: ultima_notizia
 label: Notizia
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/notizia">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: true
 default_value: {  }

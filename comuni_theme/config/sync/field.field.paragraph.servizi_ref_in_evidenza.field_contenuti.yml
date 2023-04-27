@@ -11,7 +11,7 @@ field_name: field_contenuti
 entity_type: paragraph
 bundle: servizi_ref_in_evidenza
 label: Contenuti
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/servizio">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: true
 default_value: {  }

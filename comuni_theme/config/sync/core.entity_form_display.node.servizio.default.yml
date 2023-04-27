@@ -38,6 +38,7 @@ dependencies:
     - node.type.servizio
   module:
     - link
+    - media_library
     - paragraphs
     - path
     - text
@@ -61,24 +62,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_argomenti:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 35
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_business_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 37
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_canale_digitale:
     type: link_default
@@ -97,14 +90,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_categoria_del_servizio:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 8
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_codice_dell_ente_erogatore:
     type: string_textfield
@@ -123,14 +112,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_condizioni_di_servizio:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 31
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_contatti:
     type: entity_reference_autocomplete
@@ -219,24 +205,17 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 12
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_life_events:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 36
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_motivo_dello_stato:
     type: string_textarea

@@ -37,11 +37,20 @@ settings:
       amministrazione_view_in_evidenza:
         weight: 34
         enabled: true
+      argomenti:
+        weight: 51
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 52
+        enabled: false
       argomenti_in_evidenza_card:
         weight: 35
         enabled: false
       argomenti_in_evidenza_ct:
         weight: 36
+        enabled: false
+      biglietto_evento:
+        weight: 55
         enabled: false
       calendario:
         weight: 37
@@ -49,6 +58,9 @@ settings:
       card_assistenza:
         weight: 38
         enabled: true
+      card_foto_gallery:
+        weight: 58
+        enabled: false
       collection_multimediale:
         weight: 18
         enabled: false
@@ -70,11 +82,17 @@ settings:
       container_contenuti_in_evidenza:
         weight: 45
         enabled: false
+      container_foto_gallery:
+        weight: 66
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 67
+        enabled: false
+      dataset:
+        weight: 68
+        enabled: false
       documento:
         weight: 20
-        enabled: false
-      elemento_immagine:
-        weight: 21
         enabled: false
       elemento_video:
         weight: 22
@@ -82,11 +100,17 @@ settings:
       esplora:
         weight: 49
         enabled: false
+      faq:
+        weight: 72
+        enabled: false
       fase_intitolata:
         weight: 23
         enabled: false
-      homepage_card_argomento:
-        weight: 24
+      fase_semplice:
+        weight: 74
+        enabled: false
+      hero_immagine:
+        weight: 75
         enabled: false
       homepage_top_card:
         weight: 25
@@ -94,8 +118,8 @@ settings:
       homepage_top_cards:
         weight: 53
         enabled: false
-      icona_content_type:
-        weight: 26
+      intestazione_ricerca_e_preferiti:
+        weight: 78
         enabled: false
       link:
         weight: 27
@@ -103,11 +127,35 @@ settings:
       link_con_icona:
         weight: 28
         enabled: false
+      link_esterno:
+        weight: 82
+        enabled: false
       links_con_icona:
         weight: 56
         enabled: false
+      prenotazione_appuntamento:
+        weight: 83
+        enabled: false
+      punto_di_contatto:
+        weight: 84
+        enabled: false
       ricerca:
         weight: 58
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 86
+        enabled: false
+      ricerca_novita:
+        weight: 87
+        enabled: false
+      ricerca_servizi:
+        weight: 88
+        enabled: false
+      richiesta_assistenza:
+        weight: 89
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 90
         enabled: false
       siti_tematici:
         weight: 59

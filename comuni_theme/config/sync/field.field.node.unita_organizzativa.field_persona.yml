@@ -11,7 +11,7 @@ field_name: field_persona
 entity_type: node
 bundle: unita_organizzativa
 label: 'Assessore di riferimento'
-description: 'L''assessore di riferimento della struttura, se esiste'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nL'assessore di riferimento della struttura, se esiste"
 required: false
 translatable: true
 default_value: {  }

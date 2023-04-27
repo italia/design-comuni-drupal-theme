@@ -11,7 +11,7 @@ field_name: field_persone
 entity_type: node
 bundle: unita_organizzativa
 label: 'Persone che compongono la struttura'
-description: 'Link alla scheda della persona responsabile della struttura'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nLink alla scheda della persona responsabile della struttura"
 required: true
 translatable: true
 default_value: {  }

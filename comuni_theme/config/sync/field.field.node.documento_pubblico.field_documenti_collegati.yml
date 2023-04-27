@@ -10,7 +10,7 @@ field_name: field_documenti_collegati
 entity_type: node
 bundle: documento_pubblico
 label: 'Documenti collegati'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/documento_pubblico">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

@@ -11,7 +11,7 @@ field_name: field_sede_principale
 entity_type: node
 bundle: unita_organizzativa
 label: 'Sede principale'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/luogo">Aggiungi nuovo contenuto</a>'
 required: true
 translatable: false
 default_value: {  }

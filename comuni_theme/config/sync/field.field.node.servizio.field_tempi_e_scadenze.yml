@@ -11,7 +11,7 @@ field_name: field_tempi_e_scadenze
 entity_type: node
 bundle: servizio
 label: 'Tempi e scadenze (fasi esistenti)'
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/fase_del_servizio">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

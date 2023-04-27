@@ -11,7 +11,7 @@ field_name: field_persone
 entity_type: node
 bundle: notizia
 label: Persone
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/persona">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false
 default_value: {  }

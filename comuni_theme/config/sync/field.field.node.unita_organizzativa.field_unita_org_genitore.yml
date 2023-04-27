@@ -10,7 +10,7 @@ field_name: field_unita_org_genitore
 entity_type: node
 bundle: unita_organizzativa
 label: 'Unità organizzativa genitore'
-description: 'Se la struttura fa parte di un''Area o altre macro unità, va inserita la struttura principale. '
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nSe la struttura fa parte di un'Area o altre macro unità, va inserita la struttura principale. "
 required: false
 translatable: false
 default_value: {  }

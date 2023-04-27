@@ -11,7 +11,7 @@ field_name: field_atto_di_nomina
 entity_type: node
 bundle: incarico
 label: 'Atto di nomina'
-description: 'Inserire riferimento all''atto di nomina della persona'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/documento_pubblico\">Aggiungi nuovo contenuto</a><br>\r\nInserire riferimento all'atto di nomina della persona"
 required: false
 translatable: false
 default_value: {  }

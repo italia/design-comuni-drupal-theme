@@ -11,7 +11,7 @@ field_name: field_contatti
 entity_type: node
 bundle: servizio
 label: Contatti
-description: ''
+description: '<a target="_blank" href="//[site:url-brief]/node/add/punto_di_contatto">Aggiungi nuovo contenuto</a>'
 required: true
 translatable: true
 default_value: {  }

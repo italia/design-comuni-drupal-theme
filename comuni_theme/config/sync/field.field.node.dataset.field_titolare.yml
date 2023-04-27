@@ -11,7 +11,7 @@ field_name: field_titolare
 entity_type: node
 bundle: dataset
 label: Titolare
-description: 'Organizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. '
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nOrganizzazione (o pubblica amministrazione) responsabile della gestione complessiva del dataset in virtù dei propri compiti istituzionali. "
 required: true
 translatable: false
 default_value: {  }

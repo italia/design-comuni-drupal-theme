@@ -11,7 +11,7 @@ field_name: field_unita_org_responsabile
 entity_type: node
 bundle: servizio
 label: 'Unità Organizzativa responsabile'
-description: 'Link dell''ufficio resposanbile dell''erogazione di questo Servizio.'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/unita_organizzativa\">Aggiungi nuovo contenuto</a><br>\r\nLink dell'ufficio resposanbile dell'erogazione di questo Servizio."
 required: true
 translatable: false
 default_value: {  }

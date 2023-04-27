@@ -11,7 +11,7 @@ field_name: field_documenti
 entity_type: node
 bundle: servizio
 label: Documenti
-description: 'Link alle schede documenti non funzionali al completamento del servizi, ma di semplice supporto'
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/documento_pubblico\">Aggiungi nuovo contenuto</a><br>\r\nLink alle schede documenti non funzionali al completamento del servizi, ma di semplice supporto"
 required: false
 translatable: true
 default_value: {  }

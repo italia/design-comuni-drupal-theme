@@ -359,7 +359,7 @@
           </div>
         </section>
         {% endif %}
-        {#{ dump(fase) }#}
+        
         {% if content.field_tempi_e_scadenze[0] is not empty or content.field_fase_semplice[0] is not empty %}
         <section class="it-page-section  mb-30">
           <div class="cmp-timeline">
@@ -503,7 +503,7 @@
                   {% set argName = argomento.entity.name.value %}
                   <li>
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}" 
-                      class="chip chip-simple"
+                      class="chip chip-simple" data-element="service-topic"
                     >
                       <span class="chip-label">
                         {{ argName }}

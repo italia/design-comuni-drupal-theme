@@ -1,0 +1,43 @@
+{%
+  set classes = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    not paragraph.isPublished() ? 'paragraph--unpublished'
+  ]
+%}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes)}}>
+		{% block content %}
+      {{ content.field_tipo_punto_di_contatto }}
+
+      {% set tipo_punto_di_contatto %}{{ content.field_tipo_punto_di_contatto }}{% endset %}
+      {% set tipo_punto_di_contatto %}{{ content.field_tipo_punto_di_contatto }}{% endset %}
+
+      {% for item in content.field_valore_punto_di_cont['#items'] %}
+
+        {% if (tipo_punto_di_contatto|striptags|trim) == 'Email' %}
+          <p class="mb-0"><a class="text-break" href="mailto:{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'PEC' %}
+          <p class="mb-0"><a class="text-break" href="mailto:{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telefono' %}
+          <p class="mb-0"><a class="text-break" href="tel:{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Linkedin' %}
+          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Telegram' %}
+          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Twitter' %}
+          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'URL' %}
+          <p class="mb-0"><a class="text-break" href="{{ item.value }}">{{ item.value }}</a></p>
+        {% elseif (tipo_punto_di_contatto|striptags|trim) == 'Whatsapp' %}
+          <p class="mb-0"><a class="text-break" href="https://wa.me/{{ item.value }}">{{ item.value }}</a></p>
+        {% else %}
+          <p class="mb-0"><span class="text-break">{{ item.value }}</span></p>
+        {% endif %}
+       
+      {% endfor %}
+		{% endblock %}
+	</div>
+{% endblock paragraph %}

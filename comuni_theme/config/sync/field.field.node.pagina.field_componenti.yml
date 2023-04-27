@@ -5,10 +5,52 @@ dependencies:
   config:
     - field.storage.node.field_componenti
     - node.type.pagina
-    - paragraphs.paragraphs_type.amministrazione_ref_in_evidenza
-    - paragraphs.paragraphs_type.amministrazione_view_in_evidenza
-    - paragraphs.paragraphs_type.card_assistenza
-    - paragraphs.paragraphs_type.titolo_descrizione_link
+    - paragraphs.paragraphs_type.argomenti
+    - paragraphs.paragraphs_type.argomenti_in_evidenza
+    - paragraphs.paragraphs_type.argomenti_in_evidenza_card
+    - paragraphs.paragraphs_type.argomenti_in_evidenza_ct
+    - paragraphs.paragraphs_type.biglietto_evento
+    - paragraphs.paragraphs_type.calendario
+    - paragraphs.paragraphs_type.card_foto_gallery
+    - paragraphs.paragraphs_type.collection_multimediale
+    - paragraphs.paragraphs_type.collegamenti_unita_organizzative
+    - paragraphs.paragraphs_type.comuni_altri_argomenti
+    - paragraphs.paragraphs_type.container_argomenti_in_evidenza
+    - paragraphs.paragraphs_type.container_assistenza
+    - paragraphs.paragraphs_type.container_calendario
+    - paragraphs.paragraphs_type.container_contenuti_in_evidenza
+    - paragraphs.paragraphs_type.container_foto_gallery
+    - paragraphs.paragraphs_type.container_vuoto
+    - paragraphs.paragraphs_type.contenuto_allegati_per_tipo
+    - paragraphs.paragraphs_type.dataset
+    - paragraphs.paragraphs_type.documento
+    - paragraphs.paragraphs_type.elemento_video
+    - paragraphs.paragraphs_type.esplora
+    - paragraphs.paragraphs_type.faq
+    - paragraphs.paragraphs_type.fase_intitolata
+    - paragraphs.paragraphs_type.fase_semplice
+    - paragraphs.paragraphs_type.hero_immagine
+    - paragraphs.paragraphs_type.homepage_top_card
+    - paragraphs.paragraphs_type.homepage_top_cards
+    - paragraphs.paragraphs_type.intestazione_ricerca_e_preferiti
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.link_con_icona
+    - paragraphs.paragraphs_type.link_esterno
+    - paragraphs.paragraphs_type.links_con_icona
+    - paragraphs.paragraphs_type.prenotazione_appuntamento
+    - paragraphs.paragraphs_type.punto_di_contatto
+    - paragraphs.paragraphs_type.ricerca
+    - paragraphs.paragraphs_type.ricerca_documenti_e_dati
+    - paragraphs.paragraphs_type.ricerca_novita
+    - paragraphs.paragraphs_type.ricerca_servizi
+    - paragraphs.paragraphs_type.richiesta_assistenza
+    - paragraphs.paragraphs_type.servizi_ref_in_evidenza
+    - paragraphs.paragraphs_type.siti_tematici
+    - paragraphs.paragraphs_type.testo
+    - paragraphs.paragraphs_type.testo_e_lista
+    - paragraphs.paragraphs_type.titolo_e_descrizione
+    - paragraphs.paragraphs_type.ultima_notizia
+    - paragraphs.paragraphs_type.valutazione
   module:
     - entity_reference_revisions
 id: node.pagina.field_componenti
@@ -25,154 +67,208 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      amministrazione_ref_in_evidenza: amministrazione_ref_in_evidenza
-      amministrazione_view_in_evidenza: amministrazione_view_in_evidenza
-      card_assistenza: card_assistenza
-      titolo_descrizione_link: titolo_descrizione_link
-    negate: 1
+      collection_multimediale: collection_multimediale
+      collegamenti_unita_organizzative: collegamenti_unita_organizzative
+      documento: documento
+      container_calendario: container_calendario
+      elemento_video: elemento_video
+      fase_intitolata: fase_intitolata
+      homepage_top_card: homepage_top_card
+      link: link
+      link_con_icona: link_con_icona
+      testo_e_lista: testo_e_lista
+      ultima_notizia: ultima_notizia
+      argomenti_in_evidenza_card: argomenti_in_evidenza_card
+      argomenti_in_evidenza_ct: argomenti_in_evidenza_ct
+      calendario: calendario
+      comuni_altri_argomenti: comuni_altri_argomenti
+      container_argomenti_in_evidenza: container_argomenti_in_evidenza
+      container_assistenza: container_assistenza
+      container_contenuti_in_evidenza: container_contenuti_in_evidenza
+      esplora: esplora
+      argomenti: argomenti
+      argomenti_in_evidenza: argomenti_in_evidenza
+      homepage_top_cards: homepage_top_cards
+      biglietto_evento: biglietto_evento
+      links_con_icona: links_con_icona
+      card_foto_gallery: card_foto_gallery
+      ricerca: ricerca
+      siti_tematici: siti_tematici
+      titolo_e_descrizione: titolo_e_descrizione
+      valutazione: valutazione
+      container_foto_gallery: container_foto_gallery
+      contenuto_allegati_per_tipo: contenuto_allegati_per_tipo
+      dataset: dataset
+      faq: faq
+      container_vuoto: container_vuoto
+      fase_semplice: fase_semplice
+      hero_immagine: hero_immagine
+      intestazione_ricerca_e_preferiti: intestazione_ricerca_e_preferiti
+      link_esterno: link_esterno
+      prenotazione_appuntamento: prenotazione_appuntamento
+      punto_di_contatto: punto_di_contatto
+      ricerca_documenti_e_dati: ricerca_documenti_e_dati
+      ricerca_novita: ricerca_novita
+      ricerca_servizi: ricerca_servizi
+      richiesta_assistenza: richiesta_assistenza
+      servizi_ref_in_evidenza: servizi_ref_in_evidenza
+      testo: testo
+    negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:
         weight: 33
-        enabled: true
+        enabled: false
       amministrazione_view_in_evidenza:
         weight: 34
-        enabled: true
+        enabled: false
       argomenti:
         weight: 51
-        enabled: false
+        enabled: true
       argomenti_in_evidenza:
         weight: 52
-        enabled: false
+        enabled: true
       argomenti_in_evidenza_card:
         weight: 35
-        enabled: false
+        enabled: true
       argomenti_in_evidenza_ct:
         weight: 36
-        enabled: false
+        enabled: true
       biglietto_evento:
         weight: 55
-        enabled: false
+        enabled: true
       calendario:
         weight: 37
-        enabled: false
+        enabled: true
       card_assistenza:
         weight: 38
-        enabled: true
+        enabled: false
       card_foto_gallery:
         weight: 58
-        enabled: false
+        enabled: true
       collection_multimediale:
         weight: 18
-        enabled: false
+        enabled: true
       collegamenti_unita_organizzative:
         weight: 19
-        enabled: false
+        enabled: true
       comuni_altri_argomenti:
         weight: 41
+        enabled: true
+      condizioni_di_servizio:
+        weight: 67
+        enabled: false
+      condizioni_di_servizio_link:
+        weight: 53
         enabled: false
       container_argomenti_in_evidenza:
         weight: 42
-        enabled: false
+        enabled: true
       container_assistenza:
         weight: 43
-        enabled: false
+        enabled: true
       container_calendario:
         weight: 22
-        enabled: false
+        enabled: true
       container_contenuti_in_evidenza:
         weight: 45
-        enabled: false
+        enabled: true
       container_foto_gallery:
         weight: 66
-        enabled: false
+        enabled: true
+      container_vuoto:
+        weight: 73
+        enabled: true
       contenuto_allegati_per_tipo:
         weight: 67
-        enabled: false
+        enabled: true
       dataset:
         weight: 68
-        enabled: false
+        enabled: true
       documento:
         weight: 20
-        enabled: false
+        enabled: true
       elemento_video:
         weight: 22
-        enabled: false
+        enabled: true
       esplora:
         weight: 49
-        enabled: false
+        enabled: true
       faq:
         weight: 72
-        enabled: false
+        enabled: true
       fase_intitolata:
         weight: 23
-        enabled: false
+        enabled: true
       fase_semplice:
         weight: 74
-        enabled: false
+        enabled: true
       hero_immagine:
         weight: 75
-        enabled: false
+        enabled: true
       homepage_top_card:
         weight: 25
-        enabled: false
+        enabled: true
       homepage_top_cards:
         weight: 53
-        enabled: false
+        enabled: true
       intestazione_ricerca_e_preferiti:
         weight: 78
-        enabled: false
+        enabled: true
       link:
         weight: 27
-        enabled: false
+        enabled: true
       link_con_icona:
         weight: 28
-        enabled: false
+        enabled: true
       link_esterno:
         weight: 82
-        enabled: false
+        enabled: true
       links_con_icona:
         weight: 56
-        enabled: false
+        enabled: true
       prenotazione_appuntamento:
         weight: 83
-        enabled: false
+        enabled: true
       punto_di_contatto:
         weight: 84
-        enabled: false
+        enabled: true
       ricerca:
         weight: 58
-        enabled: false
+        enabled: true
       ricerca_documenti_e_dati:
         weight: 86
-        enabled: false
+        enabled: true
       ricerca_novita:
         weight: 87
-        enabled: false
+        enabled: true
       ricerca_servizi:
         weight: 88
-        enabled: false
+        enabled: true
       richiesta_assistenza:
         weight: 89
-        enabled: false
+        enabled: true
       servizi_ref_in_evidenza:
         weight: 90
-        enabled: false
+        enabled: true
       siti_tematici:
         weight: 59
-        enabled: false
+        enabled: true
+      testo:
+        weight: 99
+        enabled: true
       testo_e_lista:
         weight: 32
-        enabled: false
+        enabled: true
       titolo_descrizione_link:
         weight: 61
-        enabled: true
+        enabled: false
       titolo_e_descrizione:
         weight: 62
-        enabled: false
+        enabled: true
       ultima_notizia:
         weight: 34
-        enabled: false
+        enabled: true
       valutazione:
         weight: 64
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

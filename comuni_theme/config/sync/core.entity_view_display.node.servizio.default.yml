@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.servizio.field_codice_dell_ente_erogatore
     - field.field.node.servizio.field_come_fare
     - field.field.node.servizio.field_condizioni_di_servizio
+    - field.field.node.servizio.field_condizioni_di_servizio_par
     - field.field.node.servizio.field_contatti
     - field.field.node.servizio.field_copertura_geografica
     - field.field.node.servizio.field_cosa_serve
@@ -51,7 +52,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_argomenti:
     type: entity_reference_entity_view
@@ -60,7 +61,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_canale_digitale:
     type: link
@@ -72,7 +73,14 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_casi_particolari:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 19
     region: content
   field_categoria_del_servizio:
     type: entity_reference_label
@@ -80,44 +88,60 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 19
+    weight: 25
     region: content
   field_come_fare:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 7
+    weight: 9
     region: content
-  field_condizioni_di_servizio:
-    type: entity_reference_entity_view
+  field_condizioni_di_servizio_par:
+    type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
-      link: true
+      link: ''
     third_party_settings: {  }
-    weight: 17
+    weight: 21
     region: content
-  field_cosa_serve:
+  field_contatti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser_dettaglio_evento
+      link: false
+    third_party_settings: {  }
+    weight: 22
+    region: content
+  field_copertura_geografica:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 8
     region: content
+  field_cosa_serve:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   field_cosa_si_ottiene:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 9
+    weight: 11
     region: content
   field_costi:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 13
+    weight: 15
     region: content
   field_descrizione_breve:
     type: basic_string
@@ -131,7 +155,16 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 6
+    weight: 7
+    region: content
+  field_documenti:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 24
     region: content
   field_fase_semplice:
     type: entity_reference_revisions_entity_view
@@ -140,21 +173,35 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 11
+    weight: 13
+    region: content
+  field_motivo_dello_stato:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_procedure_collegate_esito:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 16
     region: content
   field_promemoria_accesso:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 14
+    weight: 27
     region: content
   field_promemoria_scadenze:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 10
+    weight: 12
     region: content
   field_stato_del_servizio:
     type: boolean
@@ -172,14 +219,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 14
     region: content
   field_ulteriori_informazioni:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 16
+    weight: 20
     region: content
   field_unita_org_responsabile:
     type: entity_reference_entity_view
@@ -188,7 +235,7 @@ content:
       view_mode: default
       link: true
     third_party_settings: {  }
-    weight: 18
+    weight: 23
     region: content
   field_unita_organizzative:
     type: entity_reference_entity_view
@@ -197,7 +244,14 @@ content:
       view_mode: teaser
       link: false
     third_party_settings: {  }
-    weight: 15
+    weight: 17
+    region: content
+  field_vincoli:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
     region: content
   links:
     settings: {  }
@@ -207,21 +261,15 @@ content:
   search_api_excerpt:
     settings: {  }
     third_party_settings: {  }
-    weight: 20
+    weight: 26
     region: content
 hidden:
   field_business_events: true
   field_canale_fisico: true
-  field_casi_particolari: true
   field_codice_dell_ente_erogatore: true
-  field_contatti: true
-  field_copertura_geografica: true
-  field_documenti: true
+  field_condizioni_di_servizio: true
   field_immagine: true
   field_life_events: true
-  field_motivo_dello_stato: true
-  field_procedure_collegate_esito: true
   field_settore_merceologico: true
   field_sottotitolo: true
-  field_vincoli: true
   langcode: true

@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.punto_di_contatto.field_tipo_punto_di_contatto
-    - field.field.paragraph.punto_di_contatto.field_valore_punto_di_contatto
+    - field.field.paragraph.punto_di_contatto.field_valore_punto_di_cont
     - paragraphs.paragraphs_type.punto_di_contatto
-  module:
-    - text
 id: paragraph.punto_di_contatto.default
 targetEntityType: paragraph
 bundle: punto_di_contatto
@@ -19,12 +17,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_valore_punto_di_contatto:
-    type: text_textarea
+  field_valore_punto_di_cont:
+    type: string_textfield
     weight: 1
     region: content
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:

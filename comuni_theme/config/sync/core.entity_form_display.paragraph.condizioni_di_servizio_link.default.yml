@@ -1,0 +1,25 @@
+uuid: 1de0d3ea-3db8-476c-8083-b9b44c1318af
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.condizioni_di_servizio_link.field_link_condizioni_di_servizi
+    - paragraphs.paragraphs_type.condizioni_di_servizio_link
+  module:
+    - link
+id: paragraph.condizioni_di_servizio_link.default
+targetEntityType: paragraph
+bundle: condizioni_di_servizio_link
+mode: default
+content:
+  field_link_condizioni_di_servizi:
+    type: link_default
+    weight: 0
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

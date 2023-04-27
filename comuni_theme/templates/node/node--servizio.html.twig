@@ -109,12 +109,16 @@
             {% if content.field_stato_del_servizio %}
               <ul class="d-flex flex-wrap gap-1 my-3">
                 <li>
-                  <div class="chip chip-simple text-button" data-element="service-status">
-                    <span class="chip-label"
-                    >Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
+                  <div class="chip {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'chip-simple' : 'chip-simple chip-danger' }} text-button" data-element="service-status">
+                    <span class="chip-label">Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
                   </div>
                 </ul>
               </li>
+            {% endif %}
+            {% if content.field_motivo_dello_stato and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
+              <div class="subtitle-small mb-3 text-danger">
+                {{ content.field_motivo_dello_stato }}
+              </div>
             {% endif %}
             {% if content.field_descrizione_breve %}
               <div class="subtitle-small mb-3" data-element="service-description">
@@ -184,7 +188,7 @@
                 </div>
               </div>
             </div>
-            {# <div class="mt-4 mb-4">
+            <div class="mt-4 mb-4">
               {% if content.field_argomenti %}
                 <span class="subtitle-small">Argomenti</span>
                 <div class="chip-wrapper mt-2">
@@ -200,7 +204,22 @@
                   {% endfor %}
                 </div>
               {% endif %}
-            </div> #}
+            </div>
+            <div class="mt-4 mb-4">
+              {% if content.field_categoria_del_servizio %}
+                <span class="subtitle-small">Categoria del servizio</span>
+                <div class="chip-wrapper mt-2">
+                  {% for item in attribute(content.field_categoria_del_servizio, "#items") %}
+                    {% set arg_name = item.entity.name.value %}
+                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                      <div class="chip chip-simple chip-primary">
+                        <span class="chip-label">{{ arg_name }}</span>
+                      </div>
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
@@ -245,6 +264,13 @@
                             </a>
                           </li>
                           {% endif %}
+                          {% if content.field_copertura_geografica[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#geographical-coverage">
+                              <span class="title-medium">Copertura geografica</span>
+                            </a>
+                          </li>
+                          {% endif %}
                           {% if content.field_come_fare[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#how-to">
@@ -280,11 +306,32 @@
                             </a>
                           </li>
                           {% endif %}
+                          {% if content.field_procedure_collegate_esito[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#procedure-collegate-esito">
+                              <span class="title-medium">Procedure collegate all'esito</span>
+                            </a>
+                          </li>
+                          {% endif %}
                           <li class="nav-item">
                             <a class="nav-link" href="#submit-request">
                               <span class="title-medium">Accedi al servizio</span>
                             </a>
                           </li>
+                          {% if content.field_vincoli[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#constraints">
+                              <span class="title-medium">Vincoli</span>
+                            </a>
+                          </li>
+                          {% endif %}
+                          {% if content.field_casi_particolari[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#special-cases">
+                              <span class="title-medium">Casi particolari</span>
+                            </a>
+                          </li>
+                          {% endif %}
                           {% if content.field_ulteriori_informazioni[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#more-info">
@@ -292,17 +339,24 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_condizioni_di_servizio[0] is not empty %}
+                          {% if content.field_condizioni_di_servizio_par[0] is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#conditions">
                               <span class="title-medium">Condizioni di servizio</span>
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+                          {#% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %#}
                           <li class="nav-item">
                             <a class="nav-link" href="#contacts">
                               <span class="title-medium">Contatti</span>
+                            </a>
+                          </li>
+                          {#% endif %#}
+                          {% if content.field_documenti[0] is not empty %}
+                          <li class="nav-item">
+                            <a class="nav-link" href="#documents">
+                              <span class="title-medium">Documenti</span>
                             </a>
                           </li>
                           {% endif %}
@@ -335,6 +389,14 @@
           </div>
         </section>
         {% endif %}
+        {% if content.field_copertura_geografica[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="geographical-coverage">Copertura geografica</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_copertura_geografica }}
+          </div>
+        </section>
+        {% endif %}
         {% if content.field_come_fare[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="how-to">Come fare</h2>
@@ -359,13 +421,12 @@
           </div>
         </section>
         {% endif %}
-        
         {% if content.field_tempi_e_scadenze[0] is not empty or content.field_fase_semplice[0] is not empty %}
         <section class="it-page-section  mb-30">
           <div class="cmp-timeline">
             <h2 class="title-xxlarge mb-3" id="deadlines">Tempi e scadenze</h2>
             {% if content.field_promemoria_scadenze[0] %}
-              <div class="richtext-wrapper lora" data-element="service-calendar-text">
+              <div class="richtext-wrapper lora mb-2" data-element="service-calendar-text">
                 {{ content.field_promemoria_scadenze }}
               </div>
             {% endif %}
@@ -418,10 +479,18 @@
         </section>
         {% endif %}
         {% if content.field_costi[0] is not empty %}
-        <section class="it-page-section  mb-30">
+        <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="costs">Quanto costa</h2>
           <div class="richtext-wrapper lora" data-element="service-cost">
             {{ content.field_costi }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_procedure_collegate_esito[0] is not empty %}
+        <section class="it-page-section mb-30">
+          <h2 class="title-xxlarge mb-3" id="procedure-collegate-esito">Procedure collegate all'esito</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_procedure_collegate_esito }}
           </div>
         </section>
         {% endif %}
@@ -450,6 +519,22 @@
           ><span>Prenota appuntamento</span>
           </a>
         </section>
+        {% if content.field_vincoli[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="constraints">Vincoli</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_vincoli }}
+          </div>
+        </section>
+        {% endif %}
+        {% if content.field_casi_particolari[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="special-cases">Casi particolari</h2>
+          <div class="richtext-wrapper lora">
+            {{ content.field_casi_particolari }}
+          </div>
+        </section>
+        {% endif %}
         {% if content.field_ulteriori_informazioni[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="more-info">Ulteriori informazioni</h2>
@@ -458,14 +543,15 @@
           </div>
         </section>
         {% endif %}
-        {% if content.field_condizioni_di_servizio[0] is not empty %}
+        {% if content.field_condizioni_di_servizio_par[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
           <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
-          {{ content.field_condizioni_di_servizio }}
+          {{ content.field_condizioni_di_servizio_par }}
         </section>
         {% endif %}
-        {% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
+
+        {#% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
         <section class="it-page-section">
           <h2 class="mb-3" id="contacts">Contatti</h2>
           <div class="row">
@@ -494,33 +580,65 @@
                 </div>
               </div>
             {% endif %}
-            {% if content.field_argomenti[0] is not empty or node.changed.value %}
-              <div class="col-12 mb-30">
-                {% if content.field_argomenti[0] is not empty %}
-                <span class="text-paragraph-small">Argomenti:</span>
-                <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
-                {% for argomento in content.field_argomenti['#items'] %}
-                  {% set argName = argomento.entity.name.value %}
-                  <li>
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}" 
-                      class="chip chip-simple" data-element="service-topic"
-                    >
-                      <span class="chip-label">
-                        {{ argName }}
-                      </span>
-                    </a>
-                  </li>
-                {% endfor %}
-                {% endif %}
-                </ul>
-                {% if node.changed.value %}
-                <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
-                {% endif %}
-              </div>
-            {% endif %}
           </div>
         </section>
+        {% endif %#}
+
+        <section class="it-page-section mb-30">
+            <h2 class="mb-3" id="contacts">Contatti</h2>
+            <div class="card-wrapper card-column my-3">
+              <div class="row">
+                <div class="col-md-6">
+                  {{ content.field_contatti }}
+                </div>
+                <div class="col-md-6 mt-4 mt-md-0">
+                  <div class="font-sans-serif card card-teaser card-teaser-info rounded shadow-sm p-3 mt-0">
+                    <div class="card-body">
+                      <p class="card-title text-paragraph-regular-medium-semi mb-3"><a href="{{ path('entity.node.canonical', {'node': content.field_unita_org_responsabile['#items'][0].target_id}) }}" data-element="service-area">{{ content.field_unita_org_responsabile['#items'][0].entity.title.value }}</a></p>
+                      <div class="card-text u-main-black">
+                        <div class="mt-1"><p>{{ content.field_unita_org_responsabile['#items'][0].entity.field_descrizione_breve.value }}</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+
+        {% if content.field_documenti[0] is not empty %}
+        <section class="it-page-section  mb-30">
+          <h2 class="title-xxlarge mb-3" id="documents">Documenti</h2>
+          <!--p class="text-paragraph lora">Documenti allegati.</p-->
+          {{ content.field_documenti }}
+        </section>
         {% endif %}
+
+        <section class="it-page-section">
+          {% if content.field_argomenti[0] is not empty or node.changed.value %}
+            <div class="mb-30">
+              {% if content.field_argomenti[0] is not empty %}
+              <span class="text-paragraph-small">Argomenti:</span>
+              <ul class="d-flex flex-wrap gap-2 mt-10 mb-3">
+              {% for argomento in content.field_argomenti['#items'] %}
+                {% set argName = argomento.entity.name.value %}
+                <li>
+                  <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': argomento.target_id}) }}" 
+                    class="chip chip-simple" data-element="service-topic"
+                  >
+                    <span class="chip-label">
+                      {{ argName }}
+                    </span>
+                  </a>
+                </li>
+              {% endfor %}
+              {% endif %}
+              </ul>
+              {% if node.changed.value %}
+              <p class="text-paragraph-small mb-0">Pagina aggiornata il {{ node.changed.value|date("d/m/Y") }}</p>
+              {% endif %}
+            </div>
+          {% endif %}
+        </section>
       </div>
     </div>
   </div>
@@ -561,4 +679,3 @@
   }
 
 </script>
-

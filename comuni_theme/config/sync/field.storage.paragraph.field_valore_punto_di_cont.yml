@@ -1,0 +1,21 @@
+uuid: 851c55eb-f821-4b86-b805-d3409efa2219
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_valore_punto_di_cont
+field_name: field_valore_punto_di_cont
+entity_type: paragraph
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

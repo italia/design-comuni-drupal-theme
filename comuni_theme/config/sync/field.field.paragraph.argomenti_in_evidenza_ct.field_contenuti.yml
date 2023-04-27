@@ -14,7 +14,7 @@ field_name: field_contenuti
 entity_type: paragraph
 bundle: argomenti_in_evidenza_ct
 label: contenuti
-description: ''
+description: "Aggiungi nuovo contenuto: \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/evento\">Evento</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/luogo\">Luogo</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/notizia\">Notizia</a>, \r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/servizio\">Servizio</a>"
 required: false
 translatable: true
 default_value: {  }

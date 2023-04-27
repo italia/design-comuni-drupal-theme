@@ -11,7 +11,7 @@ field_name: field_contenuti
 entity_type: paragraph
 bundle: siti_tematici
 label: contenuti
-description: ''
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/sito_tematico\">Aggiungi nuovo contenuto</a>\r\n"
 required: false
 translatable: false
 default_value: {  }

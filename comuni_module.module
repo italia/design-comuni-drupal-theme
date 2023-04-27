@@ -87,10 +87,12 @@ function comuni_module_form_alter(&$form, FormStateInterface $form_state, $form_
       '#disabled' => TRUE,
     );
   }
+  /* fix issue 45 - titolo e descrizione devono poter essere modificati anche dopo la creazione della pagina.
   if ($form_id == 'node_pagina_edit_form' ){
     // Do some stuff.
     if ( $form['field_componenti']['widget'][0]['#paragraph_type']=='titolo_e_descrizione') {
       $form['field_componenti']['widget'][0]['#disabled'] = TRUE;
     }
   }
+  */
 }

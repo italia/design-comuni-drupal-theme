@@ -34,6 +34,7 @@ module:
   help: 0
   history: 0
   image: 0
+  integrazioni: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0

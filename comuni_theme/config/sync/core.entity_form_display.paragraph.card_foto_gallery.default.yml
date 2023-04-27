@@ -6,20 +6,19 @@ dependencies:
     - field.field.paragraph.card_foto_gallery.field_immagine
     - field.field.paragraph.card_foto_gallery.field_label
     - paragraphs.paragraphs_type.card_foto_gallery
+  module:
+    - media_library
 id: paragraph.card_foto_gallery.default
 targetEntityType: paragraph
 bundle: card_foto_gallery
 mode: default
 content:
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 0
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_label:
     type: string_textfield

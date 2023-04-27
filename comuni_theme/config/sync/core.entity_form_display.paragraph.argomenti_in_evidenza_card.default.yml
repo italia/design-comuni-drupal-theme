@@ -13,14 +13,10 @@ bundle: argomenti_in_evidenza_card
 mode: default
 content:
   field_argomento:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 5
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_contenuto:
     type: entity_reference_autocomplete

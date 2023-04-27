@@ -10,20 +10,17 @@ dependencies:
     - node.type.sito_tematico
   module:
     - link
+    - media_library
 id: node.sito_tematico.default
 targetEntityType: node
 bundle: sito_tematico
 mode: default
 content:
   field_colore:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 26
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
@@ -34,14 +31,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 27
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_link:
     type: link_default

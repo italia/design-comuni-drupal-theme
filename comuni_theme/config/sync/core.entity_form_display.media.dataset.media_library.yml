@@ -1,0 +1,28 @@
+uuid: d26d14c0-37b4-410a-9e5e-7b8285f2159a
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.dataset.field_media_file
+    - media.type.dataset
+id: media.dataset.media_library
+targetEntityType: media
+bundle: dataset
+mode: media_library
+content:
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  field_media_file: true
+  langcode: true
+  path: true
+  status: true
+  uid: true

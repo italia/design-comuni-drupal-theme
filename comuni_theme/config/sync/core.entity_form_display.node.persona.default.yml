@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.persona.field_v_situazione_patrimoniale
     - node.type.persona
   module:
+    - media_library
     - paragraphs
     - path
     - text
@@ -39,14 +40,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_altre_cariche:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 23
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_biografia:
     type: text_textarea
@@ -73,14 +71,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_curriculum_vitae:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 17
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_deleghe:
     type: text_textarea
@@ -99,14 +94,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_dichiarazione_dei_redditi:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 20
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_galleria_immagini:
     type: paragraphs
@@ -127,14 +119,11 @@ content:
         duplicate: duplicate
     third_party_settings: {  }
   field_immagine:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 11
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_incarichi:
     type: entity_reference_autocomplete
@@ -175,14 +164,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_sezione_amministrazione:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 22
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_situazione_patrimoniale:
     type: text_textarea
@@ -193,14 +178,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_spese_elettorali:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 19
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
@@ -211,14 +193,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_v_situazione_patrimoniale:
-    type: entity_reference_autocomplete
+    type: media_library_widget
     weight: 21
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      media_types: {  }
     third_party_settings: {  }
   langcode:
     type: language_select

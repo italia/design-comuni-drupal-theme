@@ -1,0 +1,10 @@
+uuid: 9db888d7-1de5-4462-aa2a-c915cde865e9
+langcode: it
+status: true
+dependencies: {  }
+id: orari_ore
+label: 'Orari - Ore'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,25 @@
+uuid: 1dcadd1c-75c3-4b32-b1f6-920e09069014
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.orari_ore.field_orari_fascia_oraria
+    - paragraphs.paragraphs_type.orari_ore
+  module:
+    - time_field
+id: paragraph.orari_ore.default
+targetEntityType: paragraph
+bundle: orari_ore
+mode: default
+content:
+  field_orari_fascia_oraria:
+    type: time_range_widget
+    weight: 0
+    region: content
+    settings:
+      enabled: false
+      step: 5
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

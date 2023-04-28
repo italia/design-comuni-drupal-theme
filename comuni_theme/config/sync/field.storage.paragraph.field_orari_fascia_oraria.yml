@@ -1,0 +1,19 @@
+uuid: 4ceb4072-d910-4a50-bbc7-f8a8910d2706
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - time_field
+id: paragraph.field_orari_fascia_oraria
+field_name: field_orari_fascia_oraria
+entity_type: paragraph
+type: time_range
+settings: {  }
+module: time_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

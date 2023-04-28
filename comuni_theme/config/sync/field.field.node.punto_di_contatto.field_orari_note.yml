@@ -1,0 +1,19 @@
+uuid: c1017a32-7133-4883-a5d1-2550bf59229c
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_orari_note
+    - node.type.punto_di_contatto
+id: node.punto_di_contatto.field_orari_note
+field_name: field_orari_note
+entity_type: node
+bundle: punto_di_contatto
+label: 'Orari note'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

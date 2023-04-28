@@ -26,9 +26,10 @@
       <div class="row">
       <div class="col-12">
           {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
+          {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
           <div class="it-header-slim-wrapper-content">
             <a class="d-lg-block navbar-brand"
-              href="/" target="_blank"
+              href="{{ url_regione }}" target="_blank"
               aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
               title="Vai al portale {{ nome_regione }}"
             >{{ nome_regione }}</a>

@@ -1,0 +1,19 @@
+uuid: 8ea7cfec-de94-4358-be52-3d3da3560327
+langcode: it
+status: true
+dependencies:
+  module:
+    - link
+    - site_settings
+id: site_setting_entity.field_url_regione
+field_name: field_url_regione
+entity_type: site_setting_entity
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

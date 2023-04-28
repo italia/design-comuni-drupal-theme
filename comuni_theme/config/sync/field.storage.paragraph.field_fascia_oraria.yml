@@ -1,0 +1,20 @@
+uuid: 80e7a7ea-94eb-47e4-9997-93a11c1893b2
+langcode: it
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_fascia_oraria
+field_name: field_fascia_oraria
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

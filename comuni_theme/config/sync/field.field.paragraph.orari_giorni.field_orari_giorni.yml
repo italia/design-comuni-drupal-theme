@@ -1,0 +1,21 @@
+uuid: 7126fb1e-502a-4b6d-bd89-6f147b857f8a
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_orari_giorni
+    - paragraphs.paragraphs_type.orari_giorni
+  module:
+    - options
+id: paragraph.orari_giorni.field_orari_giorni
+field_name: field_orari_giorni
+entity_type: paragraph
+bundle: orari_giorni
+label: Giorni
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

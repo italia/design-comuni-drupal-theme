@@ -1,0 +1,34 @@
+uuid: 92dc5f28-d759-4209-8cae-2c1ade1d5cab
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.orari_giorni.field_fascia_oraria
+    - field.field.paragraph.orari_giorni.field_orari_giorni
+    - paragraphs.paragraphs_type.orari_giorni
+  module:
+    - entity_reference_revisions
+    - options
+id: paragraph.orari_giorni.default
+targetEntityType: paragraph
+bundle: orari_giorni
+mode: default
+content:
+  field_fascia_oraria:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_orari_giorni:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

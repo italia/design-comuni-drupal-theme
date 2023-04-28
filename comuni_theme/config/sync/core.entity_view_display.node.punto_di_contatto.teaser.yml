@@ -5,6 +5,8 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.punto_di_contatto.field_contatto
+    - field.field.node.punto_di_contatto.field_orari
+    - field.field.node.punto_di_contatto.field_orari_note
     - field.field.node.punto_di_contatto.field_persona
     - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
     - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
@@ -23,6 +25,8 @@ content:
     region: content
 hidden:
   field_contatto: true
+  field_orari: true
+  field_orari_note: true
   field_persona: true
   field_tipo_punto_di_contatto: true
   field_valore_punto_di_contatto: true

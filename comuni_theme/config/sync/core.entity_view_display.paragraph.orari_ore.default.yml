@@ -1,0 +1,25 @@
+uuid: 440c17e7-3aa9-4c15-83f7-6b994223190d
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.orari_ore.field_orari_fascia_oraria
+    - paragraphs.paragraphs_type.orari_ore
+  module:
+    - time_field
+id: paragraph.orari_ore.default
+targetEntityType: paragraph
+bundle: orari_ore
+mode: default
+content:
+  field_orari_fascia_oraria:
+    type: time_range_formatter
+    label: above
+    settings:
+      time_format: 'H:i'
+      timerange_format: 'start ~ end'
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

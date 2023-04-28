@@ -1,0 +1,48 @@
+uuid: 5f5f4065-eb79-4bf7-ab7f-140cd27384ce
+langcode: it
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_orari_giorni
+field_name: field_orari_giorni
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Lunedì
+      label: Lunedì
+    -
+      value: Martedì
+      label: Martedì
+    -
+      value: Mercoledì
+      label: Mercoledì
+    -
+      value: Giovedì
+      label: Giovedì
+    -
+      value: Venerdì
+      label: Venerdì
+    -
+      value: Sabato
+      label: Sabato
+    -
+      value: Domenica
+      label: Domenica
+    -
+      value: 'Giorni feriali'
+      label: 'Giorni feriali'
+    -
+      value: 'Tutti i giorni'
+      label: 'Tutti i giorni'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

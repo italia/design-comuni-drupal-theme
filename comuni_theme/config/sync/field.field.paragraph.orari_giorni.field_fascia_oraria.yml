@@ -1,0 +1,190 @@
+uuid: ff3d069c-a003-40c1-ade5-f03084c7efd4
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fascia_oraria
+    - paragraphs.paragraphs_type.orari_giorni
+    - paragraphs.paragraphs_type.orari_ore
+  module:
+    - entity_reference_revisions
+id: paragraph.orari_giorni.field_fascia_oraria
+field_name: field_fascia_oraria
+entity_type: paragraph
+bundle: orari_giorni
+label: 'Fascia oraria'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      orari_ore: orari_ore
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 55
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 56
+        enabled: false
+      argomenti:
+        weight: 57
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 58
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 59
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 60
+        enabled: false
+      biglietto_evento:
+        weight: 61
+        enabled: false
+      calendario:
+        weight: 62
+        enabled: false
+      card_assistenza:
+        weight: 63
+        enabled: false
+      card_foto_gallery:
+        weight: 64
+        enabled: false
+      collection_multimediale:
+        weight: 65
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 66
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 67
+        enabled: false
+      condizioni_di_servizio:
+        weight: 68
+        enabled: false
+      condizioni_di_servizio_link:
+        weight: 69
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 70
+        enabled: false
+      container_assistenza:
+        weight: 71
+        enabled: false
+      container_calendario:
+        weight: 72
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 73
+        enabled: false
+      container_foto_gallery:
+        weight: 74
+        enabled: false
+      container_vuoto:
+        weight: 75
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 76
+        enabled: false
+      dataset:
+        weight: 77
+        enabled: false
+      documento:
+        weight: 78
+        enabled: false
+      elemento_video:
+        weight: 79
+        enabled: false
+      esplora:
+        weight: 80
+        enabled: false
+      faq:
+        weight: 81
+        enabled: false
+      fase_intitolata:
+        weight: 82
+        enabled: false
+      fase_semplice:
+        weight: 83
+        enabled: false
+      hero_immagine:
+        weight: 84
+        enabled: false
+      homepage_top_card:
+        weight: 85
+        enabled: false
+      homepage_top_cards:
+        weight: 86
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 87
+        enabled: false
+      link:
+        weight: 88
+        enabled: false
+      link_con_icona:
+        weight: 89
+        enabled: false
+      link_esterno:
+        weight: 90
+        enabled: false
+      links_con_icona:
+        weight: 91
+        enabled: false
+      orari_giorni:
+        weight: 92
+        enabled: false
+      orari_ore:
+        weight: 93
+        enabled: true
+      prenotazione_appuntamento:
+        weight: 94
+        enabled: false
+      punto_di_contatto:
+        weight: 95
+        enabled: false
+      ricerca:
+        weight: 96
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 97
+        enabled: false
+      ricerca_novita:
+        weight: 98
+        enabled: false
+      ricerca_servizi:
+        weight: 99
+        enabled: false
+      richiesta_assistenza:
+        weight: 100
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 101
+        enabled: false
+      siti_tematici:
+        weight: 102
+        enabled: false
+      testo:
+        weight: 103
+        enabled: false
+      testo_e_lista:
+        weight: 104
+        enabled: false
+      titolo_descrizione_link:
+        weight: 105
+        enabled: false
+      titolo_e_descrizione:
+        weight: 106
+        enabled: false
+      ultima_notizia:
+        weight: 107
+        enabled: false
+      valutazione:
+        weight: 108
+        enabled: false
+field_type: entity_reference_revisions

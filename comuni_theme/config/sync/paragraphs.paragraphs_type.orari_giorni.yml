@@ -1,0 +1,10 @@
+uuid: ff1ad30d-277c-405a-a296-3a717bc6d82b
+langcode: it
+status: true
+dependencies: {  }
+id: orari_giorni
+label: 'Orari - Giorni'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

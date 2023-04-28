@@ -39,7 +39,7 @@
 #}
 {% for item in items %}
   {% set item_name = item.content['#title'] %}
-  {% set item_uri = item.content['#url']['#uri'] %}
+  {% set item_uri = item.content['#url'].uri %}
   <div class="cmp-icon-link">
     <a href="{{ file_url(item_uri) }}"
       class="list-item icon-left d-inline-block"

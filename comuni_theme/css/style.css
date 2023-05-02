@@ -54,3 +54,8 @@ footer .it-brand-wrapper img {
 	width: 48px;
 	margin-right: 8px;
 }
+
+/* Template blocco orari nel punto di contatto */
+.servizio-contatto-orari dd > span:last-child span { display:none; }
+.striato > *:nth-child(odd) { background-color: #f7f9fa; }
+.striato > *:nth-child(even) { background-color: #fff; }

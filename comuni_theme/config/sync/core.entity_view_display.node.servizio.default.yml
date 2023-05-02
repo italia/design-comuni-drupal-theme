@@ -110,7 +110,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser_dettaglio_evento
+      view_mode: teaser_dettaglio_servizio
       link: false
     third_party_settings: {  }
     weight: 22

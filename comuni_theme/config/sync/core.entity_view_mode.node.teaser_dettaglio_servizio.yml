@@ -1,0 +1,10 @@
+uuid: 19ccf0a3-5932-48a0-9861-cab641f370de
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_dettaglio_servizio
+label: 'Teaser - Dettaglio Servizio'
+targetEntityType: node
+cache: true

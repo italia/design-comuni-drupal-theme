@@ -273,3 +273,4 @@ hidden:
   field_settore_merceologico: true
   field_sottotitolo: true
   langcode: true
+  node_read_time: true

@@ -33,6 +33,9 @@ settings:
       value: Domenica
       label: Domenica
     -
+      value: 'Da lunedì a venerdì'
+      label: 'Da lunedì a venerdì'
+    -
       value: 'Giorni feriali'
       label: 'Giorni feriali'
     -

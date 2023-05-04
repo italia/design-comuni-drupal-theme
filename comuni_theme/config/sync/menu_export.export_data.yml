@@ -1891,7 +1891,7 @@
   menu_name:
     value: footer---contatti
   link:
-    uri: 'internal:/segnalazione-disservizio'
+    uri: 'internal:/segnala-disservizio'
     title: ''
     options: {  }
   external:
@@ -1904,7 +1904,7 @@
     value: '0'
   parent: false
   changed:
-    value: '1682610786'
+    value: '1683189187'
   default_langcode:
     value: '1'
   revision_default:

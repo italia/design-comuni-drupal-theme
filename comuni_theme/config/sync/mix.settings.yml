@@ -1,0 +1,9 @@
+_core:
+  default_config_hash: IWdgJnr3IV52x7Ofw8Yyg2-Xp3BH5ILSeH-533SJ-UQ
+langcode: it
+hide_revision_field: false
+dev_mode: false
+remove_x_generator: false
+error_page:
+  mode: false
+  content: "<html>\r\n<head>\r\n<title>Unexpected error</title>\r\n<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no\">\r\n<style type=\"text/css\">\r\n  body { background-color: #ddd; }\r\n  #mix-exception { width: 50%; min-width: 260px; max-width: 600px; margin: 60px auto; padding: 20px; background: #fff; border-radius: 10px; }\r\n  #mix-exception .error-code { font-size: 128px; margin: 0; line-height: 1}\r\n  #mix-exception .blue { color: #00aaee; }\r\n  #mix-exception .grey { color: #888; }\r\n  #mix-exception .ps-10 { padding-left: 10px; }\r\n</style>\r\n</head>\r\n\r\n<body>\r\n<div id=\"mix-exception\">\r\n  <div class=\"error-code blue\"><strong>500</strong></div> \r\n  <p class=\"blue ps-10\"><strong>Oops! Unexpected error...</strong></p>\r\n  <p class=\"grey ps-10\">Refresh this page or try again later, feel free to contact us if the problem persists.</p>\r\n  <p class=\"ps-10\"><a class=\"blue\" href=\"/\">Back to homepage</a></p>\r\n</div>\r\n</body>\r\n</html>"

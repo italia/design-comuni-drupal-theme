@@ -1,0 +1,67 @@
+uuid: 003c6ab2-d28c-45b8-b23c-e2930cb1ba3f
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.punto_di_contatto.field_contatto
+    - field.field.node.punto_di_contatto.field_orari
+    - field.field.node.punto_di_contatto.field_orari_note
+    - field.field.node.punto_di_contatto.field_persona
+    - field.field.node.punto_di_contatto.field_tipo_punto_di_contatto
+    - field.field.node.punto_di_contatto.field_valore_punto_di_contatto
+    - node.type.punto_di_contatto
+  module:
+    - entity_reference_revisions
+    - user
+id: node.punto_di_contatto.card
+targetEntityType: node
+bundle: punto_di_contatto
+mode: card
+content:
+  field_contatto:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_orari:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_orari_note:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_persona:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  field_tipo_punto_di_contatto: true
+  field_valore_punto_di_contatto: true
+  langcode: true
+  node_read_time: true
+  search_api_excerpt: true
+  sharing_buttons: true

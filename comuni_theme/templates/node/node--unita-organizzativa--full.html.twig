@@ -114,31 +114,6 @@
               </h1>
             {% endif %}
             {{ title_suffix }}
-            {% if content.field_stato_del_servizio %}
-              <ul class="d-flex flex-wrap gap-1 my-3">
-                <li>
-                  <div class="chip {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'chip-simple' : 'chip-simple chip-danger' }} text-button" data-element="service-status">
-                    <span class="chip-label">Servizio {{ content.field_stato_del_servizio.0['#markup'] == 'On' ? 'attivo' : 'non attivo' }}</span>
-                  </div>
-                </ul>
-              </li>
-            {% endif %}
-            {% if content.field_motivo_dello_stato and content.field_stato_del_servizio.0['#markup'] == 'Off' %}
-              <div class="subtitle-small mb-3 text-danger">
-                {{ content.field_motivo_dello_stato }}
-              </div>
-            {% endif %}
-            {% if content.field_descrizione_breve %}
-              <div class="subtitle-small mb-3" data-element="service-description">
-                {{ content.field_descrizione_breve }}
-              </div>
-            {% endif %}
-            {% if content.field_canale_digitale[0] %}
-              <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-                 type="button" class="btn btn-primary fw-bold" data-focus-mouse="false"
-              ><span class="">{{ content.field_canale_digitale['#items'][0].title }}</span>
-              </a>
-            {% endif %}
           </div>
           <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
             {{ drupal_block("social_sharing_buttons_block") }}

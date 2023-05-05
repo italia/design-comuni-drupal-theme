@@ -546,7 +546,7 @@
         {% if content.field_condizioni_di_servizio_par[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="conditions">Condizioni di servizio</h2>
-          <p class="text-paragraph lora">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
+          <p class="text-paragraph lora mb-1">Per conoscere i dettagli di scadenze, requisiti e altre informazioni importanti, leggi i termini e le condizioni di servizio.</p>
           {{ content.field_condizioni_di_servizio_par }}
         </section>
         {% endif %}
@@ -592,14 +592,7 @@
                   {{ content.field_contatti }}
                 </div>
                 <div class="col-md-6 mt-4 mt-md-0">
-                  <div class="font-sans-serif card card-teaser card-teaser-info rounded shadow-sm p-3 mt-0">
-                    <div class="card-body">
-                      <p class="card-title text-paragraph-regular-medium-semi mb-3"><a href="{{ path('entity.node.canonical', {'node': content.field_unita_org_responsabile['#items'][0].target_id}) }}" data-element="service-area">{{ content.field_unita_org_responsabile['#items'][0].entity.title.value }}</a></p>
-                      <div class="card-text u-main-black">
-                        <div class="mt-1"><p>{{ content.field_unita_org_responsabile['#items'][0].entity.field_descrizione_breve.value }}</p></div>
-                      </div>
-                    </div>
-                  </div>
+                  {{ content.field_unita_org_responsabile }}
                 </div>
               </div>
             </div>
@@ -608,8 +601,9 @@
         {% if content.field_documenti[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="documents">Documenti</h2>
-          <!--p class="text-paragraph lora">Documenti allegati.</p-->
-          {{ content.field_documenti }}
+          <div class="card-wrapper card-teaser-wrapper">
+            {{ content.field_documenti }}
+          </div>
         </section>
         {% endif %}
 

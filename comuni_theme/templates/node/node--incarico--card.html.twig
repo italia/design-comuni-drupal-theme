@@ -1,0 +1,21 @@
+<div class="card card-teaser card-flex shadow-sm mb-0 border border-light">
+  <div class="card-body pb-5">
+    <h3 class="card-title text-paragraph-medium">{{ label }}</h3>
+    <div class="text-paragraph-card u-grey-light m-0">
+      {% if content.field_unita_organizzativa[0] is not empty %}
+        <div class="mb-1"><span class="fw-bold">Presso:</span>
+          <p>
+            {% for item in content.field_unita_organizzativa["#items"] %}
+                {{- item|view -}}
+                {% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+        </div>
+      {% endif %}
+      {% if content.field_data_insediamento[0] is not empty %}
+        <div class="mb-1"><span class="fw-bold">Data insediamento:</span> {{ content.field_data_insediamento }}</div>
+      {% endif %}
+    </div>
+  </div>
+  <a class="read-more position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
+</div>

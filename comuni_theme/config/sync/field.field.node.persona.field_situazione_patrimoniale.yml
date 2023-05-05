@@ -1,12 +1,11 @@
-uuid: 33a3ede5-9cda-4f2b-ab84-89ac0d87e7fc
+uuid: 6de5fce0-f443-4edb-8723-39226da0e20c
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.node.field_situazione_patrimoniale
+    - media.type.document
     - node.type.persona
-  module:
-    - text
 id: node.persona.field_situazione_patrimoniale
 field_name: field_situazione_patrimoniale
 entity_type: node
@@ -17,5 +16,14 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: text_long
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      document: document
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

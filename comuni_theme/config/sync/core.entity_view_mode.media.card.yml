@@ -1,0 +1,10 @@
+uuid: 2aef99d7-78eb-444e-b7bc-ac82accc8f27
+langcode: it
+status: true
+dependencies:
+  module:
+    - media
+id: media.card
+label: Card
+targetEntityType: media
+cache: true

@@ -1,0 +1,12 @@
+<div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light">
+  <div class="card-image-wrapper">
+    <div class="card-body p-3 pb-5">
+      <h3 class="card-title text-paragraph-medium u-grey-light">{{ content.field_nome[0] }} {{ content.field_cognome[0] }}</h3>
+      <div class="text-paragraph-card u-grey-light m-0">
+        <div class="mb-1">{{ content.field_descrizione_breve }}</div>
+      </div>
+    </div>
+    <div class="card-image card-image-rounded pb-5">{{ content.field_immagine }}</div>
+  </div>
+  <a class="read-more ps-3 position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
+</div>

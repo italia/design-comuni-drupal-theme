@@ -1,8 +1,9 @@
-uuid: 911cb615-0583-4a3d-9807-6b73a5528759
+uuid: c5442bf0-b03b-4b1d-b7d1-6abbb642e48c
 langcode: it
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - field.field.node.servizio.field_a_chi_rivolto
     - field.field.node.servizio.field_argomenti
     - field.field.node.servizio.field_business_events
@@ -42,10 +43,10 @@ dependencies:
     - link
     - text
     - user
-id: node.servizio.default
+id: node.servizio.card
 targetEntityType: node
 bundle: servizio
-mode: default
+mode: card
 content:
   field_a_chi_rivolto:
     type: text_default
@@ -161,8 +162,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view_mode: default
+      link: true
     third_party_settings: {  }
     weight: 24
     region: content
@@ -232,8 +233,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      view_mode: default
+      link: true
     third_party_settings: {  }
     weight: 23
     region: content

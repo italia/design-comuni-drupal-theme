@@ -3,6 +3,7 @@ langcode: it
 status: true
 dependencies:
   module:
+    - node
     - system
   theme:
     - comuni_theme
@@ -21,4 +22,32 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*\r\n/servizi/*"
+    pages: "/tutti-gli-argomenti/*\r\n/categorie-dei-servizi/*\r\n/vivere-il-comune/*\r\n/novita/*\r\n<front>\r\n*/risultati-ricerca*\r\n/servizi/*\r\n"
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      appuntamento: appuntamento
+      article: article
+      dataset: dataset
+      documento_privato: documento_privato
+      documento_pubblico: documento_pubblico
+      evento: evento
+      faq: faq
+      fase_del_servizio: fase_del_servizio
+      incarico: incarico
+      luogo: luogo
+      messaggio: messaggio
+      notizia: notizia
+      pagamento: pagamento
+      page: page
+      pagina: pagina
+      persona: persona
+      pratica: pratica
+      punto_di_contatto: punto_di_contatto
+      servizio: servizio
+      sito_tematico: sito_tematico
+      ticket: ticket
+      valutazione: valutazione

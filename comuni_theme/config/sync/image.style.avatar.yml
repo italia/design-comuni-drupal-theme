@@ -1,0 +1,15 @@
+uuid: 2ec35ffa-a9e5-4cee-a67d-de686868e5b5
+langcode: it
+status: true
+dependencies: {  }
+name: avatar
+label: Avatar
+effects:
+  747709d9-7cca-4a97-b9cd-1a643c3c9b5b:
+    uuid: 747709d9-7cca-4a97-b9cd-1a643c3c9b5b
+    id: image_scale
+    weight: 1
+    data:
+      width: 500
+      height: null
+      upscale: true

@@ -1,8 +1,9 @@
-uuid: dc323b25-36d8-482b-8bb8-6c9f86a81fe2
+uuid: 06edb316-1395-45b4-a8c5-64f83aa4b4e4
 langcode: it
-status: true
+status: false
 dependencies:
   config:
+    - core.entity_view_mode.node.card
     - field.field.node.unita_organizzativa.field_allegati_doc_pubblico
     - field.field.node.unita_organizzativa.field_altre_sedi
     - field.field.node.unita_organizzativa.field_argomenti
@@ -23,17 +24,16 @@ dependencies:
   module:
     - text
     - user
-id: node.unita_organizzativa.default
+id: node.unita_organizzativa.card
 targetEntityType: node
 bundle: unita_organizzativa
-mode: default
+mode: card
 content:
   field_allegati_doc_pubblico:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 115
     region: content
@@ -64,7 +64,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: card
+      view_mode: teaser
       link: false
     third_party_settings: {  }
     weight: 108
@@ -77,10 +77,9 @@ content:
     weight: 102
     region: content
   field_elenco_servizi_offerti:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 114
@@ -95,29 +94,26 @@ content:
     weight: 101
     region: content
   field_persona:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 119
     region: content
   field_persone:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 120
     region: content
   field_persone_altre:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 121
     region: content
@@ -154,11 +150,10 @@ content:
     weight: 109
     region: content
   field_unita_org_genitore:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: card
-      link: false
+      link: true
     third_party_settings: {  }
     weight: 104
     region: content

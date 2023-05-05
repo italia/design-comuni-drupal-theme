@@ -1,0 +1,94 @@
+uuid: 212fa3ce-4321-447c-8c8b-2287c323bbdc
+langcode: it
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.persona.field_altre_cariche
+    - field.field.node.persona.field_biografia
+    - field.field.node.persona.field_cognome
+    - field.field.node.persona.field_competenze
+    - field.field.node.persona.field_curriculum_vitae
+    - field.field.node.persona.field_deleghe
+    - field.field.node.persona.field_descrizione_breve
+    - field.field.node.persona.field_dichiarazione_dei_redditi
+    - field.field.node.persona.field_galleria_immagini
+    - field.field.node.persona.field_immagine
+    - field.field.node.persona.field_incarichi
+    - field.field.node.persona.field_nome
+    - field.field.node.persona.field_organizzazioni
+    - field.field.node.persona.field_punti_di_contatto
+    - field.field.node.persona.field_sezione_amministrazione
+    - field.field.node.persona.field_situazione_patrimoniale
+    - field.field.node.persona.field_spese_elettorali
+    - field.field.node.persona.field_ulteriori_informazioni
+    - field.field.node.persona.field_v_situazione_patrimoniale
+    - node.type.persona
+  module:
+    - media
+    - user
+id: node.persona.card
+targetEntityType: node
+bundle: persona
+mode: card
+content:
+  field_cognome:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descrizione_breve:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_immagine:
+    type: media_thumbnail
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_incarichi:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_nome:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_altre_cariche: true
+  field_biografia: true
+  field_competenze: true
+  field_curriculum_vitae: true
+  field_deleghe: true
+  field_dichiarazione_dei_redditi: true
+  field_galleria_immagini: true
+  field_organizzazioni: true
+  field_punti_di_contatto: true
+  field_sezione_amministrazione: true
+  field_situazione_patrimoniale: true
+  field_spese_elettorali: true
+  field_ulteriori_informazioni: true
+  field_v_situazione_patrimoniale: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

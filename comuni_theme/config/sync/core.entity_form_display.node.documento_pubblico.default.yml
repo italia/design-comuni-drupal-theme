@@ -31,7 +31,6 @@ dependencies:
     - node.type.documento_pubblico
   module:
     - datetime
-    - media_library
     - paragraphs
     - path
     - text
@@ -42,19 +41,19 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_argomenti:
     type: options_select
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   field_autori:
     type: text_textarea
-    weight: 17
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -62,31 +61,31 @@ content:
     third_party_settings: {  }
   field_business_events:
     type: options_select
-    weight: 26
+    weight: 27
     region: content
     settings: {  }
     third_party_settings: {  }
   field_data_fine:
     type: datetime_default
-    weight: 21
+    weight: 22
     region: content
     settings: {  }
     third_party_settings: {  }
   field_data_inizio:
     type: datetime_default
-    weight: 20
+    weight: 21
     region: content
     settings: {  }
     third_party_settings: {  }
   field_data_protocollo:
     type: datetime_default
-    weight: 9
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
   field_dataset:
     type: entity_reference_autocomplete
-    weight: 27
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS
@@ -96,7 +95,7 @@ content:
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
-    weight: 14
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -104,7 +103,7 @@ content:
     third_party_settings: {  }
   field_descrizione_completa:
     type: text_textarea
-    weight: 15
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -112,7 +111,7 @@ content:
     third_party_settings: {  }
   field_documenti_collegati:
     type: entity_reference_autocomplete
-    weight: 24
+    weight: 25
     region: content
     settings:
       match_operator: CONTAINS
@@ -122,54 +121,35 @@ content:
     third_party_settings: {  }
   field_formato_documento:
     type: string_textfield
-    weight: 0
+    weight: 1
     region: content
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_galleria_immagini:
-    type: entity_reference_paragraphs
-    weight: 32
-    region: content
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: ''
     third_party_settings: {  }
   field_identificativo:
     type: string_textfield
-    weight: 7
+    weight: 9
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_immagine:
-    type: media_library_widget
-    weight: 10
-    region: content
-    settings:
-      media_types: {  }
-    third_party_settings: {  }
   field_licenza_di_distribuzione:
     type: options_select
-    weight: 18
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
   field_life_events:
     type: options_select
-    weight: 25
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
   field_paragraph_documento:
     type: paragraphs
-    weight: 28
+    weight: 29
     region: content
     settings:
       title: Paragraph
@@ -187,7 +167,7 @@ content:
     third_party_settings: {  }
   field_protocollo:
     type: string_textfield
-    weight: 8
+    weight: 10
     region: content
     settings:
       size: 60
@@ -195,7 +175,7 @@ content:
     third_party_settings: {  }
   field_riferimenti_normativi:
     type: text_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -203,7 +183,7 @@ content:
     third_party_settings: {  }
   field_servizi:
     type: entity_reference_autocomplete
-    weight: 19
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -213,25 +193,25 @@ content:
     third_party_settings: {  }
   field_sezione_amministrazione:
     type: options_select
-    weight: 31
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
   field_tipo_di_documento:
     type: options_select
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   field_tipo_doc_albo_pretorio:
     type: options_select
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_ufficio_respons_documento:
     type: entity_reference_autocomplete
-    weight: 16
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -241,7 +221,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 22
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -249,34 +229,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 5
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 3
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 6
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 4
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -291,7 +271,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS
@@ -299,4 +279,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_galleria_immagini: true
+  field_immagine: true

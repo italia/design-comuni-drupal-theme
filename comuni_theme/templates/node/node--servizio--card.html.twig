@@ -1,0 +1,18 @@
+<div class="card card-teaser card-flex shadow-sm border border-light p-3 mb-1">
+  <div class="card-body pb-5">
+    <div class="category-top nascondi-ultimo-wrapper"> <span class="title-xsmall-semi-bold fw-semibold">
+      {% for item_categoria in content.field_categoria_del_servizio["#items"] %}
+        {{ item_categoria.entity.name.value }}<span class="nascondi-ultimo">, </span>
+      {% endfor %}
+    </span> </div>
+    <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
+    <div class="card-text u-main-black">
+      <div class="mt-1"><p>
+        {% if content.field_descrizione_breve[0] is not empty %}
+          {{- content.field_descrizione_breve -}}
+        {% endif %}
+      </p></div>
+    </div>
+  </div>
+  <a class="read-more position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
+</div>

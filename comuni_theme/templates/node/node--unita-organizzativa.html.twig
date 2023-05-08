@@ -297,22 +297,7 @@
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
             <div class="card-wrapper card-teaser-wrapper">
-              {% for item in content.field_elenco_servizi_offerti['#items'] %}
-                <div class="card card-teaser card-flex shadow-sm border border-light p-3 mb-1">
-                  <div class="card-body pb-5">
-                    <div class="category-top nascondi-ultimo-wrapper"> <span class="title-xsmall-semi-bold fw-semibold">
-                      {% for item_categoria in item.entity.field_categoria_del_servizio %}
-                        {{ item_categoria.entity.name.value }}<span class="nascondi-ultimo">, </span>
-                      {% endfor %}
-                    </span> </div>
-                    <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.title.value }}</h3>
-                    <div class="card-text u-main-black">
-                      <div class="mt-1"><p>{{ item.entity.field_descrizione_breve.value }}</p></div>
-                    </div>
-                  </div>
-                  <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': item.target_id}) }}" title="Vai al contenuto {{ item.entity.title.value }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
-                </div>
-              {% endfor %}
+              {{ content.field_elenco_servizi_offerti }}
             </div>
         </section>
         {% endif %}

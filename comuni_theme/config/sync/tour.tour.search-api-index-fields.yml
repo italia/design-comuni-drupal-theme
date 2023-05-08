@@ -64,28 +64,28 @@ tips:
   search-api-index-fields-edit:
     id: search-api-index-fields-edit
     plugin: text
-    label: 'Edit field'
+    label: 'Modifica campo'
     weight: 8
     selector: '.details-wrapper:nth(0) table tbody td:nth(5) a'
     body: 'Some fields have additional configuration available, in which case an "Edit" link is displayed in the "Operations" column.'
   search-api-index-fields-remove:
     id: search-api-index-fields-remove
     plugin: text
-    label: 'Remove field'
+    label: 'Rimuovi campi'
     weight: 9
     selector: '.details-wrapper:nth(0) table tbody td:nth(6) a'
     body: 'Removes a field from the index again. (Note: Sometimes, a field is required (for example, by a processor) and cannot be removed.)'
   search-api-index-fields-submit:
     id: search-api-index-fields-submit
     plugin: text
-    label: 'Save changes'
+    label: 'Salva le modifiche'
     weight: 10
     selector: '#edit-actions-submit'
     body: 'This saves all changes made to the fields for this index. Until this button is pressed, all added, changed or removed fields will only be stored temporarily and not effect the actual index used in the rest of the site.'
   search-api-index-fields-cancel:
     id: search-api-index-fields-cancel
     plugin: text
-    label: 'Cancel changes'
+    label: 'Annulla le modifiche'
     weight: 10
     selector: '#edit-actions-cancel'
     body: 'If you have made changes to the index''s fields but not yet saved them, the "Cancel" link lets you discard those changes.'

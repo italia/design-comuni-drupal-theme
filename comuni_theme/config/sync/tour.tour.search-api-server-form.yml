@@ -24,7 +24,7 @@ tips:
   search-api-server-form-name:
     id: search-api-server-form-name
     plugin: text
-    label: 'Server name'
+    label: 'Nome server'
     weight: 2
     selector: '#edit-name'
     body: 'Enter a name to identify this server. For example, "Solr server". This will only be displayed in the admin user interface.'

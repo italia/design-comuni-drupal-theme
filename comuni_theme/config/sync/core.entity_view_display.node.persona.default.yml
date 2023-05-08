@@ -22,9 +22,11 @@ dependencies:
     - field.field.node.persona.field_spese_elettorali
     - field.field.node.persona.field_ulteriori_informazioni
     - field.field.node.persona.field_v_situazione_patrimoniale
+    - image.style.avatar
     - node.type.persona
   module:
     - entity_reference_revisions
+    - media
     - text
     - user
 id: node.persona.default
@@ -105,10 +107,13 @@ content:
     weight: 18
     region: content
   field_immagine:
-    type: entity_reference_label
+    type: media_thumbnail
     label: above
     settings:
-      link: true
+      image_link: ''
+      image_style: avatar
+      image_loading:
+        attribute: lazy
     third_party_settings: {  }
     weight: 4
     region: content

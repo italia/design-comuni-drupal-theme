@@ -44,6 +44,11 @@
               </h1>
             {% endif %}
             {{ title_suffix }}
+            {% if content.field_descrizione_breve %}
+              <div class="subtitle-small mb-3" data-element="service-description">
+                {{ content.field_descrizione_breve }}
+              </div>
+            {% endif %}
           </div>
           <div class="col-lg-3 offset-lg-1 mt-5 mt-lg-0">
             {{ drupal_block("social_sharing_buttons_block") }}

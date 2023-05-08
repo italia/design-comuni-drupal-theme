@@ -1,0 +1,8 @@
+uuid: 7507bfd3-a52b-400a-9fd2-0861b407814f
+langcode: it
+status: true
+dependencies: {  }
+id: default_short_date_no_time
+label: 'Default short date no time'
+locked: false
+pattern: d/m/Y

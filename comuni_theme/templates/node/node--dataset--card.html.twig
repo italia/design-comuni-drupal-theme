@@ -1,0 +1,24 @@
+<div class="card card-teaser flex-nowrap shadow p-4">
+  <svg class="icon" viewbox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z"/>
+    <path fill="none" d="M0 0h24v24H0z"/>
+  </svg>
+  <div class="card-body mb-4">
+    <h5 class="card-title">
+    {% if content.field_paragraph_documento.entity.field_documento[0] is not empty %}
+      <a href="{{ file_url(content.field_paragraph_documento.entity.field_documento.entity.field_media_document.entity.fileuri) }}" download target="_blank">{{ label }}</a>
+    {% else %}
+      <a href="{{ content.field_paragraph_documento["#items"].entity.field_link[0].uri }}" title="{{ content.field_paragraph_documento["#items"].entity.field_link[0].title }}" target="_blank">{{ label }}</a>
+    {% endif %}
+    </h5>
+    <div class="card-text">
+      <p>{{ content.field_descrizione_breve }}</p>
+    </div>
+    <a class="read-more pt-0" href="{{ ( url('entity.node.canonical', {'node':  (node.id)  }) ) }}" data-focus-mouse="false">
+      <span class="text">Ulteriori informazioni</span>
+      <svg viewBox="0 0 24 24" id="it-arrow-right" class="icon" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.9,5.4l-0.7,0.7l5.3,5.4H3v1h15.5l-5.3,5.4l0.7,0.7l6.6-6.6L13.9,5.4z"/>
+      </svg>
+    </a>
+  </div>
+</div>

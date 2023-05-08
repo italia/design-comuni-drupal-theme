@@ -33,11 +33,9 @@ visibility:
       article: article
       dataset: dataset
       documento_privato: documento_privato
-      documento_pubblico: documento_pubblico
       evento: evento
       faq: faq
       fase_del_servizio: fase_del_servizio
-      incarico: incarico
       messaggio: messaggio
       notizia: notizia
       pagamento: pagamento

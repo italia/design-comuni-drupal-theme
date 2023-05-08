@@ -5,8 +5,8 @@ dependencies:
   config:
     - field.storage.node.field_condizioni_di_servizio_par
     - node.type.servizio
-    - paragraphs.paragraphs_type.condizioni_di_servizio
-    - paragraphs.paragraphs_type.condizioni_di_servizio_link
+    - paragraphs.paragraphs_type.documento
+    - paragraphs.paragraphs_type.link
   module:
     - entity_reference_revisions
 id: node.servizio.field_condizioni_di_servizio_par
@@ -23,8 +23,8 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      condizioni_di_servizio: condizioni_di_servizio
-      condizioni_di_servizio_link: condizioni_di_servizio_link
+      documento: documento
+      link: link
     negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:
@@ -68,10 +68,10 @@ settings:
         enabled: false
       condizioni_di_servizio:
         weight: 52
-        enabled: true
+        enabled: false
       condizioni_di_servizio_link:
         weight: 53
-        enabled: true
+        enabled: false
       container_argomenti_in_evidenza:
         weight: 66
         enabled: false
@@ -98,7 +98,7 @@ settings:
         enabled: false
       documento:
         weight: 74
-        enabled: false
+        enabled: true
       elemento_video:
         weight: 75
         enabled: false
@@ -128,7 +128,7 @@ settings:
         enabled: false
       link:
         weight: 84
-        enabled: false
+        enabled: true
       link_con_icona:
         weight: 85
         enabled: false
@@ -137,6 +137,12 @@ settings:
         enabled: false
       links_con_icona:
         weight: 87
+        enabled: false
+      orari_giorni:
+        weight: 92
+        enabled: false
+      orari_ore:
+        weight: 93
         enabled: false
       prenotazione_appuntamento:
         weight: 88

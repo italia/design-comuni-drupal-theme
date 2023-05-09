@@ -6,7 +6,7 @@
         <div class="mb-1"><span class="fw-bold">Presso:</span>
           <p>
             {% for item in content.field_unita_organizzativa["#items"] %}
-                {{- item|view -}}
+                <a href="{{ path('entity.node.canonical', {'node': item.entity.id}) }}" title="Vai al contenuto {{ item.entity.label }}">{{ item.entity.label }}</a>
                 {% if not loop.last %}, {% endif %}
             {% endfor %}
           </p>

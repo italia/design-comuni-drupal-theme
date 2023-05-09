@@ -1,5 +1,0 @@
-{% if items[0].content["#description"] is not empty %}
-  <a href="{{ file_url(items[0].content["#file"].fileuri) }}" download target="_blank">{{ items[0].content["#description"] }}</a>
-{% else %}
-  <a href="{{ file_url(items[0].content["#file"].fileuri) }}" download target="_blank">{{ items[0].content["#file"].filename.value }}</a>
-{% endif %}

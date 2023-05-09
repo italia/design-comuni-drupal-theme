@@ -1,10 +1,10 @@
 {% for item in items %}
   {% set item_name = item.content['#media'].name.value %}
-  {% if item.content['#media'].field_media_document[0].description is not empty %}
-    {% set item_name = item.content['#media'].field_media_document[0].description %}
+  {% if item.content['#media'].field_media_file[0].description is not empty %}
+    {% set item_name = item.content['#media'].field_media_file[0].description %}
   {% endif %}
   <div class="cmp-icon-link">
-    <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}"
+    <a href="{{ file_url(item.content['#media'].field_media_file.entity.fileuri) }}"
       class="list-item icon-left d-inline-block"
       aria-label="Scarica {{ item_name }}" title="Scarica {{ item_name }}"
       data-element="service-file"

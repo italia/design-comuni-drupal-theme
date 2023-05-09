@@ -46,7 +46,7 @@ content:
     region: content
   field_cap:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -54,7 +54,7 @@ content:
     region: content
   field_circoscrizione:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -118,7 +118,7 @@ content:
     region: content
   field_indirizzo:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -166,7 +166,7 @@ content:
     region: content
   field_quartiere:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -228,5 +228,4 @@ content:
     region: content
 hidden:
   langcode: true
-  node_read_time: true
   search_api_excerpt: true

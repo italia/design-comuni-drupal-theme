@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_patrocinato_da
     - node.type.evento
-    - paragraphs.paragraphs_type.link_esterno
+    - paragraphs.paragraphs_type.link
   module:
     - entity_reference_revisions
 id: node.evento.field_patrocinato_da
@@ -22,7 +22,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      link_esterno: link_esterno
+      link: link
     negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:
@@ -52,6 +52,9 @@ settings:
       card_assistenza:
         weight: 51
         enabled: false
+      card_foto_gallery:
+        weight: 62
+        enabled: false
       collection_multimediale:
         weight: 52
         enabled: false
@@ -73,14 +76,20 @@ settings:
       container_contenuti_in_evidenza:
         weight: 58
         enabled: false
+      container_foto_gallery:
+        weight: 70
+        enabled: false
+      container_vuoto:
+        weight: 71
+        enabled: false
       contenuto_allegati_per_tipo:
         weight: 59
         enabled: false
+      dataset:
+        weight: 73
+        enabled: false
       documento:
         weight: 60
-        enabled: false
-      elemento_immagine:
-        weight: 61
         enabled: false
       elemento_video:
         weight: 62
@@ -88,14 +97,17 @@ settings:
       esplora:
         weight: 63
         enabled: false
+      faq:
+        weight: 77
+        enabled: false
       fase_intitolata:
         weight: 64
         enabled: false
+      fase_semplice:
+        weight: 79
+        enabled: false
       hero_immagine:
         weight: 65
-        enabled: false
-      homepage_card_argomento:
-        weight: 66
         enabled: false
       homepage_top_card:
         weight: 67
@@ -103,23 +115,29 @@ settings:
       homepage_top_cards:
         weight: 68
         enabled: false
-      icona_content_type:
-        weight: 69
-        enabled: false
       intestazione_ricerca_e_preferiti:
         weight: 70
         enabled: false
       link:
         weight: 71
-        enabled: false
+        enabled: true
       link_con_icona:
         weight: 73
         enabled: false
       link_esterno:
         weight: 74
-        enabled: true
+        enabled: false
       links_con_icona:
         weight: 72
+        enabled: false
+      orari_giorni:
+        weight: 88
+        enabled: false
+      orari_ore:
+        weight: 89
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 90
         enabled: false
       punto_di_contatto:
         weight: 75
@@ -127,14 +145,26 @@ settings:
       ricerca:
         weight: 76
         enabled: false
+      ricerca_documenti_e_dati:
+        weight: 93
+        enabled: false
       ricerca_novita:
         weight: 77
         enabled: false
       ricerca_servizi:
         weight: 78
         enabled: false
+      richiesta_assistenza:
+        weight: 96
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 97
+        enabled: false
       siti_tematici:
         weight: 79
+        enabled: false
+      testo:
+        weight: 99
         enabled: false
       testo_e_lista:
         weight: 80

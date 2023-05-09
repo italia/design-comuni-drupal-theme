@@ -101,9 +101,11 @@ content:
     weight: 109
     region: content
   field_evento_genitore:
-    type: entity_reference_entity_id
+    type: entity_reference_entity_view
     label: hidden
-    settings: {  }
+    settings:
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 107
     region: content
@@ -129,7 +131,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: full
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 115
@@ -138,7 +140,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 118
@@ -156,8 +158,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 129
     region: content
@@ -165,7 +167,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser_dettaglio_evento
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 128

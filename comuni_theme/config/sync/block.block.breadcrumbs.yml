@@ -32,7 +32,6 @@ visibility:
       appuntamento: appuntamento
       article: article
       documento_privato: documento_privato
-      evento: evento
       faq: faq
       fase_del_servizio: fase_del_servizio
       messaggio: messaggio

@@ -1,0 +1,38 @@
+<div class="card-wrapper card-teaser">
+  <div class="card card-img no-after border border-light shadow-sm mt-0">
+    <div class="img-responsive-wrapper">
+      <div class="img-responsive">
+        <figure class="img-wrapper">
+          <img src="{{ file_url(node.field_immagine.entity.field_media_image.entity.fileuri) }}"
+            title="{{ node.field_immagine.entity.field_media_image.alt }}"
+            alt="{{ node.field_immagine.entity.field_media_image.alt }}"
+          >
+        </figure>
+        <div class="card-calendar d-flex flex-column justify-content-center">
+          <span class="card-date">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('d') }}</span>
+          <span class="card-day">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('M')|monthEn2It(false) }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="{{ url }}"
+          class="text-decoration-none"
+        >{{ node.label }}</a>
+      </h5>
+      <p class="card-text"></p>
+      <a href="{{ url }}"
+        title="Leggi di più - {{ node.label }}"
+        aria-label="Leggi di più - {{ node.label }}"
+        class="read-more" 
+      >
+        <span class="text">Leggi di più</span>
+        <span class="visually-hidden">{{ content.field_sottotitolo }}</span>
+        <svg class="icon" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/>
+          <path fill="none" d="M0 0h24v24H0z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>

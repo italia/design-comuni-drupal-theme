@@ -25,10 +25,11 @@ bundle: incarico
 mode: default
 content:
   field_atto_di_nomina:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 111
     region: content
@@ -41,25 +42,25 @@ content:
     region: content
   field_data_conclusione_incarico:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: olivero_medium
     third_party_settings: {  }
     weight: 107
     region: content
   field_data_inizio_incarico:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
-      format_type: medium
+      format_type: olivero_medium
     third_party_settings: {  }
     weight: 106
     region: content
   field_data_insediamento:
     type: datetime_default
-    label: above
+    label: hidden
     settings:
       timezone_override: ''
       format_type: olivero_medium
@@ -74,18 +75,20 @@ content:
     weight: 102
     region: content
   field_persona:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 103
     region: content
   field_responsabile_struttura:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 105
     region: content
@@ -105,10 +108,11 @@ content:
     weight: 109
     region: content
   field_unita_organizzativa:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: above
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 104
     region: content

@@ -551,39 +551,6 @@
         </section>
         {% endif %}
 
-        {#% if content.field_unita_org_responsabile[0] is not empty or content.field_argomenti[0] is not empty %}
-        <section class="it-page-section">
-          <h2 class="mb-3" id="contacts">Contatti</h2>
-          <div class="row">
-            {% if content.field_unita_org_responsabile[0] is not empty %}
-              <div class="col-12 col-md-8 col-lg-6 mb-30">
-                <div class="card-wrapper rounded h-auto mt-10">
-                  {% for uorg in content.field_unita_org_responsabile['#items'] %}
-                    <div class="card card-teaser card-teaser-info rounded shadow-sm p-3">
-                      <div class="card-body pe-3">
-                        <p class="card-title text-paragraph-regular-medium-semi mb-3">
-                          <a href="{{ path('entity.node.canonical', {'node': uorg.target_id}) }}"
-                            class="text-decoration-none" data-element="service-area"
-                          >{{ uorg.entity.title.value }}
-                          </a>
-                        </p>
-                        <div class="card-text">
-                          <p class="u-main-black">{{ uorg.entity.field_sede_principale.entity.field_indirizzo.value }}, {{ uorg.entity.field_sede_principale.entity.field_cap.value }}</p>
-                        </div>
-                      </div>
-                      <div class="avatar size-xl">
-                        <img src="{{ file_url(uorg.entity.field_immagine.entity.field_media_image.entity.fileuri) }}"
-                              alt="Immagine">
-                      </div>
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
-            {% endif %}
-          </div>
-        </section>
-        {% endif %#}
-
         <section class="it-page-section mb-30">
             <h2 class="mb-3" id="contacts">Contatti</h2>
             <div class="card-wrapper card-column my-3">

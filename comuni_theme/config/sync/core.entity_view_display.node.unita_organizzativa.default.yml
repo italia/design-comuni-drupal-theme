@@ -38,10 +38,11 @@ content:
     weight: 115
     region: content
   field_altre_sedi:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 113
     region: content
@@ -125,8 +126,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 112
     region: content

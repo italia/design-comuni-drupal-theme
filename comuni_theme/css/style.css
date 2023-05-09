@@ -61,3 +61,7 @@ footer .it-brand-wrapper img {
 
 /* Gestione separatore automatico */
 .nascondi-ultimo:last-child  { display:none; }
+
+/* Evitare visualizzazione link ulteriori dettagli che punta a se stesso nelle card Indirizzo dentro il luogo */
+.card-indirizzo-luogo .read-more { display:none; }
+.card-indirizzo-luogo .pb-4 { padding-bottom:0 !important; }

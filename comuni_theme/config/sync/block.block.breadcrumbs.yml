@@ -31,7 +31,6 @@ visibility:
     bundles:
       appuntamento: appuntamento
       article: article
-      dataset: dataset
       documento_privato: documento_privato
       evento: evento
       faq: faq

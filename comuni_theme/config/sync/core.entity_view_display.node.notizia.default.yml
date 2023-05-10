@@ -35,7 +35,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser_dettaglio_notizia
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 103
@@ -119,10 +119,11 @@ content:
     weight: 104
     region: content
   field_luoghi:
-    type: entity_reference_label
+    type: entity_reference_entity_view
     label: hidden
     settings:
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 110
     region: content
@@ -138,8 +139,8 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
-      link: true
+      view_mode: card
+      link: false
     third_party_settings: {  }
     weight: 119
     region: content
@@ -151,10 +152,9 @@ content:
     weight: 111
     region: content
   field_tipo_di_notizia:
-    type: entity_reference_entity_view
+    type: entity_reference_label
     label: hidden
     settings:
-      view_mode: default
       link: true
     third_party_settings: {  }
     weight: 101

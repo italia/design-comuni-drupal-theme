@@ -1,76 +1,36 @@
-{#
-/**
- * @file
- * Default theme implementation to display a node.
- *
- * Available variables:
- * - node: The node entity with limited access to object properties and methods.
- *   Only method names starting with "get", "has", or "is" and a few common
- *   methods such as "id", "label", and "bundle" are available. For example:
- *   - node.getCreatedTime() will return the node creation timestamp.
- *   - node.hasField('field_example') returns TRUE if the node bundle includes
- *     field_example. (This does not indicate the presence of a value in this
- *     field.)
- *   - node.isPublished() will return whether the node is published or not.
- *   Calling other methods, such as node.delete(), will result in an exception.
- *   See \Drupal\node\Entity\Node for a full list of public properties and
- *   methods for the node object.
- * - label: (optional) The title of the node.
- * - content: All node items. Use {{ content }} to print them all,
- *   or print a subset such as {{ content.field_example }}. Use
- *   {{ content|without('field_example') }} to temporarily suppress the printing
- *   of a given child element.
- * - author_picture: The node author user entity, rendered using the "compact"
- *   view mode.
- * - metadata: Metadata for this node.
- * - date: (optional) Themed creation date field.
- * - author_name: (optional) Themed author name field.
- * - url: Direct URL of the current node.
- * - display_submitted: Whether submission information should be displayed.
- * - attributes: HTML attributes for the containing element.
- *   The attributes.class element may contain one or more of the following
- *   classes:
- *   - node: The current template type (also known as a "theming hook").
- *   - node--type-[type]: The current node type. For example, if the node is an
- *     "Article" it would result in "node--type-article". Note that the machine
- *     name will often be in a short form of the human readable label.
- *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
- *     teaser would result in: "node--view-mode-teaser", and
- *     full: "node--view-mode-full".
- *   The following are controlled through the node publishing options.
- *   - node--promoted: Appears on nodes promoted to the front page.
- *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
- *     teaser listings.
- *   - node--unpublished: Appears on unpublished nodes visible only to site
- *     admins.
- * - title_attributes: Same as attributes, except applied to the main title
- *   tag that appears in the template.
- * - content_attributes: Same as attributes, except applied to the main
- *   content tag that appears in the template.
- * - author_attributes: Same as attributes, except applied to the author of
- *   the node tag that appears in the template.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the main title tag that appears in the template.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the main title tag that appears in the template.
- * - view_mode: View mode; for example, "teaser" or "full".
- * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
- * - page: Flag for the full page state. Will be true if view_mode is 'full'.
- * - readmore: Flag for more state. Will be true if the teaser content of the
- *   node cannot hold the main body content.
- * - logged_in: Flag for authenticated user status. Will be true when the
- *   current user is a logged-in member.
- * - is_admin: Flag for admin user status. Will be true when the current user
- *   is an administrator.
- *
- * @see template_preprocess_node()
- *
- * @ingroup themeable
- */
-#}
-
 <div class="container px-4 my-4" id="main-container">
-  {{ drupal_block('system_breadcrumb_block') }}
+  {#{ drupal_block('system_breadcrumb_block') }#}
+  <div class="row justify-content-center">
+    <div class="col-lg-12 px-lg-4 py-lg-2">
+      <div class="cmp-breadcrumbs" role="navigation">
+        <nav class="breadcrumb-container" aria-label="breadcrumb">
+          <ol data-element="breadcrumb" class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}">Home</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}novita">Novità</a>
+              <span class="separator">/</span>
+            </li>
+            {% if content.field_tipo_di_notizia[0] is not empty %}
+            <li class="breadcrumb-item">
+                {% for item in content.field_tipo_di_notizia["#items"] %}
+                    {{ item|view }}
+                    {% if not loop.last %} - {% endif %}
+                {% endfor %}
+                <span class="separator">/</span>
+            </li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">
+                {{label}}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  
   <div class="row">
     <div class="col-lg-8 px-lg-4 py-lg-2">
       {% if node.label %}
@@ -83,21 +43,26 @@
         <p data-audio>{{ content.field_descrizione_breve }}</p>
       {% endif %}
       <div class="row mt-5 mb-4">
-        <div class="col-6">
-          <small>Data:</small>{# TODO Label #}
-
+        <div class="col">
+          <small>Data:</small>
           {% if content.field_data_della_notizia %}
             {% if content.field_data_della_notizia['#items'].0.value %}
               {% set data_val = content.field_data_della_notizia['#items'].0.value %}
             {% else %}
               {% set data_val = node.getCreatedTime| date('Y-m-d') %}
             {% endif %}
-            <p
-              class="fw-semibold font-monospace">{{ data_val|date('d') }} {{ data_val|date('M')|monthEn2It(false)|lower }} {{ data_val|date('Y') }}</p>
+            <p class="fw-semibold font-monospace">{{ data_val|date('d') }} {{ data_val|date('M')|monthEn2It(false)|lower }} {{ data_val|date('Y') }}</p>
           {% endif %}
         </div>
-        <div class="col-6">
-          <small>Tempo di lettura:</small>{# TODO Label #}
+        {% if content.field_data_di_scadenza %}
+        <div class="col">
+          <small>Data scadenza:</small>
+          {% set data_al = content.field_data_di_scadenza['#items'].0.value %}
+          <p class="fw-semibold font-monospace">{{ data_al|date('d') }} {{ data_al|date('M')|monthEn2It(false)|lower }} {{ data_al|date('Y') }}</p>
+        </div>
+        {% endif %}
+        <div class="col">
+          <small>Tempo di lettura:</small>
           <p class="fw-semibold">{{ content.reading_time }} min</p>
         </div>
       </div>
@@ -155,25 +120,33 @@
         </div>
       </div>
       <div class="mt-4 mb-4">
-        {% if content.field_argomenti %}
-          <div class="row">
-            <span class="mb-2 small">Argomenti</span>
+        {% if content.field_argomenti[0] is not empty %}
+          <span class="subtitle-small">Argomenti</span>
+          <div class="chip-wrapper mt-2">
+            {% for item in attribute(content.field_argomenti, "#items") %}
+              {% set arg_name = item.entity.name.value %}
+              <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                <div class="chip chip-simple chip-primary">
+                  <span class="chip-label">{{ arg_name }}</span>
+                </div>
+              </a>
+            {% endfor %}
           </div>
-          <ul class="d-flex flex-wrap gap-1">
-          {% for item in attribute(content.field_argomenti, "#items") %}
-            <li>
-              <div class="chip chip-simple">
-                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}"
-                  class="chip-label"
-                >
-                  <span class="chip-label">
-                    {{ item.entity.name.value }}
-                  </span>
-                </a>
-              </div>
-            </li>
-          {% endfor %}
-          </ul>
+        {% endif %}
+      </div>
+      <div class="mt-4 mb-4">
+        {% if content.field_tipo_di_notizia[0] is not empty %}
+          <span class="subtitle-small">Tipo di evento</span>
+          <div class="chip-wrapper mt-2">
+            {% for item in attribute(content.field_tipo_di_notizia, "#items") %}
+              {% set arg_name = item.entity.name.value %}
+              <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                <div class="chip chip-simple chip-primary">
+                  <span class="chip-label">{{ arg_name }}</span>
+                </div>
+              </a>
+            {% endfor %}
+          </div>
         {% endif %}
       </div>
     </div>
@@ -270,67 +243,97 @@
       </div>
     </aside>
     <section class="col-lg-8 it-page-sections-container border-light">
-      {% if content.field_testo_completo_notizia [0] is not empty %}
-        <article id="descrizione" class="it-page-section anchor-offset" data-audio>
-          <h2 class="mb-3">Descrizione</h2>{# TODO Label #}
-          <div class="font-serif">
+
+      {% if content.field_testo_completo_notizia[0] is not empty %}
+        <article class="it-page-section mb-30" id="descrizione">
+          <h2 class="mb-3 visually-hidden">Descrizione</h2>
+          <div class="richtext-wrapper lora">
             {{ content.field_testo_completo_notizia }}
           </div>
+        </article>
+      {% endif %}
 
+      {% if content.field_luoghi[0] is not empty %}
+        <article class="it-page-section mb-30" id="field_luoghi">
+          <h2 class="mb-3">Luoghi</h2>
+            <div class="card-wrapper card-teaser-wrapper">
+              {{ content.field_luoghi }}
+            </div>
         </article>
       {% endif %}
+
       {% if content.field_documenti[0] is not empty %}
-        <article id="documenti" class="it-page-section anchor-offset mt-5">
+        <article class="it-page-section mt-5" id="documenti">
           <h2 class="mb-3">Documenti</h2>
-          {{ content.field_documenti }}
+          <div class="card-wrapper card-teaser-wrapper">
+            {{ content.field_documenti }}
+          </div>
         </article>
       {% endif %}
+
       {% if content.field_allegati[0] is not empty %}
-        <article id="allegati" class="it-page-section anchor-offset mt-5">
+        <article id="allegati" class="it-page-section mt-5">
           <h2 class="mb-3">Allegati</h2>
-          {{ content.field_allegati }}
+          <div class="card-wrapper card-teaser-wrapper">
+            {{ content.field_allegati }}
+          </div>
         </article>
       {% endif %}
+
       {% if content.field_dataset[0] is not empty %}
-        <article id="dataset" class="it-page-section anchor-offset mt-5">
+        <article id="dataset" class="it-page-section mt-5">
           <h2 class="mb-3">Dataset</h2>
           {{ content.field_dataset }}
         </article>
       {% endif %}
-      {% if content.field_a_cura_di[0] is not empty %}
-        <article id="a-cura-di" class="it-page-section anchor-offset mt-5">
+
+      {% if content.field_a_cura_di[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
+        <article id="a-cura-di" class="it-page-section mt-5">
           <h2 class="mb-3">A cura di</h2>
-          <div class="row">
-            <div class="col-12 col-sm-8">
-              <p class="h6">
-                <small>Questa pagina è gestita da</small>{# TODO Label #}
-              </p>
-              {{ content.field_a_cura_di }}
-            </div>
-            <div class="col-12 col-sm-4">
+          <div class="card-wrapper card-teaser-wrapper card-column my-3">
+            <div class="row">
+              {% if content.field_a_cura_di[0] is not empty %}
+                <div class="col-md-6">
+                  {{ content.field_a_cura_di }}
+                </div>
+              {% endif %}
               {% if content.field_persone[0] is not empty %}
-                <h6><small>Persone</small></h6>
-                {% for item in attribute(content.field_persone, "#items") %}
-                  <a href="{{ path('entity.node.canonical', { 'node': item.entity.id }) }}"
-                    class="text-decoration-none"
-                  >
-                    <div class="chip chip-simple chip-primary">
-                      <span class="chip-label">
-                      {{ item.entity.field_nome.value }}&nbsp;{{ item.entity.field_cognome.value }}
-                      </span>
+                <div class="col-md-6 mt-4 mt-md-0">
+                  {% for item in content.field_persone["#items"] %}
+                  <div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light flex-column p-0">
+                    <div class="card-image-wrapper d-flex">
+                      <div class="card-body p-3 pb-5">
+                        <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.field_nome.value }} {{ item.entity.field_cognome.value }}</h3>
+                        <div class="text-paragraph-card u-grey-light m-0">
+                          <div class="mb-1">{{ item.entity.field_descrizione_breve.value }}</div>
+                        </div>
+                      </div>
+                      <div class="card-image card-image-rounded pb-5">{{ item.entity.field_immagine|view }}</div>
                     </div>
-                  </a>
-                {% endfor %}
+                    <a class="read-more ps-3 position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ item.entity.label }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
+                  </div>
+                  {% endfor %}
+                </div>
               {% endif %}
             </div>
           </div>
-        </article>
+      </article>
       {% endif %}
 
       {% if content.field_ulteriori_informazioni[0] is not empty %}
-        <article id="ulteriori-informazioni" class="it-page-section anchor-offset mt-5">
-          <h4 class="mb-3">Ulteriori informazioni</h4>
-          {{ content.field_ulteriori_informazioni }}
+        <article id="ulteriori-informazioni" class="it-page-section mb-5">
+          <h2 class="mb-3">Ulteriori informazioni</h2>
+              <div class="mt-4">
+                <div class="callout">
+                  <div class="callout-title">
+                    <svg viewBox="0 0 24 24" id="it-info-circle" class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 19a9 9 0 119-9 9 9 0 01-9 9zm-.7-15h1.5v2h-1.5zm0 3h1.5v9h-1.5z"/>
+                      <path fill="none" d="M0 0h24v24H0z"/>
+                    </svg>
+                  </div>
+                    {{ content.field_ulteriori_informazioni }}
+                </div>
+              </div>
         </article>
       {% endif %}
 
@@ -340,17 +343,7 @@
           <p class="h6"><strong>{{ node.changed.value|date("d/m/Y, H:i") }}</strong></p>
         </article>
       {% endif %}
+
     </section>
   </div>
 </div>
-
-{% if display_submitted %}
-  <footer>
-    {{ author_picture }}
-    <div{{ author_attributes }}>
-      {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-      {{ metadata }}
-    </div>
-  </footer>
-{% endif %}
-

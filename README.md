@@ -78,9 +78,10 @@ Prepara la configurazione per la lingua italiana:
 drush cdel language.entity.it
 ~~~
 
-Scarica la libreria necessaria al modulo chosen:
+Abilita il modulo "chosen" e scarica la libreria necessaria al modulo:
 
 ~~~
+drush pm:enable chosen
 drush chosenplugin
 ~~~
 

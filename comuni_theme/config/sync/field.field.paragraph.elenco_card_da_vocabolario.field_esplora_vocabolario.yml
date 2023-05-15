@@ -1,0 +1,23 @@
+uuid: 9d8e5d6a-bacd-4756-949a-08d80a344a76
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_esplora_vocabolario
+    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+id: paragraph.elenco_card_da_vocabolario.field_esplora_vocabolario
+field_name: field_esplora_vocabolario
+entity_type: paragraph
+bundle: elenco_card_da_vocabolario
+label: Vocabolario
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_vocabulary'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

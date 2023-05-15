@@ -1,0 +1,14 @@
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4 title-xxlarge">{{ paragraph.field_titolo.value }}</h2>
+    <div class="row row-cols-3 g-4">
+      {% set param1 = [] %}
+      {% for item in paragraph.field_esplora_vocabolario %}
+        {% set param1 = param1|merge([item.target_id]) %}
+      {% endfor %}
+      {% set param1 = param1|join('+') %}
+      
+      {{ drupal_view('elenco_card_termini_da_un_vocabolario', 'default', param1) }}
+    </div>
+  </div>
+</section>

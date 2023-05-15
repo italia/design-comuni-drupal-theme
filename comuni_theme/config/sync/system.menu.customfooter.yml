@@ -1,7 +1,12 @@
 uuid: 163947ee-9614-45c5-b0c2-0d779855ae18
 langcode: it
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: customfooter
 label: 'Footer - Navigazione'
 description: ''

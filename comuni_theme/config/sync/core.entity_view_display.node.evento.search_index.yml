@@ -164,4 +164,5 @@ hidden:
   field_sponsor: true
   field_video_esterno: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

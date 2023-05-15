@@ -95,4 +95,5 @@ hidden:
   field_vincoli: true
   langcode: true
   links: true
+  node_read_time: true
   search_api_excerpt: true

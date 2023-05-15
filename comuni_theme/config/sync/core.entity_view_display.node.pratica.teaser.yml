@@ -35,4 +35,5 @@ hidden:
   field_stato_della_pratica: true
   field_ufficio_di_riferimento: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

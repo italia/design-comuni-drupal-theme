@@ -1,7 +1,12 @@
 uuid: 30da08da-2f92-4e71-9366-c27c736e189b
 langcode: it
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: topright
 label: topright
 description: ''

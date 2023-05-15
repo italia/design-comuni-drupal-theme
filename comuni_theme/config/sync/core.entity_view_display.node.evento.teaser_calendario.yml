@@ -62,4 +62,5 @@ hidden:
   field_video_esterno: true
   langcode: true
   links: true
+  node_read_time: true
   search_api_excerpt: true

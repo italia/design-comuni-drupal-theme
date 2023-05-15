@@ -37,4 +37,5 @@ hidden:
   field_ultima_modifica: true
   field_url_dataset: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

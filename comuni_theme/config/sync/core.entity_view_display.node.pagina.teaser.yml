@@ -22,4 +22,5 @@ hidden:
   field_componenti: true
   field_intestazione: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

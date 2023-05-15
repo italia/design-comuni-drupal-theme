@@ -239,4 +239,5 @@ content:
 hidden:
   field_galleria_immagini: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

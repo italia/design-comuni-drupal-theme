@@ -55,4 +55,5 @@ hidden:
   field_unita_org_genitore: true
   langcode: true
   links: true
+  node_read_time: true
   search_api_excerpt: true

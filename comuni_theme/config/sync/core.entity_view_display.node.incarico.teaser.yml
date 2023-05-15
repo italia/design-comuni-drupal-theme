@@ -41,4 +41,5 @@ hidden:
   field_ulteriori_informazioni: true
   field_unita_organizzativa: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

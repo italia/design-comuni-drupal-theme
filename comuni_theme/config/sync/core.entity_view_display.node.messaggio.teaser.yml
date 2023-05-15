@@ -33,4 +33,5 @@ hidden:
   field_servizio_collegato: true
   field_testo_del_messaggio: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

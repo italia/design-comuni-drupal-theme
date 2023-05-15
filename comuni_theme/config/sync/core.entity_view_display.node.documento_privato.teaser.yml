@@ -57,4 +57,5 @@ hidden:
   field_ufficio_respons_documento: true
   field_ulteriori_informazioni: true
   langcode: true
+  node_read_time: true
   search_api_excerpt: true

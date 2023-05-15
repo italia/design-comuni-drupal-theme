@@ -39,4 +39,5 @@ hidden:
   field_url_dataset: true
   langcode: true
   links: true
+  node_read_time: true
   search_api_excerpt: true

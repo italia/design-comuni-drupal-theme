@@ -65,3 +65,13 @@ footer .it-brand-wrapper img {
 /* Evitare visualizzazione link ulteriori dettagli che punta a se stesso nelle card Indirizzo dentro il luogo */
 .card-indirizzo-luogo .read-more { display:none; }
 .card-indirizzo-luogo .pb-4 { padding-bottom:0 !important; }
+
+
+/* Ridefiniamo la funzionalità bootstrapo "row-cols" poichè bootstrap italia la sovrascrive*/
+.row-cols-auto>.card{flex:0 0 auto;width:auto}
+.row-cols-1>.card{flex:0 0 auto;width:100%}
+.row-cols-2>.card{flex:0 0 auto;width:50%}
+.row-cols-3>.card{flex:0 0 auto;width:33.3333333333%}
+.row-cols-4>.card{flex:0 0 auto;width:25%}
+.row-cols-5>.card{flex:0 0 auto;width:20%}
+.row-cols-6>.card{flex:0 0 auto;width:16.6666666667%}

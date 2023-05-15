@@ -25,6 +25,7 @@ dependencies:
     - paragraphs.paragraphs_type.dataset
     - paragraphs.paragraphs_type.documento
     - paragraphs.paragraphs_type.elemento_video
+    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
     - paragraphs.paragraphs_type.esplora
     - paragraphs.paragraphs_type.faq
     - paragraphs.paragraphs_type.fase_intitolata
@@ -90,6 +91,7 @@ settings:
       argomenti_in_evidenza: argomenti_in_evidenza
       homepage_top_cards: homepage_top_cards
       biglietto_evento: biglietto_evento
+      elenco_card_da_vocabolario: elenco_card_da_vocabolario
       links_con_icona: links_con_icona
       card_foto_gallery: card_foto_gallery
       ricerca: ricerca
@@ -104,6 +106,7 @@ settings:
       fase_semplice: fase_semplice
       hero_immagine: hero_immagine
       intestazione_ricerca_e_preferiti: intestazione_ricerca_e_preferiti
+      elenco_card_da_termine: elenco_card_da_termine
       link_esterno: link_esterno
       prenotazione_appuntamento: prenotazione_appuntamento
       punto_di_contatto: punto_di_contatto
@@ -154,12 +157,6 @@ settings:
       comuni_altri_argomenti:
         weight: 41
         enabled: true
-      condizioni_di_servizio:
-        weight: 67
-        enabled: false
-      condizioni_di_servizio_link:
-        weight: 53
-        enabled: false
       container_argomenti_in_evidenza:
         weight: 42
         enabled: true
@@ -189,6 +186,12 @@ settings:
         enabled: true
       elemento_video:
         weight: 22
+        enabled: true
+      elenco_card_da_termine:
+        weight: 79
+        enabled: true
+      elenco_card_da_vocabolario:
+        weight: 55
         enabled: true
       esplora:
         weight: 49
@@ -226,6 +229,12 @@ settings:
       links_con_icona:
         weight: 56
         enabled: true
+      orari_giorni:
+        weight: 92
+        enabled: false
+      orari_ore:
+        weight: 93
+        enabled: false
       prenotazione_appuntamento:
         weight: 83
         enabled: true

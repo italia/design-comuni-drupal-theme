@@ -1,0 +1,10 @@
+uuid: 3f453289-6601-4def-98b4-f9d005307b75
+langcode: it
+status: true
+dependencies: {  }
+id: elenco_card_da_vocabolario
+label: 'Elenco card termini da un Vocabolario'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

@@ -1,0 +1,43 @@
+<div class="container" id="main-container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="cmp-breadcrumbs" role="navigation">
+        <nav class="breadcrumb-container" aria-label="breadcrumb">
+          <ol data-element="breadcrumb" class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}">Home</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">
+                {{ name }}
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <div class="container">
+      <div class="row justify-content-center row-shadow">
+          <div class="col-12 col-lg-10">
+              <div class="cmp-hero">
+                  <section class="it-hero-wrapper bg-white align-items-start">
+                      <div class="it-hero-text-wrapper pt-0 ps-0 pb-4 pb-lg-60">
+                          <h1 class="text-black hero-title" data-element="page-name">{{ name }}</h1>
+                          {% if content.description %}
+                              <div class="hero-text">{{ content.description}}</div>
+                          {% endif %}
+                      </div>
+                  </section>
+              </div>
+          </div>
+      </div>
+  </div>
+  {{ content|without('description') }}
+</article>

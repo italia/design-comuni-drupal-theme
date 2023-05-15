@@ -1,0 +1,30 @@
+uuid: 11565d62-30b4-41e0-807d-86573c4c5d4f
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.elenco_card_da_vocabolario.field_esplora_vocabolario
+    - field.field.paragraph.elenco_card_da_vocabolario.field_titolo
+    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+id: paragraph.elenco_card_da_vocabolario.default
+targetEntityType: paragraph
+bundle: elenco_card_da_vocabolario
+mode: default
+content:
+  field_esplora_vocabolario:
+    type: options_select
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_titolo:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

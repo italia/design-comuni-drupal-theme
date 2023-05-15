@@ -1,0 +1,31 @@
+uuid: 6bd15f7d-ef0e-42ee-a89b-5af17e5b3214
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.elenco_card_da_vocabolario.field_esplora_vocabolario
+    - field.field.paragraph.elenco_card_da_vocabolario.field_titolo
+    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+id: paragraph.elenco_card_da_vocabolario.default
+targetEntityType: paragraph
+bundle: elenco_card_da_vocabolario
+mode: default
+content:
+  field_esplora_vocabolario:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

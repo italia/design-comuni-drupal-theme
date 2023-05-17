@@ -339,18 +339,16 @@
     value: '1674174455'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
-    value: 'Catasto e urbanistica'
-  description:
-    value: ''
+    value: 'Edilizia e urbanistica'
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/categorie-dei-servizi/catasto-e-urbanistica'
+    uri: 'internal:/categorie-dei-servizi/edilizia-e-urbanistica'
     title: ''
     options: {  }
   external:
@@ -364,7 +362,7 @@
   parent:
     value: 'menu_link_content:8a735229-ee42-4917-911f-278895307810'
   changed:
-    value: '1674600065'
+    value: '1684317100'
   default_langcode:
     value: '1'
   revision_default:
@@ -1038,24 +1036,22 @@
     value: '1674174928'
   revision_user:
     target_id: '0'
-  revision_log_message:
-    value: ''
+  revision_log_message: false
   enabled:
     value: '1'
   title:
     value: Eventi
-  description:
-    value: ''
+  description: false
   menu_name:
     value: customfooter
   link:
-    uri: 'internal:/tutti-gli-eventi'
+    uri: 'entity:node/17'
     title: ''
     options: {  }
   external:
     value: '0'
   rediscover:
-    value: '1'
+    value: '0'
   weight:
     value: '-49'
   expanded:
@@ -1063,7 +1059,7 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1675083022'
+    value: '1684322857'
   default_langcode:
     value: '1'
   revision_default:
@@ -1094,7 +1090,7 @@
   menu_name:
     value: customfooter
   link:
-    uri: 'entity:node/65'
+    uri: 'entity:node/15'
     title: ''
     options: {  }
   external:
@@ -1108,7 +1104,7 @@
   parent:
     value: 'menu_link_content:a4f0f73b-fc92-46d8-af5e-35d136e548da'
   changed:
-    value: '1679906509'
+    value: '1684322859'
   default_langcode:
     value: '1'
   revision_default:

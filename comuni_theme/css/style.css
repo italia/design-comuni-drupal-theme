@@ -75,3 +75,6 @@ footer .it-brand-wrapper img {
 .row-cols-4>.card{flex:0 0 auto;width:25%}
 .row-cols-5>.card{flex:0 0 auto;width:20%}
 .row-cols-6>.card{flex:0 0 auto;width:16.6666666667%}
+
+/* Rimuove titolo da homepage */
+main.homepage h1{display: none;}

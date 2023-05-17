@@ -58,9 +58,8 @@
   {% if multiple %}
       {% for item in items %}
       <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
-        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
-          <path fill="none" d="M0 0h24v24H0z" />
+        <svg class="icon">
+          <use href="#it-clip" />
         </svg>
         {% set filename = item.content['#media'].field_media_document.entity.filename.value %}
         <div class="card-body">
@@ -77,9 +76,8 @@
   {% else %}
     {% for item in items %}
       <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
-        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
-          <path fill="none" d="M0 0h24v24H0z" />
+        <svg class="icon">
+          <use href="#it-clip" />
         </svg>
         {% set filename = item.content['#media'].field_media_document.entity.filename.value %}
         <div class="card-body">
@@ -97,9 +95,8 @@
 {% else %}
     {% for item in items %}
       <div class="card card-teaser shadow-sm p-4 mt-3 rounded border border-light flex-nowrap">
-        <svg class="icon" viewBox="0 0 24 24" id="it-clip" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M11 22a2.9 2.9 0 01-3-3V6a4 4 0 018 0v10h-1V6a3 3 0 00-6 0v13a2 2 0 004 0V8a1 1 0 00-2 0v8h-1V8a2 2 0 014 0v11a2.9 2.9 0 01-3 3z" />
-          <path fill="none" d="M0 0h24v24H0z" />
+        <svg class="icon">
+          <use href="#it-clip" />
         </svg>
         {% set filename = item.content['#media'].field_media_document.entity.filename.value %}
         <div class="card-body">
@@ -107,7 +104,7 @@
             <a href="{{ file_url(item.content['#media'].field_media_document.entity.fileuri) }}"
               title="Scarica {{ filename }}" aria-label="Scarica {{ filename }}"
               class="text-decoration-none"
-            >{{ filename }}
+            >{{ filename }}</a>
           </h5>
         </div>
       </div>

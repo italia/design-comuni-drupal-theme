@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.pagina.field_componenti
+    - field.field.node.pagina.field_descrizione_breve
     - node.type.pagina
   module:
     - user
@@ -20,6 +21,7 @@ content:
     region: content
 hidden:
   field_componenti: true
+  field_descrizione_breve: true
   field_intestazione: true
   langcode: true
   node_read_time: true

@@ -1,0 +1,19 @@
+uuid: 39b6af49-fda6-4055-a3da-0e6a30f8f35b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descrizione_breve
+    - node.type.pagina
+id: node.pagina.field_descrizione_breve
+field_name: field_descrizione_breve
+entity_type: node
+bundle: pagina
+label: 'Descrizione breve'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

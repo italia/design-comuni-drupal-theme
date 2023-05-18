@@ -1,0 +1,23 @@
+uuid: d012803a-2e55-4bf4-b7be-16669b89ef0c
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_content_types
+    - paragraphs.paragraphs_type.elenco_card_da_termine
+id: paragraph.elenco_card_da_termine.field_content_types
+field_name: field_content_types
+entity_type: paragraph
+bundle: elenco_card_da_termine
+label: 'Filtra per tipo di contenuto'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

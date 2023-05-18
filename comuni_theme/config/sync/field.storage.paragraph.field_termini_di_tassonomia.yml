@@ -1,0 +1,20 @@
+uuid: ae82bc83-24b5-4fc3-83de-25d7ce4f7d34
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_termini_di_tassonomia
+field_name: field_termini_di_tassonomia
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

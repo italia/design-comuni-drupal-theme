@@ -1,0 +1,20 @@
+<div class="col-12 col-md-6 col-lg-4">
+  <div class="cmp-card-simple card-wrapper pb-0 rounded border border-light">
+    <div class="card white-bg shadow-sm rounded">
+      <div class="card-body">
+        <a href="{{ url }}" class="text-decoration-none" data-element="news-category-link">
+          <h3 class="card-title t-primary title-xlarge">
+            {{ name[0] }}
+          </h3>
+        </a>
+        <div class="titillium text-paragraph mb-0">
+          {% if content.description %}
+            <div class="text-paragraph-card u-grey-light m-0">
+              {{ content.description }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

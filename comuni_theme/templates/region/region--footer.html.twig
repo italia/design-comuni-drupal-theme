@@ -23,31 +23,26 @@
                 <div class="modal-title">
                   <button class="search-link d-md-none" type="submit"
                     data-bs-toggle="modal" data-bs-target="#search-modal"
-                    aria-label="Chiudi e torna alla pagina precedente"
-                  >
-										<svg viewBox="0 0 24 24" id="it-arrow-left" class="icon icon-md" xmlns="http://www.w3.org/2000/svg">
-											<path d="M21 11.5H5.5l5.3-5.4-.7-.7L3.6 12l6.5 6.6.7-.7-5.3-5.4H21zM5 12z"/>
-											<path fill="none" d="M0 0h24v24H0z"/>
-										</svg>
+                    aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md">
+                      <use href="#it-arrow-left" />
+                    </svg>
                   </button>
                   <h2>Cerca</h2>
                   <button class="search-link d-none d-md-block" type="button"
                     data-bs-toggle="modal" data-bs-target="#search-modal"
-                    aria-label="Chiudi e torna alla pagina precedente"
-                  >
-										<svg viewBox="0 0 24 24" id="it-close-big" class="icon icon-md" xmlns="http://www.w3.org/2000/svg">
-											<path d="M12.7 12l6.7 6.6-.8.8-6.6-6.7-6.6 6.7-.8-.8 6.7-6.6-6.7-6.6.8-.8 6.6 6.7 6.6-6.7.8.8z"/>
-											<path fill="none" d="M0 0h24v24H0z"/>
-										</svg>
+                    aria-label="Chiudi e torna alla pagina precedente">
+                    <svg class="icon icon-md">
+                      <use href="#it-close-big" />
+                    </svg>
                   </button>
                 </div>
                 <div class="form-group autocomplete-wrapper">
                   <label for="autocomplete-two" class="visually-hidden">Cerca nel sito</label>
                   <input type="search" class="autocomplete ps-5" placeholder="Cerca nel sito" id="autocomplete-two" name="search_api_fulltext" data-bs-autocomplete="[]">
                   <span class="autocomplete-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" id="it-search" xmlns="http://www.w3.org/2000/svg" class="icon">
-                      <path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/>
-                      <path fill="none" d="M0 0h24v24H0z"/>
+                    <svg class="icon">
+                      <use href="#it-search" />
                     </svg>
                   </span>
                   <button type="submit" class="btn btn-primary">
@@ -115,3 +110,4 @@
     </div>
   </div>
 </footer>
+<div class="visually-hidden">{{ bit_svg|raw }}</div>

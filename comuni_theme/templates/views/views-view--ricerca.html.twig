@@ -79,7 +79,11 @@
               <h2 class="visually-hidden" id="search-result">Risultati di ricerca</h2>
               <span class="search-results u-grey-light"><span class="numResult">{{ header }}</span> Risultati</span>
               <button type="button" data-bs-toggle="modal" data-bs-target="#modal-categories" class="btn p-0 pe-2 d-lg-none">
-                <span class="rounded-icon"><svg class="icon icon-primary icon-xs mb-1" viewBox="0 0 24 24" id="it-funnel" xmlns="http://www.w3.org/2000/svg"><path d="M14 22h-1v-8.65L20.05 3H4l7 10.35V22h-1v-8.35L2.05 2H22l-8 11.65z"/><path fill="none" d="M0 0h24v24H0z"/></svg></span>
+                <span class="rounded-icon">
+                  <svg class="icon icon-primary icon-xs mb-1">
+                    <use href="#it-funnel" />
+                  </svg>
+                </span>
                 <span class="t-primary title-xsmall-semi-bold ms-1">Filtra</span>
               </button>
               <a href="{{ url('<front>') }}risultati-ricerca" class="btn p-0 pe-2 d-none d-lg-block">
@@ -109,7 +113,7 @@
                         <div class="card shadow-sm px-4 pt-4 pb-4 rounded">
                           <span class="visually-hidden">Categoria:</span>
                           <div class="card-header border-0 p-0">
-                            <a href={{mapContentTypeUrl[bundle]}}
+                            <a href="{{mapContentTypeUrl[bundle]}}"
                               class="text-decoration-none title-xsmall-bold mb-2 category text-uppercase"
                             >{{mapContentTypeName[bundle]}}
                             </a>

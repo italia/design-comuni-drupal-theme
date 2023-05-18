@@ -1,5 +1,7 @@
 <div class="card card-teaser card-flex border border-light shadow-sm p-3 mt-0">
-  <svg class="icon icon-success" viewBox="0 0 24 24" id="it-pin" xmlns="http://www.w3.org/2000/svg"><path d="M18.1 14L15 10.3V4.6L16.3 2H7.7L9 4.6v5.7L5.9 14h5.6v8h1v-8zM10 5h4v5h-4zm4.7-2l-.5 1H9.8l-.5-1zm-5 8h4.6l1.6 2H8.1z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+  <svg class="icon icon-success">
+    <use href="#it-pin" />
+  </svg>
   <div class="card-body pb-4">
     <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
     <div class="card-text u-main-black">
@@ -9,6 +11,10 @@
         </a>
       </p></div>
     </div>
-    <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': node.id}) }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span> <svg class="icon ms-0" viewBox="0 0 24 24" id="it-arrow-right" xmlns="http://www.w3.org/2000/svg"><path d="M13.9 5.4l-.7.7 5.3 5.4H3v1h15.5l-5.3 5.4.7.7 6.6-6.6zM19 12z"/><path fill="none" d="M0 0h24v24H0z"/></svg> </a>
+    <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': node.id}) }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
+      <svg class="icon ms-0">
+        <use href="#it-arrow-right" />
+      </svg>
+    </a>
   </div>
 </div>

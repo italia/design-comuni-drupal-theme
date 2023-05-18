@@ -3,8 +3,10 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.amministrazione.field_componenti
     - taxonomy.vocabulary.amministrazione
   module:
+    - entity_reference_revisions
     - text
 id: taxonomy_term.amministrazione.default
 targetEntityType: taxonomy_term
@@ -17,6 +19,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_componenti:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
     region: content
 hidden:
   langcode: true

@@ -1,0 +1,22 @@
+<section>
+  <div class="container py-5">
+    <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
+    <div class="row row-cols-3 g-4">
+      {% set param1 = [] %}
+      {% for item in content.field_termini_di_tassonomia["#items"] %}
+        {% set param1 = param1|merge([item.target_id]) %}
+      {% endfor %}
+      {% set param1 = param1|join('+') %}
+      {% set param1 = param1 ? param1 : null %}
+
+      {% set param2 = [] %}
+      {% for item in content.field_content_types["#items"] %}
+        {% set param2 = param2|merge([item.target_id]) %}
+      {% endfor %}
+      {% set param2 = param2|join('+') %}
+      {% set param2 = param2 ? param2 : null %}
+
+      {{ drupal_view('elenco_card_contenuti_da_un_termine', 'default', param1, param2) }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+uuid: 2573a7fe-0617-4a79-999b-7ab8eebdba13
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titolo
+    - paragraphs.paragraphs_type.elenco_card_da_termine
+id: paragraph.elenco_card_da_termine.field_titolo
+field_name: field_titolo
+entity_type: paragraph
+bundle: elenco_card_da_termine
+label: Titolo
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

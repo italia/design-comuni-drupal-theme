@@ -25,7 +25,7 @@ dependencies:
     - paragraphs.paragraphs_type.dataset
     - paragraphs.paragraphs_type.documento
     - paragraphs.paragraphs_type.elemento_video
-    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
+    - paragraphs.paragraphs_type.elenco_card_da_termine
     - paragraphs.paragraphs_type.esplora
     - paragraphs.paragraphs_type.faq
     - paragraphs.paragraphs_type.fase_intitolata

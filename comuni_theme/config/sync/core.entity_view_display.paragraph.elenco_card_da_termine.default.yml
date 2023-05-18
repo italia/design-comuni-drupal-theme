@@ -1,0 +1,38 @@
+uuid: b3320cad-2253-4e14-a6f8-c41d20872d3e
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.elenco_card_da_termine.field_content_types
+    - field.field.paragraph.elenco_card_da_termine.field_termini_di_tassonomia
+    - field.field.paragraph.elenco_card_da_termine.field_titolo
+    - paragraphs.paragraphs_type.elenco_card_da_termine
+id: paragraph.elenco_card_da_termine.default
+targetEntityType: paragraph
+bundle: elenco_card_da_termine
+mode: default
+content:
+  field_content_types:
+    type: entity_reference_entity_id
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_termini_di_tassonomia:
+    type: entity_reference_entity_id
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

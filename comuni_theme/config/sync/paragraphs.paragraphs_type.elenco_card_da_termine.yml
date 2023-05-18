@@ -1,0 +1,10 @@
+uuid: 23ad1de3-4eaf-4b49-98c1-1ae570ce5447
+langcode: it
+status: true
+dependencies: {  }
+id: elenco_card_da_termine
+label: 'Elenco card contenuti da un Termine'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

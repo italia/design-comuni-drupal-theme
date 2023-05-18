@@ -1,0 +1,51 @@
+uuid: 8eeb358b-1927-44cd-80bc-daf2d34f58e3
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_termini_di_tassonomia
+    - paragraphs.paragraphs_type.elenco_card_da_termine
+    - taxonomy.vocabulary.amministrazione
+    - taxonomy.vocabulary.argomenti
+    - taxonomy.vocabulary.categorie_dei_servizi
+    - taxonomy.vocabulary.documenti_albo_pretorio
+    - taxonomy.vocabulary.temi_di_un_dataset
+    - taxonomy.vocabulary.tipi_di_documento
+    - taxonomy.vocabulary.tipi_di_evento
+    - taxonomy.vocabulary.tipi_di_incarico
+    - taxonomy.vocabulary.tipi_di_luogo
+    - taxonomy.vocabulary.tipi_di_notizia
+    - taxonomy.vocabulary.tipi_punto_di_contatto
+    - taxonomy.vocabulary.tipi_unita_organizzativa
+id: paragraph.elenco_card_da_termine.field_termini_di_tassonomia
+field_name: field_termini_di_tassonomia
+entity_type: paragraph
+bundle: elenco_card_da_termine
+label: 'Termini di tassonomia'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      amministrazione: amministrazione
+      argomenti: argomenti
+      categorie_dei_servizi: categorie_dei_servizi
+      documenti_albo_pretorio: documenti_albo_pretorio
+      temi_di_un_dataset: temi_di_un_dataset
+      tipi_di_documento: tipi_di_documento
+      tipi_di_evento: tipi_di_evento
+      tipi_di_incarico: tipi_di_incarico
+      tipi_di_luogo: tipi_di_luogo
+      tipi_di_notizia: tipi_di_notizia
+      tipi_punto_di_contatto: tipi_punto_di_contatto
+      tipi_unita_organizzativa: tipi_unita_organizzativa
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: amministrazione
+field_type: entity_reference

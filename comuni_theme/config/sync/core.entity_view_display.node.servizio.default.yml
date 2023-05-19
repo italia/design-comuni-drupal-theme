@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_meta_tag
     - field.field.node.servizio.field_motivo_dello_stato
     - field.field.node.servizio.field_procedure_collegate_esito
     - field.field.node.servizio.field_promemoria_accesso
@@ -40,6 +41,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - link
+    - metatag
     - text
     - user
 id: node.servizio.default
@@ -174,6 +176,13 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 13
+    region: content
+  field_meta_tag:
+    type: metatag_empty_formatter
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 28
     region: content
   field_motivo_dello_stato:
     type: basic_string

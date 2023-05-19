@@ -1,0 +1,9 @@
+uuid: 685b670c-6e91-49cb-8143-506194dfec79
+langcode: it
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: sL588ui1E_8-2c_UupwyYxcqX2OVyMFp3HTLbbFqvPc
+id: global
+label: Globale
+tags: {  }

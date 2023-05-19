@@ -1,6 +1,6 @@
 uuid: c5442bf0-b03b-4b1d-b7d1-6abbb642e48c
 langcode: it
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.card
@@ -25,6 +25,7 @@ dependencies:
     - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_meta_tag
     - field.field.node.servizio.field_motivo_dello_stato
     - field.field.node.servizio.field_procedure_collegate_esito
     - field.field.node.servizio.field_promemoria_accesso
@@ -271,6 +272,7 @@ hidden:
   field_condizioni_di_servizio: true
   field_immagine: true
   field_life_events: true
+  field_meta_tag: true
   field_settore_merceologico: true
   field_sottotitolo: true
   langcode: true

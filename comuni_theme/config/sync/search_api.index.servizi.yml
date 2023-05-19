@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_categoria_del_servizio
+    - field.storage.node.field_meta_tag
     - search_api.server.drupal_db
   module:
     - taxonomy
@@ -14,6 +15,14 @@ name: Servizi
 description: ''
 read_only: false
 field_settings:
+  keywords:
+    label: 'Meta tag » Parole chiave'
+    datasource_id: 'entity:node'
+    property_path: 'field_meta_tag:keywords'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_meta_tag
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item

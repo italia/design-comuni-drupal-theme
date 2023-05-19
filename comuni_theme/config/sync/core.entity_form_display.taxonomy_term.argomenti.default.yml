@@ -6,6 +6,7 @@ dependencies:
     - field.field.taxonomy_term.argomenti.field_area_di_appartenenza
     - field.field.taxonomy_term.argomenti.field_assessorato_di_riferimento
     - field.field.taxonomy_term.argomenti.field_immagine
+    - field.field.taxonomy_term.argomenti.field_link_a_eurovoc
     - taxonomy.vocabulary.argomenti
   module:
     - path
@@ -50,6 +51,14 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link_a_eurovoc:
+    type: string_textfield
+    weight: 7
+    region: content
+    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }

@@ -1,0 +1,19 @@
+uuid: e00f81b1-5d92-48f1-a43d-bd601794e738
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_link_a_eurovoc
+    - taxonomy.vocabulary.argomenti
+id: taxonomy_term.argomenti.field_link_a_eurovoc
+field_name: field_link_a_eurovoc
+entity_type: taxonomy_term
+bundle: argomenti
+label: 'Link a EuroVoc'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

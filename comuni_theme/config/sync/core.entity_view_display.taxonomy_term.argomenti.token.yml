@@ -7,6 +7,7 @@ dependencies:
     - field.field.taxonomy_term.argomenti.field_area_di_appartenenza
     - field.field.taxonomy_term.argomenti.field_assessorato_di_riferimento
     - field.field.taxonomy_term.argomenti.field_immagine
+    - field.field.taxonomy_term.argomenti.field_link_a_eurovoc
     - taxonomy.vocabulary.argomenti
   module:
     - text
@@ -26,5 +27,6 @@ hidden:
   field_area_di_appartenenza: true
   field_assessorato_di_riferimento: true
   field_immagine: true
+  field_link_a_eurovoc: true
   langcode: true
   search_api_excerpt: true

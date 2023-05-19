@@ -11,7 +11,7 @@ field_name: field_persone_altre
 entity_type: node
 bundle: unita_organizzativa
 label: Responsabile
-description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nUn link alla scheda persona per ciascuno dei componenti della struttura "
+description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nLink alla scheda della persona responsabile della struttura"
 required: false
 translatable: false
 default_value: {  }

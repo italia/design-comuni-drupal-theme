@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_argomenti
+    - field.storage.node.field_meta_tag
     - search_api.server.drupal_db
     - core.entity_view_mode.node.search_index
   module:
@@ -23,6 +24,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_argomenti
+  keywords:
+    label: 'Meta tag » Parole chiave'
+    datasource_id: 'entity:node'
+    property_path: 'field_meta_tag:keywords'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_meta_tag
   name:
     label: 'Argomenti » Taxonomy term » Name'
     datasource_id: 'entity:node'

@@ -1,0 +1,21 @@
+uuid: 7ce030cd-7803-4af3-9c31-4dee750735fa
+langcode: it
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.field_link_a_eurovoc
+field_name: field_link_a_eurovoc
+entity_type: taxonomy_term
+type: string
+settings:
+  max_length: 255
+  case_sensitive: false
+  is_ascii: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -32,6 +32,14 @@ field_settings:
       view_mode:
         'entity:node':
           faq: teaser
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
   title:
     label: Title
     datasource_id: 'entity:node'

@@ -6,8 +6,8 @@ dependencies:
     - search_api.server.drupal_db
     - core.entity_view_mode.node.full
   module:
-    - search_api
     - node
+    - search_api
 id: documenti_e_dati
 name: 'Documenti e Dati'
 description: ''
@@ -24,6 +24,14 @@ field_settings:
         'entity:node':
           dataset: full
           documento_pubblico: full
+  status:
+    label: Published
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
 datasource_settings:
   'entity:node':
     bundles:

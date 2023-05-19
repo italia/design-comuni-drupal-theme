@@ -1,0 +1,9 @@
+uuid: f1e35a42-50c1-4d82-a0a9-cb4ee90fff94
+langcode: it
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Prima pagina'
+tags: {  }

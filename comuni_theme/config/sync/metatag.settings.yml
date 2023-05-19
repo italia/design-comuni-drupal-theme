@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: 3mgYDspyj5REgG6ooA1izlcMzEs34kHPFUOMIXeDOco
+langcode: it
+entity_type_groups:
+  node:
+    servizio:
+      basic: basic
+tag_trim_method: beforeValue
+use_maxlength: true
+tag_trim_maxlength:
+  metatag_maxlength_abstract: null
+  metatag_maxlength_description: null
+  metatag_maxlength_title: null
+tag_scroll_max_height: ''

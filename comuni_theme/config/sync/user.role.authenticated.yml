@@ -11,6 +11,7 @@ dependencies:
     - filter
     - fontawesome
     - media
+    - metatag_extended_perms
     - rest
     - search
     - shortcut
@@ -26,6 +27,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access fontawesome additional settings'
+  - 'access metatag basic__keywords'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'post comments'

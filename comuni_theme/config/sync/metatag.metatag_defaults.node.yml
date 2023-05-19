@@ -1,0 +1,9 @@
+uuid: e8224aca-2f7a-40ef-9b95-a105dff49063
+langcode: it
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: rpwvgyEURXLz_JjgMCrkS1rUv-0k3L79BpO-ReN7fDI
+id: node
+label: Content
+tags: {  }

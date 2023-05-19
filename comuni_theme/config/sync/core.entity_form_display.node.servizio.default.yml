@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.servizio.field_fase_semplice
     - field.field.node.servizio.field_immagine
     - field.field.node.servizio.field_life_events
+    - field.field.node.servizio.field_meta_tag
     - field.field.node.servizio.field_motivo_dello_stato
     - field.field.node.servizio.field_procedure_collegate_esito
     - field.field.node.servizio.field_promemoria_accesso
@@ -40,6 +41,7 @@ dependencies:
   module:
     - field_group
     - link
+    - metatag
     - paragraphs
     - path
     - text
@@ -53,7 +55,7 @@ third_party_settings:
       label: 'Tempi e scadenze'
       region: content
       parent_name: ''
-      weight: 18
+      weight: 19
       format_type: fieldset
       format_settings:
         classes: ''
@@ -68,13 +70,13 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
   field_a_chi_rivolto:
     type: text_textarea
-    weight: 12
+    weight: 13
     region: content
     settings:
       rows: 5
@@ -82,19 +84,19 @@ content:
     third_party_settings: {  }
   field_argomenti:
     type: options_select
-    weight: 30
+    weight: 31
     region: content
     settings: {  }
     third_party_settings: {  }
   field_business_events:
     type: options_select
-    weight: 32
+    weight: 33
     region: content
     settings: {  }
     third_party_settings: {  }
   field_canale_digitale:
     type: link_default
-    weight: 21
+    weight: 22
     region: content
     settings:
       placeholder_url: ''
@@ -102,7 +104,7 @@ content:
     third_party_settings: {  }
   field_casi_particolari:
     type: text_textarea
-    weight: 24
+    weight: 25
     region: content
     settings:
       rows: 5
@@ -110,13 +112,13 @@ content:
     third_party_settings: {  }
   field_categoria_del_servizio:
     type: options_select
-    weight: 8
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
   field_codice_dell_ente_erogatore:
     type: string_textfield
-    weight: 33
+    weight: 34
     region: content
     settings:
       size: 60
@@ -124,7 +126,7 @@ content:
     third_party_settings: {  }
   field_come_fare:
     type: text_textarea
-    weight: 15
+    weight: 16
     region: content
     settings:
       rows: 5
@@ -132,7 +134,7 @@ content:
     third_party_settings: {  }
   field_condizioni_di_servizio_par:
     type: paragraphs
-    weight: 26
+    weight: 27
     region: content
     settings:
       title: Paragraph
@@ -151,7 +153,7 @@ content:
     third_party_settings: {  }
   field_contatti:
     type: entity_reference_autocomplete
-    weight: 27
+    weight: 28
     region: content
     settings:
       match_operator: CONTAINS
@@ -161,7 +163,7 @@ content:
     third_party_settings: {  }
   field_copertura_geografica:
     type: text_textarea
-    weight: 14
+    weight: 15
     region: content
     settings:
       rows: 5
@@ -169,7 +171,7 @@ content:
     third_party_settings: {  }
   field_cosa_serve:
     type: text_textarea
-    weight: 16
+    weight: 17
     region: content
     settings:
       rows: 5
@@ -177,7 +179,7 @@ content:
     third_party_settings: {  }
   field_cosa_si_ottiene:
     type: text_textarea
-    weight: 17
+    weight: 18
     region: content
     settings:
       rows: 5
@@ -185,7 +187,7 @@ content:
     third_party_settings: {  }
   field_costi:
     type: text_textarea
-    weight: 19
+    weight: 20
     region: content
     settings:
       rows: 5
@@ -193,7 +195,7 @@ content:
     third_party_settings: {  }
   field_descrizione_breve:
     type: string_textarea
-    weight: 11
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -201,7 +203,7 @@ content:
     third_party_settings: {  }
   field_descrizione_estesa:
     type: text_textarea
-    weight: 13
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -209,7 +211,7 @@ content:
     third_party_settings: {  }
   field_documenti:
     type: entity_reference_autocomplete
-    weight: 29
+    weight: 30
     region: content
     settings:
       match_operator: CONTAINS
@@ -237,13 +239,21 @@ content:
     third_party_settings: {  }
   field_life_events:
     type: options_select
-    weight: 31
+    weight: 32
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_meta_tag:
+    type: metatag_firehose
+    weight: 1
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
+    third_party_settings: {  }
   field_motivo_dello_stato:
     type: string_textarea
-    weight: 10
+    weight: 11
     region: content
     settings:
       rows: 5
@@ -251,7 +261,7 @@ content:
     third_party_settings: {  }
   field_procedure_collegate_esito:
     type: text_textarea
-    weight: 20
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -267,7 +277,7 @@ content:
     third_party_settings: {  }
   field_settore_merceologico:
     type: string_textfield
-    weight: 34
+    weight: 35
     region: content
     settings:
       size: 60
@@ -275,7 +285,7 @@ content:
     third_party_settings: {  }
   field_stato_del_servizio:
     type: boolean_checkbox
-    weight: 9
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -292,7 +302,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 25
+    weight: 26
     region: content
     settings:
       rows: 5
@@ -300,7 +310,7 @@ content:
     third_party_settings: {  }
   field_unita_org_responsabile:
     type: entity_reference_autocomplete
-    weight: 28
+    weight: 29
     region: content
     settings:
       match_operator: CONTAINS
@@ -310,7 +320,7 @@ content:
     third_party_settings: {  }
   field_unita_organizzative:
     type: entity_reference_autocomplete
-    weight: 22
+    weight: 23
     region: content
     settings:
       match_operator: CONTAINS
@@ -320,7 +330,7 @@ content:
     third_party_settings: {  }
   field_vincoli:
     type: text_textarea
-    weight: 23
+    weight: 24
     region: content
     settings:
       rows: 5
@@ -328,34 +338,34 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 2
+    weight: 3
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 4
+    weight: 5
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 7
+    weight: 8
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 5
+    weight: 6
     region: content
     settings:
       display_label: true
@@ -370,7 +380,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     region: content
     settings:
       match_operator: CONTAINS

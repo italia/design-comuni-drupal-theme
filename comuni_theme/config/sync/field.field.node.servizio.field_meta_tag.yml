@@ -1,0 +1,21 @@
+uuid: ce887760-07dc-493c-9330-896f352fe11b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_meta_tag
+    - node.type.servizio
+  module:
+    - metatag
+id: node.servizio.field_meta_tag
+field_name: field_meta_tag
+entity_type: node
+bundle: servizio
+label: 'Meta tag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

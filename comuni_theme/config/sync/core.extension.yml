@@ -52,6 +52,8 @@ module:
   menu_link_content: 0
   menu_trail_by_path: 0
   menu_ui: 0
+  metatag: 0
+  metatag_extended_perms: 0
   mix: 0
   mysql: 0
   node: 0

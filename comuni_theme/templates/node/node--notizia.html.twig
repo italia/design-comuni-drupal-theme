@@ -128,7 +128,7 @@
       </div>
       <div class="mt-4 mb-4">
         {% if content.field_tipo_di_notizia[0] is not empty %}
-          <span class="subtitle-small">Tipo di evento</span>
+          <span class="subtitle-small">Tipo di notizia</span>
           <div class="chip-wrapper mt-2">
             {% for item in attribute(content.field_tipo_di_notizia, "#items") %}
               {% set arg_name = item.entity.name.value %}

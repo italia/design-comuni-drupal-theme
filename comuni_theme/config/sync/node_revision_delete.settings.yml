@@ -2,7 +2,7 @@ defaults:
   amount:
     status: true
     settings:
-      amount: 3
+      amount: 1
   created:
     status: false
     settings:

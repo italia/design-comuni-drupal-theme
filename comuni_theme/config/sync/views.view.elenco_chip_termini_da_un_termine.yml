@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.taxonomy_term.chip
   module:
+    - node
     - taxonomy
     - user
 id: elenco_chip_termini_da_un_termine
@@ -173,7 +174,17 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        nid:
+          id: nid
+          table: taxonomy_index
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: nodo
+          plugin_id: standard
+          required: true
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }

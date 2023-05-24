@@ -23,6 +23,17 @@ body.toolbar-fixed.toolbar-horizontal .it-header-wrapper.it-header-sticky.is-sti
 	position:fixed !important;
 	top: 39px !important;
 }
+
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
+	position:fixed !important;
+	top: 78px !important;
+}
+
+/* Fix Sticky Header con Toolbar Amministrativa*/
+body.toolbar-fixed.toolbar-horizontal .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
+	position:fixed !important;
+	top: 39px !important;
+}
 body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
 	position:fixed !important;
 	top: 78px !important;
@@ -85,6 +96,3 @@ footer .it-brand-wrapper img {
 .row-cols-4>.card{flex:0 0 auto;width:25%}
 .row-cols-5>.card{flex:0 0 auto;width:20%}
 .row-cols-6>.card{flex:0 0 auto;width:16.6666666667%}
-
-/* Rimuove titolo da homepage */
-main.homepage h1{display: none;}

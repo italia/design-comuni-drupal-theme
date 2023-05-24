@@ -6,6 +6,7 @@ dependencies:
     - field.storage.paragraph.field_componenti
     - paragraphs.paragraphs_type.container_vuoto
     - paragraphs.paragraphs_type.testo
+    - paragraphs.paragraphs_type.vista
   module:
     - entity_reference_revisions
 id: paragraph.container_vuoto.field_componenti
@@ -23,6 +24,7 @@ settings:
   handler_settings:
     target_bundles:
       testo: testo
+      vista: vista
     negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:
@@ -94,6 +96,12 @@ settings:
       elemento_video:
         weight: 73
         enabled: false
+      elenco_card_da_termine:
+        weight: 79
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 80
+        enabled: false
       esplora:
         weight: 74
         enabled: false
@@ -129,6 +137,12 @@ settings:
         enabled: false
       links_con_icona:
         weight: 85
+        enabled: false
+      orari_giorni:
+        weight: 93
+        enabled: false
+      orari_ore:
+        weight: 94
         enabled: false
       prenotazione_appuntamento:
         weight: 86
@@ -175,4 +189,7 @@ settings:
       valutazione:
         weight: 100
         enabled: false
+      vista:
+        weight: 110
+        enabled: true
 field_type: entity_reference_revisions

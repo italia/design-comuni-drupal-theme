@@ -1,0 +1,10 @@
+uuid: 0527ea51-b675-4987-ab5d-945f22fca9e2
+langcode: it
+status: true
+dependencies: {  }
+id: vista
+label: Vista
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

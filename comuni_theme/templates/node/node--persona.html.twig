@@ -141,7 +141,7 @@
                       <div class="accordion-body">
                         <ul class="link-list" data-element="page-index">
 
-                          {% if content.field_incarichi[0] is not empty %}
+                          {% if drupal_view_result('incarichi', 'block_2', node.id) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#incarichi">
                               <span class="title-medium">Incarichi</span>
@@ -246,137 +246,12 @@
 
     <div class="col-12 col-lg-8 offset-lg-1">
       <div class="it-page-sections-container">
-        {% if content.field_competenze[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="competenze">Competenze</h2>
-          <div class="richtext-wrapper lora">
-            {{ content.field_competenze }}
-          </div>
-        </section>
-        {% endif %}
-        
-        {% if content.field_persone_altre[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="persone-altre">Responsabile</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_persone_altre }}
-          </div>
-        </section>
-        {% endif %}
 
-        {% if content.field_persone[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="persone">Persone che compongono la struttura</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_persone }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_persona[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="persona">Assessore di riferimento</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_persona }}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_elenco_servizi_offerti[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
-            <div class="card-wrapper card-teaser-wrapper">
-              {% for item in content.field_elenco_servizi_offerti['#items'] %}
-                <div class="card card-teaser card-flex shadow-sm border border-light p-3 mb-1">
-                  <div class="card-body pb-5">
-                    <div class="category-top nascondi-ultimo-wrapper"> <span class="title-xsmall-semi-bold fw-semibold">
-                      {% for item_categoria in item.entity.field_categoria_del_servizio %}
-                        {{ item_categoria.entity.name.value }}<span class="nascondi-ultimo">, </span>
-                      {% endfor %}
-                    </span> </div>
-                    <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.title.value }}</h3>
-                    <div class="card-text u-main-black">
-                      <div class="mt-1"><p>{{ item.entity.field_descrizione_breve.value }}</p></div>
-                    </div>
-                  </div>
-                  <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': item.target_id}) }}" title="Vai al contenuto {{ item.entity.title.value }}"> <span class="text">Ulteriori dettagli</span>
-                    <svg class="icon ms-0">
-                      <use href="#it-arrow-right" />
-                    </svg>
-                  </a>
-                </div>
-              {% endfor %}
-            </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_sede_principale[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="sede-principale">Sede principale</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {% for item in content.field_sede_principale['#items'] %}
-              <div class="card card-teaser card-flex border border-light shadow-sm p-3 mt-0">
-                <svg class="icon icon-success">
-                  <use href="#it-pin" />
-                </svg>
-                <div class="card-body pb-4">
-                  <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.title.value }}</h3>
-                  <div class="card-text u-main-black">
-                    <div class="mt-1"><p>
-                      <a target="_blank" href="https://www.google.com/maps/place/{{ item.entity.field_indirizzo.value|replace({' ': "+"}) }},{{ item.entity.field_cap.value }}">
-                          {{ item.entity.field_indirizzo.value }}, {{ item.entity.field_cap.value }}
-                      </a>
-                    </p></div>
-                  </div>
-                  <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': item.target_id}) }}" title="Vai al contenuto {{ item.entity.title.value }}"> <span class="text">Ulteriori dettagli</span>
-                    <svg class="icon ms-0">
-                      <use href="#it-arrow-right" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_altre_sedi[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="altre-sedi">Altre sedi</h2>
-            <div class="card-wrapper card-teaser-wrapper">
-            {% for item in content.field_altre_sedi['#items'] %}
-              <div class="card card-teaser card-flex border border-light shadow-sm p-3 mt-0">
-                <svg class="icon icon-success">
-                  <use href="#it-pin" />
-                </svg>
-                <div class="card-body pb-4">
-                  <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.title.value }}</h3>
-                  <div class="card-text u-main-black">
-                    <div class="mt-1"><p>
-                      <a target="_blank" href="https://www.google.com/maps/place/{{ item.entity.field_indirizzo.value|replace({' ': "+"}) }},{{ item.entity.field_cap.value }}">
-                          {{ item.entity.field_indirizzo.value }}, {{ item.entity.field_cap.value }}
-                      </a>
-                    </p></div>
-                  </div>
-                  <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': item.target_id}) }}" title="Vai al contenuto {{ item.entity.title.value }}"> <span class="text">Ulteriori dettagli</span>
-                    <svg class="icon ms-0">
-                      <use href="#it-arrow-right" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </section>
-        {% endif %}
-
-
-
-        {% if content.field_incarichi[0] is not empty %}
+        {% if drupal_view_result('incarichi', 'block_2', node.id) %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="incarichi">Incarichi</h2>
           <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_incarichi }}
+            {{ drupal_view('incarichi', 'block_2', node.id) }}
           </div>
         </section>
         {% endif %}

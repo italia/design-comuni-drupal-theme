@@ -1,0 +1,21 @@
+uuid: 95fd0ff3-9e40-448e-b007-1fc39ea667d3
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.vista.field_vista
+    - paragraphs.paragraphs_type.vista
+id: paragraph.vista.default
+targetEntityType: paragraph
+bundle: vista
+mode: default
+content:
+  field_vista:
+    type: entity_reference_entity_id
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

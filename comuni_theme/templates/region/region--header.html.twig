@@ -24,19 +24,19 @@
   <div class="it-header-slim-wrapper">
     <div class="container">
       <div class="row">
-      <div class="col-12">
-          {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
-          {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
+        <div class="col-12">
+            {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
+            {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
           <div class="it-header-slim-wrapper-content">
             <a class="d-lg-block navbar-brand"
-              href="{{ url_regione }}" target="_blank"
-              aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
-              title="Vai al portale {{ nome_regione }}"
+               href="{{ url_regione }}" target="_blank"
+               aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
+               title="Vai al portale {{ nome_regione }}"
             >{{ nome_regione }}</a>
             <div class="it-header-slim-right-zone" role="navigation">
               <div class="nav-item dropdown">
                 <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                  aria-expanded="false" aria-controls="languages" aria-haspopup="true"
+                        aria-expanded="false" aria-controls="languages" aria-haspopup="true"
                 >
                   <span class="visually-hidden">Lingua attiva:</span>
                   <span>ITA</span>
@@ -66,8 +66,8 @@
                 </div>
               </div>
               <a href="#"
-                class="btn btn-primary btn-icon btn-full"
-                data-element="personal-area-login"
+                 class="btn btn-primary btn-icon btn-full"
+                 data-element="personal-area-login"
               ><span class="rounded-icon" aria-hidden="true">
                   <svg class="icon icon-primary">
                         <use href="#it-user" />
@@ -90,7 +90,7 @@
               <div class="it-brand-wrapper">
                 <a href="{{ url('<front>') }}" title="Vai alla homepage">
                   <img aria-hidden="true"
-                    src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
+                       src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt="logo Comune"/>
                   <div class="it-brand-text">
                     <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                   </div>
@@ -100,16 +100,15 @@
                 <div class="it-socials d-none d-lg-flex">
                   <span>Seguici su</span>
                   <ul>
-                    {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                      {{ drupal_entity('paragraph',social.target_id,'social_header') }}
-                    {% endfor %}
+                      {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+                          {{ drupal_entity('paragraph',social.target_id,'social_header') }}
+                      {% endfor %}
                   </ul>
                 </div>
-                <div class="it-search-wrapper">
+                <div class="it-search-wrapper" data-bs-toggle="modal" data-bs-target="#search-modal"
+                     aria-label="Cerca nel sito">
                   <span class="d-none d-md-block">Cerca</span>
-                  <button class="search-link rounded-icon" type="button"
-                    data-bs-toggle="modal" data-bs-target="#search-modal"
-                    aria-label="Cerca nel sito">
+                  <button class="search-link rounded-icon" type="button">
                     <svg class="icon">
                       <use href="#it-search" />
                     </svg>
@@ -127,9 +126,9 @@
           <div class="col-12">
             <div class="navbar navbar-expand-lg has-megamenu">
               <button class="custom-navbar-toggler" type="button"
-                data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
-                aria-controls="nav4" aria-expanded="false"
-                aria-label="Mostra/Nascondi la navigazione">
+                      data-bs-target="#nav4" data-bs-toggle="navbarcollapsible"
+                      aria-controls="nav4" aria-expanded="false"
+                      aria-label="Mostra/Nascondi la navigazione">
                 <svg class="icon">
                   <use href="#it-burger" />
                 </svg>
@@ -145,23 +144,23 @@
                   </button>
                 </div>
                 <div class="menu-wrapper">
-                    <a href="{{ path('<front>') }}" class="logo-hamburger"
-                    aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
+                  <a href="{{ path('<front>') }}" class="logo-hamburger"
+                     aria-label="home {{ site_settings.infocomune.info_comune.field_nome_comune }}"
                   >
                     <img style="width:82px;margin-right:16px;" aria-hidden="true"
-                       src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
+                         src="{{ site_settings.infocomune.info_comune.field_logo|getUrlFromMedia }}" alt=""/>
                     <div class="it-brand-text">
                       <div class="it-brand-title">{{ site_settings.infocomune.info_comune.field_nome_comune }}</div>
                     </div>
                   </a>
-                  {{ elements.topleft }}
-                  {{ elements.topright }}
+                    {{ elements.topleft }}
+                    {{ elements.topright }}
                   <div class="it-socials">
                     <span>Seguici su</span>
                     <ul>
-                      {% for social in site_settings.infocomune.info_comune.field_icone_social %}
-                        {{ drupal_entity('paragraph',social.target_id,'social_header_mobile') }}
-                      {% endfor %}
+                        {% for social in site_settings.infocomune.info_comune.field_icone_social %}
+                            {{ drupal_entity('paragraph',social.target_id,'social_header_mobile') }}
+                        {% endfor %}
                     </ul>
                   </div>
                 </div>

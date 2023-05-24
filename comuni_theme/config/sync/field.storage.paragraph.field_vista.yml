@@ -1,0 +1,20 @@
+uuid: b69356f5-7d58-464d-a7e0-d32fb27842ae
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - views
+id: paragraph.field_vista
+field_name: field_vista
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: view
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

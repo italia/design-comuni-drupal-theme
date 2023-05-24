@@ -281,4 +281,7 @@ settings:
       valutazione:
         weight: 104
         enabled: true
+      vista:
+        weight: 110
+        enabled: false
 field_type: entity_reference_revisions

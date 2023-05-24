@@ -1,0 +1,3 @@
+{% for item in items %} 
+    {{ drupal_view(item.content["#plain_text"], 'default') }}
+{% endfor %}

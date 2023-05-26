@@ -40,28 +40,12 @@ content:
     third_party_settings: {  }
   field_altre_cariche:
     type: media_library_widget
-    weight: 23
+    weight: 20
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_biografia:
-    type: text_textarea
-    weight: 16
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_cognome:
-    type: string_textfield
-    weight: 11
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_competenze:
     type: text_textarea
     weight: 14
     region: content
@@ -69,16 +53,32 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_cognome:
+    type: string_textfield
+    weight: 10
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_competenze:
+    type: text_textarea
+    weight: 12
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
   field_curriculum_vitae:
     type: media_library_widget
-    weight: 17
+    weight: 15
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_deleghe:
     type: text_textarea
-    weight: 15
+    weight: 13
     region: content
     settings:
       rows: 5
@@ -94,49 +94,29 @@ content:
     third_party_settings: {  }
   field_dichiarazione_dei_redditi:
     type: media_library_widget
-    weight: 20
+    weight: 18
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_immagine:
     type: media_library_widget
-    weight: 12
+    weight: 11
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-  field_incarichi:
-    type: entity_reference_autocomplete
-    weight: 13
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_nome:
     type: string_textfield
-    weight: 10
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_organizzazioni:
-    type: entity_reference_autocomplete
     weight: 9
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_punti_di_contatto:
     type: entity_reference_autocomplete
-    weight: 25
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -144,29 +124,23 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_sezione_amministrazione:
-    type: options_select
-    weight: 22
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_situazione_patrimoniale:
     type: media_library_widget
-    weight: 18
+    weight: 16
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_spese_elettorali:
     type: media_library_widget
-    weight: 19
+    weight: 17
     region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 24
+    weight: 21
     region: content
     settings:
       rows: 5
@@ -174,7 +148,7 @@ content:
     third_party_settings: {  }
   field_v_situazione_patrimoniale:
     type: media_library_widget
-    weight: 21
+    weight: 19
     region: content
     settings:
       media_types: {  }
@@ -233,3 +207,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true
+  field_incarichi: true
+  field_organizzazioni: true
+  field_sezione_amministrazione: true

@@ -10,7 +10,7 @@ id: node.persona.field_sezione_amministrazione
 field_name: field_sezione_amministrazione
 entity_type: node
 bundle: persona
-label: 'Sezione amministrazione'
+label: 'Sezione amministrazione - SOSTITUITO DA TIPO DI CONTENUTO INCARICO'
 description: ''
 required: false
 translatable: true

@@ -82,7 +82,7 @@ content:
     third_party_settings: {  }
   field_gps_latitude:
     type: string_textfield
-    weight: 26
+    weight: 25
     region: content
     settings:
       size: 60
@@ -90,7 +90,7 @@ content:
     third_party_settings: {  }
   field_gps_longitude:
     type: string_textfield
-    weight: 27
+    weight: 26
     region: content
     settings:
       size: 60
@@ -98,7 +98,7 @@ content:
     third_party_settings: {  }
   field_identificativo:
     type: string_textfield
-    weight: 25
+    weight: 24
     region: content
     settings:
       size: 60
@@ -155,7 +155,7 @@ content:
     third_party_settings: {  }
   field_punti_di_contatto:
     type: entity_reference_autocomplete
-    weight: 28
+    weight: 27
     region: content
     settings:
       match_operator: CONTAINS
@@ -168,16 +168,6 @@ content:
     weight: 18
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_sede_di:
-    type: entity_reference_autocomplete
-    weight: 23
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -207,7 +197,7 @@ content:
     third_party_settings: {  }
   field_ulteriori_informazioni:
     type: text_textarea
-    weight: 24
+    weight: 23
     region: content
     settings:
       rows: 5
@@ -267,4 +257,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_galleria_immagini: true
+  field_sede_di: true
   field_video_esterno: true

@@ -10,7 +10,7 @@ id: node.persona.field_organizzazioni
 field_name: field_organizzazioni
 entity_type: node
 bundle: persona
-label: Organizzazioni
+label: 'Organizzazioni - SOSTITUITO DA TIPO DI CONTENUTO INCARICO'
 description: '<a target="_blank" href="//[site:url-brief]/node/add/unita_organizzativa">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false

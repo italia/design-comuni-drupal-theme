@@ -10,7 +10,7 @@ id: node.documento_pubblico.field_servizi
 field_name: field_servizi
 entity_type: node
 bundle: documento_pubblico
-label: Servizi
+label: 'Servizi - SOSTITUITO DA TIPO DI CONTENUTO SERVIZIO'
 description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/servizio\">Aggiungi nuovo contenuto</a>\r\nBreve descrizione del servizio collegato al documento e link alla scheda di presentazione del servizio."
 required: false
 translatable: false

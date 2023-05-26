@@ -10,7 +10,7 @@ id: node.punto_di_contatto.field_persona
 field_name: field_persona
 entity_type: node
 bundle: punto_di_contatto
-label: Persona
+label: 'Persona - SOSTITUITO DA TIPO DI CONTENUTO PERSONA'
 description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nSe una persona è un punto di contatto di un'altra Tipologia"
 required: false
 translatable: false

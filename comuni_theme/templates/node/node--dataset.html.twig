@@ -1,35 +1,37 @@
 <div class="container" id="main-container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="cmp-breadcrumbs" role="navigation">
-            <nav class="breadcrumb-container" aria-label="breadcrumb">
-              <ol data-element="breadcrumb" class="breadcrumb p-0">
-                <li class="breadcrumb-item">
-                  <a href="{{ url('<front>') }}">Home</a>
-                  <span class="separator">/</span>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
-                  <span class="separator">/</span>
-                </li>
-                {% if content.field_sezione_amministrazione[0] is not empty %}
-                <li class="breadcrumb-item">
-                    {% for item in content.field_sezione_amministrazione["#items"] %}
-                        {{ item|view }}
-                        {% if not loop.last %} - {% endif %}
-                    {% endfor %}
-                    <span class="separator">/</span>
-                </li>
-                {% endif %}
-                <li class="breadcrumb-item active" aria-current="page">
-                    {{label}}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="cmp-breadcrumbs" role="navigation">
+        <nav class="breadcrumb-container" aria-label="breadcrumb">
+          <ol data-element="breadcrumb" class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}">Home</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}tipi-di-documento/dataset">Dataset</a>
+              <span class="separator">/</span>
+            </li>
+            {% if content.field_temi[0] is not empty %}
+            <li class="breadcrumb-item">
+              {% for item in content.field_temi["#items"] %}
+                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                  {{ item|view["#plain_text"]|capitalize }}
+                </a>
+                {% if not loop.last %} - {% endif %}
+              {% endfor %}
+              <span class="separator">/</span>
+            </li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">
+              {{label}}
+            </li>
+          </ol>
+        </nav>
       </div>
     </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -98,21 +100,6 @@
                 <span class="subtitle-small">Temi</span>
                 <div class="chip-wrapper mt-2">
                   {% for item in attribute(content.field_temi, "#items") %}
-                    {% set arg_name = item.entity.name.value %}
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
-                      <div class="chip chip-simple chip-primary">
-                        <span class="chip-label">{{ arg_name }}</span>
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
-            <div class="mt-4 mb-4">
-              {% if content.field_sezione_amministrazione[0] is not empty %}
-                <span class="subtitle-small">Sezione amministrativa</span>
-                <div class="chip-wrapper mt-2">
-                  {% for item in attribute(content.field_sezione_amministrazione, "#items") %}
                     {% set arg_name = item.entity.name.value %}
                     <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
                       <div class="chip chip-simple chip-primary">

@@ -1,44 +1,41 @@
 <div class="container" id="main-container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-          <div class="cmp-breadcrumbs" role="navigation">
-            <nav class="breadcrumb-container" aria-label="breadcrumb">
-              <ol data-element="breadcrumb" class="breadcrumb p-0">
-                <li class="breadcrumb-item">
-                  <a href="{{ url('<front>') }}">Home</a>
-                  <span class="separator">/</span>
-                </li>
-                <li class="breadcrumb-item">
-                  <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
-                  <span class="separator">/</span>
-                </li>
-                {% if content.field_sezione_amministrazione[0] is not empty %}
-                <li class="breadcrumb-item">
-                    {% for item in content.field_sezione_amministrazione["#items"] %}
-                        {{ item|view }}
-                        {% if not loop.last %} - {% endif %}
-                    {% endfor %}
-                    <span class="separator">/</span>
-                </li>
-                {% endif %}
-                {% if content.field_tipo_di_documento[0] is not empty %}
-                <li class="breadcrumb-item">
-                    {% for item in content.field_tipo_di_documento["#items"] %}
-                        {{ item|view }}
-                        {% if not loop.last %} - {% endif %}
-                    {% endfor %}
-                    <span class="separator">/</span>
-                </li>
-                {% endif %}
-                <li class="breadcrumb-item active" aria-current="page">
-                    {{label}}
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-10">
+      <div class="cmp-breadcrumbs" role="navigation">
+        <nav class="breadcrumb-container" aria-label="breadcrumb">
+          <ol data-element="breadcrumb" class="breadcrumb p-0">
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}">Home</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
+              <span class="separator">/</span>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="{{ url('<front>') }}amministrazione/documenti-e-dati">Documenti e dati</a>
+              <span class="separator">/</span>
+            </li>
+            {% if content.field_tipo_di_documento[0] is not empty %}
+            <li class="breadcrumb-item">
+              {% for item in content.field_tipo_di_documento["#items"] %}
+                <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
+                  {{ item|view["#plain_text"]|capitalize }}
+                </a>
+                {% if not loop.last %} - {% endif %}
+              {% endfor %}
+              <span class="separator">/</span>
+            </li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">
+              {{label}}
+            </li>
+          </ol>
+        </nav>
       </div>
     </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row justify-content-center">
@@ -59,19 +56,19 @@
               </div>
             {% endif %}
             <div class="row mt-5">
-              {% if content.field_data_inizio %}
+              {% if content.field_data_inizio[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data di inizio validità:</span>
                   <p class="fw-semibold text-nowrap">{% set field_data_inizio %}{{ content.field_data_inizio }}{% endset %}{{ field_data_inizio|striptags }}</p>
                 </div>
               {% endif %}
-              {% if content.field_data_protocollo %}
+              {% if content.field_data_protocollo[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data protocollo:</span>
                   <p class="fw-semibold text-nowrap">{% set field_data_protocollo %}{{ content.field_data_protocollo }}{% endset %}{{ field_data_protocollo|striptags }}</p>
                 </div>
               {% endif %}
-              {% if content.field_protocollo %}
+              {% if content.field_protocollo[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Protocollo:</span>
                   <p class="fw-semibold text-nowrap">{% set field_protocollo %}{{ content.field_protocollo }}{% endset %}{{ field_protocollo|striptags }}</p>
@@ -264,9 +261,9 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_servizi[0] is not empty %}
+                          {% if drupal_view_result('servizi_collegati', 'block_1', node.id) %}
                           <li class="nav-item">
-                            <a class="nav-link" href="#field_servizi">
+                            <a class="nav-link" href="#servizi_collegati">
                               <span class="title-medium">Servizi collegati</span>
                             </a>
                           </li>
@@ -390,11 +387,11 @@
         </section>
         {% endif %}
 
-        {% if content.field_servizi[0] is not empty %}
+        {% if drupal_view_result('servizi_collegati', 'block_1', node.id) %}
         <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="field_servizi">Servizi collegati</h2>
+          <h2 class="title-xxlarge mb-3" id="servizi_collegati">Servizi collegati</h2>
           <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_servizi }}
+            {{ drupal_view('servizi_collegati', 'block_1', node.id) }}
           </div>
         </section>
         {% endif %}

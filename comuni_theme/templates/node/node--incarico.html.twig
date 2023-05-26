@@ -41,19 +41,19 @@
               </h2>
             {% endif %}
             <div class="row mt-5">
-              {% if content.field_data_inizio_incarico %}
+              {% if content.field_data_inizio_incarico[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data inizio incarico:</span>
                   <p class="fw-semibold text-nowrap">{% set field_data_inizio_incarico %}{{ content.field_data_inizio_incarico }}{% endset %}{{ field_data_inizio_incarico|striptags }}</p>
                 </div>
               {% endif %}
-              {% if content.field_data_insediamento %}
+              {% if content.field_data_insediamento[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data insediamento:</span>
                   <p class="fw-semibold text-nowrap">{% set field_data_insediamento %}{{ content.field_data_insediamento }}{% endset %}{{ field_data_insediamento|striptags }}</p>
                 </div>
               {% endif %}
-              {% if content.field_data_conclusione_incarico %}
+              {% if content.field_data_conclusione_incarico[0] is not empty %}
                 <div class="col">
                   <span class="d-block text-nowrap">Data conclusione incarico:</span>
                   <p class="fw-semibold text-nowrap">{% set field_data_conclusione_incarico %}{{ content.field_data_conclusione_incarico }}{% endset %}{{ field_data_conclusione_incarico|striptags }}</p>

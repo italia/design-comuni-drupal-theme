@@ -6,7 +6,6 @@
     <p class="card-title text-paragraph-regular-medium-semi mb-3">{{ label }}</p>
     <div class="card-text">
       <div class="mb-1">{{ content.field_contatto }}</div>
-      <div class="mb-1">{{ content.field_persona }}</div>
       {% if content.field_orari[0] is not empty %}
         <a class="btn btn-xs btn-primary card-title mt-2" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#punto-di-contatto-{{ node.id }}">Vedi orari <i aria-hidden="true" class="fa fa-caret-down"></i></a>
         <div id="punto-di-contatto-{{ node.id }}" class="collapse lightgrey-bg-c1 p-2">
@@ -23,6 +22,11 @@
               </dl>
             {% endfor %}
           </div>
+        </div>
+      {% endif %}
+      {% if drupal_view_result('persone_collegate', 'block_1', node.id) %}
+        <div class="mb-1 mt-1">
+          {{ drupal_view('persone_collegate', 'block_1', node.id) }}
         </div>
       {% endif %}
     </div>

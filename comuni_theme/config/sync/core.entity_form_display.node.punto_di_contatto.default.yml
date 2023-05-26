@@ -23,7 +23,7 @@ third_party_settings:
       label: 'Orari per il pubblico'
       region: content
       parent_name: ''
-      weight: 4
+      weight: 3
       format_type: fieldset
       format_settings:
         classes: ''
@@ -38,7 +38,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -62,7 +62,7 @@ content:
     third_party_settings: {  }
   field_orari:
     type: paragraphs
-    weight: 5
+    weight: 4
     region: content
     settings:
       title: Paragraph
@@ -80,19 +80,9 @@ content:
     third_party_settings: {  }
   field_orari_note:
     type: string_textfield
-    weight: 6
+    weight: 5
     region: content
     settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_persona:
-    type: entity_reference_autocomplete
-    weight: 3
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
@@ -105,27 +95,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 9
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 12
+    weight: 9
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 10
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -140,7 +130,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 4
     region: content
     settings:
       match_operator: CONTAINS
@@ -149,5 +139,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_persona: true
   field_tipo_punto_di_contatto: true
   field_valore_punto_di_contatto: true

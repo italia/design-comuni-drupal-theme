@@ -1,3 +1,14 @@
+{% set uo = [] %}
+{% set incarichi = [] %}
+{% for item in drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
+  {% set incarichi = incarichi|merge([item.nid]) %}
+  {% for item2 in drupal_view_result('unita_organizzative_collegate', 'block_3', item.nid) %}
+    {% if item2.node__field_unita_organizzativa_field_unita_organizzativa_ta not in uo %}
+      {% set uo = uo|merge([item2.node__field_unita_organizzativa_field_unita_organizzativa_ta]) %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
 <div class="container" id="main-container">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
@@ -12,11 +23,27 @@
                   <a href="{{ url('<front>') }}amministrazione">Amministrazione</a>
                   <span class="separator">/</span>
                 </li>
-                {% if content.field_sezione_amministrazione[0] is not empty %}
+                {% set incarichi_padri = [] %}
+                {% for incarico in incarichi %}
+                  {% set id_tipo_incarico = drupal_field('field_tipo_di_incarico', 'node', incarico)["#items"].parent.entity.field_tipo_di_incarico.target_id %}
+                  {% set id_tipo_incarico_padre = drupal_entity('taxonomy_term', id_tipo_incarico)["#taxonomy_term"].parent[0].target_id %}
+                  {% set tipo_incarico_padre = drupal_entity('taxonomy_term', id_tipo_incarico_padre)["#taxonomy_term"].name.value %}
+                  {% if tipo_incarico_padre not in incarichi_padri %}
+                    {% set incarichi_padri = incarichi_padri|merge([tipo_incarico_padre]) %}
+                  {% endif %}
+                {% endfor %}
+                
+                {% if incarichi_padri is not empty %}
                 <li class="breadcrumb-item">
-                    {% for item in content.field_sezione_amministrazione["#items"] %}
-                        {{ item|view }}
-                        {% if not loop.last %} - {% endif %}
+                    {% for item in incarichi_padri %}
+                      {% if item == "Politici" %}
+                        <a href="/pollo">{{ item }}</a>
+                      {% elseif item == "Personale amministrativo" %}                        
+                        <a href="/persammo">{{ item }}</a>
+                      {% else %}
+                        Altro personale
+                      {% endif %}
+                      {% if not loop.last %} - {% endif %}
                     {% endfor %}
                     <span class="separator">/</span>
                 </li>
@@ -93,21 +120,6 @@
                 </div>
               </div>
             </div>
-            <div class="mt-4 mb-4">
-              {% if content.field_sezione_amministrazione[0] is not empty %}
-                <span class="subtitle-small">Sezione amministrativa</span>
-                <div class="chip-wrapper mt-2">
-                  {% for item in attribute(content.field_sezione_amministrazione, "#items") %}
-                    {% set arg_name = item.entity.name.value %}
-                    <a href="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': item.target_id}) }}">
-                      <div class="chip chip-simple chip-primary">
-                        <span class="chip-label">{{ arg_name }}</span>
-                      </div>
-                    </a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-            </div>
           </div>
         </div>
       </div>
@@ -140,15 +152,15 @@
                     <div id="collapse-one" class="accordion-collapse collapse show" role="region" aria-labelledby="accordion-title-one">
                       <div class="accordion-body">
                         <ul class="link-list" data-element="page-index">
-
-                          {% if drupal_view_result('incarichi', 'block_2', node.id) %}
+                          {% if drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#incarichi">
                               <span class="title-medium">Incarichi</span>
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_organizzazioni[0] is not empty %}
+                          
+                          {% if uo is not empty %}
                           <li class="nav-item">
                             <a class="nav-link" href="#organizzazioni">
                               <span class="title-medium">Organizzazioni</span>
@@ -247,22 +259,24 @@
     <div class="col-12 col-lg-8 offset-lg-1">
       <div class="it-page-sections-container">
 
-        {% if drupal_view_result('incarichi', 'block_2', node.id) %}
+        {% if drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="incarichi">Incarichi</h2>
           <div class="card-wrapper card-teaser-wrapper">
-            {{ drupal_view('incarichi', 'block_2', node.id) }}
+            {{ drupal_view('incarichi_collegati', 'block_1', node.id) }}
           </div>
         </section>
         {% endif %}
 
-        {% if content.field_organizzazioni[0] is not empty %}
-        <section class="it-page-section  mb-30">
-          <h2 class="title-xxlarge mb-3" id="organizzazioni">Organizzazioni</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_organizzazioni }}
-          </div>
-        </section>
+        {% if uo is not empty %}
+          <section class="it-page-section  mb-30">
+            <h2 class="title-xxlarge mb-3" id="organizzazioni">Organizzazioni</h2>
+            <div class="card-wrapper card-teaser-wrapper">
+              {% for item in uo %}
+                {{ drupal_entity('node', item, 'card') }}
+              {% endfor %}
+            </div>
+          </section>
         {% endif %}
 
         {% if content.field_competenze[0] is not empty %}

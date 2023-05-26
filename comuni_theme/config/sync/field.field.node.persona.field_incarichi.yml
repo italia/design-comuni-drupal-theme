@@ -10,7 +10,7 @@ id: node.persona.field_incarichi
 field_name: field_incarichi
 entity_type: node
 bundle: persona
-label: Incarichi
+label: 'Incarichi - SOSTITUITO DA TIPO DI CONTENUTO INCARICO'
 description: '<a target="_blank" href="//[site:url-brief]/node/add/incarico">Aggiungi nuovo contenuto</a>'
 required: false
 translatable: false

@@ -10,7 +10,7 @@ id: node.unita_organizzativa.field_persone
 field_name: field_persone
 entity_type: node
 bundle: unita_organizzativa
-label: 'Persone che compongono la struttura'
+label: 'Persone che compongono la struttura - SOSTITUITO DA TIPO DI CONTENUTO INCARICO'
 description: "<a target=\"_blank\" href=\"//[site:url-brief]/node/add/persona\">Aggiungi nuovo contenuto</a><br>\r\nUn link alla scheda persona per ciascuno dei componenti della struttura "
 required: true
 translatable: true

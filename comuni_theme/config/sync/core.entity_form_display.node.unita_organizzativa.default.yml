@@ -36,7 +36,7 @@ content:
     third_party_settings: {  }
   field_allegati_doc_pubblico:
     type: entity_reference_autocomplete
-    weight: 18
+    weight: 17
     region: content
     settings:
       match_operator: CONTAINS
@@ -86,46 +86,6 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_elenco_servizi_offerti:
-    type: entity_reference_autocomplete
-    weight: 17
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_persona:
-    type: entity_reference_autocomplete
-    weight: 20
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_persone:
-    type: entity_reference_autocomplete
-    weight: 21
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_persone_altre:
-    type: entity_reference_autocomplete
-    weight: 22
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_sede_principale:
     type: entity_reference_autocomplete
     weight: 15
@@ -135,12 +95,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_sezione_amministrazione:
-    type: options_select
-    weight: 19
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_tipo_di_organizzazione:
     type: options_select
@@ -219,4 +173,9 @@ content:
       placeholder: ''
     third_party_settings: {  }
 hidden:
+  field_elenco_servizi_offerti: true
   field_immagine: true
+  field_persona: true
+  field_persone: true
+  field_persone_altre: true
+  field_sezione_amministrazione: true

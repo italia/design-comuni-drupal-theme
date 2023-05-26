@@ -479,6 +479,7 @@ display:
           plugin_id: standard
           required: false
       css_class: 'card-wrapper card-teaser-wrapper card-teaser-wrapper-equal card-teaser-block-3'
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }

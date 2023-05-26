@@ -1,0 +1,10 @@
+uuid: e4fd7f56-5be9-4139-93bd-d9a09625d945
+langcode: it
+status: true
+dependencies:
+  module:
+    - node
+id: node.chip
+label: Chip
+targetEntityType: node
+cache: true

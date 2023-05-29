@@ -24,19 +24,19 @@
   <div class="it-header-slim-wrapper">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-            {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
-            {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
+      <div class="col-12">
+          {% set nome_regione = site_settings.infocomune.info_comune.field_nome_regione %}
+          {% set url_regione = site_settings.infocomune.info_comune.field_url_regione.uri %}
           <div class="it-header-slim-wrapper-content">
             <a class="d-lg-block navbar-brand"
-               href="{{ url_regione }}" target="_blank"
-               aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
-               title="Vai al portale {{ nome_regione }}"
+              href="{{ url_regione }}" target="_blank"
+              aria-label="Vai al portale {{ nome_regione }} - link esterno - apertura nuova scheda"
+              title="Vai al portale {{ nome_regione }}"
             >{{ nome_regione }}</a>
             <div class="it-header-slim-right-zone" role="navigation">
               <div class="nav-item dropdown">
                 <button type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                        aria-expanded="false" aria-controls="languages" aria-haspopup="true"
+                  aria-expanded="false" aria-controls="languages" aria-haspopup="true"
                 >
                   <span class="visually-hidden">Lingua attiva:</span>
                   <span>ITA</span>

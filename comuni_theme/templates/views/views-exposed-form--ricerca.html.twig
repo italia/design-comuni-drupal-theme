@@ -34,11 +34,13 @@
     <div class="input-group">
       <div class="input-group-prepend">
         <div class="input-group-text">
-          <svg class="icon icon-md" svg viewBox="0 0 24 24" id="it-search" xmlns="http://www.w3.org/2000/svg"><path d="M21.9 21.1L16 15.3a8.3 8.3 0 002-5.3 8 8 0 10-8 8 8.3 8.3 0 005.3-2l5.8 5.9zM10 17a7 7 0 117-7 7 7 0 01-7 7z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+          <svg class="icon icon-md">
+            <use href="#it-search" />
+          </svg>
         </div>
       </div>
       <label for="search_api_fulltext" class="active">Con Etichetta</label>
-      <input type="search" class="form-control" id="search_api_fulltext" name="search_api_fulltext" placeholder="Pagamento TARI" data-focus-mouse="false">
+      <input type="search" class="form-control" id="search_api_fulltext" name="search_api_fulltext" placeholder="Cerca nel sito" data-focus-mouse="false">
     </div>
     <button type="submit" data-bs-toggle="modal" data-bs-target="#" class="btn btn-primary">
       <span class="">Cerca</span>

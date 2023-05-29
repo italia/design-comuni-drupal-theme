@@ -11,8 +11,8 @@ field_name: field_contatti
 entity_type: node
 bundle: servizio
 label: Contatti
-description: '<a target="_blank" href="//[site:url-brief]/node/add/punto_di_contatto">Aggiungi nuovo contenuto</a>'
-required: true
+description: "Se non compilato verranno presi i contatti del campo unità organizzativa responsabile<br>\r\n<a target=\"_blank\" href=\"//[site:url-brief]/node/add/punto_di_contatto\">Aggiungi nuovo contenuto</a>"
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

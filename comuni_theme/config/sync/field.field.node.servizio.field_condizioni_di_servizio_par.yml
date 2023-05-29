@@ -66,12 +66,6 @@ settings:
       comuni_altri_argomenti:
         weight: 65
         enabled: false
-      condizioni_di_servizio:
-        weight: 52
-        enabled: false
-      condizioni_di_servizio_link:
-        weight: 53
-        enabled: false
       container_argomenti_in_evidenza:
         weight: 66
         enabled: false
@@ -101,6 +95,12 @@ settings:
         enabled: true
       elemento_video:
         weight: 75
+        enabled: false
+      elenco_card_da_termine:
+        weight: 79
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 80
         enabled: false
       esplora:
         weight: 76
@@ -188,5 +188,8 @@ settings:
         enabled: false
       valutazione:
         weight: 102
+        enabled: false
+      vista:
+        weight: 110
         enabled: false
 field_type: entity_reference_revisions

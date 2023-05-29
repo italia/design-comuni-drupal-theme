@@ -88,3 +88,8 @@ footer .it-brand-wrapper img {
 
 /* Rimuove titolo da homepage */
 main.homepage h1{display: none;}
+
+/* Stile cursore tutto ciò che porta a una modal (es. ricerca) */
+*[data-bs-toggle="modal"]{
+	cursor: pointer;
+}

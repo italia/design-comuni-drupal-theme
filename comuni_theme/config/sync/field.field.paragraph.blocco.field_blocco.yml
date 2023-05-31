@@ -1,0 +1,29 @@
+uuid: 40520eb6-78f3-460e-8a46-711092a424a1
+langcode: it
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.paragraph.field_blocco
+    - paragraphs.paragraphs_type.blocco
+id: paragraph.blocco.field_blocco
+field_name: field_blocco
+entity_type: paragraph
+bundle: blocco
+label: Blocco
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: ac74408a-74c9-45a7-9a6c-76744d61643b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_classi_css_wrapper
+    - taxonomy.vocabulary.tipi_di_stili
+id: taxonomy_term.tipi_di_stili.field_classi_css_wrapper
+field_name: field_classi_css_wrapper
+entity_type: taxonomy_term
+bundle: tipi_di_stili
+label: 'Classi css Wrapper'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

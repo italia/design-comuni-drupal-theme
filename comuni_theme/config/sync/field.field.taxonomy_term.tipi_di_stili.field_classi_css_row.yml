@@ -1,0 +1,19 @@
+uuid: f8799334-6d27-4d0a-9411-3aa33a66d7bf
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_classi_css_row
+    - taxonomy.vocabulary.tipi_di_stili
+id: taxonomy_term.tipi_di_stili.field_classi_css_row
+field_name: field_classi_css_row
+entity_type: taxonomy_term
+bundle: tipi_di_stili
+label: 'Classi css Row'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

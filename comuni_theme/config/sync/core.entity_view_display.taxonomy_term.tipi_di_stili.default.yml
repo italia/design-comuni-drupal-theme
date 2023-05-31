@@ -1,0 +1,50 @@
+uuid: 930896dd-4526-490b-9d00-4355d5bdffb7
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css_row
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css_wrapper
+    - taxonomy.vocabulary.tipi_di_stili
+  module:
+    - text
+id: taxonomy_term.tipi_di_stili.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_stili
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_classi_css:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_classi_css_row:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_classi_css_wrapper:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

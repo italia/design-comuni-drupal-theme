@@ -1,0 +1,49 @@
+uuid: 9637eb38-fba2-4cf0-9a03-985c3a8162bb
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenuti
+    - node.type.dataset
+    - node.type.documento_pubblico
+    - node.type.evento
+    - node.type.incarico
+    - node.type.luogo
+    - node.type.notizia
+    - node.type.pagina
+    - node.type.persona
+    - node.type.punto_di_contatto
+    - node.type.servizio
+    - node.type.unita_organizzativa
+    - paragraphs.paragraphs_type.card_in_evidenza
+id: paragraph.card_in_evidenza.field_contenuti
+field_name: field_contenuti
+entity_type: paragraph
+bundle: card_in_evidenza
+label: Contenuti
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      dataset: dataset
+      documento_pubblico: documento_pubblico
+      evento: evento
+      incarico: incarico
+      luogo: luogo
+      notizia: notizia
+      pagina: pagina
+      persona: persona
+      punto_di_contatto: punto_di_contatto
+      servizio: servizio
+      unita_organizzativa: unita_organizzativa
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: dataset
+field_type: entity_reference

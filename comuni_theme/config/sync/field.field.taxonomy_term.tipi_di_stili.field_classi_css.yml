@@ -1,0 +1,19 @@
+uuid: 556d4244-d440-49b1-a010-1156ae91303e
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_classi_css
+    - taxonomy.vocabulary.tipi_di_stili
+id: taxonomy_term.tipi_di_stili.field_classi_css
+field_name: field_classi_css
+entity_type: taxonomy_term
+bundle: tipi_di_stili
+label: 'Classi css Container'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

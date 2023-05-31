@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_componenti
+    - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.container_vuoto
     - paragraphs.paragraphs_type.testo
     - paragraphs.paragraphs_type.vista
@@ -23,6 +24,7 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
+      card_in_evidenza: card_in_evidenza
       testo: testo
       vista: vista
     negate: 0
@@ -57,6 +59,9 @@ settings:
       card_foto_gallery:
         weight: 61
         enabled: false
+      card_in_evidenza:
+        weight: 67
+        enabled: true
       collection_multimediale:
         weight: 62
         enabled: false

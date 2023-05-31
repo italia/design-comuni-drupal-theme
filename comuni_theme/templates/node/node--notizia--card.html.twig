@@ -1,10 +1,9 @@
 <div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light p-0">
-  <div class="w-100 d-flex">
+  <div class="card-image-wrapper d-flex">
     <div class="card-body p-3 pb-5">
-      <h3 class="card-title text-paragraph-medium u-grey-light">{{ content.field_nome[0] }} {{ content.field_cognome[0] }}</h3>
+      <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
       <div class="text-paragraph-card u-grey-light m-0">
         <div class="mb-3">{{ content.field_descrizione_breve }}</div>
-        <div class="mb-1">{{ drupal_view('incarichi_collegati', 'block_3', node.id) }}</div>
       </div>
     </div>
     <div class="card-image card-image-rounded pb-5">{{ content.field_immagine }}</div>

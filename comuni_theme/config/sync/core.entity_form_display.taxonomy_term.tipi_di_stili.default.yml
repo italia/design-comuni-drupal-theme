@@ -1,0 +1,78 @@
+uuid: 76294d68-cfbb-480c-b5db-c5e2f861cef9
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css_row
+    - field.field.taxonomy_term.tipi_di_stili.field_classi_css_wrapper
+    - taxonomy.vocabulary.tipi_di_stili
+  module:
+    - path
+    - text
+id: taxonomy_term.tipi_di_stili.default
+targetEntityType: taxonomy_term
+bundle: tipi_di_stili
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 4
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_classi_css:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_classi_css_row:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_classi_css_wrapper:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 7
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

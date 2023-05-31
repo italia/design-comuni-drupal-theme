@@ -1,0 +1,21 @@
+uuid: 520f8588-4fe2-42c1-bf9e-dc16acca4411
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.blocco.field_blocco
+    - paragraphs.paragraphs_type.blocco
+id: paragraph.blocco.default
+targetEntityType: paragraph
+bundle: blocco
+mode: default
+content:
+  field_blocco:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

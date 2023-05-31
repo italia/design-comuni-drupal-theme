@@ -1,0 +1,23 @@
+uuid: 07826463-ec6a-464d-af56-cab89492ac07
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.blocco.field_blocco
+    - paragraphs.paragraphs_type.blocco
+id: paragraph.blocco.default
+targetEntityType: paragraph
+bundle: blocco
+mode: default
+content:
+  field_blocco:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

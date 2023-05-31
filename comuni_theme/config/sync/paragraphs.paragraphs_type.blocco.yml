@@ -1,0 +1,10 @@
+uuid: 4ab943bb-f4c0-4b57-bc4c-f979bf81b5bc
+langcode: it
+status: true
+dependencies: {  }
+id: blocco
+label: Blocco
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

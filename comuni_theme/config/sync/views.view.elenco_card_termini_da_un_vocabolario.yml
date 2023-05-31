@@ -227,6 +227,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: 'row row-cols-3 g-4'
       header: {  }
       footer: {  }
       display_extenders: {  }

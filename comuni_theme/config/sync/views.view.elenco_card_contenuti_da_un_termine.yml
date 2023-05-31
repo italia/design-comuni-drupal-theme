@@ -71,10 +71,26 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: full
         options:
           offset: 0
-          items_per_page: 20
+          items_per_page: 6
+          total_pages: null
+          id: 0
+          tags:
+            next: ››
+            previous: ‹‹
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -207,7 +223,7 @@ display:
         type: default
         options:
           row_class: col
-          default_row_class: true
+          default_row_class: false
           uses_fields: false
       row:
         type: 'entity:node'
@@ -223,6 +239,8 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
+      css_class: 'row row-cols-3 g-4'
+      use_ajax: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -232,6 +250,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

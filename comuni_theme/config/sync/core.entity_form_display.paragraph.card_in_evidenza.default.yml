@@ -1,0 +1,41 @@
+uuid: c5cdbfa9-b15b-49fb-9242-6d2370833ee6
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.card_in_evidenza.field_contenuti
+    - field.field.paragraph.card_in_evidenza.field_tipi_di_stili
+    - field.field.paragraph.card_in_evidenza.field_titolo
+    - paragraphs.paragraphs_type.card_in_evidenza
+id: paragraph.card_in_evidenza.default
+targetEntityType: paragraph
+bundle: card_in_evidenza
+mode: default
+content:
+  field_contenuti:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_tipi_di_stili:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_titolo:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

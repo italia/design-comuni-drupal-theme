@@ -1,0 +1,29 @@
+uuid: 4348dcbf-3900-445c-8d63-8dac19e458f0
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tipi_di_stili
+    - paragraphs.paragraphs_type.card_in_evidenza
+    - taxonomy.vocabulary.tipi_di_stili
+id: paragraph.card_in_evidenza.field_tipi_di_stili
+field_name: field_tipi_di_stili
+entity_type: paragraph
+bundle: card_in_evidenza
+label: 'Tipi di stili'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_stili: tipi_di_stili
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

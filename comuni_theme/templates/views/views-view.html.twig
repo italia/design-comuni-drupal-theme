@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Theme override for a main view template.
+ * Default theme implementation for main view template.
  *
  * Available variables:
  * - attributes: Remaining HTML attributes for the element.
@@ -28,54 +28,44 @@
  *   JavaScript.
  *
  * @see template_preprocess_views_view()
+ *
+ * @ingroup themeable
  */
 #}
-
-{{ title_prefix }}
-{% if title %}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
   {{ title }}
-{% endif %}
-{{ title_suffix }}
-{% if header %}
-  <div class="view-header">
-  </div>
-{% endif %}
-{% if exposed %}
+  {{ title_suffix }}
+
+  {% if header %}
+    <header>
+      {{ header }}
+    </header>
+  {% endif %}
 
   {{ exposed }}
-{% endif %}
-{% if attachment_before %}
-  <div class="attachment attachment-before">
-    {{ attachment_before }}
-  </div>
-{% endif %}
+  {{ attachment_before }}
 
-{% if rows %}
-  {{ header }}
-  {{ rows }}
-{% elseif empty %}
-  <div class="view-empty">
+  {% if rows -%}
+    {{ rows }}
+  {% elseif empty -%}
     {{ empty }}
-  </div>
-{% endif %}
-{% if pager %}
+  {% endif %}
   {{ pager }}
-{% endif %}
-{% if attachment_after %}
-  <div class="attachment attachment-after">
-    {{ attachment_after }}
-  </div>
-{% endif %}
-{% if more %}
+
+  {{ attachment_after }}
   {{ more }}
-{% endif %}
-{% if footer %}
-  <div class="view-footer">
-    {{ footer }}
-  </div>
-{% endif %}
-{% if feed_icons %}
-  <div class="feed-icons">
-    {{ feed_icons }}
-  </div>
-{% endif %}
+
+  {% if footer %}
+    <footer>
+      {{ footer }}
+    </footer>
+  {% endif %}
+
+  {{ feed_icons }}
+</div>

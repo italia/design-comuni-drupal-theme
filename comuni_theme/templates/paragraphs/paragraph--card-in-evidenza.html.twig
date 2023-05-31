@@ -1,0 +1,50 @@
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set wrapper_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css_wrapper', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set wrapper_classes = wrapper_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% set container_classes = ['container'] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set container_classes = container_classes|merge([stile.value]) %}
+    {% if stile.value == 'container-fluid' %}
+      {% set container_classes = container_classes|slice(1) %}
+    {% endif %}
+  {% endfor %}    
+{% endfor %}
+
+{% set row_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css_row', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set row_classes = row_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% block paragraph %}
+	<div{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+	{% block content %}
+      <div class="{{ container_classes|join(' ') }} py-5">
+        <h2 class="title-xxlarge mb-4">{{ paragraph.field_titolo.value }}</h2>
+        <div class="row {{ row_classes|join(' ') }}">
+          {% for contenuto in content.field_contenuti["#items"] %}
+            <div class="col">
+              {{ drupal_entity('node', contenuto.target_id, 'card') }}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+  {% endblock %}
+	</div>
+{% endblock paragraph %}

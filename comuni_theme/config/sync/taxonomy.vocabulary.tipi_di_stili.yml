@@ -1,0 +1,8 @@
+uuid: 1a56dc21-159a-4473-8dc7-ed87ef0e107f
+langcode: it
+status: true
+dependencies: {  }
+name: 'Tipi di stili'
+vid: tipi_di_stili
+description: ''
+weight: 0

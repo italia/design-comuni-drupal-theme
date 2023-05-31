@@ -52,6 +52,7 @@ dependencies:
     - paragraphs.paragraphs_type.titolo_e_descrizione
     - paragraphs.paragraphs_type.ultima_notizia
     - paragraphs.paragraphs_type.valutazione
+    - paragraphs.paragraphs_type.vista
     - taxonomy.vocabulary.amministrazione
   module:
     - entity_reference_revisions
@@ -117,6 +118,7 @@ settings:
       titolo_e_descrizione: titolo_e_descrizione
       ultima_notizia: ultima_notizia
       valutazione: valutazione
+      vista: vista
     negate: 0
     target_bundles_drag_drop:
       amministrazione_ref_in_evidenza:
@@ -140,6 +142,9 @@ settings:
       biglietto_evento:
         weight: 59
         enabled: true
+      blocco:
+        weight: 65
+        enabled: false
       calendario:
         weight: 60
         enabled: true
@@ -149,6 +154,9 @@ settings:
       card_foto_gallery:
         weight: 62
         enabled: true
+      card_in_evidenza:
+        weight: 69
+        enabled: false
       collection_multimediale:
         weight: 63
         enabled: true
@@ -283,5 +291,5 @@ settings:
         enabled: true
       vista:
         weight: 110
-        enabled: false
+        enabled: true
 field_type: entity_reference_revisions

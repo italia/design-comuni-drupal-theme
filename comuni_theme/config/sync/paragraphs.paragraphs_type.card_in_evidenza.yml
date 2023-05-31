@@ -1,0 +1,10 @@
+uuid: bb3ec968-88db-4b7b-a156-5bae04630400
+langcode: it
+status: true
+dependencies: {  }
+id: card_in_evidenza
+label: 'Card in evidenza'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

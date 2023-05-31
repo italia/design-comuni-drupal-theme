@@ -1,0 +1,20 @@
+uuid: 9e5dc116-b7f8-45e7-8fab-f250bd1b00d3
+langcode: it
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_tipi_di_stili
+field_name: field_tipi_di_stili
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

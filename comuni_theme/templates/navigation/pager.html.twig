@@ -1,0 +1,74 @@
+{% if items %}
+  <nav class="pagination-wrapper justify-content-center my-3" aria-labelledby="Navigazione della pagina">
+    <ul class="pagination">
+      {# Print first item if we are not on the first page. #}
+      {% if items.first %}
+
+      {% endif %}
+      {# Print previous item if we are not on the first page. #}
+      {% if items.previous %}
+        <li class="page-item">
+          <a class="page-link" href="{{ items.previous.href }}" data-focus-mouse="false" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
+            <svg class="icon"><use href="#it-chevron-left"></use></svg>
+            <span class="text sr-only">{{ items.previous.text|default('‹ Previous'|t) }}</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">
+            <svg class="icon"><use href="#it-chevron-left"></use></svg>
+            <span class="visually-hidden">{{ items.previous.text|default('‹ Previous'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {# Add an ellipsis if there are further previous pages. #}
+      {% if ellipses.previous %}
+        <li class="page-item other" role="presentation">
+          <a class="page-link">&hellip;</a>
+        </li>
+      {% endif %}
+      {# Now generate the actual pager piece. #}
+      {% for key, item in items.pages %}
+        <li class="page-item">
+          {% if current == key %}
+            {% set title = 'Current page'|t %}
+          {% else %}
+            {% set title = 'Go to page @key'|t({'@key': key}) %}
+          {% endif %}
+          <a class="page-link next" {{ current == key ? 'aria-current="page"' : '' }} data-focus-mouse="false" href="{{ item.href }}" title="{{ title }}" {{ item.attributes|without('href', 'title') }}>
+            <span class="visually-hidden">
+              {{ current == key ? 'Current page'|t : 'Page'|t }}
+            </span>
+            {{- key -}}
+          </a>
+        </li>
+      {% endfor %}
+      {# Add an ellipsis if there are further next pages. #}
+      {% if ellipses.next %}
+        <li class="page-item other" role="presentation">
+          <a class="page-link">&hellip;</a>
+        </li>
+      {% endif %}
+      {# Print next item if we are not on the last page. #}
+      {% if items.next %}
+        <li class="page-item">
+          <a class="page-link" href="{{ items.next.href }}" data-focus-mouse="false" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+            <svg class="icon"><use href="#it-chevron-right"></use></svg>
+            <span class="text sr-only">{{ items.next.text|default('Next ›'|t) }}</span>
+          </a>
+        </li>
+      {% else %}
+        <li class="page-item disabled">
+          <a class="page-link" href="#">
+            <svg class="icon"><use href="#it-chevron-right"></use></svg>
+            <span class="visually-hidden">{{ items.next.text|default('‹ Next'|t) }}</span>
+          </a>
+        </li>
+      {% endif %}
+      {# Print last item if we are not on the last page. #}
+      {% if items.last %}
+
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

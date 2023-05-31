@@ -10,8 +10,10 @@ dependencies:
     - paragraphs.paragraphs_type.argomenti_in_evidenza_card
     - paragraphs.paragraphs_type.argomenti_in_evidenza_ct
     - paragraphs.paragraphs_type.biglietto_evento
+    - paragraphs.paragraphs_type.blocco
     - paragraphs.paragraphs_type.calendario
     - paragraphs.paragraphs_type.card_foto_gallery
+    - paragraphs.paragraphs_type.card_in_evidenza
     - paragraphs.paragraphs_type.collection_multimediale
     - paragraphs.paragraphs_type.collegamenti_unita_organizzative
     - paragraphs.paragraphs_type.comuni_altri_argomenti
@@ -26,6 +28,7 @@ dependencies:
     - paragraphs.paragraphs_type.documento
     - paragraphs.paragraphs_type.elemento_video
     - paragraphs.paragraphs_type.elenco_card_da_termine
+    - paragraphs.paragraphs_type.elenco_card_da_vocabolario
     - paragraphs.paragraphs_type.esplora
     - paragraphs.paragraphs_type.faq
     - paragraphs.paragraphs_type.fase_intitolata
@@ -93,6 +96,8 @@ settings:
       biglietto_evento: biglietto_evento
       elenco_card_da_vocabolario: elenco_card_da_vocabolario
       links_con_icona: links_con_icona
+      card_in_evidenza: card_in_evidenza
+      blocco: blocco
       card_foto_gallery: card_foto_gallery
       ricerca: ricerca
       siti_tematici: siti_tematici
@@ -139,6 +144,9 @@ settings:
       biglietto_evento:
         weight: 55
         enabled: true
+      blocco:
+        weight: 58
+        enabled: true
       calendario:
         weight: 37
         enabled: true
@@ -147,6 +155,9 @@ settings:
         enabled: false
       card_foto_gallery:
         weight: 58
+        enabled: true
+      card_in_evidenza:
+        weight: 57
         enabled: true
       collection_multimediale:
         weight: 18
@@ -280,4 +291,7 @@ settings:
       valutazione:
         weight: 64
         enabled: true
+      vista:
+        weight: 112
+        enabled: false
 field_type: entity_reference_revisions

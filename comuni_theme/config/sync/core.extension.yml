@@ -2,6 +2,8 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 langcode: it
 module:
+  admin_toolbar: 0
+  admin_toolbar_tools: 0
   automated_cron: 0
   better_exposed_filters: 0
   better_social_sharing_buttons: 0

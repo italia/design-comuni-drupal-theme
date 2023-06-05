@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.servizio.field_a_chi_rivolto
     - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_backend_info
     - field.field.node.servizio.field_business_events
     - field.field.node.servizio.field_canale_digitale
     - field.field.node.servizio.field_casi_particolari
@@ -64,6 +65,15 @@ content:
       link: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_backend_info:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 29
     region: content
   field_canale_digitale:
     type: link
@@ -146,9 +156,10 @@ content:
     weight: 15
     region: content
   field_descrizione_breve:
-    type: basic_string
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 1
     region: content

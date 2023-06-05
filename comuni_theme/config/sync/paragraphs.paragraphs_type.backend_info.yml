@@ -1,0 +1,10 @@
+uuid: 9287a909-8fc0-423d-aea4-7c005741af2a
+langcode: it
+status: true
+dependencies: {  }
+id: backend_info
+label: 'Campi di gestione interna'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

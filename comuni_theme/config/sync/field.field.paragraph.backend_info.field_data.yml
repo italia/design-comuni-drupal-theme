@@ -1,0 +1,21 @@
+uuid: 62d47f6c-9809-4dae-8399-8365085916df
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_data
+    - paragraphs.paragraphs_type.backend_info
+  module:
+    - datetime
+id: paragraph.backend_info.field_data
+field_name: field_data
+entity_type: paragraph
+bundle: backend_info
+label: 'Data dell''ultima verifica'
+description: 'Se questo contenuto risulta interamente completo inserire la data corrente.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -90,6 +90,7 @@ module:
   views_field_view: 0
   views_show_more: 0
   views_ui: 0
+  viewsreference: 0
   pathauto: 1
   views: 10
   paragraphs: 11

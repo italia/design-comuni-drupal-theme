@@ -14,11 +14,11 @@ bundle: hero_immagine
 mode: default
 content:
   field_descrizione:
-    type: string_textarea
+    type: string_textfield
     weight: 1
     region: content
     settings:
-      rows: 5
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_immagine:

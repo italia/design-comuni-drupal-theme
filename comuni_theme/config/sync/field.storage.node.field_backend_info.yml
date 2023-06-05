@@ -1,0 +1,21 @@
+uuid: 5db174c4-3a07-4217-a649-db1063351d8d
+langcode: it
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - node
+    - paragraphs
+id: node.field_backend_info
+field_name: field_backend_info
+entity_type: node
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

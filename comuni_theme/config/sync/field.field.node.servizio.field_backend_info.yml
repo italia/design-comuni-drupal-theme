@@ -1,0 +1,202 @@
+uuid: f81a63ed-a3ac-4978-93d3-feeaae2bcbd5
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_backend_info
+    - node.type.servizio
+    - paragraphs.paragraphs_type.backend_info
+  module:
+    - entity_reference_revisions
+id: node.servizio.field_backend_info
+field_name: field_backend_info
+entity_type: node
+bundle: servizio
+label: 'Campi di gestione interna'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      backend_info: backend_info
+    negate: 0
+    target_bundles_drag_drop:
+      amministrazione_ref_in_evidenza:
+        weight: 59
+        enabled: false
+      amministrazione_view_in_evidenza:
+        weight: 60
+        enabled: false
+      argomenti:
+        weight: 61
+        enabled: false
+      argomenti_in_evidenza:
+        weight: 62
+        enabled: false
+      argomenti_in_evidenza_card:
+        weight: 63
+        enabled: false
+      argomenti_in_evidenza_ct:
+        weight: 64
+        enabled: false
+      backend_info:
+        weight: 65
+        enabled: true
+      biglietto_evento:
+        weight: 66
+        enabled: false
+      blocco:
+        weight: 67
+        enabled: false
+      calendario:
+        weight: 68
+        enabled: false
+      card_assistenza:
+        weight: 69
+        enabled: false
+      card_foto_gallery:
+        weight: 70
+        enabled: false
+      card_in_evidenza:
+        weight: 71
+        enabled: false
+      collection_multimediale:
+        weight: 72
+        enabled: false
+      collegamenti_unita_organizzative:
+        weight: 73
+        enabled: false
+      comuni_altri_argomenti:
+        weight: 74
+        enabled: false
+      container_argomenti_in_evidenza:
+        weight: 75
+        enabled: false
+      container_assistenza:
+        weight: 76
+        enabled: false
+      container_calendario:
+        weight: 77
+        enabled: false
+      container_contenuti_in_evidenza:
+        weight: 78
+        enabled: false
+      container_foto_gallery:
+        weight: 79
+        enabled: false
+      container_vuoto:
+        weight: 80
+        enabled: false
+      contenuto_allegati_per_tipo:
+        weight: 81
+        enabled: false
+      dataset:
+        weight: 82
+        enabled: false
+      documento:
+        weight: 83
+        enabled: false
+      elemento_video:
+        weight: 84
+        enabled: false
+      elenco_card_da_termine:
+        weight: 85
+        enabled: false
+      elenco_card_da_vocabolario:
+        weight: 86
+        enabled: false
+      esplora:
+        weight: 87
+        enabled: false
+      faq:
+        weight: 88
+        enabled: false
+      fase_intitolata:
+        weight: 89
+        enabled: false
+      fase_semplice:
+        weight: 90
+        enabled: false
+      hero_immagine:
+        weight: 91
+        enabled: false
+      homepage_top_card:
+        weight: 92
+        enabled: false
+      homepage_top_cards:
+        weight: 93
+        enabled: false
+      intestazione_ricerca_e_preferiti:
+        weight: 94
+        enabled: false
+      link:
+        weight: 95
+        enabled: false
+      link_con_icona:
+        weight: 97
+        enabled: false
+      link_esterno:
+        weight: 98
+        enabled: false
+      links_con_icona:
+        weight: 96
+        enabled: false
+      orari_giorni:
+        weight: 99
+        enabled: false
+      orari_ore:
+        weight: 100
+        enabled: false
+      prenotazione_appuntamento:
+        weight: 101
+        enabled: false
+      punto_di_contatto:
+        weight: 102
+        enabled: false
+      ricerca:
+        weight: 103
+        enabled: false
+      ricerca_documenti_e_dati:
+        weight: 104
+        enabled: false
+      ricerca_novita:
+        weight: 105
+        enabled: false
+      ricerca_servizi:
+        weight: 106
+        enabled: false
+      richiesta_assistenza:
+        weight: 107
+        enabled: false
+      servizi_ref_in_evidenza:
+        weight: 108
+        enabled: false
+      siti_tematici:
+        weight: 109
+        enabled: false
+      testo:
+        weight: 110
+        enabled: false
+      testo_e_lista:
+        weight: 111
+        enabled: false
+      titolo_descrizione_link:
+        weight: 112
+        enabled: false
+      titolo_e_descrizione:
+        weight: 113
+        enabled: false
+      ultima_notizia:
+        weight: 114
+        enabled: false
+      valutazione:
+        weight: 115
+        enabled: false
+      vista:
+        weight: 116
+        enabled: false
+field_type: entity_reference_revisions

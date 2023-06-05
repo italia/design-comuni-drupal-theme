@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.card
     - field.field.node.servizio.field_a_chi_rivolto
     - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_backend_info
     - field.field.node.servizio.field_business_events
     - field.field.node.servizio.field_canale_digitale
     - field.field.node.servizio.field_casi_particolari
@@ -266,6 +267,7 @@ content:
     weight: 26
     region: content
 hidden:
+  field_backend_info: true
   field_business_events: true
   field_canale_fisico: true
   field_codice_dell_ente_erogatore: true

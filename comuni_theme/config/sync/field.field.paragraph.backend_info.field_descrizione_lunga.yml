@@ -1,0 +1,21 @@
+uuid: 58292d62-176f-4d80-9bd7-76b8cc83ab57
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_descrizione_lunga
+    - paragraphs.paragraphs_type.backend_info
+  module:
+    - text
+id: paragraph.backend_info.field_descrizione_lunga
+field_name: field_descrizione_lunga
+entity_type: paragraph
+bundle: backend_info
+label: 'Annotazioni interne'
+description: "Se ci sono annotazioni il contenuto verrà segnalato come \"Da controllare\". <br>\r\nRicordati di eliminare le annotazioni non più necessarie."
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

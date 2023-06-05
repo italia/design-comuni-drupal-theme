@@ -1,0 +1,34 @@
+uuid: a010cb8b-3a25-4b19-91cf-b0bab638263b
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.backend_info.field_data
+    - field.field.paragraph.backend_info.field_descrizione_lunga
+    - paragraphs.paragraphs_type.backend_info
+  module:
+    - datetime
+    - text
+id: paragraph.backend_info.default
+targetEntityType: paragraph
+bundle: backend_info
+mode: default
+content:
+  field_data:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_descrizione_lunga:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  search_api_excerpt: true

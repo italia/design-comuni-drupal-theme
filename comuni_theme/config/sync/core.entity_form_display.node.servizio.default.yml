@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.servizio.field_a_chi_rivolto
     - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_backend_info
     - field.field.node.servizio.field_business_events
     - field.field.node.servizio.field_canale_digitale
     - field.field.node.servizio.field_casi_particolari
@@ -87,6 +88,25 @@ content:
     weight: 31
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_backend_info:
+    type: paragraphs
+    weight: 36
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: backend_info
+      features:
+        add_above: '0'
+        collapse_edit_all: '0'
+        duplicate: '0'
     third_party_settings: {  }
   field_business_events:
     type: options_select

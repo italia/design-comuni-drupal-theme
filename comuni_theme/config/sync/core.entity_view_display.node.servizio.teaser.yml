@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.servizio.field_a_chi_rivolto
     - field.field.node.servizio.field_argomenti
+    - field.field.node.servizio.field_backend_info
     - field.field.node.servizio.field_business_events
     - field.field.node.servizio.field_canale_digitale
     - field.field.node.servizio.field_casi_particolari
@@ -64,6 +65,7 @@ content:
 hidden:
   field_a_chi_rivolto: true
   field_argomenti: true
+  field_backend_info: true
   field_business_events: true
   field_canale_digitale: true
   field_canale_fisico: true

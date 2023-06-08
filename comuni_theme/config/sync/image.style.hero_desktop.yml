@@ -1,0 +1,26 @@
+uuid: 75e29aec-0d52-4c12-8fa5-d88706899dab
+langcode: it
+status: true
+dependencies:
+  config:
+    - crop.type.hero_desktop
+  module:
+    - crop
+name: hero_desktop
+label: 'Hero (Desktop)'
+effects:
+  a68b965e-8fce-47ca-99e4-eabca7fb7ae8:
+    uuid: a68b965e-8fce-47ca-99e4-eabca7fb7ae8
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: hero_desktop
+      automatic_crop_provider: null
+  9f5917c4-821b-460f-9a58-f4fadc1dcee5:
+    uuid: 9f5917c4-821b-460f-9a58-f4fadc1dcee5
+    id: image_scale
+    weight: 2
+    data:
+      width: 1920
+      height: null
+      upscale: true

@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: UYGkeE2iH3UGp9lBPsELb3VSgHz9vkMJeaGzcYwE7Uw
+langcode: it
+settings:
+  library_url: libraries/cropper/cropper.min.js
+  css_url: libraries/cropper/cropper.min.css
+  crop_preview_image_style: crop_thumbnail
+  crop_list: {  }
+  crop_types_required: {  }
+  warn_multiple_usages: true
+  show_default_crop: true
+  show_crop_area: false
+  notify_apply: true
+  notify_update: true

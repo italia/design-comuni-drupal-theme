@@ -1,0 +1,54 @@
+uuid: f881bf5a-56dd-4cd5-a20e-9cd2efdb87ac
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.gallery.field_immagini
+    - field.field.paragraph.gallery.field_stile_immagine
+    - field.field.paragraph.gallery.field_tipi_di_stili
+    - field.field.paragraph.gallery.field_titolo
+    - image.style.large
+    - paragraphs.paragraphs_type.gallery
+  module:
+    - media
+id: paragraph.gallery.default
+targetEntityType: paragraph
+bundle: gallery
+mode: default
+content:
+  field_immagini:
+    type: media_thumbnail
+    label: above
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_stile_immagine:
+    type: entity_reference_entity_id
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tipi_di_stili:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  search_api_excerpt: true

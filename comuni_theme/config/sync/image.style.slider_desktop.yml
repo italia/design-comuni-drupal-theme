@@ -1,0 +1,26 @@
+uuid: 96937ca5-146d-4101-9ac7-f06d4b8ff79a
+langcode: it
+status: true
+dependencies:
+  config:
+    - crop.type.slider_desktop
+  module:
+    - crop
+name: slider_desktop
+label: 'Slider (desktop)'
+effects:
+  df9c2fd7-1a60-4a37-9172-13c2d4da60f3:
+    uuid: df9c2fd7-1a60-4a37-9172-13c2d4da60f3
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: slider_desktop
+      automatic_crop_provider: null
+  8766fed8-bd3f-4eaa-94e4-38416b9025b7:
+    uuid: 8766fed8-bd3f-4eaa-94e4-38416b9025b7
+    id: image_scale_and_crop
+    weight: 2
+    data:
+      width: 1920
+      height: 420
+      anchor: center-center

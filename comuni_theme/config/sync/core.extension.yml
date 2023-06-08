@@ -23,6 +23,7 @@ module:
   contact: 0
   content_synchronizer: 0
   contextual: 0
+  crop: 0
   csv_serialization: 0
   ctools: 0
   datetime: 0
@@ -42,6 +43,7 @@ module:
   help: 0
   history: 0
   image: 0
+  image_widget_crop: 0
   jquery_ui: 0
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
@@ -51,6 +53,7 @@ module:
   locale: 0
   media: 0
   media_library: 0
+  media_library_edit: 0
   menu_export: 0
   menu_link_content: 0
   menu_trail_by_path: 0

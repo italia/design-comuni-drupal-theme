@@ -16,7 +16,7 @@
                 <dt class="col-6 text-nowrap"><span>{{ item.entity.field_orari_giorni.value }}</span></dt>
                 <dd class="col-6">
                   {% for item_ora in item.entity.field_orari_giorni.entity.field_fascia_oraria %}
-                      <span class="text-nowrap">{{ item_ora.entity.field_orari_fascia_oraria.from|date('H:i') }} - {{ item_ora.entity.field_orari_fascia_oraria.to|date('H:i') }}</span><span class="nascondi-ultimo">,</span>
+                      <span class="text-nowrap">{{ item_ora.entity.field_orari_fascia_oraria.from|date('H:i', "UTC") }} - {{ item_ora.entity.field_orari_fascia_oraria.to|date('H:i', "UTC") }}</span><span class="nascondi-ultimo">,</span>
                   {% endfor %}
                 </dd>
               </dl>

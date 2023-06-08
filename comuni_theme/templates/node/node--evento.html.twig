@@ -330,7 +330,7 @@
                 <div class="point-list-content">
                   <div class="card card-teaser shadow rounded">
                     <div class="card-body">
-                      <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('H:m')}} - Inizio evento </h3>
+                      <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_inizio['#items'].0.value|date('H:m','UTC')}} - Inizio evento </h3>
                     </div>
                   </div>
                 </div>
@@ -344,7 +344,7 @@
                   <div class="point-list-content">
                     <div class="card card-teaser shadow rounded">
                       <div class="card-body">
-                        <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('H:m') }} - Fine evento</h3>
+                        <h3 class="card-title h5 m-0">{{ content.field_data_e_orario_di_fine['#items'].0.value|date('H:m','UTC') }} - Fine evento</h3>
                       </div>
                     </div>
                   </div>
@@ -463,7 +463,7 @@
       </article>
         {% if node.changed.value %}
           <article id="ultimo-aggiornamento" class="it-page-section mt-5">
-            <h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal">{{ node.changed.value|date("d/m/Y, H:i") }}</span></h4>
+            <h4 class="h6">Ultimo aggiornamento: <span class="h6 fw-normal">{{ node.changed.value|date("d/m/Y, H:i",'UTC') }}</span></h4>
           </article>
         {% endif %}
     </section>

@@ -56,9 +56,8 @@
               </div>
             {% endif %}
             {% if content.field_canale_digitale[0] %}
-              <a href="{{ content.field_canale_digitale['#items'][0].uri }}" target="_blank"
-                 type="button" class="btn btn-primary fw-bold" data-focus-mouse="false"
-              ><span class="">{{ content.field_canale_digitale['#items'][0].title }}</span>
+              <a href="{{ content.field_canale_digitale[0]['#url'] }}" type="button" class="btn btn-primary fw-bold" data-focus-mouse="false">
+                <span>{{ content.field_canale_digitale['#items'][0].title }}</span>
               </a>
             {% endif %}
           </div>

@@ -239,7 +239,7 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      css_class: 'row row-cols-3 g-4'
+      css_class: ''
       use_ajax: true
       header: {  }
       footer: {  }

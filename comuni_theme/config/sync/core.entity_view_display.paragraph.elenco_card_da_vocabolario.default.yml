@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.elenco_card_da_vocabolario.field_esplora_vocabolario
+    - field.field.paragraph.elenco_card_da_vocabolario.field_tipi_di_stili
     - field.field.paragraph.elenco_card_da_vocabolario.field_titolo
     - paragraphs.paragraphs_type.elenco_card_da_vocabolario
 id: paragraph.elenco_card_da_vocabolario.default
@@ -18,6 +19,14 @@ content:
       link: true
     third_party_settings: {  }
     weight: 0
+    region: content
+  field_tipi_di_stili:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
     region: content
   field_titolo:
     type: string

@@ -3,19 +3,45 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vista.field_tipi_di_stili
+    - field.field.paragraph.vista.field_titolo
     - field.field.paragraph.vista.field_vista
     - paragraphs.paragraphs_type.vista
+  module:
+    - viewsreference
 id: paragraph.vista.default
 targetEntityType: paragraph
 bundle: vista
 mode: default
 content:
-  field_vista:
-    type: entity_reference_entity_id
+  field_tipi_di_stili:
+    type: entity_reference_label
     label: above
-    settings: {  }
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
+    region: content
+  field_titolo:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_vista:
+    type: viewsreference_formatter
+    label: hidden
+    settings:
+      plugin_types:
+        default: default
+        block: block
+        page: page
+        rest_export: 0
+        feed: 0
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   search_api_excerpt: true

@@ -1,10 +1,12 @@
-uuid: d4e31cf1-b28c-40a4-bc03-5d1bbc6d2039
+uuid: 961afed4-9485-427e-9078-4851568a6d35
 langcode: it
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_vista
     - paragraphs.paragraphs_type.vista
+  module:
+    - viewsreference
 id: paragraph.vista.field_vista
 field_name: field_vista
 entity_type: paragraph
@@ -19,5 +21,60 @@ settings:
   handler: 'default:view'
   handler_settings:
     target_bundles: null
-    auto_create: false
-field_type: entity_reference
+    auto_create: 0
+  plugin_types:
+    default: default
+    block: block
+    page: page
+    rest_export: 0
+    feed: 0
+  preselect_views:
+    politici: politici
+    allegati: 0
+    appuntamenti: 0
+    appuntamenti_eventi: 0
+    argomenti: 0
+    argomenti_correlati: 0
+    assistenza: 0
+    bandi: 0
+    block_content: 0
+    calendario: 0
+    comment: 0
+    comments_recent: 0
+    comuni_amministrazione: 0
+    comuni_in_evidenza: 0
+    content: 0
+    content_recent: 0
+    content_servizi: 0
+    contenuti_correlati: 0
+    elenca_contenuti: 0
+    elenca_servizi_per_categoria: 0
+    elenca_tassonomie_per_vocabolario: 0
+    elenco_card_contenuti_da_un_termine: 0
+    elenco_card_termini_da_un_vocabolario: 0
+    elenco_chip_termini_da_un_termine: 0
+    esplora_categoria: 0
+    faq: 0
+    files: 0
+    frontpage: 0
+    incarichi_collegati: 0
+    manutenzione_files: 0
+    media: 0
+    media_library: 0
+    persone_collegate: 0
+    punti_di_contatto_collegati: 0
+    ricerca: 0
+    ricerca_documenti_e_dati: 0
+    sedi_unita_organizzativa: 0
+    servizi_collegati: 0
+    taxonomy_term: 0
+    tutte_le_novita: 0
+    tutti_i_servizi: 0
+    ultima_notizia: 0
+    unita_organizzative_collegate: 0
+    user_admin_people: 0
+    valutazione: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+field_type: viewsreference

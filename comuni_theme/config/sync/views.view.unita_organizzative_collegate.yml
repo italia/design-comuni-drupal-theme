@@ -223,9 +223,8 @@ display:
         type: default
         options:
           grouping: {  }
-          row_class: ''
+          row_class: col
           default_row_class: true
-          uses_fields: false
       row:
         type: fields
         options:
@@ -309,7 +308,20 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+      style:
+        type: default
+        options:
+          row_class: col
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: card
       defaults:
+        style: false
+        row: false
         relationships: false
         arguments: false
       relationships:
@@ -319,7 +331,7 @@ display:
           field: field_sede_principale
           relationship: none
           group_type: group
-          admin_label: 'sede_principale: Unità Organizzativa'
+          admin_label: 'field_sede_principale: Content'
           plugin_id: standard
           required: false
       display_description: ''
@@ -491,24 +503,10 @@ display:
         operator: AND
         groups:
           1: AND
-      style:
-        type: default
-        options:
-          grouping: {  }
-          row_class: ''
-          default_row_class: true
-          uses_fields: false
-      row:
-        type: fields
-        options:
-          default_field_elements: false
-          inline: {  }
-          separator: ''
-          hide_empty: false
       defaults:
         group_by: false
-        style: false
-        row: false
+        style: true
+        row: true
         relationships: false
         fields: false
         arguments: false

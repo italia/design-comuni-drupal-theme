@@ -1,12 +1,48 @@
-<section>
-  <div class="container py-5">
-    <h2 class="mb-4 title-xxlarge">{{ paragraph.field_titolo.value }}</h2>
+{% set classes = [
+  'paragraph',
+  'paragraph--type--' ~ paragraph.bundle|clean_class,
+  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+  not paragraph.isPublished() ? 'paragraph--unpublished'
+] %}
+
+{% set wrapper_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css_wrapper', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set wrapper_classes = wrapper_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% set container_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set container_classes = container_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% set row_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css_row', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set row_classes = row_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+<section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+  <div class="{{ container_classes|join(' ') }}">
+    {% if content.field_titolo[0] is not empty %}
+      <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
+    {% endif %}
+    
     {% set param1 = [] %}
     {% for item in paragraph.field_esplora_vocabolario %}
       {% set param1 = param1|merge([item.target_id]) %}
     {% endfor %}
     {% set param1 = param1|join('+') %}
     
-    {{ drupal_view('elenco_card_termini_da_un_vocabolario', 'default', param1) }}
+    <div class="row {{ row_classes|join(' ') }}">
+      {{ drupal_view('elenco_card_termini_da_un_vocabolario', 'default', param1) }}
+    </div>
   </div>
 </section>

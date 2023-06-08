@@ -262,7 +262,7 @@
         {% if drupal_view_result('incarichi_collegati', 'block_1', node.id) %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="incarichi">Incarichi</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="row row-cols-2 g-4">
             {{ drupal_view('incarichi_collegati', 'block_1', node.id) }}
           </div>
         </section>

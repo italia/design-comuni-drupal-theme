@@ -16,8 +16,6 @@
   {% endfor %}
 {% endfor %}
 
-
-
 <div class="container" id="main-container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-10">
@@ -309,7 +307,7 @@
         {% if drupal_view_result('servizi_collegati', 'block_2', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
-            <div class="card-wrapper card-teaser-wrapper">
+            <div class="row row-cols-2 g-4">
               {{ drupal_view('servizi_collegati', 'block_2', node.id) }}
             </div>
         </section>

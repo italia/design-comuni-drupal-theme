@@ -399,7 +399,7 @@
         {% if drupal_view_result('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) is not empty %}
           <article id="appuntamenti" class="it-page-section mt-5">
             <h2 class="mb-3">Appuntamenti</h2>
-            <div class="card-wrapper card-teaser-wrapper card-teaser-wrapper-equal">
+            <div class="row row-cols-2 g-4">
               {{ drupal_view('appuntamenti_eventi', 'block_1', node.id, evento_genitore_id) }}
             </div>
           </article>

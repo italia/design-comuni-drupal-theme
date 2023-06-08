@@ -1,20 +1,22 @@
-<div class="card card-teaser card-flex border border-light shadow-sm p-3 mt-0">
-  <svg class="icon icon-success">
-    <use href="#it-pin" />
-  </svg>
-  <div class="card-body pb-4">
-    <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
-    <div class="card-text u-main-black">
-      <div class="mt-1"><p>
-        <a target="_blank" href="https://www.google.com/maps/place/{{ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) }},{{ content.field_cap[0]["#context"].value }}">
-            {{ content.field_indirizzo[0]["#context"].value }}, {{ content.field_cap[0]["#context"].value }}
-        </a>
-      </p></div>
+<div class="col">
+  <div class="card card-teaser white-bg shadow-sm rounded border border-light h-100">
+    <svg class="icon icon-success">
+      <use href="#it-pin" />
+    </svg>
+    <div class="card-body pb-4">
+      <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
+      <div class="card-text u-main-black">
+        <div class="mt-1"><p>
+          <a target="_blank" href="https://www.google.com/maps/place/{{ content.field_indirizzo[0]["#context"].value|replace({' ': "+"}) }},{{ content.field_cap[0]["#context"].value }}">
+              {{ content.field_indirizzo[0]["#context"].value }}, {{ content.field_cap[0]["#context"].value }}
+          </a>
+        </p></div>
+      </div>
+      <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': node.id}) }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
+        <svg class="icon ms-0">
+          <use href="#it-arrow-right" />
+        </svg>
+      </a>
     </div>
-    <a class="read-more bottom-0 mb-3" href="{{ path('entity.node.canonical', {'node': node.id}) }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
-      <svg class="icon ms-0">
-        <use href="#it-arrow-right" />
-      </svg>
-    </a>
   </div>
 </div>

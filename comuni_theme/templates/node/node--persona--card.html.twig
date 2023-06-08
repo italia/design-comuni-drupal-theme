@@ -1,17 +1,19 @@
-<div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light p-0">
-  <div class="w-100 d-flex">
-    <div class="card-body p-3 pb-5">
-      <h3 class="card-title text-paragraph-medium u-grey-light">{{ content.field_nome[0] }} {{ content.field_cognome[0] }}</h3>
-      <div class="text-paragraph-card u-grey-light m-0">
-        <div class="mb-3">{{ content.field_descrizione_breve }}</div>
-        <div class="mb-1">{{ drupal_view('incarichi_collegati', 'block_3', node.id) }}</div>
+<div class="col">
+  <div class="card card-teaser card-teaser-image card-flex white-bg shadow-sm rounded border border-light h-100">
+    <div class="w-100 d-flex">
+      <div class="card-body">
+        <h3 class="card-title text-paragraph-medium u-grey-light">{{ content.field_nome[0] }} {{ content.field_cognome[0] }}</h3>
+        <div class="text-paragraph-card u-grey-light m-0">
+          <div class="mb-3">{{ content.field_descrizione_breve }}</div>
+          <div class="mb-1">{{ drupal_view('incarichi_collegati', 'block_3', node.id) }}</div>
+        </div>
       </div>
+      <div class="card-image card-image-rounded pb-5">{{ content.field_immagine }}</div>
     </div>
-    <div class="card-image card-image-rounded pb-5">{{ content.field_immagine }}</div>
+    <a class="read-more position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
+      <svg  class="icon ms-0">
+        <use href="#it-arrow-right" />
+      </svg>
+    </a>
   </div>
-  <a class="read-more ps-3 position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
-    <svg  class="icon ms-0">
-      <use href="#it-arrow-right" />
-    </svg>
-  </a>
 </div>

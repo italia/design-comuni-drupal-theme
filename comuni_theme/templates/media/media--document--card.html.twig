@@ -1,0 +1,16 @@
+{% set filename = content.field_media_document[0]["#file"].filename.value %}
+{% set href = file_url(content.field_media_document[0]["#file"].uri.value) %}
+<div class="col">
+  <div class="card card-teaser white-bg shadow-sm rounded border border-light h-100">
+    <svg class="icon">
+      <use href="#it-clip" />
+    </svg>
+    <div class="card-body">
+      <h5 class="card-title mb-0">
+        <a href="{{ href }}" title="Scarica {{ filename }}" aria-label="Scarica {{ filename }}" class="text-decoration-none">
+          {{ filename }}
+        </a>
+      </h5>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,29 @@
-<div class="card card-teaser flex-nowrap shadow-sm border border-light p-4">
-  <svg class="icon">
-    <use href="#it-clip" />
-  </svg>
-  <div class="card-body mb-4">
-    <h5 class="card-title">
-    {% set item_name = content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document.entity.filename.value %}
-    {% if content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document[0].description is not empty %}
-      {% set item_name = content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document[0].description %}
-    {% endif %}
-    {% if content.field_paragraph_documento["#items"].entity.field_documento[0] is not empty %}
-      <a href="{{ file_url(content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document.entity.fileuri) }}" title="Scarica {{ item_name }}" download target="_blank">{{ label }}</a>
-    {% else %}
-      <a href="{{ content.field_paragraph_documento["#items"].entity.field_link[0].uri }}" title="Vai a {{ content.field_paragraph_documento["#items"].entity.field_link[0].title }}" target="_blank">{{ label }}</a>
-    {% endif %}
-    </h5>
-    <div class="card-text">
-      <p>{{ content.field_descrizione_breve }}</p>
+<div class="col">
+  <div class="card card-teaser white-bg shadow-sm rounded border border-light h-100">
+    <svg class="icon">
+      <use href="#it-clip" />
+    </svg>
+    <div class="card-body mb-4">
+      <h5 class="card-title">
+      {% set item_name = content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document.entity.filename.value %}
+      {% if content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document[0].description is not empty %}
+        {% set item_name = content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document[0].description %}
+      {% endif %}
+      {% if content.field_paragraph_documento["#items"].entity.field_documento[0] is not empty %}
+        <a href="{{ file_url(content.field_paragraph_documento["#items"].entity.field_documento.entity.field_media_document.entity.fileuri) }}" title="Scarica {{ item_name }}" download target="_blank">{{ label }}</a>
+      {% else %}
+        <a href="{{ content.field_paragraph_documento["#items"].entity.field_link[0].uri }}" title="Vai a {{ content.field_paragraph_documento["#items"].entity.field_link[0].title }}" target="_blank">{{ label }}</a>
+      {% endif %}
+      </h5>
+      <div class="card-text">
+        <p>{{ content.field_descrizione_breve }}</p>
+      </div>
+      <a class="read-more pt-0" href="{{ ( url('entity.node.canonical', {'node':  (node.id)  }) ) }}" data-focus-mouse="false" title="Vai al contenuto {{ node.label }}">
+        <span class="text">Ulteriori informazioni</span>
+        <svg class="icon">
+          <use href="#it-arrow-right" />
+        </svg>
+      </a>
     </div>
-    <a class="read-more pt-0" href="{{ ( url('entity.node.canonical', {'node':  (node.id)  }) ) }}" data-focus-mouse="false" title="Vai al contenuto {{ node.label }}">
-      <span class="text">Ulteriori informazioni</span>
-      <svg class="icon">
-        <use href="#it-arrow-right" />
-      </svg>
-    </a>
   </div>
 </div>

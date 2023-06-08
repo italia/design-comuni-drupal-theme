@@ -42,7 +42,7 @@
       {% if content.field_descrizione_breve %}
         <p data-audio>{{ content.field_descrizione_breve }}</p>
       {% endif %}
-      <div class="row mt-5 mb-4">
+      <div class="row row-cols-lg-3 row-cols-1 mt-5 mb-4">
         <div class="col">
           <small>Data:</small>
           {% if content.field_data_della_notizia %}
@@ -250,8 +250,10 @@
       {% if content.field_luoghi[0] is not empty %}
         <article class="it-page-section mb-30" id="field_luoghi">
           <h2 class="mb-3">Luoghi</h2>
-            <div class="card-wrapper card-teaser-wrapper">
-              {{ content.field_luoghi }}
+            <div class="container my-3">
+              <div class="row row-cols-lg-2 row-cols-1 g-4">
+                {{ content.field_luoghi }}
+              </div>
             </div>
         </article>
       {% endif %}
@@ -259,8 +261,10 @@
       {% if content.field_documenti[0] is not empty %}
         <article class="it-page-section mt-5" id="documenti">
           <h2 class="mb-3">Documenti</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_documenti }}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_documenti }}
+            </div>
           </div>
         </article>
       {% endif %}
@@ -268,8 +272,10 @@
       {% if content.field_allegati[0] is not empty %}
         <article id="allegati" class="it-page-section mt-5">
           <h2 class="mb-3">Allegati</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_allegati }}
+          <div class="container">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_allegati }}
+            </div>
           </div>
         </article>
       {% endif %}
@@ -277,40 +283,31 @@
       {% if content.field_dataset[0] is not empty %}
         <article id="dataset" class="it-page-section mt-5">
           <h2 class="mb-3">Dataset</h2>
-          {{ content.field_dataset }}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_dataset }}
+            </div>
+          </div>
         </article>
       {% endif %}
 
       {% if content.field_a_cura_di[0] is not empty or content.field_unita_org_responsabile[0] is not empty %}
         <article id="a-cura-di" class="it-page-section mt-5">
           <h2 class="mb-3">A cura di</h2>
-          <div class="card-wrapper card-teaser-wrapper card-column my-3">
-            <div class="row">
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
               {% if content.field_a_cura_di[0] is not empty %}
-                <div class="col-md-6">
-                  {{ content.field_a_cura_di }}
+                <div class="col">
+                  <div class="row row-cols-1 g-4">
+                    {{ content.field_a_cura_di }}
+                  </div>
                 </div>
               {% endif %}
               {% if content.field_persone[0] is not empty %}
-                <div class="col-md-6 mt-4 mt-md-0">
-                  {% for item in content.field_persone["#items"] %}
-                  <div class="card card-teaser card-teaser-image card-flex shadow-sm mb-0 border border-light flex-column p-0">
-                    <div class="card-image-wrapper d-flex">
-                      <div class="card-body p-3 pb-5">
-                        <h3 class="card-title text-paragraph-medium u-grey-light">{{ item.entity.field_nome.value }} {{ item.entity.field_cognome.value }}</h3>
-                        <div class="text-paragraph-card u-grey-light m-0">
-                          <div class="mb-1">{{ item.entity.field_descrizione_breve.value }}</div>
-                        </div>
-                      </div>
-                      <div class="card-image card-image-rounded pb-5">{{ item.entity.field_immagine|view }}</div>
-                    </div>
-                    <a class="read-more ps-3 position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ item.entity.label }}"> <span class="text">Ulteriori dettagli</span>
-                      <svg class="icon ms-0">
-                        <use href="#it-arrow-right" />
-                      </svg>
-                    </a>
+                <div class="col">
+                  <div class="row row-cols-1 g-4">
+                    {{ content.field_persone }}
                   </div>
-                  {% endfor %}
                 </div>
               {% endif %}
             </div>

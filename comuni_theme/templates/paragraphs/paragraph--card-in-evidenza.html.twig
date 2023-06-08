@@ -13,14 +13,11 @@
   {% endfor %}    
 {% endfor %}
 
-{% set container_classes = ['container'] %}
+{% set container_classes = [] %}
 
 {% for stili in content.field_tipi_di_stili["#items"] %}
   {% for stile in drupal_field('field_classi_css', 'taxonomy_term', stili.target_id)["#items"] %}
     {% set container_classes = container_classes|merge([stile.value]) %}
-    {% if stile.value == 'container-fluid' %}
-      {% set container_classes = container_classes|slice(1) %}
-    {% endif %}
   {% endfor %}    
 {% endfor %}
 
@@ -32,19 +29,18 @@
   {% endfor %}    
 {% endfor %}
 
-{% block paragraph %}
-	<div{{attributes.addClass(classes).addClass(wrapper_classes)}}>
-	{% block content %}
-      <div class="{{ container_classes|join(' ') }} py-5">
-        <h2 class="title-xxlarge mb-4">{{ paragraph.field_titolo.value }}</h2>
-        <div class="row {{ row_classes|join(' ') }}">
-          {% for contenuto in content.field_contenuti["#items"] %}
-            <div class="col">
-              {{ drupal_entity('node', contenuto.target_id, 'card') }}
-            </div>
-          {% endfor %}
+<section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+  <div class="{{ container_classes|join(' ') }} py-5">
+    {% if content.field_titolo[0] is not empty %}
+      <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
+    {% endif %}
+    
+    <div class="row {{ row_classes|join(' ') }}">
+      {% for contenuto in content.field_contenuti["#items"] %}
+        <div class="col">
+          {{ drupal_entity('node', contenuto.target_id, 'card') }}
         </div>
-      </div>
-  {% endblock %}
-	</div>
-{% endblock paragraph %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

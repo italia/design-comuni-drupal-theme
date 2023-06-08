@@ -1,0 +1,36 @@
+uuid: 609653c8-3312-41b7-a816-8c6b460291f2
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_tipi_di_stili
+    - paragraphs.paragraphs_type.vista
+    - taxonomy.vocabulary.tipi_di_stili
+  content:
+    - 'taxonomy_term:tipi_di_stili:979718dc-39b2-4994-ba22-5d675773e488'
+    - 'taxonomy_term:tipi_di_stili:e2855833-6115-4210-9abd-14ecedf15f7f'
+id: paragraph.vista.field_tipi_di_stili
+field_name: field_tipi_di_stili
+entity_type: paragraph
+bundle: vista
+label: 'Tipi di stili'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    target_uuid: 979718dc-39b2-4994-ba22-5d675773e488
+  -
+    target_uuid: e2855833-6115-4210-9abd-14ecedf15f7f
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tipi_di_stili: tipi_di_stili
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

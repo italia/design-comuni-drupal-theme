@@ -3,16 +3,34 @@ langcode: it
 status: true
 dependencies:
   config:
+    - field.field.paragraph.vista.field_tipi_di_stili
+    - field.field.paragraph.vista.field_titolo
     - field.field.paragraph.vista.field_vista
     - paragraphs.paragraphs_type.vista
+  module:
+    - viewsreference
 id: paragraph.vista.default
 targetEntityType: paragraph
 bundle: vista
 mode: default
 content:
-  field_vista:
+  field_tipi_di_stili:
     type: options_select
     weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_titolo:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_vista:
+    type: viewsreference_select
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }

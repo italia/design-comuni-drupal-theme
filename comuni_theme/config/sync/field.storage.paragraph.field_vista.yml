@@ -1,17 +1,18 @@
-uuid: b69356f5-7d58-464d-a7e0-d32fb27842ae
+uuid: f2a98cf9-48ef-4520-9501-d3ea5568c9ac
 langcode: it
 status: true
 dependencies:
   module:
     - paragraphs
     - views
+    - viewsreference
 id: paragraph.field_vista
 field_name: field_vista
 entity_type: paragraph
-type: entity_reference
+type: viewsreference
 settings:
   target_type: view
-module: core
+module: viewsreference
 locked: false
 cardinality: 1
 translatable: true

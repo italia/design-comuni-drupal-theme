@@ -390,7 +390,7 @@
         {% if drupal_view_result('servizi_collegati', 'block_1', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="servizi_collegati">Servizi collegati</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="row row-cols-2 g-4">
             {{ drupal_view('servizi_collegati', 'block_1', node.id) }}
           </div>
         </section>

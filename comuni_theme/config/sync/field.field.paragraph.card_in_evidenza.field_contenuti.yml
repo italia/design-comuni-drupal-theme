@@ -22,7 +22,7 @@ entity_type: paragraph
 bundle: card_in_evidenza
 label: Contenuti
 description: ''
-required: true
+required: false
 translatable: true
 default_value: {  }
 default_value_callback: ''

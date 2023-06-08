@@ -334,7 +334,7 @@
         {% if drupal_view_result('unita_organizzative_collegate', 'block_1', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="sede_di">Sede di</h2>
-          <div class="card-wrapper card-teaser-wrapper">
+          <div class="row row-cols-2 g-4">
             {{ drupal_view('unita_organizzative_collegate', 'block_1', node.id) }}
           </div>
         </section>

@@ -193,6 +193,10 @@ display:
             operator_list: {  }
       style:
         type: default
+        options:
+          row_class: d-inline-block
+          default_row_class: true
+          uses_fields: false
       row:
         type: 'entity:node'
         options:

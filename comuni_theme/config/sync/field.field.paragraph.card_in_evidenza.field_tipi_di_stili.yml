@@ -6,6 +6,9 @@ dependencies:
     - field.storage.paragraph.field_tipi_di_stili
     - paragraphs.paragraphs_type.card_in_evidenza
     - taxonomy.vocabulary.tipi_di_stili
+  content:
+    - 'taxonomy_term:tipi_di_stili:979718dc-39b2-4994-ba22-5d675773e488'
+    - 'taxonomy_term:tipi_di_stili:e2855833-6115-4210-9abd-14ecedf15f7f'
 id: paragraph.card_in_evidenza.field_tipi_di_stili
 field_name: field_tipi_di_stili
 entity_type: paragraph
@@ -14,7 +17,11 @@ label: 'Tipi di stili'
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 979718dc-39b2-4994-ba22-5d675773e488
+  -
+    target_uuid: e2855833-6115-4210-9abd-14ecedf15f7f
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

@@ -1,0 +1,20 @@
+uuid: 238d21c4-15c2-4fc8-943a-46714ecdd2f2
+langcode: it
+status: true
+dependencies:
+  module:
+    - image
+    - paragraphs
+id: paragraph.field_stile_immagine
+field_name: field_stile_immagine
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

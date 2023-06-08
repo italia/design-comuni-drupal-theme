@@ -1,0 +1,83 @@
+{% set wrapper_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css_wrapper', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set wrapper_classes = wrapper_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% set container_classes = [] %}
+
+{% for stili in content.field_tipi_di_stili["#items"] %}
+  {% for stile in drupal_field('field_classi_css', 'taxonomy_term', stili.target_id)["#items"] %}
+    {% set container_classes = container_classes|merge([stile.value]) %}
+  {% endfor %}    
+{% endfor %}
+
+{% set num_elementi_lg = 3 %}
+{% set num_elementi_md = 2 %}
+{% set num_elementi_sm = 1 %}
+{% for stili in content.field_tipi_di_stili %}
+  {% if stili["#title"] == "1 elemento per riga" %}
+    {% set num_elementi_lg = 1 %}
+    {% set num_elementi_md = 1 %}
+    {% set num_elementi_sm = 1 %}
+  {% elseif stili["#title"] == "2 elementi per riga" %}
+    {% set num_elementi_lg = 2 %}
+    {% set num_elementi_md = 2 %}
+    {% set num_elementi_sm = 1 %}
+  {% elseif stili["#title"] == "3 elementi per riga" %}
+    {% set num_elementi_lg = 3 %}
+    {% set num_elementi_md = 2 %}
+    {% set num_elementi_sm = 1 %}
+  {% endif %}
+{% endfor %}
+
+{% set num_immagini = content.field_immagini["#items"]|length %}
+{%
+  set data_splide = {
+    "type": "slide",
+    "gap": 25,
+    "drag": (num_immagini > 1) ? true : false,
+    "perPage": num_elementi_lg,
+    "arrows": false,
+    "breakpoints": {
+		  991: {
+			  perPage: num_elementi_md,
+      },
+      767: {
+			  perPage: num_elementi_sm,
+      }    
+    }
+  }
+%}
+
+<section{{attributes.addClass(classes).addClass(wrapper_classes)}}>
+	<div class="{{ container_classes|join(' ') }} py-5">
+    {% if content.field_titolo[0] is not empty %}
+      <h2 class="mb-4 title-xxlarge">{{ content.field_titolo }}</h2>
+    {% endif %}
+		<div class="row">
+			<div class="col-12">
+				<div class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide" data-bs-carousel-splide data-splide='{{ data_splide|json_encode }}'>
+					<div class="splide__track">
+						<ul class="splide__list">
+							{% for contenuto in content.field_immagini["#items"] %}
+							<li class="splide__slide">
+                {% set immagine = drupal_entity('media', contenuto.target_id, 'default') %}
+                {% set caption = immagine["#media"].field_media_image[0].alt %}
+                {% set stile_desktop = (loop.length == 1 ? content.field_stile_immagine[0]["#plain_text"] : '4_3') %}
+                {{ drupal_image(immagine["#media"].field_media_image[0].target_id, stile_desktop, {class: 'w-100 h-auto d-none d-sm-block', alt: caption|t, title: caption|t}) }}
+                {{ drupal_image(immagine["#media"].field_media_image[0].target_id, '4_3', {class: 'w-100 h-auto d-block d-sm-none', alt: caption|t, title: caption|t}) }}
+                <p class="title-xsmall cmp-hero-img-small__description">
+                  {{ caption }}
+                </p>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

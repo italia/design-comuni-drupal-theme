@@ -1,0 +1,21 @@
+uuid: 3fbd1062-fc72-4e2c-a458-07387d09f329
+langcode: it
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_stile_immagine
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_stile_immagine
+field_name: field_stile_immagine
+entity_type: paragraph
+bundle: gallery
+label: 'Stile immagine'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:image_style'
+  handler_settings: {  }
+field_type: entity_reference

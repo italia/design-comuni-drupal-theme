@@ -1,0 +1,26 @@
+uuid: 0d71fa87-316c-42bd-a9f4-00d043dc0382
+langcode: it
+status: true
+dependencies:
+  config:
+    - crop.type.4_3
+  module:
+    - crop
+name: '4_3'
+label: '4:3 (Slider mobile e Box desktop)'
+effects:
+  d8e3f55d-4a18-482a-b74f-5f0b5be2f1ab:
+    uuid: d8e3f55d-4a18-482a-b74f-5f0b5be2f1ab
+    id: crop_crop
+    weight: -10
+    data:
+      crop_type: '4_3'
+      automatic_crop_provider: null
+  a0c5a65b-94eb-4b2f-afa1-8eee83cbfe9f:
+    uuid: a0c5a65b-94eb-4b2f-afa1-8eee83cbfe9f
+    id: image_scale_and_crop
+    weight: 3
+    data:
+      width: 560
+      height: 420
+      anchor: center-center

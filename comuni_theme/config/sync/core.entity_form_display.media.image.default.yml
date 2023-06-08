@@ -4,10 +4,9 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_media_image
-    - image.style.thumbnail
     - media.type.image
   module:
-    - image
+    - image_widget_crop
     - path
 _core:
   default_config_hash: JSY4-JPyNZBiYYo6imdRYF6_SdtWQexPndrLvn3-vw4
@@ -23,12 +22,21 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_media_image:
-    type: image_image
+    type: image_widget_crop
     weight: 0
     region: content
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
+      preview_image_style: ''
+      crop_preview_image_style: crop_thumbnail
+      crop_list:
+        - '4_3'
+        - hero_desktop_
+        - slider_desktop
+      crop_types_required: {  }
+      warn_multiple_usages: true
+      show_crop_area: false
+      show_default_crop: true
     third_party_settings: {  }
   langcode:
     type: language_select

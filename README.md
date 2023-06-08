@@ -38,7 +38,7 @@ $settings['file_private_path'] = 'path/to/your/folder';
 Nella cartella principale di drupal che si è selezionata durante l'installazione con composer esegui il seguente comando:
 
 ~~~
-composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3 drupal/chosen:^3.0 drupal/force_password_change:^2.0 drupal/smtp:^1.2 drupal/field_group:~3.4 drupal/time_field:^2.1 drupal/mix:^1.2 drupal/metatag:^1.23 drupal/textarea_widget_for_text:^1.2 drupal/conditional_fields:^4.0@alpha drupal/node_revision_delete:^2.0@alpha drupal/file_delete:^2.0 drupal/admin_toolbar:^3.4 drupal/viewsreference:^1.8
+composer require drupal/views_field_view:^1.0@beta drupal/csv_serialization:^2.1  cweagans/composer-patches drupal/menu_trail_by_path drupal/better_exposed_filters drupal/better_social_sharing_buttons drupal/color_field drupal/content_synchronizer drupal/devel drupal/fontawesome drupal/jquery_ui_touch_punch drupal/node_read_time drupal/paragraphs drupal/pathauto drupal/quick_node_clone drupal/restui drupal/search_api drupal/site_settings drupal/twig_tweak  drupal/views_show_more drush/drush drupal/menu_export:^1.3 drupal/chosen:^3.0 drupal/force_password_change:^2.0 drupal/smtp:^1.2 drupal/field_group:~3.4 drupal/time_field:^2.1 drupal/mix:^1.2 drupal/metatag:^1.23 drupal/textarea_widget_for_text:^1.2 drupal/conditional_fields:^4.0@alpha drupal/node_revision_delete:^2.0@alpha drupal/file_delete:^2.0 drupal/admin_toolbar:^3.4 drupal/viewsreference:^1.8 drupal/media_library_edit:^3.0 drupal/image_widget_crop:^2.4
 ~~~
 
 Nel file *composer.json* inserire la seguente patch all'interno della chiave `extra`:
@@ -85,10 +85,14 @@ drush pm:enable chosen
 drush chosenplugin
 ~~~
 
-Abilita modulo media_library:
+Scarica librerie cropper (image_widget_crop):
 
 ~~~
-drush pm:enable media_library
+cd web/libraries/
+mkdir cropper
+cd cropper/
+curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.js -o cropper.min.js
+curl https://cdnjs.cloudflare.com/ajax/libs/cropper/4.0.0/cropper.min.css -o cropper.min.css
 ~~~
 
 Importa i file di configurazione del sito con il seguentecomando drush (se necessario il comando può essere ripetuto più volte):

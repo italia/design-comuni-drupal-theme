@@ -33,6 +33,7 @@ dependencies:
     - paragraphs.paragraphs_type.faq
     - paragraphs.paragraphs_type.fase_intitolata
     - paragraphs.paragraphs_type.fase_semplice
+    - paragraphs.paragraphs_type.gallery
     - paragraphs.paragraphs_type.hero_immagine
     - paragraphs.paragraphs_type.homepage_top_card
     - paragraphs.paragraphs_type.homepage_top_cards
@@ -120,6 +121,7 @@ settings:
       ricerca_servizi: ricerca_servizi
       richiesta_assistenza: richiesta_assistenza
       servizi_ref_in_evidenza: servizi_ref_in_evidenza
+      gallery: gallery
       testo: testo
     negate: 0
     target_bundles_drag_drop:
@@ -141,6 +143,9 @@ settings:
       argomenti_in_evidenza_ct:
         weight: 36
         enabled: true
+      backend_info:
+        weight: 66
+        enabled: false
       biglietto_evento:
         weight: 55
         enabled: true
@@ -215,6 +220,9 @@ settings:
         enabled: true
       fase_semplice:
         weight: 74
+        enabled: true
+      gallery:
+        weight: 92
         enabled: true
       hero_immagine:
         weight: 75

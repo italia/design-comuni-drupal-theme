@@ -1,34 +1,36 @@
-<div class="card card-teaser card-teaser-info rounded shadow-sm p-3 border border-light">
-  <svg class="icon">
-    <use href="#it-telephone" />
-  </svg>
-  <div class="card-body">
-    <p class="card-title text-paragraph-regular-medium-semi mb-3">{{ label }}</p>
-    <div class="card-text">
-      <div class="mb-1">{{ content.field_contatto }}</div>
-      {% if content.field_orari[0] is not empty %}
-        <a class="btn btn-xs btn-primary card-title mt-2" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#punto-di-contatto-{{ node.id }}">Vedi orari <i aria-hidden="true" class="fa fa-caret-down"></i></a>
-        <div id="punto-di-contatto-{{ node.id }}" class="collapse lightgrey-bg-c1 p-2">
-          <div class="mb-1">{{ content.field_orari_note }}</div>
-          <div class="">
-            {% for item in attribute(content.field_orari, "#items") %}
-              <dl class="servizio-contatto-orari row mb-1">
-                <dt class="col-6 text-nowrap"><span>{{ item.entity.field_orari_giorni.value }}</span></dt>
-                <dd class="col-6">
-                  {% for item_ora in item.entity.field_orari_giorni.entity.field_fascia_oraria %}
-                      <span class="text-nowrap">{{ item_ora.entity.field_orari_fascia_oraria.from|date('H:i','UTC') }} - {{ item_ora.entity.field_orari_fascia_oraria.to|date('H:i','UTC') }}</span><span class="nascondi-ultimo">,</span>
-                  {% endfor %}
-                </dd>
-              </dl>
-            {% endfor %}
+<div class="col">
+  <div class="card card-teaser white-bg shadow-sm rounded border border-light h-100">
+    <svg class="icon">
+      <use href="#it-telephone" />
+    </svg>
+    <div class="card-body">
+      <p class="card-title text-paragraph-regular-medium-semi mb-3">{{ label }}</p>
+      <div class="card-text">
+        <div class="mb-1">{{ content.field_contatto }}</div>
+        {% if content.field_orari[0] is not empty %}
+          <a class="btn btn-xs btn-primary card-title mt-2" href="javascript: void(0);" data-bs-toggle="collapse" data-bs-target="#punto-di-contatto-{{ node.id }}">Vedi orari <i aria-hidden="true" class="fa fa-caret-down"></i></a>
+          <div id="punto-di-contatto-{{ node.id }}" class="collapse lightgrey-bg-c1 p-2">
+            <div class="mb-1">{{ content.field_orari_note }}</div>
+            <div class="">
+              {% for item in attribute(content.field_orari, "#items") %}
+                <dl class="servizio-contatto-orari row mb-1">
+                  <dt class="col-6 text-nowrap"><span>{{ item.entity.field_orari_giorni.value }}</span></dt>
+                  <dd class="col-6">
+                    {% for item_ora in item.entity.field_orari_giorni.entity.field_fascia_oraria %}
+                        <span class="text-nowrap">{{ item_ora.entity.field_orari_fascia_oraria.from|date('H:i','UTC') }} - {{ item_ora.entity.field_orari_fascia_oraria.to|date('H:i','UTC') }}</span><span class="nascondi-ultimo">,</span>
+                    {% endfor %}
+                  </dd>
+                </dl>
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      {% endif %}
-      {% if drupal_view_result('persone_collegate', 'block_1', node.id) %}
-        <div class="mb-1 mt-1">
-          {{ drupal_view('persone_collegate', 'block_1', node.id) }}
-        </div>
-      {% endif %}
+        {% endif %}
+        {% if drupal_view_result('persone_collegate', 'block_1', node.id) %}
+          <div class="mb-1 mt-1">
+            {{ drupal_view('persone_collegate', 'block_1', node.id) }}
+          </div>
+        {% endif %}
+      </div>
     </div>
   </div>
 </div>

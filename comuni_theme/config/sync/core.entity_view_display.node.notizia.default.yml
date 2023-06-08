@@ -44,7 +44,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 114
@@ -79,15 +79,16 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 116
     region: content
   field_descrizione_breve:
-    type: basic_string
+    type: string
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
     weight: 105
     region: content
@@ -95,7 +96,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: card
       link: false
     third_party_settings: {  }
     weight: 115

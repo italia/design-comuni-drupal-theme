@@ -128,12 +128,16 @@ Importa il logo svg del comune spostando il file svg nella cartella */web/sites/
 
 Se necessario ripulire la cache di drupal un'ultima volta.
 
-#### Per categorizzare "Esplora" nelle pagine di secondo livello
-In modifica della pagina Servizi, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Categorie dei servizi".
-In modifica della pagina Novità, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Tipi di notizia".
-In modifica della pagina Amministrazione, nel componente "Container contenuti in evidenza - Esplora l'amministrazione", selezionare il tipo di visualizzazione "Amministrazione (con Data Element)".
-In modifica della pagina Documenti e dati, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Tipi di documento".
-In modifica della pagina Tutti gli argomenti, nel componente Esplora, al campo "Esplora - Vocabolario", selezionare il vocabolario "Argomenti".
+#### Per popolare le pagine di secondo livello (le prime quattro sono necessarie al superamento della valutazione tramite "APP valutazione comuni")
+- In modifica della pagina Amministrazione, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Amministrazione".
+- In modifica della pagina Novità, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di notizia".
+- In modifica della pagina Servizi, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Categorie dei servizi".
+- In modifica della pagina Tutti gli argomenti, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Argomenti".
+- In modifica della pagina Eventi, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di evento".
+- In modifica della pagina Luoghi, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di luogo".
+- In modifica del termine /amministrazione/documenti-e-dati, nel componente "Elenco card termini da un vocabolario", selezionare il vocabolario "Tipi di documento".
+- In modifica del termine /amministrazione/politici, nel componente "Vista", selezionare la Vista "Politici" e il Display Id "Block".
+
 
 #### **Supporto tecnico ed editoriale**
 Sul [canale Slack #design-siti-comuni](http://developersitalia.slack.com/messages/design-siti-comuni) puoi confrontarti sulle risorse e trovare le risposte a tutte le domande riguardo problemi tecnici o l’architettura dei contenuti.

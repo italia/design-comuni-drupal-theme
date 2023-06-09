@@ -93,3 +93,7 @@ main.homepage h1{display: none;}
 *[data-bs-toggle="modal"]{
 	cursor: pointer;
 }
+
+.flex-basis-100 {
+	flex-basis: 100%;
+}

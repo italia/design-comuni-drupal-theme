@@ -1,20 +1,26 @@
-<div class="card card-teaser card-flex shadow-sm border border-light p-3 mb-1">
-  <div class="card-body pb-5">
-    <div class="category-top nascondi-ultimo-wrapper"> <span class="title-xsmall-semi-bold fw-semibold">
-      {% for item_categoria in content.field_categoria_del_servizio["#items"] %}
-        {{ item_categoria.entity.name.value }}<span class="nascondi-ultimo">, </span>
-      {% endfor %}
-    </span> </div>
-    <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
-    <div class="card-text u-main-black">
-      <div class="mt-1"><p>
-        {% if content.field_descrizione_breve[0] is not empty %}
-          {{- content.field_descrizione_breve -}}
-        {% endif %}
-      </p></div>
+<div class="card card-teaser white-bg shadow-sm rounded border border-light h-100 d-block">
+  <div class="container p-0">
+    <div class="row m-0">
+      <div class="col p-0">
+        <div class="card-body">
+          <div class="category-top">
+            <span class="title-xsmall-semi-bold fw-semibold">
+              {% for item_categoria in content.field_categoria_del_servizio["#items"] %}
+                {{ item_categoria.entity.name.value }}{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </span>
+          </div>
+          <h3 class="card-title text-paragraph-medium u-grey-light">{{ label }}</h3>
+          <div class="card-text u-main-black">
+            <div class="mt-1"><p>
+              {{ content.field_descrizione_breve }}
+            </p></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <a class="read-more position-absolute bottom-0 mb-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
+  <a class="read-more bottom-0 position-relative d-block mt-3" href="{{ url }}" title="Vai al contenuto {{ node.label }}"> <span class="text">Ulteriori dettagli</span>
     <svg class="icon ms-0">
       <use href="#it-arrow-right" />
     </svg>

@@ -201,13 +201,6 @@
                             </a>
                           </li>
                           {% endif %}
-                          {% if content.field_persona[0] is not empty %}
-                          <li class="nav-item">
-                            <a class="nav-link" href="#persona">
-                              <span class="title-medium">Assessore di riferimento</span>
-                            </a>
-                          </li>
-                          {% endif %}
                           {% if drupal_view_result('servizi_collegati', 'block_2', node.id) %}
                           <li class="nav-item">
                             <a class="nav-link" href="#elenco-servizi-offerti">
@@ -276,10 +269,12 @@
         {% if persone_responsabili is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="persone-responsabili">Responsabili</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {% for item in persone_responsabili %}
-              {{ drupal_entity('node', item, 'card') }}
-            {% endfor %}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {% for item in persone_responsabili %}
+                {{ drupal_entity('node', item, 'card') }}
+              {% endfor %}
+            </div>
           </div>
         </section>
         {% endif %}
@@ -287,19 +282,12 @@
         {% if persone is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="persone">Persone che compongono la struttura</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {% for item in persone %}
-              {{ drupal_entity('node', item, 'card') }}
-            {% endfor %}
-          </div>
-        </section>
-        {% endif %}
-
-        {% if content.field_persona[0] is not empty %}
-        <section class="it-page-section mb-30">
-          <h2 class="title-xxlarge mb-3" id="persona">Assessore di riferimento</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_persona }}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {% for item in persone %}
+                {{ drupal_entity('node', item, 'card') }}
+              {% endfor %}
+            </div>
           </div>
         </section>
         {% endif %}
@@ -307,8 +295,10 @@
         {% if drupal_view_result('servizi_collegati', 'block_2', node.id) %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="elenco-servizi-offerti">Servizi offerti</h2>
-            <div class="row row-cols-2 g-4">
-              {{ drupal_view('servizi_collegati', 'block_2', node.id) }}
+            <div class="container my-3">
+              <div class="row row-cols-lg-2 row-cols-1 g-4">
+                {{ drupal_view('servizi_collegati', 'block_2', node.id) }}
+              </div>
             </div>
         </section>
         {% endif %}
@@ -316,8 +306,10 @@
         {% if content.field_sede_principale[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="sede-principale">Sede principale</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_sede_principale }}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_sede_principale }}
+            </div>
           </div>
         </section>
         {% endif %}
@@ -325,8 +317,10 @@
         {% if content.field_altre_sedi[0] is not empty %}
         <section class="it-page-section mb-30">
           <h2 class="title-xxlarge mb-3" id="altre-sedi">Altre sedi</h2>
-            <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_altre_sedi }}
+          <div class="container">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_altre_sedi }}
+            </div>
           </div>
         </section>
         {% endif %}
@@ -334,22 +328,28 @@
 
         <section class="it-page-section mb-30">
             <h2 class="mb-3" id="contacts">Contatti</h2>
-            <div class="card-wrapper card-column my-3">
-              <div class="row">
+            <div class="container my-3">
+              <div class="row row-cols-lg-2 row-cols-1 g-4">
               
                 {% if drupal_view_result('punti_di_contatto_collegati', 'block_1', node.id) %}
-                  <div class="col-md-6">
-                    {{ drupal_view('punti_di_contatto_collegati', 'block_1', node.id) }}
+                  <div class="col">
+                    <div class="row row-cols-1 g-4">
+                      {{ drupal_view('punti_di_contatto_collegati', 'block_1', node.id) }}
+                    </div>
                   </div>
                 {% else %}
-                  <div class="col-md-6">
-                    {{ drupal_view('punti_di_contatto_collegati', 'block_2', node.id) }}
+                  <div class="col">
+                    <div class="row row-cols-1 g-4">
+                      {{ drupal_view('punti_di_contatto_collegati', 'block_2', node.id) }}
+                    </div>
                   </div>
                 {% endif %}
 
                 {% if content.field_unita_org_genitore[0] is not empty %}
-                  <div class="col-md-6 mt-4 mt-md-0">
-                    {{ content.field_unita_org_genitore }}
+                  <div class="col">
+                    <div class="row row-cols-1 g-4">
+                      {{ content.field_unita_org_genitore }}
+                    </div>
                   </div>
                 {% endif %}
               </div>
@@ -359,8 +359,10 @@
         {% if content.field_allegati_doc_pubblico[0] is not empty %}
         <section class="it-page-section  mb-30">
           <h2 class="title-xxlarge mb-3" id="allegati-doc-pubblico">Allegati</h2>
-          <div class="card-wrapper card-teaser-wrapper">
-            {{ content.field_allegati_doc_pubblico }}
+          <div class="container my-3">
+            <div class="row row-cols-lg-2 row-cols-1 g-4">
+              {{ content.field_allegati_doc_pubblico }}
+            </div>
           </div>
         </section>
         {% endif %}

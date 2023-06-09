@@ -306,7 +306,9 @@ display:
           break_phrase: false
           not: false
       defaults:
+        use_ajax: false
         arguments: false
+      use_ajax: true
       display_description: ''
       display_extenders: {  }
     cache_metadata:

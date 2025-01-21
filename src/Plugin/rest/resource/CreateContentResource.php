@@ -11,6 +11,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
+function clean_input ($input) {
+  $input = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $input);
+  return htmlspecialchars($input);
+}
+
 /**
  * Provides a resource to get view modes by entity and bundle.
  *
@@ -99,37 +104,37 @@ class CreateContentResource extends ResourceBase {
         case  'valutazione' :
           $arrayInsertNode['title'] = $payload['title'];
 
-          $arrayInsertNode['field_stelle'] = $payload['star'];
-          $arrayInsertNode['field_sottotitolo'] = $payload['radioResponse'];
-          $arrayInsertNode['body'] = $payload['freeText'];
-          $arrayInsertNode['field_nome'] = $payload['page'];
+          $arrayInsertNode['field_stelle'] = clean_input($payload['star']);
+          $arrayInsertNode['field_sottotitolo'] = clean_input($payload['radioResponse']);
+          $arrayInsertNode['body'] = clean_input($payload['freeText']);
+          $arrayInsertNode['field_nome'] = clean_input($payload['page']);
 
           break;
         case 'ticket' :
-          $arrayInsertNode['title'] = $payload['title'];
+          $arrayInsertNode['title'] = clean_input($payload['title']);
 
-          $arrayInsertNode['field_nome'] = $payload['nome'];
-          $arrayInsertNode['field_cognome'] = $payload['cognome'];
-          $arrayInsertNode['field_email'] = $payload['email'];
-          $arrayInsertNode['field_categoria_servizio_txt'] = $payload['categoria'];
-          $arrayInsertNode['field_nome_servizio_txt'] = $payload['servizio'];
-          $arrayInsertNode['field_descrizione_breve'] = $payload['descrizione'];
+          $arrayInsertNode['field_nome'] = clean_input($payload['nome']);
+          $arrayInsertNode['field_cognome'] = clean_input($payload['cognome']);
+          $arrayInsertNode['field_email'] = clean_input($payload['email']);
+          $arrayInsertNode['field_categoria_servizio_txt'] = clean_input($payload['categoria']);
+          $arrayInsertNode['field_nome_servizio_txt'] = clean_input($payload['servizio']);
+          $arrayInsertNode['field_descrizione_breve'] = clean_input($payload['descrizione']);
 
           break;
         case 'appuntamento' :
-          $arrayInsertNode['title'] = $payload['name']. ' '.$payload['surname'];
+          $arrayInsertNode['title'] = clean_input($payload['name']. ' '.$payload['surname']);
           $timeEndDate = strtotime($payload['appointment']['endDate']);
           $newformatEndDate = date('Y-m-d\TH:i:s',$timeEndDate);
           $timestartDate = strtotime($payload['appointment']['startDate']);
           $newformatstartDate = date('Y-m-d\TH:i:s',$timestartDate);
 
-          $arrayInsertNode['field_email_richiedente'] = $payload['email'];
-          $arrayInsertNode['field_data_e_ora_fine_appuntam'] = $newformatEndDate;
-          $arrayInsertNode['field_data_e_ora_inizio_appuntam'] = $newformatstartDate;
+          $arrayInsertNode['field_email_richiedente'] = clean_input($payload['email']);
+          $arrayInsertNode['field_data_e_ora_fine_appuntam'] = clean_input($newformatEndDate);
+          $arrayInsertNode['field_data_e_ora_inizio_appuntam'] = clean_input($newformatstartDate);
           $arrayInsertNode['field_data_e_ora_prenotazione'] = date("Y-m-d\TH:i:s");
-          $arrayInsertNode['field_dettaglio_richiesta'] = $payload['moreDetails'];
-          $arrayInsertNode['field_nome'] = $payload['service'];
-          $arrayInsertNode['field_sottotitolo'] = $payload['office'];
+          $arrayInsertNode['field_dettaglio_richiesta'] = clean_input($payload['moreDetails']);
+          $arrayInsertNode['field_nome'] = clean_input($payload['service']);
+          $arrayInsertNode['field_sottotitolo'] = clean_input($payload['office']);
           break;
       }
 

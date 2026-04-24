@@ -4,7 +4,7 @@ applicationSuite: Modello Comuni di Designers Italia
 url: https://github.com/italia/design-comuni-drupal-theme
 isBasedOn: https://github.com/italia/design-comuni-pagine-statiche
 softwareVersion: v1.8.1
-releaseDate: 2025-01-23
+releaseDate: '2025-01-23'
 platforms:
   - web
 categories:
